@@ -72,6 +72,24 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAnular.Designer.vb">
+      <DependentUpon>frmAnular.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnular.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturar.Designer.vb">
+      <DependentUpon>frmFacturar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmVentas.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +114,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAnular.resx">
+      <DependentUpon>frmAnular.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturar.resx">
+      <DependentUpon>frmFacturar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVentas.resx">
       <DependentUpon>frmVentas.vb</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +134,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
