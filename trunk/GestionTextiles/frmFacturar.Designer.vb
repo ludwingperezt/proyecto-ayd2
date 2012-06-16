@@ -90,6 +90,7 @@ Partial Class frmFacturar
         '
         Me.txtnombre.Location = New System.Drawing.Point(95, 155)
         Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.ReadOnly = True
         Me.txtnombre.Size = New System.Drawing.Size(308, 20)
         Me.txtnombre.TabIndex = 3
         '
@@ -104,6 +105,7 @@ Partial Class frmFacturar
         '
         Me.txtdireccion.Location = New System.Drawing.Point(96, 183)
         Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.ReadOnly = True
         Me.txtdireccion.Size = New System.Drawing.Size(307, 20)
         Me.txtdireccion.TabIndex = 5
         '

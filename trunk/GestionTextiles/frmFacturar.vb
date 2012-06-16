@@ -1,4 +1,5 @@
-﻿Public Class frmFacturar
+﻿Imports System.Xml
+Public Class frmFacturar
 
     Private Sub DataGridView1_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
@@ -182,10 +183,40 @@
     End Sub
 
     Private Sub txtCodigo_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtCodigo.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9")) Then
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
             e.KeyChar = vbNullChar
 
         End If
 
+    End Sub
+
+    Private Sub txtCodigo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCodigo.TextChanged
+        
+    End Sub
+
+    Private Sub txtTela_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTela.KeyPress
+        If (Not (e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then  'revisar si lleva numeros en los nombres de las telas
+            e.KeyChar = vbNullChar
+
+        End If
+    End Sub
+
+    Private Sub txtCantidad_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCantidad.KeyPress
+
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = "." Or e.KeyChar = vbBack)) Then
+            e.KeyChar = vbNullChar
+        End If
+        If e.KeyChar = "." Then
+            If txtCantidad.Text.Contains(".") Then
+                e.KeyChar = ""
+            End If
+        End If
+
+    End Sub
+    Private Sub txtnit_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtnit.KeyPress
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
+            e.KeyChar = vbNullChar
+
+        End If
     End Sub
 End Class
