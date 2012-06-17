@@ -43,6 +43,7 @@
     <Compile Include="clUsuario.cs" />
     <Compile Include="negociosAdaptadores.cs" />
     <Compile Include="negociosPuesto.cs" />
+    <Compile Include="negociosTipoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
