@@ -14,6 +14,7 @@ namespace negocios
         private string lsDescripcionPuesto;
         private bool lboActivo;
 
+        #region constructores
         /// <summary>
         /// Constructor del objeto negociosPuesto, por defecto. Para establecer el valor de los campos deberá utilizar las funciones de modificación para cada campo.
         /// </summary>
@@ -35,9 +36,8 @@ namespace negocios
             this.lsDescripcionPuesto = lsDescripcion;
             this.lboActivo = true;
         }
-
-        //REGION DE FUNCIONES ACCESORAS Y MODIFICADORAS
-        #region 
+        #endregion
+        #region REGION DE FUNCIONES ACCESORAS Y MODIFICADORAS
         /// <summary>
         /// Función modificadora del campo ID del puesto
         /// </summary>
@@ -103,9 +103,7 @@ namespace negocios
             return this.lboActivo;
         }
         #endregion
-
-        //REGION DE FUNCIONES DE ACCESO A LA BASE DE DATOS
-        #region
+        #region REGION DE FUNCIONES DE ACCESO A LA BASE DE DATOS
         /// <summary>
         /// Función para insertar un nuevo Puesto a la base de datos. Funciona sobre el objeto this, por lo tanto, éste deberá tener como mínimo los campos NOMBRE y DESCRIPCION asignados.
         /// </summary>
@@ -154,11 +152,13 @@ namespace negocios
                 return ex.Message;
             }
         }
+        #endregion
+        #region funciones estáticas (listados y búsquedas)
         /// <summary>
         /// Función que obtiene la lista de todos los puestos en la base de datos
         /// </summary>
         /// <returns>DataTable: Lista de todos los puestos de la base de datos</returns>
-        public DataTable fnListarPuestos()
+        public static DataTable fnListarPuestos()
         {
             return negociosAdaptadores.gListarPuestos.GetData();
         }

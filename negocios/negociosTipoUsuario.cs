@@ -14,6 +14,7 @@ namespace negocios
         private int liNivelAcceso;
         private bool lboActivo;
 
+        #region constructores
         /// <summary>
         /// Constructor por defecto del objeto negociosTipoUsuario.
         /// Para establecer el valor de los campos deberá utilizar las funciones de modificación para cada campo.
@@ -37,7 +38,7 @@ namespace negocios
             this.liNivelAcceso = liNivelAcceso;
             this.lboActivo = lboActivo;
         }
-
+        #endregion
         #region region de funciones accesoras y modificadoras
         /// <summary>
         /// Función de acceso al ID del tipo de usuario
@@ -121,6 +122,7 @@ namespace negocios
             this.lboActivo = lboActivo;
         }
         #endregion
+        #region funciones de acceso a la base de datos
         /// <summary>
         /// Función de modificación del tipo de usuario en la base de datos. Contempla los campos: nombre, descripción y nivel de acceso.
         /// Los nuevos datos de envío a la base de datos son los que contiene actualmente éste objeto.
@@ -170,13 +172,16 @@ namespace negocios
                 return ex.Message;
             }
         }
+        #endregion
+        #region funciones estáticas (listas y búsquedas)
         /// <summary>
         /// Función de lista de todos los tipos de usuario en la base de datos.
         /// </summary>
         /// <returns>DataTable: La lista de todos los tipos de usuario en la base de datos.</returns>
-        public DataTable fnMostrarTiposUsuario()
+        public static DataTable fnMostrarTiposUsuario()
         {
             return negociosAdaptadores.gListarTiposUsuario.GetData();
         }
+        #endregion
     }
 }
