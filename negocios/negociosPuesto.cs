@@ -14,12 +14,34 @@ namespace negocios
         private string lsDescripcionPuesto;
         private bool lboActivo;
 
+        /// <summary>
+        /// Constructor del objeto negociosPuesto, por defecto. Para establecer el valor de los campos deberá utilizar las funciones de modificación para cada campo.
+        /// </summary>
+        public negociosPuesto()
+        { 
+        }
+
+        /// <summary>
+        /// Constructor sobrecargado del objeto negociosPuesto.
+        /// </summary>
+        /// <param name="liIdPuesto">int: el id del puesto que se está creando</param>
+        /// <param name="lsNombre">string: el nombre del puesto</param>
+        /// <param name="lsDescripcion">string: la descripción del puesto</param>
+        /// <param name="lboActivo">bool: campo de activación o desactivación del puesto</param>
+        public negociosPuesto(int liIdPuesto, string lsNombre, string lsDescripcion, bool lboActivo)
+        {
+            this.liIdPuesto = liIdPuesto;
+            this.lsNombrePuesto = lsNombre;
+            this.lsDescripcionPuesto = lsDescripcion;
+            this.lboActivo = true;
+        }
+
         //REGION DE FUNCIONES ACCESORAS Y MODIFICADORAS
         #region 
         /// <summary>
         /// Función modificadora del campo ID del puesto
         /// </summary>
-        /// <param name="liIdPuesto">Entero: El nuevo id</param>
+        /// <param name="liIdPuesto">int: El nuevo id</param>
         public void setIdPuesto(int liIdPuesto)
         {
             this.liIdPuesto = liIdPuesto;
@@ -27,7 +49,7 @@ namespace negocios
         /// <summary>
         /// Función de acceso al campo ID del puesto
         /// </summary>
-        /// <returns>Entero: el id del puesto</returns>
+        /// <returns>int: el id del puesto</returns>
         public int getIdPuesto()
         {
             return this.liIdPuesto;
@@ -35,7 +57,7 @@ namespace negocios
         /// <summary>
         /// Función modificadora del campo NOMBRE del puesto
         /// </summary>
-        /// <param name="lsNombre">Cadena: el nuevo nombre del puesto</param>
+        /// <param name="lsNombre">string: el nuevo nombre del puesto</param>
         public void setNombrePuesto(string lsNombre)
         {
             this.lsNombrePuesto = lsNombre;
@@ -43,7 +65,7 @@ namespace negocios
         /// <summary>
         /// Función de acceso al campo NOMBRE del puesto
         /// </summary>
-        /// <returns>Cadena: el nombre del puesto</returns>
+        /// <returns>string: el nombre del puesto</returns>
         public string getNombrePuesto()
         {
             return this.lsNombrePuesto;
@@ -51,7 +73,7 @@ namespace negocios
         /// <summary>
         /// Función modificadora del campo DESCRIPCION del puesto
         /// </summary>
-        /// <param name="lsDescripcion">Cadena: la nueva descripcion del puesto</param>
+        /// <param name="lsDescripcion">string: la nueva descripcion del puesto</param>
         public void setDescripcionPuesto(string lsDescripcion)
         {
             this.lsDescripcionPuesto = lsDescripcion;
@@ -59,7 +81,7 @@ namespace negocios
         /// <summary>
         /// Función de acceso al campo DESCRIPCION del puesto
         /// </summary>
-        /// <returns>Cadena: la descripcion del puesto</returns>
+        /// <returns>string: la descripcion del puesto</returns>
         public string getDescripcionPuesto()
         {
             return this.lsDescripcionPuesto;
@@ -75,7 +97,7 @@ namespace negocios
         /// <summary>
         /// Función de acceso al campo ACTIVO del puesto. Informa sobre el estado específico de un puesto.
         /// </summary>
-        /// <returns>Bool: True si el puesto está activo, False si el puesto fue desactivado (eliminado)</returns>
+        /// <returns>bool: True si el puesto está activo, False si el puesto fue desactivado (eliminado)</returns>
         public bool getActivo()
         {
             return this.lboActivo;
@@ -87,7 +109,7 @@ namespace negocios
         /// <summary>
         /// Función para insertar un nuevo Puesto a la base de datos. Funciona sobre el objeto this, por lo tanto, éste deberá tener como mínimo los campos NOMBRE y DESCRIPCION asignados.
         /// </summary>
-        /// <returns>Cadena: Mensaje de confirmación o de error de la operación</returns>
+        /// <returns>string: Mensaje de confirmación o de error de la operación</returns>
         public string fnInsertarPuesto()
         {
             try
@@ -103,7 +125,7 @@ namespace negocios
         /// <summary>
         /// Función de modificación de un puesto en la base de datos.
         /// </summary>
-        /// <returns>Cadena: Mensaje de confirmación o de error de la operación</returns>
+        /// <returns>string: Mensaje de confirmación o de error de la operación</returns>
         public string fnModificarPuesto()
         {
             try
@@ -119,7 +141,7 @@ namespace negocios
         /// <summary>
         /// Función que envía la confirmación de eliminación (desactivación) de éste puesto de la base de datos.
         /// </summary>
-        /// <returns>Cadena: Mensaje de confirmación o de error de la operación</returns>
+        /// <returns>string: Mensaje de confirmación o de error de la operación</returns>
         public string fnEliminarPuesto()
         {
             try
