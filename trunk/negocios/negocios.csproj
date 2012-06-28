@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="negociosAdaptadores.cs" />
+    <Compile Include="negociosProducto.cs" />
     <Compile Include="negociosTipoCliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
