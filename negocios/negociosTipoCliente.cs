@@ -142,7 +142,8 @@ namespace negocios
         /// <returns>DataTable: listado de todos los tipos de cliente</returns>
         public DataTable mostrarTiposCliente()
         {
-            return negociosAdaptadores.gListarTiposCliente.GetData();
+            //return negociosAdaptadores.gListarTiposCliente.GetData();
+            return null;
         }
         #endregion
     }

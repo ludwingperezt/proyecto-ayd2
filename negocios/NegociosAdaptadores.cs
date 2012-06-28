@@ -9,9 +9,7 @@ namespace negocios
     public static class negociosAdaptadores
     {
         public static QueriesTableAdapter gAdaptadorDeConsultas = new QueriesTableAdapter();
-        public static mostrarPuestosTableAdapter gListarPuestos = new mostrarPuestosTableAdapter();
-        public static mostrarTodosTiposUsuariosTableAdapter gListarTiposUsuario = new mostrarTodosTiposUsuariosTableAdapter();
-        public static mostrarClientesTableAdapter gListarClientes = new mostrarClientesTableAdapter();
-        public static mostrarTiposClienteTableAdapter gListarTiposCliente = new mostrarTiposClienteTableAdapter();
+        public static mostrarProductosTableAdapter gAdaptadorListaProductos = new mostrarProductosTableAdapter();
+        public static mostrarRolesTableAdapter gAdaptadorListaRoles = new mostrarRolesTableAdapter();
     }
 }
