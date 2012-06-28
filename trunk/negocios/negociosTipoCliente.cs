@@ -109,7 +109,7 @@ namespace negocios
         {
             try
             {
-                negociosAdaptadores.gAdaptadorDeConsultas.insertarTipoCliente(this.lsNombre, this.lsDescripcion, this.lDescuento);
+                //negociosAdaptadores.gAdaptadorDeConsultas.insertarTipoCliente(this.lsNombre, this.lsDescripcion, this.lDescuento);
                 return "La operación de inserción de la categoría de cliente "+this.lsNombre+" se finalizó con éxito";
             }
             catch (Exception ex)
@@ -126,7 +126,7 @@ namespace negocios
         {
             try
             {
-                negociosAdaptadores.gAdaptadorDeConsultas.modificarTipoCliente(this.liIdTipoCliente,this.lsNombre, this.lsDescripcion, this.lDescuento);
+                //negociosAdaptadores.gAdaptadorDeConsultas.modificarTipoCliente(this.liIdTipoCliente,this.lsNombre, this.lsDescripcion, this.lDescuento);
                 return "La operación de modificación de datos de la categoría de cliente " + this.lsNombre + " se finalizó con éxito";
             }
             catch (Exception ex)
