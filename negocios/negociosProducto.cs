@@ -186,7 +186,7 @@ namespace negocios
         /// Los datos que se envían a la base de datos son los que se encuentran contenidos actualmente en éste objeto.
         /// </summary>
         /// <returns>string: mensaje de confirmación o error de la operación</returns>
-        public string insertarDescripcionProducto()
+        public string fnsInsertarDescripcionProducto()
         {
             try
             {
@@ -203,7 +203,7 @@ namespace negocios
         /// Método que modifica la descripción de un producto. Los datos que se utilizan para la modificación son los que se encuentran almacenados en el objeto actual.
         /// </summary>
         /// <returns>string: mensaje de confirmación o error de la operación</returns>
-        public string modificarDescripcionProducto()
+        public string fnsModificarDescripcionProducto()
         {
             try
             {
@@ -219,7 +219,7 @@ namespace negocios
         /// Método que elimina un producto de la base de datos. Éste producto seguirá apareciendo en el historial de la base de datos pero no estará disponible para futuras consultas.
         /// </summary>
         /// <returns>string: mensaje de confirmación o error de la operación</returns>
-        public string eliminarProducto()
+        public string fnsEliminarProducto()
         {
             try
             {
@@ -236,7 +236,7 @@ namespace negocios
         /// </summary>
         /// <param name="cantidad">double: cantidad que se desea agregar a la cantidad actual de producto en bodega</param>
         /// <returns>string: mensaje de confirmación o error de la operación</returns>
-        public string aumentarExistenciaProducto(double cantidad)
+        public string fnsAumentarExistenciaProducto(double cantidad)
         {
             try
             {
@@ -253,7 +253,7 @@ namespace negocios
         /// </summary>
         /// <param name="cantidad">double: cantidad que se desea disminuir a la cantidad actual de producto en bodega</param>
         /// <returns>string: mensaje de confirmación o error de la operación</returns>
-        public string disminuirExistenciaProducto(double cantidad)
+        public string fnsDisminuirExistenciaProducto(double cantidad)
         {
             try
             {
@@ -270,7 +270,7 @@ namespace negocios
         /// </summary>
         /// <param name="cantidad">double: cantidad con la cual se desea comparar la existencia del producto (cantidad solicitada en un pedido)</param>
         /// <returns>bool: True si la cantidad de producto almacenada en bodega es mayor o igual a la cantidad pedida especificada como parámetro; False si no hay suficiente producto</returns>
-        public bool verificarCantidadExistenteProducto(double cantidad)
+        public bool fnboVerificarCantidadExistenteProducto(double cantidad)
         {
             return (bool)negociosAdaptadores.gAdaptadorDeConsultas.verificarExistencia((short)this.liIdProducto, cantidad);
         }
@@ -278,7 +278,7 @@ namespace negocios
         /// Función que muestra todos los productos disponibles en la base de datos.
         /// </summary>
         /// <returns>DataTable: lista de los productos activos en la base de datos.</returns>
-        public static DataTable listarProductos()
+        public static DataTable fnDTlistarProductos()
         {
             return negociosAdaptadores.gAdaptadorListaProductos.GetData();
         }
