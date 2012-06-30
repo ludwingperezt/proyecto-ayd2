@@ -194,22 +194,24 @@ Partial Class frmFacturar
         '
         'btnCancelar
         '
+        Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancelar.Location = New System.Drawing.Point(230, 624)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 27
         Me.btnCancelar.Text = "&Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btnAceptar
         '
+        Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAceptar.Location = New System.Drawing.Point(328, 624)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 26
         Me.btnAceptar.Text = "&Aceptar"
-        Me.btnAceptar.UseVisualStyleBackColor = True
+        Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'lblTitulo
         '
@@ -272,12 +274,13 @@ Partial Class frmFacturar
         '
         'btnagregar
         '
+        Me.btnagregar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnagregar.Location = New System.Drawing.Point(308, 301)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(75, 23)
         Me.btnagregar.TabIndex = 39
         Me.btnagregar.Text = "Agregar"
-        Me.btnagregar.UseVisualStyleBackColor = True
+        Me.btnagregar.UseVisualStyleBackColor = False
         '
         'txtCantidad
         '
