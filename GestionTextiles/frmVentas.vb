@@ -13,7 +13,7 @@
     End Sub
 
 
-    Private Sub btnCotizar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnCotizar.MouseHover
+    Private Sub btnCotizar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Permite realizar una cotización de productos"
     End Sub
 
@@ -40,7 +40,7 @@
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnCotizar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnCotizar.MouseLeave
+    Private Sub btnCotizar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -55,5 +55,9 @@
 
     Private Sub btnFacturar_Click(sender As System.Object, e As System.EventArgs) Handles btnFacturar.Click
         frmFacturar.ShowDialog(Me)
+    End Sub
+
+    Private Sub btnCotizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 End Class

@@ -29,7 +29,6 @@ Partial Class frmVentas
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnAnular = New System.Windows.Forms.Button()
         Me.btnFacturar = New System.Windows.Forms.Button()
-        Me.btnCotizar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.lblTitulo = New System.Windows.Forms.Label()
@@ -80,23 +79,12 @@ Partial Class frmVentas
         Me.btnFacturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnFacturar.UseVisualStyleBackColor = True
         '
-        'btnCotizar
-        '
-        Me.btnCotizar.Image = CType(resources.GetObject("btnCotizar.Image"), System.Drawing.Image)
-        Me.btnCotizar.Location = New System.Drawing.Point(30, 133)
-        Me.btnCotizar.Name = "btnCotizar"
-        Me.btnCotizar.Size = New System.Drawing.Size(97, 64)
-        Me.btnCotizar.TabIndex = 3
-        Me.btnCotizar.Text = "C&otizar"
-        Me.btnCotizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnCotizar.UseVisualStyleBackColor = True
-        '
         'Button1
         '
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(165, 133)
+        Me.Button1.Location = New System.Drawing.Point(30, 133)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(99, 64)
+        Me.Button1.Size = New System.Drawing.Size(234, 64)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "&Salir"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -123,7 +111,6 @@ Partial Class frmVentas
         Me.ClientSize = New System.Drawing.Size(300, 241)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnCotizar)
         Me.Controls.Add(Me.btnFacturar)
         Me.Controls.Add(Me.btnAnular)
         Me.Controls.Add(Me.stsBarra)
@@ -142,7 +129,6 @@ Partial Class frmVentas
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents btnAnular As System.Windows.Forms.Button
     Friend WithEvents btnFacturar As System.Windows.Forms.Button
-    Friend WithEvents btnCotizar As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
