@@ -59,6 +59,7 @@ Partial Class frmVentas
         '
         'btnAnular
         '
+        Me.btnAnular.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAnular.Image = CType(resources.GetObject("btnAnular.Image"), System.Drawing.Image)
         Me.btnAnular.Location = New System.Drawing.Point(30, 60)
         Me.btnAnular.Name = "btnAnular"
@@ -66,10 +67,11 @@ Partial Class frmVentas
         Me.btnAnular.TabIndex = 1
         Me.btnAnular.Text = "An&ular Factura"
         Me.btnAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnAnular.UseVisualStyleBackColor = True
+        Me.btnAnular.UseVisualStyleBackColor = False
         '
         'btnFacturar
         '
+        Me.btnFacturar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnFacturar.Image = CType(resources.GetObject("btnFacturar.Image"), System.Drawing.Image)
         Me.btnFacturar.Location = New System.Drawing.Point(165, 60)
         Me.btnFacturar.Name = "btnFacturar"
@@ -77,10 +79,11 @@ Partial Class frmVentas
         Me.btnFacturar.TabIndex = 2
         Me.btnFacturar.Text = "&Facturar"
         Me.btnFacturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnFacturar.UseVisualStyleBackColor = True
+        Me.btnFacturar.UseVisualStyleBackColor = False
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.Location = New System.Drawing.Point(30, 133)
         Me.Button1.Name = "Button1"
@@ -88,7 +91,7 @@ Partial Class frmVentas
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "&Salir"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'ToolTip1
         '
