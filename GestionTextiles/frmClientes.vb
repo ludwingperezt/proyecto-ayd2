@@ -9,7 +9,7 @@
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub DataGridView1_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataGridView1.MouseLeave
+    Private Sub DataGridView1_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvclientes.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -37,7 +37,7 @@
         slblDescripcion.Text = "Debe  precionar el boton 'buscar' para inciar la busqueda "
     End Sub
 
-    Private Sub DataGridView1_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DataGridView1.MouseHover
+    Private Sub DataGridView1_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvclientes.MouseHover
         slblDescripcion.Text = "Listado de clientes actuales"
     End Sub
 
@@ -64,5 +64,19 @@
             'codigo paa busqueda
 
         End If
+    End Sub
+
+    Private Sub btningresarcliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btningresarcliente.Click
+        frmingresoclientes.Show()
+
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Me.Dispose()
+        frmPrincipal.Show()
+    End Sub
+
+    Private Sub btnmodificarclientes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmodificarclientes.Click
+        frmModificarCliente.Show()
     End Sub
 End Class

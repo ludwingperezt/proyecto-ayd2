@@ -25,7 +25,7 @@ Partial Class frmClientes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClientes))
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btningresarcliente = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvclientes = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,7 +41,7 @@ Partial Class frmClientes
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,14 +68,14 @@ Partial Class frmClientes
         Me.btningresarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btningresarcliente.UseVisualStyleBackColor = False
         '
-        'DataGridView1
+        'dgvclientes
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        Me.DataGridView1.Location = New System.Drawing.Point(1, 144)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(544, 132)
-        Me.DataGridView1.TabIndex = 31
+        Me.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvclientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        Me.dgvclientes.Location = New System.Drawing.Point(1, 144)
+        Me.dgvclientes.Name = "dgvclientes"
+        Me.dgvclientes.Size = New System.Drawing.Size(544, 132)
+        Me.dgvclientes.TabIndex = 31
         '
         'Column1
         '
@@ -210,12 +210,13 @@ Partial Class frmClientes
         Me.Controls.Add(Me.btneliminarcliente)
         Me.Controls.Add(Me.btnmodificarclientes)
         Me.Controls.Add(Me.lbllistaclientes)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvclientes)
         Me.Controls.Add(Me.btningresarcliente)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmClientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmClientes"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)
@@ -224,7 +225,7 @@ Partial Class frmClientes
     End Sub
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents btningresarcliente As System.Windows.Forms.Button
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvclientes As System.Windows.Forms.DataGridView
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
