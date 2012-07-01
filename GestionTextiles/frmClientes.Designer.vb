@@ -35,10 +35,14 @@ Partial Class frmClientes
         Me.btnmodificarclientes = New System.Windows.Forms.Button()
         Me.btneliminarcliente = New System.Windows.Forms.Button()
         Me.lblbusqueda = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtbusqueda = New System.Windows.Forms.TextBox()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.stsBarra = New System.Windows.Forms.StatusStrip()
+        Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -142,12 +146,12 @@ Partial Class frmClientes
         Me.lblbusqueda.TabIndex = 35
         Me.lblbusqueda.Text = "Ingrese el texto a buscar: "
         '
-        'TextBox1
+        'txtbusqueda
         '
-        Me.TextBox1.Location = New System.Drawing.Point(15, 79)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(400, 20)
-        Me.TextBox1.TabIndex = 36
+        Me.txtbusqueda.Location = New System.Drawing.Point(15, 79)
+        Me.txtbusqueda.Name = "txtbusqueda"
+        Me.txtbusqueda.Size = New System.Drawing.Size(400, 20)
+        Me.txtbusqueda.TabIndex = 36
         '
         'btnbuscar
         '
@@ -171,14 +175,37 @@ Partial Class frmClientes
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'stsBarra
+        '
+        Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
+        Me.stsBarra.Location = New System.Drawing.Point(0, 464)
+        Me.stsBarra.Name = "stsBarra"
+        Me.stsBarra.Size = New System.Drawing.Size(547, 22)
+        Me.stsBarra.TabIndex = 39
+        Me.stsBarra.Text = "StatusStrip1"
+        '
+        'slblDescripcion
+        '
+        Me.slblDescripcion.AutoToolTip = True
+        Me.slblDescripcion.Name = "slblDescripcion"
+        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
+        Me.slblDescripcion.Text = "Descripción"
+        '
+        'slblFecha
+        '
+        Me.slblFecha.Name = "slblFecha"
+        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
+        Me.slblFecha.Text = "FECHA Y HORA"
+        '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(547, 468)
+        Me.ClientSize = New System.Drawing.Size(547, 486)
+        Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnbuscar)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtbusqueda)
         Me.Controls.Add(Me.lblbusqueda)
         Me.Controls.Add(Me.btneliminarcliente)
         Me.Controls.Add(Me.btnmodificarclientes)
@@ -189,6 +216,8 @@ Partial Class frmClientes
         Me.Name = "frmClientes"
         Me.Text = "frmClientes"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.stsBarra.ResumeLayout(False)
+        Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -205,7 +234,10 @@ Partial Class frmClientes
     Friend WithEvents btnmodificarclientes As System.Windows.Forms.Button
     Friend WithEvents btneliminarcliente As System.Windows.Forms.Button
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtbusqueda As System.Windows.Forms.TextBox
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
+    Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
 End Class
