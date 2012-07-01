@@ -1,0 +1,78 @@
+﻿Public Class frmModificarTipoCliente
+
+    Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtdescripcion_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdescripcion.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtdescuento_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdescuento.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtnombre_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseHover
+        slblDescripcion.Text = "Ingrese el nuevo nombre ej. supremo"
+    End Sub
+
+    Private Sub txtdescripcion_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdescripcion.MouseHover
+        slblDescripcion.Text = "Ingrese la nueva descripción del tipo de cliente"
+    End Sub
+
+    Private Sub txtdescuento_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdescuento.MouseHover
+        slblDescripcion.Text = "Ingrese el nuevo porcentaje de descuento ej. 20"
+    End Sub
+
+    Private Sub btnCancelar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+
+    End Sub
+
+    Private Sub btnAceptar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnCancelar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseHover
+        slblDescripcion.Text = "Sale de la aplicación , verifique si almaceno los cambios"
+    End Sub
+
+    Private Sub btnAceptar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseHover
+        slblDescripcion.Text = "Almacena los cambios realizados al tipo de cliente"
+    End Sub
+
+    Private Sub txtnombre_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtnombre.KeyPress
+        If (Not (e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then  'revisar para que solo lleve letras
+            e.KeyChar = vbNullChar
+
+        End If
+    End Sub
+
+    Private Sub txtdescuento_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtdescuento.KeyPress
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
+            e.KeyChar = vbNullChar
+
+        End If
+        If Convert.ToDouble(txtdescuento.Text) <= 100 Then
+            e.KeyChar = vbNullChar
+            MessageBox.Show("Descuento exedido  del 100% ")
+        End If
+    End Sub
+
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+        Me.Dispose()
+        frmtipocliente.Show()
+    End Sub
+
+    Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        For Each ctrlIterador As Control In Me.Controls
+            If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
+                If (ctrlIterador.Text = "") Then
+                    ctrlIterador.BackColor = Color.Yellow
+                Else
+                    ctrlIterador.BackColor = Color.White
+                End If
+            End If
+        Next
+    End Sub
+End Class
