@@ -31,7 +31,7 @@ Partial Class frmFacturar
         Me.cmbserie = New System.Windows.Forms.ComboBox()
         Me.lblserie = New System.Windows.Forms.Label()
         Me.lblnumero = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvdetallefactura = New System.Windows.Forms.DataGridView()
         Me.clmCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clmCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clmTela = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,7 +55,7 @@ Partial Class frmFacturar
         Me.lblcantidad = New System.Windows.Forms.Label()
         Me.lbltela = New System.Windows.Forms.Label()
         Me.lblcodigo = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvdetallefactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -135,14 +135,14 @@ Partial Class frmFacturar
         Me.lblnumero.TabIndex = 8
         Me.lblnumero.Text = "número: "
         '
-        'DataGridView1
+        'dgvdetallefactura
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clmCantidad, Me.clmCodigo, Me.clmTela, Me.clmSubtotal})
-        Me.DataGridView1.Location = New System.Drawing.Point(15, 352)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(388, 187)
-        Me.DataGridView1.TabIndex = 18
+        Me.dgvdetallefactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvdetallefactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clmCantidad, Me.clmCodigo, Me.clmTela, Me.clmSubtotal})
+        Me.dgvdetallefactura.Location = New System.Drawing.Point(15, 352)
+        Me.dgvdetallefactura.Name = "dgvdetallefactura"
+        Me.dgvdetallefactura.Size = New System.Drawing.Size(388, 187)
+        Me.dgvdetallefactura.TabIndex = 18
         '
         'clmCantidad
         '
@@ -352,7 +352,7 @@ Partial Class frmFacturar
         Me.Controls.Add(Me.lblDescuento)
         Me.Controls.Add(Me.lbTotal)
         Me.Controls.Add(Me.gpProducto)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvdetallefactura)
         Me.Controls.Add(Me.lblnumero)
         Me.Controls.Add(Me.lblserie)
         Me.Controls.Add(Me.cmbserie)
@@ -366,7 +366,7 @@ Partial Class frmFacturar
         Me.Name = "frmFacturar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Facturar"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvdetallefactura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)
@@ -382,7 +382,7 @@ Partial Class frmFacturar
     Friend WithEvents cmbserie As System.Windows.Forms.ComboBox
     Friend WithEvents lblserie As System.Windows.Forms.Label
     Friend WithEvents lblnumero As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvdetallefactura As System.Windows.Forms.DataGridView
     Friend WithEvents clmCantidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clmCodigo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clmTela As System.Windows.Forms.DataGridViewTextBoxColumn
