@@ -5,7 +5,7 @@ using System.Text;
 
 namespace negocios
 {
-    class negociosCliente
+    public class negociosCliente
     {
     }
 }
