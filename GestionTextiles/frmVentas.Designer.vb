@@ -29,7 +29,7 @@ Partial Class frmVentas
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnAnular = New System.Windows.Forms.Button()
         Me.btnFacturar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
@@ -81,17 +81,17 @@ Partial Class frmVentas
         Me.btnFacturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnFacturar.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnSalir
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(30, 133)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(234, 64)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "&Salir"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.Location = New System.Drawing.Point(30, 133)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(234, 64)
+        Me.btnSalir.TabIndex = 4
+        Me.btnSalir.Text = "&Salir"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSalir.UseVisualStyleBackColor = False
         '
         'ToolTip1
         '
@@ -101,6 +101,7 @@ Partial Class frmVentas
         '
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(35, 19)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(226, 29)
@@ -113,7 +114,7 @@ Partial Class frmVentas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(300, 241)
         Me.Controls.Add(Me.lblTitulo)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnFacturar)
         Me.Controls.Add(Me.btnAnular)
         Me.Controls.Add(Me.stsBarra)
@@ -132,7 +133,7 @@ Partial Class frmVentas
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents btnAnular As System.Windows.Forms.Button
     Friend WithEvents btnFacturar As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
 

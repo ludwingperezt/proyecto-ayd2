@@ -25,7 +25,7 @@
         slblDescripcion.Text = "Anula una factura, utilizando la serie y su correlativo"
     End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
         Me.Dispose()
         frmPrincipal.Show()
 

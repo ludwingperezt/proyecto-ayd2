@@ -191,7 +191,7 @@ Public Class frmFacturar
     End Sub
 
     Private Sub txtCodigo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCodigo.TextChanged
-        
+
     End Sub
 
     Private Sub txtTela_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTela.KeyPress
