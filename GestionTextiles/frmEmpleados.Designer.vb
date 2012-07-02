@@ -26,29 +26,31 @@ Partial Class frmEmpleados
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.txtDPI = New System.Windows.Forms.TextBox()
+        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.lblDPI = New System.Windows.Forms.Label()
+        Me.txtSueldo = New System.Windows.Forms.TextBox()
+        Me.txtCelular = New System.Windows.Forms.TextBox()
+        Me.lblCelular = New System.Windows.Forms.Label()
+        Me.lblTelefono = New System.Windows.Forms.Label()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.lblDireccion = New System.Windows.Forms.Label()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.lblSueldo = New System.Windows.Forms.Label()
+        Me.lblFechaContrato = New System.Windows.Forms.Label()
+        Me.dtpFechaContrato = New System.Windows.Forms.DateTimePicker()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnAceptar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 275)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 309)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(637, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(522, 22)
         Me.stsBarra.TabIndex = 8
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -70,149 +72,174 @@ Partial Class frmEmpleados
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(225, 20)
+        Me.lblTitulo.Location = New System.Drawing.Point(143, 19)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(214, 29)
-        Me.lblTitulo.TabIndex = 9
+        Me.lblTitulo.TabIndex = 28
         Me.lblTitulo.Text = "Nuevo Empleado"
         '
-        'TextBox2
+        'txtDPI
         '
-        Me.TextBox2.Location = New System.Drawing.Point(148, 71)
-        Me.TextBox2.MaxLength = 70
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(354, 20)
-        Me.TextBox2.TabIndex = 19
+        Me.txtDPI.Location = New System.Drawing.Point(148, 97)
+        Me.txtDPI.MaxLength = 70
+        Me.txtDPI.Name = "txtDPI"
+        Me.txtDPI.Size = New System.Drawing.Size(100, 20)
+        Me.txtDPI.TabIndex = 19
         '
-        'Label2
+        'lblNombre
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(31, 74)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
-        Me.Label2.TabIndex = 18
-        Me.Label2.Text = "Nombre"
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Location = New System.Drawing.Point(31, 74)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(44, 13)
+        Me.lblNombre.TabIndex = 18
+        Me.lblNombre.Text = "Nombre"
         '
-        'TextBox1
+        'txtNombre
         '
-        Me.TextBox1.Location = New System.Drawing.Point(148, 97)
-        Me.TextBox1.MaxLength = 70
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(98, 20)
-        Me.TextBox1.TabIndex = 21
+        Me.txtNombre.Location = New System.Drawing.Point(148, 71)
+        Me.txtNombre.MaxLength = 70
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(354, 20)
+        Me.txtNombre.TabIndex = 21
         '
-        'Label1
+        'lblDPI
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 100)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(69, 13)
-        Me.Label1.TabIndex = 20
-        Me.Label1.Text = "Cedula / DPI"
+        Me.lblDPI.AutoSize = True
+        Me.lblDPI.Location = New System.Drawing.Point(31, 100)
+        Me.lblDPI.Name = "lblDPI"
+        Me.lblDPI.Size = New System.Drawing.Size(69, 13)
+        Me.lblDPI.TabIndex = 20
+        Me.lblDPI.Text = "Cedula / DPI"
         '
-        'TextBox7
+        'txtSueldo
         '
-        Me.TextBox7.Location = New System.Drawing.Point(146, 177)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox7.TabIndex = 26
+        Me.txtSueldo.Location = New System.Drawing.Point(146, 203)
+        Me.txtSueldo.Name = "txtSueldo"
+        Me.txtSueldo.Size = New System.Drawing.Size(100, 20)
+        Me.txtSueldo.TabIndex = 26
         '
-        'TextBox6
+        'txtCelular
         '
-        Me.TextBox6.Location = New System.Drawing.Point(146, 151)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox6.TabIndex = 27
+        Me.txtCelular.Location = New System.Drawing.Point(146, 177)
+        Me.txtCelular.Name = "txtCelular"
+        Me.txtCelular.Size = New System.Drawing.Size(100, 20)
+        Me.txtCelular.TabIndex = 27
         '
-        'Label7
+        'lblCelular
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(29, 180)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(39, 13)
-        Me.Label7.TabIndex = 23
-        Me.Label7.Text = "Celular"
+        Me.lblCelular.AutoSize = True
+        Me.lblCelular.Location = New System.Drawing.Point(29, 180)
+        Me.lblCelular.Name = "lblCelular"
+        Me.lblCelular.Size = New System.Drawing.Size(39, 13)
+        Me.lblCelular.TabIndex = 23
+        Me.lblCelular.Text = "Celular"
         '
-        'Label6
+        'lblTelefono
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(29, 154)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 13)
-        Me.Label6.TabIndex = 24
-        Me.Label6.Text = "Teléfono"
+        Me.lblTelefono.AutoSize = True
+        Me.lblTelefono.Location = New System.Drawing.Point(29, 154)
+        Me.lblTelefono.Name = "lblTelefono"
+        Me.lblTelefono.Size = New System.Drawing.Size(49, 13)
+        Me.lblTelefono.TabIndex = 24
+        Me.lblTelefono.Text = "Teléfono"
         '
-        'TextBox3
+        'txtDireccion
         '
-        Me.TextBox3.Location = New System.Drawing.Point(148, 123)
-        Me.TextBox3.MaxLength = 60
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(354, 20)
-        Me.TextBox3.TabIndex = 29
+        Me.txtDireccion.Location = New System.Drawing.Point(148, 123)
+        Me.txtDireccion.MaxLength = 60
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(354, 20)
+        Me.txtDireccion.TabIndex = 29
         '
-        'Label3
+        'lblDireccion
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(31, 123)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 13)
-        Me.Label3.TabIndex = 28
-        Me.Label3.Text = "Dirección"
+        Me.lblDireccion.AutoSize = True
+        Me.lblDireccion.Location = New System.Drawing.Point(31, 123)
+        Me.lblDireccion.Name = "lblDireccion"
+        Me.lblDireccion.Size = New System.Drawing.Size(52, 13)
+        Me.lblDireccion.TabIndex = 28
+        Me.lblDireccion.Text = "Dirección"
         '
-        'TextBox4
+        'txtTelefono
         '
-        Me.TextBox4.Location = New System.Drawing.Point(148, 203)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 31
+        Me.txtTelefono.Location = New System.Drawing.Point(148, 151)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
+        Me.txtTelefono.TabIndex = 31
         '
-        'Label4
+        'lblSueldo
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(31, 206)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
-        Me.Label4.TabIndex = 30
-        Me.Label4.Text = "Sueldo"
+        Me.lblSueldo.AutoSize = True
+        Me.lblSueldo.Location = New System.Drawing.Point(31, 206)
+        Me.lblSueldo.Name = "lblSueldo"
+        Me.lblSueldo.Size = New System.Drawing.Size(40, 13)
+        Me.lblSueldo.TabIndex = 30
+        Me.lblSueldo.Text = "Sueldo"
         '
-        'Label5
+        'lblFechaContrato
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(31, 229)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(95, 13)
-        Me.Label5.TabIndex = 32
-        Me.Label5.Text = "Fecha de Contrato"
+        Me.lblFechaContrato.AutoSize = True
+        Me.lblFechaContrato.Location = New System.Drawing.Point(31, 229)
+        Me.lblFechaContrato.Name = "lblFechaContrato"
+        Me.lblFechaContrato.Size = New System.Drawing.Size(95, 13)
+        Me.lblFechaContrato.TabIndex = 32
+        Me.lblFechaContrato.Text = "Fecha de Contrato"
         '
-        'DateTimePicker1
+        'dtpFechaContrato
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(148, 229)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 33
+        Me.dtpFechaContrato.Location = New System.Drawing.Point(148, 229)
+        Me.dtpFechaContrato.Name = "dtpFechaContrato"
+        Me.dtpFechaContrato.Size = New System.Drawing.Size(200, 20)
+        Me.dtpFechaContrato.TabIndex = 33
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancelar.Location = New System.Drawing.Point(329, 266)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 35
+        Me.btnCancelar.Text = "&Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'btnAceptar
+        '
+        Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAceptar.Location = New System.Drawing.Point(427, 266)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
+        Me.btnAceptar.TabIndex = 34
+        Me.btnAceptar.Text = "&Aceptar"
+        Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(637, 297)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label2)
+        Me.ClientSize = New System.Drawing.Size(522, 331)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnAceptar)
+        Me.Controls.Add(Me.dtpFechaContrato)
+        Me.Controls.Add(Me.lblFechaContrato)
+        Me.Controls.Add(Me.txtTelefono)
+        Me.Controls.Add(Me.lblSueldo)
+        Me.Controls.Add(Me.txtDireccion)
+        Me.Controls.Add(Me.lblDireccion)
+        Me.Controls.Add(Me.txtSueldo)
+        Me.Controls.Add(Me.txtCelular)
+        Me.Controls.Add(Me.lblCelular)
+        Me.Controls.Add(Me.lblTelefono)
+        Me.Controls.Add(Me.txtNombre)
+        Me.Controls.Add(Me.lblDPI)
+        Me.Controls.Add(Me.txtDPI)
+        Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.stsBarra)
+        Me.MaximizeBox = False
         Me.Name = "frmEmpleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "frmEmpleados"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
@@ -224,18 +251,20 @@ Partial Class frmEmpleados
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents txtDPI As System.Windows.Forms.TextBox
+    Friend WithEvents lblNombre As System.Windows.Forms.Label
+    Friend WithEvents txtNombre As System.Windows.Forms.TextBox
+    Friend WithEvents lblDPI As System.Windows.Forms.Label
+    Friend WithEvents txtSueldo As System.Windows.Forms.TextBox
+    Friend WithEvents txtCelular As System.Windows.Forms.TextBox
+    Friend WithEvents lblCelular As System.Windows.Forms.Label
+    Friend WithEvents lblTelefono As System.Windows.Forms.Label
+    Friend WithEvents txtDireccion As System.Windows.Forms.TextBox
+    Friend WithEvents lblDireccion As System.Windows.Forms.Label
+    Friend WithEvents txtTelefono As System.Windows.Forms.TextBox
+    Friend WithEvents lblSueldo As System.Windows.Forms.Label
+    Friend WithEvents lblFechaContrato As System.Windows.Forms.Label
+    Friend WithEvents dtpFechaContrato As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents btnAceptar As System.Windows.Forms.Button
 End Class
