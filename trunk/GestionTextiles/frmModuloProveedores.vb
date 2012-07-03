@@ -33,4 +33,8 @@
     Private Sub btnSalir_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnSalir.MouseHover
         slblDescripcion.Text = "Cierra el módulo de proveedores"
     End Sub
+
+    Private Sub btnLProveedores_Click(sender As System.Object, e As System.EventArgs) Handles btnLProveedores.Click
+        frmListarProveedores.ShowDialog()
+    End Sub
 End Class
