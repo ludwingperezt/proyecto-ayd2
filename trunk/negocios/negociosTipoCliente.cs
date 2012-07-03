@@ -5,7 +5,10 @@ using System.Text;
 
 namespace negocios
 {
-    public class TipoCliente
+    /// <summary>
+    /// Clase para el manejo de tipo de cliente
+    /// </summary>
+    public class negociosTipoCliente
     {
     }
 }
