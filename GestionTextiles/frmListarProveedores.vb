@@ -43,4 +43,12 @@
             MessageBox.Show("Eliminar")
         End If
     End Sub
+
+    Private Sub btnEliminar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnEliminar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnEliminar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnEliminar.MouseHover
+        slblDescripcion.Text = "Elimina el Proveedor seleccionado de la lista"
+    End Sub
 End Class
