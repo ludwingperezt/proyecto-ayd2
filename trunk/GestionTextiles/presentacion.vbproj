@@ -78,6 +78,12 @@
     <Compile Include="frmAnular.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCompras.Designer.vb">
+      <DependentUpon>frmCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmEmpleados.Designer.vb">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </Compile>
@@ -140,6 +146,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAnular.resx">
       <DependentUpon>frmAnular.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompras.resx">
+      <DependentUpon>frmCompras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.vb</DependentUpon>

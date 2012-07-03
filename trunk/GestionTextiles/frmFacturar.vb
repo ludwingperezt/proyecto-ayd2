@@ -1,14 +1,6 @@
 ﻿Imports System.Xml
 Public Class frmFacturar
 
-    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvdetallefactura.CellContentClick
-
-    End Sub
-
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblDescuento.Click
-
-    End Sub
-
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Dispose()
     End Sub
@@ -17,24 +9,8 @@ Public Class frmFacturar
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtnumero_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub lblserie_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblserie.Click
-
-    End Sub
-
-    Private Sub txtnit_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnit.TextChanged
-
-    End Sub
-
     Private Sub txtnit_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnit.MouseLeave
         slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub txtnombre_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.TextChanged
-
     End Sub
 
     Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseLeave
@@ -96,9 +72,6 @@ Public Class frmFacturar
     Private Sub txtdireccion_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdireccion.MouseHover
         slblDescripcion.Text = "Dirección del cliente"
     End Sub
-
-
-
 
     Private Sub txtCodigo_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Se debe ingresar el codigo de tela  Ej: 7486"
