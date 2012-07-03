@@ -96,6 +96,12 @@
     <Compile Include="frmFacturar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmListarProveedores.Designer.vb">
+      <DependentUpon>frmListarProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmModuloProveedores.Designer.vb">
       <DependentUpon>frmModuloProveedores.vb</DependentUpon>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFacturar.resx">
       <DependentUpon>frmFacturar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarProveedores.resx">
+      <DependentUpon>frmListarProveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModuloProveedores.resx">
       <DependentUpon>frmModuloProveedores.vb</DependentUpon>
