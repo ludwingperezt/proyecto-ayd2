@@ -26,6 +26,8 @@ Partial Class frmRoles
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnAceptar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -62,11 +64,34 @@ Partial Class frmRoles
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
+        'btnCancelar
+        '
+        Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancelar.Location = New System.Drawing.Point(56, 120)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 29
+        Me.btnCancelar.Text = "&Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'btnAceptar
+        '
+        Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAceptar.Location = New System.Drawing.Point(154, 120)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
+        Me.btnAceptar.TabIndex = 28
+        Me.btnAceptar.Text = "&Aceptar"
+        Me.btnAceptar.UseVisualStyleBackColor = False
+        '
         'frmRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmRoles"
@@ -81,4 +106,6 @@ Partial Class frmRoles
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents btnAceptar As System.Windows.Forms.Button
 End Class

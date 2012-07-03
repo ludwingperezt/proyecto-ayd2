@@ -11,4 +11,9 @@
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         frmVentas.ShowDialog(Me)
     End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        frmModuloProveedores.ShowDialog()
+
+    End Sub
 End Class
