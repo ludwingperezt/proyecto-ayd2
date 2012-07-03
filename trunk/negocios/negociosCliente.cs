@@ -16,5 +16,21 @@ namespace negocios
        private string apellido;
        private string direccion;
 
+        #region constructores
+        /// <summary>
+        /// Constructor por defecto del objeto negociosCliente
+        /// </summary>
+        public negociosCliente()
+        { 
+        }
+             public negociosCliente(string sNitCliente, int iIDTipoCliente, string sNombreCliente, string sApellidoCliente, string sDireccionCliente)
+        {
+            this.nombre = sNombreCliente;
+            this.nit = sNitCliente;
+            this.idTipoCliente = iIDTipoCliente;
+            this.apellido = sApellidoCliente;
+            this.direccion = sDireccionCliente;
+        }
+        #endregion
     }
 }
