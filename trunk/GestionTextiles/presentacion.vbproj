@@ -78,6 +78,12 @@
     <Compile Include="frmAnular.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmClientes.Designer.vb">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCompras.Designer.vb">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </Compile>
@@ -96,10 +102,34 @@
     <Compile Include="frmFacturar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmingresoclientes.Designer.vb">
+      <DependentUpon>frmingresoclientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmingresoclientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmingresotipocliente.Designer.vb">
+      <DependentUpon>frmingresotipocliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmingresotipocliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListarProveedores.Designer.vb">
       <DependentUpon>frmListarProveedores.vb</DependentUpon>
     </Compile>
     <Compile Include="frmListarProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarCliente.Designer.vb">
+      <DependentUpon>frmModificarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarTipoCliente.Designer.vb">
+      <DependentUpon>frmModificarTipoCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarTipoCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmModuloProveedores.Designer.vb">
@@ -124,6 +154,12 @@
       <DependentUpon>frmRoles.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRoles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmtipocliente.Designer.vb">
+      <DependentUpon>frmtipocliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmtipocliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVentas.vb">
@@ -153,6 +189,9 @@
     <EmbeddedResource Include="frmAnular.resx">
       <DependentUpon>frmAnular.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmClientes.resx">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </EmbeddedResource>
@@ -162,8 +201,20 @@
     <EmbeddedResource Include="frmFacturar.resx">
       <DependentUpon>frmFacturar.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmingresoclientes.resx">
+      <DependentUpon>frmingresoclientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmingresotipocliente.resx">
+      <DependentUpon>frmingresotipocliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListarProveedores.resx">
       <DependentUpon>frmListarProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarCliente.resx">
+      <DependentUpon>frmModificarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarTipoCliente.resx">
+      <DependentUpon>frmModificarTipoCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModuloProveedores.resx">
       <DependentUpon>frmModuloProveedores.vb</DependentUpon>
@@ -176,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoles.resx">
       <DependentUpon>frmRoles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmtipocliente.resx">
+      <DependentUpon>frmtipocliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentas.resx">
       <DependentUpon>frmVentas.vb</DependentUpon>

@@ -79,4 +79,8 @@
     Private Sub btnmodificarclientes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmodificarclientes.Click
         frmModificarCliente.Show()
     End Sub
+
+    Private Sub txtbusqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.TextChanged
+
+    End Sub
 End Class
