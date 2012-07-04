@@ -106,6 +106,7 @@ Partial Class frmModificarCliente
         'txtnit
         '
         Me.txtnit.Location = New System.Drawing.Point(113, 166)
+        Me.txtnit.MaxLength = 15
         Me.txtnit.Name = "txtnit"
         Me.txtnit.Size = New System.Drawing.Size(124, 20)
         Me.txtnit.TabIndex = 53
@@ -113,6 +114,7 @@ Partial Class frmModificarCliente
         'txtdireccion
         '
         Me.txtdireccion.Location = New System.Drawing.Point(113, 133)
+        Me.txtdireccion.MaxLength = 60
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(274, 20)
         Me.txtdireccion.TabIndex = 52
@@ -120,6 +122,7 @@ Partial Class frmModificarCliente
         'txtapellido
         '
         Me.txtapellido.Location = New System.Drawing.Point(113, 102)
+        Me.txtapellido.MaxLength = 40
         Me.txtapellido.Name = "txtapellido"
         Me.txtapellido.Size = New System.Drawing.Size(274, 20)
         Me.txtapellido.TabIndex = 51
@@ -127,6 +130,7 @@ Partial Class frmModificarCliente
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(113, 69)
+        Me.txtnombre.MaxLength = 40
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(274, 20)
         Me.txtnombre.TabIndex = 50
@@ -180,6 +184,7 @@ Partial Class frmModificarCliente
         '
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(96, 20)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(266, 29)
@@ -207,6 +212,7 @@ Partial Class frmModificarCliente
         Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmModificarCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmModificarCliente"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()

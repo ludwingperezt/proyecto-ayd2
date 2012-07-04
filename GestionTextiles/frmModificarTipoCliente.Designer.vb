@@ -90,6 +90,7 @@ Partial Class frmModificarTipoCliente
         'txtdescripcion
         '
         Me.txtdescripcion.Location = New System.Drawing.Point(96, 108)
+        Me.txtdescripcion.MaxLength = 60
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(229, 20)
         Me.txtdescripcion.TabIndex = 50
@@ -97,6 +98,7 @@ Partial Class frmModificarTipoCliente
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(96, 73)
+        Me.txtnombre.MaxLength = 15
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(229, 20)
         Me.txtnombre.TabIndex = 49
@@ -132,6 +134,7 @@ Partial Class frmModificarTipoCliente
         '
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(10, 13)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(325, 29)
@@ -154,6 +157,7 @@ Partial Class frmModificarTipoCliente
         Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmModificarTipoCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmModificarTipoCliente"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()

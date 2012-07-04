@@ -41,6 +41,7 @@ Partial Class frmingresotipocliente
         '
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(12, 22)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(375, 29)
@@ -77,6 +78,7 @@ Partial Class frmingresotipocliente
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(125, 85)
+        Me.txtnombre.MaxLength = 15
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(229, 20)
         Me.txtnombre.TabIndex = 34
@@ -84,6 +86,7 @@ Partial Class frmingresotipocliente
         'txtdescripcion
         '
         Me.txtdescripcion.Location = New System.Drawing.Point(125, 120)
+        Me.txtdescripcion.MaxLength = 60
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(229, 20)
         Me.txtdescripcion.TabIndex = 35
@@ -154,6 +157,7 @@ Partial Class frmingresotipocliente
         Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmingresotipocliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmingresotipocliente"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()

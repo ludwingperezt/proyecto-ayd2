@@ -46,6 +46,7 @@ Partial Class frmingresoclientes
         '
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(142, 31)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(195, 29)
@@ -100,6 +101,7 @@ Partial Class frmingresoclientes
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(126, 85)
+        Me.txtnombre.MaxLength = 40
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(274, 20)
         Me.txtnombre.TabIndex = 35
@@ -107,6 +109,7 @@ Partial Class frmingresoclientes
         'txtapellido
         '
         Me.txtapellido.Location = New System.Drawing.Point(126, 118)
+        Me.txtapellido.MaxLength = 40
         Me.txtapellido.Name = "txtapellido"
         Me.txtapellido.Size = New System.Drawing.Size(274, 20)
         Me.txtapellido.TabIndex = 36
@@ -114,6 +117,7 @@ Partial Class frmingresoclientes
         'txtdireccion
         '
         Me.txtdireccion.Location = New System.Drawing.Point(126, 149)
+        Me.txtdireccion.MaxLength = 60
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(274, 20)
         Me.txtdireccion.TabIndex = 37
@@ -121,6 +125,7 @@ Partial Class frmingresoclientes
         'txtnit
         '
         Me.txtnit.Location = New System.Drawing.Point(126, 182)
+        Me.txtnit.MaxLength = 15
         Me.txtnit.Name = "txtnit"
         Me.txtnit.Size = New System.Drawing.Size(124, 20)
         Me.txtnit.TabIndex = 38
@@ -207,6 +212,7 @@ Partial Class frmingresoclientes
         Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmingresoclientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmingresoclientes"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
