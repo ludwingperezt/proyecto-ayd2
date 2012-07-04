@@ -62,12 +62,13 @@ Partial Class frmPrincipal
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.SystemColors.HighlightText
         Me.Button1.Location = New System.Drawing.Point(79, 35)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(186, 23)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Módulo de Ventas"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '

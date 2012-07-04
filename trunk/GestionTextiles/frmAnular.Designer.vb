@@ -59,12 +59,13 @@ Partial Class frmAnular
         '
         'btnAceptar
         '
+        Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAceptar.Location = New System.Drawing.Point(219, 130)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 2
         Me.btnAceptar.Text = "&Aceptar"
-        Me.btnAceptar.UseVisualStyleBackColor = True
+        Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'txtSerie
         '
@@ -111,13 +112,14 @@ Partial Class frmAnular
         '
         'btnCancelar
         '
+        Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancelar.Location = New System.Drawing.Point(138, 130)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 9
         Me.btnCancelar.Text = "&Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'frmAnular
         '
