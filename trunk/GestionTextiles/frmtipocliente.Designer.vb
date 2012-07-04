@@ -47,6 +47,7 @@ Partial Class frmtipocliente
         '
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(138, 25)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(249, 29)
@@ -202,6 +203,7 @@ Partial Class frmtipocliente
         Me.Controls.Add(Me.dgvtiposcliente)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmtipocliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmtipocliente"
         CType(Me.dgvtiposcliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
