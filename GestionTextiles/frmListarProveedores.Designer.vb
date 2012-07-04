@@ -80,12 +80,13 @@ Partial Class frmListarProveedores
         '
         'btnEditar
         '
+        Me.btnEditar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEditar.Location = New System.Drawing.Point(512, 361)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(75, 23)
         Me.btnEditar.TabIndex = 11
         Me.btnEditar.Text = "Editar"
-        Me.btnEditar.UseVisualStyleBackColor = True
+        Me.btnEditar.UseVisualStyleBackColor = False
         '
         'cmbFiltro
         '
@@ -123,12 +124,13 @@ Partial Class frmListarProveedores
         '
         'btnEliminar
         '
+        Me.btnEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEliminar.Location = New System.Drawing.Point(420, 361)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar.TabIndex = 15
         Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
+        Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'frmListarProveedores
         '
