@@ -11,5 +11,6 @@ namespace negocios
         public static QueriesTableAdapter gAdaptadorDeConsultas = new QueriesTableAdapter();
         public static mostrarProductosTableAdapter gAdaptadorListaProductos = new mostrarProductosTableAdapter();
         public static mostrarRolesTableAdapter gAdaptadorListaRoles = new mostrarRolesTableAdapter();
+        public static mostrarSeriesTableAdapter gAdaptadorListaSeries = new mostrarSeriesTableAdapter();
     }
 }
