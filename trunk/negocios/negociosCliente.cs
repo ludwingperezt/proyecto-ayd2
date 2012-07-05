@@ -78,7 +78,7 @@ namespace negocios
              /// <summary>
              /// Método modificador del campo nit del cliente
              /// </summary>
-             /// <param name="ldecPrecioCompra">string: el nit del cliente</param>
+             /// <param name="lsNit">string: el nit del cliente</param>
              public void setNitCliente(string lsNit)
              {
                  this.nit = lsNit;
@@ -86,15 +86,15 @@ namespace negocios
              /// <summary>
              /// Método modificador del campo id tipo del cliente
              /// </summary>
-             /// <param name="ldecPrecioCompra">int: el id del tipo del cliente del cliente</param>
-             public void setNitCliente(int lIIdTipo)
+             /// <param name="lIIdTipo">int: el id del tipo del cliente del cliente</param>
+             public void setNitCliente(byte lIIdTipo)
              {
                  this.idTipoCliente = lIIdTipo;
              }
              /// <summary>
              /// Método modificador del campo nombre del cliente
              /// </summary>
-             /// <param name="ldecPrecioCompra">string: el nombre del cliente</param>
+             /// <param name="lsNombre">string: el nombre del cliente</param>
              public void setNombreCliente(string lsNombre)
              {
                  this.nombre = lsNombre;
@@ -102,7 +102,7 @@ namespace negocios
              /// <summary>
              /// Método modificador del campo apellido del cliente
              /// </summary>
-             /// <param name="ldecPrecioCompra">string: el apellido del cliente</param>
+             /// <param name="lsApellido">string: el apellido del cliente</param>
              public void setApellidoCliente(string lsApellido)
              {
                  this.apellido = lsApellido;
@@ -110,7 +110,7 @@ namespace negocios
              /// <summary>
              /// Método modificador del campo direccion del cliente
              /// </summary>
-             /// <param name="ldecPrecioCompra">string: la direccion del cliente</param>
+             /// <param name="lsDireccion">string: la direccion del cliente</param>
              public void setDireccionCliente(string lsDireccion)
              {
                  this.direccion = lsDireccion;
@@ -153,7 +153,7 @@ namespace negocios
                  }
              }
              /// <summary>
-             /// Función que busca a un cliente por nit
+             /// Función que lista a los clientes
              /// </summary>
              /// <returns>DataTable: lista de los clientes de la base de datos.</returns>
              public static DataTable fnDbListarClientes()
