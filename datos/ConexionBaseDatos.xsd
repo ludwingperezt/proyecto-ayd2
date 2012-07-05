@@ -796,6 +796,26 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListarClientesTableAdapter" GeneratorDataComponentClassName="ListarClientesTableAdapter" Name="ListarClientes" UserDataComponentName="ListarClientesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="textilesConnectionString1 (Settings)" DbObjectName="textiles.dbo.ListarClientes" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NIT, IDTIPOCLIENTE, NOMBRE, APELLIDO, DIRECCION FROM dbo.ListarClientes()</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NIT" DataSetColumn="NIT" />
+              <Mapping SourceColumn="IDTIPOCLIENTE" DataSetColumn="IDTIPOCLIENTE" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="APELLIDO" DataSetColumn="APELLIDO" />
+              <Mapping SourceColumn="DIRECCION" DataSetColumn="DIRECCION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.aumentarStockProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="aumentarStockProducto" MethodsParameterType="CLR" Modifier="Public" Name="aumentarStockProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="aumentarStockProducto">
@@ -1184,7 +1204,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarSerieFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarSerieFactura" MethodsParameterType="CLR" Modifier="Public" Name="modificarSerieFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy110" UserSourceName="modificarSerieFactura">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarSerieFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarSerieFactura" MethodsParameterType="CLR" Modifier="Public" Name="modificarSerieFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy26" UserSourceName="modificarSerieFactura">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.modificarSerieFactura</CommandText>
@@ -1196,13 +1216,28 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.eliminarSerieFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="eliminarSerieFactura" MethodsParameterType="CLR" Modifier="Public" Name="eliminarSerieFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy26" UserSourceName="eliminarSerieFactura">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.eliminarSerieFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="eliminarSerieFactura" MethodsParameterType="CLR" Modifier="Public" Name="eliminarSerieFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy27" UserSourceName="eliminarSerieFactura">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.eliminarSerieFactura</CommandText>
                 <Parameters>
                   <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                   <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@serie" Precision="0" ProviderType="Char" Scale="0" Size="3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="textilesConnectionString1 (Settings)" DbObjectName="textiles.dbo.insertarCliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarCliente" MethodsParameterType="CLR" Modifier="Public" Name="insertarCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy28" UserSourceName="insertarCliente">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.insertarCliente</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@IdtipoCliente" Precision="3" ProviderType="TinyInt" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@nombreCliente" Precision="0" ProviderType="VarChar" Scale="0" Size="40" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@apellidoCliente" Precision="0" ProviderType="VarChar" Scale="0" Size="40" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@direccionCliente" Precision="0" ProviderType="VarChar" Scale="0" Size="60" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@nitCliente" Precision="0" ProviderType="Char" Scale="0" Size="12" SourceColumnNullMapping="false" SourceVersion="Current" />
                 </Parameters>
               </DbCommand>
             </SelectCommand>
@@ -2543,6 +2578,41 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ListarClientes" msprop:Generator_TableClassName="ListarClientesDataTable" msprop:Generator_TableVarName="tableListarClientes" msprop:Generator_TablePropName="ListarClientes" msprop:Generator_RowDeletingName="ListarClientesRowDeleting" msprop:Generator_UserTableName="ListarClientes" msprop:Generator_RowChangingName="ListarClientesRowChanging" msprop:Generator_RowEvHandlerName="ListarClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="ListarClientesRowDeleted" msprop:Generator_RowEvArgName="ListarClientesRowChangeEvent" msprop:Generator_RowChangedName="ListarClientesRowChanged" msprop:Generator_RowClassName="ListarClientesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NIT" msprop:Generator_ColumnVarNameInTable="columnNIT" msprop:Generator_ColumnPropNameInRow="NIT" msprop:Generator_ColumnPropNameInTable="NITColumn" msprop:Generator_UserColumnName="NIT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDTIPOCLIENTE" msprop:Generator_ColumnVarNameInTable="columnIDTIPOCLIENTE" msprop:Generator_ColumnPropNameInRow="IDTIPOCLIENTE" msprop:Generator_ColumnPropNameInTable="IDTIPOCLIENTEColumn" msprop:Generator_UserColumnName="IDTIPOCLIENTE" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="APELLIDO" msprop:Generator_ColumnVarNameInTable="columnAPELLIDO" msprop:Generator_ColumnPropNameInRow="APELLIDO" msprop:Generator_ColumnPropNameInTable="APELLIDOColumn" msprop:Generator_UserColumnName="APELLIDO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIRECCION" msprop:Generator_ColumnVarNameInTable="columnDIRECCION" msprop:Generator_ColumnPropNameInRow="DIRECCION" msprop:Generator_ColumnPropNameInTable="DIRECCIONColumn" msprop:Generator_UserColumnName="DIRECCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -2668,6 +2738,10 @@
     <xs:unique name="mostrarSeries_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:mostrarSeries" />
       <xs:field xpath="mstns:SERIE" />
+    </xs:unique>
+    <xs:unique name="ListarClientes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ListarClientes" />
+      <xs:field xpath="mstns:NIT" />
     </xs:unique>
   </xs:element>
 </xs:schema>
