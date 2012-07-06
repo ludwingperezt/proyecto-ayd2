@@ -785,6 +785,22 @@ namespace negocios
         {
             return this.lboHabilitado;
         }
+        /// <summary>
+        /// Función de modificación del campo nombre de rol
+        /// </summary>
+        /// <param name="lsNombreRol">string: el nombre del rol</param>
+        public void setNombre(string lsNombreRol)
+        {
+            this.lsNombre = lsNombreRol;
+        }
+        /// <summary>
+        /// Función de acceso al campo Nombre, del rol
+        /// </summary>
+        /// <returns>string: el nombre actual del rol</returns>
+        public string getNombre()
+        {
+            return this.lsNombre;
+        }
         #endregion
         #region métodos de comunicación con la base de datos
         /// <summary>
