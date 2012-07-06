@@ -31,7 +31,7 @@
     End Sub
 
     Private Sub BtnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSalir.Click
-        this.Dispose()
+        Me.Dispose()
     End Sub
 
     Private Sub BtnVentas_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnVentas.MouseLeave
