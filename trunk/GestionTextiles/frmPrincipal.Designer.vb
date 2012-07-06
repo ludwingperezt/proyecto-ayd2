@@ -23,23 +23,27 @@ Partial Class frmPrincipal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tmrRefrescarBarra = New System.Windows.Forms.Timer(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.BtnVentas = New System.Windows.Forms.Button()
+        Me.BtnProveedores = New System.Windows.Forms.Button()
+        Me.BtnCompras = New System.Windows.Forms.Button()
+        Me.BtnClientes = New System.Windows.Forms.Button()
+        Me.BtnEmpleados = New System.Windows.Forms.Button()
+        Me.BtnSalir = New System.Windows.Forms.Button()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 381)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 215)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(703, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(841, 22)
         Me.stsBarra.TabIndex = 2
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -61,56 +65,112 @@ Partial Class frmPrincipal
         Me.tmrRefrescarBarra.Enabled = True
         Me.tmrRefrescarBarra.Interval = 1000
         '
-        'Button1
+        'BtnVentas
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.Button1.Location = New System.Drawing.Point(79, 35)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(186, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Módulo de Ventas"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BtnVentas.BackColor = System.Drawing.SystemColors.HighlightText
+        Me.BtnVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnVentas.Image = CType(resources.GetObject("BtnVentas.Image"), System.Drawing.Image)
+        Me.BtnVentas.Location = New System.Drawing.Point(31, 49)
+        Me.BtnVentas.Name = "BtnVentas"
+        Me.BtnVentas.Size = New System.Drawing.Size(138, 148)
+        Me.BtnVentas.TabIndex = 3
+        Me.BtnVentas.Text = "Módulo de Ventas"
+        Me.BtnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnVentas.UseVisualStyleBackColor = False
         '
-        'Button2
+        'BtnProveedores
         '
-        Me.Button2.Location = New System.Drawing.Point(79, 78)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(186, 23)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Modulo Proveedores"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnProveedores.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnProveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnProveedores.Image = CType(resources.GetObject("BtnProveedores.Image"), System.Drawing.Image)
+        Me.BtnProveedores.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnProveedores.Location = New System.Drawing.Point(480, 49)
+        Me.BtnProveedores.Name = "BtnProveedores"
+        Me.BtnProveedores.Size = New System.Drawing.Size(128, 148)
+        Me.BtnProveedores.TabIndex = 4
+        Me.BtnProveedores.Text = "Modulo Proveedores"
+        Me.BtnProveedores.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnProveedores.UseVisualStyleBackColor = False
         '
-        'Button3
+        'BtnCompras
         '
-        Me.Button3.Location = New System.Drawing.Point(79, 122)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(186, 23)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Modulo Compras"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtnCompras.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnCompras.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCompras.Image = CType(resources.GetObject("BtnCompras.Image"), System.Drawing.Image)
+        Me.BtnCompras.Location = New System.Drawing.Point(184, 49)
+        Me.BtnCompras.Name = "BtnCompras"
+        Me.BtnCompras.Size = New System.Drawing.Size(125, 148)
+        Me.BtnCompras.TabIndex = 5
+        Me.BtnCompras.Text = "Modulo Compras"
+        Me.BtnCompras.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnCompras.UseVisualStyleBackColor = False
         '
-        'Button4
+        'BtnClientes
         '
-        Me.Button4.Location = New System.Drawing.Point(79, 174)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(186, 23)
-        Me.Button4.TabIndex = 6
-        Me.Button4.Text = "Modulo Clientes"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.BtnClientes.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClientes.Image = CType(resources.GetObject("BtnClientes.Image"), System.Drawing.Image)
+        Me.BtnClientes.Location = New System.Drawing.Point(327, 49)
+        Me.BtnClientes.Name = "BtnClientes"
+        Me.BtnClientes.Size = New System.Drawing.Size(132, 148)
+        Me.BtnClientes.TabIndex = 6
+        Me.BtnClientes.Text = "Modulo Clientes"
+        Me.BtnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnClientes.UseVisualStyleBackColor = False
+        '
+        'BtnEmpleados
+        '
+        Me.BtnEmpleados.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnEmpleados.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEmpleados.Image = CType(resources.GetObject("BtnEmpleados.Image"), System.Drawing.Image)
+        Me.BtnEmpleados.Location = New System.Drawing.Point(627, 49)
+        Me.BtnEmpleados.Name = "BtnEmpleados"
+        Me.BtnEmpleados.Size = New System.Drawing.Size(126, 148)
+        Me.BtnEmpleados.TabIndex = 7
+        Me.BtnEmpleados.Text = "Modulo Empleados"
+        Me.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnEmpleados.UseVisualStyleBackColor = False
+        '
+        'BtnSalir
+        '
+        Me.BtnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
+        Me.BtnSalir.Location = New System.Drawing.Point(762, 49)
+        Me.BtnSalir.Name = "BtnSalir"
+        Me.BtnSalir.Size = New System.Drawing.Size(67, 148)
+        Me.BtnSalir.TabIndex = 39
+        Me.BtnSalir.Text = "&Salir"
+        Me.BtnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnSalir.UseVisualStyleBackColor = False
+        '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblTitulo.Location = New System.Drawing.Point(285, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(205, 29)
+        Me.lblTitulo.TabIndex = 40
+        Me.lblTitulo.Text = "Menú Principal"
         '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(703, 403)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(841, 237)
+        Me.Controls.Add(Me.lblTitulo)
+        Me.Controls.Add(Me.BtnSalir)
+        Me.Controls.Add(Me.BtnEmpleados)
+        Me.Controls.Add(Me.BtnClientes)
+        Me.Controls.Add(Me.BtnCompras)
+        Me.Controls.Add(Me.BtnProveedores)
+        Me.Controls.Add(Me.BtnVentas)
         Me.Controls.Add(Me.stsBarra)
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmPrincipal"
+        Me.Text = "Menú"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)
@@ -121,8 +181,11 @@ Partial Class frmPrincipal
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents tmrRefrescarBarra As System.Windows.Forms.Timer
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents BtnVentas As System.Windows.Forms.Button
+    Friend WithEvents BtnProveedores As System.Windows.Forms.Button
+    Friend WithEvents BtnCompras As System.Windows.Forms.Button
+    Friend WithEvents BtnClientes As System.Windows.Forms.Button
+    Friend WithEvents BtnEmpleados As System.Windows.Forms.Button
+    Friend WithEvents BtnSalir As System.Windows.Forms.Button
+    Friend WithEvents lblTitulo As System.Windows.Forms.Label
 End Class
