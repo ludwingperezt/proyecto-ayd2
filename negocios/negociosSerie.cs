@@ -125,6 +125,7 @@ namespace negocios
         {
             try
             {
+                negociosAdaptadores.gAdaptadorDeConsultas.darDeBajaSerie(this.lsSerie);
                 return "La serie se eliminó correctamente";
             }
             catch (Exception ex)
