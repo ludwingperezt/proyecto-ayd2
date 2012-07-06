@@ -121,12 +121,12 @@ namespace negocios
              /// Método que modifica el tipo de cliente. Los datos que se utilizan para la modificación son los que se encuentran almacenados en el objeto actual.
              /// </summary>
              /// <returns>string: mensaje de confirmación o error de la operación</returns>
-             public string fnsModificarDescripcionProducto()
+             public string fnsModificarTipoCliente()
              {
                  try
                  {
-                     negociosAdaptadores.gAdaptadorDeConsultas.ModificarCliente(this.idTipoCliente, this.nombre, this.apellido, this.direccion, this.nit);
-                     return "La modificación de los datos del cliente se llevó a cabo con éxito";
+                     negociosAdaptadores.gAdaptadorDeConsultas.ModificarTipoCliente(this.idTipoCliente, this.nombre, this.descripcion, this.descuento);
+                     return "La modificación de los datos de tipos de  clientes se llevó a cabo con éxito";
                  }
                  catch (Exception ex)
                  {

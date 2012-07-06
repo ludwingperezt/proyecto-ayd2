@@ -140,7 +140,7 @@ namespace negocios
              /// Método que modifica del cliente. Los datos que se utilizan para la modificación son los que se encuentran almacenados en el objeto actual.
              /// </summary>
              /// <returns>string: mensaje de confirmación o error de la operación</returns>
-             public string fnsModificarDescripcionProducto()
+             public string fnsModificarCliente()
              {
                  try
                  {
