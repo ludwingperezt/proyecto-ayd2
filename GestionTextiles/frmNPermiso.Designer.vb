@@ -30,8 +30,6 @@ Partial Class frmNPermiso
         Me.lblProductos = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
-        Me.lblNivelAcceso = New System.Windows.Forms.Label()
-        Me.txtNivelAcceso = New System.Windows.Forms.TextBox()
         Me.clbRoles = New System.Windows.Forms.CheckedListBox()
         Me.clbEmpleados = New System.Windows.Forms.CheckedListBox()
         Me.clbProveedores = New System.Windows.Forms.CheckedListBox()
@@ -60,7 +58,7 @@ Partial Class frmNPermiso
         '
         Me.lblModulo.AutoSize = True
         Me.lblModulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblModulo.Location = New System.Drawing.Point(38, 146)
+        Me.lblModulo.Location = New System.Drawing.Point(38, 130)
         Me.lblModulo.Name = "lblModulo"
         Me.lblModulo.Size = New System.Drawing.Size(59, 16)
         Me.lblModulo.TabIndex = 0
@@ -89,7 +87,7 @@ Partial Class frmNPermiso
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(127, 19)
+        Me.lblTitulo.Location = New System.Drawing.Point(228, 20)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(192, 29)
         Me.lblTitulo.TabIndex = 10
@@ -115,7 +113,7 @@ Partial Class frmNPermiso
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(132, 64)
+        Me.txtNombre.Location = New System.Drawing.Point(132, 73)
         Me.txtNombre.MaxLength = 20
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(271, 20)
@@ -124,27 +122,11 @@ Partial Class frmNPermiso
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
-        Me.lblNombre.Location = New System.Drawing.Point(38, 67)
+        Me.lblNombre.Location = New System.Drawing.Point(38, 76)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(44, 13)
         Me.lblNombre.TabIndex = 0
         Me.lblNombre.Text = "Nombre"
-        '
-        'lblNivelAcceso
-        '
-        Me.lblNivelAcceso.AutoSize = True
-        Me.lblNivelAcceso.Location = New System.Drawing.Point(38, 103)
-        Me.lblNivelAcceso.Name = "lblNivelAcceso"
-        Me.lblNivelAcceso.Size = New System.Drawing.Size(84, 13)
-        Me.lblNivelAcceso.TabIndex = 0
-        Me.lblNivelAcceso.Text = "Nivel de acceso"
-        '
-        'txtNivelAcceso
-        '
-        Me.txtNivelAcceso.Location = New System.Drawing.Point(132, 96)
-        Me.txtNivelAcceso.Name = "txtNivelAcceso"
-        Me.txtNivelAcceso.Size = New System.Drawing.Size(50, 20)
-        Me.txtNivelAcceso.TabIndex = 12
         '
         'clbRoles
         '
@@ -335,8 +317,10 @@ Partial Class frmNPermiso
         '
         'frmNPermiso
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(635, 627)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
@@ -351,7 +335,6 @@ Partial Class frmNPermiso
         Me.Controls.Add(Me.clbCliente)
         Me.Controls.Add(Me.clbTalonario)
         Me.Controls.Add(Me.clbRoles)
-        Me.Controls.Add(Me.txtNivelAcceso)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.lblTipos)
@@ -363,7 +346,6 @@ Partial Class frmNPermiso
         Me.Controls.Add(Me.lblProductos)
         Me.Controls.Add(Me.lblProveedores)
         Me.Controls.Add(Me.lblEmpleados)
-        Me.Controls.Add(Me.lblNivelAcceso)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.lblRoles)
         Me.Controls.Add(Me.lblModulo)
@@ -386,8 +368,6 @@ Partial Class frmNPermiso
     Friend WithEvents lblProductos As System.Windows.Forms.Label
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents lblNombre As System.Windows.Forms.Label
-    Friend WithEvents lblNivelAcceso As System.Windows.Forms.Label
-    Friend WithEvents txtNivelAcceso As System.Windows.Forms.TextBox
     Friend WithEvents clbRoles As System.Windows.Forms.CheckedListBox
     Friend WithEvents clbEmpleados As System.Windows.Forms.CheckedListBox
     Friend WithEvents clbProveedores As System.Windows.Forms.CheckedListBox
