@@ -33,6 +33,13 @@ Partial Class frmListarProveedores
         Me.lblFiltro = New System.Windows.Forms.Label()
         Me.lblBuscar = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.dgvtxtNIT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtDireccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtPropietario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtTelefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvCelular = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,6 +80,7 @@ Partial Class frmListarProveedores
         'dgvListaProveedores
         '
         Me.dgvListaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListaProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvtxtNIT, Me.dgvtxtEmpresa, Me.dgvtxtDescripcion, Me.dgvtxtDireccion, Me.dgvtxtPropietario, Me.dgvtxtTelefono, Me.dgvCelular})
         Me.dgvListaProveedores.Location = New System.Drawing.Point(30, 141)
         Me.dgvListaProveedores.Name = "dgvListaProveedores"
         Me.dgvListaProveedores.Size = New System.Drawing.Size(557, 200)
@@ -132,6 +140,41 @@ Partial Class frmListarProveedores
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = False
         '
+        'dgvtxtNIT
+        '
+        Me.dgvtxtNIT.HeaderText = "NIT"
+        Me.dgvtxtNIT.Name = "dgvtxtNIT"
+        '
+        'dgvtxtEmpresa
+        '
+        Me.dgvtxtEmpresa.HeaderText = "Empresa"
+        Me.dgvtxtEmpresa.Name = "dgvtxtEmpresa"
+        '
+        'dgvtxtDescripcion
+        '
+        Me.dgvtxtDescripcion.HeaderText = "Descripción"
+        Me.dgvtxtDescripcion.Name = "dgvtxtDescripcion"
+        '
+        'dgvtxtDireccion
+        '
+        Me.dgvtxtDireccion.HeaderText = "Dirección"
+        Me.dgvtxtDireccion.Name = "dgvtxtDireccion"
+        '
+        'dgvtxtPropietario
+        '
+        Me.dgvtxtPropietario.HeaderText = "Propietario"
+        Me.dgvtxtPropietario.Name = "dgvtxtPropietario"
+        '
+        'dgvtxtTelefono
+        '
+        Me.dgvtxtTelefono.HeaderText = "Telefono"
+        Me.dgvtxtTelefono.Name = "dgvtxtTelefono"
+        '
+        'dgvCelular
+        '
+        Me.dgvCelular.HeaderText = "Celular"
+        Me.dgvCelular.Name = "dgvCelular"
+        '
         'frmListarProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -169,4 +212,11 @@ Partial Class frmListarProveedores
     Friend WithEvents lblFiltro As System.Windows.Forms.Label
     Friend WithEvents lblBuscar As System.Windows.Forms.Label
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
+    Friend WithEvents dgvtxtNIT As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtEmpresa As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtDescripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtDireccion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtPropietario As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtTelefono As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvCelular As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

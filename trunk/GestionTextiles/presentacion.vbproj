@@ -49,10 +49,13 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -138,6 +141,12 @@
     <Compile Include="frmModuloProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmModuloReportes.Designer.vb">
+      <DependentUpon>frmModuloReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModuloReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmNPermiso.Designer.vb">
       <DependentUpon>frmNPermiso.vb</DependentUpon>
     </Compile>
@@ -154,6 +163,12 @@
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.vb">
+      <DependentUpon>frmReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRoles.Designer.vb">
@@ -225,6 +240,9 @@
     <EmbeddedResource Include="frmModuloProveedores.resx">
       <DependentUpon>frmModuloProveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmModuloReportes.resx">
+      <DependentUpon>frmModuloReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNPermiso.resx">
       <DependentUpon>frmNPermiso.vb</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoles.resx">
       <DependentUpon>frmRoles.vb</DependentUpon>
@@ -267,6 +288,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\winhand1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

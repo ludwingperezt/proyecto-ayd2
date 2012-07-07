@@ -85,4 +85,8 @@
     Private Sub Button3_Click_1(sender As System.Object, e As System.EventArgs) Handles Button3.Click
         frmRoles.ShowDialog()
     End Sub
+
+    Private Sub btnReportes_Click(sender As System.Object, e As System.EventArgs) Handles btnReportes.Click
+        frmModuloReportes.ShowDialog()
+    End Sub
 End Class
