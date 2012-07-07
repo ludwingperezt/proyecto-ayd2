@@ -15,6 +15,7 @@
                 End If
             End If
         Next
+        Proveedores a = New Proveedores();
 
         If lbooBandera Then
             Me.Dispose()
