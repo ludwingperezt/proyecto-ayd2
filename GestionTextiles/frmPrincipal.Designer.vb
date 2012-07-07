@@ -29,10 +29,10 @@ Partial Class frmPrincipal
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tmrRefrescarBarra = New System.Windows.Forms.Timer(Me.components)
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BtnGestionTalonarios = New System.Windows.Forms.Button()
+        Me.BtnRoles = New System.Windows.Forms.Button()
         Me.btnReportes = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnLogin = New System.Windows.Forms.Button()
         Me.BtnSalir = New System.Windows.Forms.Button()
         Me.BtnEmpleados = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
@@ -80,37 +80,39 @@ Partial Class frmPrincipal
         Me.lblTitulo.TabIndex = 40
         Me.lblTitulo.Text = "Menú Principal"
         '
-        'Button4
+        'BtnGestionTalonarios
         '
-        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(337, 231)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(125, 148)
-        Me.Button4.TabIndex = 44
-        Me.Button4.Text = "Gestión de Talonario"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.BtnGestionTalonarios.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnGestionTalonarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnGestionTalonarios.Image = CType(resources.GetObject("BtnGestionTalonarios.Image"), System.Drawing.Image)
+        Me.BtnGestionTalonarios.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnGestionTalonarios.Location = New System.Drawing.Point(337, 231)
+        Me.BtnGestionTalonarios.Name = "BtnGestionTalonarios"
+        Me.BtnGestionTalonarios.Size = New System.Drawing.Size(125, 148)
+        Me.BtnGestionTalonarios.TabIndex = 44
+        Me.BtnGestionTalonarios.Text = "Gestión de Talonario"
+        Me.BtnGestionTalonarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnGestionTalonarios.UseVisualStyleBackColor = False
         '
-        'Button3
+        'BtnRoles
         '
-        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(184, 231)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(138, 148)
-        Me.Button3.TabIndex = 43
-        Me.Button3.Text = "Módulo de Roles"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.BtnRoles.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnRoles.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRoles.Image = CType(resources.GetObject("BtnRoles.Image"), System.Drawing.Image)
+        Me.BtnRoles.Location = New System.Drawing.Point(184, 231)
+        Me.BtnRoles.Name = "BtnRoles"
+        Me.BtnRoles.Size = New System.Drawing.Size(138, 148)
+        Me.BtnRoles.TabIndex = 43
+        Me.BtnRoles.Text = "Módulo de Roles"
+        Me.BtnRoles.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnRoles.UseVisualStyleBackColor = False
         '
         'btnReportes
         '
         Me.btnReportes.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnReportes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReportes.Image = CType(resources.GetObject("btnReportes.Image"), System.Drawing.Image)
+        Me.btnReportes.ImageAlign = System.Drawing.ContentAlignment.TopRight
         Me.btnReportes.Location = New System.Drawing.Point(480, 231)
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(132, 148)
@@ -119,18 +121,18 @@ Partial Class frmPrincipal
         Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnReportes.UseVisualStyleBackColor = False
         '
-        'Button1
+        'BtnLogin
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(36, 64)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(126, 148)
-        Me.Button1.TabIndex = 41
-        Me.Button1.Text = "Login"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BtnLogin.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLogin.Image = CType(resources.GetObject("BtnLogin.Image"), System.Drawing.Image)
+        Me.BtnLogin.Location = New System.Drawing.Point(36, 64)
+        Me.BtnLogin.Name = "BtnLogin"
+        Me.BtnLogin.Size = New System.Drawing.Size(126, 148)
+        Me.BtnLogin.TabIndex = 41
+        Me.BtnLogin.Text = "Login"
+        Me.BtnLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnLogin.UseVisualStyleBackColor = False
         '
         'BtnSalir
         '
@@ -215,11 +217,12 @@ Partial Class frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(801, 429)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.BtnGestionTalonarios)
+        Me.Controls.Add(Me.BtnRoles)
         Me.Controls.Add(Me.btnReportes)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnLogin)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.BtnEmpleados)
@@ -250,8 +253,8 @@ Partial Class frmPrincipal
     Friend WithEvents BtnEmpleados As System.Windows.Forms.Button
     Friend WithEvents BtnSalir As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents BtnLogin As System.Windows.Forms.Button
     Friend WithEvents btnReportes As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents BtnRoles As System.Windows.Forms.Button
+    Friend WithEvents BtnGestionTalonarios As System.Windows.Forms.Button
 End Class
