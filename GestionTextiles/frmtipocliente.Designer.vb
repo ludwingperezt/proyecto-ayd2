@@ -202,6 +202,8 @@ Partial Class frmtipocliente
         Me.Controls.Add(Me.lbllistatipoclientes)
         Me.Controls.Add(Me.dgvtiposcliente)
         Me.Controls.Add(Me.lblTitulo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "frmtipocliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmtipocliente"

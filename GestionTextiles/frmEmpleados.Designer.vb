@@ -237,9 +237,10 @@ Partial Class frmEmpleados
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.stsBarra)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmEmpleados"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmEmpleados"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()

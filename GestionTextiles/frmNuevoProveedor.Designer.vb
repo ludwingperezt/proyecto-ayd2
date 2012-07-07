@@ -48,7 +48,7 @@ Partial Class frmNuevoProveedor
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 307)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 313)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(567, 22)
         Me.stsBarra.TabIndex = 8
@@ -90,16 +90,16 @@ Partial Class frmNuevoProveedor
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
-        Me.lblNombre.Location = New System.Drawing.Point(61, 97)
+        Me.lblNombre.Location = New System.Drawing.Point(61, 231)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(44, 13)
+        Me.lblNombre.Size = New System.Drawing.Size(63, 13)
         Me.lblNombre.TabIndex = 11
-        Me.lblNombre.Text = "Nombre"
+        Me.lblNombre.Text = "Descripción"
         '
         'lblDireccion
         '
         Me.lblDireccion.AutoSize = True
-        Me.lblDireccion.Location = New System.Drawing.Point(61, 123)
+        Me.lblDireccion.Location = New System.Drawing.Point(61, 97)
         Me.lblDireccion.Name = "lblDireccion"
         Me.lblDireccion.Size = New System.Drawing.Size(52, 13)
         Me.lblDireccion.TabIndex = 12
@@ -108,7 +108,7 @@ Partial Class frmNuevoProveedor
         'lblEmpresa
         '
         Me.lblEmpresa.AutoSize = True
-        Me.lblEmpresa.Location = New System.Drawing.Point(61, 163)
+        Me.lblEmpresa.Location = New System.Drawing.Point(61, 123)
         Me.lblEmpresa.Name = "lblEmpresa"
         Me.lblEmpresa.Size = New System.Drawing.Size(48, 13)
         Me.lblEmpresa.TabIndex = 13
@@ -117,7 +117,7 @@ Partial Class frmNuevoProveedor
         'lblPropietario
         '
         Me.lblPropietario.AutoSize = True
-        Me.lblPropietario.Location = New System.Drawing.Point(60, 189)
+        Me.lblPropietario.Location = New System.Drawing.Point(60, 149)
         Me.lblPropietario.Name = "lblPropietario"
         Me.lblPropietario.Size = New System.Drawing.Size(57, 13)
         Me.lblPropietario.TabIndex = 14
@@ -126,7 +126,7 @@ Partial Class frmNuevoProveedor
         'lblTelefono
         '
         Me.lblTelefono.AutoSize = True
-        Me.lblTelefono.Location = New System.Drawing.Point(60, 216)
+        Me.lblTelefono.Location = New System.Drawing.Point(60, 176)
         Me.lblTelefono.Name = "lblTelefono"
         Me.lblTelefono.Size = New System.Drawing.Size(49, 13)
         Me.lblTelefono.TabIndex = 15
@@ -143,7 +143,7 @@ Partial Class frmNuevoProveedor
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(142, 90)
+        Me.txtNombre.Location = New System.Drawing.Point(142, 228)
         Me.txtNombre.MaxLength = 70
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(354, 20)
@@ -151,7 +151,7 @@ Partial Class frmNuevoProveedor
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(142, 116)
+        Me.txtDireccion.Location = New System.Drawing.Point(142, 90)
         Me.txtDireccion.MaxLength = 60
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(354, 20)
@@ -159,7 +159,7 @@ Partial Class frmNuevoProveedor
         '
         'txtEmpresa
         '
-        Me.txtEmpresa.Location = New System.Drawing.Point(142, 156)
+        Me.txtEmpresa.Location = New System.Drawing.Point(142, 116)
         Me.txtEmpresa.MaxLength = 25
         Me.txtEmpresa.Name = "txtEmpresa"
         Me.txtEmpresa.Size = New System.Drawing.Size(186, 20)
@@ -167,7 +167,7 @@ Partial Class frmNuevoProveedor
         '
         'txtPropietario
         '
-        Me.txtPropietario.Location = New System.Drawing.Point(142, 182)
+        Me.txtPropietario.Location = New System.Drawing.Point(142, 142)
         Me.txtPropietario.MaxLength = 70
         Me.txtPropietario.Name = "txtPropietario"
         Me.txtPropietario.Size = New System.Drawing.Size(354, 20)
@@ -175,7 +175,7 @@ Partial Class frmNuevoProveedor
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(142, 209)
+        Me.txtTelefono.Location = New System.Drawing.Point(142, 169)
         Me.txtTelefono.MaxLength = 15
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
@@ -184,7 +184,7 @@ Partial Class frmNuevoProveedor
         'lblCelular
         '
         Me.lblCelular.AutoSize = True
-        Me.lblCelular.Location = New System.Drawing.Point(60, 242)
+        Me.lblCelular.Location = New System.Drawing.Point(60, 202)
         Me.lblCelular.Name = "lblCelular"
         Me.lblCelular.Size = New System.Drawing.Size(39, 13)
         Me.lblCelular.TabIndex = 15
@@ -192,7 +192,7 @@ Partial Class frmNuevoProveedor
         '
         'txtCelular
         '
-        Me.txtCelular.Location = New System.Drawing.Point(142, 235)
+        Me.txtCelular.Location = New System.Drawing.Point(142, 195)
         Me.txtCelular.MaxLength = 15
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(100, 20)
@@ -202,7 +202,7 @@ Partial Class frmNuevoProveedor
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(323, 271)
+        Me.btnCancelar.Location = New System.Drawing.Point(326, 276)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 29
@@ -212,7 +212,7 @@ Partial Class frmNuevoProveedor
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(421, 271)
+        Me.btnAceptar.Location = New System.Drawing.Point(421, 276)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 28
@@ -225,7 +225,7 @@ Partial Class frmNuevoProveedor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(567, 329)
+        Me.ClientSize = New System.Drawing.Size(567, 335)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.txtCelular)
@@ -244,8 +244,10 @@ Partial Class frmNuevoProveedor
         Me.Controls.Add(Me.lblNIT)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.stsBarra)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmNuevoProveedor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Proveedor"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()

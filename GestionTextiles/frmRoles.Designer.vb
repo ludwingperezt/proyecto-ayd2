@@ -28,6 +28,8 @@ Partial Class frmRoles
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.btnAsignarPermiso = New System.Windows.Forms.Button()
+        Me.btnNPermiso = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,7 +38,7 @@ Partial Class frmRoles
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(26, 21)
+        Me.lblTitulo.Location = New System.Drawing.Point(42, 9)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(226, 29)
         Me.lblTitulo.TabIndex = 6
@@ -47,7 +49,7 @@ Partial Class frmRoles
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
         Me.stsBarra.Location = New System.Drawing.Point(0, 240)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(284, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(308, 22)
         Me.stsBarra.TabIndex = 7
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -68,7 +70,7 @@ Partial Class frmRoles
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(56, 120)
+        Me.btnCancelar.Location = New System.Drawing.Point(47, 194)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 29
@@ -78,23 +80,52 @@ Partial Class frmRoles
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(154, 120)
+        Me.btnAceptar.Location = New System.Drawing.Point(177, 194)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 28
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
+        'btnAsignarPermiso
+        '
+        Me.btnAsignarPermiso.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAsignarPermiso.Image = Global.GestionTextiles.My.Resources.Resources.winhand1
+        Me.btnAsignarPermiso.Location = New System.Drawing.Point(159, 62)
+        Me.btnAsignarPermiso.Name = "btnAsignarPermiso"
+        Me.btnAsignarPermiso.Size = New System.Drawing.Size(97, 77)
+        Me.btnAsignarPermiso.TabIndex = 30
+        Me.btnAsignarPermiso.Text = "Asignar permiso"
+        Me.btnAsignarPermiso.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnAsignarPermiso.UseVisualStyleBackColor = False
+        '
+        'btnNPermiso
+        '
+        Me.btnNPermiso.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnNPermiso.Image = Global.GestionTextiles.My.Resources.Resources.winarrow1
+        Me.btnNPermiso.Location = New System.Drawing.Point(47, 62)
+        Me.btnNPermiso.Name = "btnNPermiso"
+        Me.btnNPermiso.Size = New System.Drawing.Size(97, 77)
+        Me.btnNPermiso.TabIndex = 30
+        Me.btnNPermiso.Text = "Nuevo permiso"
+        Me.btnNPermiso.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnNPermiso.UseVisualStyleBackColor = False
+        '
         'frmRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.ClientSize = New System.Drawing.Size(308, 262)
+        Me.Controls.Add(Me.btnAsignarPermiso)
+        Me.Controls.Add(Me.btnNPermiso)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblTitulo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "frmRoles"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Definición de Roles"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
@@ -108,4 +139,6 @@ Partial Class frmRoles
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
+    Friend WithEvents btnNPermiso As System.Windows.Forms.Button
+    Friend WithEvents btnAsignarPermiso As System.Windows.Forms.Button
 End Class

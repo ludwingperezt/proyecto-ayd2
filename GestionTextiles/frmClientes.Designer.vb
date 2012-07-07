@@ -24,7 +24,6 @@ Partial Class frmClientes
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClientes))
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.btningresarcliente = New System.Windows.Forms.Button()
         Me.dgvclientes = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -32,15 +31,16 @@ Partial Class frmClientes
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbllistaclientes = New System.Windows.Forms.Label()
-        Me.btnmodificarclientes = New System.Windows.Forms.Button()
-        Me.btneliminarcliente = New System.Windows.Forms.Button()
         Me.lblbusqueda = New System.Windows.Forms.Label()
         Me.txtbusqueda = New System.Windows.Forms.TextBox()
         Me.btnbuscar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btneliminarcliente = New System.Windows.Forms.Button()
+        Me.btnmodificarclientes = New System.Windows.Forms.Button()
+        Me.btningresarcliente = New System.Windows.Forms.Button()
         CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
@@ -56,18 +56,6 @@ Partial Class frmClientes
         Me.lblTitulo.TabIndex = 29
         Me.lblTitulo.Text = "Módulo Clientes"
         Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'btningresarcliente
-        '
-        Me.btningresarcliente.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btningresarcliente.Image = CType(resources.GetObject("btningresarcliente.Image"), System.Drawing.Image)
-        Me.btningresarcliente.Location = New System.Drawing.Point(78, 305)
-        Me.btningresarcliente.Name = "btningresarcliente"
-        Me.btningresarcliente.Size = New System.Drawing.Size(102, 72)
-        Me.btningresarcliente.TabIndex = 30
-        Me.btningresarcliente.Text = "&Ingresar cliente"
-        Me.btningresarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btningresarcliente.UseVisualStyleBackColor = False
         '
         'dgvclientes
         '
@@ -114,30 +102,6 @@ Partial Class frmClientes
         Me.lbllistaclientes.TabIndex = 32
         Me.lbllistaclientes.Text = "Listado Clientes: "
         '
-        'btnmodificarclientes
-        '
-        Me.btnmodificarclientes.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnmodificarclientes.Image = CType(resources.GetObject("btnmodificarclientes.Image"), System.Drawing.Image)
-        Me.btnmodificarclientes.Location = New System.Drawing.Point(202, 305)
-        Me.btnmodificarclientes.Name = "btnmodificarclientes"
-        Me.btnmodificarclientes.Size = New System.Drawing.Size(104, 72)
-        Me.btnmodificarclientes.TabIndex = 33
-        Me.btnmodificarclientes.Text = "&Modificar Cliente"
-        Me.btnmodificarclientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnmodificarclientes.UseVisualStyleBackColor = False
-        '
-        'btneliminarcliente
-        '
-        Me.btneliminarcliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btneliminarcliente.Image = CType(resources.GetObject("btneliminarcliente.Image"), System.Drawing.Image)
-        Me.btneliminarcliente.Location = New System.Drawing.Point(330, 305)
-        Me.btneliminarcliente.Name = "btneliminarcliente"
-        Me.btneliminarcliente.Size = New System.Drawing.Size(98, 71)
-        Me.btneliminarcliente.TabIndex = 34
-        Me.btneliminarcliente.Text = "&Eliminar Cliente"
-        Me.btneliminarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btneliminarcliente.UseVisualStyleBackColor = False
-        '
         'lblbusqueda
         '
         Me.lblbusqueda.AutoSize = True
@@ -164,18 +128,6 @@ Partial Class frmClientes
         Me.btnbuscar.Text = "B&uscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(78, 388)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(350, 64)
-        Me.Button1.TabIndex = 38
-        Me.Button1.Text = "&Salir"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
@@ -198,6 +150,54 @@ Partial Class frmClientes
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(78, 388)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(350, 64)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "&Salir"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'btneliminarcliente
+        '
+        Me.btneliminarcliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btneliminarcliente.Image = CType(resources.GetObject("btneliminarcliente.Image"), System.Drawing.Image)
+        Me.btneliminarcliente.Location = New System.Drawing.Point(330, 305)
+        Me.btneliminarcliente.Name = "btneliminarcliente"
+        Me.btneliminarcliente.Size = New System.Drawing.Size(98, 71)
+        Me.btneliminarcliente.TabIndex = 34
+        Me.btneliminarcliente.Text = "&Eliminar Cliente"
+        Me.btneliminarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btneliminarcliente.UseVisualStyleBackColor = False
+        '
+        'btnmodificarclientes
+        '
+        Me.btnmodificarclientes.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnmodificarclientes.Image = CType(resources.GetObject("btnmodificarclientes.Image"), System.Drawing.Image)
+        Me.btnmodificarclientes.Location = New System.Drawing.Point(202, 305)
+        Me.btnmodificarclientes.Name = "btnmodificarclientes"
+        Me.btnmodificarclientes.Size = New System.Drawing.Size(104, 72)
+        Me.btnmodificarclientes.TabIndex = 33
+        Me.btnmodificarclientes.Text = "&Modificar Cliente"
+        Me.btnmodificarclientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnmodificarclientes.UseVisualStyleBackColor = False
+        '
+        'btningresarcliente
+        '
+        Me.btningresarcliente.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btningresarcliente.Image = CType(resources.GetObject("btningresarcliente.Image"), System.Drawing.Image)
+        Me.btningresarcliente.Location = New System.Drawing.Point(78, 305)
+        Me.btningresarcliente.Name = "btningresarcliente"
+        Me.btningresarcliente.Size = New System.Drawing.Size(102, 72)
+        Me.btningresarcliente.TabIndex = 30
+        Me.btningresarcliente.Text = "&Ingresar cliente"
+        Me.btningresarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btningresarcliente.UseVisualStyleBackColor = False
+        '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -214,6 +214,8 @@ Partial Class frmClientes
         Me.Controls.Add(Me.dgvclientes)
         Me.Controls.Add(Me.btningresarcliente)
         Me.Controls.Add(Me.lblTitulo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "frmClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmClientes"

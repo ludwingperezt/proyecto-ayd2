@@ -141,8 +141,10 @@ Partial Class frmCompras
         Me.Controls.Add(Me.btnNCompra)
         Me.Controls.Add(Me.btnLNCredito)
         Me.Controls.Add(Me.btnNCredito)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmCompras"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Compras"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()

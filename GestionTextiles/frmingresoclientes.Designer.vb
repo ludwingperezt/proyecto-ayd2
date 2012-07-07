@@ -211,9 +211,11 @@ Partial Class frmingresoclientes
         Me.Controls.Add(Me.lblapellido)
         Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.lblTitulo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "frmingresoclientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmingresoclientes"
+        Me.Text = "Ingreso de Clientes"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)

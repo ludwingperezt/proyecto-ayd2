@@ -115,8 +115,10 @@ Partial Class frmModuloProveedores
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblTitulo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmModuloProveedores"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modulo de Proveedores"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
