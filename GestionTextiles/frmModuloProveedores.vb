@@ -1,7 +1,7 @@
 ﻿Public Class frmModuloProveedores
 
     Private Sub btnNProveedor_Click(sender As System.Object, e As System.EventArgs) Handles btnNProveedor.Click
-        frmNuevoProveedor.ShowDialog()
+        frmNuevoProveedor.ShowDialog(Me)
 
     End Sub
 
