@@ -283,5 +283,35 @@ namespace negocios
             return negociosAdaptadores.gAdaptadorListaProductos.GetData();
         }
         #endregion
+        #region accesos estáticos
+        /// <summary>
+        /// Función de acceso estático. Verifica si la cantidad existente en bodega de un producto especificado está disponible para cubrir la cantidad solicitada.
+        /// </summary>
+        /// <param name="liIdProducto">short: id del producto solicitado</param>
+        /// <param name="cantidad">double: cantidad solicitada del producto</param>
+        /// <returns>bool: True si hay existencias del producto, False si no hay existencias</returns>
+        public static bool fnboVerificarCantidadExistenteProducto(short liIdProducto, double cantidad)
+        {
+            return (bool)negociosAdaptadores.gAdaptadorDeConsultas.verificarExistencia(liIdProducto, cantidad);
+        }
+        /// <summary>
+        /// Función de acceso estático. Disminuye la cantidad en bodega del producto especificado.
+        /// </summary>
+        /// <param name="lshIdProducto">shor: el ID del producto</param>
+        /// <param name="cantidad">double: cantidad que se desea disminuir del stock en bodega</param>
+        public static void fnvdDisminuirExistenciaProducto(short lshIdProducto ,double cantidad)
+        {
+            negociosAdaptadores.gAdaptadorDeConsultas.disminuirStockProducto(lshIdProducto, cantidad);
+        }
+        /// <summary>
+        /// Función de acceso estático. Aumenta la cantidad en bodega del producto espercificado
+        /// </summary>
+        /// <param name="lshIdProducto">short: Id del producto</param>
+        /// <param name="cantidad">double: cantidad que se desea aumentar del stock en bodega</param>
+        public static void fnvdAumentarExistenciaProducto(short lshIdProducto,double cantidad)
+        {
+            negociosAdaptadores.gAdaptadorDeConsultas.aumentarStockProducto(lshIdProducto, cantidad);
+        }
+        #endregion
     }
 }
