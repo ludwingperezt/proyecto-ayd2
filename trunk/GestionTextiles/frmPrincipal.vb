@@ -82,11 +82,51 @@
         slblDescripcion.Text = "Sale de la aplicación"
     End Sub
 
-    Private Sub Button3_Click_1(sender As System.Object, e As System.EventArgs) Handles Button3.Click
+    Private Sub Button3_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRoles.Click
         frmRoles.ShowDialog()
     End Sub
 
     Private Sub btnReportes_Click(sender As System.Object, e As System.EventArgs) Handles btnReportes.Click
         frmModuloReportes.ShowDialog()
+    End Sub
+
+    Private Sub BtnLogin_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogin.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub BtnRoles_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRoles.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub BtnGestionTalonarios_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGestionTalonarios.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnReportes_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReportes.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub BtnLogin_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogin.MouseHover
+        slblDescripcion.Text = "Ingreso de usuario y contraseña para acceder al sistema"
+    End Sub
+
+    Private Sub BtnRoles_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRoles.MouseHover
+        slblDescripcion.Text = "Módulo encargado de gestionar los persmisos de acceso  de los usuarios"
+    End Sub
+
+    Private Sub BtnGestionTalonarios_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGestionTalonarios.MouseHover
+        slblDescripcion.Text = "Módulo encargado de gestionar la numeración y series de las facturas"
+    End Sub
+
+    Private Sub btnReportes_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReportes.MouseHover
+        slblDescripcion.Text = "Módulo encargado de generar y mostrar los resportes "
+    End Sub
+
+    Private Sub BtnLogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogin.Click
+        frmLogin.Show()
+    End Sub
+
+    Private Sub BtnGestionTalonarios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGestionTalonarios.Click
+
     End Sub
 End Class
