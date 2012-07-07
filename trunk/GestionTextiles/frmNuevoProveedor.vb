@@ -1,16 +1,24 @@
 ﻿Public Class frmNuevoProveedor
 
     Private Sub btnAceptar_Click(sender As System.Object, e As System.EventArgs) Handles btnAceptar.Click
+        Dim lbooBandera As Boolean = True
+
         For Each ctrlIterador As Control In Me.Controls
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
-                If (ctrlIterador.Text = "") Then
-                    ctrlIterador.BackColor = Color.Yellow
-                Else
-                    ctrlIterador.BackColor = Color.White
+                If ctrlIterador.Name <> "txtTelefono" And ctrlIterador.Name <> "txtCelular" Then
+                    If (ctrlIterador.Text = "") Then
+                        ctrlIterador.BackColor = Color.Yellow
+                        lbooBandera = False
+                    Else
+                        ctrlIterador.BackColor = Color.White
+                    End If
                 End If
             End If
         Next
 
+        If lbooBandera Then
+            Me.Dispose()
+        End If
     End Sub
 
     Private Sub txtNIT_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtNIT.MouseLeave
