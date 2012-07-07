@@ -138,6 +138,12 @@
     <Compile Include="frmModuloProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmNPermiso.Designer.vb">
+      <DependentUpon>frmNPermiso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNPermiso.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmNuevoProveedor.Designer.vb">
       <DependentUpon>frmNuevoProveedor.vb</DependentUpon>
     </Compile>
@@ -219,6 +225,9 @@
     <EmbeddedResource Include="frmModuloProveedores.resx">
       <DependentUpon>frmModuloProveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNPermiso.resx">
+      <DependentUpon>frmNPermiso.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNuevoProveedor.resx">
       <DependentUpon>frmNuevoProveedor.vb</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +261,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\winarrow1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\winhand1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

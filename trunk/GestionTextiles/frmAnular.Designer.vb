@@ -136,6 +136,7 @@ Partial Class frmAnular
         Me.Controls.Add(Me.txtSerie)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.stsBarra)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmAnular"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

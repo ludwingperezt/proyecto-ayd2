@@ -81,4 +81,8 @@
     Private Sub BtnSalir_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSalir.MouseHover
         slblDescripcion.Text = "Sale de la aplicación"
     End Sub
+
+    Private Sub Button3_Click_1(sender As System.Object, e As System.EventArgs) Handles Button3.Click
+        frmRoles.ShowDialog()
+    End Sub
 End Class

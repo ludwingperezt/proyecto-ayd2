@@ -211,6 +211,8 @@ Partial Class frmModificarCliente
         Me.Controls.Add(Me.lblapellido)
         Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.lblTitulo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "frmModificarCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmModificarCliente"

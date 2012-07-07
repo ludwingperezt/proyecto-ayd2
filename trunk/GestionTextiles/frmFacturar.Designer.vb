@@ -365,9 +365,10 @@ Partial Class frmFacturar
         Me.Controls.Add(Me.lbldireccion)
         Me.Controls.Add(Me.lblnit)
         Me.Controls.Add(Me.Lblnombre)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmFacturar"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Facturar"
         CType(Me.dgvdetallefactura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)

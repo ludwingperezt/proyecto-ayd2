@@ -156,6 +156,8 @@ Partial Class frmModificarTipoCliente
         Me.Controls.Add(Me.lbldescripcion)
         Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.lblTitulo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "frmModificarTipoCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmModificarTipoCliente"

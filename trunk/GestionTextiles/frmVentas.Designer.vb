@@ -118,9 +118,10 @@ Partial Class frmVentas
         Me.Controls.Add(Me.btnFacturar)
         Me.Controls.Add(Me.btnAnular)
         Me.Controls.Add(Me.stsBarra)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmVentas"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ventas"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
