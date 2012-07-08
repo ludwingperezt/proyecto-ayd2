@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmReporteFacturasEliminadas
+Partial Class frmReporteDevolucionesProveedor
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -47,11 +47,11 @@ Partial Class frmReporteFacturasEliminadas
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(186, 30)
+        Me.lblTitulo.Location = New System.Drawing.Point(188, 31)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(473, 29)
-        Me.lblTitulo.TabIndex = 16
-        Me.lblTitulo.Text = "Reporte Lista de Facturas Eliminadas"
+        Me.lblTitulo.Size = New System.Drawing.Size(447, 29)
+        Me.lblTitulo.TabIndex = 19
+        Me.lblTitulo.Text = "Reporte Devoluciónes por Proveedor"
         '
         'gbParametros1
         '
@@ -65,10 +65,10 @@ Partial Class frmReporteFacturasEliminadas
         Me.gbParametros1.Controls.Add(Me.lblInicio)
         Me.gbParametros1.Controls.Add(Me.dtpFin)
         Me.gbParametros1.Controls.Add(Me.dtpInicio)
-        Me.gbParametros1.Location = New System.Drawing.Point(0, 82)
+        Me.gbParametros1.Location = New System.Drawing.Point(2, 83)
         Me.gbParametros1.Name = "gbParametros1"
         Me.gbParametros1.Size = New System.Drawing.Size(835, 77)
-        Me.gbParametros1.TabIndex = 15
+        Me.gbParametros1.TabIndex = 18
         Me.gbParametros1.TabStop = False
         Me.gbParametros1.Text = "Parámetros"
         Me.gbParametros1.Visible = False
@@ -78,9 +78,9 @@ Partial Class frmReporteFacturasEliminadas
         Me.chNit.AutoSize = True
         Me.chNit.Location = New System.Drawing.Point(13, 48)
         Me.chNit.Name = "chNit"
-        Me.chNit.Size = New System.Drawing.Size(77, 17)
+        Me.chNit.Size = New System.Drawing.Size(94, 17)
         Me.chNit.TabIndex = 35
-        Me.chNit.Text = "Por Cliente"
+        Me.chNit.Text = "Por Proveedor"
         Me.chNit.UseVisualStyleBackColor = True
         '
         'chFecha
@@ -106,9 +106,9 @@ Partial Class frmReporteFacturasEliminadas
         Me.lblNitCLiente.AutoSize = True
         Me.lblNitCLiente.Location = New System.Drawing.Point(134, 53)
         Me.lblNitCLiente.Name = "lblNitCLiente"
-        Me.lblNitCLiente.Size = New System.Drawing.Size(61, 13)
+        Me.lblNitCLiente.Size = New System.Drawing.Size(78, 13)
         Me.lblNitCLiente.TabIndex = 32
-        Me.lblNitCLiente.Text = "Nit Cliente: "
+        Me.lblNitCLiente.Text = "Nit Proveedor: "
         '
         'btnCancelar
         '
@@ -165,18 +165,18 @@ Partial Class frmReporteFacturasEliminadas
         '
         'rptvReporte
         '
-        Me.rptvReporte.Location = New System.Drawing.Point(0, 178)
+        Me.rptvReporte.Location = New System.Drawing.Point(2, 179)
         Me.rptvReporte.Name = "rptvReporte"
         Me.rptvReporte.Size = New System.Drawing.Size(835, 432)
-        Me.rptvReporte.TabIndex = 14
+        Me.rptvReporte.TabIndex = 17
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 589)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 590)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(838, 22)
-        Me.stsBarra.TabIndex = 60
+        Me.stsBarra.Size = New System.Drawing.Size(837, 22)
+        Me.stsBarra.TabIndex = 61
         Me.stsBarra.Text = "StatusStrip1"
         '
         'slblDescripcion
@@ -192,17 +192,17 @@ Partial Class frmReporteFacturasEliminadas
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
-        'frmReporteFacturasEliminadas
+        'frmReporteDevolucionesProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(838, 611)
+        Me.ClientSize = New System.Drawing.Size(837, 612)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.gbParametros1)
         Me.Controls.Add(Me.rptvReporte)
-        Me.Name = "frmReporteFacturasEliminadas"
-        Me.Text = "Reporte Facturas Eliminadas"
+        Me.Name = "frmReporteDevolucionesProveedor"
+        Me.Text = "Reporte Devoluciónes Proveedor"
         Me.gbParametros1.ResumeLayout(False)
         Me.gbParametros1.PerformLayout()
         Me.stsBarra.ResumeLayout(False)
@@ -213,6 +213,10 @@ Partial Class frmReporteFacturasEliminadas
     End Sub
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents gbParametros1 As System.Windows.Forms.GroupBox
+    Friend WithEvents chNit As System.Windows.Forms.CheckBox
+    Friend WithEvents chFecha As System.Windows.Forms.CheckBox
+    Friend WithEvents txtNit As System.Windows.Forms.TextBox
+    Friend WithEvents lblNitCLiente As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents lblFin As System.Windows.Forms.Label
@@ -223,8 +227,4 @@ Partial Class frmReporteFacturasEliminadas
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents chNit As System.Windows.Forms.CheckBox
-    Friend WithEvents chFecha As System.Windows.Forms.CheckBox
-    Friend WithEvents txtNit As System.Windows.Forms.TextBox
-    Friend WithEvents lblNitCLiente As System.Windows.Forms.Label
 End Class

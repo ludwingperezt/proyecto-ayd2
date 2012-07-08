@@ -14,6 +14,7 @@
         frmModificarTipoCliente.slblFecha.Text = Date.Now
         frmReporteCorteCaja.slblFecha.Text = Date.Now
         frmtipocliente.slblFecha.Text = Date.Now
+        frmModuloReportes.slblFecha.Text = Date.Now
 
     End Sub
 
