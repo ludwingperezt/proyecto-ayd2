@@ -6,6 +6,15 @@
         frmAnular.slblFecha.Text = Date.Now
         frmVentas.slblFecha.Text = Date.Now
         frmFacturar.slblFecha.Text = Date.Now
+        frmClientes.slblFecha.Text = Date.Now
+        frmingresoclientes.slblFecha.Text = Date.Now
+        frmingresotipocliente.slblFecha.Text = Date.Now
+        frmLogin.slblFecha.Text = Date.Now
+        frmModificarCliente.slblFecha.Text = Date.Now
+        frmModificarTipoCliente.slblFecha.Text = Date.Now
+        frmReporteCorteCaja.slblFecha.Text = Date.Now
+        frmtipocliente.slblFecha.Text = Date.Now
+
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnVentas.Click

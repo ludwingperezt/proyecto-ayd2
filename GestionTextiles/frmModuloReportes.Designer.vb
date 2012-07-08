@@ -24,7 +24,7 @@ Partial Class frmModuloReportes
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmModuloReportes))
         Me.btnCorte = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnReporteFacturasasEliminadas = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -44,18 +44,19 @@ Partial Class frmModuloReportes
         Me.btnCorte.Text = "Corte de Caja"
         Me.btnCorte.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnReporteFacturasasEliminadas
         '
-        Me.Button2.Location = New System.Drawing.Point(85, 57)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnReporteFacturasasEliminadas.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnReporteFacturasasEliminadas.Location = New System.Drawing.Point(85, 57)
+        Me.btnReporteFacturasasEliminadas.Name = "btnReporteFacturasasEliminadas"
+        Me.btnReporteFacturasasEliminadas.Size = New System.Drawing.Size(214, 34)
+        Me.btnReporteFacturasasEliminadas.TabIndex = 1
+        Me.btnReporteFacturasasEliminadas.Text = "Listado de Facturas Eliminadas"
+        Me.btnReporteFacturasasEliminadas.UseVisualStyleBackColor = False
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(85, 86)
+        Me.Button3.Location = New System.Drawing.Point(160, 100)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 2
@@ -64,7 +65,7 @@ Partial Class frmModuloReportes
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(85, 115)
+        Me.Button4.Location = New System.Drawing.Point(160, 129)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 3
@@ -73,7 +74,7 @@ Partial Class frmModuloReportes
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(85, 144)
+        Me.Button5.Location = New System.Drawing.Point(160, 158)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 4
@@ -82,7 +83,7 @@ Partial Class frmModuloReportes
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(85, 173)
+        Me.Button6.Location = New System.Drawing.Point(160, 187)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 5
@@ -91,7 +92,7 @@ Partial Class frmModuloReportes
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(85, 202)
+        Me.Button7.Location = New System.Drawing.Point(160, 216)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(75, 23)
         Me.Button7.TabIndex = 6
@@ -100,7 +101,7 @@ Partial Class frmModuloReportes
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(85, 231)
+        Me.Button8.Location = New System.Drawing.Point(160, 245)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(75, 23)
         Me.Button8.TabIndex = 7
@@ -112,7 +113,7 @@ Partial Class frmModuloReportes
         Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(85, 260)
+        Me.btnSalir.Location = New System.Drawing.Point(85, 274)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(214, 64)
         Me.btnSalir.TabIndex = 8
@@ -124,7 +125,7 @@ Partial Class frmModuloReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(405, 332)
+        Me.ClientSize = New System.Drawing.Size(405, 361)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
@@ -132,7 +133,7 @@ Partial Class frmModuloReportes
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnReporteFacturasasEliminadas)
         Me.Controls.Add(Me.btnCorte)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -143,7 +144,7 @@ Partial Class frmModuloReportes
 
     End Sub
     Friend WithEvents btnCorte As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btnReporteFacturasasEliminadas As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button

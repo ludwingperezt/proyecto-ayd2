@@ -9,11 +9,11 @@
     End Sub
 
     Private Sub btnCancelar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseHover
-        slblDescripcion.Text = "Ingreso del nombre de usuario para tener acceso al sistema"
+        slblDescripcion.Text = "Salir de la ventana del  ingreso al sistema"
     End Sub
 
     Private Sub btnAceptar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseHover
-        slblDescripcion.Text = "Ingreso de la contraseña del usuario"
+        slblDescripcion.Text = "Ingresar al sistema "
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
@@ -26,5 +26,21 @@
                 End If
             End If
         Next
+    End Sub
+
+    Private Sub txtUsuario_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUsuario.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtcontraseña_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtcontraseña.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtUsuario_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUsuario.MouseHover
+        slblDescripcion.Text = "Ingreso del nombre de usuario para tener acceso al sistema"
+    End Sub
+
+    Private Sub txtcontraseña_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtcontraseña.MouseHover
+        slblDescripcion.Text = "Ingreso de la contraseña del usuario"
     End Sub
 End Class

@@ -176,6 +176,18 @@
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReporteCorteCaja.Designer.vb">
+      <DependentUpon>frmReporteCorteCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteCorteCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteFacturasEliminadas.Designer.vb">
+      <DependentUpon>frmReporteFacturasEliminadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteFacturasEliminadas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmReportes.Designer.vb">
       <DependentUpon>frmReportes.vb</DependentUpon>
     </Compile>
@@ -265,6 +277,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteCorteCaja.resx">
+      <DependentUpon>frmReporteCorteCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteFacturasEliminadas.resx">
+      <DependentUpon>frmReporteFacturasEliminadas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportes.resx">
       <DependentUpon>frmReportes.vb</DependentUpon>
