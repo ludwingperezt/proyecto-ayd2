@@ -32,7 +32,7 @@ namespace negocios
         public negociosEmpleado()
         { 
         }
-             public negociosEmpleado(int iIdEmpleado, int iIdRolEmpleado, string isNombreEmpleado, string isApellidoEmpleado, string isDireccionEmpleado, string isTelefonoEmpleado, string isCelularEmpleado, string isPuestoEmpleado, DateTime iDateFechaContratacion, double iDoSalario, string isUsuario, string isPassword, Boolean iboolHabilitado)
+             public negociosEmpleado(byte iIdEmpleado, byte iIdRolEmpleado, string isNombreEmpleado, string isApellidoEmpleado, string isDireccionEmpleado, string isTelefonoEmpleado, string isCelularEmpleado, string isPuestoEmpleado, DateTime iDateFechaContratacion, decimal iDoSalario, string isUsuario, byte[] isPassword, Boolean iboolHabilitado)
         {
             this.idEmpleado = iIdEmpleado;
             this.idRol = iIdRolEmpleado;
@@ -143,7 +143,7 @@ namespace negocios
              /// Método que accede al campo password del empleado
              /// </summary>
              /// <return>byte: el password del empleado</param>
-             public byte getPasswordEmpleado()
+             public byte[] getPasswordEmpleado()
              {
                  return this.password;
              }
@@ -182,10 +182,10 @@ namespace negocios
              /// <summary>
              /// Método modificador el campo apellido del empleado
              /// </summary>
-             /// <param name="lIdNombreEmpleado">string: el nombre del empleado</param>
-             public void setNombreEmpleado(string lIdNombreEmpleado)
+             /// <param name="lIdNombreEmpleado">string: el apellido del empleado</param>
+             public void setApellidoEmpleado(string lsApellidoEmpleado)
              {
-                 this.apellido = lIdNombreEmpleado;
+                 this.apellido = lsApellidoEmpleado;
              }
              /// <summary>
              /// Método modificador el campo direccion del empleado
@@ -247,7 +247,7 @@ namespace negocios
              /// Método modificador el campo password del empleado
              /// </summary>
              /// <param name="lIdEmpleado">byte: el password del empleado</param>
-             public void setPasswordEmpleado(byte  lsPasswordEmpleado)
+             public void setPasswordEmpleado(byte[]  lsPasswordEmpleado)
              {
                  this.password = lsPasswordEmpleado;
              }
