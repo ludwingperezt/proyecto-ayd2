@@ -2,11 +2,12 @@
 <xs:schema id="ConexionBaseDatos" targetNamespace="http://tempuri.org/ConexionBaseDatos.xsd" xmlns:mstns="http://tempuri.org/ConexionBaseDatos.xsd" xmlns="http://tempuri.org/ConexionBaseDatos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="textilesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="textilesConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Datos.Properties.Settings.GlobalReference.Default.textilesConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="textilesConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="textilesConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Datos.Properties.Settings.GlobalReference.Default.textilesConnectionString1" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="textilesConnectionLuis" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="textilesConnectionLuis (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Datos.Properties.Settings.GlobalReference.Default.textilesConnectionLuis" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="textilesConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="textilesConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Datos.Properties.Settings.GlobalReference.Default.textilesConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="textilesConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="textilesConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Datos.Properties.Settings.GlobalReference.Default.textilesConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="textilesConnectionLuis" IsAppSettingsProperty="true" Modifier="Assembly" Name="textilesConnectionLuis (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Datos.Properties.Settings.GlobalReference.Default.textilesConnectionLuis" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsPropertyName="textilesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="textilesConnectionString ()" ParameterPrefix="@" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="mostrarProductosTableAdapter" GeneratorDataComponentClassName="mostrarProductosTableAdapter" Name="mostrarProductos" UserDataComponentName="mostrarProductosTableAdapter">
@@ -887,6 +888,93 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="listarFacturasProveedorEliminadasTableAdapter" GeneratorDataComponentClassName="listarFacturasProveedorEliminadasTableAdapter" Name="listarFacturasProveedorEliminadas" UserDataComponentName="listarFacturasProveedorEliminadasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="textilesConnectionString ()" DbObjectName="textiles.dbo.listarFacturasProveedorEliminadas" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.listarFacturasProveedorEliminadas</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDFACTURAPROVEEDOR" DataSetColumn="IDFACTURAPROVEEDOR" />
+              <Mapping SourceColumn="IDEMPLEADO" DataSetColumn="IDEMPLEADO" />
+              <Mapping SourceColumn="FECHA" DataSetColumn="FECHA" />
+              <Mapping SourceColumn="ANOTACION" DataSetColumn="ANOTACION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="buscarFacturaProveedorEliminadaPorIdempleadoTableAdapter" GeneratorDataComponentClassName="buscarFacturaProveedorEliminadaPorIdempleadoTableAdapter" Name="buscarFacturaProveedorEliminadaPorIdempleado" UserDataComponentName="buscarFacturaProveedorEliminadaPorIdempleadoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="textilesConnectionString ()" DbObjectName="textiles.dbo.buscarFacturaProveedorEliminadaPorIdempleado" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.buscarFacturaProveedorEliminadaPorIdempleado</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@id" Precision="3" ProviderType="TinyInt" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDFACTURAPROVEEDOR" DataSetColumn="IDFACTURAPROVEEDOR" />
+              <Mapping SourceColumn="IDEMPLEADO" DataSetColumn="IDEMPLEADO" />
+              <Mapping SourceColumn="FECHA" DataSetColumn="FECHA" />
+              <Mapping SourceColumn="ANOTACION" DataSetColumn="ANOTACION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="buscarFacturaProveedorEliminadaDesdeFechaTableAdapter" GeneratorDataComponentClassName="buscarFacturaProveedorEliminadaDesdeFechaTableAdapter" Name="buscarFacturaProveedorEliminadaDesdeFecha" UserDataComponentName="buscarFacturaProveedorEliminadaDesdeFechaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="textilesConnectionString ()" DbObjectName="textiles.dbo.buscarFacturaProveedorEliminadaDesdeFecha" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.buscarFacturaProveedorEliminadaDesdeFecha</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime2" DbType="DateTime2" Direction="Input" ParameterName="@fecha" Precision="27" ProviderType="DateTime2" Scale="7" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDFACTURAPROVEEDOR" DataSetColumn="IDFACTURAPROVEEDOR" />
+              <Mapping SourceColumn="IDEMPLEADO" DataSetColumn="IDEMPLEADO" />
+              <Mapping SourceColumn="FECHA" DataSetColumn="FECHA" />
+              <Mapping SourceColumn="ANOTACION" DataSetColumn="ANOTACION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="buscarFacturaProveedorEliminadaHastaFechaTableAdapter" GeneratorDataComponentClassName="buscarFacturaProveedorEliminadaHastaFechaTableAdapter" Name="buscarFacturaProveedorEliminadaHastaFecha" UserDataComponentName="buscarFacturaProveedorEliminadaHastaFechaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="textilesConnectionString ()" DbObjectName="textiles.dbo.buscarFacturaProveedorEliminadaHastaFecha" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.buscarFacturaProveedorEliminadaHastaFecha</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime2" DbType="DateTime2" Direction="Input" ParameterName="@fecha" Precision="27" ProviderType="DateTime2" Scale="7" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDFACTURAPROVEEDOR" DataSetColumn="IDFACTURAPROVEEDOR" />
+              <Mapping SourceColumn="IDEMPLEADO" DataSetColumn="IDEMPLEADO" />
+              <Mapping SourceColumn="FECHA" DataSetColumn="FECHA" />
+              <Mapping SourceColumn="ANOTACION" DataSetColumn="ANOTACION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.aumentarStockProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="aumentarStockProducto" MethodsParameterType="CLR" Modifier="Public" Name="aumentarStockProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="aumentarStockProducto">
@@ -1335,6 +1423,45 @@
                 <Parameters>
                   <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                   <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFactura" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="textilesConnectionString ()" DbObjectName="textiles.dbo.insersionFacturaProveedorEliminada" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insersionFacturaProveedorEliminada" MethodsParameterType="CLR" Modifier="Public" Name="insersionFacturaProveedorEliminada" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy31" UserSourceName="insersionFacturaProveedorEliminada">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.insersionFacturaProveedorEliminada</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFact" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@idEmpleado" Precision="3" ProviderType="TinyInt" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime2" DbType="DateTime2" Direction="Input" ParameterName="@fecha" Precision="27" ProviderType="DateTime2" Scale="7" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@anotacion" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="textilesConnectionString ()" DbObjectName="textiles.dbo.modificarFacutraProveedorEliminada" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarFacutraProveedorEliminada" MethodsParameterType="CLR" Modifier="Public" Name="modificarFacutraProveedorEliminada" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy32" UserSourceName="modificarFacutraProveedorEliminada">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.modificarFacutraProveedorEliminada</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFact" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@idEmpleado" Precision="3" ProviderType="TinyInt" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime2" DbType="DateTime2" Direction="Input" ParameterName="@fecha" Precision="27" ProviderType="DateTime2" Scale="7" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@anotacion" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="textilesConnectionString ()" DbObjectName="textiles.dbo.eliminarFacturaProveedorEliminada" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="eliminarFacturaProveedorEliminada" MethodsParameterType="CLR" Modifier="Public" Name="eliminarFacturaProveedorEliminada" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy33" UserSourceName="eliminarFacturaProveedorEliminada">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.eliminarFacturaProveedorEliminada</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFact" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                 </Parameters>
               </DbCommand>
             </SelectCommand>
@@ -2800,6 +2927,70 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="listarFacturasProveedorEliminadas" msprop:Generator_TableClassName="listarFacturasProveedorEliminadasDataTable" msprop:Generator_TableVarName="tablelistarFacturasProveedorEliminadas" msprop:Generator_TablePropName="listarFacturasProveedorEliminadas" msprop:Generator_RowDeletingName="listarFacturasProveedorEliminadasRowDeleting" msprop:Generator_UserTableName="listarFacturasProveedorEliminadas" msprop:Generator_RowChangingName="listarFacturasProveedorEliminadasRowChanging" msprop:Generator_RowEvHandlerName="listarFacturasProveedorEliminadasRowChangeEventHandler" msprop:Generator_RowDeletedName="listarFacturasProveedorEliminadasRowDeleted" msprop:Generator_RowEvArgName="listarFacturasProveedorEliminadasRowChangeEvent" msprop:Generator_RowChangedName="listarFacturasProveedorEliminadasRowChanged" msprop:Generator_RowClassName="listarFacturasProveedorEliminadasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDFACTURAPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnIDFACTURAPROVEEDOR" msprop:Generator_ColumnPropNameInRow="IDFACTURAPROVEEDOR" msprop:Generator_ColumnPropNameInTable="IDFACTURAPROVEEDORColumn" msprop:Generator_UserColumnName="IDFACTURAPROVEEDOR" type="xs:int" />
+              <xs:element name="IDEMPLEADO" msprop:Generator_ColumnVarNameInTable="columnIDEMPLEADO" msprop:Generator_ColumnPropNameInRow="IDEMPLEADO" msprop:Generator_ColumnPropNameInTable="IDEMPLEADOColumn" msprop:Generator_UserColumnName="IDEMPLEADO" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" msprop:Generator_UserColumnName="FECHA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ANOTACION" msprop:Generator_ColumnVarNameInTable="columnANOTACION" msprop:Generator_ColumnPropNameInRow="ANOTACION" msprop:Generator_ColumnPropNameInTable="ANOTACIONColumn" msprop:Generator_UserColumnName="ANOTACION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="buscarFacturaProveedorEliminadaPorIdempleado" msprop:Generator_TableClassName="buscarFacturaProveedorEliminadaPorIdempleadoDataTable" msprop:Generator_TableVarName="tablebuscarFacturaProveedorEliminadaPorIdempleado" msprop:Generator_TablePropName="buscarFacturaProveedorEliminadaPorIdempleado" msprop:Generator_RowDeletingName="buscarFacturaProveedorEliminadaPorIdempleadoRowDeleting" msprop:Generator_UserTableName="buscarFacturaProveedorEliminadaPorIdempleado" msprop:Generator_RowChangingName="buscarFacturaProveedorEliminadaPorIdempleadoRowChanging" msprop:Generator_RowEvHandlerName="buscarFacturaProveedorEliminadaPorIdempleadoRowChangeEventHandler" msprop:Generator_RowDeletedName="buscarFacturaProveedorEliminadaPorIdempleadoRowDeleted" msprop:Generator_RowEvArgName="buscarFacturaProveedorEliminadaPorIdempleadoRowChangeEvent" msprop:Generator_RowChangedName="buscarFacturaProveedorEliminadaPorIdempleadoRowChanged" msprop:Generator_RowClassName="buscarFacturaProveedorEliminadaPorIdempleadoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDFACTURAPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnIDFACTURAPROVEEDOR" msprop:Generator_ColumnPropNameInRow="IDFACTURAPROVEEDOR" msprop:Generator_ColumnPropNameInTable="IDFACTURAPROVEEDORColumn" msprop:Generator_UserColumnName="IDFACTURAPROVEEDOR" type="xs:int" />
+              <xs:element name="IDEMPLEADO" msprop:Generator_ColumnVarNameInTable="columnIDEMPLEADO" msprop:Generator_ColumnPropNameInRow="IDEMPLEADO" msprop:Generator_ColumnPropNameInTable="IDEMPLEADOColumn" msprop:Generator_UserColumnName="IDEMPLEADO" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" msprop:Generator_UserColumnName="FECHA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ANOTACION" msprop:Generator_ColumnVarNameInTable="columnANOTACION" msprop:Generator_ColumnPropNameInRow="ANOTACION" msprop:Generator_ColumnPropNameInTable="ANOTACIONColumn" msprop:Generator_UserColumnName="ANOTACION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="buscarFacturaProveedorEliminadaDesdeFecha" msprop:Generator_TableClassName="buscarFacturaProveedorEliminadaDesdeFechaDataTable" msprop:Generator_TableVarName="tablebuscarFacturaProveedorEliminadaDesdeFecha" msprop:Generator_TablePropName="buscarFacturaProveedorEliminadaDesdeFecha" msprop:Generator_RowDeletingName="buscarFacturaProveedorEliminadaDesdeFechaRowDeleting" msprop:Generator_UserTableName="buscarFacturaProveedorEliminadaDesdeFecha" msprop:Generator_RowChangingName="buscarFacturaProveedorEliminadaDesdeFechaRowChanging" msprop:Generator_RowEvHandlerName="buscarFacturaProveedorEliminadaDesdeFechaRowChangeEventHandler" msprop:Generator_RowDeletedName="buscarFacturaProveedorEliminadaDesdeFechaRowDeleted" msprop:Generator_RowEvArgName="buscarFacturaProveedorEliminadaDesdeFechaRowChangeEvent" msprop:Generator_RowChangedName="buscarFacturaProveedorEliminadaDesdeFechaRowChanged" msprop:Generator_RowClassName="buscarFacturaProveedorEliminadaDesdeFechaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDFACTURAPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnIDFACTURAPROVEEDOR" msprop:Generator_ColumnPropNameInRow="IDFACTURAPROVEEDOR" msprop:Generator_ColumnPropNameInTable="IDFACTURAPROVEEDORColumn" msprop:Generator_UserColumnName="IDFACTURAPROVEEDOR" type="xs:int" />
+              <xs:element name="IDEMPLEADO" msprop:Generator_ColumnVarNameInTable="columnIDEMPLEADO" msprop:Generator_ColumnPropNameInRow="IDEMPLEADO" msprop:Generator_ColumnPropNameInTable="IDEMPLEADOColumn" msprop:Generator_UserColumnName="IDEMPLEADO" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" msprop:Generator_UserColumnName="FECHA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ANOTACION" msprop:Generator_ColumnVarNameInTable="columnANOTACION" msprop:Generator_ColumnPropNameInRow="ANOTACION" msprop:Generator_ColumnPropNameInTable="ANOTACIONColumn" msprop:Generator_UserColumnName="ANOTACION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="buscarFacturaProveedorEliminadaHastaFecha" msprop:Generator_TableClassName="buscarFacturaProveedorEliminadaHastaFechaDataTable" msprop:Generator_TableVarName="tablebuscarFacturaProveedorEliminadaHastaFecha" msprop:Generator_TablePropName="buscarFacturaProveedorEliminadaHastaFecha" msprop:Generator_RowDeletingName="buscarFacturaProveedorEliminadaHastaFechaRowDeleting" msprop:Generator_UserTableName="buscarFacturaProveedorEliminadaHastaFecha" msprop:Generator_RowChangingName="buscarFacturaProveedorEliminadaHastaFechaRowChanging" msprop:Generator_RowEvHandlerName="buscarFacturaProveedorEliminadaHastaFechaRowChangeEventHandler" msprop:Generator_RowDeletedName="buscarFacturaProveedorEliminadaHastaFechaRowDeleted" msprop:Generator_RowEvArgName="buscarFacturaProveedorEliminadaHastaFechaRowChangeEvent" msprop:Generator_RowChangedName="buscarFacturaProveedorEliminadaHastaFechaRowChanged" msprop:Generator_RowClassName="buscarFacturaProveedorEliminadaHastaFechaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDFACTURAPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnIDFACTURAPROVEEDOR" msprop:Generator_ColumnPropNameInRow="IDFACTURAPROVEEDOR" msprop:Generator_ColumnPropNameInTable="IDFACTURAPROVEEDORColumn" msprop:Generator_UserColumnName="IDFACTURAPROVEEDOR" type="xs:int" />
+              <xs:element name="IDEMPLEADO" msprop:Generator_ColumnVarNameInTable="columnIDEMPLEADO" msprop:Generator_ColumnPropNameInRow="IDEMPLEADO" msprop:Generator_ColumnPropNameInTable="IDEMPLEADOColumn" msprop:Generator_UserColumnName="IDEMPLEADO" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" msprop:Generator_UserColumnName="FECHA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ANOTACION" msprop:Generator_ColumnVarNameInTable="columnANOTACION" msprop:Generator_ColumnPropNameInRow="ANOTACION" msprop:Generator_ColumnPropNameInTable="ANOTACIONColumn" msprop:Generator_UserColumnName="ANOTACION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -2937,6 +3128,22 @@
     <xs:unique name="ListarTiposClientes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ListarTiposClientes" />
       <xs:field xpath="mstns:IDTIPOCLIENTE" />
+    </xs:unique>
+    <xs:unique name="listarFacturasProveedorEliminadas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:listarFacturasProveedorEliminadas" />
+      <xs:field xpath="mstns:IDFACTURAPROVEEDOR" />
+    </xs:unique>
+    <xs:unique name="buscarFacturaProveedorEliminadaPorIdempleado_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:buscarFacturaProveedorEliminadaPorIdempleado" />
+      <xs:field xpath="mstns:IDFACTURAPROVEEDOR" />
+    </xs:unique>
+    <xs:unique name="buscarFacturaProveedorEliminadaDesdeFecha_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:buscarFacturaProveedorEliminadaDesdeFecha" />
+      <xs:field xpath="mstns:IDFACTURAPROVEEDOR" />
+    </xs:unique>
+    <xs:unique name="buscarFacturaProveedorEliminadaHastaFecha_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:buscarFacturaProveedorEliminadaHastaFecha" />
+      <xs:field xpath="mstns:IDFACTURAPROVEEDOR" />
     </xs:unique>
   </xs:element>
 </xs:schema>
