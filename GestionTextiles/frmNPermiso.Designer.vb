@@ -130,6 +130,7 @@ Partial Class frmNPermiso
         '
         'clbRoles
         '
+        Me.clbRoles.CheckOnClick = True
         Me.clbRoles.FormattingEnabled = True
         Me.clbRoles.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar", "Eliminar"})
         Me.clbRoles.Location = New System.Drawing.Point(180, 175)
@@ -139,6 +140,7 @@ Partial Class frmNPermiso
         '
         'clbEmpleados
         '
+        Me.clbEmpleados.CheckOnClick = True
         Me.clbEmpleados.FormattingEnabled = True
         Me.clbEmpleados.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar", "Eliminar"})
         Me.clbEmpleados.Location = New System.Drawing.Point(180, 245)
@@ -148,6 +150,7 @@ Partial Class frmNPermiso
         '
         'clbProveedores
         '
+        Me.clbProveedores.CheckOnClick = True
         Me.clbProveedores.FormattingEnabled = True
         Me.clbProveedores.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar", "Eliminar", "Buscar"})
         Me.clbProveedores.Location = New System.Drawing.Point(180, 316)
@@ -157,6 +160,7 @@ Partial Class frmNPermiso
         '
         'clbProductos
         '
+        Me.clbProductos.CheckOnClick = True
         Me.clbProductos.FormattingEnabled = True
         Me.clbProductos.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar", "Eliminar", "Buscar", "Cargar Productos", "Descargar Productos"})
         Me.clbProductos.Location = New System.Drawing.Point(180, 393)
@@ -220,6 +224,7 @@ Partial Class frmNPermiso
         '
         'clbCompras
         '
+        Me.clbCompras.CheckOnClick = True
         Me.clbCompras.FormattingEnabled = True
         Me.clbCompras.Items.AddRange(New Object() {"Hacer Compras", "Devolver Productos"})
         Me.clbCompras.Location = New System.Drawing.Point(180, 467)
@@ -229,6 +234,7 @@ Partial Class frmNPermiso
         '
         'clbClientes
         '
+        Me.clbClientes.CheckOnClick = True
         Me.clbClientes.FormattingEnabled = True
         Me.clbClientes.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar"})
         Me.clbClientes.Location = New System.Drawing.Point(485, 175)
@@ -238,6 +244,7 @@ Partial Class frmNPermiso
         '
         'clbVentas
         '
+        Me.clbVentas.CheckOnClick = True
         Me.clbVentas.FormattingEnabled = True
         Me.clbVentas.Items.AddRange(New Object() {"Hacer Ventas", "Eliminar facturas de ventas"})
         Me.clbVentas.Location = New System.Drawing.Point(485, 245)
@@ -247,6 +254,7 @@ Partial Class frmNPermiso
         '
         'clbCliente
         '
+        Me.clbCliente.CheckOnClick = True
         Me.clbCliente.FormattingEnabled = True
         Me.clbCliente.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar", "Eliminar"})
         Me.clbCliente.Location = New System.Drawing.Point(485, 316)
@@ -256,6 +264,7 @@ Partial Class frmNPermiso
         '
         'clbReportes
         '
+        Me.clbReportes.CheckOnClick = True
         Me.clbReportes.FormattingEnabled = True
         Me.clbReportes.Items.AddRange(New Object() {"Corte de caja", "Listar facturas de ventas eliminadas", "Devoluciones por proveedor", "Historial de costos", "Historial de ventas del mes", "Historial del compras del mes", "Crédito por proveedor", "Crédito por mes"})
         Me.clbReportes.Location = New System.Drawing.Point(485, 393)
@@ -265,6 +274,7 @@ Partial Class frmNPermiso
         '
         'clbTalonario
         '
+        Me.clbTalonario.CheckOnClick = True
         Me.clbTalonario.FormattingEnabled = True
         Me.clbTalonario.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar", "Eliminar"})
         Me.clbTalonario.Location = New System.Drawing.Point(485, 467)

@@ -299,6 +299,12 @@
   <ItemGroup>
     <Folder Include="Reportes\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\negocios\negocios.csproj">
+      <Project>{1AD4564B-DA43-413B-8225-BB133BF3E2FB}</Project>
+      <Name>negocios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
