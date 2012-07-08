@@ -182,6 +182,12 @@
     <Compile Include="frmReporteCorteCaja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReporteDevolucionesProveedor.Designer.vb">
+      <DependentUpon>frmReporteDevolucionesProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteDevolucionesProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmReporteFacturasEliminadas.Designer.vb">
       <DependentUpon>frmReporteFacturasEliminadas.vb</DependentUpon>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteCorteCaja.resx">
       <DependentUpon>frmReporteCorteCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteDevolucionesProveedor.resx">
+      <DependentUpon>frmReporteDevolucionesProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteFacturasEliminadas.resx">
       <DependentUpon>frmReporteFacturasEliminadas.vb</DependentUpon>

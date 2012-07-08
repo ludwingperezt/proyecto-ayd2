@@ -53,4 +53,8 @@
     Private Sub rptvReporte_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rptvReporte.MouseHover
         slblDescripcion.Text = "Reporte de cierre de caja"
     End Sub
+
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+        Me.Dispose()
+    End Sub
 End Class

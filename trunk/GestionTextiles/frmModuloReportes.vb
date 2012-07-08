@@ -8,4 +8,32 @@
     Private Sub btnReporteFacturasasEliminadas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporteFacturasasEliminadas.Click
         frmReporteFacturasEliminadas.Show()
     End Sub
+
+    Private Sub btnReporteDevolucionesProveedor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporteDevolucionesProveedor.Click
+        frmReporteDevolucionesProveedor.Show()
+    End Sub
+
+    Private Sub btnCorte_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCorte.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnReporteFacturasasEliminadas_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporteFacturasasEliminadas.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnReporteDevolucionesProveedor_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporteDevolucionesProveedor.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnCorte_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCorte.MouseHover
+        slblDescripcion.Text = "Muestra el Reporte de Cierre de caja "
+    End Sub
+
+    Private Sub btnReporteFacturasasEliminadas_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporteFacturasasEliminadas.MouseHover
+        slblDescripcion.Text = "Muestra el Reporte de facturas eliminadas por fecha y/o cliente"
+    End Sub
+
+    Private Sub btnReporteDevolucionesProveedor_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporteDevolucionesProveedor.MouseHover
+        slblDescripcion.Text = "Muestra el Reporte de devoluciónes realizadas por los proveedores"
+    End Sub
 End Class
