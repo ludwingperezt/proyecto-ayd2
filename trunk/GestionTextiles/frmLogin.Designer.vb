@@ -29,11 +29,11 @@ Partial Class frmLogin
         Me.lblContraseña = New System.Windows.Forms.Label()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.txtcontraseña = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.picbLogin = New System.Windows.Forms.PictureBox()
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picbLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -90,15 +90,15 @@ Partial Class frmLogin
         Me.txtcontraseña.Size = New System.Drawing.Size(173, 20)
         Me.txtcontraseña.TabIndex = 33
         '
-        'PictureBox1
+        'picbLogin
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-62, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(179, 240)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 34
-        Me.PictureBox1.TabStop = False
+        Me.picbLogin.Image = CType(resources.GetObject("picbLogin.Image"), System.Drawing.Image)
+        Me.picbLogin.Location = New System.Drawing.Point(-62, 2)
+        Me.picbLogin.Name = "picbLogin"
+        Me.picbLogin.Size = New System.Drawing.Size(179, 240)
+        Me.picbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picbLogin.TabIndex = 34
+        Me.picbLogin.TabStop = False
         '
         'stsBarra
         '
@@ -129,7 +129,7 @@ Partial Class frmLogin
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(318, 219)
         Me.Controls.Add(Me.stsBarra)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.picbLogin)
         Me.Controls.Add(Me.txtcontraseña)
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.lblContraseña)
@@ -139,7 +139,7 @@ Partial Class frmLogin
         Me.DoubleBuffered = True
         Me.Name = "frmLogin"
         Me.Text = "frmLogin"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picbLogin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)
@@ -152,7 +152,7 @@ Partial Class frmLogin
     Friend WithEvents lblContraseña As System.Windows.Forms.Label
     Friend WithEvents txtUsuario As System.Windows.Forms.TextBox
     Friend WithEvents txtcontraseña As System.Windows.Forms.TextBox
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents picbLogin As System.Windows.Forms.PictureBox
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
