@@ -41,41 +41,41 @@ namespace negocios
         /// <summary>
         /// Grupo de funciones para modificar los valores de la clase
         /// </summary>
-        /// <param name="sNomb">String: dato a registrar en la clase</param>
+        /// <param name="lsNomb">String: dato a registrar en la clase</param>
         
-        public void setNombre (string sNomb)
+        public void setNombre (string lsNomb)
         {
-            this.nombre = sNomb;
+            this.nombre = lsNomb;
         }
 
-        public void setNit (string sNit)
+        public void setNit (string lsNit)
         {
-            this.nit = sNit;
+            this.nit = lsNit;
         }
 
-        public void setDireccion (string sDir)
+        public void setDireccion (string lsDir)
         {
-            this.direccion = sDir;
+            this.direccion = lsDir;
         }
 
-        public void setEmpresa(string sEmpresa)
+        public void setEmpresa(string lsEmpresa)
         {
-            this.empresa = sEmpresa;
+            this.empresa = lsEmpresa;
         }
 
-        public void setPropietario(string sPropietario)
+        public void setPropietario(string lsPropietario)
         {
-            this.propietario = sPropietario;
+            this.propietario = lsPropietario;
         }
 
-        public void setTelefono (string sTel)
+        public void setTelefono (string lsTel)
         {
-            this.telefono = sTel;
+            this.telefono = lsTel;
         }
 
-        public void setCelular (string sCel)
+        public void setCelular (string lsCel)
         {
-            this.celular = sCel;
+            this.celular = lsCel;
         }
 
         /// <summary>
