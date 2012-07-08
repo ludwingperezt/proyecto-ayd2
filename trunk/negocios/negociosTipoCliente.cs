@@ -22,7 +22,7 @@ namespace negocios
         public negociosTipoCliente()
         { 
         }
-             public negociosTipoCliente(int isTipoCliente, string isNombre, string isdescripcion, float ifdescuento)
+             public negociosTipoCliente(byte isTipoCliente, string isNombre, string isdescripcion, float ifdescuento)
         {
             this.idTipoCliente = isTipoCliente;
             this.nombre = isNombre;
