@@ -59,37 +59,37 @@ namespace negocios
             this.larrbyPermisosRoles[3] = lbyPermiso;
         }
         /// <summary>
-        /// Función de acceso al permiso de creación de roles, para éste rol de acceso
+        /// Función que retorna el permiso de creación de roles, para éste rol de acceso en modo boolean
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCreacionRol()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoCreacionRol()
         {
-            return larrbyPermisosRoles[0];
+            return Convert.ToBoolean(larrbyPermisosRoles[0]);
         }
         /// <summary>
         /// Función de acceso al permiso de listado y búsqueda de roles, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoListarRoles()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoListarRoles()
         {
-            return larrbyPermisosRoles[1];
+            return Convert.ToBoolean(larrbyPermisosRoles[1]);
         }
         /// <summary>
         /// Función de acceso al permiso de modificación de roles, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoModificacionRol()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoModificacionRol()
         {
-            return larrbyPermisosRoles[2];
+            return Convert.ToBoolean(larrbyPermisosRoles[2]);
         }
         /// <summary>
         /// Función de acceso al permiso de Eliminación de roles, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoEliminacionRol()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoEliminacionRol()
         {
-            return larrbyPermisosRoles[3];
-        }        
+            return Convert.ToBoolean(larrbyPermisosRoles[3]);
+        } 
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de empleados
         /// <summary>
@@ -127,34 +127,34 @@ namespace negocios
         /// <summary>
         /// Función de acceso al permiso de creación de empleados, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCreacionEmpleados()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoCreacionEmpleados()
         {
-            return larrbyPermisosEmpleados[0];
+            return Convert.ToBoolean(larrbyPermisosEmpleados[0]);
         }
         /// <summary>
         /// Función de acceso al permiso de listado y búsqueda de empleados, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoListarEmpleados()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoListarEmpleados()
         {
-            return larrbyPermisosEmpleados[1];
+            return Convert.ToBoolean(larrbyPermisosEmpleados[1]);
         }
         /// <summary>
         /// Función de acceso al permiso de modificación de datos de empleados, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoModificacionEmpleados()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoModificacionEmpleados()
         {
-            return larrbyPermisosEmpleados[2];
+            return Convert.ToBoolean(larrbyPermisosEmpleados[2]);
         }
         /// <summary>
         /// Función de acceso al permiso de Eliminación de empleados, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoEliminacionEmpleados()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoEliminacionEmpleados()
         {
-            return larrbyPermisosEmpleados[3];
+            return Convert.ToBoolean(larrbyPermisosEmpleados[3]);
         }
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de proveedores
@@ -202,42 +202,42 @@ namespace negocios
         /// <summary>
         /// Función de acceso al permiso de creación de proveedores, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCreacionProveedores()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoCreacionProveedores()
         {
-            return larrbyPermisosProveedores[0];
+            return Convert.ToBoolean(larrbyPermisosProveedores[0]);
         }
         /// <summary>
         /// Función de acceso al permiso de listado de proveedores, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoListarProveedores()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoListarProveedores()
         {
-            return larrbyPermisosProveedores[1];
+            return Convert.ToBoolean(larrbyPermisosProveedores[1]);
         }
         /// <summary>
         /// Función de acceso al permiso de búsqueda de proveedores, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoBuscarProveedores()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoBuscarProveedores()
         {
-            return larrbyPermisosProveedores[4];
+            return Convert.ToBoolean(larrbyPermisosProveedores[4]);
         }
         /// <summary>
         /// Función de acceso al permiso de modificación de datos de proveedores, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoModificacionProveedores()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoModificacionProveedores()
         {
-            return larrbyPermisosProveedores[2];
+            return Convert.ToBoolean(larrbyPermisosProveedores[2]);
         }
         /// <summary>
         /// Función de acceso al permiso de Eliminación de proveedores, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoEliminacionProveedores()
+        /// <returns>bool: True si tiene permiso, False si no tiene permiso</returns>
+        public bool getPermisoEliminacionProveedores()
         {
-            return larrbyPermisosProveedores[3];
+            return Convert.ToBoolean(larrbyPermisosProveedores[3]);
         }
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de productos
@@ -300,58 +300,58 @@ namespace negocios
         /// <summary>
         /// Función de acceso al permiso de creación de productos, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCreacionProductos()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoCreacionProductos()
         {
-            return larrbyPermisosProductos[0];
+            return Convert.ToBoolean(larrbyPermisosProductos[0]);
         }
         /// <summary>
         /// Función de acceso al permiso de listado de productos, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoListarProductos()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoListarProductos()
         {
-            return larrbyPermisosProductos[1];
+            return Convert.ToBoolean(larrbyPermisosProductos[1]);
         }
         /// <summary>
         /// Función de acceso al permiso de modificación de datos de productos, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoModificacionProductos()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoModificacionProductos()
         {
-            return larrbyPermisosProductos[2];
+            return Convert.ToBoolean(larrbyPermisosProductos[2]);
         }
         /// <summary>
         /// Función de acceso al permiso de Eliminación de productos, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoEliminacionProductos()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoEliminacionProductos()
         {
-            return larrbyPermisosProductos[3];
+            return Convert.ToBoolean(larrbyPermisosProductos[3]);
         }
         /// <summary>
         /// Función de acceso al permiso de búsqueda de productos, para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoBusquedaProductos()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoBusquedaProductos()
         {
-            return larrbyPermisosProductos[4];
+            return Convert.ToBoolean(larrbyPermisosProductos[4]);
         }
         /// <summary>
         /// Función de acceso al permiso de carga de productos (aumentar existencias), para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCargarProductos()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoCargarProductos()
         {
-            return larrbyPermisosProductos[5];
+            return Convert.ToBoolean(larrbyPermisosProductos[5]);
         }
         /// <summary>
         /// Función de acceso al permiso de descarga de productos (disminuir existencias), para éste rol de acceso
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoDescargarProductos()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoDescargarProductos()
         {
-            return larrbyPermisosProductos[6];
+            return Convert.ToBoolean(larrbyPermisosProductos[6]);
         }
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de compras
@@ -375,18 +375,18 @@ namespace negocios
         /// <summary>
         /// Función de acceso al permiso de ingresar al módulo de compras en la parte de cargado de nuevas facturas de compra
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCompra()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoCompra()
         {
-            return larrbyPermisosCompras[0];
+            return Convert.ToBoolean(larrbyPermisosCompras[0]);
         }
         /// <summary>
         /// Función de acceso al permiso para hacer anotaciones de crédito a favor y devolver productos a proveedores
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoDevolverProductosProveedores()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoDevolverProductosProveedores()
         {
-            return larrbyPermisosCompras[1];
+            return Convert.ToBoolean(larrbyPermisosCompras[1]);
         }        
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de clientes
@@ -417,26 +417,26 @@ namespace negocios
         /// <summary>
         /// Función de acceso al permiso de creación de clientes
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCreacionClientes()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoCreacionClientes()
         {
-            return larrbyPermisosClientes[0];
+            return Convert.ToBoolean(larrbyPermisosClientes[0]);
         }
         /// <summary>
         /// Función de acceso al permiso de listado y búsqueda de clientes
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoListarClientes()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoListarClientes()
         {
-            return larrbyPermisosClientes[1];
+            return Convert.ToBoolean(larrbyPermisosClientes[1]);
         }
         /// <summary>
         /// Función de acceso al permiso de modificación de clientes
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoModificacionClientes()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoModificacionClientes()
         {
-            return larrbyPermisosClientes[2];
+            return Convert.ToBoolean(larrbyPermisosClientes[2]);
         }
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de ventas
@@ -460,18 +460,18 @@ namespace negocios
         /// <summary>
         /// Función de acceso al permiso de ingresar al módulo de ventas
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoVentas()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoVentas()
         {
-            return larrbyPermisosVentas[0];
+            return Convert.ToBoolean(larrbyPermisosVentas[0]);
         }
         /// <summary>
         /// Función de acceso al permiso específico para hacer modificaciones a facturas de venta (eliminar facturas y volver a crearlas)
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoEliminarFacturasVentas()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoEliminarFacturasVentas()
         {
-            return larrbyPermisosVentas[1];
+            return Convert.ToBoolean(larrbyPermisosVentas[1]);
         }
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de reportes
@@ -487,7 +487,7 @@ namespace negocios
         /// Función que asigna un permiso específico para hacer listas de facturas de venta eliminadas
         /// </summary>
         /// <param name="lbyPermiso">byte: un numero que indica el nivel de permiso asignado</param>
-        public void setPermisoListarFacturasVentaEliminadas(byte lbyPermiso)
+        public void setPermisoReporteFacturasVentaEliminadas(byte lbyPermiso)
         {
             this.larrbyPermisosReportes[1] = lbyPermiso;
         }
@@ -495,7 +495,7 @@ namespace negocios
         /// Función que asigna un permiso específico para listar devoluciones al proveedor
         /// </summary>
         /// <param name="lbyPermiso">byte: un numero que indica el nivel de permiso asignado</param>
-        public void setPermisoListarDevolucionesProveedor(byte lbyPermiso)
+        public void setPermisoReporteDevolucionesProveedor(byte lbyPermiso)
         {
             this.larrbyPermisosReportes[2] = lbyPermiso;
         }
@@ -542,66 +542,66 @@ namespace negocios
         /// <summary>
         /// Función de acceso al permiso para hacer cortes de caja
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCortesCaja()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoCortesCaja()
         {
-            return larrbyPermisosReportes[0];
+            return Convert.ToBoolean(larrbyPermisosReportes[0]);
         }
         /// <summary>
         /// Función de acceso al permiso para hacer listas de facturas de venta eliminadas
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoListarFacturasVentaEliminadas()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoReporteFacturasVentaEliminadas()
         {
-            return larrbyPermisosReportes[1];
+            return Convert.ToBoolean(larrbyPermisosReportes[1]);
         }
         /// <summary>
         /// Función de acceso al permiso para hacer listas de devoluciones de producto al proveedor
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoListarDevolucionesProveedor()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoReporteDevolucionesProveedor()
         {
-            return larrbyPermisosReportes[2];
+            return Convert.ToBoolean(larrbyPermisosReportes[2]);
         }
         /// <summary>
         /// Función de acceso al permiso para ver el historial de costos
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoHistorialCostos()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoHistorialCostos()
         {
-            return larrbyPermisosReportes[3];
+            return Convert.ToBoolean(larrbyPermisosReportes[3]);
         }
         /// <summary>
         /// Función de acceso al permiso para ver el historial de ventas del mes
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoHistorialVentasMes()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoHistorialVentasMes()
         {
-            return larrbyPermisosReportes[4];
+            return Convert.ToBoolean(larrbyPermisosReportes[4]);
         }
         /// <summary>
         /// Función de acceso al permiso para ver el historial de compras del mes
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoHistorialComprasMes()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoHistorialComprasMes()
         {
-            return larrbyPermisosReportes[5];
+            return Convert.ToBoolean(larrbyPermisosReportes[5]);
         }
         /// <summary>
         /// Función de acceso al permiso para ver el historial de crédito por proveedor
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoHistorialCreditoPorProveedor()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoHistorialCreditoPorProveedor()
         {
-            return larrbyPermisosReportes[6];
+            return Convert.ToBoolean(larrbyPermisosReportes[6]);
         }
         /// <summary>
         /// Función de acceso al permiso para ver el historial de crédito por mes
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoHistorialCreditoMes()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoHistorialCreditoMes()
         {
-            return larrbyPermisosReportes[7];
+            return Convert.ToBoolean(larrbyPermisosReportes[7]);
         }
         #endregion
         #region métodos de acceso y modificación de series de facturas de venta
@@ -640,34 +640,34 @@ namespace negocios
         /// <summary>
         /// Función de acceso al permiso de creación de series de facturas de venta
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCreacionSerieFacturaVenta()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoCreacionSerieFacturaVenta()
         {
-            return larrbyPermisosRoles[4];
+            return Convert.ToBoolean(larrbyPermisosRoles[4]);
         }
         /// <summary>
         /// Función de acceso al permiso de listado y búsqueda de series de facturas de venta
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoListarSerieFacturaVenta()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoListarSerieFacturaVenta()
         {
-            return larrbyPermisosRoles[5];
+            return Convert.ToBoolean(larrbyPermisosRoles[5]);
         }
         /// <summary>
         /// Función de acceso al permiso de modificación de series de facturas de venta
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoModificacionSerieFacturaVenta()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoModificacionSerieFacturaVenta()
         {
-            return larrbyPermisosRoles[6];
+            return Convert.ToBoolean(larrbyPermisosRoles[6]);
         }
         /// <summary>
         /// Función de acceso al permiso de Eliminación de series de facturas de venta
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoEliminacionSerieFacturaVenta()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoEliminacionSerieFacturaVenta()
         {
-            return larrbyPermisosRoles[7];
+            return Convert.ToBoolean(larrbyPermisosRoles[7]);
         }
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo tipos de clientes
@@ -706,34 +706,34 @@ namespace negocios
         /// <summary>
         /// Función de acceso al permiso de creación de tipos de cliente
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoCreacionTiposCliente()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoCreacionTiposCliente()
         {
-            return larrbyPermisosEmpleados[4];
+            return Convert.ToBoolean(larrbyPermisosEmpleados[4]);
         }
         /// <summary>
         /// Función de acceso al permiso de listado y búsqueda de tipos de cliente
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoListarTiposCliente()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoListarTiposCliente()
         {
-            return larrbyPermisosEmpleados[5];
+            return Convert.ToBoolean(larrbyPermisosEmpleados[5]);
         }
         /// <summary>
         /// Función de acceso al permiso de modificación de datos de tipos de cliente
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoModificacionTiposCliente()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoModificacionTiposCliente()
         {
-            return larrbyPermisosEmpleados[6];
+            return Convert.ToBoolean(larrbyPermisosEmpleados[6]);
         }
         /// <summary>
         /// Función de acceso al permiso de Eliminación de tipos de cliente
         /// </summary>
-        /// <returns>byte: el número que representa el permiso concedido a éste rol</returns>
-        public byte getPermisoEliminacionTiposCliente()
+        /// <returns>bool: True si tiene permiso, False si no</returns>
+        public bool getPermisoEliminacionTiposCliente()
         {
-            return larrbyPermisosEmpleados[7];
+            return Convert.ToBoolean(larrbyPermisosEmpleados[7]);
         }
         #endregion
         #region otros métodos de acceso y modificacion
