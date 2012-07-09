@@ -181,7 +181,13 @@ Public Class frmNPermiso
         lnrNuevoRol.setPermisoListarSerieFacturaVenta(Convert.ToByte(clbTalonario.GetItemChecked(2)))
         lnrNuevoRol.setPermisoEliminacionSerieFacturaVenta(Convert.ToByte(clbTalonario.GetItemChecked(3)))
 
-        Dim lsMensaje As String = lnrNuevoRol.crearRol()
-        slblDescripcion.Text = lsMensaje
+        Try
+            lnrNuevoRol.fnvdCrearRol()
+            slblDescripcion.Text = "La inserción del nuevo rol se llevó a cabo con éxito"
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+
     End Sub
 End Class
