@@ -36,4 +36,18 @@
     Private Sub btnReporteDevolucionesProveedor_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporteDevolucionesProveedor.MouseHover
         slblDescripcion.Text = "Muestra el Reporte de devoluciónes realizadas por los proveedores"
     End Sub
+
+    Private Sub btnCProveedor_Click(sender As System.Object, e As System.EventArgs) Handles btnCProveedor.Click
+        frmReportes.gbParametros1.Visible = True
+        frmReportes.gbParametros2.Visible = False
+        frmReportes.lblTitulo.Text = "Reportes de Créditos por Proveedor"
+        frmReportes.ShowDialog()
+    End Sub
+
+    Private Sub btnCMes_Click(sender As System.Object, e As System.EventArgs) Handles btnCMes.Click
+        frmReportes.gbParametros1.Visible = False
+        frmReportes.gbParametros2.Visible = True
+        frmReportes.lblTitulo.Text = "Reportes de Créditos por Mes"
+        frmReportes.ShowDialog()
+    End Sub
 End Class
