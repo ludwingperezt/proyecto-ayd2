@@ -133,10 +133,10 @@
     End Sub
 
     Private Sub BtnLogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogin.Click
-        frmLogin.Show()
+        frmLogin.ShowDialog()
     End Sub
 
     Private Sub BtnGestionTalonarios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGestionTalonarios.Click
-
+        frmModuloSeries.ShowDialog()
     End Sub
 End Class
