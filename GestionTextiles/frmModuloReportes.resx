@@ -460,7 +460,7 @@
         ////////
 </value>
   </data>
-  <data name="Button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCProveedor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk02DAAAAAAAADYAAAAoAAAAIAAAACAAAAABABgAAAAAAAAAAAARCwAAEQsAAAAAAAAAAAAA////////
         ////////////////////////////////////////////////////+/z8wL69WWBiU1habnFyi4yNqqqq
@@ -517,7 +517,7 @@
         ////////
 </value>
   </data>
-  <data name="Button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCMes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk02DAAAAAAAADYAAAAoAAAAIAAAACAAAAABABgAAAAAAAAAAAARCwAAEQsAAAAAAAAAAAAA////////
         ////////////////////////////////////////////////////+/z8wL69WWBiU1habnFyi4yNqqqq
