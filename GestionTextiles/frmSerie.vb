@@ -1,5 +1,7 @@
 ﻿Public Class frmSerie
 
+    Friend Shared actualizar As Boolean
+
     Private Sub txtSerie_Leave(sender As System.Object, e As System.EventArgs) Handles txtSerie.Leave
         '' Validar si no existe la serie indicada...
         picbValidacion.Image = imglValidacion.Images(1)
@@ -26,6 +28,11 @@
         Next
 
         If lbooBandera Then
+            If actualizar Then
+                '' si es un update...
+            Else
+                '' si es un insert...
+            End If
             ' todo es válido se procede a guardar en la BD y luego a cerrar el form!
             Me.Dispose()
         End If
