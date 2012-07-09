@@ -30,7 +30,6 @@ Partial Class frmFacturar
         Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.cmbserie = New System.Windows.Forms.ComboBox()
         Me.lblserie = New System.Windows.Forms.Label()
-        Me.lblnumero = New System.Windows.Forms.Label()
         Me.dgvdetallefactura = New System.Windows.Forms.DataGridView()
         Me.clmCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clmCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,7 +44,6 @@ Partial Class frmFacturar
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.lblnumerofac = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.lbldescuentofac = New System.Windows.Forms.Label()
         Me.btnagregar = New System.Windows.Forms.Button()
@@ -125,15 +123,6 @@ Partial Class frmFacturar
         Me.lblserie.Size = New System.Drawing.Size(34, 13)
         Me.lblserie.TabIndex = 7
         Me.lblserie.Text = "Serie:"
-        '
-        'lblnumero
-        '
-        Me.lblnumero.AutoSize = True
-        Me.lblnumero.Location = New System.Drawing.Point(269, 84)
-        Me.lblnumero.Name = "lblnumero"
-        Me.lblnumero.Size = New System.Drawing.Size(48, 13)
-        Me.lblnumero.TabIndex = 8
-        Me.lblnumero.Text = "número: "
         '
         'dgvdetallefactura
         '
@@ -246,15 +235,6 @@ Partial Class frmFacturar
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
-        'lblnumerofac
-        '
-        Me.lblnumerofac.AutoSize = True
-        Me.lblnumerofac.Location = New System.Drawing.Point(325, 84)
-        Me.lblnumerofac.Name = "lblnumerofac"
-        Me.lblnumerofac.Size = New System.Drawing.Size(39, 13)
-        Me.lblnumerofac.TabIndex = 30
-        Me.lblnumerofac.Text = "Label1"
-        '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
@@ -347,7 +327,6 @@ Partial Class frmFacturar
         Me.Controls.Add(Me.lblcodigo)
         Me.Controls.Add(Me.lbldescuentofac)
         Me.Controls.Add(Me.lbltotal)
-        Me.Controls.Add(Me.lblnumerofac)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnCancelar)
@@ -356,7 +335,6 @@ Partial Class frmFacturar
         Me.Controls.Add(Me.lbTotal)
         Me.Controls.Add(Me.gpProducto)
         Me.Controls.Add(Me.dgvdetallefactura)
-        Me.Controls.Add(Me.lblnumero)
         Me.Controls.Add(Me.lblserie)
         Me.Controls.Add(Me.cmbserie)
         Me.Controls.Add(Me.txtdireccion)
@@ -385,7 +363,6 @@ Partial Class frmFacturar
     Friend WithEvents txtdireccion As System.Windows.Forms.TextBox
     Friend WithEvents cmbserie As System.Windows.Forms.ComboBox
     Friend WithEvents lblserie As System.Windows.Forms.Label
-    Friend WithEvents lblnumero As System.Windows.Forms.Label
     Friend WithEvents dgvdetallefactura As System.Windows.Forms.DataGridView
     Friend WithEvents clmCantidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clmCodigo As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -400,7 +377,6 @@ Partial Class frmFacturar
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents lblnumerofac As System.Windows.Forms.Label
     Friend WithEvents lbltotal As System.Windows.Forms.Label
     Friend WithEvents lbldescuentofac As System.Windows.Forms.Label
     Friend WithEvents btnagregar As System.Windows.Forms.Button

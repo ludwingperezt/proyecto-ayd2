@@ -109,7 +109,7 @@ Public Class frmFacturar
         slblDescripcion.Text = "Inicia impresión de factura"
     End Sub
 
-    Private Sub lblnumerofac_MouseLeave(sender As System.Object, e As System.EventArgs) Handles lblnumerofac.MouseLeave
+    Private Sub lblnumerofac_MouseLeave(sender As System.Object, e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -129,7 +129,7 @@ Public Class frmFacturar
         slblDescripcion.Text = "Total a pagar"
     End Sub
 
-    Private Sub lblnumerofac_MouseHover(sender As System.Object, e As System.EventArgs) Handles lblnumerofac.MouseHover
+    Private Sub lblnumerofac_MouseHover(sender As System.Object, e As System.EventArgs)
         slblDescripcion.Text = "Numero de factura"
     End Sub
 

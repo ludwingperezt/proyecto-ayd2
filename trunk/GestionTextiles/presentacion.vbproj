@@ -164,6 +164,12 @@
     <Compile Include="frmModuloReportes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmModuloSeries.Designer.vb">
+      <DependentUpon>frmModuloSeries.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModuloSeries.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmNPermiso.Designer.vb">
       <DependentUpon>frmNPermiso.vb</DependentUpon>
     </Compile>
@@ -210,6 +216,12 @@
       <DependentUpon>frmRoles.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRoles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSerie.Designer.vb">
+      <DependentUpon>frmSerie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSerie.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmtipocliente.Designer.vb">
@@ -281,6 +293,9 @@
     <EmbeddedResource Include="frmModuloReportes.resx">
       <DependentUpon>frmModuloReportes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmModuloSeries.resx">
+      <DependentUpon>frmModuloSeries.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNPermiso.resx">
       <DependentUpon>frmNPermiso.vb</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoles.resx">
       <DependentUpon>frmRoles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSerie.resx">
+      <DependentUpon>frmSerie.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmtipocliente.resx">
       <DependentUpon>frmtipocliente.vb</DependentUpon>
@@ -350,6 +368,9 @@
       <Project>{1AD4564B-DA43-413B-8225-BB133BF3E2FB}</Project>
       <Name>negocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numberhash1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

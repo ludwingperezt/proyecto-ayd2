@@ -18,6 +18,7 @@
         ''Proveedores a = New Proveedores();
 
         If lbooBandera Then
+            ' todo es válido se procede a guardar en la BD y luego a cerrar el form!
             Me.Dispose()
         End If
     End Sub
