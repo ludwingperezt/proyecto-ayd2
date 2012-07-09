@@ -134,6 +134,12 @@
     <Compile Include="frmListarProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmListarSeries.Designer.vb">
+      <DependentUpon>frmListarSeries.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarSeries.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListarProveedores.resx">
       <DependentUpon>frmListarProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarSeries.resx">
+      <DependentUpon>frmListarSeries.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

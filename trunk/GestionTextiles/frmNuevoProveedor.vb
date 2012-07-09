@@ -1,5 +1,7 @@
 ﻿Public Class frmNuevoProveedor
 
+    Friend Shared actualizar As Boolean
+
     Private Sub btnAceptar_Click(sender As System.Object, e As System.EventArgs) Handles btnAceptar.Click
         Dim lbooBandera As Boolean = True
 
@@ -18,6 +20,11 @@
         ''Proveedores a = New Proveedores();
 
         If lbooBandera Then
+            If actualizar Then
+                '' si es un update...
+            Else
+                '' si es un insert...
+            End If
             ' todo es válido se procede a guardar en la BD y luego a cerrar el form!
             Me.Dispose()
         End If
