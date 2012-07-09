@@ -1,7 +1,5 @@
 ﻿Public Class frmModuloEmpleados
 
-    
-
     Private Sub btnbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnbuscar.Click
         If txtbusqueda.Text = "" Then
             MessageBox.Show("Ingrese la busqueda deseada ")

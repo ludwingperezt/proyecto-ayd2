@@ -104,6 +104,18 @@
     <Compile Include="frmCompras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmDarDeBajaEmpleado.Designer.vb">
+      <DependentUpon>frmDarDeBajaEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDarDeBajaEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDarDeBajaProductos.Designer.vb">
+      <DependentUpon>frmDarDeBajaProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDarDeBajaProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmEmpleados.Designer.vb">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </Compile>
@@ -120,6 +132,12 @@
       <DependentUpon>frmingresoclientes.vb</DependentUpon>
     </Compile>
     <Compile Include="frmingresoclientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoProductos.Designer.vb">
+      <DependentUpon>frmIngresoProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoProductos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmingresotipocliente.Designer.vb">
@@ -152,10 +170,34 @@
     <Compile Include="frmModificarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmModificarEmpleado.Designer.vb">
+      <DependentUpon>frmModificarEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarProductos.Designer.vb">
+      <DependentUpon>frmModificarProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmModificarTipoCliente.Designer.vb">
       <DependentUpon>frmModificarTipoCliente.vb</DependentUpon>
     </Compile>
     <Compile Include="frmModificarTipoCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModuloEmpleados.Designer.vb">
+      <DependentUpon>frmModuloEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModuloEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModuloProductos.Designer.vb">
+      <DependentUpon>frmModuloProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmModuloProductos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmModuloProveedores.Designer.vb">
@@ -269,6 +311,12 @@
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDarDeBajaEmpleado.resx">
+      <DependentUpon>frmDarDeBajaEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDarDeBajaProductos.resx">
+      <DependentUpon>frmDarDeBajaProductos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmingresoclientes.resx">
       <DependentUpon>frmingresoclientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoProductos.resx">
+      <DependentUpon>frmIngresoProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmingresotipocliente.resx">
       <DependentUpon>frmingresotipocliente.vb</DependentUpon>
@@ -293,8 +344,20 @@
     <EmbeddedResource Include="frmModificarCliente.resx">
       <DependentUpon>frmModificarCliente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarEmpleado.resx">
+      <DependentUpon>frmModificarEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarProductos.resx">
+      <DependentUpon>frmModificarProductos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmModificarTipoCliente.resx">
       <DependentUpon>frmModificarTipoCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModuloEmpleados.resx">
+      <DependentUpon>frmModuloEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModuloProductos.resx">
+      <DependentUpon>frmModuloProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModuloProveedores.resx">
       <DependentUpon>frmModuloProveedores.vb</DependentUpon>
