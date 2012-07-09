@@ -34,12 +34,8 @@ Partial Class frmReporteDevolucionesProveedor
         Me.lblInicio = New System.Windows.Forms.Label()
         Me.dtpFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
-        Me.rptvReporte = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.stsBarra = New System.Windows.Forms.StatusStrip()
-        Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.crvReporte = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.gbParametros1.SuspendLayout()
-        Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -163,50 +159,31 @@ Partial Class frmReporteDevolucionesProveedor
         Me.dtpInicio.Size = New System.Drawing.Size(197, 20)
         Me.dtpInicio.TabIndex = 0
         '
-        'rptvReporte
+        'crvReporte
         '
-        Me.rptvReporte.Location = New System.Drawing.Point(2, 179)
-        Me.rptvReporte.Name = "rptvReporte"
-        Me.rptvReporte.Size = New System.Drawing.Size(835, 432)
-        Me.rptvReporte.TabIndex = 17
-        '
-        'stsBarra
-        '
-        Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 590)
-        Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(837, 22)
-        Me.stsBarra.TabIndex = 61
-        Me.stsBarra.Text = "StatusStrip1"
-        '
-        'slblDescripcion
-        '
-        Me.slblDescripcion.AutoToolTip = True
-        Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
-        Me.slblDescripcion.Text = "Descripción"
-        '
-        'slblFecha
-        '
-        Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
-        Me.slblFecha.Text = "FECHA Y HORA"
+        Me.crvReporte.ActiveViewIndex = -1
+        Me.crvReporte.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.crvReporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
+        Me.crvReporte.Location = New System.Drawing.Point(2, 166)
+        Me.crvReporte.Name = "crvReporte"
+        Me.crvReporte.Size = New System.Drawing.Size(835, 445)
+        Me.crvReporte.TabIndex = 20
         '
         'frmReporteDevolucionesProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(837, 612)
-        Me.Controls.Add(Me.stsBarra)
+        Me.Controls.Add(Me.crvReporte)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.gbParametros1)
-        Me.Controls.Add(Me.rptvReporte)
         Me.Name = "frmReporteDevolucionesProveedor"
         Me.Text = "Reporte Devoluciónes Proveedor"
         Me.gbParametros1.ResumeLayout(False)
         Me.gbParametros1.PerformLayout()
-        Me.stsBarra.ResumeLayout(False)
-        Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -223,8 +200,5 @@ Partial Class frmReporteDevolucionesProveedor
     Friend WithEvents lblInicio As System.Windows.Forms.Label
     Friend WithEvents dtpFin As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpInicio As System.Windows.Forms.DateTimePicker
-    Friend WithEvents rptvReporte As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
-    Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents crvReporte As CrystalDecisions.Windows.Forms.CrystalReportViewer
 End Class
