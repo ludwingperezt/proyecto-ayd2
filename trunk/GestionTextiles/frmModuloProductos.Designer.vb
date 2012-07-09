@@ -24,9 +24,9 @@ Partial Class frmModuloProductos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmModuloProductos))
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.btnEliminarEmpleados = New System.Windows.Forms.Button()
-        Me.btnModificarEmpleado = New System.Windows.Forms.Button()
-        Me.btnIngresarEmpleado = New System.Windows.Forms.Button()
+        Me.btnEliminarProducto = New System.Windows.Forms.Button()
+        Me.btnModificarProducto = New System.Windows.Forms.Button()
+        Me.btnIngresarProducto = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
@@ -59,41 +59,41 @@ Partial Class frmModuloProductos
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'btnEliminarEmpleados
+        'btnEliminarProducto
         '
-        Me.btnEliminarEmpleados.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnEliminarEmpleados.Image = CType(resources.GetObject("btnEliminarEmpleados.Image"), System.Drawing.Image)
-        Me.btnEliminarEmpleados.Location = New System.Drawing.Point(369, 303)
-        Me.btnEliminarEmpleados.Name = "btnEliminarEmpleados"
-        Me.btnEliminarEmpleados.Size = New System.Drawing.Size(107, 71)
-        Me.btnEliminarEmpleados.TabIndex = 60
-        Me.btnEliminarEmpleados.Text = "&Eliminar Producto"
-        Me.btnEliminarEmpleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnEliminarEmpleados.UseVisualStyleBackColor = False
+        Me.btnEliminarProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnEliminarProducto.Image = CType(resources.GetObject("btnEliminarProducto.Image"), System.Drawing.Image)
+        Me.btnEliminarProducto.Location = New System.Drawing.Point(369, 303)
+        Me.btnEliminarProducto.Name = "btnEliminarProducto"
+        Me.btnEliminarProducto.Size = New System.Drawing.Size(107, 71)
+        Me.btnEliminarProducto.TabIndex = 60
+        Me.btnEliminarProducto.Text = "&Eliminar Producto"
+        Me.btnEliminarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnEliminarProducto.UseVisualStyleBackColor = False
         '
-        'btnModificarEmpleado
+        'btnModificarProducto
         '
-        Me.btnModificarEmpleado.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnModificarEmpleado.Image = CType(resources.GetObject("btnModificarEmpleado.Image"), System.Drawing.Image)
-        Me.btnModificarEmpleado.Location = New System.Drawing.Point(245, 303)
-        Me.btnModificarEmpleado.Name = "btnModificarEmpleado"
-        Me.btnModificarEmpleado.Size = New System.Drawing.Size(108, 72)
-        Me.btnModificarEmpleado.TabIndex = 59
-        Me.btnModificarEmpleado.Text = "&Modificar Producto"
-        Me.btnModificarEmpleado.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnModificarEmpleado.UseVisualStyleBackColor = False
+        Me.btnModificarProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnModificarProducto.Image = CType(resources.GetObject("btnModificarProducto.Image"), System.Drawing.Image)
+        Me.btnModificarProducto.Location = New System.Drawing.Point(246, 303)
+        Me.btnModificarProducto.Name = "btnModificarProducto"
+        Me.btnModificarProducto.Size = New System.Drawing.Size(108, 72)
+        Me.btnModificarProducto.TabIndex = 59
+        Me.btnModificarProducto.Text = "&Modificar Producto"
+        Me.btnModificarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnModificarProducto.UseVisualStyleBackColor = False
         '
-        'btnIngresarEmpleado
+        'btnIngresarProducto
         '
-        Me.btnIngresarEmpleado.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnIngresarEmpleado.Image = CType(resources.GetObject("btnIngresarEmpleado.Image"), System.Drawing.Image)
-        Me.btnIngresarEmpleado.Location = New System.Drawing.Point(116, 303)
-        Me.btnIngresarEmpleado.Name = "btnIngresarEmpleado"
-        Me.btnIngresarEmpleado.Size = New System.Drawing.Size(106, 72)
-        Me.btnIngresarEmpleado.TabIndex = 58
-        Me.btnIngresarEmpleado.Text = "&Ingresar Producto"
-        Me.btnIngresarEmpleado.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnIngresarEmpleado.UseVisualStyleBackColor = False
+        Me.btnIngresarProducto.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnIngresarProducto.Image = CType(resources.GetObject("btnIngresarProducto.Image"), System.Drawing.Image)
+        Me.btnIngresarProducto.Location = New System.Drawing.Point(116, 303)
+        Me.btnIngresarProducto.Name = "btnIngresarProducto"
+        Me.btnIngresarProducto.Size = New System.Drawing.Size(106, 72)
+        Me.btnIngresarProducto.TabIndex = 58
+        Me.btnIngresarProducto.Text = "&Ingresar Producto"
+        Me.btnIngresarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnIngresarProducto.UseVisualStyleBackColor = False
         '
         'lblTitulo
         '
@@ -215,9 +215,9 @@ Partial Class frmModuloProductos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(641, 478)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.btnEliminarEmpleados)
-        Me.Controls.Add(Me.btnModificarEmpleado)
-        Me.Controls.Add(Me.btnIngresarEmpleado)
+        Me.Controls.Add(Me.btnEliminarProducto)
+        Me.Controls.Add(Me.btnModificarProducto)
+        Me.Controls.Add(Me.btnIngresarProducto)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.btnbuscar)
@@ -235,9 +235,9 @@ Partial Class frmModuloProductos
 
     End Sub
     Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents btnEliminarEmpleados As System.Windows.Forms.Button
-    Friend WithEvents btnModificarEmpleado As System.Windows.Forms.Button
-    Friend WithEvents btnIngresarEmpleado As System.Windows.Forms.Button
+    Friend WithEvents btnEliminarProducto As System.Windows.Forms.Button
+    Friend WithEvents btnModificarProducto As System.Windows.Forms.Button
+    Friend WithEvents btnIngresarProducto As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
