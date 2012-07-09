@@ -7,7 +7,7 @@ using System.Data;
 namespace negocios
 {  
 
-    class negociosProveedores
+    public class negociosProveedores
     {
         private int id;
         private string nombre;
