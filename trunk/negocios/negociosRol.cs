@@ -821,6 +821,14 @@ namespace negocios
             }
         }
         /// <summary>
+        /// Función para insertar un nuevo rol de acceso y permisos de la aplicación, en la base de datos.
+        /// Los datos a ingresar son los que el objeto actual contiene.
+        /// </summary>
+        public void fnvdCrearRol()
+        {            
+               negociosAdaptadores.gAdaptadorDeConsultas.insertarRol(this.lsNombre, this.larrbyPermisosRoles, this.larrbyPermisosEmpleados, this.larrbyPermisosProveedores, this.larrbyPermisosProductos, this.larrbyPermisosCompras, this.larrbyPermisosClientes, this.larrbyPermisosVentas, this.larrbyPermisosReportes, (byte)this.liNivelAcceso);               
+        }
+        /// <summary>
         /// Función de modificación del rol de acceso y permisos de la aplicación.
         /// Los datos que son enviados para reemplazo son los que actualmente están almacenados en éste objeto.
         /// </summary>
@@ -838,6 +846,14 @@ namespace negocios
             }
         }
         /// <summary>
+        /// Función de modificación del rol de acceso y permisos de la aplicación.
+        /// Los datos que son enviados para reemplazo son los que actualmente están almacenados en éste objeto.
+        /// </summary>
+        public void fnvdModificarRol()
+        {            
+            negociosAdaptadores.gAdaptadorDeConsultas.modificarRol((byte)this.liIdRol, this.lsNombre, this.larrbyPermisosRoles, this.larrbyPermisosEmpleados, this.larrbyPermisosProveedores, this.larrbyPermisosProductos, this.larrbyPermisosCompras, this.larrbyPermisosClientes, this.larrbyPermisosVentas, this.larrbyPermisosReportes, (byte)this.liNivelAcceso);
+        }
+        /// <summary>
         /// Función para eliminar (desactivar) el rol que representa éste objeto, de la base de datos.
         /// </summary>
         /// <returns>string: mensaje de confirmación o error de la operación</returns>
@@ -852,6 +868,13 @@ namespace negocios
             {
                 return ex.Message;
             }
+        }
+        /// <summary>
+        /// Función para eliminar (desactivar) el rol que representa éste objeto, de la base de datos.
+        /// </summary>
+        public void fnvdEliminarRol()
+        {            
+            negociosAdaptadores.gAdaptadorDeConsultas.eliminarRol((byte)this.liIdRol);
         }
         /// <summary>
         /// Función para listar todos los roles activos dentro de la base de datos
