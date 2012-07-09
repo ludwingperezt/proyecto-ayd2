@@ -39,7 +39,7 @@ Partial Class frmModuloEmpleados
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnEliminarEmpleados = New System.Windows.Forms.Button()
         Me.btnModificarEmpleado = New System.Windows.Forms.Button()
         Me.btnIngresarEmpleado = New System.Windows.Forms.Button()
@@ -161,17 +161,17 @@ Partial Class frmModuloEmpleados
         Me.lblTitulo.Text = "Módulo Empleados"
         Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Button1
+        'btnSalir
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(126, 391)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(350, 64)
-        Me.Button1.TabIndex = 50
-        Me.Button1.Text = "&Salir"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.Location = New System.Drawing.Point(126, 391)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(350, 64)
+        Me.btnSalir.TabIndex = 50
+        Me.btnSalir.Text = "&Salir"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSalir.UseVisualStyleBackColor = False
         '
         'btnEliminarEmpleados
         '
@@ -214,7 +214,7 @@ Partial Class frmModuloEmpleados
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(619, 494)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnEliminarEmpleados)
         Me.Controls.Add(Me.btnModificarEmpleado)
         Me.Controls.Add(Me.btnIngresarEmpleado)
@@ -250,7 +250,7 @@ Partial Class frmModuloEmpleados
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents btnEliminarEmpleados As System.Windows.Forms.Button
     Friend WithEvents btnModificarEmpleado As System.Windows.Forms.Button
     Friend WithEvents btnIngresarEmpleado As System.Windows.Forms.Button
