@@ -64,4 +64,16 @@
 
         End If
     End Sub
+
+    Private Sub btnIngresarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIngresarProducto.Click
+        frmIngresoProductos.ShowDialog(Me)
+    End Sub
+
+    Private Sub btnModificarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarProducto.Click
+        frmModificarProductos.ShowDialog(Me)
+    End Sub
+
+    Private Sub btnEliminarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarProducto.Click
+        frmDarDeBajaProductos.ShowDialog(Me)
+    End Sub
 End Class

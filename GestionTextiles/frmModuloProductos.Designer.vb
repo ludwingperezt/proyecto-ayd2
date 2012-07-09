@@ -23,10 +23,6 @@ Partial Class frmModuloProductos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmModuloProductos))
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.btnEliminarProducto = New System.Windows.Forms.Button()
-        Me.btnModificarProducto = New System.Windows.Forms.Button()
-        Me.btnIngresarProducto = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
@@ -43,57 +39,13 @@ Partial Class frmModuloProductos
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnEliminarProducto = New System.Windows.Forms.Button()
+        Me.btnModificarProducto = New System.Windows.Forms.Button()
+        Me.btnIngresarProducto = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btnSalir
-        '
-        Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(126, 381)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(350, 64)
-        Me.btnSalir.TabIndex = 61
-        Me.btnSalir.Text = "&Salir"
-        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'btnEliminarProducto
-        '
-        Me.btnEliminarProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnEliminarProducto.Image = CType(resources.GetObject("btnEliminarProducto.Image"), System.Drawing.Image)
-        Me.btnEliminarProducto.Location = New System.Drawing.Point(369, 303)
-        Me.btnEliminarProducto.Name = "btnEliminarProducto"
-        Me.btnEliminarProducto.Size = New System.Drawing.Size(107, 71)
-        Me.btnEliminarProducto.TabIndex = 60
-        Me.btnEliminarProducto.Text = "&Eliminar Producto"
-        Me.btnEliminarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnEliminarProducto.UseVisualStyleBackColor = False
-        '
-        'btnModificarProducto
-        '
-        Me.btnModificarProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnModificarProducto.Image = CType(resources.GetObject("btnModificarProducto.Image"), System.Drawing.Image)
-        Me.btnModificarProducto.Location = New System.Drawing.Point(246, 303)
-        Me.btnModificarProducto.Name = "btnModificarProducto"
-        Me.btnModificarProducto.Size = New System.Drawing.Size(108, 72)
-        Me.btnModificarProducto.TabIndex = 59
-        Me.btnModificarProducto.Text = "&Modificar Producto"
-        Me.btnModificarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnModificarProducto.UseVisualStyleBackColor = False
-        '
-        'btnIngresarProducto
-        '
-        Me.btnIngresarProducto.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnIngresarProducto.Image = CType(resources.GetObject("btnIngresarProducto.Image"), System.Drawing.Image)
-        Me.btnIngresarProducto.Location = New System.Drawing.Point(116, 303)
-        Me.btnIngresarProducto.Name = "btnIngresarProducto"
-        Me.btnIngresarProducto.Size = New System.Drawing.Size(106, 72)
-        Me.btnIngresarProducto.TabIndex = 58
-        Me.btnIngresarProducto.Text = "&Ingresar Producto"
-        Me.btnIngresarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnIngresarProducto.UseVisualStyleBackColor = False
         '
         'lblTitulo
         '
@@ -208,6 +160,54 @@ Partial Class frmModuloProductos
         '
         Me.Column7.HeaderText = "Sueldo"
         Me.Column7.Name = "Column7"
+        '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.Location = New System.Drawing.Point(126, 381)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(350, 64)
+        Me.btnSalir.TabIndex = 61
+        Me.btnSalir.Text = "&Salir"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'btnEliminarProducto
+        '
+        Me.btnEliminarProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnEliminarProducto.Image = CType(resources.GetObject("btnEliminarProducto.Image"), System.Drawing.Image)
+        Me.btnEliminarProducto.Location = New System.Drawing.Point(369, 303)
+        Me.btnEliminarProducto.Name = "btnEliminarProducto"
+        Me.btnEliminarProducto.Size = New System.Drawing.Size(107, 71)
+        Me.btnEliminarProducto.TabIndex = 60
+        Me.btnEliminarProducto.Text = "&Eliminar Producto"
+        Me.btnEliminarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnEliminarProducto.UseVisualStyleBackColor = False
+        '
+        'btnModificarProducto
+        '
+        Me.btnModificarProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnModificarProducto.Image = CType(resources.GetObject("btnModificarProducto.Image"), System.Drawing.Image)
+        Me.btnModificarProducto.Location = New System.Drawing.Point(246, 303)
+        Me.btnModificarProducto.Name = "btnModificarProducto"
+        Me.btnModificarProducto.Size = New System.Drawing.Size(108, 72)
+        Me.btnModificarProducto.TabIndex = 59
+        Me.btnModificarProducto.Text = "&Modificar Producto"
+        Me.btnModificarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnModificarProducto.UseVisualStyleBackColor = False
+        '
+        'btnIngresarProducto
+        '
+        Me.btnIngresarProducto.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnIngresarProducto.Image = CType(resources.GetObject("btnIngresarProducto.Image"), System.Drawing.Image)
+        Me.btnIngresarProducto.Location = New System.Drawing.Point(116, 303)
+        Me.btnIngresarProducto.Name = "btnIngresarProducto"
+        Me.btnIngresarProducto.Size = New System.Drawing.Size(106, 72)
+        Me.btnIngresarProducto.TabIndex = 58
+        Me.btnIngresarProducto.Text = "&Ingresar Producto"
+        Me.btnIngresarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnIngresarProducto.UseVisualStyleBackColor = False
         '
         'frmModuloProductos
         '
