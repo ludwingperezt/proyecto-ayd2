@@ -88,7 +88,7 @@ Partial Class frmVentas
         Me.btnSalir.Location = New System.Drawing.Point(30, 133)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(234, 64)
-        Me.btnSalir.TabIndex = 4
+        Me.btnSalir.TabIndex = 3
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False

@@ -44,7 +44,7 @@ Partial Class frmLogin
         Me.btnCancelar.Location = New System.Drawing.Point(123, 145)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 29
+        Me.btnCancelar.TabIndex = 2
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -54,7 +54,7 @@ Partial Class frmLogin
         Me.btnAceptar.Location = New System.Drawing.Point(221, 145)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 28
+        Me.btnAceptar.TabIndex = 3
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
@@ -81,14 +81,14 @@ Partial Class frmLogin
         Me.txtUsuario.Location = New System.Drawing.Point(123, 45)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(173, 20)
-        Me.txtUsuario.TabIndex = 32
+        Me.txtUsuario.TabIndex = 0
         '
         'txtcontraseña
         '
         Me.txtcontraseña.Location = New System.Drawing.Point(123, 97)
         Me.txtcontraseña.Name = "txtcontraseña"
         Me.txtcontraseña.Size = New System.Drawing.Size(173, 20)
-        Me.txtcontraseña.TabIndex = 33
+        Me.txtcontraseña.TabIndex = 1
         '
         'picbLogin
         '

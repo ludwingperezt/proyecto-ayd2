@@ -90,7 +90,7 @@ Partial Class frmPrincipal
         Me.BtnGestionTalonarios.Location = New System.Drawing.Point(337, 231)
         Me.BtnGestionTalonarios.Name = "BtnGestionTalonarios"
         Me.BtnGestionTalonarios.Size = New System.Drawing.Size(125, 148)
-        Me.BtnGestionTalonarios.TabIndex = 44
+        Me.BtnGestionTalonarios.TabIndex = 8
         Me.BtnGestionTalonarios.Text = "Gestión de Talonario"
         Me.BtnGestionTalonarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnGestionTalonarios.UseVisualStyleBackColor = False
@@ -103,7 +103,7 @@ Partial Class frmPrincipal
         Me.BtnRoles.Location = New System.Drawing.Point(184, 231)
         Me.BtnRoles.Name = "BtnRoles"
         Me.BtnRoles.Size = New System.Drawing.Size(138, 148)
-        Me.BtnRoles.TabIndex = 43
+        Me.BtnRoles.TabIndex = 7
         Me.BtnRoles.Text = "Módulo de Roles"
         Me.BtnRoles.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnRoles.UseVisualStyleBackColor = False
@@ -117,7 +117,7 @@ Partial Class frmPrincipal
         Me.btnReportes.Location = New System.Drawing.Point(480, 231)
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(132, 148)
-        Me.btnReportes.TabIndex = 42
+        Me.btnReportes.TabIndex = 9
         Me.btnReportes.Text = "Módulo de Reportes"
         Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnReportes.UseVisualStyleBackColor = False
@@ -130,7 +130,7 @@ Partial Class frmPrincipal
         Me.BtnLogin.Location = New System.Drawing.Point(36, 64)
         Me.BtnLogin.Name = "BtnLogin"
         Me.BtnLogin.Size = New System.Drawing.Size(126, 148)
-        Me.BtnLogin.TabIndex = 41
+        Me.BtnLogin.TabIndex = 0
         Me.BtnLogin.Text = "Login"
         Me.BtnLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnLogin.UseVisualStyleBackColor = False
@@ -143,7 +143,7 @@ Partial Class frmPrincipal
         Me.BtnSalir.Location = New System.Drawing.Point(633, 231)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(280, 148)
-        Me.BtnSalir.TabIndex = 39
+        Me.BtnSalir.TabIndex = 10
         Me.BtnSalir.Text = "&Salir"
         Me.BtnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnSalir.UseVisualStyleBackColor = False
@@ -156,7 +156,7 @@ Partial Class frmPrincipal
         Me.BtnEmpleados.Location = New System.Drawing.Point(36, 231)
         Me.BtnEmpleados.Name = "BtnEmpleados"
         Me.BtnEmpleados.Size = New System.Drawing.Size(126, 148)
-        Me.BtnEmpleados.TabIndex = 7
+        Me.BtnEmpleados.TabIndex = 6
         Me.BtnEmpleados.Text = "Modulo Empleados"
         Me.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnEmpleados.UseVisualStyleBackColor = False
@@ -169,7 +169,7 @@ Partial Class frmPrincipal
         Me.BtnClientes.Location = New System.Drawing.Point(480, 64)
         Me.BtnClientes.Name = "BtnClientes"
         Me.BtnClientes.Size = New System.Drawing.Size(132, 148)
-        Me.BtnClientes.TabIndex = 6
+        Me.BtnClientes.TabIndex = 3
         Me.BtnClientes.Text = "Modulo Clientes"
         Me.BtnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnClientes.UseVisualStyleBackColor = False
@@ -182,7 +182,7 @@ Partial Class frmPrincipal
         Me.BtnCompras.Location = New System.Drawing.Point(337, 64)
         Me.BtnCompras.Name = "BtnCompras"
         Me.BtnCompras.Size = New System.Drawing.Size(125, 148)
-        Me.BtnCompras.TabIndex = 5
+        Me.BtnCompras.TabIndex = 2
         Me.BtnCompras.Text = "Modulo Compras"
         Me.BtnCompras.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnCompras.UseVisualStyleBackColor = False
@@ -209,7 +209,7 @@ Partial Class frmPrincipal
         Me.BtnVentas.Location = New System.Drawing.Point(184, 64)
         Me.BtnVentas.Name = "BtnVentas"
         Me.BtnVentas.Size = New System.Drawing.Size(138, 148)
-        Me.BtnVentas.TabIndex = 3
+        Me.BtnVentas.TabIndex = 1
         Me.BtnVentas.Text = "Módulo de Ventas"
         Me.BtnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnVentas.UseVisualStyleBackColor = False
@@ -222,7 +222,7 @@ Partial Class frmPrincipal
         Me.btnProductos.Location = New System.Drawing.Point(788, 64)
         Me.btnProductos.Name = "btnProductos"
         Me.btnProductos.Size = New System.Drawing.Size(125, 148)
-        Me.btnProductos.TabIndex = 45
+        Me.btnProductos.TabIndex = 5
         Me.btnProductos.Text = "Productos"
         Me.btnProductos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnProductos.UseVisualStyleBackColor = False
