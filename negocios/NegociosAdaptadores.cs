@@ -17,6 +17,8 @@ namespace negocios
         public static ListarTiposClientesTableAdapter gAdaptadorListarTiposClientes = new ListarTiposClientesTableAdapter();
         public static ListarEmpleadosTableAdapter gAdaptadorListaEmpleados = new ListarEmpleadosTableAdapter();
         public static listarFacturasProveedorEliminadasTableAdapter gAdaptadorListarFacturasProveedorEliminadas = new listarFacturasProveedorEliminadasTableAdapter();
-        public static insertarEncabezadoFacturaClienteTableAdapter gAdaptadorEncabezadoFacturaCliente = new insertarEncabezadoFacturaClienteTableAdapter();        
+        public static insertarEncabezadoFacturaClienteTableAdapter gAdaptadorEncabezadoFacturaCliente = new insertarEncabezadoFacturaClienteTableAdapter();
+        public static buscarProveedorPorNitTableAdapter gAdaptadorRegistroProveedor = new buscarProveedorPorNitTableAdapter();
+
     }
 }
