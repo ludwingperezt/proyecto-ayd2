@@ -60,7 +60,7 @@ Partial Class frmtipocliente
         Me.btnbuscar.Location = New System.Drawing.Point(414, 90)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
-        Me.btnbuscar.TabIndex = 42
+        Me.btnbuscar.TabIndex = 1
         Me.btnbuscar.Text = "B&uscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
@@ -69,7 +69,7 @@ Partial Class frmtipocliente
         Me.txtbusqueda.Location = New System.Drawing.Point(14, 95)
         Me.txtbusqueda.Name = "txtbusqueda"
         Me.txtbusqueda.Size = New System.Drawing.Size(394, 20)
-        Me.txtbusqueda.TabIndex = 41
+        Me.txtbusqueda.TabIndex = 0
         '
         'lblbusqueda
         '
@@ -96,7 +96,7 @@ Partial Class frmtipocliente
         Me.dgvtiposcliente.Location = New System.Drawing.Point(0, 160)
         Me.dgvtiposcliente.Name = "dgvtiposcliente"
         Me.dgvtiposcliente.Size = New System.Drawing.Size(543, 97)
-        Me.dgvtiposcliente.TabIndex = 38
+        Me.dgvtiposcliente.TabIndex = 2
         '
         'Column2
         '
@@ -145,7 +145,7 @@ Partial Class frmtipocliente
         Me.btnsalir.Location = New System.Drawing.Point(56, 343)
         Me.btnsalir.Name = "btnsalir"
         Me.btnsalir.Size = New System.Drawing.Size(416, 64)
-        Me.btnsalir.TabIndex = 46
+        Me.btnsalir.TabIndex = 6
         Me.btnsalir.Text = "&Salir"
         Me.btnsalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnsalir.UseVisualStyleBackColor = False
@@ -157,7 +157,7 @@ Partial Class frmtipocliente
         Me.btneliminartipocliente.Location = New System.Drawing.Point(346, 275)
         Me.btneliminartipocliente.Name = "btneliminartipocliente"
         Me.btneliminartipocliente.Size = New System.Drawing.Size(126, 62)
-        Me.btneliminartipocliente.TabIndex = 45
+        Me.btneliminartipocliente.TabIndex = 5
         Me.btneliminartipocliente.Text = "&Eliminar tipo cliente"
         Me.btneliminartipocliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btneliminartipocliente.UseVisualStyleBackColor = False
@@ -169,7 +169,7 @@ Partial Class frmtipocliente
         Me.btnmodificartipocliente.Location = New System.Drawing.Point(196, 275)
         Me.btnmodificartipocliente.Name = "btnmodificartipocliente"
         Me.btnmodificartipocliente.Size = New System.Drawing.Size(125, 62)
-        Me.btnmodificartipocliente.TabIndex = 44
+        Me.btnmodificartipocliente.TabIndex = 4
         Me.btnmodificartipocliente.Text = "&Modificar tipo cliente"
         Me.btnmodificartipocliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnmodificartipocliente.UseVisualStyleBackColor = False
@@ -181,7 +181,7 @@ Partial Class frmtipocliente
         Me.btningresar.Location = New System.Drawing.Point(56, 275)
         Me.btningresar.Name = "btningresar"
         Me.btningresar.Size = New System.Drawing.Size(123, 62)
-        Me.btningresar.TabIndex = 43
+        Me.btningresar.TabIndex = 3
         Me.btningresar.Text = "&Ingresar tipo cliente"
         Me.btningresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btningresar.UseVisualStyleBackColor = False

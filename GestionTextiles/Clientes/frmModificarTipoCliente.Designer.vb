@@ -66,7 +66,7 @@ Partial Class frmModificarTipoCliente
         Me.btnCancelar.Location = New System.Drawing.Point(167, 210)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 53
+        Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -76,7 +76,7 @@ Partial Class frmModificarTipoCliente
         Me.btnAceptar.Location = New System.Drawing.Point(260, 210)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 52
+        Me.btnAceptar.TabIndex = 4
         Me.btnAceptar.Text = "&Agregar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
@@ -85,7 +85,7 @@ Partial Class frmModificarTipoCliente
         Me.txtdescuento.Location = New System.Drawing.Point(96, 144)
         Me.txtdescuento.Name = "txtdescuento"
         Me.txtdescuento.Size = New System.Drawing.Size(229, 20)
-        Me.txtdescuento.TabIndex = 51
+        Me.txtdescuento.TabIndex = 2
         '
         'txtdescripcion
         '
@@ -93,7 +93,7 @@ Partial Class frmModificarTipoCliente
         Me.txtdescripcion.MaxLength = 60
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(229, 20)
-        Me.txtdescripcion.TabIndex = 50
+        Me.txtdescripcion.TabIndex = 1
         '
         'txtnombre
         '
@@ -101,7 +101,7 @@ Partial Class frmModificarTipoCliente
         Me.txtnombre.MaxLength = 15
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(229, 20)
-        Me.txtnombre.TabIndex = 49
+        Me.txtnombre.TabIndex = 0
         '
         'lbldescuento
         '

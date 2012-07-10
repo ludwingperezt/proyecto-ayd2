@@ -48,7 +48,7 @@ Partial Class frmModificarCliente
         Me.btntipocliente.Location = New System.Drawing.Point(272, 198)
         Me.btntipocliente.Name = "btntipocliente"
         Me.btntipocliente.Size = New System.Drawing.Size(175, 24)
-        Me.btntipocliente.TabIndex = 58
+        Me.btntipocliente.TabIndex = 5
         Me.btntipocliente.Text = "Gestion  tipo cliente"
         Me.btntipocliente.UseVisualStyleBackColor = False
         '
@@ -81,7 +81,7 @@ Partial Class frmModificarCliente
         Me.btnCancelar.Location = New System.Drawing.Point(262, 280)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 56
+        Me.btnCancelar.TabIndex = 6
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -91,13 +91,14 @@ Partial Class frmModificarCliente
         Me.btnAceptar.Location = New System.Drawing.Point(355, 280)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 55
+        Me.btnAceptar.TabIndex = 7
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'cmbtipocliente
         '
         Me.cmbtipocliente.FormattingEnabled = True
+        Me.cmbtipocliente.ItemHeight = 13
         Me.cmbtipocliente.Location = New System.Drawing.Point(116, 201)
         Me.cmbtipocliente.Name = "cmbtipocliente"
         Me.cmbtipocliente.Size = New System.Drawing.Size(121, 21)
@@ -109,7 +110,7 @@ Partial Class frmModificarCliente
         Me.txtnit.MaxLength = 15
         Me.txtnit.Name = "txtnit"
         Me.txtnit.Size = New System.Drawing.Size(124, 20)
-        Me.txtnit.TabIndex = 53
+        Me.txtnit.TabIndex = 3
         '
         'txtdireccion
         '
@@ -117,7 +118,7 @@ Partial Class frmModificarCliente
         Me.txtdireccion.MaxLength = 60
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(274, 20)
-        Me.txtdireccion.TabIndex = 52
+        Me.txtdireccion.TabIndex = 2
         '
         'txtapellido
         '
@@ -125,7 +126,7 @@ Partial Class frmModificarCliente
         Me.txtapellido.MaxLength = 40
         Me.txtapellido.Name = "txtapellido"
         Me.txtapellido.Size = New System.Drawing.Size(274, 20)
-        Me.txtapellido.TabIndex = 51
+        Me.txtapellido.TabIndex = 1
         '
         'txtnombre
         '
@@ -133,7 +134,7 @@ Partial Class frmModificarCliente
         Me.txtnombre.MaxLength = 40
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(274, 20)
-        Me.txtnombre.TabIndex = 50
+        Me.txtnombre.TabIndex = 0
         '
         'lbltipocliente
         '

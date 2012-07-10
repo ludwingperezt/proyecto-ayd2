@@ -64,7 +64,7 @@ Partial Class frmClientes
         Me.dgvclientes.Location = New System.Drawing.Point(1, 144)
         Me.dgvclientes.Name = "dgvclientes"
         Me.dgvclientes.Size = New System.Drawing.Size(544, 132)
-        Me.dgvclientes.TabIndex = 31
+        Me.dgvclientes.TabIndex = 2
         '
         'Column1
         '
@@ -116,7 +116,7 @@ Partial Class frmClientes
         Me.txtbusqueda.Location = New System.Drawing.Point(15, 79)
         Me.txtbusqueda.Name = "txtbusqueda"
         Me.txtbusqueda.Size = New System.Drawing.Size(400, 20)
-        Me.txtbusqueda.TabIndex = 36
+        Me.txtbusqueda.TabIndex = 0
         '
         'btnbuscar
         '
@@ -124,7 +124,7 @@ Partial Class frmClientes
         Me.btnbuscar.Location = New System.Drawing.Point(427, 74)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
-        Me.btnbuscar.TabIndex = 37
+        Me.btnbuscar.TabIndex = 1
         Me.btnbuscar.Text = "B&uscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
@@ -157,7 +157,7 @@ Partial Class frmClientes
         Me.Button1.Location = New System.Drawing.Point(78, 388)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(350, 64)
-        Me.Button1.TabIndex = 38
+        Me.Button1.TabIndex = 6
         Me.Button1.Text = "&Salir"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.UseVisualStyleBackColor = False
@@ -169,7 +169,7 @@ Partial Class frmClientes
         Me.btneliminarcliente.Location = New System.Drawing.Point(330, 305)
         Me.btneliminarcliente.Name = "btneliminarcliente"
         Me.btneliminarcliente.Size = New System.Drawing.Size(98, 71)
-        Me.btneliminarcliente.TabIndex = 34
+        Me.btneliminarcliente.TabIndex = 5
         Me.btneliminarcliente.Text = "&Eliminar Cliente"
         Me.btneliminarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btneliminarcliente.UseVisualStyleBackColor = False
@@ -181,7 +181,7 @@ Partial Class frmClientes
         Me.btnmodificarclientes.Location = New System.Drawing.Point(202, 305)
         Me.btnmodificarclientes.Name = "btnmodificarclientes"
         Me.btnmodificarclientes.Size = New System.Drawing.Size(104, 72)
-        Me.btnmodificarclientes.TabIndex = 33
+        Me.btnmodificarclientes.TabIndex = 4
         Me.btnmodificarclientes.Text = "&Modificar Cliente"
         Me.btnmodificarclientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnmodificarclientes.UseVisualStyleBackColor = False
@@ -193,7 +193,7 @@ Partial Class frmClientes
         Me.btningresarcliente.Location = New System.Drawing.Point(78, 305)
         Me.btningresarcliente.Name = "btningresarcliente"
         Me.btningresarcliente.Size = New System.Drawing.Size(102, 72)
-        Me.btningresarcliente.TabIndex = 30
+        Me.btningresarcliente.TabIndex = 3
         Me.btningresarcliente.Text = "&Ingresar cliente"
         Me.btningresarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btningresarcliente.UseVisualStyleBackColor = False
