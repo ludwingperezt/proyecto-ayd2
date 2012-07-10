@@ -61,7 +61,7 @@ Public Class frmModuloProductos
 
     Private Sub btnbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnbuscar.Click
         If txtbusqueda.Text = "" Then
-            MessageBox.Show("Ingrese la busqueda deseada ")
+            Me.fnvdRecargar()
         Else
             'codigo para busqueda
             Me.fnvBuscar(txtbusqueda.Text)
@@ -149,5 +149,9 @@ Public Class frmModuloProductos
 
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
         Me.Dispose()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Me.fnvdRecargar()
     End Sub
 End Class

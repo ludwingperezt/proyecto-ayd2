@@ -36,6 +36,7 @@ Partial Class frmModuloProductos
         Me.btnEliminarProducto = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnIngresarProducto = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -168,11 +169,21 @@ Partial Class frmModuloProductos
         Me.btnIngresarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnIngresarProducto.UseVisualStyleBackColor = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(420, 112)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 62
+        Me.Button1.Text = "Actualizar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmModuloProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(641, 478)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnEliminarProducto)
         Me.Controls.Add(Me.btnModificarProducto)
@@ -206,4 +217,5 @@ Partial Class frmModuloProductos
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
     Friend WithEvents lbllistaclientes As System.Windows.Forms.Label
     Friend WithEvents dgvEmpleados As System.Windows.Forms.DataGridView
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
