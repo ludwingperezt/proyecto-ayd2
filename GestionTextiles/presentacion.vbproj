@@ -104,6 +104,12 @@
     <Compile Include="frmCompras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmListarCompras.Designer.vb">
+      <DependentUpon>frmListarCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmModuloCompras.Designer.vb">
       <DependentUpon>frmModuloCompras.vb</DependentUpon>
     </Compile>
@@ -242,28 +248,28 @@
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReporteCorteCaja.Designer.vb">
+    <Compile Include="Formularios de Reportes\frmReporteCorteCaja.Designer.vb">
       <DependentUpon>frmReporteCorteCaja.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteCorteCaja.vb">
+    <Compile Include="Formularios de Reportes\frmReporteCorteCaja.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReporteDevolucionesProveedor.Designer.vb">
+    <Compile Include="Formularios de Reportes\frmReporteDevolucionesProveedor.Designer.vb">
       <DependentUpon>frmReporteDevolucionesProveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteDevolucionesProveedor.vb">
+    <Compile Include="Formularios de Reportes\frmReporteDevolucionesProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReporteFacturasEliminadas.Designer.vb">
+    <Compile Include="Formularios de Reportes\frmReporteFacturasEliminadas.Designer.vb">
       <DependentUpon>frmReporteFacturasEliminadas.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteFacturasEliminadas.vb">
+    <Compile Include="Formularios de Reportes\frmReporteFacturasEliminadas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportes.Designer.vb">
+    <Compile Include="Formularios de Reportes\frmReportes.Designer.vb">
       <DependentUpon>frmReportes.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmReportes.vb">
+    <Compile Include="Formularios de Reportes\frmReportes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRoles.Designer.vb">
@@ -316,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarCompras.resx">
+      <DependentUpon>frmListarCompras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModuloCompras.resx">
       <DependentUpon>frmModuloCompras.vb</DependentUpon>
@@ -386,16 +395,16 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteCorteCaja.resx">
+    <EmbeddedResource Include="Formularios de Reportes\frmReporteCorteCaja.resx">
       <DependentUpon>frmReporteCorteCaja.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteDevolucionesProveedor.resx">
+    <EmbeddedResource Include="Formularios de Reportes\frmReporteDevolucionesProveedor.resx">
       <DependentUpon>frmReporteDevolucionesProveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteFacturasEliminadas.resx">
+    <EmbeddedResource Include="Formularios de Reportes\frmReporteFacturasEliminadas.resx">
       <DependentUpon>frmReporteFacturasEliminadas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportes.resx">
+    <EmbeddedResource Include="Formularios de Reportes\frmReportes.resx">
       <DependentUpon>frmReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoles.resx">

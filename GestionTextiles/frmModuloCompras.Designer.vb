@@ -129,7 +129,7 @@ Partial Class frmModuloCompras
         Me.lblTitulo.TabIndex = 10
         Me.lblTitulo.Text = "Módulo de Compras"
         '
-        'frmCompras
+        'frmModuloCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -143,7 +143,7 @@ Partial Class frmModuloCompras
         Me.Controls.Add(Me.btnNCredito)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.Name = "frmCompras"
+        Me.Name = "frmModuloCompras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Compras"
         Me.stsBarra.ResumeLayout(False)
