@@ -13,7 +13,7 @@ namespace negocios
         private string serie;
         private int numero;
         private DateTime fecha;
-        private decimal total;
+        private decimal total;//
 
         #region constructores
         /// <summary>
