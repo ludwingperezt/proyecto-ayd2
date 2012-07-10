@@ -1,5 +1,8 @@
-﻿Public Class frmModuloProductos
-
+﻿Imports negocios
+Public Class frmModuloProductos
+    Private glstProductos As List(Of negociosProducto)
+    Private glstProductosFiltrada As List(Of negociosProducto)
+    Public Shared gnpProductoSeleccionado As negociosProducto
     Private Sub txtbusqueda_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -61,19 +64,90 @@
             MessageBox.Show("Ingrese la busqueda deseada ")
         Else
             'codigo para busqueda
-
+            Me.fnvBuscar(txtbusqueda.Text)
         End If
     End Sub
 
     Private Sub btnIngresarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIngresarProducto.Click
         frmIngresoProductos.ShowDialog(Me)
+        Me.fnvdRecargar()
     End Sub
 
     Private Sub btnModificarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarProducto.Click
-        frmModificarProductos.ShowDialog(Me)
+        If IsNothing(frmModuloProductos.gnpProductoSeleccionado) Then
+            MessageBox.Show("Debe seleccionar un producto de la lista para poder modificar sus datos", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            frmModificarProductos.ShowDialog(Me)
+            Me.fnvdRecargar()
+        End If
+
     End Sub
 
     Private Sub btnEliminarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarProducto.Click
-        frmDarDeBajaProductos.ShowDialog(Me)
+        If IsNothing(frmModuloProductos.gnpProductoSeleccionado) Then
+            MessageBox.Show("Debe seleccionar un producto de la lista para poder eliminarlo", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            If MessageBox.Show("¿Está seguro de querer eliminar el producto " + frmModuloProductos.gnpProductoSeleccionado.getNombre() + "de la base de datos? Esta operación no se puede deshacer", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                Try
+                    frmModuloProductos.gnpProductoSeleccionado.fnvdEliminarProducto()
+                    MessageBox.Show("La operación finalizó con éxito", "Producto eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+                Me.fnvdRecargar()
+            End If
+        End If
+    End Sub
+
+    Private Sub frmModuloProductos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.fnvdRecargar()
+    End Sub
+    Private Sub fnvCrearDataTable(ByRef lst As List(Of negociosProducto))
+        Dim ldtTabla As DataTable = New DataTable()
+        ldtTabla.Columns.Add("Codigo")
+        ldtTabla.Columns.Add("Nombre")
+        ldtTabla.Columns.Add("Cantidad")
+        ldtTabla.Columns.Add("Precio compra")
+        ldtTabla.Columns.Add("Precio venta")
+        ldtTabla.Columns.Add("Color")
+        For i = 0 To lst.Count - 1 Step 1
+            Dim ldrFila As DataRow = ldtTabla.NewRow()
+            Dim lnpProductoLocal As negociosProducto = lst(i)
+            ldrFila(0) = lnpProductoLocal.getCodigo()
+            ldrFila(1) = lnpProductoLocal.getNombre()
+            ldrFila(2) = lnpProductoLocal.getStock()
+            ldrFila(3) = lnpProductoLocal.getPrecioCompra()
+            ldrFila(4) = lnpProductoLocal.getPrecioVenta()
+            ldrFila(5) = lnpProductoLocal.getColor()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        Me.dgvEmpleados.DataSource = ldtTabla
+    End Sub
+
+    Private Sub dgvEmpleados_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvEmpleados.CellClick
+        frmModuloProductos.gnpProductoSeleccionado = glstProductos(e.RowIndex)
+    End Sub
+
+    Private Sub dgvEmpleados_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgvEmpleados.CellMouseClick
+
+    End Sub
+    Private Sub fnvdRecargar()
+        frmModuloProductos.gnpProductoSeleccionado = Nothing
+        Me.glstProductos = negociosProducto.fnlstListarProductos()
+        Me.fnvCrearDataTable(Me.glstProductos)
+    End Sub
+    Private Sub fnvBuscar(ByRef txt As String)
+        Me.glstProductosFiltrada = New List(Of negociosProducto)
+        For Each i As negociosProducto In Me.glstProductos
+            If i.getCodigo() = txt Or i.getNombre() = txt Or i.getColor() = txt Then
+                Me.glstProductosFiltrada.Add(i)
+            End If
+        Next
+        Me.fnvCrearDataTable(Me.glstProductosFiltrada)
+        Me.glstProductosFiltrada = Nothing
+    End Sub
+
+    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        Me.Dispose()
     End Sub
 End Class
