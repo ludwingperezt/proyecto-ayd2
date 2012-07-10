@@ -101,6 +101,13 @@ namespace negocios
             }
         }
         /// <summary>
+        /// Función de inserción de una nueva serie a la base de datos. Los datos que se envían para la inserción son los que actualmente están en éste objeto.
+        /// </summary>
+        public void fnvInsertarSerie()
+        {
+            negociosAdaptadores.gAdaptadorDeConsultas.insertarSerieFactura(this.lsSerie, this.liNumeroActual);
+        }
+        /// <summary>
         /// Función de modificación de una serie. En esta función el único dato que puede ser modificado es el número actual en el que se encuentra la serie.
         /// El nombre de la serie ('a','b',etc) no puede ser modificado.
         /// </summary>
@@ -116,6 +123,14 @@ namespace negocios
             {
                 return ex.Message;
             }
+        }
+        /// <summary>
+        /// Función de modificación de una serie. En esta función el único dato que puede ser modificado es el número actual en el que se encuentra la serie.
+        /// El nombre de la serie ('a','b',etc) no puede ser modificado.
+        /// </summary>
+        public void fnvModificarSerie()
+        {
+            negociosAdaptadores.gAdaptadorDeConsultas.eliminarSerieFactura(this.lsSerie);
         }
         /// <summary>
         /// Función que elimina la serie actual de la base de datos.
@@ -134,10 +149,27 @@ namespace negocios
             }
         }
         /// <summary>
+        /// Función que elimina la serie actual de la base de datos.
+        /// </summary>
+        public void fnvEliminarSerie()
+        {
+           
+                negociosAdaptadores.gAdaptadorDeConsultas.darDeBajaSerie(this.lsSerie);
+             
+        }
+        /// <summary>
         /// Función de consulta de todas las series activas en la base de datos.
         /// </summary>
         /// <returns>DataTable: la lista de todas las series que se encuentran en la base de datos</returns>
         public DataTable fnDTListarSeries()
+        {
+            return negociosAdaptadores.gAdaptadorListaSeries.GetData();
+        }
+        /// <summary>
+        /// Función de acceso estático de consulta de todas las series activas en la base de datos.
+        /// </summary>
+        /// <returns>DataTable: la lista de todas las series que se encuentran en la base de datos</returns>
+        public static DataTable fnListarSeries()
         {
             return negociosAdaptadores.gAdaptadorListaSeries.GetData();
         }

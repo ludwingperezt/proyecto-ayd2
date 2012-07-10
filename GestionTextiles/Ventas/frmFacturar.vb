@@ -1,4 +1,5 @@
 ﻿Imports System.Xml
+Imports negocios
 Public Class frmFacturar
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
@@ -200,5 +201,12 @@ Public Class frmFacturar
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         frmModuloProductos.ShowDialog()
         ' ahora se procede a obtener el objeto estático que está en el frmModuloProductos...
+    End Sub
+
+    Private Sub frmFacturar_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Me.cmbserie.DataSource = negociosSerie.fnListarSeries()
+        Me.cmbserie.DisplayMember = "SERIE"
+        Me.cmbserie.ValueMember = "SERIE"
     End Sub
 End Class
