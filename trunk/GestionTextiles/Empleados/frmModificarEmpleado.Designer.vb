@@ -160,7 +160,7 @@ Partial Class frmModificarEmpleado
         Me.txtNombre.MaxLength = 70
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(354, 20)
-        Me.txtNombre.TabIndex = 39
+        Me.txtNombre.TabIndex = 0
         '
         'lblDPI
         '
