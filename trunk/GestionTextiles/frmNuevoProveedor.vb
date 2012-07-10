@@ -1,12 +1,9 @@
 ﻿Public Class frmNuevoProveedor
 
-<<<<<<< .mine
-    Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
-=======
     Friend Shared actualizar As Boolean
+    Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
 
-    Private Sub btnAceptar_Click(sender As System.Object, e As System.EventArgs) Handles btnAceptar.Click
->>>>>>> .r95
+
         Dim lbooBandera As Boolean = True
 
         For Each ctrlIterador As Control In Me.Controls
@@ -21,11 +18,8 @@
                 End If
             End If
         Next
-<<<<<<< .mine
-=======
         ''Proveedores a = New Proveedores();
 
->>>>>>> .r95
         If lbooBandera Then
             If actualizar Then
                 '' si es un update...
