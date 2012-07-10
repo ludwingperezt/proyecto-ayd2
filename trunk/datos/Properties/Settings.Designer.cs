@@ -52,5 +52,15 @@ namespace Datos.Properties {
                 return ((string)(this["textilesConnectionLuis"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=E2MA-PC\\E2MA;Initial Catalog=textiles;Integrated Security=True")]
+        public string textilesConnectionString2 {
+            get {
+                return ((string)(this["textilesConnectionString2"]));
+            }
+        }
     }
 }

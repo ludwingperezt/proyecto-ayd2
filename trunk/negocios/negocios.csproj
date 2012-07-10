@@ -40,12 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="negociosDetallesFacturasProveedores.cs" />
     <Compile Include="negociosFacturasProveedorEliminadas.cs" />
     <Compile Include="negociosAdaptadores.cs" />
     <Compile Include="negociosCliente.cs" />
     <Compile Include="negociosDetalleFacturaCliente.cs" />
     <Compile Include="negociosEmpleado.cs" />
     <Compile Include="negociosFacturaCliente.cs" />
+    <Compile Include="negociosFacturasProveedores.cs" />
     <Compile Include="negociosProducto.cs" />
     <Compile Include="negociosRol.cs" />
     <Compile Include="negociosSerie.cs" />
