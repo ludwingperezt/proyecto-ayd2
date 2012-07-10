@@ -36,6 +36,11 @@ Partial Class frmFacturar
         Me.clmTela = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clmSubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gpProducto = New System.Windows.Forms.GroupBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.txtTela = New System.Windows.Forms.TextBox()
+        Me.lblcantidad = New System.Windows.Forms.Label()
+        Me.lbltela = New System.Windows.Forms.Label()
         Me.lbTotal = New System.Windows.Forms.Label()
         Me.lblDescuento = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -47,11 +52,6 @@ Partial Class frmFacturar
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.lbldescuentofac = New System.Windows.Forms.Label()
         Me.btnagregar = New System.Windows.Forms.Button()
-        Me.txtCantidad = New System.Windows.Forms.TextBox()
-        Me.lblcantidad = New System.Windows.Forms.Label()
-        Me.lbltela = New System.Windows.Forms.Label()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.txtTela = New System.Windows.Forms.TextBox()
         Me.lblEmpleado = New System.Windows.Forms.Label()
         CType(Me.dgvdetallefactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gpProducto.SuspendLayout()
@@ -169,6 +169,49 @@ Partial Class frmFacturar
         Me.gpProducto.TabStop = False
         Me.gpProducto.Text = "Producto"
         '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBuscar.Location = New System.Drawing.Point(276, 17)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 5
+        Me.btnBuscar.Text = "Buscar..."
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Location = New System.Drawing.Point(76, 45)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(92, 20)
+        Me.txtCantidad.TabIndex = 6
+        '
+        'txtTela
+        '
+        Me.txtTela.Enabled = False
+        Me.txtTela.Location = New System.Drawing.Point(76, 19)
+        Me.txtTela.Name = "txtTela"
+        Me.txtTela.Size = New System.Drawing.Size(194, 20)
+        Me.txtTela.TabIndex = 4
+        '
+        'lblcantidad
+        '
+        Me.lblcantidad.AutoSize = True
+        Me.lblcantidad.Location = New System.Drawing.Point(12, 48)
+        Me.lblcantidad.Name = "lblcantidad"
+        Me.lblcantidad.Size = New System.Drawing.Size(52, 13)
+        Me.lblcantidad.TabIndex = 35
+        Me.lblcantidad.Text = "Cantidad:"
+        '
+        'lbltela
+        '
+        Me.lbltela.AutoSize = True
+        Me.lbltela.Location = New System.Drawing.Point(12, 22)
+        Me.lbltela.Name = "lbltela"
+        Me.lbltela.Size = New System.Drawing.Size(31, 13)
+        Me.lbltela.TabIndex = 34
+        Me.lbltela.Text = "Tela:"
+        '
         'lbTotal
         '
         Me.lbTotal.AutoSize = True
@@ -268,49 +311,6 @@ Partial Class frmFacturar
         Me.btnagregar.TabIndex = 7
         Me.btnagregar.Text = "Agregar a la cesta"
         Me.btnagregar.UseVisualStyleBackColor = False
-        '
-        'txtCantidad
-        '
-        Me.txtCantidad.Location = New System.Drawing.Point(76, 45)
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(92, 20)
-        Me.txtCantidad.TabIndex = 6
-        '
-        'lblcantidad
-        '
-        Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(12, 48)
-        Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(52, 13)
-        Me.lblcantidad.TabIndex = 35
-        Me.lblcantidad.Text = "Cantidad:"
-        '
-        'lbltela
-        '
-        Me.lbltela.AutoSize = True
-        Me.lbltela.Location = New System.Drawing.Point(12, 22)
-        Me.lbltela.Name = "lbltela"
-        Me.lbltela.Size = New System.Drawing.Size(31, 13)
-        Me.lbltela.TabIndex = 34
-        Me.lbltela.Text = "Tela:"
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBuscar.Location = New System.Drawing.Point(276, 17)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscar.TabIndex = 5
-        Me.btnBuscar.Text = "Buscar..."
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'txtTela
-        '
-        Me.txtTela.Enabled = False
-        Me.txtTela.Location = New System.Drawing.Point(76, 19)
-        Me.txtTela.Name = "txtTela"
-        Me.txtTela.Size = New System.Drawing.Size(194, 20)
-        Me.txtTela.TabIndex = 4
         '
         'lblEmpleado
         '

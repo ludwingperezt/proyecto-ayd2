@@ -1,6 +1,6 @@
 ﻿Public Class frmSerie
 
-    Friend Shared actualizar As Boolean
+    Friend Shared actualizar As Boolean 'si esta bandera es TRUE entonces es insertar, sino, modificar
 
     Private Sub txtSerie_Leave(sender As System.Object, e As System.EventArgs) Handles txtSerie.Leave
         '' Validar si no existe la serie indicada...
@@ -52,5 +52,14 @@
 
     Private Sub txtCorrelativo_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtCorrelativo.MouseLeave
         slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub frmSerie_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If actualizar = False Then
+            Me.lblTitulo.Text = "Modificar serie"
+        Else
+            Me.lblTitulo.Text = "Nueva serie"
+        End If
+
     End Sub
 End Class
