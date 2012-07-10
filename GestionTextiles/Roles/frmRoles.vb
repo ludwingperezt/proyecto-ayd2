@@ -1,7 +1,7 @@
 ﻿Public Class frmRoles
 
     Private Sub btnNCompra_Click(sender As System.Object, e As System.EventArgs) Handles btnNPermiso.Click
-        frmNPermiso.ShowDialog()
+        frmModificarPermiso.ShowDialog()
 
     End Sub
 
