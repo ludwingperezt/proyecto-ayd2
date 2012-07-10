@@ -138,7 +138,7 @@ Partial Class frmNuevoProveedor
         Me.txtNIT.MaxLength = 15
         Me.txtNIT.Name = "txtNIT"
         Me.txtNIT.Size = New System.Drawing.Size(100, 20)
-        Me.txtNIT.TabIndex = 16
+        Me.txtNIT.TabIndex = 0
         Me.txtNIT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtNombre
@@ -147,7 +147,7 @@ Partial Class frmNuevoProveedor
         Me.txtNombre.MaxLength = 70
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(354, 20)
-        Me.txtNombre.TabIndex = 17
+        Me.txtNombre.TabIndex = 6
         '
         'txtDireccion
         '
@@ -155,7 +155,7 @@ Partial Class frmNuevoProveedor
         Me.txtDireccion.MaxLength = 60
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(354, 20)
-        Me.txtDireccion.TabIndex = 18
+        Me.txtDireccion.TabIndex = 1
         '
         'txtEmpresa
         '
@@ -163,7 +163,7 @@ Partial Class frmNuevoProveedor
         Me.txtEmpresa.MaxLength = 25
         Me.txtEmpresa.Name = "txtEmpresa"
         Me.txtEmpresa.Size = New System.Drawing.Size(186, 20)
-        Me.txtEmpresa.TabIndex = 19
+        Me.txtEmpresa.TabIndex = 2
         '
         'txtPropietario
         '
@@ -171,7 +171,7 @@ Partial Class frmNuevoProveedor
         Me.txtPropietario.MaxLength = 70
         Me.txtPropietario.Name = "txtPropietario"
         Me.txtPropietario.Size = New System.Drawing.Size(354, 20)
-        Me.txtPropietario.TabIndex = 20
+        Me.txtPropietario.TabIndex = 3
         '
         'txtTelefono
         '
@@ -179,7 +179,7 @@ Partial Class frmNuevoProveedor
         Me.txtTelefono.MaxLength = 15
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
-        Me.txtTelefono.TabIndex = 21
+        Me.txtTelefono.TabIndex = 4
         '
         'lblCelular
         '
@@ -196,7 +196,7 @@ Partial Class frmNuevoProveedor
         Me.txtCelular.MaxLength = 15
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(100, 20)
-        Me.txtCelular.TabIndex = 21
+        Me.txtCelular.TabIndex = 5
         '
         'btnCancelar
         '
@@ -205,7 +205,7 @@ Partial Class frmNuevoProveedor
         Me.btnCancelar.Location = New System.Drawing.Point(326, 276)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 29
+        Me.btnCancelar.TabIndex = 7
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -215,7 +215,7 @@ Partial Class frmNuevoProveedor
         Me.btnAceptar.Location = New System.Drawing.Point(421, 276)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 28
+        Me.btnAceptar.TabIndex = 8
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '

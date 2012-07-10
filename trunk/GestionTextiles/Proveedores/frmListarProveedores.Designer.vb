@@ -84,7 +84,7 @@ Partial Class frmListarProveedores
         Me.dgvListaProveedores.Location = New System.Drawing.Point(30, 141)
         Me.dgvListaProveedores.Name = "dgvListaProveedores"
         Me.dgvListaProveedores.Size = New System.Drawing.Size(557, 200)
-        Me.dgvListaProveedores.TabIndex = 10
+        Me.dgvListaProveedores.TabIndex = 2
         '
         'dgvtxtNIT
         '
@@ -127,7 +127,7 @@ Partial Class frmListarProveedores
         Me.btnEditar.Location = New System.Drawing.Point(512, 361)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEditar.TabIndex = 11
+        Me.btnEditar.TabIndex = 4
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = False
         '
@@ -138,14 +138,14 @@ Partial Class frmListarProveedores
         Me.cmbFiltro.Location = New System.Drawing.Point(91, 50)
         Me.cmbFiltro.Name = "cmbFiltro"
         Me.cmbFiltro.Size = New System.Drawing.Size(121, 21)
-        Me.cmbFiltro.TabIndex = 12
+        Me.cmbFiltro.TabIndex = 0
         '
         'txtBusqueda
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(91, 82)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(194, 20)
-        Me.txtBusqueda.TabIndex = 13
+        Me.txtBusqueda.TabIndex = 1
         '
         'lblFiltro
         '
@@ -171,7 +171,7 @@ Partial Class frmListarProveedores
         Me.btnEliminar.Location = New System.Drawing.Point(420, 361)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
-        Me.btnEliminar.TabIndex = 15
+        Me.btnEliminar.TabIndex = 3
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = False
         '

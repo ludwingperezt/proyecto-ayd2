@@ -457,7 +457,6 @@
     <None Include="Resources\winhand1.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Informes de Reportes\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>

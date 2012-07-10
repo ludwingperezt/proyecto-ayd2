@@ -125,10 +125,6 @@ Public Class frmNuevoProveedor
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
-        Me.Dispose()
-    End Sub
-
     Private Sub frmNuevoProveedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If actualizar = True Then
             Me.txtNIT.Text = frmListarProveedores.gnpProveedor.getNit()
