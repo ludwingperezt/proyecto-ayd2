@@ -1,9 +1,6 @@
 ﻿Public Class frmNuevoProveedor
-
     Friend Shared actualizar As Boolean
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
-
-
         Dim lbooBandera As Boolean = True
 
         For Each ctrlIterador As Control In Me.Controls
@@ -18,7 +15,6 @@
                 End If
             End If
         Next
-        ''Proveedores a = New Proveedores();
 
         If lbooBandera Then
             If actualizar Then

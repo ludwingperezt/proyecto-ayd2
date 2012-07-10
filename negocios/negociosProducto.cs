@@ -320,6 +320,26 @@ namespace negocios
         {
             return negociosAdaptadores.gAdaptadorListaProductos.GetData();
         }
+        public static List<negociosProducto> fnlstListarProductos()
+        {
+            List<negociosProducto> llstNegociosProductos = new List<negociosProducto>();
+            DataTable ldtProductos = negociosProducto.fnDTlistarProductos();
+            object[] elementos;
+            for (int i = 0; i < ldtProductos.Rows.Count; i++)
+            {
+                elementos = ldtProductos.Rows[i].ItemArray;
+                negociosProducto localProducto = new negociosProducto();
+                localProducto.setIdProducto(Convert.ToInt32(elementos[0]));
+                localProducto.setCodigo(Convert.ToString(elementos[1]));
+                localProducto.setNombre(Convert.ToString(elementos[2]));
+                localProducto.setStock(Convert.ToDouble(elementos[3]));
+                localProducto.setPrecioCompra(Convert.ToDecimal(elementos[4]));
+                localProducto.setPrecioVenta(Convert.ToDecimal(elementos[5]));
+                localProducto.setColor(Convert.ToString(elementos[6]));
+                llstNegociosProductos.Add(localProducto);
+            }            
+            return llstNegociosProductos;
+        }
         #endregion
         #region accesos estáticos
         /// <summary>

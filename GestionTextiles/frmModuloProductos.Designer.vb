@@ -32,13 +32,6 @@ Partial Class frmModuloProductos
         Me.lblbusqueda = New System.Windows.Forms.Label()
         Me.lbllistaclientes = New System.Windows.Forms.Label()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnEliminarProducto = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
@@ -118,48 +111,14 @@ Partial Class frmModuloProductos
         '
         'dgvEmpleados
         '
+        Me.dgvEmpleados.AllowUserToAddRows = False
+        Me.dgvEmpleados.AllowUserToDeleteRows = False
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column1, Me.Column4, Me.Column3, Me.Column5, Me.Column6, Me.Column7})
         Me.dgvEmpleados.Location = New System.Drawing.Point(23, 147)
         Me.dgvEmpleados.Name = "dgvEmpleados"
+        Me.dgvEmpleados.ReadOnly = True
         Me.dgvEmpleados.Size = New System.Drawing.Size(544, 132)
         Me.dgvEmpleados.TabIndex = 51
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Nombre"
-        Me.Column2.Name = "Column2"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Cedula / DPI"
-        Me.Column1.Name = "Column1"
-        '
-        'Column4
-        '
-        Me.Column4.FillWeight = 75.0!
-        Me.Column4.HeaderText = "Dirección"
-        Me.Column4.Name = "Column4"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Telefono"
-        Me.Column3.Name = "Column3"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Celular"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Fecha Contrato"
-        Me.Column6.Name = "Column6"
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Sueldo"
-        Me.Column7.Name = "Column7"
         '
         'btnSalir
         '
@@ -247,11 +206,4 @@ Partial Class frmModuloProductos
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
     Friend WithEvents lbllistaclientes As System.Windows.Forms.Label
     Friend WithEvents dgvEmpleados As System.Windows.Forms.DataGridView
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
