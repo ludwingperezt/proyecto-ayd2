@@ -17,10 +17,10 @@ namespace negocios
         /// <summary>
         /// Constructor por defecto del objeto negociosDetallesFacturasProveedores
         /// </summary>
-        public void negociosDetallesFacturasProveedores
+        /*public void negociosDetallesFacturasProveedores()
         {
 
-        }
+        }*/
         #endregion
 
         #region Accesores y modificadores
