@@ -141,7 +141,15 @@
         frmModuloSeries.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProductos.Click
         frmModuloProductos.ShowDialog()
+    End Sub
+
+    Private Sub btnProductos_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProductos.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnProductos_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProductos.MouseHover
+        slblDescripcion.Text = "Módulo para gestionar los productos"
     End Sub
 End Class

@@ -39,7 +39,7 @@ Partial Class frmPrincipal
         Me.BtnCompras = New System.Windows.Forms.Button()
         Me.BtnProveedores = New System.Windows.Forms.Button()
         Me.BtnVentas = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnProductos = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -142,7 +142,7 @@ Partial Class frmPrincipal
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.Location = New System.Drawing.Point(633, 231)
         Me.BtnSalir.Name = "BtnSalir"
-        Me.BtnSalir.Size = New System.Drawing.Size(128, 148)
+        Me.BtnSalir.Size = New System.Drawing.Size(280, 148)
         Me.BtnSalir.TabIndex = 39
         Me.BtnSalir.Text = "&Salir"
         Me.BtnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -214,14 +214,18 @@ Partial Class frmPrincipal
         Me.BtnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnVentas.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnProductos
         '
-        Me.Button1.Location = New System.Drawing.Point(827, 115)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 45
-        Me.Button1.Text = "Productos"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProductos.Image = CType(resources.GetObject("btnProductos.Image"), System.Drawing.Image)
+        Me.btnProductos.Location = New System.Drawing.Point(788, 64)
+        Me.btnProductos.Name = "btnProductos"
+        Me.btnProductos.Size = New System.Drawing.Size(125, 148)
+        Me.btnProductos.TabIndex = 45
+        Me.btnProductos.Text = "Productos"
+        Me.btnProductos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnProductos.UseVisualStyleBackColor = False
         '
         'frmPrincipal
         '
@@ -229,7 +233,7 @@ Partial Class frmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(985, 429)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnProductos)
         Me.Controls.Add(Me.BtnGestionTalonarios)
         Me.Controls.Add(Me.BtnRoles)
         Me.Controls.Add(Me.btnReportes)
@@ -268,5 +272,5 @@ Partial Class frmPrincipal
     Friend WithEvents btnReportes As System.Windows.Forms.Button
     Friend WithEvents BtnRoles As System.Windows.Forms.Button
     Friend WithEvents BtnGestionTalonarios As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnProductos As System.Windows.Forms.Button
 End Class
