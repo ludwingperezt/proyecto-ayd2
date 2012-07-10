@@ -37,7 +37,8 @@
     End Sub
 
     Private Sub BtnEmpleados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEmpleados.Click
-        frmEmpleados.Show()
+        'frmEmpleados.Show()
+        frmModuloEmpleados.ShowDialog()
     End Sub
 
     Private Sub BtnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSalir.Click
@@ -138,5 +139,9 @@
 
     Private Sub BtnGestionTalonarios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGestionTalonarios.Click
         frmModuloSeries.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        frmModuloProductos.ShowDialog()
     End Sub
 End Class

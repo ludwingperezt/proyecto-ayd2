@@ -70,7 +70,6 @@ Partial Class frmModuloSeries
         'btnNSerie
         '
         Me.btnNSerie.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnNSerie.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnNSerie.Image = Global.GestionTextiles.My.Resources.Resources.numberhash1
         Me.btnNSerie.Location = New System.Drawing.Point(215, 68)
         Me.btnNSerie.Name = "btnNSerie"
