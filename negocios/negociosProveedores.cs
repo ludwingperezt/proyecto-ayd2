@@ -82,7 +82,6 @@ namespace negocios
         /// Grupo de funciones para leer los datos de la clase
         /// </summary>
         /// <returns>string: dato solicitado dependiendo de la funcion</returns>
-
         public string getNombre()
         {
             return this.nombre;
@@ -117,6 +116,12 @@ namespace negocios
         {
             return this.celular;
         }
+
+        public int getId()
+        {
+            return this.id;
+        }
+
         #endregion
         
         #region Comunicacion con la DB
@@ -138,7 +143,7 @@ namespace negocios
             try
             {
                 negociosAdaptadores.gAdaptadorDeConsultas.insersionProveedor(this.nombre, this.nit, this.direccion, this.empresa, this.propietario, this.telefono, this.celular);
-                return "La inserción del cliente en la base de datos se llevó a cabo con éxito";
+                return "La inserción del proveedor en la base de datos se llevó a cabo con éxito";
 
             }
             catch (Exception e)
@@ -156,7 +161,7 @@ namespace negocios
             try
             {
                 negociosAdaptadores.gAdaptadorDeConsultas.modificarProveedor((short)this.id, this.nombre, this.nit, this.direccion, this.empresa, this.propietario, this.telefono, this.celular);
-                return "La modificación de los datos del cliente se llevó a cabo con éxito";
+                return "La modificación de los datos del proveedor se llevó a cabo con éxito";
             }
             catch (Exception e)
             {
@@ -173,7 +178,7 @@ namespace negocios
             try
             {
                 negociosAdaptadores.gAdaptadorDeConsultas.darDeBajaProveedor((short)this.id);
-                return "La modificación de los datos del cliente se llevó a cabo con éxito";
+                return "La modificación de los datos del proveedor se llevó a cabo con éxito";
             }
             catch (Exception e)
             {
@@ -190,7 +195,7 @@ namespace negocios
             try
             {
                 negociosAdaptadores.gAdaptadorDeConsultas.darDeAltaProveedor((short)this.id);
-                return "La modificación de los datos del cliente se llevó a cabo con éxito";
+                return "La modificación de los datos del proveedor se llevó a cabo con éxito";
             }
             catch (Exception e)
             {
