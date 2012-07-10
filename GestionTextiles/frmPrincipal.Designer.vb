@@ -39,6 +39,7 @@ Partial Class frmPrincipal
         Me.BtnCompras = New System.Windows.Forms.Button()
         Me.BtnProveedores = New System.Windows.Forms.Button()
         Me.BtnVentas = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,7 +48,7 @@ Partial Class frmPrincipal
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
         Me.stsBarra.Location = New System.Drawing.Point(0, 407)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(801, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(985, 22)
         Me.stsBarra.TabIndex = 2
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -213,12 +214,22 @@ Partial Class frmPrincipal
         Me.BtnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnVentas.UseVisualStyleBackColor = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(827, 115)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 45
+        Me.Button1.Text = "Productos"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(801, 429)
+        Me.ClientSize = New System.Drawing.Size(985, 429)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BtnGestionTalonarios)
         Me.Controls.Add(Me.BtnRoles)
         Me.Controls.Add(Me.btnReportes)
@@ -257,4 +268,5 @@ Partial Class frmPrincipal
     Friend WithEvents btnReportes As System.Windows.Forms.Button
     Friend WithEvents BtnRoles As System.Windows.Forms.Button
     Friend WithEvents BtnGestionTalonarios As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
