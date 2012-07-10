@@ -9,118 +9,6 @@
         Me.Dispose()
     End Sub
 
-    Private Sub txtnit_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNit.MouseLeave
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseLeave
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub txtdireccion_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDireccion.MouseLeave
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub TextBox1_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub TextBox2_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub TextBox3_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub DataGridView1_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvDetalleFactura.MouseLeave
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub txtTotal_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub txtDescuento_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub btnCancelar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseLeave
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub btnAceptar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseLeave
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub txtnumero_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Número de la factura"
-    End Sub
-
-    Private Sub txtnit_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNit.MouseHover
-        slblDescripcion.Text = "Se debe ingresar el nit del cliente. Ej: 1269264-5"
-    End Sub
-
-    Private Sub txtnombre_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseHover
-        slblDescripcion.Text = "Nombre del cliente"
-    End Sub
-
-    Private Sub txtdireccion_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDireccion.MouseHover
-        slblDescripcion.Text = "Dirección del cliente"
-    End Sub
-
-    Private Sub txtCodigo_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Se debe ingresar el codigo de tela  Ej: 7486"
-    End Sub
-
-    Private Sub txtTela_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "tipo de tela "
-    End Sub
-
-    Private Sub txtCantidad_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Se debe ingresar la cantidad de yardas de tela  Ej. 5"
-    End Sub
-
-    Private Sub btnagregar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        slblDescripcion.Text = "Ingreso de la tela selecciónada"
-    End Sub
-
-    Private Sub DataGridView1_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvDetalleFactura.MouseHover
-        slblDescripcion.Text = "Descripcion de los productos a facturar"
-    End Sub
-
-    Private Sub txtTotal_MouseHover(sender As System.Object, e As System.EventArgs)
-        slblDescripcion.Text = "Total a pagar"
-    End Sub
-
-    Private Sub txtDescuento_MouseHover(sender As System.Object, e As System.EventArgs)
-        slblDescripcion.Text = "Descuento total"
-    End Sub
-
-    Private Sub btnCancelar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnCancelar.MouseHover
-        slblDescripcion.Text = "Cancelar facturación"
-    End Sub
-
-    Private Sub btnAceptar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnAceptar.MouseHover
-        slblDescripcion.Text = "Inicia impresión de factura"
-    End Sub
-
-    Private Sub lblnumerofac_MouseLeave(sender As System.Object, e As System.EventArgs)
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub lbltotal_MouseLeave(sender As System.Object, e As System.EventArgs) Handles lblTotal.MouseLeave
-        slblDescripcion.Text = "Descripción"
-    End Sub
-
-    Private Sub lbltotal_MouseHover(sender As System.Object, e As System.EventArgs) Handles lblTotal.MouseHover
-        slblDescripcion.Text = "Total a pagar"
-    End Sub
-
-    Private Sub lblnumerofac_MouseHover(sender As System.Object, e As System.EventArgs)
-        slblDescripcion.Text = "Numero de factura"
-    End Sub
-
     Private Sub btnAceptar_Click(sender As System.Object, e As System.EventArgs) Handles btnAceptar.Click
         For Each ctrlIterador As Control In Me.Controls
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
@@ -130,16 +18,6 @@
                     ctrlIterador.BackColor = Color.White
                 End If
             End If
-            '' Validación de combobox
-            If TypeOf (ctrlIterador) Is Windows.Forms.ComboBox Then
-                If (ctrlIterador.Text = "") Then
-                    ctrlIterador.BackColor = Color.Yellow
-                Else
-                    ctrlIterador.BackColor = Color.White
-                End If
-            End If
-
-
         Next
     End Sub
 
@@ -179,5 +57,121 @@
             e.KeyChar = vbNullChar
 
         End If
+    End Sub
+
+    Private Sub txtSerie_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtSerie.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtCorrelativo_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtCorrelativo.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub DateTimePicker1_MouseLeave(sender As System.Object, e As System.EventArgs) Handles DateTimePicker1.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub lblEmpleado_MouseLeave(sender As System.Object, e As System.EventArgs) Handles lblEmpleado.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtNit_Leave(sender As System.Object, e As System.EventArgs) Handles txtNit.Leave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtNombre_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtNombre.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtDireccion_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtDireccion.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtTela_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtTela.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtCantidad_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtCantidad.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnBuscar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnBuscar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnagregar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnagregar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub dgvDetalleFactura_MouseLeave(sender As System.Object, e As System.EventArgs) Handles dgvDetalleFactura.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnCancelar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnCancelar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnAceptar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnAceptar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtSerie_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtSerie.MouseHover
+        slblDescripcion.Text = "Ingrese el número de serie, no más de 4 caracteres"
+    End Sub
+
+    Private Sub DateTimePicker1_MouseHover(sender As System.Object, e As System.EventArgs) Handles DateTimePicker1.MouseHover
+        slblDescripcion.Text = "Seleccione la fecha de la factura"
+    End Sub
+
+    Private Sub lblEmpleado_MouseHover(sender As System.Object, e As System.EventArgs) Handles lblEmpleado.MouseHover
+        slblDescripcion.Text = "Se muestra el nombre del empleado logueado"
+    End Sub
+
+    Private Sub txtNit_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtNit.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtNit_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtNit.MouseHover
+        slblDescripcion.Text = "Ingrese el nit, sin guión"
+    End Sub
+
+    Private Sub txtNombre_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtNombre.MouseHover
+        slblDescripcion.Text = "Nombre del proveedor"
+    End Sub
+
+    Private Sub txtDireccion_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtDireccion.MouseHover
+        slblDescripcion.Text = "Dirección del proveedor"
+    End Sub
+
+    Private Sub txtTela_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtTela.MouseHover
+        slblDescripcion.Text = "Producto comprado"
+    End Sub
+
+    Private Sub txtCantidad_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtCantidad.MouseHover
+        slblDescripcion.Text = "Cantidad de tela"
+    End Sub
+
+    Private Sub btnagregar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnagregar.MouseHover
+        slblDescripcion.Text = "Agregar el producto al detalle de compra"
+    End Sub
+
+    Private Sub dgvDetalleFactura_MouseHover(sender As System.Object, e As System.EventArgs) Handles dgvDetalleFactura.MouseHover
+        slblDescripcion.Text = "Detalle de compras"
+    End Sub
+
+    Private Sub lblTotal_MouseLeave(sender As System.Object, e As System.EventArgs) Handles lblTotal.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub lblTotal_MouseHover(sender As System.Object, e As System.EventArgs) Handles lblTotal.MouseHover
+        slblDescripcion.Text = "El total de la factura de compra"
+    End Sub
+
+    Private Sub btnCancelar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnCancelar.MouseHover
+        slblDescripcion.Text = "Cierra la ventana si guardar"
+    End Sub
+
+    Private Sub btnAceptar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnAceptar.MouseHover
+        slblDescripcion.Text = "Cierra la ventana y guarda la factura"
     End Sub
 End Class

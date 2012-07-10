@@ -41,4 +41,16 @@
     Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
         Me.Dispose()
     End Sub
+
+    Private Sub btnCancelar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnCancelar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtSerie_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtSerie.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtCorrelativo_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtCorrelativo.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
 End Class

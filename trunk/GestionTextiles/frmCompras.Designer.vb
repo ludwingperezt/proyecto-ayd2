@@ -35,7 +35,11 @@ Partial Class frmCompras
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lbEtiquetaTotal = New System.Windows.Forms.Label()
         Me.gpProducto = New System.Windows.Forms.GroupBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.dgvDetalleFactura = New System.Windows.Forms.DataGridView()
+        Me.clmCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clmTela = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clmSubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblserie = New System.Windows.Forms.Label()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.txtNit = New System.Windows.Forms.TextBox()
@@ -46,10 +50,6 @@ Partial Class frmCompras
         Me.txtSerie = New System.Windows.Forms.TextBox()
         Me.lblCorrelativo = New System.Windows.Forms.Label()
         Me.txtCorrelativo = New System.Windows.Forms.TextBox()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.clmCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clmTela = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clmSubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblEmpleado = New System.Windows.Forms.Label()
@@ -183,6 +183,16 @@ Partial Class frmCompras
         Me.gpProducto.TabStop = False
         Me.gpProducto.Text = "Producto"
         '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBuscar.Location = New System.Drawing.Point(282, 27)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 7
+        Me.btnBuscar.Text = "Buscar..."
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
         'dgvDetalleFactura
         '
         Me.dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -191,6 +201,22 @@ Partial Class frmCompras
         Me.dgvDetalleFactura.Name = "dgvDetalleFactura"
         Me.dgvDetalleFactura.Size = New System.Drawing.Size(388, 187)
         Me.dgvDetalleFactura.TabIndex = 10
+        '
+        'clmCantidad
+        '
+        Me.clmCantidad.HeaderText = "Cantidad"
+        Me.clmCantidad.Name = "clmCantidad"
+        Me.clmCantidad.Width = 50
+        '
+        'clmTela
+        '
+        Me.clmTela.HeaderText = "Tela"
+        Me.clmTela.Name = "clmTela"
+        '
+        'clmSubtotal
+        '
+        Me.clmSubtotal.HeaderText = "Subtotal"
+        Me.clmSubtotal.Name = "clmSubtotal"
         '
         'lblserie
         '
@@ -279,32 +305,6 @@ Partial Class frmCompras
         Me.txtCorrelativo.Size = New System.Drawing.Size(86, 20)
         Me.txtCorrelativo.TabIndex = 1
         Me.txtCorrelativo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBuscar.Location = New System.Drawing.Point(282, 27)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscar.TabIndex = 7
-        Me.btnBuscar.Text = "Buscar..."
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'clmCantidad
-        '
-        Me.clmCantidad.HeaderText = "Cantidad"
-        Me.clmCantidad.Name = "clmCantidad"
-        Me.clmCantidad.Width = 50
-        '
-        'clmTela
-        '
-        Me.clmTela.HeaderText = "Tela"
-        Me.clmTela.Name = "clmTela"
-        '
-        'clmSubtotal
-        '
-        Me.clmSubtotal.HeaderText = "Subtotal"
-        Me.clmSubtotal.Name = "clmSubtotal"
         '
         'DateTimePicker1
         '
