@@ -35,7 +35,6 @@ Partial Class frmCompras
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lbEtiquetaTotal = New System.Windows.Forms.Label()
         Me.gpProducto = New System.Windows.Forms.GroupBox()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.dgvDetalleFactura = New System.Windows.Forms.DataGridView()
         Me.clmCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clmTela = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,6 +53,7 @@ Partial Class frmCompras
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblEmpleado = New System.Windows.Forms.Label()
         Me.btnagregar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.gpProducto.SuspendLayout()
         CType(Me.dgvDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,16 +182,6 @@ Partial Class frmCompras
         Me.gpProducto.TabIndex = 50
         Me.gpProducto.TabStop = False
         Me.gpProducto.Text = "Producto"
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBuscar.Location = New System.Drawing.Point(282, 27)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscar.TabIndex = 7
-        Me.btnBuscar.Text = "Buscar..."
-        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'dgvDetalleFactura
         '
@@ -340,6 +330,16 @@ Partial Class frmCompras
         Me.btnagregar.TabIndex = 58
         Me.btnagregar.Text = "Agregar a la cesta"
         Me.btnagregar.UseVisualStyleBackColor = False
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBuscar.Location = New System.Drawing.Point(282, 27)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 7
+        Me.btnBuscar.Text = "Buscar..."
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'frmCompras
         '
