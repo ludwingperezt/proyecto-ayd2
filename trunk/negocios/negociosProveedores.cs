@@ -197,8 +197,15 @@ namespace negocios
                 return e.Message;
             }
         }
+        /// <summary>
+        /// Funcion para buscar a un proveedor por su nit
+        /// </summary>
+        /// <returns>DataTable: Tabla con la tupla del proveedor</returns>
+        public DataTable fnsBuscarProveedorNit(string nitProveedor)
+        {
 
-
+                return negociosAdaptadores.gAdaptadorRegistroProveedor(nitProveedor).GetData();
+        }
         #endregion
     }
 }
