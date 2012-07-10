@@ -86,12 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="frmModificarPermiso.Designer.vb">
-      <DependentUpon>frmModificarPermiso.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmModificarPermiso.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Ventas\frmAnular.Designer.vb">
       <DependentUpon>frmAnular.vb</DependentUpon>
     </Compile>
@@ -320,9 +314,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmModificarPermiso.resx">
-      <DependentUpon>frmModificarPermiso.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frmAnular.resx">
       <DependentUpon>frmAnular.vb</DependentUpon>
     </EmbeddedResource>
