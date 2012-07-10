@@ -63,7 +63,7 @@ Partial Class frmAnular
         Me.btnAceptar.Location = New System.Drawing.Point(219, 130)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 2
+        Me.btnAceptar.TabIndex = 3
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
@@ -72,7 +72,7 @@ Partial Class frmAnular
         Me.txtSerie.Location = New System.Drawing.Point(66, 66)
         Me.txtSerie.Name = "txtSerie"
         Me.txtSerie.Size = New System.Drawing.Size(100, 20)
-        Me.txtSerie.TabIndex = 3
+        Me.txtSerie.TabIndex = 0
         '
         'lblSerie
         '
@@ -108,7 +108,7 @@ Partial Class frmAnular
         Me.txtNumero.Location = New System.Drawing.Point(66, 95)
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.Size = New System.Drawing.Size(100, 20)
-        Me.txtNumero.TabIndex = 8
+        Me.txtNumero.TabIndex = 1
         '
         'btnCancelar
         '
@@ -117,7 +117,7 @@ Partial Class frmAnular
         Me.btnCancelar.Location = New System.Drawing.Point(138, 130)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 9
+        Me.btnCancelar.TabIndex = 2
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
