@@ -447,7 +447,14 @@
     <None Include="Resources\winhand1.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Clientes\" />
+    <Folder Include="Compras\" />
+    <Folder Include="Empleados\" />
+    <Folder Include="Productos\" />
+    <Folder Include="Proveedores\" />
     <Folder Include="Reportes\" />
+    <Folder Include="Series\" />
+    <Folder Include="Ventas\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\datos\datos.csproj">
