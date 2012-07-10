@@ -204,7 +204,7 @@ namespace negocios
         public DataTable fnsBuscarProveedorNit(string nitProveedor)
         {
 
-                return negociosAdaptadores.gAdaptadorRegistroProveedor(nitProveedor).GetData();
+                return negociosAdaptadores.gAdaptadorRegistroProveedor.GetData(nitProveedor);
         }
         #endregion
     }
