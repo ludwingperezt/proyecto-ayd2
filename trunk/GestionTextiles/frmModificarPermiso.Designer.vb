@@ -87,11 +87,11 @@ Partial Class frmModificarPermiso
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(228, 20)
+        Me.lblTitulo.Location = New System.Drawing.Point(205, 18)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(192, 29)
+        Me.lblTitulo.Size = New System.Drawing.Size(239, 29)
         Me.lblTitulo.TabIndex = 10
-        Me.lblTitulo.Text = "Nuevo Permiso"
+        Me.lblTitulo.Text = "Modificar Permiso"
         '
         'lblProveedores
         '
@@ -325,7 +325,7 @@ Partial Class frmModificarPermiso
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
-        'frmNPermiso
+        'frmModificarPermiso
         '
         Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -361,7 +361,7 @@ Partial Class frmModificarPermiso
         Me.Controls.Add(Me.lblModulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.Name = "frmNPermiso"
+        Me.Name = "frmModificarPermiso"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Permiso"
         Me.stsBarra.ResumeLayout(False)
