@@ -1,6 +1,12 @@
 ﻿Public Class frmCompras
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+        frmModuloProductos.btnSalir.Text = "Aceptar"
+        frmModuloProductos.btnSalir.Image = New Bitmap(Application.)
+        frmModuloProductos.btnEliminarProducto.Visible = False
+        frmModuloProductos.btnModificarProducto.Visible = False
+        frmModuloProductos.btnIngresarProducto.Visible = False
+
         frmModuloProductos.ShowDialog()
         ' ahora se procede a obtener el objeto estático que está en el frmModuloProductos...
     End Sub
