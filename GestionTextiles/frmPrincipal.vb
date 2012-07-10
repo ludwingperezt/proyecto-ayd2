@@ -19,30 +19,30 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnVentas.Click
-        frmVentas.ShowDialog(Me)
+        frmVentas.Show(Me)
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnProveedores.Click
-        frmModuloProveedores.ShowDialog()
+        frmModuloProveedores.Show(Me)
 
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCompras.Click
-        frmModuloCompras.ShowDialog()
+        frmModuloCompras.Show(Me)
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnClientes.Click
-        frmClientes.Show()
+        frmClientes.Show(Me)
 
     End Sub
 
     Private Sub BtnEmpleados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEmpleados.Click
         'frmEmpleados.Show()
-        frmModuloEmpleados.ShowDialog()
+        frmModuloEmpleados.Show(Me)
     End Sub
 
     Private Sub BtnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSalir.Click
-        Me.Dispose()
+        End
     End Sub
 
     Private Sub BtnVentas_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnVentas.MouseLeave
@@ -94,11 +94,11 @@
     End Sub
 
     Private Sub Button3_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRoles.Click
-        frmRoles.ShowDialog()
+        frmRoles.Show(Me)
     End Sub
 
     Private Sub btnReportes_Click(sender As System.Object, e As System.EventArgs) Handles btnReportes.Click
-        frmModuloReportes.ShowDialog()
+        frmModuloReportes.Show(Me)
     End Sub
 
     Private Sub BtnLogin_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogin.MouseLeave
@@ -138,11 +138,11 @@
     End Sub
 
     Private Sub BtnGestionTalonarios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGestionTalonarios.Click
-        frmModuloSeries.ShowDialog()
+        frmModuloSeries.Show(Me)
     End Sub
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProductos.Click
-        frmModuloProductos.ShowDialog()
+        frmModuloProductos.Show(Me)
     End Sub
 
     Private Sub btnProductos_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProductos.MouseLeave
