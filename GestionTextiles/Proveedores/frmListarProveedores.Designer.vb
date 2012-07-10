@@ -27,12 +27,6 @@ Partial Class frmListarProveedores
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.dgvListaProveedores = New System.Windows.Forms.DataGridView()
-        Me.btnEditar = New System.Windows.Forms.Button()
-        Me.cmbFiltro = New System.Windows.Forms.ComboBox()
-        Me.txtBusqueda = New System.Windows.Forms.TextBox()
-        Me.lblFiltro = New System.Windows.Forms.Label()
-        Me.lblBuscar = New System.Windows.Forms.Label()
-        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.dgvtxtNIT = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvtxtEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvtxtDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +34,12 @@ Partial Class frmListarProveedores
         Me.dgvtxtPropietario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvtxtTelefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvCelular = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEditar = New System.Windows.Forms.Button()
+        Me.cmbFiltro = New System.Windows.Forms.ComboBox()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.lblFiltro = New System.Windows.Forms.Label()
+        Me.lblBuscar = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -85,6 +85,41 @@ Partial Class frmListarProveedores
         Me.dgvListaProveedores.Name = "dgvListaProveedores"
         Me.dgvListaProveedores.Size = New System.Drawing.Size(557, 200)
         Me.dgvListaProveedores.TabIndex = 10
+        '
+        'dgvtxtNIT
+        '
+        Me.dgvtxtNIT.HeaderText = "NIT"
+        Me.dgvtxtNIT.Name = "dgvtxtNIT"
+        '
+        'dgvtxtEmpresa
+        '
+        Me.dgvtxtEmpresa.HeaderText = "Empresa"
+        Me.dgvtxtEmpresa.Name = "dgvtxtEmpresa"
+        '
+        'dgvtxtDescripcion
+        '
+        Me.dgvtxtDescripcion.HeaderText = "Descripción"
+        Me.dgvtxtDescripcion.Name = "dgvtxtDescripcion"
+        '
+        'dgvtxtDireccion
+        '
+        Me.dgvtxtDireccion.HeaderText = "Dirección"
+        Me.dgvtxtDireccion.Name = "dgvtxtDireccion"
+        '
+        'dgvtxtPropietario
+        '
+        Me.dgvtxtPropietario.HeaderText = "Propietario"
+        Me.dgvtxtPropietario.Name = "dgvtxtPropietario"
+        '
+        'dgvtxtTelefono
+        '
+        Me.dgvtxtTelefono.HeaderText = "Telefono"
+        Me.dgvtxtTelefono.Name = "dgvtxtTelefono"
+        '
+        'dgvCelular
+        '
+        Me.dgvCelular.HeaderText = "Celular"
+        Me.dgvCelular.Name = "dgvCelular"
         '
         'btnEditar
         '
@@ -139,41 +174,6 @@ Partial Class frmListarProveedores
         Me.btnEliminar.TabIndex = 15
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = False
-        '
-        'dgvtxtNIT
-        '
-        Me.dgvtxtNIT.HeaderText = "NIT"
-        Me.dgvtxtNIT.Name = "dgvtxtNIT"
-        '
-        'dgvtxtEmpresa
-        '
-        Me.dgvtxtEmpresa.HeaderText = "Empresa"
-        Me.dgvtxtEmpresa.Name = "dgvtxtEmpresa"
-        '
-        'dgvtxtDescripcion
-        '
-        Me.dgvtxtDescripcion.HeaderText = "Descripción"
-        Me.dgvtxtDescripcion.Name = "dgvtxtDescripcion"
-        '
-        'dgvtxtDireccion
-        '
-        Me.dgvtxtDireccion.HeaderText = "Dirección"
-        Me.dgvtxtDireccion.Name = "dgvtxtDireccion"
-        '
-        'dgvtxtPropietario
-        '
-        Me.dgvtxtPropietario.HeaderText = "Propietario"
-        Me.dgvtxtPropietario.Name = "dgvtxtPropietario"
-        '
-        'dgvtxtTelefono
-        '
-        Me.dgvtxtTelefono.HeaderText = "Telefono"
-        Me.dgvtxtTelefono.Name = "dgvtxtTelefono"
-        '
-        'dgvCelular
-        '
-        Me.dgvCelular.HeaderText = "Celular"
-        Me.dgvCelular.Name = "dgvCelular"
         '
         'frmListarProveedores
         '
