@@ -81,7 +81,7 @@ Partial Class frmingresotipocliente
         Me.txtnombre.MaxLength = 15
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(229, 20)
-        Me.txtnombre.TabIndex = 34
+        Me.txtnombre.TabIndex = 0
         '
         'txtdescripcion
         '
@@ -89,14 +89,14 @@ Partial Class frmingresotipocliente
         Me.txtdescripcion.MaxLength = 60
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(229, 20)
-        Me.txtdescripcion.TabIndex = 35
+        Me.txtdescripcion.TabIndex = 1
         '
         'txtdescuento
         '
         Me.txtdescuento.Location = New System.Drawing.Point(125, 156)
         Me.txtdescuento.Name = "txtdescuento"
         Me.txtdescuento.Size = New System.Drawing.Size(229, 20)
-        Me.txtdescuento.TabIndex = 36
+        Me.txtdescuento.TabIndex = 2
         '
         'btnCancelar
         '
@@ -105,7 +105,7 @@ Partial Class frmingresotipocliente
         Me.btnCancelar.Location = New System.Drawing.Point(198, 200)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 43
+        Me.btnCancelar.TabIndex = 3
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -115,7 +115,7 @@ Partial Class frmingresotipocliente
         Me.btnAceptar.Location = New System.Drawing.Point(291, 200)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 42
+        Me.btnAceptar.TabIndex = 4
         Me.btnAceptar.Text = "&Agregar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
