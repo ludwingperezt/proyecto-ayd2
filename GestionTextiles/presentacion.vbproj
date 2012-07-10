@@ -212,34 +212,34 @@
     <Compile Include="Productos\frmModuloProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModuloProveedores.Designer.vb">
+    <Compile Include="Proveedores\frmModuloProveedores.Designer.vb">
       <DependentUpon>frmModuloProveedores.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmModuloProveedores.vb">
+    <Compile Include="Proveedores\frmModuloProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModuloReportes.Designer.vb">
+    <Compile Include="Formularios de Reportes\frmModuloReportes.Designer.vb">
       <DependentUpon>frmModuloReportes.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmModuloReportes.vb">
+    <Compile Include="Formularios de Reportes\frmModuloReportes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModuloSeries.Designer.vb">
+    <Compile Include="Series\frmModuloSeries.Designer.vb">
       <DependentUpon>frmModuloSeries.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmModuloSeries.vb">
+    <Compile Include="Series\frmModuloSeries.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNPermiso.Designer.vb">
+    <Compile Include="Roles\frmNPermiso.Designer.vb">
       <DependentUpon>frmNPermiso.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmNPermiso.vb">
+    <Compile Include="Roles\frmNPermiso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNuevoProveedor.Designer.vb">
+    <Compile Include="Proveedores\frmNuevoProveedor.Designer.vb">
       <DependentUpon>frmNuevoProveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmNuevoProveedor.vb">
+    <Compile Include="Proveedores\frmNuevoProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.vb">
@@ -272,28 +272,28 @@
     <Compile Include="Formularios de Reportes\frmReportes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRoles.Designer.vb">
+    <Compile Include="Roles\frmRoles.Designer.vb">
       <DependentUpon>frmRoles.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmRoles.vb">
+    <Compile Include="Roles\frmRoles.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSerie.Designer.vb">
+    <Compile Include="Series\frmSerie.Designer.vb">
       <DependentUpon>frmSerie.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSerie.vb">
+    <Compile Include="Series\frmSerie.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmtipocliente.Designer.vb">
+    <Compile Include="Clientes\frmtipocliente.Designer.vb">
       <DependentUpon>frmtipocliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmtipocliente.vb">
+    <Compile Include="Clientes\frmtipocliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVentas.vb">
+    <Compile Include="Ventas\frmVentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVentas.Designer.vb">
+    <Compile Include="Ventas\frmVentas.Designer.vb">
       <DependentUpon>frmVentas.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -377,19 +377,19 @@
     <EmbeddedResource Include="Productos\frmModuloProductos.resx">
       <DependentUpon>frmModuloProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModuloProveedores.resx">
+    <EmbeddedResource Include="Proveedores\frmModuloProveedores.resx">
       <DependentUpon>frmModuloProveedores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModuloReportes.resx">
+    <EmbeddedResource Include="Formularios de Reportes\frmModuloReportes.resx">
       <DependentUpon>frmModuloReportes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModuloSeries.resx">
+    <EmbeddedResource Include="Series\frmModuloSeries.resx">
       <DependentUpon>frmModuloSeries.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNPermiso.resx">
+    <EmbeddedResource Include="Roles\frmNPermiso.resx">
       <DependentUpon>frmNPermiso.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNuevoProveedor.resx">
+    <EmbeddedResource Include="Proveedores\frmNuevoProveedor.resx">
       <DependentUpon>frmNuevoProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
@@ -407,16 +407,16 @@
     <EmbeddedResource Include="Formularios de Reportes\frmReportes.resx">
       <DependentUpon>frmReportes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRoles.resx">
+    <EmbeddedResource Include="Roles\frmRoles.resx">
       <DependentUpon>frmRoles.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSerie.resx">
+    <EmbeddedResource Include="Series\frmSerie.resx">
       <DependentUpon>frmSerie.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmtipocliente.resx">
+    <EmbeddedResource Include="Clientes\frmtipocliente.resx">
       <DependentUpon>frmtipocliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVentas.resx">
+    <EmbeddedResource Include="Ventas\frmVentas.resx">
       <DependentUpon>frmVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
