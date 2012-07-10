@@ -110,10 +110,10 @@
     <Compile Include="Compras\frmListarCompras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModuloCompras.Designer.vb">
+    <Compile Include="Compras\frmModuloCompras.Designer.vb">
       <DependentUpon>frmModuloCompras.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmModuloCompras.vb">
+    <Compile Include="Compras\frmModuloCompras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empleados\frmDarDeBajaEmpleado.Designer.vb">
@@ -158,16 +158,16 @@
     <Compile Include="Clientes\frmingresotipocliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListarProveedores.Designer.vb">
+    <Compile Include="Proveedores\frmListarProveedores.Designer.vb">
       <DependentUpon>frmListarProveedores.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmListarProveedores.vb">
+    <Compile Include="Proveedores\frmListarProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListarSeries.Designer.vb">
+    <Compile Include="Series\frmListarSeries.Designer.vb">
       <DependentUpon>frmListarSeries.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmListarSeries.vb">
+    <Compile Include="Series\frmListarSeries.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empleados\frmLogin.Designer.vb">
@@ -182,34 +182,34 @@
     <Compile Include="Clientes\frmModificarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModificarEmpleado.Designer.vb">
+    <Compile Include="Empleados\frmModificarEmpleado.Designer.vb">
       <DependentUpon>frmModificarEmpleado.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmModificarEmpleado.vb">
+    <Compile Include="Empleados\frmModificarEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModificarProductos.Designer.vb">
+    <Compile Include="Productos\frmModificarProductos.Designer.vb">
       <DependentUpon>frmModificarProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmModificarProductos.vb">
+    <Compile Include="Productos\frmModificarProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModificarTipoCliente.Designer.vb">
+    <Compile Include="Clientes\frmModificarTipoCliente.Designer.vb">
       <DependentUpon>frmModificarTipoCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmModificarTipoCliente.vb">
+    <Compile Include="Clientes\frmModificarTipoCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModuloEmpleados.Designer.vb">
+    <Compile Include="Empleados\frmModuloEmpleados.Designer.vb">
       <DependentUpon>frmModuloEmpleados.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmModuloEmpleados.vb">
+    <Compile Include="Empleados\frmModuloEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModuloProductos.Designer.vb">
+    <Compile Include="Productos\frmModuloProductos.Designer.vb">
       <DependentUpon>frmModuloProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmModuloProductos.vb">
+    <Compile Include="Productos\frmModuloProductos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmModuloProveedores.Designer.vb">
@@ -326,7 +326,7 @@
     <EmbeddedResource Include="Compras\frmListarCompras.resx">
       <DependentUpon>frmListarCompras.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModuloCompras.resx">
+    <EmbeddedResource Include="Compras\frmModuloCompras.resx">
       <DependentUpon>frmModuloCompras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\frmDarDeBajaEmpleado.resx">
@@ -350,10 +350,10 @@
     <EmbeddedResource Include="Clientes\frmingresotipocliente.resx">
       <DependentUpon>frmingresotipocliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListarProveedores.resx">
+    <EmbeddedResource Include="Proveedores\frmListarProveedores.resx">
       <DependentUpon>frmListarProveedores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListarSeries.resx">
+    <EmbeddedResource Include="Series\frmListarSeries.resx">
       <DependentUpon>frmListarSeries.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\frmLogin.resx">
@@ -362,19 +362,19 @@
     <EmbeddedResource Include="Clientes\frmModificarCliente.resx">
       <DependentUpon>frmModificarCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModificarEmpleado.resx">
+    <EmbeddedResource Include="Empleados\frmModificarEmpleado.resx">
       <DependentUpon>frmModificarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModificarProductos.resx">
+    <EmbeddedResource Include="Productos\frmModificarProductos.resx">
       <DependentUpon>frmModificarProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModificarTipoCliente.resx">
+    <EmbeddedResource Include="Clientes\frmModificarTipoCliente.resx">
       <DependentUpon>frmModificarTipoCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModuloEmpleados.resx">
+    <EmbeddedResource Include="Empleados\frmModuloEmpleados.resx">
       <DependentUpon>frmModuloEmpleados.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModuloProductos.resx">
+    <EmbeddedResource Include="Productos\frmModuloProductos.resx">
       <DependentUpon>frmModuloProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModuloProveedores.resx">
@@ -447,9 +447,7 @@
     <None Include="Resources\winhand1.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Proveedores\" />
     <Folder Include="Reportes\" />
-    <Folder Include="Series\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\datos\datos.csproj">
