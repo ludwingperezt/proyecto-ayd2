@@ -86,22 +86,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="frmAnular.Designer.vb">
+    <Compile Include="Ventas\frmAnular.Designer.vb">
       <DependentUpon>frmAnular.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAnular.vb">
+    <Compile Include="Ventas\frmAnular.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClientes.Designer.vb">
+    <Compile Include="Clientes\frmClientes.Designer.vb">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmClientes.vb">
+    <Compile Include="Clientes\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCompras.Designer.vb">
+    <Compile Include="Compras\frmCompras.Designer.vb">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCompras.vb">
+    <Compile Include="Compras\frmCompras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmListarCompras.Designer.vb">
@@ -314,13 +314,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAnular.resx">
+    <EmbeddedResource Include="Ventas\frmAnular.resx">
       <DependentUpon>frmAnular.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClientes.resx">
+    <EmbeddedResource Include="Clientes\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCompras.resx">
+    <EmbeddedResource Include="Compras\frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListarCompras.resx">
@@ -447,14 +447,11 @@
     <None Include="Resources\winhand1.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Clientes\" />
-    <Folder Include="Compras\" />
     <Folder Include="Empleados\" />
     <Folder Include="Productos\" />
     <Folder Include="Proveedores\" />
     <Folder Include="Reportes\" />
     <Folder Include="Series\" />
-    <Folder Include="Ventas\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\datos\datos.csproj">
