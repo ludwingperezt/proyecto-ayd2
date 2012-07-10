@@ -5,6 +5,6 @@
         ''Acá se llenan los textbox
         'frmSerie.txtSerie.Text = SERIE
         'frmSerie.txtCorrelativo.Text=CORRELATIVO
-        frmSerie.actualizar=True;
+        frmSerie.actualizar = True
     End Sub
 End Class

@@ -25,11 +25,10 @@ Partial Class frmCompras
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.btnagregar = New System.Windows.Forms.Button()
         Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.txtTela = New System.Windows.Forms.TextBox()
-        Me.lblcantidad = New System.Windows.Forms.Label()
-        Me.lbltela = New System.Windows.Forms.Label()
+        Me.lblCantidad = New System.Windows.Forms.Label()
+        Me.lblTela = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -53,6 +52,8 @@ Partial Class frmCompras
         Me.clmSubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblEmpleado = New System.Windows.Forms.Label()
+        Me.btnagregar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.gpProducto.SuspendLayout()
         CType(Me.dgvDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,21 +81,11 @@ Partial Class frmCompras
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
-        'btnagregar
-        '
-        Me.btnagregar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnagregar.Location = New System.Drawing.Point(333, 313)
-        Me.btnagregar.Name = "btnagregar"
-        Me.btnagregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnagregar.TabIndex = 9
-        Me.btnagregar.Text = "Agregar"
-        Me.btnagregar.UseVisualStyleBackColor = False
-        '
         'txtCantidad
         '
         Me.txtCantidad.Location = New System.Drawing.Point(81, 57)
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(194, 20)
+        Me.txtCantidad.Size = New System.Drawing.Size(87, 20)
         Me.txtCantidad.TabIndex = 8
         '
         'txtTela
@@ -105,30 +96,30 @@ Partial Class frmCompras
         Me.txtTela.Size = New System.Drawing.Size(194, 20)
         Me.txtTela.TabIndex = 6
         '
-        'lblcantidad
+        'lblCantidad
         '
-        Me.lblcantidad.AutoSize = True
-        Me.lblcantidad.Location = New System.Drawing.Point(16, 57)
-        Me.lblcantidad.Name = "lblcantidad"
-        Me.lblcantidad.Size = New System.Drawing.Size(49, 13)
-        Me.lblcantidad.TabIndex = 60
-        Me.lblcantidad.Text = "Cantidad"
+        Me.lblCantidad.AutoSize = True
+        Me.lblCantidad.Location = New System.Drawing.Point(16, 57)
+        Me.lblCantidad.Name = "lblCantidad"
+        Me.lblCantidad.Size = New System.Drawing.Size(49, 13)
+        Me.lblCantidad.TabIndex = 60
+        Me.lblCantidad.Text = "Cantidad"
         '
-        'lbltela
+        'lblTela
         '
-        Me.lbltela.AutoSize = True
-        Me.lbltela.Location = New System.Drawing.Point(16, 29)
-        Me.lbltela.Name = "lbltela"
-        Me.lbltela.Size = New System.Drawing.Size(28, 13)
-        Me.lbltela.TabIndex = 59
-        Me.lbltela.Text = "Tela"
+        Me.lblTela.AutoSize = True
+        Me.lblTela.Location = New System.Drawing.Point(16, 29)
+        Me.lblTela.Name = "lblTela"
+        Me.lblTela.Size = New System.Drawing.Size(28, 13)
+        Me.lblTela.TabIndex = 59
+        Me.lblTela.Text = "Tela"
         '
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.Green
-        Me.lblTotal.Location = New System.Drawing.Point(365, 552)
+        Me.lblTotal.Location = New System.Drawing.Point(365, 565)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(74, 16)
         Me.lblTotal.TabIndex = 56
@@ -172,7 +163,7 @@ Partial Class frmCompras
         Me.lbEtiquetaTotal.AutoSize = True
         Me.lbEtiquetaTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbEtiquetaTotal.ForeColor = System.Drawing.Color.Green
-        Me.lbEtiquetaTotal.Location = New System.Drawing.Point(263, 552)
+        Me.lbEtiquetaTotal.Location = New System.Drawing.Point(268, 565)
         Me.lbEtiquetaTotal.Name = "lbEtiquetaTotal"
         Me.lbEtiquetaTotal.Size = New System.Drawing.Size(48, 16)
         Me.lbEtiquetaTotal.TabIndex = 51
@@ -182,10 +173,10 @@ Partial Class frmCompras
         '
         Me.gpProducto.Controls.Add(Me.btnBuscar)
         Me.gpProducto.Controls.Add(Me.txtCantidad)
-        Me.gpProducto.Controls.Add(Me.lbltela)
-        Me.gpProducto.Controls.Add(Me.lblcantidad)
+        Me.gpProducto.Controls.Add(Me.lblTela)
+        Me.gpProducto.Controls.Add(Me.lblCantidad)
         Me.gpProducto.Controls.Add(Me.txtTela)
-        Me.gpProducto.Location = New System.Drawing.Point(51, 217)
+        Me.gpProducto.Location = New System.Drawing.Point(51, 214)
         Me.gpProducto.Name = "gpProducto"
         Me.gpProducto.Size = New System.Drawing.Size(388, 90)
         Me.gpProducto.TabIndex = 50
@@ -196,7 +187,7 @@ Partial Class frmCompras
         '
         Me.dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clmCantidad, Me.clmTela, Me.clmSubtotal})
-        Me.dgvDetalleFactura.Location = New System.Drawing.Point(51, 342)
+        Me.dgvDetalleFactura.Location = New System.Drawing.Point(51, 363)
         Me.dgvDetalleFactura.Name = "dgvDetalleFactura"
         Me.dgvDetalleFactura.Size = New System.Drawing.Size(388, 187)
         Me.dgvDetalleFactura.TabIndex = 10
@@ -331,14 +322,34 @@ Partial Class frmCompras
         Me.Label1.TabIndex = 42
         Me.Label1.Text = "Fecha"
         '
+        'lblEmpleado
+        '
+        Me.lblEmpleado.AutoSize = True
+        Me.lblEmpleado.Location = New System.Drawing.Point(350, 95)
+        Me.lblEmpleado.Name = "lblEmpleado"
+        Me.lblEmpleado.Size = New System.Drawing.Size(66, 13)
+        Me.lblEmpleado.TabIndex = 57
+        Me.lblEmpleado.Text = "EMPLEADO"
+        '
+        'btnagregar
+        '
+        Me.btnagregar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnagregar.Location = New System.Drawing.Point(302, 310)
+        Me.btnagregar.Name = "btnagregar"
+        Me.btnagregar.Size = New System.Drawing.Size(106, 23)
+        Me.btnagregar.TabIndex = 58
+        Me.btnagregar.Text = "Agregar a la cesta"
+        Me.btnagregar.UseVisualStyleBackColor = False
+        '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(504, 675)
+        Me.Controls.Add(Me.btnagregar)
+        Me.Controls.Add(Me.lblEmpleado)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.txtCorrelativo)
-        Me.Controls.Add(Me.btnagregar)
         Me.Controls.Add(Me.txtSerie)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.lblTitulo)
@@ -374,11 +385,10 @@ Partial Class frmCompras
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents btnagregar As System.Windows.Forms.Button
     Friend WithEvents txtCantidad As System.Windows.Forms.TextBox
     Friend WithEvents txtTela As System.Windows.Forms.TextBox
-    Friend WithEvents lblcantidad As System.Windows.Forms.Label
-    Friend WithEvents lbltela As System.Windows.Forms.Label
+    Friend WithEvents lblCantidad As System.Windows.Forms.Label
+    Friend WithEvents lblTela As System.Windows.Forms.Label
     Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
@@ -402,4 +412,6 @@ Partial Class frmCompras
     Friend WithEvents clmSubtotal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblEmpleado As System.Windows.Forms.Label
+    Friend WithEvents btnagregar As System.Windows.Forms.Button
 End Class
