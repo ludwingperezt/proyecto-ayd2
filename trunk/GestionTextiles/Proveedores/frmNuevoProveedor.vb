@@ -1,7 +1,11 @@
-﻿Public Class frmNuevoProveedor
+﻿Imports negocios
+
+Public Class frmNuevoProveedor
     Friend Shared actualizar As Boolean
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Dim lbooBandera As Boolean = True
+        Dim lsMensaje As String
+        Dim lnpProveedorNuevo As negociosProveedores
 
         For Each ctrlIterador As Control In Me.Controls
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
@@ -19,8 +23,34 @@
         If lbooBandera Then
             If actualizar Then
                 '' si es un update...
+                frmListarProveedores.gnpProveedor.setNit(Me.txtNIT.Text)
+                frmListarProveedores.gnpProveedor.setDireccion(Me.txtDireccion.Text)
+                frmListarProveedores.gnpProveedor.setEmpresa(Me.txtEmpresa.Text)
+                frmListarProveedores.gnpProveedor.setNombre(Me.txtNombre.Text)
+                frmListarProveedores.gnpProveedor.setPropietario(Me.txtPropietario.Text)
+                frmListarProveedores.gnpProveedor.setTelefono(Me.txtTelefono.Text)
+                frmListarProveedores.gnpProveedor.setCelular(Me.txtCelular.Text)
+
+                If MessageBox.Show("¿Está seguro de modificar los datos de este proveedor?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
+                    Try
+                        lsMensaje = frmListarProveedores.gnpProveedor.fnsModificarProveedor()
+                        MessageBox.Show(lsMensaje, "Modificación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End Try
+                End If
+
             Else
                 '' si es un insert...
+                lnpProveedorNuevo = New negociosProveedores(Me.txtNombre.Text, Me.txtNIT.Text, Me.txtDireccion.Text, Me.txtEmpresa.Text, Me.txtPropietario.Text, Me.txtTelefono.Text, Me.txtCelular.Text)
+                Try
+
+                    lsMensaje = lnpProveedorNuevo.fnsInsertarProveedor()
+                    MessageBox.Show(lsMensaje, "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+
             End If
             ' todo es válido se procede a guardar en la BD y luego a cerrar el form!
             Me.Dispose()
@@ -97,5 +127,19 @@
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Dispose()
+    End Sub
+
+    Private Sub frmNuevoProveedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If actualizar = True Then
+            Me.txtNIT.Text = frmListarProveedores.gnpProveedor.getNit()
+            Me.txtDireccion.Text = frmListarProveedores.gnpProveedor.getDireccion()
+            Me.txtEmpresa.Text = frmListarProveedores.gnpProveedor.getEmpresa()
+            Me.txtNombre.Text = frmListarProveedores.gnpProveedor.getNombre()
+            Me.txtPropietario.Text = frmListarProveedores.gnpProveedor.getPropietario()
+            Me.txtTelefono.Text = frmListarProveedores.gnpProveedor.getTelefono()
+            Me.txtCelular.Text = frmListarProveedores.gnpProveedor.getCelular()
+
+
+        End If
     End Sub
 End Class

@@ -6,7 +6,9 @@ using System.Data;
 
 namespace negocios
 {  
-
+    /// <summary>
+    /// Clase para el manejo de proveedores
+    /// </summary>
     public class negociosProveedores
     {
         private int id;
@@ -129,7 +131,7 @@ namespace negocios
         /// Funcion para listar todos los proveedores existentes
         /// </summary>
         /// <returns>DataTable: Tabla con la lista de los proveedores</returns>
-        public DataTable fnsListarProveedores()
+        public static DataTable fnsListarProveedores()
         {
             return negociosAdaptadores.gAdaptadorListarProveedores.GetData();
         }
