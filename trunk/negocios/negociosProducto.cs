@@ -200,6 +200,14 @@ namespace negocios
 
         }
         /// <summary>
+        /// Método que inserta un nuevo producto a la base de datos. Éste método solo inserta la descripción del producto, no los detalles de compras o ventas, es decir que no se debe utilizar este método para la actualización de existencias, para ello utilice los métodos aumentarExistenciaProducto y disminuirExistenciaProducto.
+        /// Los datos que se envían a la base de datos son los que se encuentran contenidos actualmente en éste objeto.
+        /// </summary>
+        public void fnvdInsertarDescripcionProducto()
+        {           
+                negociosAdaptadores.gAdaptadorDeConsultas.insertarProducto(this.lsCodigo, this.lsNombre, this.lduCantidad, this.ldecPrecioCompra, this.ldecPrecioVenta, this.lsColor);
+        }
+        /// <summary>
         /// Método que modifica la descripción de un producto. Los datos que se utilizan para la modificación son los que se encuentran almacenados en el objeto actual.
         /// </summary>
         /// <returns>string: mensaje de confirmación o error de la operación</returns>
@@ -216,6 +224,13 @@ namespace negocios
             }
         }
         /// <summary>
+        /// Método que modifica la descripción de un producto. Los datos que se utilizan para la modificación son los que se encuentran almacenados en el objeto actual.
+        /// </summary>
+        public void fnvdModificarDescripcionProducto()
+        {
+                negociosAdaptadores.gAdaptadorDeConsultas.modificarProducto((short)this.liIdProducto, this.lsCodigo, this.lsNombre, this.lduCantidad, this.ldecPrecioCompra, this.ldecPrecioVenta, this.lsColor);
+        }
+        /// <summary>
         /// Método que elimina un producto de la base de datos. Éste producto seguirá apareciendo en el historial de la base de datos pero no estará disponible para futuras consultas.
         /// </summary>
         /// <returns>string: mensaje de confirmación o error de la operación</returns>
@@ -230,6 +245,13 @@ namespace negocios
             {
                 return ex.Message;
             }
+        }
+        /// <summary>
+        /// Método que elimina un producto de la base de datos. Éste producto seguirá apareciendo en el historial de la base de datos pero no estará disponible para futuras consultas.
+        /// </summary>
+        public void fnvdEliminarProducto()
+        {
+                negociosAdaptadores.gAdaptadorDeConsultas.eliminarProducto((short)this.liIdProducto);
         }
         /// <summary>
         /// Método que aumenta la existencia del producto que representa éste objeto en la cantidad específicada.
@@ -249,6 +271,14 @@ namespace negocios
             }
         }
         /// <summary>
+        /// Método que aumenta la existencia del producto que representa éste objeto en la cantidad específicada.
+        /// </summary>
+        /// <param name="cantidad">double: cantidad que se desea agregar a la cantidad actual de producto en bodega</param>
+        public void fnvdAumentarExistenciaProducto(double cantidad)
+        {
+                negociosAdaptadores.gAdaptadorDeConsultas.aumentarStockProducto((short)this.liIdProducto, cantidad);
+        }
+        /// <summary>
         /// Método que disminuye la existencia del producto que representa éste objeto en la cantidad específicada.
         /// </summary>
         /// <param name="cantidad">double: cantidad que se desea disminuir a la cantidad actual de producto en bodega</param>
@@ -264,6 +294,14 @@ namespace negocios
             {
                 return ex.Message;
             }
+        }
+        /// <summary>
+        /// Método que disminuye la existencia del producto que representa éste objeto en la cantidad específicada.
+        /// </summary>
+        /// <param name="cantidad">double: cantidad que se desea disminuir a la cantidad actual de producto en bodega</param>
+        public void fnvdDisminuirExistenciaProducto(double cantidad)
+        {
+                negociosAdaptadores.gAdaptadorDeConsultas.disminuirStockProducto((short)this.liIdProducto, cantidad);
         }
         /// <summary>
         /// Función que verifica las existencias de éste producto en bodega para cubrir el pedido especificado.
