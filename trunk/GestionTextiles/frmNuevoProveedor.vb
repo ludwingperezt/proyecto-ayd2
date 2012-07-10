@@ -1,8 +1,12 @@
 ﻿Public Class frmNuevoProveedor
 
+<<<<<<< .mine
+    Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+=======
     Friend Shared actualizar As Boolean
 
     Private Sub btnAceptar_Click(sender As System.Object, e As System.EventArgs) Handles btnAceptar.Click
+>>>>>>> .r95
         Dim lbooBandera As Boolean = True
 
         For Each ctrlIterador As Control In Me.Controls
@@ -17,8 +21,11 @@
                 End If
             End If
         Next
+<<<<<<< .mine
+=======
         ''Proveedores a = New Proveedores();
 
+>>>>>>> .r95
         If lbooBandera Then
             If actualizar Then
                 '' si es un update...
@@ -30,75 +37,75 @@
         End If
     End Sub
 
-    Private Sub txtNIT_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtNIT.MouseLeave
+    Private Sub txtNIT_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNIT.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtNombre_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtNombre.MouseLeave
+    Private Sub txtNombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtDireccion_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtDireccion.MouseLeave
+    Private Sub txtDireccion_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDireccion.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtEmpresa_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtEmpresa.MouseLeave
+    Private Sub txtEmpresa_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEmpresa.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtPropietario_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtPropietario.MouseLeave
+    Private Sub txtPropietario_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPropietario.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtTelefono_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtTelefono.MouseLeave
+    Private Sub txtTelefono_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTelefono.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtCelular_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtCelular.MouseLeave
+    Private Sub txtCelular_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCelular.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtNIT_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtNIT.MouseHover
+    Private Sub txtNIT_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNIT.MouseHover
         slblDescripcion.Text = "Ingrese el NIT del proveedor, sin guiones"
     End Sub
 
-    Private Sub txtNombre_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtNombre.MouseHover
+    Private Sub txtNombre_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseHover
         slblDescripcion.Text = "Ingrese el nombre"
     End Sub
 
-    Private Sub txtDireccion_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtDireccion.MouseHover
+    Private Sub txtDireccion_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDireccion.MouseHover
         slblDescripcion.Text = "Ingrese la dirección del proveedor"
     End Sub
 
-    Private Sub txtPropietario_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtPropietario.MouseHover
+    Private Sub txtPropietario_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPropietario.MouseHover
         slblDescripcion.Text = "Ingrese el nombre del propietario o contacto de la empresa proveedora"
     End Sub
 
-    Private Sub txtTelefono_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtTelefono.MouseHover
+    Private Sub txtTelefono_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTelefono.MouseHover
         slblDescripcion.Text = "Si tiene telefono, ingrese el número, sin guiones ni letras"
     End Sub
 
-    Private Sub txtCelular_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtCelular.MouseHover
+    Private Sub txtCelular_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCelular.MouseHover
         slblDescripcion.Text = "Si tiene celular, ingrese el número, sin guiones ni letras"
     End Sub
 
-    Private Sub btnCancelar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnCancelar.MouseHover
+    Private Sub btnCancelar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseHover
         slblDescripcion.Text = "Cierra y no guarda cambios"
     End Sub
 
-    Private Sub btnAceptar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnAceptar.MouseHover
+    Private Sub btnAceptar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseHover
         slblDescripcion.Text = "Cierra y guarda el proveedor"
     End Sub
 
-    Private Sub btnAceptar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnAceptar.MouseLeave
+    Private Sub btnAceptar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnCancelar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnCancelar.MouseLeave
+    Private Sub btnCancelar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Dispose()
     End Sub
 End Class
