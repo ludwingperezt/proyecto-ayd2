@@ -6,7 +6,7 @@ using System.Data;
 
 namespace negocios
 {
-    class negociosFacturasProveedorEliminadas
+    public class negociosFacturasProveedorEliminadas
     {
         private int idFactura;
         private byte idEmpleado;
@@ -139,7 +139,7 @@ namespace negocios
             }
         }
 
-        public DataTable fnsListarFacturasProveedorEliminadas()
+        public static DataTable fnsListarFacturasProveedorEliminadas()
         {
             return negociosAdaptadores.gAdaptadorListarFacturasProveedorEliminadas.GetData();
         }

@@ -2,7 +2,7 @@
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         frmModuloProductos.btnSalir.Text = "Aceptar"
-        frmModuloProductos.btnSalir.Image = New Bitmap(Application.)
+        frmModuloProductos.btnSalir.Image = My.Resources.ok
         frmModuloProductos.btnEliminarProducto.Visible = False
         frmModuloProductos.btnModificarProducto.Visible = False
         frmModuloProductos.btnIngresarProducto.Visible = False

@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 namespace negocios
 {
-    class negociosFacturasProveedores
+    public class negociosFacturasProveedores
     {
         private int idFacturaProveedor;
         private int idProveedor;
