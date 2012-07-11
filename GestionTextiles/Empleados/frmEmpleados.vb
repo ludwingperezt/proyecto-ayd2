@@ -86,6 +86,7 @@ Public Class frmEmpleados
                 Else
                     ctrlIterador.BackColor = Color.White
                     ''ingreso de empleado nuevo
+                    ''hay que setear el id del empleado
                     Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
                     lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
                     lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
