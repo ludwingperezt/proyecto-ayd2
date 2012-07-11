@@ -86,18 +86,17 @@ Public Class frmEmpleados
                 Else
                     ctrlIterador.BackColor = Color.White
                     ''ingreso de empleado nuevo
-                    ''hay que setear el id del empleado
                     Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
                     lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
                     lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
                     lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
-                    lnpNuevoEmpleado.setTelefonoCliente(Convert.ToInt16(txtTelefono.Text))
-                    ''hay que quitar del formulario el textbox que se llamda cedula/dpi
+                    lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
+                    ''lnpNuevoEmpleado.set
                     lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
                     lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
                     lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
                     lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
-                    ''falta setear la fecha de contratacion lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.
+                    lnpNuevoEmpleado.setFechaContratacionEmpleado(Convert.ToDateTime(dtpFechaContrato.ToString))
                     Try
                         lnpNuevoEmpleado.fnsInsertarEmpleado()
                         MessageBox.Show("La operación de insersión de empleado se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
