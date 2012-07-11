@@ -100,7 +100,13 @@ Public Class frmModuloProductos
     End Sub
 
     Private Sub frmModuloProductos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.fnvdRecargar()
+        Try
+            Me.fnvdRecargar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+
     End Sub
     Private Sub fnvCrearDataTable(ByRef lst As List(Of negociosProducto))
         Dim ldtTabla As DataTable = New DataTable()
