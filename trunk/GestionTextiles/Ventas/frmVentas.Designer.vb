@@ -32,15 +32,16 @@ Partial Class frmVentas
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.lblTitulo = New System.Windows.Forms.Label()
+        Me.lblEmpleado = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 219)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 206)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(300, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(477, 22)
         Me.stsBarra.TabIndex = 0
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -61,9 +62,9 @@ Partial Class frmVentas
         '
         Me.btnAnular.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAnular.Image = CType(resources.GetObject("btnAnular.Image"), System.Drawing.Image)
-        Me.btnAnular.Location = New System.Drawing.Point(30, 60)
+        Me.btnAnular.Location = New System.Drawing.Point(16, 75)
         Me.btnAnular.Name = "btnAnular"
-        Me.btnAnular.Size = New System.Drawing.Size(97, 67)
+        Me.btnAnular.Size = New System.Drawing.Size(210, 67)
         Me.btnAnular.TabIndex = 1
         Me.btnAnular.Text = "An&ular Factura"
         Me.btnAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -73,9 +74,9 @@ Partial Class frmVentas
         '
         Me.btnFacturar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnFacturar.Image = CType(resources.GetObject("btnFacturar.Image"), System.Drawing.Image)
-        Me.btnFacturar.Location = New System.Drawing.Point(165, 60)
+        Me.btnFacturar.Location = New System.Drawing.Point(245, 75)
         Me.btnFacturar.Name = "btnFacturar"
-        Me.btnFacturar.Size = New System.Drawing.Size(99, 67)
+        Me.btnFacturar.Size = New System.Drawing.Size(206, 67)
         Me.btnFacturar.TabIndex = 2
         Me.btnFacturar.Text = "&Facturar"
         Me.btnFacturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -85,9 +86,10 @@ Partial Class frmVentas
         '
         Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(30, 133)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalir.Location = New System.Drawing.Point(346, 163)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(234, 64)
+        Me.btnSalir.Size = New System.Drawing.Size(105, 29)
         Me.btnSalir.TabIndex = 3
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -102,17 +104,27 @@ Partial Class frmVentas
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(35, 19)
+        Me.lblTitulo.Location = New System.Drawing.Point(104, 23)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(226, 29)
         Me.lblTitulo.TabIndex = 5
         Me.lblTitulo.Text = "Módulo de Ventas"
         '
+        'lblEmpleado
+        '
+        Me.lblEmpleado.AutoSize = True
+        Me.lblEmpleado.Location = New System.Drawing.Point(375, 35)
+        Me.lblEmpleado.Name = "lblEmpleado"
+        Me.lblEmpleado.Size = New System.Drawing.Size(66, 13)
+        Me.lblEmpleado.TabIndex = 59
+        Me.lblEmpleado.Text = "EMPLEADO"
+        '
         'frmVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(300, 241)
+        Me.ClientSize = New System.Drawing.Size(477, 228)
+        Me.Controls.Add(Me.lblEmpleado)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnFacturar)
@@ -137,5 +149,6 @@ Partial Class frmVentas
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
+    Friend WithEvents lblEmpleado As System.Windows.Forms.Label
 
 End Class
