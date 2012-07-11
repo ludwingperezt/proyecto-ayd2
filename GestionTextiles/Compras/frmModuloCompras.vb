@@ -76,4 +76,9 @@ Public Class frmModuloCompras
     Private Sub chkAnuladas_MouseHover(sender As System.Object, e As System.EventArgs) Handles chkAnuladas.MouseHover
         slblDescripcion.Text = "Si está habilitada esta opción, se hara una búsqueda solamente entre las facturas anuladas"
     End Sub
+
+    Private Sub btnSalir_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
+        Me.Dispose()
+
+    End Sub
 End Class
