@@ -110,7 +110,7 @@ namespace negocios
              {
                  try
                  {
-                     //negociosAdaptadores.gAdaptadorDeConsultas.insertarCliente(this.idTipoCliente,this.nombre,this.direccion,this.nit);
+                     negociosAdaptadores.gAdaptadorDeConsultas.insertarCliente(this.idTipoCliente,this.nombre,this.direccion,this.nit);
                      return "La inserción del cliente en la base de datos se llevó a cabo con éxito";
                  }
                  catch (Exception ex)
