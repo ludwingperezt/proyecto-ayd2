@@ -127,7 +127,7 @@ namespace negocios
              {
                  try
                  {
-                     //negociosAdaptadores.gAdaptadorDeConsultas.ModificarCliente(this.idTipoCliente, this.nombre, this.direccion, this.nit);
+                     negociosAdaptadores.gAdaptadorDeConsultas.ModificarCliente(this.idTipoCliente, this.nombre, this.direccion, this.nit);
                      return "La modificación de los datos del cliente se llevó a cabo con éxito";
                  }
                  catch (Exception ex)
@@ -147,9 +147,9 @@ namespace negocios
              /// Función que busca a un cliente por nombre
              /// </summary>
              /// <returns>DataTable: me devuelve a un cliente buscado por nombre</returns>
-             public static void fnDbBuscarClienteNombre(string nombreCliente)
+             public static DataTable fnDbBuscarClienteNombre(string nombreCliente)
              {
-                 //return negociosAdaptadores.gAdaptadorListarClientes.GetData();
+                 return negociosAdaptadores.gAdaptadorClienteNombre.GetData(nombreCliente);
 
              }
              #endregion
