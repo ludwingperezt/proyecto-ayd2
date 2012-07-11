@@ -100,13 +100,7 @@ Public Class frmModuloProductos
     End Sub
 
     Private Sub frmModuloProductos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Try
-            Me.fnvdRecargar()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-
+        Me.fnvdRecargar()
     End Sub
     Private Sub fnvCrearDataTable(ByRef lst As List(Of negociosProducto))
         Dim ldtTabla As DataTable = New DataTable()
@@ -138,9 +132,16 @@ Public Class frmModuloProductos
 
     End Sub
     Private Sub fnvdRecargar()
-        frmModuloProductos.gnpProductoSeleccionado = Nothing
-        Me.glstProductos = negociosProducto.fnlstListarProductos()
-        Me.fnvCrearDataTable(Me.glstProductos)
+        Try
+            frmModuloProductos.gnpProductoSeleccionado = Nothing
+            Me.glstProductos = negociosProducto.fnlstListarProductos()
+            Me.fnvCrearDataTable(Me.glstProductos)
+        Catch ex As Exception
+            Me.glstProductos.Clear()
+            Me.glstProductosFiltrada.Clear()
+            Me.fnvCrearDataTable(Me.glstProductos)
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
     Private Sub fnvBuscar(ByRef txt As String)
         Me.glstProductosFiltrada = New List(Of negociosProducto)
