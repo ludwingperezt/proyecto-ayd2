@@ -143,6 +143,15 @@ namespace negocios
              {
                  return negociosAdaptadores.gAdaptadorListarClientes.GetData();
              }
+             /// <summary>
+             /// Función que busca a un cliente por nombre
+             /// </summary>
+             /// <returns>DataTable: me devuelve a un cliente buscado por nombre</returns>
+             public static void fnDbBuscarClienteNombre(string nombreCliente)
+             {
+                 //return negociosAdaptadores.gAdaptadorListarClientes.GetData();
+
+             }
              #endregion
     }
 }
