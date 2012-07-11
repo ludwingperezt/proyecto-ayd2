@@ -8,7 +8,7 @@ Public Class frmSerie
         picbValidacion.Image = imglValidacion.Images(1)
         '' else
         picbValidacion.Image = imglValidacion.Images(0)
-        txtSerie.Focus()
+        ''txtSerie.Focus()
         ''End if
     End Sub
 
