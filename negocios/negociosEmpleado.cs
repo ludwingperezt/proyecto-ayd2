@@ -24,6 +24,7 @@ namespace negocios
       private string usuario;
       private byte[] password = new byte[20]; //es tipo binary ¿?
       private Boolean habilitado;
+      private string dpiCedula;
 
       #region constructores
         /// <summary>
@@ -32,7 +33,7 @@ namespace negocios
         public negociosEmpleado()
         { 
         }
-             public negociosEmpleado(byte iIdEmpleado, byte iIdRolEmpleado, string isNombreEmpleado, string isApellidoEmpleado, string isDireccionEmpleado, string isTelefonoEmpleado, string isCelularEmpleado, string isPuestoEmpleado, DateTime iDateFechaContratacion, decimal iDoSalario, string isUsuario, byte[] isPassword, Boolean iboolHabilitado)
+             public negociosEmpleado(byte iIdEmpleado, byte iIdRolEmpleado, string isNombreEmpleado, string isApellidoEmpleado, string isDireccionEmpleado, string isTelefonoEmpleado, string isCelularEmpleado, string isPuestoEmpleado, DateTime iDateFechaContratacion, decimal iDoSalario, string isUsuario, byte[] isPassword, Boolean iboolHabilitado, string isdpiCedula)
         {
             this.idEmpleado = iIdEmpleado;
             this.idRol = iIdRolEmpleado;
@@ -47,6 +48,7 @@ namespace negocios
             this.usuario = isUsuario;
             this.password = isPassword;
             this.habilitado = iboolHabilitado;
+            this.dpiCedula = isdpiCedula;
         }
         #endregion
 
@@ -156,6 +158,14 @@ namespace negocios
                  return this.habilitado;
              }
              /// <summary>
+             /// Método que accede al campo dpiCedula del empleado
+             /// </summary>
+             /// <return>string: el numero de la cedula o dpi del empleado</param>
+             public string getDpiCedula()
+             {
+                 return this.dpiCedula;
+             }
+             /// <summary>
              /// Método modificador el campo id del empleado
              /// </summary>
              /// <param name="lIdEmpleado">byte: el id del empleado</param>
@@ -259,6 +269,14 @@ namespace negocios
              {
                  this.habilitado = lbyHabilitadoEmpleado;
              }
+             /// <summary>
+             /// Método modificador el numero de cedula o dpi del empleado
+             /// </summary>
+             /// <param name="lsdpiCedula">string: numero de cedula o dpi</param>
+             public void setDpiCedula(string lsDpiCedula)
+             {
+                 this.dpiCedula = lsDpiCedula;
+             }
              #endregion
 
       #region Métodos de comunicación con la base de datos
@@ -271,7 +289,7 @@ namespace negocios
              {
                  try
                  {
-                     negociosAdaptadores.gAdaptadorDeConsultas.insertarEmpleados(this.idRol, this.nombre, this.apellido, this.direccion, this.telefono, this.celular, this.puesto, this.fechaContratacion, this.salario, this.usuario, this.password, this.habilitado);
+                     //negociosAdaptadores.gAdaptadorDeConsultas.insertarEmpleados(this.idRol, this.nombre, this.apellido, this.direccion, this.telefono, this.celular, this.puesto, this.fechaContratacion, this.salario, this.usuario, this.password, this.habilitado);
                      return "La inserción del empleado en la base de datos se llevó a cabo con éxito";
                  }
                  catch (Exception ex)
