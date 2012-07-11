@@ -41,6 +41,7 @@ Partial Class frmClientes
         Me.btneliminarcliente = New System.Windows.Forms.Button()
         Me.btnmodificarclientes = New System.Windows.Forms.Button()
         Me.btningresarcliente = New System.Windows.Forms.Button()
+        Me.lblEmpleado = New System.Windows.Forms.Label()
         CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
@@ -50,7 +51,7 @@ Partial Class frmClientes
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(162, 20)
+        Me.lblTitulo.Location = New System.Drawing.Point(150, 20)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(206, 29)
         Me.lblTitulo.TabIndex = 29
@@ -131,7 +132,7 @@ Partial Class frmClientes
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 464)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 442)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(547, 22)
         Me.stsBarra.TabIndex = 39
@@ -154,9 +155,10 @@ Partial Class frmClientes
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(78, 388)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(363, 411)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(350, 64)
+        Me.Button1.Size = New System.Drawing.Size(139, 28)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "&Salir"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -166,9 +168,9 @@ Partial Class frmClientes
         '
         Me.btneliminarcliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btneliminarcliente.Image = CType(resources.GetObject("btneliminarcliente.Image"), System.Drawing.Image)
-        Me.btneliminarcliente.Location = New System.Drawing.Point(330, 305)
+        Me.btneliminarcliente.Location = New System.Drawing.Point(363, 307)
         Me.btneliminarcliente.Name = "btneliminarcliente"
-        Me.btneliminarcliente.Size = New System.Drawing.Size(98, 71)
+        Me.btneliminarcliente.Size = New System.Drawing.Size(139, 71)
         Me.btneliminarcliente.TabIndex = 5
         Me.btneliminarcliente.Text = "&Eliminar Cliente"
         Me.btneliminarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -178,9 +180,9 @@ Partial Class frmClientes
         '
         Me.btnmodificarclientes.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnmodificarclientes.Image = CType(resources.GetObject("btnmodificarclientes.Image"), System.Drawing.Image)
-        Me.btnmodificarclientes.Location = New System.Drawing.Point(202, 305)
+        Me.btnmodificarclientes.Location = New System.Drawing.Point(188, 306)
         Me.btnmodificarclientes.Name = "btnmodificarclientes"
-        Me.btnmodificarclientes.Size = New System.Drawing.Size(104, 72)
+        Me.btnmodificarclientes.Size = New System.Drawing.Size(138, 72)
         Me.btnmodificarclientes.TabIndex = 4
         Me.btnmodificarclientes.Text = "&Modificar Cliente"
         Me.btnmodificarclientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -190,19 +192,29 @@ Partial Class frmClientes
         '
         Me.btningresarcliente.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btningresarcliente.Image = CType(resources.GetObject("btningresarcliente.Image"), System.Drawing.Image)
-        Me.btningresarcliente.Location = New System.Drawing.Point(78, 305)
+        Me.btningresarcliente.Location = New System.Drawing.Point(15, 306)
         Me.btningresarcliente.Name = "btningresarcliente"
-        Me.btningresarcliente.Size = New System.Drawing.Size(102, 72)
+        Me.btningresarcliente.Size = New System.Drawing.Size(126, 72)
         Me.btningresarcliente.TabIndex = 3
         Me.btningresarcliente.Text = "&Ingresar cliente"
         Me.btningresarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btningresarcliente.UseVisualStyleBackColor = False
         '
+        'lblEmpleado
+        '
+        Me.lblEmpleado.AutoSize = True
+        Me.lblEmpleado.Location = New System.Drawing.Point(412, 32)
+        Me.lblEmpleado.Name = "lblEmpleado"
+        Me.lblEmpleado.Size = New System.Drawing.Size(66, 13)
+        Me.lblEmpleado.TabIndex = 59
+        Me.lblEmpleado.Text = "EMPLEADO"
+        '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(547, 486)
+        Me.ClientSize = New System.Drawing.Size(547, 464)
+        Me.Controls.Add(Me.lblEmpleado)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnbuscar)
@@ -244,4 +256,5 @@ Partial Class frmClientes
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents lblEmpleado As System.Windows.Forms.Label
 End Class
