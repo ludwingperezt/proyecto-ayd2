@@ -14,7 +14,6 @@ namespace negocios
        private string nit;
        private byte idTipoCliente;
        private string nombre;
-       private string apellido;
        private string direccion;
 
         #region constructores
@@ -24,12 +23,11 @@ namespace negocios
         public negociosCliente()
         { 
         }
-             public negociosCliente(string sNitCliente, byte iByteDTipoCliente, string sNombreCliente, string sApellidoCliente, string sDireccionCliente)
+             public negociosCliente(string sNitCliente, byte iByteDTipoCliente, string sNombreCliente, string sDireccionCliente)
         {
             this.nombre = sNombreCliente;
             this.nit = sNitCliente;
             this.idTipoCliente = iByteDTipoCliente;
-            this.apellido = sApellidoCliente;
             this.direccion = sDireccionCliente;
         }
         #endregion
@@ -58,14 +56,6 @@ namespace negocios
              public byte getIdTipoCliente()
              {
                  return this.idTipoCliente;
-             }
-             /// <summary>
-             /// Método que accede al apellido del cliente
-             /// </summary>
-             /// <returns>string: el apellido del cliente </returns>
-             public string getApellidoCliente()
-             {
-                 return this.apellido;
              }
              /// <summary>
              /// Método que accede a la direccion del cliente
@@ -99,14 +89,7 @@ namespace negocios
              {
                  this.nombre = lsNombre;
              }
-             /// <summary>
-             /// Método modificador del campo apellido del cliente
-             /// </summary>
-             /// <param name="lsApellido">string: el apellido del cliente</param>
-             public void setApellidoCliente(string lsApellido)
-             {
-                 this.apellido = lsApellido;
-             }
+
              /// <summary>
              /// Método modificador del campo direccion del cliente
              /// </summary>
@@ -127,7 +110,7 @@ namespace negocios
              {
                  try
                  {
-                     negociosAdaptadores.gAdaptadorDeConsultas.insertarCliente(this.idTipoCliente, this.nombre, this.apellido, this.direccion, this.nit);
+                    // negociosAdaptadores.gAdaptadorDeConsultas.insertarCliente(this.idTipoCliente, this.nombre, this.direccion, this.nit);
                      return "La inserción del cliente en la base de datos se llevó a cabo con éxito";
                  }
                  catch (Exception ex)
@@ -144,7 +127,7 @@ namespace negocios
              {
                  try
                  {
-                     negociosAdaptadores.gAdaptadorDeConsultas.ModificarCliente(this.idTipoCliente, this.nombre, this.apellido, this.direccion, this.nit);
+                     //negociosAdaptadores.gAdaptadorDeConsultas.ModificarCliente(this.idTipoCliente, this.nombre, this.direccion, this.nit);
                      return "La modificación de los datos del cliente se llevó a cabo con éxito";
                  }
                  catch (Exception ex)
