@@ -60,7 +60,6 @@ Partial Class frmReporteCorteCaja
         Me.gbParametros1.TabIndex = 12
         Me.gbParametros1.TabStop = False
         Me.gbParametros1.Text = "Parámetros"
-        Me.gbParametros1.Visible = False
         '
         'btnCancelar
         '
@@ -130,8 +129,8 @@ Partial Class frmReporteCorteCaja
         '
         Me.crvReporte.ActiveViewIndex = -1
         Me.crvReporte.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crvReporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(2, 173)
