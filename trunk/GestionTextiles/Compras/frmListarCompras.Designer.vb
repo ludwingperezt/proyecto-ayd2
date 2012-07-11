@@ -22,41 +22,26 @@ Partial Class frmListarCompras
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.dgvtxtNIT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvtxtTelefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvtxtEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.dgvtxtPropietario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvtxtDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.dgvtxtDireccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.lblBuscar = New System.Windows.Forms.Label()
-        Me.lblFiltro = New System.Windows.Forms.Label()
-        Me.dgvCelular = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtBusqueda = New System.Windows.Forms.TextBox()
-        Me.cmbFiltro = New System.Windows.Forms.ComboBox()
-        Me.dgvListaProveedores = New System.Windows.Forms.DataGridView()
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.lblTitulo = New System.Windows.Forms.Label()
-        CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgvCelular = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtTelefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtPropietario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtDireccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvtxtNIT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvListaProveedores = New System.Windows.Forms.DataGridView()
+        Me.cmbFiltro = New System.Windows.Forms.ComboBox()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.lblFiltro = New System.Windows.Forms.Label()
+        Me.lblBuscar = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
+        CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'dgvtxtNIT
-        '
-        Me.dgvtxtNIT.HeaderText = "NIT"
-        Me.dgvtxtNIT.Name = "dgvtxtNIT"
-        '
-        'dgvtxtTelefono
-        '
-        Me.dgvtxtTelefono.HeaderText = "Telefono"
-        Me.dgvtxtTelefono.Name = "dgvtxtTelefono"
-        '
-        'dgvtxtEmpresa
-        '
-        Me.dgvtxtEmpresa.HeaderText = "Empresa"
-        Me.dgvtxtEmpresa.Name = "dgvtxtEmpresa"
         '
         'slblFecha
         '
@@ -64,27 +49,12 @@ Partial Class frmListarCompras
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
-        'dgvtxtPropietario
-        '
-        Me.dgvtxtPropietario.HeaderText = "Propietario"
-        Me.dgvtxtPropietario.Name = "dgvtxtPropietario"
-        '
-        'dgvtxtDescripcion
-        '
-        Me.dgvtxtDescripcion.HeaderText = "Descripción"
-        Me.dgvtxtDescripcion.Name = "dgvtxtDescripcion"
-        '
         'slblDescripcion
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
         Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
         Me.slblDescripcion.Text = "Descripción"
-        '
-        'dgvtxtDireccion
-        '
-        Me.dgvtxtDireccion.HeaderText = "Dirección"
-        Me.dgvtxtDireccion.Name = "dgvtxtDireccion"
         '
         'btnEliminar
         '
@@ -95,54 +65,6 @@ Partial Class frmListarCompras
         Me.btnEliminar.TabIndex = 24
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = False
-        '
-        'lblBuscar
-        '
-        Me.lblBuscar.AutoSize = True
-        Me.lblBuscar.Location = New System.Drawing.Point(27, 80)
-        Me.lblBuscar.Name = "lblBuscar"
-        Me.lblBuscar.Size = New System.Drawing.Size(40, 13)
-        Me.lblBuscar.TabIndex = 22
-        Me.lblBuscar.Text = "Buscar"
-        '
-        'lblFiltro
-        '
-        Me.lblFiltro.AutoSize = True
-        Me.lblFiltro.Location = New System.Drawing.Point(27, 48)
-        Me.lblFiltro.Name = "lblFiltro"
-        Me.lblFiltro.Size = New System.Drawing.Size(39, 13)
-        Me.lblFiltro.TabIndex = 23
-        Me.lblFiltro.Text = "Criterio"
-        '
-        'dgvCelular
-        '
-        Me.dgvCelular.HeaderText = "Celular"
-        Me.dgvCelular.Name = "dgvCelular"
-        '
-        'txtBusqueda
-        '
-        Me.txtBusqueda.Location = New System.Drawing.Point(91, 77)
-        Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(194, 20)
-        Me.txtBusqueda.TabIndex = 21
-        '
-        'cmbFiltro
-        '
-        Me.cmbFiltro.FormattingEnabled = True
-        Me.cmbFiltro.Items.AddRange(New Object() {"NIT", "Empresa", "Propietario"})
-        Me.cmbFiltro.Location = New System.Drawing.Point(91, 45)
-        Me.cmbFiltro.Name = "cmbFiltro"
-        Me.cmbFiltro.Size = New System.Drawing.Size(121, 21)
-        Me.cmbFiltro.TabIndex = 20
-        '
-        'dgvListaProveedores
-        '
-        Me.dgvListaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListaProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvtxtNIT, Me.dgvtxtEmpresa, Me.dgvtxtDescripcion, Me.dgvtxtDireccion, Me.dgvtxtPropietario, Me.dgvtxtTelefono, Me.dgvCelular})
-        Me.dgvListaProveedores.Location = New System.Drawing.Point(30, 136)
-        Me.dgvListaProveedores.Name = "dgvListaProveedores"
-        Me.dgvListaProveedores.Size = New System.Drawing.Size(557, 200)
-        Me.dgvListaProveedores.TabIndex = 18
         '
         'stsBarra
         '
@@ -164,6 +86,84 @@ Partial Class frmListarCompras
         Me.lblTitulo.TabIndex = 16
         Me.lblTitulo.Text = "Lista de Facturas de Compras"
         '
+        'dgvCelular
+        '
+        Me.dgvCelular.HeaderText = "Celular"
+        Me.dgvCelular.Name = "dgvCelular"
+        '
+        'dgvtxtTelefono
+        '
+        Me.dgvtxtTelefono.HeaderText = "Telefono"
+        Me.dgvtxtTelefono.Name = "dgvtxtTelefono"
+        '
+        'dgvtxtPropietario
+        '
+        Me.dgvtxtPropietario.HeaderText = "Propietario"
+        Me.dgvtxtPropietario.Name = "dgvtxtPropietario"
+        '
+        'dgvtxtDireccion
+        '
+        Me.dgvtxtDireccion.HeaderText = "Dirección"
+        Me.dgvtxtDireccion.Name = "dgvtxtDireccion"
+        '
+        'dgvtxtDescripcion
+        '
+        Me.dgvtxtDescripcion.HeaderText = "Descripción"
+        Me.dgvtxtDescripcion.Name = "dgvtxtDescripcion"
+        '
+        'dgvtxtEmpresa
+        '
+        Me.dgvtxtEmpresa.HeaderText = "Empresa"
+        Me.dgvtxtEmpresa.Name = "dgvtxtEmpresa"
+        '
+        'dgvtxtNIT
+        '
+        Me.dgvtxtNIT.HeaderText = "NIT"
+        Me.dgvtxtNIT.Name = "dgvtxtNIT"
+        '
+        'dgvListaProveedores
+        '
+        Me.dgvListaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListaProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvtxtNIT, Me.dgvtxtEmpresa, Me.dgvtxtDescripcion, Me.dgvtxtDireccion, Me.dgvtxtPropietario, Me.dgvtxtTelefono, Me.dgvCelular})
+        Me.dgvListaProveedores.Location = New System.Drawing.Point(30, 136)
+        Me.dgvListaProveedores.Name = "dgvListaProveedores"
+        Me.dgvListaProveedores.Size = New System.Drawing.Size(557, 200)
+        Me.dgvListaProveedores.TabIndex = 18
+        '
+        'cmbFiltro
+        '
+        Me.cmbFiltro.FormattingEnabled = True
+        Me.cmbFiltro.Items.AddRange(New Object() {"NIT", "Empresa", "Propietario"})
+        Me.cmbFiltro.Location = New System.Drawing.Point(91, 45)
+        Me.cmbFiltro.Name = "cmbFiltro"
+        Me.cmbFiltro.Size = New System.Drawing.Size(121, 21)
+        Me.cmbFiltro.TabIndex = 20
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.Location = New System.Drawing.Point(91, 77)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(194, 20)
+        Me.txtBusqueda.TabIndex = 21
+        '
+        'lblFiltro
+        '
+        Me.lblFiltro.AutoSize = True
+        Me.lblFiltro.Location = New System.Drawing.Point(27, 48)
+        Me.lblFiltro.Name = "lblFiltro"
+        Me.lblFiltro.Size = New System.Drawing.Size(39, 13)
+        Me.lblFiltro.TabIndex = 23
+        Me.lblFiltro.Text = "Criterio"
+        '
+        'lblBuscar
+        '
+        Me.lblBuscar.AutoSize = True
+        Me.lblBuscar.Location = New System.Drawing.Point(27, 80)
+        Me.lblBuscar.Name = "lblBuscar"
+        Me.lblBuscar.Size = New System.Drawing.Size(40, 13)
+        Me.lblBuscar.TabIndex = 22
+        Me.lblBuscar.Text = "Buscar"
+        '
         'frmListarCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -181,28 +181,28 @@ Partial Class frmListarCompras
         Me.Name = "frmListarCompras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listar Compras"
-        CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
+        CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents dgvtxtNIT As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgvtxtTelefono As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgvtxtEmpresa As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents dgvtxtPropietario As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgvtxtDescripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents dgvtxtDireccion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
-    Friend WithEvents lblBuscar As System.Windows.Forms.Label
-    Friend WithEvents lblFiltro As System.Windows.Forms.Label
-    Friend WithEvents dgvCelular As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
-    Friend WithEvents cmbFiltro As System.Windows.Forms.ComboBox
-    Friend WithEvents dgvListaProveedores As System.Windows.Forms.DataGridView
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
+    Friend WithEvents dgvCelular As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtTelefono As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtPropietario As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtDireccion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtDescripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtEmpresa As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvtxtNIT As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvListaProveedores As System.Windows.Forms.DataGridView
+    Friend WithEvents cmbFiltro As System.Windows.Forms.ComboBox
+    Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
+    Friend WithEvents lblFiltro As System.Windows.Forms.Label
+    Friend WithEvents lblBuscar As System.Windows.Forms.Label
 End Class

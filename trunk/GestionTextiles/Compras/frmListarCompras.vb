@@ -15,4 +15,8 @@
     Private Sub btnEliminar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnEliminar.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
+
+    Private Sub btnEliminar_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar.Click
+
+    End Sub
 End Class
