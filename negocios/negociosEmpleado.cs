@@ -289,7 +289,7 @@ namespace negocios
              {
                  try
                  {
-                     //negociosAdaptadores.gAdaptadorDeConsultas.insertarEmpleados(this.idRol, this.nombre, this.apellido, this.direccion, this.telefono, this.celular, this.puesto, this.fechaContratacion, this.salario, this.usuario, this.password, this.habilitado);
+                     negociosAdaptadores.gAdaptadorDeConsultas.insertarEmpleados(this.idRol, this.nombre, this.apellido, this.direccion, this.telefono, this.celular, this.puesto, this.fechaContratacion, this.salario, this.usuario, this.password, this.habilitado,this.dpiCedula);
                      return "La inserción del empleado en la base de datos se llevó a cabo con éxito";
                  }
                  catch (Exception ex)
@@ -306,7 +306,7 @@ namespace negocios
              {
                  try
                  {
-                     //negociosAdaptadores.gAdaptadorDeConsultas.ModificarEmpleado(this.idEmpleado, this.idRol, this.nombre, this.apellido, this.direccion, this.telefono, this.celular, this.puesto, this.fechaContratacion, this.salario, this.usuario, this.password, this.habilitado);
+                     negociosAdaptadores.gAdaptadorDeConsultas.ModificarEmpleado(this.idEmpleado, this.idRol, this.nombre, this.apellido, this.direccion, this.telefono, this.celular, this.puesto, this.fechaContratacion, this.salario, this.usuario, this.password, this.habilitado,this.dpiCedula);
                      return "La modificación de los datos del empleado se llevó a cabo con éxito";
                  }
                  catch (Exception ex)
@@ -340,6 +340,10 @@ namespace negocios
              {
                  return negociosAdaptadores.gAdaptadorListaEmpleados.GetData();
              }
+             /// <summary>
+             /// Función que lista a los empleados
+             /// </summary>
+             /// <returns>DataTable: lista de los empleados de la base de datos.</returns>
              #endregion
     }
 }
