@@ -40,15 +40,16 @@ Partial Class frmPrincipal
         Me.BtnProveedores = New System.Windows.Forms.Button()
         Me.BtnVentas = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
+        Me.lblEmpleado = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 407)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 448)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(985, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(789, 22)
         Me.stsBarra.TabIndex = 2
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -75,7 +76,7 @@ Partial Class frmPrincipal
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(285, 9)
+        Me.lblTitulo.Location = New System.Drawing.Point(295, 13)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(205, 29)
         Me.lblTitulo.TabIndex = 40
@@ -140,9 +141,10 @@ Partial Class frmPrincipal
         Me.BtnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BtnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
-        Me.BtnSalir.Location = New System.Drawing.Point(633, 231)
+        Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnSalir.Location = New System.Drawing.Point(633, 411)
         Me.BtnSalir.Name = "BtnSalir"
-        Me.BtnSalir.Size = New System.Drawing.Size(280, 148)
+        Me.BtnSalir.Size = New System.Drawing.Size(128, 34)
         Me.BtnSalir.TabIndex = 10
         Me.BtnSalir.Text = "&Salir"
         Me.BtnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -219,7 +221,7 @@ Partial Class frmPrincipal
         Me.btnProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProductos.Image = CType(resources.GetObject("btnProductos.Image"), System.Drawing.Image)
-        Me.btnProductos.Location = New System.Drawing.Point(788, 64)
+        Me.btnProductos.Location = New System.Drawing.Point(633, 231)
         Me.btnProductos.Name = "btnProductos"
         Me.btnProductos.Size = New System.Drawing.Size(125, 148)
         Me.btnProductos.TabIndex = 5
@@ -227,12 +229,22 @@ Partial Class frmPrincipal
         Me.btnProductos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnProductos.UseVisualStyleBackColor = False
         '
+        'lblEmpleado
+        '
+        Me.lblEmpleado.AutoSize = True
+        Me.lblEmpleado.Location = New System.Drawing.Point(601, 29)
+        Me.lblEmpleado.Name = "lblEmpleado"
+        Me.lblEmpleado.Size = New System.Drawing.Size(66, 13)
+        Me.lblEmpleado.TabIndex = 59
+        Me.lblEmpleado.Text = "EMPLEADO"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(985, 429)
+        Me.ClientSize = New System.Drawing.Size(789, 470)
+        Me.Controls.Add(Me.lblEmpleado)
         Me.Controls.Add(Me.btnProductos)
         Me.Controls.Add(Me.BtnGestionTalonarios)
         Me.Controls.Add(Me.BtnRoles)
@@ -273,4 +285,5 @@ Partial Class frmPrincipal
     Friend WithEvents BtnRoles As System.Windows.Forms.Button
     Friend WithEvents BtnGestionTalonarios As System.Windows.Forms.Button
     Friend WithEvents btnProductos As System.Windows.Forms.Button
+    Friend WithEvents lblEmpleado As System.Windows.Forms.Label
 End Class
