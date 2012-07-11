@@ -199,7 +199,7 @@ namespace negocios
              /// Método modificador del campo telefono del cliente
              /// </summary>
              /// <param name="lsTelefonoCliente">string: el telefono del cliente</param>
-             public void setTelefonoCliente(string lsTelefonoCliente)
+             public void setTelefonoEmpleado(string lsTelefonoCliente)
              {
                  this.telefono = lsTelefonoCliente;
              }
