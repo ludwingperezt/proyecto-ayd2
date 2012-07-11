@@ -3,20 +3,26 @@ Public Class frmModificarEmpleado
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
-        ''falta el textbox de apellido del empleado
-        ''lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
+        lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
         lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
         lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
         lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
-        ''hay que quitar del formulario el textbox que se llamda cedula/dpi
+        lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
         lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
-        ''falta el textbox del puesto
-        ''lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
+        lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
         lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
-        ''se va a modificar usuario????
-        ''lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
-        ''falta setear la fecha de contratacion lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.
+        lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
+        Dim bytes() As Byte
+        bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
+        lnpNuevoEmpleado.setFechaContratacionEmpleado(Convert.ToDateTime(dtpFechaContrato.ToString))
 
+        Try
+            lnpNuevoEmpleado.fnsModificarEmpleado()
+            MessageBox.Show("La operación de modificacion de empleado se llevó a cabo con éxito", "Modificacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Dispose()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub txtNombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseLeave
