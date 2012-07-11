@@ -341,9 +341,13 @@ namespace negocios
                  return negociosAdaptadores.gAdaptadorListaEmpleados.GetData();
              }
              /// <summary>
-             /// Función que lista a los empleados
+             /// Función que busca a un empleado por nombre
              /// </summary>
-             /// <returns>DataTable: lista de los empleados de la base de datos.</returns>
+             /// <returns>DataTable: busca a un empleado por nombre.</returns>
+             public static DataTable fnDbBuscarEmpleadoNombre(string lsnombreEmpleado)
+             {
+                 return negociosAdaptadores.gAdaptadorEmpleadoNombre.GetData(lsnombreEmpleado);
+             }
              #endregion
     }
 }
