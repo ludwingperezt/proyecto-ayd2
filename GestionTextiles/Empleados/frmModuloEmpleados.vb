@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub btnEliminarEmpleados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarEmpleados.Click
-        frmDarDeBajaEmpleado.ShowDialog(Me)
+
     End Sub
 
     Private Sub txtbusqueda_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.MouseLeave
