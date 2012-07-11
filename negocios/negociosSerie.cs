@@ -116,7 +116,7 @@ namespace negocios
         {
             try
             {
-                negociosAdaptadores.gAdaptadorDeConsultas.eliminarSerieFactura(this.lsSerie);
+                negociosAdaptadores.gAdaptadorDeConsultas.modificarSerie(this.lsSerie, this.liNumeroActual);
                 return "La serie se modificó correctamente";
             }
             catch (Exception ex)
@@ -130,7 +130,7 @@ namespace negocios
         /// </summary>
         public void fnvModificarSerie()
         {
-            negociosAdaptadores.gAdaptadorDeConsultas.eliminarSerieFactura(this.lsSerie);
+            negociosAdaptadores.gAdaptadorDeConsultas.modificarSerie(this.lsSerie, this.liNumeroActual);
         }
         /// <summary>
         /// Función que elimina la serie actual de la base de datos.

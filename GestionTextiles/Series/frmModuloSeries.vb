@@ -6,6 +6,7 @@ Public Class frmModuloSeries
     Private Sub btnNSerie_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNSerie.Click
         frmSerie.actualizar = False
         frmSerie.ShowDialog()
+        Me.fnvCargarLista()
     End Sub
 
     Private Sub btnLProveedores_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmSerie.Click
@@ -15,6 +16,7 @@ Public Class frmModuloSeries
             frmSerie.actualizar = True
             frmSerie.ShowDialog()
             ''recargar lista
+            Me.fnvCargarLista()
         End If
     End Sub
 
@@ -43,7 +45,7 @@ Public Class frmModuloSeries
     End Sub
 
     Private Sub dgvSeries_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvSeries.CellClick
-        frmModuloSeries.gnsSerieSeleccionada = Me.lstSeries(e.RowIndex)
+        frmModuloSeries.gnsSerieSeleccionada = Me.lstSeriesFiltrada(e.RowIndex)
     End Sub
 
     Private Sub btneSerie_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btneSerie.Click
@@ -55,6 +57,7 @@ Public Class frmModuloSeries
                     frmModuloSeries.gnsSerieSeleccionada.fnvEliminarSerie()
                     MessageBox.Show("La operación finalizó con éxito", "Talonario eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     ''recargar lista
+                    Me.fnvCargarLista()
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
@@ -68,20 +71,19 @@ Public Class frmModuloSeries
             Me.fnvLlenarDataGridView(Me.lstSeries)
         Catch ex As Exception
             Me.lstSeries.Clear()
-            Me.lstSeriesFiltrada = Nothing
+            'Me.lstSeriesFiltrada = Nothing
             Me.fnvLlenarDataGridView(Me.lstSeries)
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub fnvBuscar(ByRef txt As String)
-        Me.lstSeriesFiltrada = New List(Of negociosSerie)
+        Dim lstSeriesLocal As List(Of negociosSerie) = New List(Of negociosSerie)
         For Each i As negociosSerie In lstSeries
             If i.getSerie() = txt Then
-                Me.lstSeriesFiltrada.Add(i)
+                lstSeriesLocal.Add(i)
             End If
         Next
-        Me.fnvLlenarDataGridView(lstSeriesFiltrada)
-        Me.lstSeriesFiltrada = Nothing
+        Me.fnvLlenarDataGridView(lstSeriesLocal)
     End Sub
     Private Sub fnvLlenarDataGridView(ByRef lst As List(Of negociosSerie))
         Dim ldtTabla As DataTable = New DataTable()
@@ -95,5 +97,24 @@ Public Class frmModuloSeries
             ldtTabla.Rows.Add(ldrFila)
         Next
         Me.dgvSeries.DataSource = ldtTabla
+        Me.lstSeriesFiltrada = lst
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Me.fnvCargarLista()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim lsTexto As String = txtBusqueda.Text
+        If lsTexto.Length = 1 Then
+            lsTexto = lsTexto + "  "
+        ElseIf lsTexto.Length = 2 Then
+            lsTexto = lsTexto + " "
+        End If
+        Me.fnvBuscar(lsTexto)
+    End Sub
+
+    Private Sub frmModuloSeries_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.fnvCargarLista()
     End Sub
 End Class
