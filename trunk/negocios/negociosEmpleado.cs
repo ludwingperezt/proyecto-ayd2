@@ -271,7 +271,7 @@ namespace negocios
              {
                  try
                  {
-                     negociosAdaptadores.gAdaptadorDeConsultas.insertarEmpleados(this.idEmpleado, this.idRol, this.nombre, this.apellido, this.direccion, this.telefono, this.celular, this.puesto, this.fechaContratacion, this.salario, this.usuario, this.password, this.habilitado);
+                     negociosAdaptadores.gAdaptadorDeConsultas.insertarEmpleados(this.idRol, this.nombre, this.apellido, this.direccion, this.telefono, this.celular, this.puesto, this.fechaContratacion, this.salario, this.usuario, this.password, this.habilitado);
                      return "La inserción del empleado en la base de datos se llevó a cabo con éxito";
                  }
                  catch (Exception ex)

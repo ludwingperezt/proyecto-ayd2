@@ -460,10 +460,6 @@
     <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\datos\datos.csproj">
-      <Project>{6972A24D-1EC3-4E73-A324-602C0493CE87}</Project>
-      <Name>datos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\negocios\negocios.csproj">
       <Project>{1AD4564B-DA43-413B-8225-BB133BF3E2FB}</Project>
       <Name>negocios</Name>
