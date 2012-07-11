@@ -50,7 +50,7 @@ Partial Class frmModuloEmpleados
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 472)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 408)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(619, 22)
         Me.stsBarra.TabIndex = 45
@@ -165,9 +165,9 @@ Partial Class frmModuloEmpleados
         '
         Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(126, 391)
+        Me.btnSalir.Location = New System.Drawing.Point(515, 334)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(350, 64)
+        Me.btnSalir.Size = New System.Drawing.Size(52, 51)
         Me.btnSalir.TabIndex = 50
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -213,7 +213,7 @@ Partial Class frmModuloEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(619, 494)
+        Me.ClientSize = New System.Drawing.Size(619, 430)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnEliminarEmpleados)
         Me.Controls.Add(Me.btnModificarEmpleado)
@@ -226,7 +226,7 @@ Partial Class frmModuloEmpleados
         Me.Controls.Add(Me.lbllistaclientes)
         Me.Controls.Add(Me.dgvEmpleados)
         Me.Name = "frmModuloEmpleados"
-        Me.Text = "frmModuloEmpleados"
+        Me.Text = "Modulo de Empleados"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
