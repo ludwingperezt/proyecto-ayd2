@@ -37,6 +37,7 @@ Partial Class frmModuloProductos
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnIngresarProducto = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,11 +45,11 @@ Partial Class frmModuloProductos
         'lblTitulo
         '
         Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(195, 10)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(227, 29)
+        Me.lblTitulo.Size = New System.Drawing.Size(248, 31)
         Me.lblTitulo.TabIndex = 57
         Me.lblTitulo.Text = "Módulo Productos"
         Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -66,13 +67,13 @@ Partial Class frmModuloProductos
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
         'btnbuscar
@@ -178,11 +179,21 @@ Partial Class frmModuloProductos
         Me.Button1.Text = "Actualizar"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(495, 312)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(103, 44)
+        Me.Button2.TabIndex = 63
+        Me.Button2.Text = "Seleccionar producto"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'frmModuloProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(641, 478)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnEliminarProducto)
@@ -218,4 +229,5 @@ Partial Class frmModuloProductos
     Friend WithEvents lbllistaclientes As System.Windows.Forms.Label
     Friend WithEvents dgvEmpleados As System.Windows.Forms.DataGridView
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class
