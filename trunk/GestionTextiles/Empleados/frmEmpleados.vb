@@ -1,4 +1,5 @@
-﻿Public Class frmEmpleados
+﻿Imports negocios
+Public Class frmEmpleados
 
     Private Sub slblDescripcion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles slblDescripcion.Click
 
@@ -84,6 +85,25 @@
                     ctrlIterador.BackColor = Color.Yellow
                 Else
                     ctrlIterador.BackColor = Color.White
+                    ''ingreso de empleado nuevo
+                    Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
+                    lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
+                    lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
+                    lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
+                    lnpNuevoEmpleado.setTelefonoCliente(Convert.ToInt16(txtTelefono.Text))
+                    ''hay que quitar del formulario el textbox que se llamda cedula/dpi
+                    lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
+                    lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
+                    lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
+                    lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
+                    ''falta setear la fecha de contratacion lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.
+                    Try
+                        lnpNuevoEmpleado.fnsInsertarEmpleado()
+                        MessageBox.Show("La operación de insersión de empleado se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Me.Dispose()
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End Try
                 End If
             End If
         Next
@@ -102,5 +122,12 @@
 
         End If
     End Sub
-  
+
+    Private Sub cmbPuesto_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbPuesto.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub dtpFechaContrato_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpFechaContrato.ValueChanged
+
+    End Sub
 End Class
