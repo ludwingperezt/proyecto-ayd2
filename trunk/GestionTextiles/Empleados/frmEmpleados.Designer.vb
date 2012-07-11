@@ -48,13 +48,15 @@ Partial Class frmEmpleados
         Me.cmbPuesto = New System.Windows.Forms.ComboBox()
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.lblPassword = New System.Windows.Forms.Label()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 369)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 403)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(522, 22)
         Me.stsBarra.TabIndex = 8
@@ -205,7 +207,7 @@ Partial Class frmEmpleados
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(346, 334)
+        Me.btnCancelar.Location = New System.Drawing.Point(346, 368)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 35
@@ -215,7 +217,7 @@ Partial Class frmEmpleados
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(427, 334)
+        Me.btnAceptar.Location = New System.Drawing.Point(427, 368)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 34
@@ -273,11 +275,30 @@ Partial Class frmEmpleados
         Me.txtUsuario.Size = New System.Drawing.Size(100, 20)
         Me.txtUsuario.TabIndex = 40
         '
+        'lblPassword
+        '
+        Me.lblPassword.AutoSize = True
+        Me.lblPassword.Location = New System.Drawing.Point(31, 335)
+        Me.lblPassword.Name = "lblPassword"
+        Me.lblPassword.Size = New System.Drawing.Size(53, 13)
+        Me.lblPassword.TabIndex = 43
+        Me.lblPassword.Text = "Password"
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Location = New System.Drawing.Point(148, 332)
+        Me.txtPassword.MaxLength = 20
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtPassword.TabIndex = 42
+        '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(522, 391)
+        Me.ClientSize = New System.Drawing.Size(522, 425)
+        Me.Controls.Add(Me.lblPassword)
+        Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.cmbPuesto)
@@ -305,8 +326,8 @@ Partial Class frmEmpleados
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmEmpleados"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmEmpleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Nuevo Empleado"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)
@@ -339,4 +360,6 @@ Partial Class frmEmpleados
     Friend WithEvents cmbPuesto As System.Windows.Forms.ComboBox
     Friend WithEvents lblUsuario As System.Windows.Forms.Label
     Friend WithEvents txtUsuario As System.Windows.Forms.TextBox
+    Friend WithEvents lblPassword As System.Windows.Forms.Label
+    Friend WithEvents txtPassword As System.Windows.Forms.TextBox
 End Class
