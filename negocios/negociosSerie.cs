@@ -173,6 +173,27 @@ namespace negocios
         {
             return negociosAdaptadores.gAdaptadorListaSeries.GetData();
         }
+        /// <summary>
+        /// Devuelve una lista de objetos de tipo negociosSerie, que representan las tuplas en la tabla series
+        /// </summary>
+        /// <returns>List de negociosSerie: cada objeto representa una tupla en la tabla series</returns>
+        public static List<negociosSerie> fnlstListaSeries()
+        {
+            DataTable dtLocal = negociosSerie.fnListarSeries();
+            List<negociosSerie> lstSeries = new List<negociosSerie>();
+            object[] objInstancia;
+            for (int i = 0; i < dtLocal.Rows.Count; i++)
+            {
+                objInstancia = dtLocal.Rows[i].ItemArray;
+                negociosSerie temporal = new negociosSerie();
+                temporal.setSerie(Convert.ToString(objInstancia[0]));
+                temporal.setNumeroActual(Convert.ToInt32(objInstancia[1]));
+                temporal.setActiva(Convert.ToBoolean(objInstancia[2]));
+                lstSeries.Add(temporal);
+            }
+            return lstSeries;
+            //s.SERIE,s.ACTUAL,s.ACTIVA
+        }
         #endregion
     }
 }

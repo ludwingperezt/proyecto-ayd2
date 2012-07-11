@@ -161,4 +161,12 @@ Public Class frmModuloProductos
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Me.fnvdRecargar()
     End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        If IsNothing(frmModuloProductos.gnpProductoSeleccionado) Then
+            MessageBox.Show("No puede usar esta opción si no ha hecho clic en algun elemento de la lista", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            Me.Dispose()
+        End If
+    End Sub
 End Class
