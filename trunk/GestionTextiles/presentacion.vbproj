@@ -122,18 +122,6 @@
     <Compile Include="Compras\frmModuloCompras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empleados\frmDarDeBajaEmpleado.Designer.vb">
-      <DependentUpon>frmDarDeBajaEmpleado.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Empleados\frmDarDeBajaEmpleado.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Productos\frmDarDeBajaProductos.Designer.vb">
-      <DependentUpon>frmDarDeBajaProductos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Productos\frmDarDeBajaProductos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Empleados\frmEmpleados.Designer.vb">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </Compile>
@@ -338,12 +326,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmModuloCompras.resx">
       <DependentUpon>frmModuloCompras.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empleados\frmDarDeBajaEmpleado.resx">
-      <DependentUpon>frmDarDeBajaEmpleado.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Productos\frmDarDeBajaProductos.resx">
-      <DependentUpon>frmDarDeBajaProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
