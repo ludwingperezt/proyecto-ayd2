@@ -15,7 +15,6 @@ Public Class frmModificarEmpleado
         Dim bytes() As Byte
         bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
         lnpNuevoEmpleado.setFechaContratacionEmpleado(Convert.ToDateTime(dtpFechaContrato.ToString))
-
         Try
             lnpNuevoEmpleado.fnsModificarEmpleado()
             MessageBox.Show("La operación de modificacion de empleado se llevó a cabo con éxito", "Modificacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
