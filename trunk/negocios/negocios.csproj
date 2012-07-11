@@ -55,12 +55,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="negociosProveedores.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\datos\datos.csproj">
-      <Project>{6972A24D-1EC3-4E73-A324-602C0493CE87}</Project>
-      <Name>datos</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
