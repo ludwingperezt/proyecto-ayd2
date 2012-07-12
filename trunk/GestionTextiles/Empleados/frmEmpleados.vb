@@ -97,7 +97,7 @@ Public Class frmEmpleados
                     lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
                     lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
                     lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
-                    lnpNuevoEmpleado.setFechaContratacionEmpleado(Convert.ToDateTime(dtpFechaContrato.ToString))
+                    lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
                     lnpNuevoEmpleado.setHabilitadoEmpleado(1)
                     Dim bytes() As Byte
                     bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
