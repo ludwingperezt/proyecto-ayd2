@@ -32,12 +32,14 @@ Partial Class frmModuloSeries
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnEliminarSerie = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnmSerie = New System.Windows.Forms.Button()
         Me.btnNSerie = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'stsBarra
@@ -67,7 +69,7 @@ Partial Class frmModuloSeries
         Me.dgvSeries.AllowUserToAddRows = False
         Me.dgvSeries.AllowUserToDeleteRows = False
         Me.dgvSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSeries.Location = New System.Drawing.Point(40, 159)
+        Me.dgvSeries.Location = New System.Drawing.Point(12, 39)
         Me.dgvSeries.Name = "dgvSeries"
         Me.dgvSeries.ReadOnly = True
         Me.dgvSeries.Size = New System.Drawing.Size(443, 159)
@@ -75,7 +77,7 @@ Partial Class frmModuloSeries
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(89, 84)
+        Me.txtBusqueda.Location = New System.Drawing.Point(89, 69)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(279, 20)
         Me.txtBusqueda.TabIndex = 20
@@ -83,7 +85,7 @@ Partial Class frmModuloSeries
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 87)
+        Me.Label1.Location = New System.Drawing.Point(37, 72)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 22
@@ -92,7 +94,8 @@ Partial Class frmModuloSeries
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBuscar.Location = New System.Drawing.Point(380, 81)
+        Me.btnBuscar.Enabled = False
+        Me.btnBuscar.Location = New System.Drawing.Point(380, 66)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(103, 25)
         Me.btnBuscar.TabIndex = 23
@@ -118,19 +121,19 @@ Partial Class frmModuloSeries
         Me.btnEliminarSerie.Name = "btnEliminarSerie"
         Me.btnEliminarSerie.Size = New System.Drawing.Size(97, 77)
         Me.btnEliminarSerie.TabIndex = 21
-        Me.btnEliminarSerie.Text = "&Eliminar Cliente"
+        Me.btnEliminarSerie.Text = "&Eliminar Serie"
         Me.btnEliminarSerie.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnEliminarSerie.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnActualizar
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Image = Global.GestionTextiles.My.Resources.Resources.refresh
-        Me.Button2.Location = New System.Drawing.Point(456, 132)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(27, 25)
-        Me.Button2.TabIndex = 18
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnActualizar.Location = New System.Drawing.Point(428, 9)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(27, 25)
+        Me.btnActualizar.TabIndex = 18
+        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'btnmSerie
         '
@@ -169,18 +172,28 @@ Partial Class frmModuloSeries
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.dgvSeries)
+        Me.GroupBox1.Controls.Add(Me.btnActualizar)
+        Me.GroupBox1.Location = New System.Drawing.Point(28, 116)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(469, 215)
+        Me.GroupBox1.TabIndex = 25
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Listado Series"
+        '
         'frmModuloSeries
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(521, 460)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnEliminarSerie)
         Me.Controls.Add(Me.txtBusqueda)
-        Me.Controls.Add(Me.dgvSeries)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnmSerie)
         Me.Controls.Add(Me.btnNSerie)
         Me.Controls.Add(Me.btnSalir)
@@ -193,6 +206,7 @@ Partial Class frmModuloSeries
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -203,11 +217,12 @@ Partial Class frmModuloSeries
     Friend WithEvents btnmSerie As System.Windows.Forms.Button
     Friend WithEvents btnNSerie As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
     Friend WithEvents dgvSeries As System.Windows.Forms.DataGridView
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents btnEliminarSerie As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
 End Class
