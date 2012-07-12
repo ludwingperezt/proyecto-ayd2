@@ -85,11 +85,11 @@ Partial Class frmModificarPermiso
         'lblTitulo
         '
         Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(228, 20)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(192, 29)
+        Me.lblTitulo.Size = New System.Drawing.Size(212, 31)
         Me.lblTitulo.TabIndex = 10
         Me.lblTitulo.Text = "Nuevo Permiso"
         '
@@ -295,13 +295,13 @@ Partial Class frmModificarPermiso
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
         'btnCancelar
@@ -325,7 +325,7 @@ Partial Class frmModificarPermiso
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
-        'frmNPermiso
+        'frmModificarPermiso
         '
         Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -361,7 +361,7 @@ Partial Class frmModificarPermiso
         Me.Controls.Add(Me.lblModulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.Name = "frmNPermiso"
+        Me.Name = "frmModificarPermiso"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Permiso"
         Me.stsBarra.ResumeLayout(False)

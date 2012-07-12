@@ -34,10 +34,10 @@ Partial Class frmRoles
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.dgvRoles = New System.Windows.Forms.DataGridView()
         Me.stsBarra.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -146,31 +146,31 @@ Partial Class frmRoles
         Me.Button4.Text = "Actualizar lista"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtBusqueda
         '
-        Me.TextBox1.Location = New System.Drawing.Point(37, 61)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(453, 20)
-        Me.TextBox1.TabIndex = 36
+        Me.txtBusqueda.Location = New System.Drawing.Point(37, 61)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(453, 20)
+        Me.txtBusqueda.TabIndex = 36
         '
-        'DataGridView1
+        'dgvRoles
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(26, 120)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(439, 150)
-        Me.DataGridView1.TabIndex = 37
+        Me.dgvRoles.AllowUserToAddRows = False
+        Me.dgvRoles.AllowUserToDeleteRows = False
+        Me.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRoles.Location = New System.Drawing.Point(26, 120)
+        Me.dgvRoles.Name = "dgvRoles"
+        Me.dgvRoles.ReadOnly = True
+        Me.dgvRoles.Size = New System.Drawing.Size(439, 150)
+        Me.dgvRoles.TabIndex = 37
         '
         'frmRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(712, 522)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.dgvRoles)
+        Me.Controls.Add(Me.txtBusqueda)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -187,7 +187,7 @@ Partial Class frmRoles
         Me.Text = "Definición de Roles"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -203,6 +203,6 @@ Partial Class frmRoles
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
+    Friend WithEvents dgvRoles As System.Windows.Forms.DataGridView
 End Class
