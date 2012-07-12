@@ -1,6 +1,6 @@
 ﻿Imports negocios
 Public Class frmModificarPermiso
-
+    Public Shared actualizar As Boolean
     Private Sub clbRoles_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles clbRoles.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -120,8 +120,8 @@ Public Class frmModificarPermiso
     End Sub
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+        frmRoles.nrRolSeleccionado = Nothing
         Me.Dispose()
-
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
@@ -181,13 +181,111 @@ Public Class frmModificarPermiso
         lnrNuevoRol.setPermisoListarSerieFacturaVenta(Convert.ToByte(clbTalonario.GetItemChecked(2)))
         lnrNuevoRol.setPermisoEliminacionSerieFacturaVenta(Convert.ToByte(clbTalonario.GetItemChecked(3)))
 
-        Try
-            lnrNuevoRol.fnvdCrearRol()
-            slblDescripcion.Text = "La inserción del nuevo rol se llevó a cabo con éxito"
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        If actualizar Then
+            'si es una modificaciòn
+            lnrNuevoRol.setNivelAcceso(frmRoles.nrRolSeleccionado.getNivelAcceso())
+            lnrNuevoRol.setIdRol(frmRoles.nrRolSeleccionado.getIdRol())
+            lnrNuevoRol.setHabilitado(frmRoles.nrRolSeleccionado.getHabilitado())
+            If MessageBox.Show("¿Está seguro de modificar los permisos de acceso a la aplicación?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
+                Try
+                    lnrNuevoRol.fnvdModificarRol()
+                    MessageBox.Show("La operación de modificación finalizó con éxito", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    frmRoles.nrRolSeleccionado = Nothing
+                    Me.Dispose()
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        Else
+            'si es una insersiòn
+            Try
+                lnrNuevoRol.fnvdCrearRol()
+                slblDescripcion.Text = "La inserción del nuevo rol de permisos se llevó a cabo con éxito"
+                frmRoles.nrRolSeleccionado = Nothing
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                frmRoles.nrRolSeleccionado = Nothing
+            End Try
+        End If
+    End Sub
 
+    Private Sub frmModificarPermiso_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If actualizar Then
+            'si es una modificacion
+            MessageBox.Show("La modificación de datos en esta parte del programa puede dañar la integridad de la base de datos", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            lblTitulo.Text = "Modificar permiso"
+            Me.Text = "Modificar permiso"
+            txtNombre.Text = frmRoles.nrRolSeleccionado.getNombre()
+            llenarPermisosActuales()
+        Else
+            lblTitulo.Text = "Nuevo Permiso"
+            Me.Text = "Nuevo Permiso"
+        End If
+    End Sub
 
+    Private Sub llenarPermisosActuales()
+        'permisos de roles
+        clbRoles.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCreacionRol())
+        clbRoles.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoModificacionRol())
+        clbRoles.SetItemChecked(2, frmRoles.nrRolSeleccionado.getPermisoListarRoles())
+        clbRoles.SetItemChecked(3, frmRoles.nrRolSeleccionado.getPermisoEliminacionRol())
+
+        'permisos de manejo de empleados
+        clbEmpleados.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCreacionEmpleados())
+        clbEmpleados.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoModificacionEmpleados())
+        clbEmpleados.SetItemChecked(2, frmRoles.nrRolSeleccionado.getPermisoListarEmpleados())
+        clbEmpleados.SetItemChecked(3, frmRoles.nrRolSeleccionado.getPermisoEliminacionEmpleados())
+
+        'permisos de manejo de proveedores
+        clbProveedores.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCreacionProveedores())
+        clbProveedores.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoModificacionProveedores())
+        clbProveedores.SetItemChecked(2, frmRoles.nrRolSeleccionado.getPermisoListarProveedores())
+        clbProveedores.SetItemChecked(3, frmRoles.nrRolSeleccionado.getPermisoEliminacionProveedores())
+        clbProveedores.SetItemChecked(4, frmRoles.nrRolSeleccionado.getPermisoBuscarProveedores())
+
+        'permisos de manejo de productos
+        clbProductos.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCreacionProductos())
+        clbProductos.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoModificacionProductos())
+        clbProductos.SetItemChecked(2, frmRoles.nrRolSeleccionado.getPermisoListarProductos())
+        clbProductos.SetItemChecked(3, frmRoles.nrRolSeleccionado.getPermisoEliminacionProductos())
+        clbProductos.SetItemChecked(4, frmRoles.nrRolSeleccionado.getPermisoBusquedaProductos())
+        clbProductos.SetItemChecked(5, frmRoles.nrRolSeleccionado.getPermisoCargarProductos())
+        clbProductos.SetItemChecked(6, frmRoles.nrRolSeleccionado.getPermisoDescargarProductos())
+
+        'permisos de manejo de compras
+        clbCompras.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCompra())
+        clbCompras.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoDevolverProductosProveedores())
+
+        'permisos de manejo de clientes
+        clbClientes.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCreacionClientes())
+        clbClientes.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoModificacionClientes())
+        clbClientes.SetItemChecked(2, frmRoles.nrRolSeleccionado.getPermisoListarClientes())
+
+        'permisos de manejo de ventas
+        clbVentas.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoVentas())
+        clbVentas.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoEliminarFacturasVentas())
+
+        'permisos de manejo de tipos de cliente
+        clbCliente.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCreacionTiposCliente())
+        clbCliente.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoModificacionTiposCliente())
+        clbCliente.SetItemChecked(2, frmRoles.nrRolSeleccionado.getPermisoListarTiposCliente())
+        clbCliente.SetItemChecked(3, frmRoles.nrRolSeleccionado.getPermisoEliminacionTiposCliente())
+
+        'permisos de reportes
+        clbReportes.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCortesCaja())
+        clbReportes.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoReporteFacturasVentaEliminadas())
+        clbReportes.SetItemChecked(2, frmRoles.nrRolSeleccionado.getPermisoReporteDevolucionesProveedor())
+        clbReportes.SetItemChecked(3, frmRoles.nrRolSeleccionado.getPermisoHistorialCostos())
+        clbReportes.SetItemChecked(4, frmRoles.nrRolSeleccionado.getPermisoHistorialVentasMes())
+        clbReportes.SetItemChecked(5, frmRoles.nrRolSeleccionado.getPermisoHistorialComprasMes())
+        clbReportes.SetItemChecked(6, frmRoles.nrRolSeleccionado.getPermisoHistorialCreditoPorProveedor())
+        clbReportes.SetItemChecked(7, frmRoles.nrRolSeleccionado.getPermisoHistorialCreditoMes())
+
+        'creando permisos de gestión de series (talonarios)
+        clbTalonario.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCreacionSerieFacturaVenta())
+        clbTalonario.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoModificacionSerieFacturaVenta())
+        clbTalonario.SetItemChecked(2, frmRoles.nrRolSeleccionado.getPermisoListarSerieFacturaVenta())
+        clbTalonario.SetItemChecked(3, frmRoles.nrRolSeleccionado.getPermisoEliminacionSerieFacturaVenta())
     End Sub
 End Class
