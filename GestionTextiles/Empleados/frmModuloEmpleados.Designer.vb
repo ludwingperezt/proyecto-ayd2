@@ -43,6 +43,7 @@ Partial Class frmModuloEmpleados
         Me.btnIngresarEmpleado = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.gbListaEmpleados = New System.Windows.Forms.GroupBox()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.lblFiltroCriterio = New System.Windows.Forms.Label()
         Me.cmbFiltroCriterio = New System.Windows.Forms.ComboBox()
         Me.lblFiltradoEstados = New System.Windows.Forms.Label()
@@ -55,7 +56,7 @@ Partial Class frmModuloEmpleados
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 498)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 504)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(619, 22)
         Me.stsBarra.TabIndex = 45
@@ -104,7 +105,7 @@ Partial Class frmModuloEmpleados
         '
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column1, Me.Column4, Me.Column3, Me.Column5, Me.Column6, Me.Column7})
-        Me.dgvEmpleados.Location = New System.Drawing.Point(11, 29)
+        Me.dgvEmpleados.Location = New System.Drawing.Point(11, 50)
         Me.dgvEmpleados.Name = "dgvEmpleados"
         Me.dgvEmpleados.Size = New System.Drawing.Size(544, 132)
         Me.dgvEmpleados.TabIndex = 40
@@ -161,7 +162,7 @@ Partial Class frmModuloEmpleados
         '
         Me.btnEliminarEmpleados.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEliminarEmpleados.Image = CType(resources.GetObject("btnEliminarEmpleados.Image"), System.Drawing.Image)
-        Me.btnEliminarEmpleados.Location = New System.Drawing.Point(464, 356)
+        Me.btnEliminarEmpleados.Location = New System.Drawing.Point(464, 370)
         Me.btnEliminarEmpleados.Name = "btnEliminarEmpleados"
         Me.btnEliminarEmpleados.Size = New System.Drawing.Size(107, 71)
         Me.btnEliminarEmpleados.TabIndex = 49
@@ -173,7 +174,7 @@ Partial Class frmModuloEmpleados
         '
         Me.btnModificarEmpleado.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnModificarEmpleado.Image = CType(resources.GetObject("btnModificarEmpleado.Image"), System.Drawing.Image)
-        Me.btnModificarEmpleado.Location = New System.Drawing.Point(340, 356)
+        Me.btnModificarEmpleado.Location = New System.Drawing.Point(340, 370)
         Me.btnModificarEmpleado.Name = "btnModificarEmpleado"
         Me.btnModificarEmpleado.Size = New System.Drawing.Size(108, 72)
         Me.btnModificarEmpleado.TabIndex = 48
@@ -185,7 +186,7 @@ Partial Class frmModuloEmpleados
         '
         Me.btnIngresarEmpleado.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnIngresarEmpleado.Image = CType(resources.GetObject("btnIngresarEmpleado.Image"), System.Drawing.Image)
-        Me.btnIngresarEmpleado.Location = New System.Drawing.Point(211, 356)
+        Me.btnIngresarEmpleado.Location = New System.Drawing.Point(211, 370)
         Me.btnIngresarEmpleado.Name = "btnIngresarEmpleado"
         Me.btnIngresarEmpleado.Size = New System.Drawing.Size(106, 72)
         Me.btnIngresarEmpleado.TabIndex = 47
@@ -199,7 +200,7 @@ Partial Class frmModuloEmpleados
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalir.Location = New System.Drawing.Point(464, 449)
+        Me.btnSalir.Location = New System.Drawing.Point(464, 463)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(107, 30)
         Me.btnSalir.TabIndex = 50
@@ -208,13 +209,26 @@ Partial Class frmModuloEmpleados
         '
         'gbListaEmpleados
         '
+        Me.gbListaEmpleados.Controls.Add(Me.btnRegresar)
         Me.gbListaEmpleados.Controls.Add(Me.dgvEmpleados)
         Me.gbListaEmpleados.Location = New System.Drawing.Point(16, 152)
         Me.gbListaEmpleados.Name = "gbListaEmpleados"
-        Me.gbListaEmpleados.Size = New System.Drawing.Size(568, 179)
+        Me.gbListaEmpleados.Size = New System.Drawing.Size(568, 199)
         Me.gbListaEmpleados.TabIndex = 51
         Me.gbListaEmpleados.TabStop = False
         Me.gbListaEmpleados.Text = "Listado Empleados"
+        '
+        'btnRegresar
+        '
+        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRegresar.Location = New System.Drawing.Point(465, 19)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(90, 25)
+        Me.btnRegresar.TabIndex = 56
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'lblFiltroCriterio
         '
@@ -258,7 +272,7 @@ Partial Class frmModuloEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(619, 520)
+        Me.ClientSize = New System.Drawing.Size(619, 526)
         Me.Controls.Add(Me.lblFiltradoEstados)
         Me.Controls.Add(Me.cmbFiltradoEstados)
         Me.Controls.Add(Me.lblFiltroCriterio)
@@ -307,4 +321,5 @@ Partial Class frmModuloEmpleados
     Friend WithEvents cmbFiltroCriterio As System.Windows.Forms.ComboBox
     Friend WithEvents lblFiltradoEstados As System.Windows.Forms.Label
     Friend WithEvents cmbFiltradoEstados As System.Windows.Forms.ComboBox
+    Friend WithEvents btnRegresar As System.Windows.Forms.Button
 End Class

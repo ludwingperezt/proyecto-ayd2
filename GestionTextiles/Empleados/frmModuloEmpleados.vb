@@ -112,4 +112,12 @@ Public Class frmModuloEmpleados
     Private Sub btnSalir_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseHover
         slblDescripcion.Text = "Salir de la aplicación"
     End Sub
+
+    Private Sub btnRegresar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnRegresar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseHover
+        slblDescripcion.Text = "Regresa al Filtro Inicial."
+    End Sub
 End Class

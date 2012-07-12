@@ -50,6 +50,8 @@ Partial Class frmEmpleados
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.lblRolEmpleado = New System.Windows.Forms.Label()
+        Me.cmbRolEmpleado = New System.Windows.Forms.ComboBox()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -292,11 +294,30 @@ Partial Class frmEmpleados
         Me.txtPassword.Size = New System.Drawing.Size(100, 20)
         Me.txtPassword.TabIndex = 42
         '
+        'lblRolEmpleado
+        '
+        Me.lblRolEmpleado.AutoSize = True
+        Me.lblRolEmpleado.Location = New System.Drawing.Point(31, 361)
+        Me.lblRolEmpleado.Name = "lblRolEmpleado"
+        Me.lblRolEmpleado.Size = New System.Drawing.Size(23, 13)
+        Me.lblRolEmpleado.TabIndex = 45
+        Me.lblRolEmpleado.Text = "Rol"
+        '
+        'cmbRolEmpleado
+        '
+        Me.cmbRolEmpleado.FormattingEnabled = True
+        Me.cmbRolEmpleado.Location = New System.Drawing.Point(148, 358)
+        Me.cmbRolEmpleado.Name = "cmbRolEmpleado"
+        Me.cmbRolEmpleado.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRolEmpleado.TabIndex = 46
+        '
         'frmEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(522, 425)
+        Me.Controls.Add(Me.cmbRolEmpleado)
+        Me.Controls.Add(Me.lblRolEmpleado)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.lblUsuario)
@@ -362,4 +383,6 @@ Partial Class frmEmpleados
     Friend WithEvents txtUsuario As System.Windows.Forms.TextBox
     Friend WithEvents lblPassword As System.Windows.Forms.Label
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
+    Friend WithEvents lblRolEmpleado As System.Windows.Forms.Label
+    Friend WithEvents cmbRolEmpleado As System.Windows.Forms.ComboBox
 End Class
