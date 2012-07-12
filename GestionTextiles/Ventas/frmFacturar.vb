@@ -209,4 +209,8 @@ Public Class frmFacturar
         Me.cmbserie.DisplayMember = "SERIE"
         Me.cmbserie.ValueMember = "SERIE"
     End Sub
+
+    Private Sub btntipocliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btntipocliente.Click
+        frmtipocliente.Show()
+    End Sub
 End Class
