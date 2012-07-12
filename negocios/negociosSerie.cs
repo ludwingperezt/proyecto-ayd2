@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace negocios
 {
@@ -193,6 +194,30 @@ namespace negocios
             }
             return lstSeries;
             //s.SERIE,s.ACTUAL,s.ACTIVA
+        }
+        #endregion
+        #region funciones de acceso estático
+        /// <summary>
+        /// Función que verifica la existencia de una serie de facturas de venta.
+        /// </summary>
+        /// <param name="lsSerie">string: el nombre de la serie a buscar</param>
+        /// <returns>bool: True si la serie existe, False si no</returns>
+        public static bool verificarExistenciaBaseSerie(string lsSerie)
+        {
+            string ConnectionString = "Data Source=ROLANDO-PC;Initial Catalog=textiles;Persist Security Info=True;User ID=textilesUser;Password=123";
+            //string cadenaConexion = "Data Source=.\\SQLEXPRESS;Initial Catalog=textiles;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection(ConnectionString);
+            SqlCommand comando = new SqlCommand("verificarExistenciaSerie", conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Add("@serie", SqlDbType.Char, 3);
+            comando.Parameters["@serie"].Value = lsSerie;
+            comando.Parameters.Add(new SqlParameter("@RETORNO", SqlDbType.Bit));
+            comando.Parameters["@RETORNO"].Direction = ParameterDirection.ReturnValue;
+            conexion.Open();
+            comando.ExecuteScalar();
+            SqlParameter retorno = comando.Parameters["@RETORNO"];
+            conexion.Close();
+            return Convert.ToBoolean(retorno.Value);
         }
         #endregion
     }
