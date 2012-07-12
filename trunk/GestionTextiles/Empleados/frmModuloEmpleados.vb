@@ -1,15 +1,17 @@
-﻿Public Class frmModuloEmpleados
-
+﻿Imports negocios
+Public Class frmModuloEmpleados
+    Dim lnpEmpleado As negociosEmpleado = New negociosEmpleado()
     Private Sub btnbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnbuscar.Click
         If txtbusqueda.Text = "" Then
             MessageBox.Show("Ingrese la busqueda deseada ")
         Else
             'codigo para busqueda
-
+            'verificar si funciona
+            dgvEmpleados.DataSource = negociosEmpleado.fnDbBuscarEmpleadoNombre(txtbusqueda.Text)
         End If
     End Sub
 
-    
+
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
@@ -81,5 +83,9 @@
 
     Private Sub btnSalir_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseHover
         slblDescripcion.Text = "Salir de la aplicación"
+    End Sub
+
+    Private Sub dgvEmpleados_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvEmpleados.CellContentClick
+
     End Sub
 End Class
