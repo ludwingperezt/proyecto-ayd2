@@ -1,6 +1,7 @@
 ﻿Imports System.Xml
+Imports negocios
 Public Class frmtipocliente
-
+    Dim lnpTipoCliente As negociosTipoCliente = New negociosTipoCliente()
     Private Sub txtbusqueda_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -63,6 +64,7 @@ Public Class frmtipocliente
             MessageBox.Show("Ingrese una descripción para realizar la busqueda")
         Else
             ' codigo para realizar la busqueda
+            dgvtiposcliente.DataSource = negociosCliente.fnDbBuscarClienteNombre(txtbusqueda.Text)
         End If
     End Sub
 
@@ -93,5 +95,9 @@ Public Class frmtipocliente
 
     Private Sub btnActualizar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.MouseHover
         slblDescripcion.Text = "Actualiza el  listado de los tipos de cliente en sistema"
+    End Sub
+
+    Private Sub dgvtiposcliente_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvtiposcliente.CellContentClick
+
     End Sub
 End Class
