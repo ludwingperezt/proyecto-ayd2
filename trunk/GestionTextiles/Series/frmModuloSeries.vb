@@ -7,6 +7,7 @@ Public Class frmModuloSeries
         frmSerie.actualizar = False
         frmSerie.ShowDialog()
         Me.fnvCargarLista()
+        txtBusqueda.Text = ""
     End Sub
 
     Private Sub btnLProveedores_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmSerie.Click
@@ -17,6 +18,7 @@ Public Class frmModuloSeries
             frmSerie.ShowDialog()
             ''recargar lista
             Me.fnvCargarLista()
+            txtBusqueda.Text = ""
         End If
     End Sub
 
@@ -84,10 +86,6 @@ Public Class frmModuloSeries
         Me.lstSeriesFiltrada = lst
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        Me.fnvCargarLista()
-    End Sub
-
     Private Sub frmModuloSeries_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.fnvCargarLista()
     End Sub
@@ -102,6 +100,7 @@ Public Class frmModuloSeries
                     MessageBox.Show("La operación finalizó con éxito", "Talonario eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     ''recargar lista
                     Me.fnvCargarLista()
+                    txtBusqueda.Text = ""
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
@@ -125,5 +124,49 @@ Public Class frmModuloSeries
 
     Private Sub txtBusqueda_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtBusqueda.MouseLeave
         slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
+        Me.fnvCargarLista()
+    End Sub
+
+    Private Sub btnActualizar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnActualizar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub dgvSeries_MouseLeave(sender As System.Object, e As System.EventArgs) Handles dgvSeries.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtBusqueda_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtBusqueda.MouseHover
+        slblDescripcion.Text = "Ingrese una serie específica..."
+    End Sub
+
+    Private Sub dgvSeries_MouseHover(sender As System.Object, e As System.EventArgs) Handles dgvSeries.MouseHover
+        slblDescripcion.Text = "Lista de series usadas para facturar..."
+    End Sub
+
+    Private Sub txtBusqueda_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtBusqueda.TextChanged
+        If txtBusqueda.Text = "" Then
+            btnBuscar.Enabled = False
+        Else
+            btnBuscar.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnSalir_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub btnActualizar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnActualizar.MouseHover
+        slblDescripcion.Text = "Carga toda la lista de series"
+    End Sub
+
+    Private Sub btnBuscar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnBuscar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnBuscar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnBuscar.MouseHover
+        slblDescripcion.Text = "Inicia la búsqueda..."
     End Sub
 End Class
