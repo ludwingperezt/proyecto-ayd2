@@ -47,29 +47,29 @@ Partial Class frmIngresoProductos
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(325, 226)
+        Me.btnCancelar.Location = New System.Drawing.Point(314, 217)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 68
+        Me.btnCancelar.TabIndex = 7
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(423, 226)
+        Me.btnAceptar.Location = New System.Drawing.Point(412, 217)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 67
+        Me.btnAceptar.TabIndex = 6
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'txtPrecioCompra
         '
-        Me.txtPrecioCompra.Location = New System.Drawing.Point(144, 135)
+        Me.txtPrecioCompra.Location = New System.Drawing.Point(133, 135)
         Me.txtPrecioCompra.Name = "txtPrecioCompra"
         Me.txtPrecioCompra.Size = New System.Drawing.Size(100, 20)
-        Me.txtPrecioCompra.TabIndex = 66
+        Me.txtPrecioCompra.TabIndex = 3
         '
         'lblColor
         '
@@ -82,11 +82,11 @@ Partial Class frmIngresoProductos
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(144, 107)
+        Me.txtCantidad.Location = New System.Drawing.Point(133, 107)
         Me.txtCantidad.MaxLength = 60
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(100, 20)
-        Me.txtCantidad.TabIndex = 64
+        Me.txtCantidad.TabIndex = 2
         '
         'lblCantidad
         '
@@ -99,17 +99,17 @@ Partial Class frmIngresoProductos
         '
         'txtColor
         '
-        Me.txtColor.Location = New System.Drawing.Point(142, 187)
+        Me.txtColor.Location = New System.Drawing.Point(133, 187)
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(100, 20)
-        Me.txtColor.TabIndex = 61
+        Me.txtColor.TabIndex = 5
         '
         'txtPrecioVenta
         '
-        Me.txtPrecioVenta.Location = New System.Drawing.Point(142, 161)
+        Me.txtPrecioVenta.Location = New System.Drawing.Point(133, 161)
         Me.txtPrecioVenta.Name = "txtPrecioVenta"
         Me.txtPrecioVenta.Size = New System.Drawing.Size(100, 20)
-        Me.txtPrecioVenta.TabIndex = 62
+        Me.txtPrecioVenta.TabIndex = 4
         '
         'lblPrecioVenta
         '
@@ -131,11 +131,11 @@ Partial Class frmIngresoProductos
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(144, 55)
+        Me.txtNombre.Location = New System.Drawing.Point(133, 55)
         Me.txtNombre.MaxLength = 70
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(354, 20)
-        Me.txtNombre.TabIndex = 58
+        Me.txtNombre.TabIndex = 0
         '
         'lblDPI
         '
@@ -148,11 +148,11 @@ Partial Class frmIngresoProductos
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(144, 81)
+        Me.txtCodigo.Location = New System.Drawing.Point(133, 81)
         Me.txtCodigo.MaxLength = 70
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodigo.TabIndex = 56
+        Me.txtCodigo.TabIndex = 1
         '
         'lblNombre
         '
@@ -168,7 +168,7 @@ Partial Class frmIngresoProductos
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
         Me.stsBarra.Location = New System.Drawing.Point(0, 263)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(521, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(504, 22)
         Me.stsBarra.TabIndex = 54
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -190,17 +190,18 @@ Partial Class frmIngresoProductos
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(92, 9)
+        Me.lblTitulo.Location = New System.Drawing.Point(81, 9)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(333, 29)
         Me.lblTitulo.TabIndex = 53
         Me.lblTitulo.Text = "Ingreso de Nuevo Producto"
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frmIngresoProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(521, 285)
+        Me.ClientSize = New System.Drawing.Size(504, 285)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.txtPrecioCompra)
@@ -218,6 +219,7 @@ Partial Class frmIngresoProductos
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmIngresoProductos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmIngresoProductos"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
