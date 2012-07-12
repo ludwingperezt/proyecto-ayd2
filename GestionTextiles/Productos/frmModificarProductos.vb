@@ -11,21 +11,76 @@
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
-        frmModuloProductos.gnpProductoSeleccionado.setNombre(txtNombre.Text)
-        frmModuloProductos.gnpProductoSeleccionado.setCodigo(txtCodigo.Text)
-        frmModuloProductos.gnpProductoSeleccionado.setStock(Convert.ToDouble(txtCantidad.Text))
-        frmModuloProductos.gnpProductoSeleccionado.setPrecioCompra(Convert.ToDecimal(txtPrecioCompra.Text))
-        frmModuloProductos.gnpProductoSeleccionado.setPrecioVenta(Convert.ToDecimal(txtPrecioVenta.Text))
-        frmModuloProductos.gnpProductoSeleccionado.setColor(txtColor.Text)
-        If MessageBox.Show("¿Está seguro de modificar los datos del producto?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
-            Try
-                frmModuloProductos.gnpProductoSeleccionado.fnvdModificarDescripcionProducto()
-                MessageBox.Show("La operación de modificación finalizó con éxito", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                frmModuloProductos.gnpProductoSeleccionado = Nothing
-                Me.Dispose()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
+
+        For Each ctrlIterador As Control In Me.Controls
+            '' Validación de textbox
+            If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
+                If (ctrlIterador.Text = "") Then
+                    ctrlIterador.BackColor = Color.Yellow
+                Else
+                    ctrlIterador.BackColor = Color.White
+
+                    frmModuloProductos.gnpProductoSeleccionado.setNombre(txtNombre.Text)
+                    frmModuloProductos.gnpProductoSeleccionado.setCodigo(txtCodigo.Text)
+                    frmModuloProductos.gnpProductoSeleccionado.setStock(Convert.ToDouble(txtCantidad.Text))
+                    frmModuloProductos.gnpProductoSeleccionado.setPrecioCompra(Convert.ToDecimal(txtPrecioCompra.Text))
+                    frmModuloProductos.gnpProductoSeleccionado.setPrecioVenta(Convert.ToDecimal(txtPrecioVenta.Text))
+                    frmModuloProductos.gnpProductoSeleccionado.setColor(txtColor.Text)
+                    If MessageBox.Show("¿Está seguro de modificar los datos del producto?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
+                        Try
+                            frmModuloProductos.gnpProductoSeleccionado.fnvdModificarDescripcionProducto()
+                            MessageBox.Show("La operación de modificación finalizó con éxito", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            frmModuloProductos.gnpProductoSeleccionado = Nothing
+                            Me.Dispose()
+                        Catch ex As Exception
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
+                    End If
+
+                End If
+            End If
+        Next
+    End Sub
+
+    Private Sub txtPrecioCompra_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecioCompra.KeyPress
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.Handled = ".")) Then
+            e.KeyChar = vbNullChar
         End If
+    End Sub
+
+    Private Sub txtPrecioVenta_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecioVenta.KeyPress
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.Handled = ".")) Then
+            e.KeyChar = vbNullChar
+        End If
+    End Sub
+
+    Private Sub txtCantidad_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCantidad.KeyPress
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
+            e.KeyChar = vbNullChar
+        End If
+    End Sub
+
+    Private Sub txtNombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtCodigo_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCodigo.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtCantidad_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCantidad.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtPrecioCompra_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPrecioCompra.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtPrecioVenta_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPrecioVenta.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtColor_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtColor.MouseLeave
+        slblDescripcion.Text = "Descripción"
     End Sub
 End Class
