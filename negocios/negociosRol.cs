@@ -89,7 +89,24 @@ namespace negocios
         public bool getPermisoEliminacionRol()
         {
             return Convert.ToBoolean(larrbyPermisosRoles[3]);
-        } 
+        }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Roles
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModulo()
+        {
+            bool retorno = true;
+            int i=0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 3)
+                retorno=false;
+            return retorno;
+        }
+
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de empleados
         /// <summary>
