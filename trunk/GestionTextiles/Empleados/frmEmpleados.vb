@@ -174,4 +174,20 @@ Public Class frmEmpleados
     Private Sub frmEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub cmbRolEmpleado_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbRolEmpleado.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub cmbRolEmpleado_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbRolEmpleado.MouseHover
+        slblDescripcion.Text = "Seleccione un Rol para el Empleado."
+    End Sub
+
+    Private Sub btnComprobar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnComprobar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.MouseHover
+        slblDescripcion.Text = "Comprobar si el Usuario ya Existe."
+    End Sub
 End Class
