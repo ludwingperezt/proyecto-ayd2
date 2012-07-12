@@ -23,17 +23,17 @@ Public Class frmNuevoProveedor
         If lbooBandera Then
             If actualizar Then
                 '' si es un update...
-                frmListarProveedores.gnpProveedor.setNit(Me.txtNIT.Text)
-                frmListarProveedores.gnpProveedor.setDireccion(Me.txtDireccion.Text)
-                frmListarProveedores.gnpProveedor.setEmpresa(Me.txtEmpresa.Text)
-                frmListarProveedores.gnpProveedor.setNombre(Me.txtNombre.Text)
-                frmListarProveedores.gnpProveedor.setPropietario(Me.txtPropietario.Text)
-                frmListarProveedores.gnpProveedor.setTelefono(Me.txtTelefono.Text)
-                frmListarProveedores.gnpProveedor.setCelular(Me.txtCelular.Text)
+                frmModuloProveedores.gnpProveedor.setNit(Me.txtNIT.Text.Trim())
+                frmModuloProveedores.gnpProveedor.setDireccion(Me.txtDireccion.Text)
+                frmModuloProveedores.gnpProveedor.setEmpresa(Me.txtEmpresa.Text)
+                frmModuloProveedores.gnpProveedor.setNombre(Me.txtNombre.Text)
+                frmModuloProveedores.gnpProveedor.setPropietario(Me.txtPropietario.Text)
+                frmModuloProveedores.gnpProveedor.setTelefono(Me.txtTelefono.Text)
+                frmModuloProveedores.gnpProveedor.setCelular(Me.txtCelular.Text)
 
                 If MessageBox.Show("¿Está seguro de modificar los datos de este proveedor?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
                     Try
-                        lsMensaje = frmListarProveedores.gnpProveedor.fnsModificarProveedor()
+                        lsMensaje = frmModuloProveedores.gnpProveedor.fnsModificarProveedor()
                         MessageBox.Show(lsMensaje, "Modificación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Catch ex As Exception
                         MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -53,6 +53,7 @@ Public Class frmNuevoProveedor
 
             End If
             ' todo es válido se procede a guardar en la BD y luego a cerrar el form!
+            frmModuloProveedores.lstnpProveedores = negociosProveedores.fnslListarProveedores()
             Me.Dispose()
         End If
     End Sub
@@ -127,13 +128,13 @@ Public Class frmNuevoProveedor
 
     Private Sub frmNuevoProveedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If actualizar = True Then
-            Me.txtNIT.Text = frmListarProveedores.gnpProveedor.getNit()
-            Me.txtDireccion.Text = frmListarProveedores.gnpProveedor.getDireccion()
-            Me.txtEmpresa.Text = frmListarProveedores.gnpProveedor.getEmpresa()
-            Me.txtNombre.Text = frmListarProveedores.gnpProveedor.getNombre()
-            Me.txtPropietario.Text = frmListarProveedores.gnpProveedor.getPropietario()
-            Me.txtTelefono.Text = frmListarProveedores.gnpProveedor.getTelefono()
-            Me.txtCelular.Text = frmListarProveedores.gnpProveedor.getCelular()
+            Me.txtNIT.Text = frmModuloProveedores.gnpProveedor.getNit()
+            Me.txtDireccion.Text = frmModuloProveedores.gnpProveedor.getDireccion()
+            Me.txtEmpresa.Text = frmModuloProveedores.gnpProveedor.getEmpresa()
+            Me.txtNombre.Text = frmModuloProveedores.gnpProveedor.getNombre()
+            Me.txtPropietario.Text = frmModuloProveedores.gnpProveedor.getPropietario()
+            Me.txtTelefono.Text = frmModuloProveedores.gnpProveedor.getTelefono()
+            Me.txtCelular.Text = frmModuloProveedores.gnpProveedor.getCelular()
 
 
         End If
