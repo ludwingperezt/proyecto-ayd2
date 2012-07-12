@@ -29,8 +29,6 @@ Partial Class frmModuloReportes
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.btnCProveedor = New System.Windows.Forms.Button()
-        Me.btnCMes = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
@@ -44,7 +42,7 @@ Partial Class frmModuloReportes
         Me.btnCorte.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCorte.Image = CType(resources.GetObject("btnCorte.Image"), System.Drawing.Image)
         Me.btnCorte.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnCorte.Location = New System.Drawing.Point(36, 76)
+        Me.btnCorte.Location = New System.Drawing.Point(36, 88)
         Me.btnCorte.Name = "btnCorte"
         Me.btnCorte.Size = New System.Drawing.Size(214, 39)
         Me.btnCorte.TabIndex = 0
@@ -56,7 +54,7 @@ Partial Class frmModuloReportes
         Me.btnReporteFacturasasEliminadas.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnReporteFacturasasEliminadas.Image = CType(resources.GetObject("btnReporteFacturasasEliminadas.Image"), System.Drawing.Image)
         Me.btnReporteFacturasasEliminadas.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnReporteFacturasasEliminadas.Location = New System.Drawing.Point(277, 76)
+        Me.btnReporteFacturasasEliminadas.Location = New System.Drawing.Point(277, 88)
         Me.btnReporteFacturasasEliminadas.Name = "btnReporteFacturasasEliminadas"
         Me.btnReporteFacturasasEliminadas.Size = New System.Drawing.Size(214, 37)
         Me.btnReporteFacturasasEliminadas.TabIndex = 1
@@ -68,7 +66,7 @@ Partial Class frmModuloReportes
         Me.btnReporteDevolucionesProveedor.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnReporteDevolucionesProveedor.Image = CType(resources.GetObject("btnReporteDevolucionesProveedor.Image"), System.Drawing.Image)
         Me.btnReporteDevolucionesProveedor.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnReporteDevolucionesProveedor.Location = New System.Drawing.Point(520, 76)
+        Me.btnReporteDevolucionesProveedor.Location = New System.Drawing.Point(520, 88)
         Me.btnReporteDevolucionesProveedor.Name = "btnReporteDevolucionesProveedor"
         Me.btnReporteDevolucionesProveedor.Size = New System.Drawing.Size(214, 37)
         Me.btnReporteDevolucionesProveedor.TabIndex = 2
@@ -80,7 +78,7 @@ Partial Class frmModuloReportes
         Me.Button4.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button4.Location = New System.Drawing.Point(36, 148)
+        Me.Button4.Location = New System.Drawing.Point(36, 133)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(214, 38)
         Me.Button4.TabIndex = 3
@@ -92,7 +90,7 @@ Partial Class frmModuloReportes
         Me.Button5.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button5.Location = New System.Drawing.Point(277, 148)
+        Me.Button5.Location = New System.Drawing.Point(277, 133)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(214, 38)
         Me.Button5.TabIndex = 4
@@ -104,36 +102,12 @@ Partial Class frmModuloReportes
         Me.Button6.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button6.Location = New System.Drawing.Point(520, 148)
+        Me.Button6.Location = New System.Drawing.Point(520, 133)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(214, 38)
         Me.Button6.TabIndex = 5
         Me.Button6.Text = "Button6"
         Me.Button6.UseVisualStyleBackColor = False
-        '
-        'btnCProveedor
-        '
-        Me.btnCProveedor.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnCProveedor.Image = CType(resources.GetObject("btnCProveedor.Image"), System.Drawing.Image)
-        Me.btnCProveedor.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnCProveedor.Location = New System.Drawing.Point(36, 224)
-        Me.btnCProveedor.Name = "btnCProveedor"
-        Me.btnCProveedor.Size = New System.Drawing.Size(214, 35)
-        Me.btnCProveedor.TabIndex = 6
-        Me.btnCProveedor.Text = "Créditos por Proveedor"
-        Me.btnCProveedor.UseVisualStyleBackColor = False
-        '
-        'btnCMes
-        '
-        Me.btnCMes.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnCMes.Image = CType(resources.GetObject("btnCMes.Image"), System.Drawing.Image)
-        Me.btnCMes.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnCMes.Location = New System.Drawing.Point(277, 224)
-        Me.btnCMes.Name = "btnCMes"
-        Me.btnCMes.Size = New System.Drawing.Size(214, 35)
-        Me.btnCMes.TabIndex = 7
-        Me.btnCMes.Text = "Créditos Por Mes"
-        Me.btnCMes.UseVisualStyleBackColor = False
         '
         'btnSalir
         '
@@ -141,7 +115,7 @@ Partial Class frmModuloReportes
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnSalir.Location = New System.Drawing.Point(520, 224)
+        Me.btnSalir.Location = New System.Drawing.Point(520, 177)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(214, 35)
         Me.btnSalir.TabIndex = 8
@@ -154,7 +128,7 @@ Partial Class frmModuloReportes
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(310, 23)
+        Me.lblTitulo.Location = New System.Drawing.Point(287, 9)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(213, 29)
         Me.lblTitulo.TabIndex = 9
@@ -163,7 +137,7 @@ Partial Class frmModuloReportes
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 269)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 234)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(779, 22)
         Me.stsBarra.TabIndex = 10
@@ -187,12 +161,10 @@ Partial Class frmModuloReportes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ClientSize = New System.Drawing.Size(779, 291)
+        Me.ClientSize = New System.Drawing.Size(779, 256)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.btnCMes)
-        Me.Controls.Add(Me.btnCProveedor)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -216,8 +188,6 @@ Partial Class frmModuloReportes
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents btnCProveedor As System.Windows.Forms.Button
-    Friend WithEvents btnCMes As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip

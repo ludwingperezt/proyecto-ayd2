@@ -1,4 +1,9 @@
-﻿Public Class frmPrincipal
+﻿Imports negocios
+
+Public Class frmPrincipal
+    Public Shared lnegEmpleado As negociosEmpleado = New negociosEmpleado()
+    Public Shared lnegPermisos As negociosRol = New negociosRol()
+
 
     '' TODOS LAS FECHAS SE DEBEN GESTIONAR DESDE ESTE TIMER
     Private Sub tmrRefrescarBarra_Tick(sender As System.Object, e As System.EventArgs) Handles tmrRefrescarBarra.Tick
@@ -151,5 +156,10 @@
 
     Private Sub btnProductos_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProductos.MouseHover
         slblDescripcion.Text = "Módulo para gestionar los productos"
+    End Sub
+
+    Private Sub frmPrincipal_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        lnegPermisos.getPermisoVentas()
+
     End Sub
 End Class

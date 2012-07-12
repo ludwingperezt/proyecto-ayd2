@@ -17,7 +17,7 @@
         slblDescripcion.Text = "Permite realizar una cotización de productos"
     End Sub
 
-    Private Sub btnFacturar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnFacturar.MouseHover
+    Private Sub btnFacturar_MouseHover(sender As System.Object, e As System.EventArgs)
         slblDescripcion.Text = "Inicia una nueva factura"
     End Sub
 
@@ -36,7 +36,7 @@
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnFacturar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnFacturar.MouseLeave
+    Private Sub btnFacturar_MouseLeave(sender As System.Object, e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -53,7 +53,7 @@
 
     End Sub
 
-    Private Sub btnFacturar_Click(sender As System.Object, e As System.EventArgs) Handles btnFacturar.Click
+    Private Sub btnFacturar_Click(sender As System.Object, e As System.EventArgs)
         frmFacturar.ShowDialog(Me)
     End Sub
 

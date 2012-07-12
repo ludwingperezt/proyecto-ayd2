@@ -28,20 +28,29 @@ Partial Class frmVentas
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnAnular = New System.Windows.Forms.Button()
-        Me.btnFacturar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.lblEmpleado = New System.Windows.Forms.Label()
+        Me.gbListaSeries = New System.Windows.Forms.GroupBox()
+        Me.dgvSeries = New System.Windows.Forms.DataGridView()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtNumero = New System.Windows.Forms.TextBox()
+        Me.lblNumero = New System.Windows.Forms.Label()
+        Me.lblSerie = New System.Windows.Forms.Label()
+        Me.txtSerie = New System.Windows.Forms.TextBox()
+        Me.btnFacturar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
+        Me.gbListaSeries.SuspendLayout()
+        CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 206)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 503)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(477, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(634, 22)
         Me.stsBarra.TabIndex = 0
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -62,35 +71,23 @@ Partial Class frmVentas
         '
         Me.btnAnular.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAnular.Image = CType(resources.GetObject("btnAnular.Image"), System.Drawing.Image)
-        Me.btnAnular.Location = New System.Drawing.Point(16, 75)
+        Me.btnAnular.Location = New System.Drawing.Point(505, 384)
         Me.btnAnular.Name = "btnAnular"
-        Me.btnAnular.Size = New System.Drawing.Size(210, 67)
-        Me.btnAnular.TabIndex = 1
+        Me.btnAnular.Size = New System.Drawing.Size(97, 77)
+        Me.btnAnular.TabIndex = 6
         Me.btnAnular.Text = "An&ular Factura"
         Me.btnAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnAnular.UseVisualStyleBackColor = False
-        '
-        'btnFacturar
-        '
-        Me.btnFacturar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnFacturar.Image = CType(resources.GetObject("btnFacturar.Image"), System.Drawing.Image)
-        Me.btnFacturar.Location = New System.Drawing.Point(245, 75)
-        Me.btnFacturar.Name = "btnFacturar"
-        Me.btnFacturar.Size = New System.Drawing.Size(206, 67)
-        Me.btnFacturar.TabIndex = 2
-        Me.btnFacturar.Text = "&Facturar"
-        Me.btnFacturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnFacturar.UseVisualStyleBackColor = False
         '
         'btnSalir
         '
         Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalir.Location = New System.Drawing.Point(346, 163)
+        Me.btnSalir.Location = New System.Drawing.Point(505, 467)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(105, 29)
-        Me.btnSalir.TabIndex = 3
+        Me.btnSalir.Size = New System.Drawing.Size(97, 29)
+        Me.btnSalir.TabIndex = 7
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
@@ -104,30 +101,114 @@ Partial Class frmVentas
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(104, 23)
+        Me.lblTitulo.Location = New System.Drawing.Point(207, 9)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(226, 29)
         Me.lblTitulo.TabIndex = 5
         Me.lblTitulo.Text = "Módulo de Ventas"
         '
-        'lblEmpleado
+        'gbListaSeries
         '
-        Me.lblEmpleado.AutoSize = True
-        Me.lblEmpleado.Location = New System.Drawing.Point(375, 35)
-        Me.lblEmpleado.Name = "lblEmpleado"
-        Me.lblEmpleado.Size = New System.Drawing.Size(66, 13)
-        Me.lblEmpleado.TabIndex = 59
-        Me.lblEmpleado.Text = "EMPLEADO"
+        Me.gbListaSeries.Controls.Add(Me.dgvSeries)
+        Me.gbListaSeries.Controls.Add(Me.btnActualizar)
+        Me.gbListaSeries.Location = New System.Drawing.Point(12, 138)
+        Me.gbListaSeries.Name = "gbListaSeries"
+        Me.gbListaSeries.Size = New System.Drawing.Size(610, 240)
+        Me.gbListaSeries.TabIndex = 63
+        Me.gbListaSeries.TabStop = False
+        Me.gbListaSeries.Text = "Listado Facturas"
+        '
+        'dgvSeries
+        '
+        Me.dgvSeries.AllowUserToAddRows = False
+        Me.dgvSeries.AllowUserToDeleteRows = False
+        Me.dgvSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSeries.Location = New System.Drawing.Point(12, 37)
+        Me.dgvSeries.Name = "dgvSeries"
+        Me.dgvSeries.ReadOnly = True
+        Me.dgvSeries.Size = New System.Drawing.Size(578, 188)
+        Me.dgvSeries.TabIndex = 4
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnActualizar.Location = New System.Drawing.Point(487, 10)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
+        Me.btnActualizar.TabIndex = 3
+        Me.btnActualizar.Text = "Recargar Lista"
+        Me.btnActualizar.UseVisualStyleBackColor = False
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBuscar.Enabled = False
+        Me.btnBuscar.Location = New System.Drawing.Point(294, 96)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(103, 25)
+        Me.btnBuscar.TabIndex = 2
+        Me.btnBuscar.Text = "B&uscar"
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'txtNumero
+        '
+        Me.txtNumero.Location = New System.Drawing.Point(146, 99)
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.Size = New System.Drawing.Size(100, 20)
+        Me.txtNumero.TabIndex = 1
+        '
+        'lblNumero
+        '
+        Me.lblNumero.AutoSize = True
+        Me.lblNumero.Location = New System.Drawing.Point(92, 102)
+        Me.lblNumero.Name = "lblNumero"
+        Me.lblNumero.Size = New System.Drawing.Size(44, 13)
+        Me.lblNumero.TabIndex = 11
+        Me.lblNumero.Text = "Numero"
+        '
+        'lblSerie
+        '
+        Me.lblSerie.AutoSize = True
+        Me.lblSerie.Location = New System.Drawing.Point(92, 73)
+        Me.lblSerie.Name = "lblSerie"
+        Me.lblSerie.Size = New System.Drawing.Size(31, 13)
+        Me.lblSerie.TabIndex = 10
+        Me.lblSerie.Text = "Serie"
+        '
+        'txtSerie
+        '
+        Me.txtSerie.Location = New System.Drawing.Point(146, 70)
+        Me.txtSerie.Name = "txtSerie"
+        Me.txtSerie.Size = New System.Drawing.Size(100, 20)
+        Me.txtSerie.TabIndex = 0
+        '
+        'btnFacturar
+        '
+        Me.btnFacturar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnFacturar.Image = CType(resources.GetObject("btnFacturar.Image"), System.Drawing.Image)
+        Me.btnFacturar.Location = New System.Drawing.Point(389, 384)
+        Me.btnFacturar.Name = "btnFacturar"
+        Me.btnFacturar.Size = New System.Drawing.Size(98, 77)
+        Me.btnFacturar.TabIndex = 5
+        Me.btnFacturar.Text = "&Facturar"
+        Me.btnFacturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnFacturar.UseVisualStyleBackColor = False
         '
         'frmVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(477, 228)
-        Me.Controls.Add(Me.lblEmpleado)
+        Me.CancelButton = Me.btnSalir
+        Me.ClientSize = New System.Drawing.Size(634, 525)
+        Me.Controls.Add(Me.btnFacturar)
+        Me.Controls.Add(Me.txtNumero)
+        Me.Controls.Add(Me.gbListaSeries)
+        Me.Controls.Add(Me.lblNumero)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.lblSerie)
+        Me.Controls.Add(Me.txtSerie)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.btnFacturar)
         Me.Controls.Add(Me.btnAnular)
         Me.Controls.Add(Me.stsBarra)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -137,6 +218,8 @@ Partial Class frmVentas
         Me.Text = "Ventas"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
+        Me.gbListaSeries.ResumeLayout(False)
+        CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -145,10 +228,17 @@ Partial Class frmVentas
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents btnAnular As System.Windows.Forms.Button
-    Friend WithEvents btnFacturar As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
-    Friend WithEvents lblEmpleado As System.Windows.Forms.Label
+    Friend WithEvents gbListaSeries As System.Windows.Forms.GroupBox
+    Friend WithEvents dgvSeries As System.Windows.Forms.DataGridView
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents txtNumero As System.Windows.Forms.TextBox
+    Friend WithEvents lblNumero As System.Windows.Forms.Label
+    Friend WithEvents lblSerie As System.Windows.Forms.Label
+    Friend WithEvents txtSerie As System.Windows.Forms.TextBox
+    Friend WithEvents btnFacturar As System.Windows.Forms.Button
 
 End Class
