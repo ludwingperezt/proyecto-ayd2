@@ -69,7 +69,7 @@ Partial Class frmSerie
         Me.btnCancelar.Location = New System.Drawing.Point(80, 150)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 35
+        Me.btnCancelar.TabIndex = 2
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -79,7 +79,7 @@ Partial Class frmSerie
         Me.btnAceptar.Location = New System.Drawing.Point(178, 150)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 34
+        Me.btnAceptar.TabIndex = 3
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
@@ -98,7 +98,7 @@ Partial Class frmSerie
         Me.txtSerie.MaxLength = 3
         Me.txtSerie.Name = "txtSerie"
         Me.txtSerie.Size = New System.Drawing.Size(100, 20)
-        Me.txtSerie.TabIndex = 37
+        Me.txtSerie.TabIndex = 0
         '
         'Label2
         '
@@ -114,7 +114,7 @@ Partial Class frmSerie
         Me.txtCorrelativo.Location = New System.Drawing.Point(114, 100)
         Me.txtCorrelativo.Name = "txtCorrelativo"
         Me.txtCorrelativo.Size = New System.Drawing.Size(100, 20)
-        Me.txtCorrelativo.TabIndex = 37
+        Me.txtCorrelativo.TabIndex = 1
         '
         'lblTitulo
         '

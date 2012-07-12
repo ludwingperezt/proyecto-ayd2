@@ -36,10 +36,10 @@ Partial Class frmModuloSeries
         Me.btnmSerie = New System.Windows.Forms.Button()
         Me.btnNSerie = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.gbListaSeries = New System.Windows.Forms.GroupBox()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
+        Me.gbListaSeries.SuspendLayout()
         Me.SuspendLayout()
         '
         'stsBarra
@@ -172,16 +172,16 @@ Partial Class frmModuloSeries
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'GroupBox1
+        'gbListaSeries
         '
-        Me.GroupBox1.Controls.Add(Me.dgvSeries)
-        Me.GroupBox1.Controls.Add(Me.btnActualizar)
-        Me.GroupBox1.Location = New System.Drawing.Point(28, 116)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(469, 226)
-        Me.GroupBox1.TabIndex = 25
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Listado Series"
+        Me.gbListaSeries.Controls.Add(Me.dgvSeries)
+        Me.gbListaSeries.Controls.Add(Me.btnActualizar)
+        Me.gbListaSeries.Location = New System.Drawing.Point(28, 116)
+        Me.gbListaSeries.Name = "gbListaSeries"
+        Me.gbListaSeries.Size = New System.Drawing.Size(469, 226)
+        Me.gbListaSeries.TabIndex = 25
+        Me.gbListaSeries.TabStop = False
+        Me.gbListaSeries.Text = "Listado Series"
         '
         'frmModuloSeries
         '
@@ -189,7 +189,7 @@ Partial Class frmModuloSeries
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSalir
         Me.ClientSize = New System.Drawing.Size(521, 490)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.gbListaSeries)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.Label1)
@@ -207,7 +207,7 @@ Partial Class frmModuloSeries
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
+        Me.gbListaSeries.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -225,5 +225,5 @@ Partial Class frmModuloSeries
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents gbListaSeries As System.Windows.Forms.GroupBox
 End Class

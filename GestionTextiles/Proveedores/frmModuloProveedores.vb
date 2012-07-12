@@ -7,7 +7,8 @@ Public Class frmModuloProveedores
     Dim bBusquenda As Boolean = False
 
     Private Sub btnNProveedor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNProveedor.Click
-        ''frmNuevoProveedor.actualizar = False
+        frmNuevoProveedor.actualizar = False
+
         frmNuevoProveedor.ShowDialog()
         Me.fnvdRecargar()
     End Sub
