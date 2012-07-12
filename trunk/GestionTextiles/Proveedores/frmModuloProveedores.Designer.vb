@@ -37,6 +37,8 @@ Partial Class frmModuloProveedores
         Me.btnEliminarProv = New System.Windows.Forms.Button()
         Me.btnModificarProv = New System.Windows.Forms.Button()
         Me.btnbuscar = New System.Windows.Forms.Button()
+        Me.cmbFiltradoEstados = New System.Windows.Forms.ComboBox()
+        Me.lblFiltradoEstados = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -103,7 +105,7 @@ Partial Class frmModuloProveedores
         'lblBuscar
         '
         Me.lblBuscar.AutoSize = True
-        Me.lblBuscar.Location = New System.Drawing.Point(50, 124)
+        Me.lblBuscar.Location = New System.Drawing.Point(85, 126)
         Me.lblBuscar.Name = "lblBuscar"
         Me.lblBuscar.Size = New System.Drawing.Size(40, 13)
         Me.lblBuscar.TabIndex = 22
@@ -112,7 +114,7 @@ Partial Class frmModuloProveedores
         'lblFiltro
         '
         Me.lblFiltro.AutoSize = True
-        Me.lblFiltro.Location = New System.Drawing.Point(50, 92)
+        Me.lblFiltro.Location = New System.Drawing.Point(85, 94)
         Me.lblFiltro.Name = "lblFiltro"
         Me.lblFiltro.Size = New System.Drawing.Size(39, 13)
         Me.lblFiltro.TabIndex = 21
@@ -120,7 +122,7 @@ Partial Class frmModuloProveedores
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(114, 121)
+        Me.txtBusqueda.Location = New System.Drawing.Point(131, 123)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(307, 20)
         Me.txtBusqueda.TabIndex = 1
@@ -128,8 +130,8 @@ Partial Class frmModuloProveedores
         'cmbFiltro
         '
         Me.cmbFiltro.FormattingEnabled = True
-        Me.cmbFiltro.Items.AddRange(New Object() {"NIT", "Empresa", "Propietario"})
-        Me.cmbFiltro.Location = New System.Drawing.Point(114, 89)
+        Me.cmbFiltro.Items.AddRange(New Object() {"NIT", "Empresa", "Propietario", "Estado"})
+        Me.cmbFiltro.Location = New System.Drawing.Point(130, 91)
         Me.cmbFiltro.Name = "cmbFiltro"
         Me.cmbFiltro.Size = New System.Drawing.Size(121, 21)
         Me.cmbFiltro.TabIndex = 0
@@ -169,12 +171,32 @@ Partial Class frmModuloProveedores
         'btnbuscar
         '
         Me.btnbuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnbuscar.Location = New System.Drawing.Point(468, 121)
+        Me.btnbuscar.Location = New System.Drawing.Point(444, 104)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
         Me.btnbuscar.TabIndex = 2
         Me.btnbuscar.Text = "B&uscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
+        '
+        'cmbFiltradoEstados
+        '
+        Me.cmbFiltradoEstados.FormattingEnabled = True
+        Me.cmbFiltradoEstados.Items.AddRange(New Object() {"Activo", "Inactivo"})
+        Me.cmbFiltradoEstados.Location = New System.Drawing.Point(317, 91)
+        Me.cmbFiltradoEstados.Name = "cmbFiltradoEstados"
+        Me.cmbFiltradoEstados.Size = New System.Drawing.Size(121, 21)
+        Me.cmbFiltradoEstados.TabIndex = 23
+        Me.cmbFiltradoEstados.Visible = False
+        '
+        'lblFiltradoEstados
+        '
+        Me.lblFiltradoEstados.AutoSize = True
+        Me.lblFiltradoEstados.Location = New System.Drawing.Point(266, 94)
+        Me.lblFiltradoEstados.Name = "lblFiltradoEstados"
+        Me.lblFiltradoEstados.Size = New System.Drawing.Size(45, 13)
+        Me.lblFiltradoEstados.TabIndex = 24
+        Me.lblFiltradoEstados.Text = "Estados"
+        Me.lblFiltradoEstados.Visible = False
         '
         'frmModuloProveedores
         '
@@ -182,6 +204,8 @@ Partial Class frmModuloProveedores
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSalir
         Me.ClientSize = New System.Drawing.Size(667, 511)
+        Me.Controls.Add(Me.lblFiltradoEstados)
+        Me.Controls.Add(Me.cmbFiltradoEstados)
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.btnEliminarProv)
         Me.Controls.Add(Me.btnModificarProv)
@@ -220,4 +244,6 @@ Partial Class frmModuloProveedores
     Friend WithEvents btnEliminarProv As System.Windows.Forms.Button
     Friend WithEvents btnModificarProv As System.Windows.Forms.Button
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
+    Friend WithEvents cmbFiltradoEstados As System.Windows.Forms.ComboBox
+    Friend WithEvents lblFiltradoEstados As System.Windows.Forms.Label
 End Class

@@ -86,6 +86,11 @@ namespace negocios
             this.celular = lsCel;
         }
 
+        public void setEstado(bool lbEstado)
+        {
+            this.activo = lbEstado;
+        }
+
         /// <summary>
         /// Grupo de funciones para leer los datos de la clase
         /// </summary>
@@ -131,9 +136,14 @@ namespace negocios
             return this.id;
         }
 
-        public bool getEstado()
+        public string getEstado()
         {
-            return this.activo;
+            if (this.activo)
+            {
+                return "Activo";
+            }
+            else
+                return "Inactivo";        
         }
 
         #endregion
@@ -162,10 +172,10 @@ namespace negocios
                 npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[2]));
                 npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[3]));
                 npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[4]));
-                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));
-                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[6]));
-                npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[7]));
-                npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[8]));
+                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));                
+                npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[6]));
+                npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[7]));
+                npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[8]));
                 lnpProveedores.Add(npNuevoProveedor);
             }
             return lnpProveedores;
@@ -215,6 +225,7 @@ namespace negocios
             try
             {
                 negociosAdaptadores.gAdaptadorDeConsultas.darDeBajaProveedor((short)this.id);
+                //this.activo = false;
                 return "La modificación de los datos del proveedor se llevó a cabo con éxito";
             }
             catch (Exception e)
