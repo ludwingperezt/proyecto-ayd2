@@ -1,4 +1,5 @@
-﻿Public Class frmingresoclientes
+﻿Imports negocios
+Public Class frmingresoclientes
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         For Each ctrlIterador As Control In Me.Controls
@@ -17,8 +18,18 @@
                     ctrlIterador.BackColor = Color.White
                 End If
             End If
-
-
+            'ingreso nuevo cliente
+            Dim lnpNuevoCliente As negociosCliente = New negociosCliente()
+            lnpNuevoCliente.setNombreCliente(txtnombre.Text)
+            lnpNuevoCliente.setNitCliente(txtnit.Text)
+            lnpNuevoCliente.setDireccionCliente(txtdireccion.Text)
+            Try
+                lnpNuevoCliente.fnsInsertarCliente()
+                MessageBox.Show("La operación de insersión de cliente se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         Next
     End Sub
 
