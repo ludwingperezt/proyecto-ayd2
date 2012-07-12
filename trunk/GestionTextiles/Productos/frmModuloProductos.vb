@@ -65,6 +65,7 @@ Public Class frmModuloProductos
             Me.fnvdRecargar()
         Else
             'codigo para busqueda
+            Me.banderaBusqueda = True
             Me.fnvBuscar(txtbusqueda.Text)
         End If
     End Sub
@@ -140,6 +141,7 @@ Public Class frmModuloProductos
     Private Sub fnvdRecargar()
         Try
             frmModuloProductos.gnpProductoSeleccionado = Nothing
+            Me.glstProductosFiltrada.Clear()
             Me.banderaBusqueda = False
             Me.glstProductos = negociosProducto.fnlstListarProductos()
             Me.fnvCrearDataTable(Me.glstProductos)
@@ -154,12 +156,11 @@ Public Class frmModuloProductos
     Private Sub fnvBuscar(ByRef txt As String)
         Me.glstProductosFiltrada = New List(Of negociosProducto)
         For Each i As negociosProducto In Me.glstProductos
-            If i.getCodigo() = txt Or i.getNombre() = txt Or i.getColor() = txt Then
+            If i.getCodigo().Trim() = txt Or i.getNombre() = txt Or i.getColor() = txt Then
                 Me.glstProductosFiltrada.Add(i)
             End If
         Next
         Me.fnvCrearDataTable(Me.glstProductosFiltrada)
-        Me.glstProductosFiltrada = Nothing
     End Sub
 
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
