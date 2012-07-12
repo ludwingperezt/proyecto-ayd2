@@ -113,8 +113,18 @@ Public Class frmListarProveedores
 
     Private Sub fnvdRecargar()
         frmListarProveedores.gnpProveedor = Nothing
-        Me.glstProveedores = negociosProveedores.fnsListarProveedores()
+        Me.glstProveedores = negociosProveedores.fnslListarProveedores()
         Me.fnvCrearDataTable(Me.glstProveedores)
+
+    End Sub
+
+    Private Sub frmListarProveedores_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Try
+            fnvdRecargar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
 End Class

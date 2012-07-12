@@ -35,7 +35,8 @@ namespace negocios
             this.activo = true;
         }
         public negociosProveedores()
-        { 
+        {
+            this.activo = true;
         }
         #endregion
 
@@ -48,6 +49,11 @@ namespace negocios
         public void setNombre (string lsNomb)
         {
             this.nombre = lsNomb;
+        }
+
+        public void setId(int liId)
+        {
+            this.id = liId;
         }
 
         public void setNit (string lsNit)
@@ -89,6 +95,7 @@ namespace negocios
             return this.nombre;
         }
 
+
         public string getNit()
         {
             return this.nit;
@@ -124,6 +131,11 @@ namespace negocios
             return this.id;
         }
 
+        public bool getEstado()
+        {
+            return this.activo;
+        }
+
         #endregion
         
         #region Comunicacion con la DB
@@ -131,9 +143,32 @@ namespace negocios
         /// Funcion para listar todos los proveedores existentes
         /// </summary>
         /// <returns>DataTable: Tabla con la lista de los proveedores</returns>
-        public static DataTable fnsListarProveedores()
+        public static DataTable fnsDTListarProveedores()
         {
             return negociosAdaptadores.gAdaptadorListarProveedores.GetData();
+        }
+
+        public static List<negociosProveedores> fnslListarProveedores()
+        {
+            List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
+            DataTable ldtProveedores = negociosProveedores.fnsDTListarProveedores();
+            object[] oListaElmentos;
+            for (int i = 0; i < ldtProveedores.Rows.Count; i++)
+            {
+                oListaElmentos = ldtProveedores.Rows[i].ItemArray;
+                negociosProveedores npNuevoProveedor = new negociosProveedores();
+                npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
+                npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
+                npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[2]));
+                npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[3]));
+                npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[4]));
+                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));
+                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[6]));
+                npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[7]));
+                npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[8]));
+                lnpProveedores.Add(npNuevoProveedor);
+            }
+            return lnpProveedores;
         }
 
         /// <summary>
