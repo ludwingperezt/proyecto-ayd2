@@ -122,17 +122,17 @@ Public Class frmModuloProveedores
 
     Private Sub fnvdRecargar()
         If IsNothing(lstnpProveedores) Then
-            Me.lstnpProveedores = negociosProveedores.fnslListarProveedores()
+            frmModuloProveedores.lstnpProveedores = negociosProveedores.fnslListarProveedores()
         End If
         If bBusquenda = True Then
             frmModuloProveedores.gnpProveedor = Nothing
-            'Me.lstnpProveedoresFiltrado = negociosProveedores.fnslListarProveedores()
-            Me.fnvCrearDataTable(Me.lstnpProveedoresFiltrado)
-            Me.lstnpProveedoresFiltrado.Clear()
+            'frmModuloProveedores.lstnpProveedoresFiltrado = negociosProveedores.fnslListarProveedores()
+            Me.fnvCrearDataTable(frmModuloProveedores.lstnpProveedoresFiltrado)
+            frmModuloProveedores.lstnpProveedoresFiltrado.Clear()
             bBusquenda = False
         Else
             frmModuloProveedores.gnpProveedor = Nothing
-            Me.fnvCrearDataTable(Me.lstnpProveedores)
+            Me.fnvCrearDataTable(frmModuloProveedores.lstnpProveedores)
         End If
 
     End Sub
@@ -157,7 +157,7 @@ Public Class frmModuloProveedores
                 Try
                     lsMensaje = gnpProveedor.fnsDarDeBajaProveedor()
                     MessageBox.Show(lsMensaje, "Proveedor desactivado", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Me.lstnpProveedores = negociosProveedores.fnslListarProveedores()
+                    frmModuloProveedores.lstnpProveedores = negociosProveedores.fnslListarProveedores()
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
@@ -184,7 +184,7 @@ Public Class frmModuloProveedores
     Private Sub fnsFiltarListaProveedores(ByVal sTextoBuscado As String)
         lstnpProveedoresFiltrado = New List(Of negociosProveedores)
         sTextoBuscado = sTextoBuscado.Trim()
-        For Each i As negociosProveedores In Me.lstnpProveedores
+        For Each i As negociosProveedores In frmModuloProveedores.lstnpProveedores
             If cmbFiltro.SelectedItem = "NIT" Then
                 If i.getNit().Trim().Contains(sTextoBuscado) Then
                     lstnpProveedoresFiltrado.Add(i)
