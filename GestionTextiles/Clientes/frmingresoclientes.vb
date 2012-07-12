@@ -26,7 +26,7 @@
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtapellido_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtapellido.MouseLeave
+    Private Sub txtapellido_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -58,7 +58,7 @@
         slblDescripcion.Text = "Se debe ingresar el nombre del cliente ej. Juan Mariano "
     End Sub
 
-    Private Sub txtapellido_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtapellido.MouseHover
+    Private Sub txtapellido_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Se debe ingresar el apellido del cliente ej. Dominguez Estrada"
     End Sub
 
@@ -93,7 +93,7 @@
         End If
     End Sub
 
-    Private Sub txtapellido_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtapellido.KeyPress
+    Private Sub txtapellido_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If (Not (e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then  'revisar para que solo lleve letras
             e.KeyChar = vbNullChar
 
@@ -131,5 +131,9 @@
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Dispose()
         frmClientes.Show()
+    End Sub
+
+    Private Sub lbltipocliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbltipocliente.Click
+
     End Sub
 End Class
