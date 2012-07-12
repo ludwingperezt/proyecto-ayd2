@@ -83,4 +83,44 @@
     Private Sub txtColor_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtColor.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
+
+    Private Sub txtNombre_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseHover
+        slblDescripcion.Text = "Nombre del Producto."
+    End Sub
+
+    Private Sub txtCodigo_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCodigo.MouseHover
+        slblDescripcion.Text = "Codigo del Producto."
+    End Sub
+
+    Private Sub txtCantidad_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCantidad.MouseHover
+        slblDescripcion.Text = "Cantidad Existente del Producto."
+    End Sub
+
+    Private Sub txtPrecioCompra_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPrecioCompra.MouseHover
+        slblDescripcion.Text = "Precio de Compra del Producto."
+    End Sub
+
+    Private Sub txtPrecioVenta_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPrecioVenta.MouseHover
+        slblDescripcion.Text = "Precio de Venta del Producto."
+    End Sub
+
+    Private Sub txtColor_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtColor.MouseHover
+        slblDescripcion.Text = "Color del Producto."
+    End Sub
+
+    Private Sub btnAceptar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnCancelar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnAceptar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseHover
+        slblDescripcion.Text = "Confirmar Cambios del Producto."
+    End Sub
+
+    Private Sub btnCancelar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseHover
+        slblDescripcion.Text = "Cancelar Cambios del Producto."
+    End Sub
 End Class
