@@ -1,8 +1,9 @@
 ﻿Imports negocios
 Public Class frmModuloProductos
-    Private glstProductos As List(Of negociosProducto)
-    Private glstProductosFiltrada As List(Of negociosProducto)
+    Private glstProductos As List(Of negociosProducto) = New List(Of negociosProducto)
+    Private glstProductosFiltrada As List(Of negociosProducto) = New List(Of negociosProducto)
     Public Shared gnpProductoSeleccionado As negociosProducto
+    Private banderaBusqueda As Boolean = False
     Private Sub txtbusqueda_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -125,7 +126,12 @@ Public Class frmModuloProductos
     End Sub
 
     Private Sub dgvEmpleados_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvEmpleados.CellClick
-        frmModuloProductos.gnpProductoSeleccionado = glstProductos(e.RowIndex)
+        If banderaBusqueda Then
+            frmModuloProductos.gnpProductoSeleccionado = glstProductosFiltrada(e.RowIndex)
+        Else
+            frmModuloProductos.gnpProductoSeleccionado = glstProductos(e.RowIndex)
+        End If
+
     End Sub
 
     Private Sub dgvEmpleados_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgvEmpleados.CellMouseClick
@@ -134,13 +140,15 @@ Public Class frmModuloProductos
     Private Sub fnvdRecargar()
         Try
             frmModuloProductos.gnpProductoSeleccionado = Nothing
+            Me.banderaBusqueda = False
             Me.glstProductos = negociosProducto.fnlstListarProductos()
             Me.fnvCrearDataTable(Me.glstProductos)
         Catch ex As Exception
-            Me.glstProductos.Clear()
-            Me.glstProductosFiltrada.Clear()
-            Me.fnvCrearDataTable(Me.glstProductos)
+            'Me.glstProductos.Clear()
+            'Me.glstProductosFiltrada.Clear()
+            'Me.fnvCrearDataTable(Me.glstProductos)
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvEmpleados.DataSource = Nothing
         End Try
     End Sub
     Private Sub fnvBuscar(ByRef txt As String)
