@@ -54,6 +54,7 @@ Public Class frmNuevoProveedor
             End If
             ' todo es válido se procede a guardar en la BD y luego a cerrar el form!
             frmModuloProveedores.lstnpProveedores = negociosProveedores.fnslListarProveedores()
+            frmNuevoProveedor.actualizar = False
             Me.Dispose()
         End If
     End Sub
