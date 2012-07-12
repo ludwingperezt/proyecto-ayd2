@@ -34,14 +34,7 @@ Public Class frmRoles
     Private Sub frmRoles_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         fnvCargarLista()
     End Sub
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Dim lsTexto As String = txtBusqueda.Text
-        If lsTexto = "" Then
-            Me.fnvCargarLista()
-        Else
-            Me.fnvBuscar(lsTexto)
-        End If
-    End Sub
+
     Private Sub fnvCargarLista()
         Try
             frmRoles.nrRolSeleccionado = Nothing
@@ -74,8 +67,8 @@ Public Class frmRoles
         Me.fnvLlenarDataGridView(lstRolLocal)
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        Me.fnvCargarLista()
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
     Private Sub dgvRoles_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvRoles.CellClick
@@ -104,6 +97,19 @@ Public Class frmRoles
             MessageBox.Show("No puede usar esta opción si no ha hecho clic en algun elemento de la lista", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         Else
             Me.Dispose()
+        End If
+    End Sub
+
+    Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
+        Me.fnvCargarLista()
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+        Dim lsTexto As String = txtBusqueda.Text
+        If lsTexto = "" Then
+            Me.fnvCargarLista()
+        Else
+            Me.fnvBuscar(lsTexto)
         End If
     End Sub
 End Class

@@ -215,11 +215,11 @@ Partial Class frmModuloProveedores
         'btnActualizar
         '
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
-        Me.btnActualizar.Location = New System.Drawing.Point(557, 13)
+        Me.btnActualizar.Location = New System.Drawing.Point(481, 13)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(27, 25)
-        Me.btnActualizar.TabIndex = 4
+        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
+        Me.btnActualizar.TabIndex = 6
+        Me.btnActualizar.Text = "Recargar Lista"
         Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'frmModuloProveedores

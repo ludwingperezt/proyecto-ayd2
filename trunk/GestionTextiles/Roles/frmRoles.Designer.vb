@@ -32,10 +32,10 @@ Partial Class frmRoles
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.dgvRoles = New System.Windows.Forms.DataGridView()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -64,13 +64,13 @@ Partial Class frmRoles
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
         'btnAsignarPermiso
@@ -128,29 +128,11 @@ Partial Class frmRoles
         Me.Button2.Text = "Seleccionar permiso"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(505, 61)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 34
-        Me.Button3.Text = "Buscar"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(587, 61)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 46)
-        Me.Button4.TabIndex = 35
-        Me.Button4.Text = "Actualizar lista"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'txtBusqueda
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(37, 61)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(453, 20)
+        Me.txtBusqueda.Size = New System.Drawing.Size(332, 20)
         Me.txtBusqueda.TabIndex = 36
         '
         'dgvRoles
@@ -158,21 +140,42 @@ Partial Class frmRoles
         Me.dgvRoles.AllowUserToAddRows = False
         Me.dgvRoles.AllowUserToDeleteRows = False
         Me.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRoles.Location = New System.Drawing.Point(26, 120)
+        Me.dgvRoles.Location = New System.Drawing.Point(37, 120)
         Me.dgvRoles.Name = "dgvRoles"
         Me.dgvRoles.ReadOnly = True
-        Me.dgvRoles.Size = New System.Drawing.Size(439, 150)
+        Me.dgvRoles.Size = New System.Drawing.Size(453, 150)
         Me.dgvRoles.TabIndex = 37
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnActualizar.Location = New System.Drawing.Point(387, 90)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
+        Me.btnActualizar.TabIndex = 38
+        Me.btnActualizar.Text = "Recargar Lista"
+        Me.btnActualizar.UseVisualStyleBackColor = False
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBuscar.Enabled = False
+        Me.btnBuscar.Location = New System.Drawing.Point(387, 56)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(103, 25)
+        Me.btnBuscar.TabIndex = 39
+        Me.btnBuscar.Text = "B&uscar"
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'frmRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(712, 522)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.dgvRoles)
         Me.Controls.Add(Me.txtBusqueda)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnSalir)
@@ -201,8 +204,8 @@ Partial Class frmRoles
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents dgvRoles As System.Windows.Forms.DataGridView
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
 End Class
