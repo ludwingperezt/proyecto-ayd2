@@ -1,6 +1,6 @@
-﻿Public Class frmClientes
-
-    
+﻿Imports negocios
+Public Class frmClientes
+    Dim lnpNuevoCliente As negociosCliente = New negociosCliente()
     Private Sub txtbusqueda_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -61,8 +61,8 @@
         If txtbusqueda.Text = "" Then
             MessageBox.Show("Ingrese la busqueda deseada ")
         Else
-            'codigo paa busqueda
-
+            ''verificar porque no se puede acceder
+            dgvclientes.DataSource = lnpNuevoCliente.fnDbBuscarClienteNombre(txtbusqueda.Text)
         End If
     End Sub
 
@@ -88,12 +88,16 @@
         End If
     End Sub
 
-    
+
     Private Sub btnActualizar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
     Private Sub btnActualizar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.MouseHover
         slblDescripcion.Text = "Actualiza el  listado de los Cliente en sistema"
+    End Sub
+
+    Private Sub dgvclientes_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvclientes.CellContentClick
+
     End Sub
 End Class
