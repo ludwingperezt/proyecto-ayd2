@@ -20,10 +20,11 @@ Public Class frmSerie
                 End If
             End If
         Next
-        If Not actualizar Then ' si no se va a actualizar (es insert) entonces se valida la serie!
 
+
+        If Not actualizar Then ' si no se va a actualizar (es insert) entonces se valida la serie!
             If lbSerieValida Then
-                If Not lbooBandera Then
+                If lbooBandera Then
                     '' si es un insert...
                     Dim lnsSerieLocal As negociosSerie = New negociosSerie()
                     lnsSerieLocal.setSerie(txtSerie.Text)
