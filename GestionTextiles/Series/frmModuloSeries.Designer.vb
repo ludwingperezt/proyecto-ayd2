@@ -128,11 +128,11 @@ Partial Class frmModuloSeries
         'btnActualizar
         '
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
-        Me.btnActualizar.Location = New System.Drawing.Point(428, 9)
+        Me.btnActualizar.Location = New System.Drawing.Point(352, 9)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(27, 25)
+        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
         Me.btnActualizar.TabIndex = 2
+        Me.btnActualizar.Text = "Recargar Lista"
         Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'btnmSerie
