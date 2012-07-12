@@ -158,12 +158,6 @@
     <Compile Include="Proveedores\frmListarProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Series\frmListarSeries.Designer.vb">
-      <DependentUpon>frmListarSeries.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Series\frmListarSeries.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Empleados\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -344,9 +338,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\frmListarProveedores.resx">
       <DependentUpon>frmListarProveedores.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Series\frmListarSeries.resx">
-      <DependentUpon>frmListarSeries.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

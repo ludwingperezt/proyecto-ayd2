@@ -129,7 +129,7 @@ Partial Class frmSerie
         '
         'picbValidacion
         '
-        Me.picbValidacion.Location = New System.Drawing.Point(220, 55)
+        Me.picbValidacion.Location = New System.Drawing.Point(220, 62)
         Me.picbValidacion.Name = "picbValidacion"
         Me.picbValidacion.Size = New System.Drawing.Size(33, 29)
         Me.picbValidacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

@@ -45,7 +45,7 @@ Partial Class frmModuloSeries
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 438)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 468)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(521, 22)
         Me.stsBarra.TabIndex = 11
@@ -72,15 +72,15 @@ Partial Class frmModuloSeries
         Me.dgvSeries.Location = New System.Drawing.Point(12, 39)
         Me.dgvSeries.Name = "dgvSeries"
         Me.dgvSeries.ReadOnly = True
-        Me.dgvSeries.Size = New System.Drawing.Size(443, 159)
-        Me.dgvSeries.TabIndex = 19
+        Me.dgvSeries.Size = New System.Drawing.Size(443, 172)
+        Me.dgvSeries.TabIndex = 3
         '
         'txtBusqueda
         '
         Me.txtBusqueda.Location = New System.Drawing.Point(89, 69)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(279, 20)
-        Me.txtBusqueda.TabIndex = 20
+        Me.txtBusqueda.TabIndex = 0
         '
         'Label1
         '
@@ -98,7 +98,7 @@ Partial Class frmModuloSeries
         Me.btnBuscar.Location = New System.Drawing.Point(380, 66)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(103, 25)
-        Me.btnBuscar.TabIndex = 23
+        Me.btnBuscar.TabIndex = 1
         Me.btnBuscar.Text = "B&uscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
@@ -117,10 +117,10 @@ Partial Class frmModuloSeries
         '
         Me.btnEliminarSerie.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEliminarSerie.Image = CType(resources.GetObject("btnEliminarSerie.Image"), System.Drawing.Image)
-        Me.btnEliminarSerie.Location = New System.Drawing.Point(271, 337)
+        Me.btnEliminarSerie.Location = New System.Drawing.Point(386, 348)
         Me.btnEliminarSerie.Name = "btnEliminarSerie"
         Me.btnEliminarSerie.Size = New System.Drawing.Size(97, 77)
-        Me.btnEliminarSerie.TabIndex = 21
+        Me.btnEliminarSerie.TabIndex = 6
         Me.btnEliminarSerie.Text = "&Eliminar Serie"
         Me.btnEliminarSerie.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnEliminarSerie.UseVisualStyleBackColor = False
@@ -132,18 +132,18 @@ Partial Class frmModuloSeries
         Me.btnActualizar.Location = New System.Drawing.Point(428, 9)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(27, 25)
-        Me.btnActualizar.TabIndex = 18
+        Me.btnActualizar.TabIndex = 2
         Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'btnmSerie
         '
         Me.btnmSerie.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnmSerie.Image = CType(resources.GetObject("btnmSerie.Image"), System.Drawing.Image)
-        Me.btnmSerie.Location = New System.Drawing.Point(156, 337)
+        Me.btnmSerie.Location = New System.Drawing.Point(271, 348)
         Me.btnmSerie.Name = "btnmSerie"
         Me.btnmSerie.Size = New System.Drawing.Size(97, 77)
-        Me.btnmSerie.TabIndex = 13
-        Me.btnmSerie.Text = "Modificar Serie"
+        Me.btnmSerie.TabIndex = 5
+        Me.btnmSerie.Text = "M&odificar Serie"
         Me.btnmSerie.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnmSerie.UseVisualStyleBackColor = False
         '
@@ -151,11 +151,11 @@ Partial Class frmModuloSeries
         '
         Me.btnNSerie.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNSerie.Image = Global.GestionTextiles.My.Resources.Resources.numberhash1
-        Me.btnNSerie.Location = New System.Drawing.Point(40, 337)
+        Me.btnNSerie.Location = New System.Drawing.Point(158, 348)
         Me.btnNSerie.Name = "btnNSerie"
         Me.btnNSerie.Size = New System.Drawing.Size(97, 77)
-        Me.btnNSerie.TabIndex = 12
-        Me.btnNSerie.Text = "Nueva Serie"
+        Me.btnNSerie.TabIndex = 4
+        Me.btnNSerie.Text = "&Nueva Serie"
         Me.btnNSerie.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnNSerie.UseVisualStyleBackColor = False
         '
@@ -164,12 +164,12 @@ Partial Class frmModuloSeries
         Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(385, 337)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalir.Location = New System.Drawing.Point(385, 431)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(98, 77)
-        Me.btnSalir.TabIndex = 15
+        Me.btnSalir.Size = New System.Drawing.Size(98, 30)
+        Me.btnSalir.TabIndex = 7
         Me.btnSalir.Text = "&Salir"
-        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
         '
         'GroupBox1
@@ -178,7 +178,7 @@ Partial Class frmModuloSeries
         Me.GroupBox1.Controls.Add(Me.btnActualizar)
         Me.GroupBox1.Location = New System.Drawing.Point(28, 116)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(469, 215)
+        Me.GroupBox1.Size = New System.Drawing.Size(469, 226)
         Me.GroupBox1.TabIndex = 25
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado Series"
@@ -187,7 +187,8 @@ Partial Class frmModuloSeries
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(521, 460)
+        Me.CancelButton = Me.btnSalir
+        Me.ClientSize = New System.Drawing.Size(521, 490)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnBuscar)
