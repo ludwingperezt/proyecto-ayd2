@@ -74,6 +74,20 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property refresh() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("refresh", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property refresh_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("refresh_icon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property winarrow1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("winarrow1", resourceCulture)
