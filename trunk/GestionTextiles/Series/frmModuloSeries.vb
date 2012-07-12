@@ -1,8 +1,8 @@
 ﻿Imports negocios
 Public Class frmModuloSeries
     Public Shared gnsSerieSeleccionada As negociosSerie
-    Private lstSeries As List(Of negociosSerie)
-    Private lstSeriesFiltrada As List(Of negociosSerie)
+    Private lstSeries As List(Of negociosSerie) = New List(Of negociosSerie)
+    Private lstSeriesFiltrada As List(Of negociosSerie) = New List(Of negociosSerie)
     Private Sub btnNSerie_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNSerie.Click
         frmSerie.actualizar = False
         frmSerie.ShowDialog()
@@ -70,9 +70,10 @@ Public Class frmModuloSeries
             Me.lstSeries = negociosSerie.fnlstListaSeries()
             Me.fnvLlenarDataGridView(Me.lstSeries)
         Catch ex As Exception
-            Me.lstSeries.Clear()
+            'Me.lstSeries.Clear()
             'Me.lstSeriesFiltrada = Nothing
-            Me.fnvLlenarDataGridView(Me.lstSeries)
+            'Me.fnvLlenarDataGridView(Me.lstSeries)
+            Me.dgvSeries.DataSource = Nothing
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
@@ -106,12 +107,17 @@ Public Class frmModuloSeries
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Dim lsTexto As String = txtBusqueda.Text
-        If lsTexto.Length = 1 Then
-            lsTexto = lsTexto + "  "
-        ElseIf lsTexto.Length = 2 Then
-            lsTexto = lsTexto + " "
+        If lsTexto = "" Then
+            Me.fnvCargarLista()
+        Else
+            If lsTexto.Length = 1 Then
+                lsTexto = lsTexto + "  "
+            ElseIf lsTexto.Length = 2 Then
+                lsTexto = lsTexto + " "
+            End If
+            Me.fnvBuscar(lsTexto)
         End If
-        Me.fnvBuscar(lsTexto)
+        
     End Sub
 
     Private Sub frmModuloSeries_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
