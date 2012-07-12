@@ -249,4 +249,14 @@ Public Class frmModuloProveedores
     Private Sub cmbFiltradoEstados_SelectedValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbFiltradoEstados.SelectedValueChanged
         txtBusqueda.Text = cmbFiltradoEstados.SelectedItem.ToString()
     End Sub
+
+    Private Sub txtBusqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBusqueda.TextChanged
+        If txtBusqueda.Text = "" Then
+            Me.fnvdRecargar()
+        End If
+    End Sub
+
+    Private Sub btnActualizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.Click
+        Me.fnvdRecargar()
+    End Sub
 End Class
