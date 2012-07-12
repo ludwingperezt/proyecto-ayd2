@@ -28,7 +28,7 @@ Public Class frmModuloProductos
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnSalir_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseLeave
+    Private Sub btnSalir_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -56,7 +56,7 @@ Public Class frmModuloProductos
         slblDescripcion.Text = "Eliminacion de Productos"
     End Sub
 
-    Private Sub btnSalir_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseHover
+    Private Sub btnSalir_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Salir de la aplicación"
     End Sub
 
@@ -135,9 +135,6 @@ Public Class frmModuloProductos
 
     End Sub
 
-    Private Sub dgvEmpleados_CellMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgvEmpleados.CellMouseClick
-
-    End Sub
     Private Sub fnvdRecargar()
         Try
             frmModuloProductos.gnpProductoSeleccionado = Nothing
@@ -163,19 +160,27 @@ Public Class frmModuloProductos
         Me.fnvCrearDataTable(Me.glstProductosFiltrada)
     End Sub
 
-    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
-        Me.Dispose()
+    Private Sub txtbusqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.TextChanged
+        If txtbusqueda.Text = "" Then
+            btnbuscar.Enabled = False
+        Else
+            btnbuscar.Enabled = True
+        End If
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Me.fnvdRecargar()
-    End Sub
-
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub btnSeleccionarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSeleccionarProducto.Click
         If IsNothing(frmModuloProductos.gnpProductoSeleccionado) Then
             MessageBox.Show("No puede usar esta opción si no ha hecho clic en algun elemento de la lista", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         Else
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub btnRegresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.Click
+        Me.fnvdRecargar()
     End Sub
 End Class
