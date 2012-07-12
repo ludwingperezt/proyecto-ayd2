@@ -183,4 +183,28 @@ Public Class frmModuloProductos
     Private Sub btnRegresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.Click
         Me.fnvdRecargar()
     End Sub
+
+    Private Sub btnRegresar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnSeleccionarProducto_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSeleccionarProducto.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnSalir_MouseLeave_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnRegresar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseHover
+        slblDescripcion.Text = "Regresa al Filtro Inicial."
+    End Sub
+
+    Private Sub btnSeleccionarProducto_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSeleccionarProducto.MouseHover
+        slblDescripcion.Text = "Confirma el Producto que Selecciono de la Lista."
+    End Sub
+
+    Private Sub btnSalir_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseHover
+        slblDescripcion.Text = "Salir de la aplicación"
+    End Sub
 End Class
