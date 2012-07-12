@@ -61,7 +61,7 @@ Partial Class frmModificarProductos
         Me.btnCancelar.Location = New System.Drawing.Point(325, 235)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 52
+        Me.btnCancelar.TabIndex = 7
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -71,7 +71,7 @@ Partial Class frmModificarProductos
         Me.btnAceptar.Location = New System.Drawing.Point(423, 235)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 51
+        Me.btnAceptar.TabIndex = 6
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
@@ -80,7 +80,7 @@ Partial Class frmModificarProductos
         Me.txtPrecioCompra.Location = New System.Drawing.Point(144, 144)
         Me.txtPrecioCompra.Name = "txtPrecioCompra"
         Me.txtPrecioCompra.Size = New System.Drawing.Size(100, 20)
-        Me.txtPrecioCompra.TabIndex = 48
+        Me.txtPrecioCompra.TabIndex = 3
         '
         'lblColor
         '
@@ -97,7 +97,7 @@ Partial Class frmModificarProductos
         Me.txtCantidad.MaxLength = 60
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(100, 20)
-        Me.txtCantidad.TabIndex = 46
+        Me.txtCantidad.TabIndex = 2
         '
         'lblCantidad
         '
@@ -113,14 +113,14 @@ Partial Class frmModificarProductos
         Me.txtColor.Location = New System.Drawing.Point(142, 196)
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(100, 20)
-        Me.txtColor.TabIndex = 43
+        Me.txtColor.TabIndex = 5
         '
         'txtPrecioVenta
         '
         Me.txtPrecioVenta.Location = New System.Drawing.Point(142, 170)
         Me.txtPrecioVenta.Name = "txtPrecioVenta"
         Me.txtPrecioVenta.Size = New System.Drawing.Size(100, 20)
-        Me.txtPrecioVenta.TabIndex = 44
+        Me.txtPrecioVenta.TabIndex = 4
         '
         'lblPrecioVenta
         '
@@ -146,7 +146,7 @@ Partial Class frmModificarProductos
         Me.txtNombre.MaxLength = 70
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(354, 20)
-        Me.txtNombre.TabIndex = 40
+        Me.txtNombre.TabIndex = 0
         '
         'lblDPI
         '
@@ -163,7 +163,7 @@ Partial Class frmModificarProductos
         Me.txtCodigo.MaxLength = 70
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodigo.TabIndex = 38
+        Me.txtCodigo.TabIndex = 1
         '
         'lblNombre
         '
