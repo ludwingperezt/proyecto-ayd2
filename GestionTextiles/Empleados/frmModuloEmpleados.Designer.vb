@@ -81,7 +81,7 @@ Partial Class frmModuloEmpleados
         Me.btnbuscar.Location = New System.Drawing.Point(437, 112)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
-        Me.btnbuscar.TabIndex = 44
+        Me.btnbuscar.TabIndex = 3
         Me.btnbuscar.Text = "B&uscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
@@ -90,7 +90,7 @@ Partial Class frmModuloEmpleados
         Me.txtbusqueda.Location = New System.Drawing.Point(111, 117)
         Me.txtbusqueda.Name = "txtbusqueda"
         Me.txtbusqueda.Size = New System.Drawing.Size(314, 20)
-        Me.txtbusqueda.TabIndex = 43
+        Me.txtbusqueda.TabIndex = 2
         '
         'lblbusqueda
         '
@@ -165,7 +165,7 @@ Partial Class frmModuloEmpleados
         Me.btnEliminarEmpleados.Location = New System.Drawing.Point(464, 370)
         Me.btnEliminarEmpleados.Name = "btnEliminarEmpleados"
         Me.btnEliminarEmpleados.Size = New System.Drawing.Size(107, 71)
-        Me.btnEliminarEmpleados.TabIndex = 49
+        Me.btnEliminarEmpleados.TabIndex = 7
         Me.btnEliminarEmpleados.Text = "&Eliminar Empleado"
         Me.btnEliminarEmpleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnEliminarEmpleados.UseVisualStyleBackColor = False
@@ -177,7 +177,7 @@ Partial Class frmModuloEmpleados
         Me.btnModificarEmpleado.Location = New System.Drawing.Point(340, 370)
         Me.btnModificarEmpleado.Name = "btnModificarEmpleado"
         Me.btnModificarEmpleado.Size = New System.Drawing.Size(108, 72)
-        Me.btnModificarEmpleado.TabIndex = 48
+        Me.btnModificarEmpleado.TabIndex = 6
         Me.btnModificarEmpleado.Text = "&Modificar Empleado"
         Me.btnModificarEmpleado.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnModificarEmpleado.UseVisualStyleBackColor = False
@@ -189,7 +189,7 @@ Partial Class frmModuloEmpleados
         Me.btnIngresarEmpleado.Location = New System.Drawing.Point(211, 370)
         Me.btnIngresarEmpleado.Name = "btnIngresarEmpleado"
         Me.btnIngresarEmpleado.Size = New System.Drawing.Size(106, 72)
-        Me.btnIngresarEmpleado.TabIndex = 47
+        Me.btnIngresarEmpleado.TabIndex = 5
         Me.btnIngresarEmpleado.Text = "&Ingresar Empleado"
         Me.btnIngresarEmpleado.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnIngresarEmpleado.UseVisualStyleBackColor = False
@@ -203,7 +203,7 @@ Partial Class frmModuloEmpleados
         Me.btnSalir.Location = New System.Drawing.Point(464, 463)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(107, 30)
-        Me.btnSalir.TabIndex = 50
+        Me.btnSalir.TabIndex = 8
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
@@ -226,7 +226,7 @@ Partial Class frmModuloEmpleados
         Me.btnRegresar.Location = New System.Drawing.Point(465, 19)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(90, 25)
-        Me.btnRegresar.TabIndex = 56
+        Me.btnRegresar.TabIndex = 4
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
@@ -246,7 +246,7 @@ Partial Class frmModuloEmpleados
         Me.cmbFiltroCriterio.Location = New System.Drawing.Point(107, 83)
         Me.cmbFiltroCriterio.Name = "cmbFiltroCriterio"
         Me.cmbFiltroCriterio.Size = New System.Drawing.Size(121, 21)
-        Me.cmbFiltroCriterio.TabIndex = 52
+        Me.cmbFiltroCriterio.TabIndex = 0
         '
         'lblFiltradoEstados
         '
@@ -265,7 +265,7 @@ Partial Class frmModuloEmpleados
         Me.cmbFiltradoEstados.Location = New System.Drawing.Point(304, 83)
         Me.cmbFiltradoEstados.Name = "cmbFiltradoEstados"
         Me.cmbFiltradoEstados.Size = New System.Drawing.Size(121, 21)
-        Me.cmbFiltradoEstados.TabIndex = 54
+        Me.cmbFiltradoEstados.TabIndex = 1
         Me.cmbFiltradoEstados.Visible = False
         '
         'frmModuloEmpleados
