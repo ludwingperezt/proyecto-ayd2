@@ -56,6 +56,10 @@ Partial Class frmFacturar
         Me.cmbtipocliente = New System.Windows.Forms.ComboBox()
         Me.lbltipocliente = New System.Windows.Forms.Label()
         Me.btntipocliente = New System.Windows.Forms.Button()
+        Me.lblVuelto = New System.Windows.Forms.Label()
+        Me.lblcambio = New System.Windows.Forms.Label()
+        Me.txtEfectivo = New System.Windows.Forms.TextBox()
+        Me.lblefectivo = New System.Windows.Forms.Label()
         CType(Me.dgvdetallefactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gpProducto.SuspendLayout()
         Me.stsBarra.SuspendLayout()
@@ -93,7 +97,6 @@ Partial Class frmFacturar
         '
         'txtnombre
         '
-        Me.txtnombre.Enabled = False
         Me.txtnombre.Location = New System.Drawing.Point(95, 155)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(852, 20)
@@ -108,7 +111,6 @@ Partial Class frmFacturar
         '
         'txtdireccion
         '
-        Me.txtdireccion.Enabled = False
         Me.txtdireccion.Location = New System.Drawing.Point(96, 183)
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(851, 20)
@@ -135,9 +137,9 @@ Partial Class frmFacturar
         '
         Me.dgvdetallefactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvdetallefactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clmCantidad, Me.clmCodigo, Me.clmTela, Me.clmSubtotal})
-        Me.dgvdetallefactura.Location = New System.Drawing.Point(22, 419)
+        Me.dgvdetallefactura.Location = New System.Drawing.Point(22, 390)
         Me.dgvdetallefactura.Name = "dgvdetallefactura"
-        Me.dgvdetallefactura.Size = New System.Drawing.Size(925, 187)
+        Me.dgvdetallefactura.Size = New System.Drawing.Size(925, 178)
         Me.dgvdetallefactura.TabIndex = 8
         '
         'clmCantidad
@@ -171,7 +173,7 @@ Partial Class frmFacturar
         Me.gpProducto.Controls.Add(Me.txtTela)
         Me.gpProducto.Controls.Add(Me.lblcantidad)
         Me.gpProducto.Controls.Add(Me.lbltela)
-        Me.gpProducto.Location = New System.Drawing.Point(12, 293)
+        Me.gpProducto.Location = New System.Drawing.Point(12, 264)
         Me.gpProducto.Name = "gpProducto"
         Me.gpProducto.Size = New System.Drawing.Size(935, 75)
         Me.gpProducto.TabIndex = 19
@@ -224,7 +226,7 @@ Partial Class frmFacturar
         'lbTotal
         '
         Me.lbTotal.AutoSize = True
-        Me.lbTotal.Location = New System.Drawing.Point(773, 625)
+        Me.lbTotal.Location = New System.Drawing.Point(816, 650)
         Me.lbTotal.Name = "lbTotal"
         Me.lbTotal.Size = New System.Drawing.Size(34, 13)
         Me.lbTotal.TabIndex = 20
@@ -233,7 +235,7 @@ Partial Class frmFacturar
         'lblDescuento
         '
         Me.lblDescuento.AutoSize = True
-        Me.lblDescuento.Location = New System.Drawing.Point(773, 655)
+        Me.lblDescuento.Location = New System.Drawing.Point(816, 604)
         Me.lblDescuento.Name = "lblDescuento"
         Me.lblDescuento.Size = New System.Drawing.Size(62, 13)
         Me.lblDescuento.TabIndex = 24
@@ -296,7 +298,7 @@ Partial Class frmFacturar
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(841, 625)
+        Me.lbltotal.Location = New System.Drawing.Point(884, 650)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(28, 13)
         Me.lbltotal.TabIndex = 31
@@ -305,7 +307,7 @@ Partial Class frmFacturar
         'lbldescuentofac
         '
         Me.lbldescuentofac.AutoSize = True
-        Me.lbldescuentofac.Location = New System.Drawing.Point(841, 655)
+        Me.lbldescuentofac.Location = New System.Drawing.Point(884, 604)
         Me.lbldescuentofac.Name = "lbldescuentofac"
         Me.lbldescuentofac.Size = New System.Drawing.Size(28, 13)
         Me.lbldescuentofac.TabIndex = 32
@@ -314,7 +316,7 @@ Partial Class frmFacturar
         'btnagregar
         '
         Me.btnagregar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnagregar.Location = New System.Drawing.Point(819, 390)
+        Me.btnagregar.Location = New System.Drawing.Point(819, 361)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(106, 23)
         Me.btnagregar.TabIndex = 7
@@ -359,6 +361,40 @@ Partial Class frmFacturar
         Me.btntipocliente.Text = "Gestion  tipo cliente"
         Me.btntipocliente.UseVisualStyleBackColor = False
         '
+        'lblVuelto
+        '
+        Me.lblVuelto.AutoSize = True
+        Me.lblVuelto.Location = New System.Drawing.Point(698, 650)
+        Me.lblVuelto.Name = "lblVuelto"
+        Me.lblVuelto.Size = New System.Drawing.Size(28, 13)
+        Me.lblVuelto.TabIndex = 63
+        Me.lblVuelto.Text = "0.00"
+        '
+        'lblcambio
+        '
+        Me.lblcambio.AutoSize = True
+        Me.lblcambio.Location = New System.Drawing.Point(597, 650)
+        Me.lblcambio.Name = "lblcambio"
+        Me.lblcambio.Size = New System.Drawing.Size(45, 13)
+        Me.lblcambio.TabIndex = 62
+        Me.lblcambio.Text = "Cambio:"
+        '
+        'txtEfectivo
+        '
+        Me.txtEfectivo.Location = New System.Drawing.Point(664, 604)
+        Me.txtEfectivo.Name = "txtEfectivo"
+        Me.txtEfectivo.Size = New System.Drawing.Size(100, 20)
+        Me.txtEfectivo.TabIndex = 64
+        '
+        'lblefectivo
+        '
+        Me.lblefectivo.AutoSize = True
+        Me.lblefectivo.Location = New System.Drawing.Point(597, 607)
+        Me.lblefectivo.Name = "lblefectivo"
+        Me.lblefectivo.Size = New System.Drawing.Size(49, 13)
+        Me.lblefectivo.TabIndex = 65
+        Me.lblefectivo.Text = "Efectivo:"
+        '
         'frmFacturar
         '
         Me.AcceptButton = Me.btnAceptar
@@ -366,6 +402,10 @@ Partial Class frmFacturar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(964, 756)
+        Me.Controls.Add(Me.lblefectivo)
+        Me.Controls.Add(Me.txtEfectivo)
+        Me.Controls.Add(Me.lblVuelto)
+        Me.Controls.Add(Me.lblcambio)
         Me.Controls.Add(Me.btntipocliente)
         Me.Controls.Add(Me.cmbtipocliente)
         Me.Controls.Add(Me.lbltipocliente)
@@ -437,4 +477,8 @@ Partial Class frmFacturar
     Friend WithEvents clmTela As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clmSubtotal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btntipocliente As System.Windows.Forms.Button
+    Friend WithEvents lblVuelto As System.Windows.Forms.Label
+    Friend WithEvents lblcambio As System.Windows.Forms.Label
+    Friend WithEvents txtEfectivo As System.Windows.Forms.TextBox
+    Friend WithEvents lblefectivo As System.Windows.Forms.Label
 End Class
