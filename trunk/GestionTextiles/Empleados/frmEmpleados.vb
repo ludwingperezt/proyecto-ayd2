@@ -131,9 +131,7 @@ Public Class frmEmpleados
 
     End Sub
 
-    Private Sub dtpFechaContrato_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpFechaContrato.ValueChanged
-
-    End Sub
+  
 
     Private Sub txtSueldo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSueldo.KeyPress
         If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.Handled = ".")) Then
