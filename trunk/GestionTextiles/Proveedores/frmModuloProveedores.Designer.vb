@@ -39,8 +39,11 @@ Partial Class frmModuloProveedores
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.cmbFiltradoEstados = New System.Windows.Forms.ComboBox()
         Me.lblFiltradoEstados = New System.Windows.Forms.Label()
+        Me.gbListaProv = New System.Windows.Forms.GroupBox()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbListaProv.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -48,7 +51,7 @@ Partial Class frmModuloProveedores
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(182, 25)
+        Me.lblTitulo.Location = New System.Drawing.Point(182, 9)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(287, 29)
         Me.lblTitulo.TabIndex = 6
@@ -57,7 +60,7 @@ Partial Class frmModuloProveedores
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 489)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 554)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(667, 22)
         Me.stsBarra.TabIndex = 7
@@ -81,12 +84,12 @@ Partial Class frmModuloProveedores
         Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(444, 398)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalir.Location = New System.Drawing.Point(520, 504)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(97, 77)
-        Me.btnSalir.TabIndex = 7
+        Me.btnSalir.Size = New System.Drawing.Size(97, 40)
+        Me.btnSalir.TabIndex = 9
         Me.btnSalir.Text = "&Salir"
-        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
         '
         'btnNProveedor
@@ -94,10 +97,10 @@ Partial Class frmModuloProveedores
         Me.btnNProveedor.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNProveedor.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnNProveedor.Image = CType(resources.GetObject("btnNProveedor.Image"), System.Drawing.Image)
-        Me.btnNProveedor.Location = New System.Drawing.Point(127, 398)
+        Me.btnNProveedor.Location = New System.Drawing.Point(307, 421)
         Me.btnNProveedor.Name = "btnNProveedor"
         Me.btnNProveedor.Size = New System.Drawing.Size(97, 77)
-        Me.btnNProveedor.TabIndex = 4
+        Me.btnNProveedor.TabIndex = 6
         Me.btnNProveedor.Text = "Nuevo Proveedor"
         Me.btnNProveedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnNProveedor.UseVisualStyleBackColor = False
@@ -105,7 +108,7 @@ Partial Class frmModuloProveedores
         'lblBuscar
         '
         Me.lblBuscar.AutoSize = True
-        Me.lblBuscar.Location = New System.Drawing.Point(85, 126)
+        Me.lblBuscar.Location = New System.Drawing.Point(116, 95)
         Me.lblBuscar.Name = "lblBuscar"
         Me.lblBuscar.Size = New System.Drawing.Size(40, 13)
         Me.lblBuscar.TabIndex = 22
@@ -114,7 +117,7 @@ Partial Class frmModuloProveedores
         'lblFiltro
         '
         Me.lblFiltro.AutoSize = True
-        Me.lblFiltro.Location = New System.Drawing.Point(85, 94)
+        Me.lblFiltro.Location = New System.Drawing.Point(116, 63)
         Me.lblFiltro.Name = "lblFiltro"
         Me.lblFiltro.Size = New System.Drawing.Size(39, 13)
         Me.lblFiltro.TabIndex = 21
@@ -122,16 +125,16 @@ Partial Class frmModuloProveedores
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Location = New System.Drawing.Point(131, 123)
+        Me.txtBusqueda.Location = New System.Drawing.Point(162, 92)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(307, 20)
-        Me.txtBusqueda.TabIndex = 1
+        Me.txtBusqueda.TabIndex = 2
         '
         'cmbFiltro
         '
         Me.cmbFiltro.FormattingEnabled = True
         Me.cmbFiltro.Items.AddRange(New Object() {"NIT", "Empresa", "Propietario", "Estado"})
-        Me.cmbFiltro.Location = New System.Drawing.Point(130, 91)
+        Me.cmbFiltro.Location = New System.Drawing.Point(161, 60)
         Me.cmbFiltro.Name = "cmbFiltro"
         Me.cmbFiltro.Size = New System.Drawing.Size(121, 21)
         Me.cmbFiltro.TabIndex = 0
@@ -139,19 +142,19 @@ Partial Class frmModuloProveedores
         'dgvListaProveedores
         '
         Me.dgvListaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListaProveedores.Location = New System.Drawing.Point(53, 161)
+        Me.dgvListaProveedores.Location = New System.Drawing.Point(28, 44)
         Me.dgvListaProveedores.Name = "dgvListaProveedores"
         Me.dgvListaProveedores.Size = New System.Drawing.Size(557, 219)
-        Me.dgvListaProveedores.TabIndex = 3
+        Me.dgvListaProveedores.TabIndex = 5
         '
         'btnEliminarProv
         '
         Me.btnEliminarProv.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEliminarProv.Image = CType(resources.GetObject("btnEliminarProv.Image"), System.Drawing.Image)
-        Me.btnEliminarProv.Location = New System.Drawing.Point(340, 398)
+        Me.btnEliminarProv.Location = New System.Drawing.Point(520, 421)
         Me.btnEliminarProv.Name = "btnEliminarProv"
         Me.btnEliminarProv.Size = New System.Drawing.Size(98, 77)
-        Me.btnEliminarProv.TabIndex = 6
+        Me.btnEliminarProv.TabIndex = 8
         Me.btnEliminarProv.Text = "&Eliminar Proveedor"
         Me.btnEliminarProv.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnEliminarProv.UseVisualStyleBackColor = False
@@ -160,10 +163,10 @@ Partial Class frmModuloProveedores
         '
         Me.btnModificarProv.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnModificarProv.Image = CType(resources.GetObject("btnModificarProv.Image"), System.Drawing.Image)
-        Me.btnModificarProv.Location = New System.Drawing.Point(230, 398)
+        Me.btnModificarProv.Location = New System.Drawing.Point(410, 421)
         Me.btnModificarProv.Name = "btnModificarProv"
         Me.btnModificarProv.Size = New System.Drawing.Size(104, 77)
-        Me.btnModificarProv.TabIndex = 5
+        Me.btnModificarProv.TabIndex = 7
         Me.btnModificarProv.Text = "&Modificar Proveedor"
         Me.btnModificarProv.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnModificarProv.UseVisualStyleBackColor = False
@@ -171,10 +174,10 @@ Partial Class frmModuloProveedores
         'btnbuscar
         '
         Me.btnbuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnbuscar.Location = New System.Drawing.Point(444, 104)
+        Me.btnbuscar.Location = New System.Drawing.Point(475, 89)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
-        Me.btnbuscar.TabIndex = 2
+        Me.btnbuscar.TabIndex = 3
         Me.btnbuscar.Text = "B&uscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
@@ -182,28 +185,50 @@ Partial Class frmModuloProveedores
         '
         Me.cmbFiltradoEstados.FormattingEnabled = True
         Me.cmbFiltradoEstados.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.cmbFiltradoEstados.Location = New System.Drawing.Point(317, 91)
+        Me.cmbFiltradoEstados.Location = New System.Drawing.Point(348, 60)
         Me.cmbFiltradoEstados.Name = "cmbFiltradoEstados"
         Me.cmbFiltradoEstados.Size = New System.Drawing.Size(121, 21)
-        Me.cmbFiltradoEstados.TabIndex = 23
+        Me.cmbFiltradoEstados.TabIndex = 1
         Me.cmbFiltradoEstados.Visible = False
         '
         'lblFiltradoEstados
         '
         Me.lblFiltradoEstados.AutoSize = True
-        Me.lblFiltradoEstados.Location = New System.Drawing.Point(266, 94)
+        Me.lblFiltradoEstados.Location = New System.Drawing.Point(297, 63)
         Me.lblFiltradoEstados.Name = "lblFiltradoEstados"
         Me.lblFiltradoEstados.Size = New System.Drawing.Size(45, 13)
         Me.lblFiltradoEstados.TabIndex = 24
         Me.lblFiltradoEstados.Text = "Estados"
         Me.lblFiltradoEstados.Visible = False
         '
+        'gbListaProv
+        '
+        Me.gbListaProv.Controls.Add(Me.btnActualizar)
+        Me.gbListaProv.Controls.Add(Me.dgvListaProveedores)
+        Me.gbListaProv.Location = New System.Drawing.Point(33, 132)
+        Me.gbListaProv.Name = "gbListaProv"
+        Me.gbListaProv.Size = New System.Drawing.Size(610, 283)
+        Me.gbListaProv.TabIndex = 25
+        Me.gbListaProv.TabStop = False
+        Me.gbListaProv.Text = "Lista de Proveedores"
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnActualizar.Location = New System.Drawing.Point(557, 13)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(27, 25)
+        Me.btnActualizar.TabIndex = 4
+        Me.btnActualizar.UseVisualStyleBackColor = False
+        '
         'frmModuloProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSalir
-        Me.ClientSize = New System.Drawing.Size(667, 511)
+        Me.ClientSize = New System.Drawing.Size(667, 576)
+        Me.Controls.Add(Me.gbListaProv)
         Me.Controls.Add(Me.lblFiltradoEstados)
         Me.Controls.Add(Me.cmbFiltradoEstados)
         Me.Controls.Add(Me.btnbuscar)
@@ -213,7 +238,6 @@ Partial Class frmModuloProveedores
         Me.Controls.Add(Me.lblFiltro)
         Me.Controls.Add(Me.txtBusqueda)
         Me.Controls.Add(Me.cmbFiltro)
-        Me.Controls.Add(Me.dgvListaProveedores)
         Me.Controls.Add(Me.btnNProveedor)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.stsBarra)
@@ -226,6 +250,7 @@ Partial Class frmModuloProveedores
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbListaProv.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -246,4 +271,6 @@ Partial Class frmModuloProveedores
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
     Friend WithEvents cmbFiltradoEstados As System.Windows.Forms.ComboBox
     Friend WithEvents lblFiltradoEstados As System.Windows.Forms.Label
+    Friend WithEvents gbListaProv As System.Windows.Forms.GroupBox
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
 End Class
