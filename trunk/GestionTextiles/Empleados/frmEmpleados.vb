@@ -172,4 +172,8 @@ Public Class frmEmpleados
     Private Sub txtUsuario_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUsuario.MouseHover
         slblDescripcion.Text = "Usuario del Empleado"
     End Sub
+
+    Private Sub frmEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
