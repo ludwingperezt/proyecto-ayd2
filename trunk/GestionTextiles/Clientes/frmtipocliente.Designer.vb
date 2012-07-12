@@ -27,7 +27,6 @@ Partial Class frmtipocliente
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.txtbusqueda = New System.Windows.Forms.TextBox()
         Me.lblbusqueda = New System.Windows.Forms.Label()
-        Me.lbllistatipoclientes = New System.Windows.Forms.Label()
         Me.dgvtiposcliente = New System.Windows.Forms.DataGridView()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,9 +38,11 @@ Partial Class frmtipocliente
         Me.btneliminartipocliente = New System.Windows.Forms.Button()
         Me.btnmodificartipocliente = New System.Windows.Forms.Button()
         Me.btningresar = New System.Windows.Forms.Button()
-        Me.lblEmpleado = New System.Windows.Forms.Label()
+        Me.gpListadoClientes = New System.Windows.Forms.GroupBox()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         CType(Me.dgvtiposcliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
+        Me.gpListadoClientes.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -49,7 +50,7 @@ Partial Class frmtipocliente
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(138, 25)
+        Me.lblTitulo.Location = New System.Drawing.Point(164, 30)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(249, 29)
         Me.lblTitulo.TabIndex = 29
@@ -58,7 +59,7 @@ Partial Class frmtipocliente
         'btnbuscar
         '
         Me.btnbuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnbuscar.Location = New System.Drawing.Point(414, 90)
+        Me.btnbuscar.Location = New System.Drawing.Point(468, 92)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
         Me.btnbuscar.TabIndex = 1
@@ -67,37 +68,28 @@ Partial Class frmtipocliente
         '
         'txtbusqueda
         '
-        Me.txtbusqueda.Location = New System.Drawing.Point(14, 95)
+        Me.txtbusqueda.Location = New System.Drawing.Point(72, 97)
         Me.txtbusqueda.Name = "txtbusqueda"
-        Me.txtbusqueda.Size = New System.Drawing.Size(394, 20)
+        Me.txtbusqueda.Size = New System.Drawing.Size(369, 20)
         Me.txtbusqueda.TabIndex = 0
         '
         'lblbusqueda
         '
         Me.lblbusqueda.AutoSize = True
-        Me.lblbusqueda.Location = New System.Drawing.Point(11, 68)
+        Me.lblbusqueda.Location = New System.Drawing.Point(26, 100)
         Me.lblbusqueda.Name = "lblbusqueda"
-        Me.lblbusqueda.Size = New System.Drawing.Size(129, 13)
+        Me.lblbusqueda.Size = New System.Drawing.Size(40, 13)
         Me.lblbusqueda.TabIndex = 40
-        Me.lblbusqueda.Text = "Ingrese el texto a buscar: "
-        '
-        'lbllistatipoclientes
-        '
-        Me.lbllistatipoclientes.AutoSize = True
-        Me.lbllistatipoclientes.Location = New System.Drawing.Point(11, 132)
-        Me.lbllistatipoclientes.Name = "lbllistatipoclientes"
-        Me.lbllistatipoclientes.Size = New System.Drawing.Size(116, 13)
-        Me.lbllistatipoclientes.TabIndex = 39
-        Me.lbllistatipoclientes.Text = "Listado Tipos Clientes: "
+        Me.lblbusqueda.Text = "Buscar"
         '
         'dgvtiposcliente
         '
         Me.dgvtiposcliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvtiposcliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4})
-        Me.dgvtiposcliente.Location = New System.Drawing.Point(0, 160)
+        Me.dgvtiposcliente.Location = New System.Drawing.Point(15, 50)
         Me.dgvtiposcliente.Name = "dgvtiposcliente"
-        Me.dgvtiposcliente.Size = New System.Drawing.Size(543, 97)
-        Me.dgvtiposcliente.TabIndex = 2
+        Me.dgvtiposcliente.Size = New System.Drawing.Size(544, 89)
+        Me.dgvtiposcliente.TabIndex = 3
         '
         'Column2
         '
@@ -120,9 +112,9 @@ Partial Class frmtipocliente
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 408)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 463)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(556, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(592, 22)
         Me.stsBarra.TabIndex = 47
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -144,10 +136,10 @@ Partial Class frmtipocliente
         Me.btnsalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnsalir.Image = CType(resources.GetObject("btnsalir.Image"), System.Drawing.Image)
         Me.btnsalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnsalir.Location = New System.Drawing.Point(377, 365)
+        Me.btnsalir.Location = New System.Drawing.Point(428, 404)
         Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(148, 31)
-        Me.btnsalir.TabIndex = 6
+        Me.btnsalir.Size = New System.Drawing.Size(131, 31)
+        Me.btnsalir.TabIndex = 7
         Me.btnsalir.Text = "&Salir"
         Me.btnsalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnsalir.UseVisualStyleBackColor = False
@@ -156,10 +148,10 @@ Partial Class frmtipocliente
         '
         Me.btneliminartipocliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btneliminartipocliente.Image = CType(resources.GetObject("btneliminartipocliente.Image"), System.Drawing.Image)
-        Me.btneliminartipocliente.Location = New System.Drawing.Point(377, 275)
+        Me.btneliminartipocliente.Location = New System.Drawing.Point(428, 314)
         Me.btneliminartipocliente.Name = "btneliminartipocliente"
-        Me.btneliminartipocliente.Size = New System.Drawing.Size(148, 62)
-        Me.btneliminartipocliente.TabIndex = 5
+        Me.btneliminartipocliente.Size = New System.Drawing.Size(131, 62)
+        Me.btneliminartipocliente.TabIndex = 6
         Me.btneliminartipocliente.Text = "&Eliminar tipo cliente"
         Me.btneliminartipocliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btneliminartipocliente.UseVisualStyleBackColor = False
@@ -168,10 +160,10 @@ Partial Class frmtipocliente
         '
         Me.btnmodificartipocliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnmodificartipocliente.Image = CType(resources.GetObject("btnmodificartipocliente.Image"), System.Drawing.Image)
-        Me.btnmodificartipocliente.Location = New System.Drawing.Point(184, 275)
+        Me.btnmodificartipocliente.Location = New System.Drawing.Point(284, 314)
         Me.btnmodificartipocliente.Name = "btnmodificartipocliente"
-        Me.btnmodificartipocliente.Size = New System.Drawing.Size(156, 62)
-        Me.btnmodificartipocliente.TabIndex = 4
+        Me.btnmodificartipocliente.Size = New System.Drawing.Size(129, 62)
+        Me.btnmodificartipocliente.TabIndex = 5
         Me.btnmodificartipocliente.Text = "&Modificar tipo cliente"
         Me.btnmodificartipocliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnmodificartipocliente.UseVisualStyleBackColor = False
@@ -180,29 +172,41 @@ Partial Class frmtipocliente
         '
         Me.btningresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btningresar.Image = CType(resources.GetObject("btningresar.Image"), System.Drawing.Image)
-        Me.btningresar.Location = New System.Drawing.Point(12, 275)
+        Me.btningresar.Location = New System.Drawing.Point(136, 314)
         Me.btningresar.Name = "btningresar"
-        Me.btningresar.Size = New System.Drawing.Size(153, 62)
-        Me.btningresar.TabIndex = 3
+        Me.btningresar.Size = New System.Drawing.Size(131, 62)
+        Me.btningresar.TabIndex = 4
         Me.btningresar.Text = "&Ingresar tipo cliente"
         Me.btningresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btningresar.UseVisualStyleBackColor = False
         '
-        'lblEmpleado
+        'gpListadoClientes
         '
-        Me.lblEmpleado.AutoSize = True
-        Me.lblEmpleado.Location = New System.Drawing.Point(451, 37)
-        Me.lblEmpleado.Name = "lblEmpleado"
-        Me.lblEmpleado.Size = New System.Drawing.Size(66, 13)
-        Me.lblEmpleado.TabIndex = 59
-        Me.lblEmpleado.Text = "EMPLEADO"
+        Me.gpListadoClientes.Controls.Add(Me.btnActualizar)
+        Me.gpListadoClientes.Controls.Add(Me.dgvtiposcliente)
+        Me.gpListadoClientes.Location = New System.Drawing.Point(12, 142)
+        Me.gpListadoClientes.Name = "gpListadoClientes"
+        Me.gpListadoClientes.Size = New System.Drawing.Size(570, 166)
+        Me.gpListadoClientes.TabIndex = 61
+        Me.gpListadoClientes.TabStop = False
+        Me.gpListadoClientes.Text = "Listado Clientes"
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnActualizar.Location = New System.Drawing.Point(520, 19)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(27, 25)
+        Me.btnActualizar.TabIndex = 2
+        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'frmtipocliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(556, 430)
-        Me.Controls.Add(Me.lblEmpleado)
+        Me.ClientSize = New System.Drawing.Size(592, 485)
+        Me.Controls.Add(Me.gpListadoClientes)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.btneliminartipocliente)
@@ -211,17 +215,16 @@ Partial Class frmtipocliente
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.txtbusqueda)
         Me.Controls.Add(Me.lblbusqueda)
-        Me.Controls.Add(Me.lbllistatipoclientes)
-        Me.Controls.Add(Me.dgvtiposcliente)
         Me.Controls.Add(Me.lblTitulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmtipocliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmtipocliente"
+        Me.Text = "Tipo Cliente"
         CType(Me.dgvtiposcliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
+        Me.gpListadoClientes.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -230,7 +233,6 @@ Partial Class frmtipocliente
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
     Friend WithEvents txtbusqueda As System.Windows.Forms.TextBox
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
-    Friend WithEvents lbllistatipoclientes As System.Windows.Forms.Label
     Friend WithEvents dgvtiposcliente As System.Windows.Forms.DataGridView
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -242,5 +244,6 @@ Partial Class frmtipocliente
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents lblEmpleado As System.Windows.Forms.Label
+    Friend WithEvents gpListadoClientes As System.Windows.Forms.GroupBox
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
 End Class

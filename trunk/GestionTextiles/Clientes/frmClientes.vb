@@ -81,8 +81,19 @@
     End Sub
 
     Private Sub txtbusqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.TextChanged
-
+        If txtbusqueda.Text = "" Then
+            btnbuscar.Enabled = False
+        Else
+            btnbuscar.Enabled = True
+        End If
     End Sub
 
     
+    Private Sub btnActualizar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnActualizar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.MouseHover
+        slblDescripcion.Text = "Actualiza el  listado de los Cliente en sistema"
+    End Sub
 End Class

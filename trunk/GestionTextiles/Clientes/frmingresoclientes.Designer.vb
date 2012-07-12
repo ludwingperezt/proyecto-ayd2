@@ -24,12 +24,10 @@ Partial Class frmingresoclientes
     Private Sub InitializeComponent()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.lblnombre = New System.Windows.Forms.Label()
-        Me.lblapellido = New System.Windows.Forms.Label()
         Me.lbdireccion = New System.Windows.Forms.Label()
         Me.lblnit = New System.Windows.Forms.Label()
         Me.lbltipocliente = New System.Windows.Forms.Label()
         Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.txtapellido = New System.Windows.Forms.TextBox()
         Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.txtnit = New System.Windows.Forms.TextBox()
         Me.cmbtipocliente = New System.Windows.Forms.ComboBox()
@@ -62,19 +60,10 @@ Partial Class frmingresoclientes
         Me.lblnombre.TabIndex = 30
         Me.lblnombre.Text = "Nombre: "
         '
-        'lblapellido
-        '
-        Me.lblapellido.AutoSize = True
-        Me.lblapellido.Location = New System.Drawing.Point(54, 118)
-        Me.lblapellido.Name = "lblapellido"
-        Me.lblapellido.Size = New System.Drawing.Size(50, 13)
-        Me.lblapellido.TabIndex = 31
-        Me.lblapellido.Text = "Apellido: "
-        '
         'lbdireccion
         '
         Me.lbdireccion.AutoSize = True
-        Me.lbdireccion.Location = New System.Drawing.Point(54, 149)
+        Me.lbdireccion.Location = New System.Drawing.Point(54, 125)
         Me.lbdireccion.Name = "lbdireccion"
         Me.lbdireccion.Size = New System.Drawing.Size(58, 13)
         Me.lbdireccion.TabIndex = 32
@@ -83,7 +72,7 @@ Partial Class frmingresoclientes
         'lblnit
         '
         Me.lblnit.AutoSize = True
-        Me.lblnit.Location = New System.Drawing.Point(54, 182)
+        Me.lblnit.Location = New System.Drawing.Point(54, 158)
         Me.lblnit.Name = "lblnit"
         Me.lblnit.Size = New System.Drawing.Size(26, 13)
         Me.lblnit.TabIndex = 33
@@ -92,7 +81,7 @@ Partial Class frmingresoclientes
         'lbltipocliente
         '
         Me.lbltipocliente.AutoSize = True
-        Me.lbltipocliente.Location = New System.Drawing.Point(54, 217)
+        Me.lbltipocliente.Location = New System.Drawing.Point(54, 196)
         Me.lbltipocliente.Name = "lbltipocliente"
         Me.lbltipocliente.Size = New System.Drawing.Size(68, 13)
         Me.lbltipocliente.TabIndex = 34
@@ -106,17 +95,9 @@ Partial Class frmingresoclientes
         Me.txtnombre.Size = New System.Drawing.Size(274, 20)
         Me.txtnombre.TabIndex = 0
         '
-        'txtapellido
-        '
-        Me.txtapellido.Location = New System.Drawing.Point(126, 118)
-        Me.txtapellido.MaxLength = 40
-        Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(274, 20)
-        Me.txtapellido.TabIndex = 1
-        '
         'txtdireccion
         '
-        Me.txtdireccion.Location = New System.Drawing.Point(126, 149)
+        Me.txtdireccion.Location = New System.Drawing.Point(126, 125)
         Me.txtdireccion.MaxLength = 60
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(274, 20)
@@ -124,7 +105,7 @@ Partial Class frmingresoclientes
         '
         'txtnit
         '
-        Me.txtnit.Location = New System.Drawing.Point(126, 182)
+        Me.txtnit.Location = New System.Drawing.Point(126, 158)
         Me.txtnit.MaxLength = 15
         Me.txtnit.Name = "txtnit"
         Me.txtnit.Size = New System.Drawing.Size(124, 20)
@@ -134,7 +115,7 @@ Partial Class frmingresoclientes
         '
         Me.cmbtipocliente.FormattingEnabled = True
         Me.cmbtipocliente.ItemHeight = 13
-        Me.cmbtipocliente.Location = New System.Drawing.Point(129, 217)
+        Me.cmbtipocliente.Location = New System.Drawing.Point(129, 193)
         Me.cmbtipocliente.Name = "cmbtipocliente"
         Me.cmbtipocliente.Size = New System.Drawing.Size(121, 21)
         Me.cmbtipocliente.TabIndex = 39
@@ -165,7 +146,7 @@ Partial Class frmingresoclientes
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(275, 296)
+        Me.btnCancelar.Location = New System.Drawing.Point(275, 272)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 6
@@ -175,7 +156,7 @@ Partial Class frmingresoclientes
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(368, 296)
+        Me.btnAceptar.Location = New System.Drawing.Point(368, 272)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 7
@@ -185,7 +166,7 @@ Partial Class frmingresoclientes
         'btntipocliente
         '
         Me.btntipocliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btntipocliente.Location = New System.Drawing.Point(285, 214)
+        Me.btntipocliente.Location = New System.Drawing.Point(285, 190)
         Me.btntipocliente.Name = "btntipocliente"
         Me.btntipocliente.Size = New System.Drawing.Size(175, 24)
         Me.btntipocliente.TabIndex = 5
@@ -204,12 +185,10 @@ Partial Class frmingresoclientes
         Me.Controls.Add(Me.cmbtipocliente)
         Me.Controls.Add(Me.txtnit)
         Me.Controls.Add(Me.txtdireccion)
-        Me.Controls.Add(Me.txtapellido)
         Me.Controls.Add(Me.txtnombre)
         Me.Controls.Add(Me.lbltipocliente)
         Me.Controls.Add(Me.lblnit)
         Me.Controls.Add(Me.lbdireccion)
-        Me.Controls.Add(Me.lblapellido)
         Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -225,12 +204,10 @@ Partial Class frmingresoclientes
     End Sub
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents lblnombre As System.Windows.Forms.Label
-    Friend WithEvents lblapellido As System.Windows.Forms.Label
     Friend WithEvents lbdireccion As System.Windows.Forms.Label
     Friend WithEvents lblnit As System.Windows.Forms.Label
     Friend WithEvents lbltipocliente As System.Windows.Forms.Label
     Friend WithEvents txtnombre As System.Windows.Forms.TextBox
-    Friend WithEvents txtapellido As System.Windows.Forms.TextBox
     Friend WithEvents txtdireccion As System.Windows.Forms.TextBox
     Friend WithEvents txtnit As System.Windows.Forms.TextBox
     Friend WithEvents cmbtipocliente As System.Windows.Forms.ComboBox
