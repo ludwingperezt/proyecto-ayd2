@@ -49,7 +49,7 @@ Public Class frmModuloEmpleados
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub Button1_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseLeave
+    Private Sub Button1_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -81,11 +81,35 @@ Public Class frmModuloEmpleados
         slblDescripcion.Text = "Eliminacion de Empleados"
     End Sub
 
-    Private Sub btnSalir_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseHover
-        slblDescripcion.Text = "Salir de la aplicación"
+    Private Sub txtbusqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.TextChanged
+        If txtbusqueda.Text = "" Then
+            btnbuscar.Enabled = False
+        Else
+            btnbuscar.Enabled = True
+        End If
     End Sub
 
-    Private Sub dgvEmpleados_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvEmpleados.CellContentClick
+    Private Sub cmbFiltroCriterio_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbFiltroCriterio.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
 
+    Private Sub cmbFiltradoEstados_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbFiltradoEstados.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub cmbFiltroCriterio_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbFiltroCriterio.MouseHover
+        slblDescripcion.Text = "Selecciones un Criterio de Busqueda."
+    End Sub
+
+    Private Sub cmbFiltradoEstados_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbFiltradoEstados.MouseHover
+        slblDescripcion.Text = "Selecciones un Estado."
+    End Sub
+
+    Private Sub btnSalir_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnSalir_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseHover
+        slblDescripcion.Text = "Salir de la aplicación"
     End Sub
 End Class

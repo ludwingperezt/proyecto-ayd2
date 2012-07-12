@@ -29,7 +29,6 @@ Partial Class frmModuloEmpleados
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.txtbusqueda = New System.Windows.Forms.TextBox()
         Me.lblbusqueda = New System.Windows.Forms.Label()
-        Me.lbllistaclientes = New System.Windows.Forms.Label()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,18 +38,24 @@ Partial Class frmModuloEmpleados
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnEliminarEmpleados = New System.Windows.Forms.Button()
         Me.btnModificarEmpleado = New System.Windows.Forms.Button()
         Me.btnIngresarEmpleado = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.gbListaEmpleados = New System.Windows.Forms.GroupBox()
+        Me.lblFiltroCriterio = New System.Windows.Forms.Label()
+        Me.cmbFiltroCriterio = New System.Windows.Forms.ComboBox()
+        Me.lblFiltradoEstados = New System.Windows.Forms.Label()
+        Me.cmbFiltradoEstados = New System.Windows.Forms.ComboBox()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbListaEmpleados.SuspendLayout()
         Me.SuspendLayout()
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 408)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 498)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(619, 22)
         Me.stsBarra.TabIndex = 45
@@ -72,7 +77,7 @@ Partial Class frmModuloEmpleados
         'btnbuscar
         '
         Me.btnbuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnbuscar.Location = New System.Drawing.Point(447, 90)
+        Me.btnbuscar.Location = New System.Drawing.Point(437, 112)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
         Me.btnbuscar.TabIndex = 44
@@ -81,34 +86,25 @@ Partial Class frmModuloEmpleados
         '
         'txtbusqueda
         '
-        Me.txtbusqueda.Location = New System.Drawing.Point(35, 95)
+        Me.txtbusqueda.Location = New System.Drawing.Point(111, 117)
         Me.txtbusqueda.Name = "txtbusqueda"
-        Me.txtbusqueda.Size = New System.Drawing.Size(400, 20)
+        Me.txtbusqueda.Size = New System.Drawing.Size(314, 20)
         Me.txtbusqueda.TabIndex = 43
         '
         'lblbusqueda
         '
         Me.lblbusqueda.AutoSize = True
-        Me.lblbusqueda.Location = New System.Drawing.Point(32, 68)
+        Me.lblbusqueda.Location = New System.Drawing.Point(62, 120)
         Me.lblbusqueda.Name = "lblbusqueda"
-        Me.lblbusqueda.Size = New System.Drawing.Size(129, 13)
+        Me.lblbusqueda.Size = New System.Drawing.Size(43, 13)
         Me.lblbusqueda.TabIndex = 42
-        Me.lblbusqueda.Text = "Ingrese el texto a buscar: "
-        '
-        'lbllistaclientes
-        '
-        Me.lbllistaclientes.AutoSize = True
-        Me.lbllistaclientes.Location = New System.Drawing.Point(32, 132)
-        Me.lbllistaclientes.Name = "lbllistaclientes"
-        Me.lbllistaclientes.Size = New System.Drawing.Size(87, 13)
-        Me.lbllistaclientes.TabIndex = 41
-        Me.lbllistaclientes.Text = "Listado Clientes: "
+        Me.lblbusqueda.Text = "Buscar:"
         '
         'dgvEmpleados
         '
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column1, Me.Column4, Me.Column3, Me.Column5, Me.Column6, Me.Column7})
-        Me.dgvEmpleados.Location = New System.Drawing.Point(23, 157)
+        Me.dgvEmpleados.Location = New System.Drawing.Point(11, 29)
         Me.dgvEmpleados.Name = "dgvEmpleados"
         Me.dgvEmpleados.Size = New System.Drawing.Size(544, 132)
         Me.dgvEmpleados.TabIndex = 40
@@ -161,23 +157,11 @@ Partial Class frmModuloEmpleados
         Me.lblTitulo.Text = "Módulo Empleados"
         Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'btnSalir
-        '
-        Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(515, 334)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(52, 51)
-        Me.btnSalir.TabIndex = 50
-        Me.btnSalir.Text = "&Salir"
-        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSalir.UseVisualStyleBackColor = False
-        '
         'btnEliminarEmpleados
         '
         Me.btnEliminarEmpleados.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEliminarEmpleados.Image = CType(resources.GetObject("btnEliminarEmpleados.Image"), System.Drawing.Image)
-        Me.btnEliminarEmpleados.Location = New System.Drawing.Point(369, 313)
+        Me.btnEliminarEmpleados.Location = New System.Drawing.Point(464, 356)
         Me.btnEliminarEmpleados.Name = "btnEliminarEmpleados"
         Me.btnEliminarEmpleados.Size = New System.Drawing.Size(107, 71)
         Me.btnEliminarEmpleados.TabIndex = 49
@@ -189,7 +173,7 @@ Partial Class frmModuloEmpleados
         '
         Me.btnModificarEmpleado.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnModificarEmpleado.Image = CType(resources.GetObject("btnModificarEmpleado.Image"), System.Drawing.Image)
-        Me.btnModificarEmpleado.Location = New System.Drawing.Point(245, 313)
+        Me.btnModificarEmpleado.Location = New System.Drawing.Point(340, 356)
         Me.btnModificarEmpleado.Name = "btnModificarEmpleado"
         Me.btnModificarEmpleado.Size = New System.Drawing.Size(108, 72)
         Me.btnModificarEmpleado.TabIndex = 48
@@ -201,7 +185,7 @@ Partial Class frmModuloEmpleados
         '
         Me.btnIngresarEmpleado.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnIngresarEmpleado.Image = CType(resources.GetObject("btnIngresarEmpleado.Image"), System.Drawing.Image)
-        Me.btnIngresarEmpleado.Location = New System.Drawing.Point(116, 313)
+        Me.btnIngresarEmpleado.Location = New System.Drawing.Point(211, 356)
         Me.btnIngresarEmpleado.Name = "btnIngresarEmpleado"
         Me.btnIngresarEmpleado.Size = New System.Drawing.Size(106, 72)
         Me.btnIngresarEmpleado.TabIndex = 47
@@ -209,11 +193,77 @@ Partial Class frmModuloEmpleados
         Me.btnIngresarEmpleado.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnIngresarEmpleado.UseVisualStyleBackColor = False
         '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalir.Location = New System.Drawing.Point(464, 449)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(107, 30)
+        Me.btnSalir.TabIndex = 50
+        Me.btnSalir.Text = "&Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'gbListaEmpleados
+        '
+        Me.gbListaEmpleados.Controls.Add(Me.dgvEmpleados)
+        Me.gbListaEmpleados.Location = New System.Drawing.Point(16, 152)
+        Me.gbListaEmpleados.Name = "gbListaEmpleados"
+        Me.gbListaEmpleados.Size = New System.Drawing.Size(568, 179)
+        Me.gbListaEmpleados.TabIndex = 51
+        Me.gbListaEmpleados.TabStop = False
+        Me.gbListaEmpleados.Text = "Listado Empleados"
+        '
+        'lblFiltroCriterio
+        '
+        Me.lblFiltroCriterio.AutoSize = True
+        Me.lblFiltroCriterio.Location = New System.Drawing.Point(62, 86)
+        Me.lblFiltroCriterio.Name = "lblFiltroCriterio"
+        Me.lblFiltroCriterio.Size = New System.Drawing.Size(39, 13)
+        Me.lblFiltroCriterio.TabIndex = 53
+        Me.lblFiltroCriterio.Text = "Criterio"
+        '
+        'cmbFiltroCriterio
+        '
+        Me.cmbFiltroCriterio.FormattingEnabled = True
+        Me.cmbFiltroCriterio.Items.AddRange(New Object() {"Nombre", "Apellido", "Usuario", "Cedula / DPI", "Telefono", "Celular", "Puesto", "Rol"})
+        Me.cmbFiltroCriterio.Location = New System.Drawing.Point(107, 83)
+        Me.cmbFiltroCriterio.Name = "cmbFiltroCriterio"
+        Me.cmbFiltroCriterio.Size = New System.Drawing.Size(121, 21)
+        Me.cmbFiltroCriterio.TabIndex = 52
+        '
+        'lblFiltradoEstados
+        '
+        Me.lblFiltradoEstados.AutoSize = True
+        Me.lblFiltradoEstados.Location = New System.Drawing.Point(253, 86)
+        Me.lblFiltradoEstados.Name = "lblFiltradoEstados"
+        Me.lblFiltradoEstados.Size = New System.Drawing.Size(45, 13)
+        Me.lblFiltradoEstados.TabIndex = 55
+        Me.lblFiltradoEstados.Text = "Estados"
+        Me.lblFiltradoEstados.Visible = False
+        '
+        'cmbFiltradoEstados
+        '
+        Me.cmbFiltradoEstados.FormattingEnabled = True
+        Me.cmbFiltradoEstados.Items.AddRange(New Object() {"Activo", "Inactivo"})
+        Me.cmbFiltradoEstados.Location = New System.Drawing.Point(304, 83)
+        Me.cmbFiltradoEstados.Name = "cmbFiltradoEstados"
+        Me.cmbFiltradoEstados.Size = New System.Drawing.Size(121, 21)
+        Me.cmbFiltradoEstados.TabIndex = 54
+        Me.cmbFiltradoEstados.Visible = False
+        '
         'frmModuloEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(619, 430)
+        Me.ClientSize = New System.Drawing.Size(619, 520)
+        Me.Controls.Add(Me.lblFiltradoEstados)
+        Me.Controls.Add(Me.cmbFiltradoEstados)
+        Me.Controls.Add(Me.lblFiltroCriterio)
+        Me.Controls.Add(Me.cmbFiltroCriterio)
+        Me.Controls.Add(Me.gbListaEmpleados)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnEliminarEmpleados)
         Me.Controls.Add(Me.btnModificarEmpleado)
@@ -223,13 +273,12 @@ Partial Class frmModuloEmpleados
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.txtbusqueda)
         Me.Controls.Add(Me.lblbusqueda)
-        Me.Controls.Add(Me.lbllistaclientes)
-        Me.Controls.Add(Me.dgvEmpleados)
         Me.Name = "frmModuloEmpleados"
         Me.Text = "Modulo de Empleados"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbListaEmpleados.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -240,7 +289,6 @@ Partial Class frmModuloEmpleados
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
     Friend WithEvents txtbusqueda As System.Windows.Forms.TextBox
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
-    Friend WithEvents lbllistaclientes As System.Windows.Forms.Label
     Friend WithEvents dgvEmpleados As System.Windows.Forms.DataGridView
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -250,8 +298,13 @@ Partial Class frmModuloEmpleados
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents btnEliminarEmpleados As System.Windows.Forms.Button
     Friend WithEvents btnModificarEmpleado As System.Windows.Forms.Button
     Friend WithEvents btnIngresarEmpleado As System.Windows.Forms.Button
+    Friend WithEvents btnSalir As System.Windows.Forms.Button
+    Friend WithEvents gbListaEmpleados As System.Windows.Forms.GroupBox
+    Friend WithEvents lblFiltroCriterio As System.Windows.Forms.Label
+    Friend WithEvents cmbFiltroCriterio As System.Windows.Forms.ComboBox
+    Friend WithEvents lblFiltradoEstados As System.Windows.Forms.Label
+    Friend WithEvents cmbFiltradoEstados As System.Windows.Forms.ComboBox
 End Class
