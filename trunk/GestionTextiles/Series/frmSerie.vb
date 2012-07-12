@@ -6,41 +6,24 @@ Public Class frmSerie
 
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
-        If lbSerieValida Then
-            Dim lbooBandera As Boolean = True
+        Dim lbooBandera As Boolean = True
 
-            For Each ctrlIterador As Control In Me.Controls
-                If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
-                    If ctrlIterador.Name <> "txtTelefono" And ctrlIterador.Name <> "txtCelular" Then
-                        If (ctrlIterador.Text = "") Then
-                            ctrlIterador.BackColor = Color.Yellow
-                            lbooBandera = False
-                        Else
-                            ctrlIterador.BackColor = Color.White
-                        End If
+        For Each ctrlIterador As Control In Me.Controls
+            If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
+                If ctrlIterador.Name <> "txtTelefono" And ctrlIterador.Name <> "txtCelular" Then
+                    If (ctrlIterador.Text = "") Then
+                        ctrlIterador.BackColor = Color.Yellow
+                        lbooBandera = False
+                    Else
+                        ctrlIterador.BackColor = Color.White
                     End If
                 End If
-            Next
+            End If
+        Next
+        If Not actualizar Then ' si no se va a actualizar (es insert) entonces se valida la serie!
 
-            If lbooBandera Then
-                If actualizar Then
-                    '' si es un update...
-                    frmModuloSeries.gnsSerieSeleccionada.setNumeroActual(Convert.ToInt32(txtCorrelativo.Text))
-                    Try
-                        If MessageBox.Show("¿Está seguro de modificar los datos del talonario?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
-                            Try
-                                frmModuloSeries.gnsSerieSeleccionada.fnvModificarSerie()
-                                MessageBox.Show("La operación de modificación finalizó con éxito", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                frmModuloSeries.gnsSerieSeleccionada = Nothing
-                                Me.Dispose()
-                            Catch ex As Exception
-                                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            End Try
-                        End If
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
-                Else
+            If lbSerieValida Then
+                If Not lbooBandera Then
                     '' si es un insert...
                     Dim lnsSerieLocal As negociosSerie = New negociosSerie()
                     lnsSerieLocal.setSerie(txtSerie.Text)
@@ -53,16 +36,39 @@ Public Class frmSerie
                         MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End Try
                 End If
-                ' todo es válido se procede a guardar en la BD y luego a cerrar el form!
 
+                ' todo es válido se procede a guardar en la BD y luego a cerrar el form!
+            Else
+                txtSerie.Focus()
+                slblDescripcion.Text = "No puede usar esa serie, elija una diferente"
             End If
-        Else
-            txtSerie.Focus()
-            slblDescripcion.Text = "No puede usar esa serie, elija una diferente"
+
         End If
 
 
-        
+        If actualizar Then
+            If lbooBandera Then
+                '' si es un update...
+                frmModuloSeries.gnsSerieSeleccionada.setNumeroActual(Convert.ToInt32(txtCorrelativo.Text))
+                Try
+                    If MessageBox.Show("¿Está seguro de modificar los datos del talonario?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
+                        Try
+                            frmModuloSeries.gnsSerieSeleccionada.fnvModificarSerie()
+                            MessageBox.Show("La operación de modificación finalizó con éxito", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            frmModuloSeries.gnsSerieSeleccionada = Nothing
+                            Me.Dispose()
+                        Catch ex As Exception
+                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End If
+
+
+
     End Sub
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
