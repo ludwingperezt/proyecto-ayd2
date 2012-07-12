@@ -26,15 +26,16 @@ Partial Class frmModuloSeries
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.dgvSeries = New System.Windows.Forms.DataGridView()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.lblTitulo = New System.Windows.Forms.Label()
+        Me.btnEliminarSerie = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.btnmSerie = New System.Windows.Forms.Button()
         Me.btnNSerie = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.btneSerie = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.dgvSeries = New System.Windows.Forms.DataGridView()
-        Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -42,9 +43,9 @@ Partial Class frmModuloSeries
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 495)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 438)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(1174, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(521, 22)
         Me.stsBarra.TabIndex = 11
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -52,14 +53,84 @@ Partial Class frmModuloSeries
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
+        '
+        'dgvSeries
+        '
+        Me.dgvSeries.AllowUserToAddRows = False
+        Me.dgvSeries.AllowUserToDeleteRows = False
+        Me.dgvSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSeries.Location = New System.Drawing.Point(40, 159)
+        Me.dgvSeries.Name = "dgvSeries"
+        Me.dgvSeries.ReadOnly = True
+        Me.dgvSeries.Size = New System.Drawing.Size(443, 159)
+        Me.dgvSeries.TabIndex = 19
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.Location = New System.Drawing.Point(89, 84)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(279, 20)
+        Me.txtBusqueda.TabIndex = 20
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(37, 87)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
+        Me.Label1.TabIndex = 22
+        Me.Label1.Text = "Buscar"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBuscar.Location = New System.Drawing.Point(380, 81)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(103, 25)
+        Me.btnBuscar.TabIndex = 23
+        Me.btnBuscar.Text = "B&uscar"
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblTitulo.Location = New System.Drawing.Point(84, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(373, 29)
+        Me.lblTitulo.TabIndex = 24
+        Me.lblTitulo.Text = "Módulo Gestión de Talonarios"
+        '
+        'btnEliminarSerie
+        '
+        Me.btnEliminarSerie.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnEliminarSerie.Image = CType(resources.GetObject("btnEliminarSerie.Image"), System.Drawing.Image)
+        Me.btnEliminarSerie.Location = New System.Drawing.Point(271, 337)
+        Me.btnEliminarSerie.Name = "btnEliminarSerie"
+        Me.btnEliminarSerie.Size = New System.Drawing.Size(97, 77)
+        Me.btnEliminarSerie.TabIndex = 21
+        Me.btnEliminarSerie.Text = "&Eliminar Cliente"
+        Me.btnEliminarSerie.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnEliminarSerie.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.Button2.Location = New System.Drawing.Point(456, 132)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(27, 25)
+        Me.Button2.TabIndex = 18
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'btnmSerie
         '
@@ -90,84 +161,29 @@ Partial Class frmModuloSeries
         Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(458, 411)
+        Me.btnSalir.Location = New System.Drawing.Point(385, 337)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(214, 64)
+        Me.btnSalir.Size = New System.Drawing.Size(98, 77)
         Me.btnSalir.TabIndex = 15
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'lblTitulo
-        '
-        Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(126, 22)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(442, 31)
-        Me.lblTitulo.TabIndex = 14
-        Me.lblTitulo.Text = "Módulo de Gestión de Talonarios"
-        '
-        'btneSerie
-        '
-        Me.btneSerie.Location = New System.Drawing.Point(274, 337)
-        Me.btneSerie.Name = "btneSerie"
-        Me.btneSerie.Size = New System.Drawing.Size(154, 47)
-        Me.btneSerie.TabIndex = 16
-        Me.btneSerie.Text = "Eliminar serie"
-        Me.btneSerie.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(503, 107)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 17
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(584, 107)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(98, 23)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Actualizar lista"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'dgvSeries
-        '
-        Me.dgvSeries.AllowUserToAddRows = False
-        Me.dgvSeries.AllowUserToDeleteRows = False
-        Me.dgvSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSeries.Location = New System.Drawing.Point(30, 143)
-        Me.dgvSeries.Name = "dgvSeries"
-        Me.dgvSeries.ReadOnly = True
-        Me.dgvSeries.Size = New System.Drawing.Size(453, 150)
-        Me.dgvSeries.TabIndex = 19
-        '
-        'txtBusqueda
-        '
-        Me.txtBusqueda.Location = New System.Drawing.Point(30, 107)
-        Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(453, 20)
-        Me.txtBusqueda.TabIndex = 20
-        '
         'frmModuloSeries
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1174, 517)
+        Me.ClientSize = New System.Drawing.Size(521, 460)
+        Me.Controls.Add(Me.lblTitulo)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnEliminarSerie)
         Me.Controls.Add(Me.txtBusqueda)
         Me.Controls.Add(Me.dgvSeries)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btneSerie)
         Me.Controls.Add(Me.btnmSerie)
         Me.Controls.Add(Me.btnNSerie)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.stsBarra)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -187,10 +203,11 @@ Partial Class frmModuloSeries
     Friend WithEvents btnmSerie As System.Windows.Forms.Button
     Friend WithEvents btnNSerie As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents lblTitulo As System.Windows.Forms.Label
-    Friend WithEvents btneSerie As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents dgvSeries As System.Windows.Forms.DataGridView
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
+    Friend WithEvents btnEliminarSerie As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents lblTitulo As System.Windows.Forms.Label
 End Class

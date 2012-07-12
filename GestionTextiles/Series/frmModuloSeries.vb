@@ -47,23 +47,6 @@ Public Class frmModuloSeries
     Private Sub dgvSeries_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvSeries.CellClick
         frmModuloSeries.gnsSerieSeleccionada = Me.lstSeriesFiltrada(e.RowIndex)
     End Sub
-
-    Private Sub btneSerie_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btneSerie.Click
-        If IsNothing(frmModuloSeries.gnsSerieSeleccionada) Then
-            MessageBox.Show("Debe seleccionar un elemento de la lista para poder eliminarlo", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-        Else
-            If MessageBox.Show("¿Está seguro de querer eliminar el talonario " + frmModuloSeries.gnsSerieSeleccionada.getSerie() + "de la base de datos? Esta operación no se puede deshacer", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                Try
-                    frmModuloSeries.gnsSerieSeleccionada.fnvEliminarSerie()
-                    MessageBox.Show("La operación finalizó con éxito", "Talonario eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    ''recargar lista
-                    Me.fnvCargarLista()
-                Catch ex As Exception
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
-            End If
-        End If
-    End Sub
     Private Sub fnvCargarLista()
         Try
             frmModuloSeries.gnsSerieSeleccionada = Nothing
@@ -105,7 +88,28 @@ Public Class frmModuloSeries
         Me.fnvCargarLista()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub frmModuloSeries_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.fnvCargarLista()
+    End Sub
+
+    Private Sub btnEliminarSerie_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminarSerie.Click
+        If IsNothing(frmModuloSeries.gnsSerieSeleccionada) Then
+            MessageBox.Show("Debe seleccionar un elemento de la lista para poder eliminarlo", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            If MessageBox.Show("¿Está seguro de querer eliminar el talonario " + frmModuloSeries.gnsSerieSeleccionada.getSerie() + "de la base de datos? Esta operación no se puede deshacer", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                Try
+                    frmModuloSeries.gnsSerieSeleccionada.fnvEliminarSerie()
+                    MessageBox.Show("La operación finalizó con éxito", "Talonario eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    ''recargar lista
+                    Me.fnvCargarLista()
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End If
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         Dim lsTexto As String = txtBusqueda.Text
         If lsTexto = "" Then
             Me.fnvCargarLista()
@@ -117,10 +121,9 @@ Public Class frmModuloSeries
             End If
             Me.fnvBuscar(lsTexto)
         End If
-        
     End Sub
 
-    Private Sub frmModuloSeries_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.fnvCargarLista()
+    Private Sub txtBusqueda_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtBusqueda.MouseLeave
+        slblDescripcion.Text = "Descripción"
     End Sub
 End Class
