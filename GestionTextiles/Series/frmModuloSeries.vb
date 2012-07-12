@@ -15,6 +15,9 @@ Public Class frmModuloSeries
             MessageBox.Show("Debe seleccionar un elemento de la lista para poder modificarlo", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         Else
             frmSerie.actualizar = True
+            frmSerie.lblTitulo.Text = "Modificar serie"
+            frmSerie.txtSerie.Enabled = False
+            frmSerie.picbValidacion.Visible = False
             frmSerie.ShowDialog()
             ''recargar lista
             Me.fnvCargarLista()
