@@ -48,17 +48,18 @@ Partial Class frmModificarProductos
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(92, 18)
+        Me.lblTitulo.Location = New System.Drawing.Point(62, 19)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(376, 29)
         Me.lblTitulo.TabIndex = 30
         Me.lblTitulo.Text = "Modificar Datos Del Producto"
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnCancelar
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(325, 235)
+        Me.btnCancelar.Location = New System.Drawing.Point(314, 235)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 7
@@ -68,7 +69,7 @@ Partial Class frmModificarProductos
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(423, 235)
+        Me.btnAceptar.Location = New System.Drawing.Point(412, 235)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 6
@@ -77,7 +78,7 @@ Partial Class frmModificarProductos
         '
         'txtPrecioCompra
         '
-        Me.txtPrecioCompra.Location = New System.Drawing.Point(144, 144)
+        Me.txtPrecioCompra.Location = New System.Drawing.Point(133, 144)
         Me.txtPrecioCompra.Name = "txtPrecioCompra"
         Me.txtPrecioCompra.Size = New System.Drawing.Size(100, 20)
         Me.txtPrecioCompra.TabIndex = 3
@@ -93,7 +94,7 @@ Partial Class frmModificarProductos
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(144, 116)
+        Me.txtCantidad.Location = New System.Drawing.Point(133, 116)
         Me.txtCantidad.MaxLength = 60
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(100, 20)
@@ -110,14 +111,14 @@ Partial Class frmModificarProductos
         '
         'txtColor
         '
-        Me.txtColor.Location = New System.Drawing.Point(142, 196)
+        Me.txtColor.Location = New System.Drawing.Point(133, 196)
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(100, 20)
         Me.txtColor.TabIndex = 5
         '
         'txtPrecioVenta
         '
-        Me.txtPrecioVenta.Location = New System.Drawing.Point(142, 170)
+        Me.txtPrecioVenta.Location = New System.Drawing.Point(133, 170)
         Me.txtPrecioVenta.Name = "txtPrecioVenta"
         Me.txtPrecioVenta.Size = New System.Drawing.Size(100, 20)
         Me.txtPrecioVenta.TabIndex = 4
@@ -142,7 +143,7 @@ Partial Class frmModificarProductos
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(144, 64)
+        Me.txtNombre.Location = New System.Drawing.Point(133, 67)
         Me.txtNombre.MaxLength = 70
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(354, 20)
@@ -159,7 +160,7 @@ Partial Class frmModificarProductos
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(144, 90)
+        Me.txtCodigo.Location = New System.Drawing.Point(133, 90)
         Me.txtCodigo.MaxLength = 70
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
@@ -179,7 +180,7 @@ Partial Class frmModificarProductos
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
         Me.stsBarra.Location = New System.Drawing.Point(0, 270)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(539, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(517, 22)
         Me.stsBarra.TabIndex = 36
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -200,7 +201,7 @@ Partial Class frmModificarProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(539, 292)
+        Me.ClientSize = New System.Drawing.Size(517, 292)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.txtPrecioCompra)
@@ -218,7 +219,8 @@ Partial Class frmModificarProductos
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmModificarProductos"
-        Me.Text = "frmModificarProductos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Modificar Productos"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)

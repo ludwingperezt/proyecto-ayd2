@@ -223,7 +223,8 @@ Partial Class frmModificarDatosPropiosEmpleado
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmModificarDatosPropiosEmpleado"
-        Me.Text = "frmModificarDatosPropiosEmpleado"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Modificar Datos Propios"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)
