@@ -42,6 +42,8 @@ Partial Class frmClientes
         Me.btningresarcliente = New System.Windows.Forms.Button()
         Me.gpListadoClientes = New System.Windows.Forms.GroupBox()
         Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.lblParametro = New System.Windows.Forms.Label()
+        Me.cmbCliente = New System.Windows.Forms.ComboBox()
         CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
         Me.gpListadoClientes.SuspendLayout()
@@ -98,15 +100,15 @@ Partial Class frmClientes
         'lblbusqueda
         '
         Me.lblbusqueda.AutoSize = True
-        Me.lblbusqueda.Location = New System.Drawing.Point(22, 82)
+        Me.lblbusqueda.Location = New System.Drawing.Point(12, 127)
         Me.lblbusqueda.Name = "lblbusqueda"
-        Me.lblbusqueda.Size = New System.Drawing.Size(40, 13)
+        Me.lblbusqueda.Size = New System.Drawing.Size(46, 13)
         Me.lblbusqueda.TabIndex = 35
-        Me.lblbusqueda.Text = "Buscar"
+        Me.lblbusqueda.Text = "Buscar: "
         '
         'txtbusqueda
         '
-        Me.txtbusqueda.Location = New System.Drawing.Point(80, 79)
+        Me.txtbusqueda.Location = New System.Drawing.Point(76, 124)
         Me.txtbusqueda.Name = "txtbusqueda"
         Me.txtbusqueda.Size = New System.Drawing.Size(372, 20)
         Me.txtbusqueda.TabIndex = 0
@@ -114,7 +116,7 @@ Partial Class frmClientes
         'btnbuscar
         '
         Me.btnbuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnbuscar.Location = New System.Drawing.Point(471, 76)
+        Me.btnbuscar.Location = New System.Drawing.Point(467, 121)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
         Me.btnbuscar.TabIndex = 1
@@ -124,7 +126,7 @@ Partial Class frmClientes
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 486)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 552)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(595, 22)
         Me.stsBarra.TabIndex = 39
@@ -148,7 +150,7 @@ Partial Class frmClientes
         Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(452, 443)
+        Me.Button1.Location = New System.Drawing.Point(452, 502)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(107, 28)
         Me.Button1.TabIndex = 7
@@ -160,7 +162,7 @@ Partial Class frmClientes
         '
         Me.btneliminarcliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btneliminarcliente.Image = CType(resources.GetObject("btneliminarcliente.Image"), System.Drawing.Image)
-        Me.btneliminarcliente.Location = New System.Drawing.Point(452, 347)
+        Me.btneliminarcliente.Location = New System.Drawing.Point(452, 406)
         Me.btneliminarcliente.Name = "btneliminarcliente"
         Me.btneliminarcliente.Size = New System.Drawing.Size(107, 71)
         Me.btneliminarcliente.TabIndex = 6
@@ -172,7 +174,7 @@ Partial Class frmClientes
         '
         Me.btnmodificarclientes.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnmodificarclientes.Image = CType(resources.GetObject("btnmodificarclientes.Image"), System.Drawing.Image)
-        Me.btnmodificarclientes.Location = New System.Drawing.Point(327, 347)
+        Me.btnmodificarclientes.Location = New System.Drawing.Point(327, 406)
         Me.btnmodificarclientes.Name = "btnmodificarclientes"
         Me.btnmodificarclientes.Size = New System.Drawing.Size(107, 72)
         Me.btnmodificarclientes.TabIndex = 5
@@ -184,7 +186,7 @@ Partial Class frmClientes
         '
         Me.btningresarcliente.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btningresarcliente.Image = CType(resources.GetObject("btningresarcliente.Image"), System.Drawing.Image)
-        Me.btningresarcliente.Location = New System.Drawing.Point(201, 347)
+        Me.btningresarcliente.Location = New System.Drawing.Point(201, 406)
         Me.btningresarcliente.Name = "btningresarcliente"
         Me.btningresarcliente.Size = New System.Drawing.Size(109, 72)
         Me.btningresarcliente.TabIndex = 4
@@ -196,7 +198,7 @@ Partial Class frmClientes
         '
         Me.gpListadoClientes.Controls.Add(Me.btnActualizar)
         Me.gpListadoClientes.Controls.Add(Me.dgvclientes)
-        Me.gpListadoClientes.Location = New System.Drawing.Point(12, 115)
+        Me.gpListadoClientes.Location = New System.Drawing.Point(12, 174)
         Me.gpListadoClientes.Name = "gpListadoClientes"
         Me.gpListadoClientes.Size = New System.Drawing.Size(562, 215)
         Me.gpListadoClientes.TabIndex = 60
@@ -213,11 +215,31 @@ Partial Class frmClientes
         Me.btnActualizar.TabIndex = 2
         Me.btnActualizar.UseVisualStyleBackColor = False
         '
+        'lblParametro
+        '
+        Me.lblParametro.AutoSize = True
+        Me.lblParametro.Location = New System.Drawing.Point(9, 84)
+        Me.lblParametro.Name = "lblParametro"
+        Me.lblParametro.Size = New System.Drawing.Size(126, 13)
+        Me.lblParametro.TabIndex = 61
+        Me.lblParametro.Text = "Parametro de busqueda: "
+        '
+        'cmbCliente
+        '
+        Me.cmbCliente.FormattingEnabled = True
+        Me.cmbCliente.Items.AddRange(New Object() {"Tipo Cliente", "Nombre", "Apellido", "Dirección", "Nit"})
+        Me.cmbCliente.Location = New System.Drawing.Point(151, 84)
+        Me.cmbCliente.Name = "cmbCliente"
+        Me.cmbCliente.Size = New System.Drawing.Size(127, 21)
+        Me.cmbCliente.TabIndex = 62
+        '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(595, 508)
+        Me.ClientSize = New System.Drawing.Size(595, 574)
+        Me.Controls.Add(Me.cmbCliente)
+        Me.Controls.Add(Me.lblParametro)
         Me.Controls.Add(Me.gpListadoClientes)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.Button1)
@@ -260,4 +282,6 @@ Partial Class frmClientes
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents gpListadoClientes As System.Windows.Forms.GroupBox
     Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents lblParametro As System.Windows.Forms.Label
+    Friend WithEvents cmbCliente As System.Windows.Forms.ComboBox
 End Class

@@ -86,6 +86,7 @@ Public Class frmClientes
         Else
             btnbuscar.Enabled = True
         End If
+
     End Sub
 
 
@@ -99,5 +100,13 @@ Public Class frmClientes
 
     Private Sub dgvclientes_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvclientes.CellContentClick
 
+    End Sub
+
+    Private Sub cmbCliente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbCliente.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub cmbCliente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbCliente.MouseHover
+        slblDescripcion.Text = "Seleccióne el parametro por el que desea buscar"
     End Sub
 End Class

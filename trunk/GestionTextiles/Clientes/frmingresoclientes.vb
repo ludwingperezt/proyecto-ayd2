@@ -1,23 +1,31 @@
 ﻿Imports negocios
 Public Class frmingresoclientes
-
+    Private bandera As Boolean
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        bandera = True
         For Each ctrlIterador As Control In Me.Controls
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
+                    bandera = False
                 Else
                     ctrlIterador.BackColor = Color.White
+
                 End If
             End If
             '' Validación de combobox
             If TypeOf (ctrlIterador) Is Windows.Forms.ComboBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
+                    bandera = False
                 Else
                     ctrlIterador.BackColor = Color.White
                 End If
             End If
+        Next
+        If bandera <> False Then 'aqui compruba que no hayan datos perdidos
+
+
             'ingreso nuevo cliente
             Dim lnpNuevoCliente As negociosCliente = New negociosCliente()
             lnpNuevoCliente.setNombreCliente(txtnombre.Text)
@@ -30,7 +38,7 @@ Public Class frmingresoclientes
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-        Next
+        End If
     End Sub
 
     Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseLeave

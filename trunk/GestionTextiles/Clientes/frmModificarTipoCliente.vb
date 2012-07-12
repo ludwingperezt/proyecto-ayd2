@@ -1,5 +1,5 @@
 ﻿Public Class frmModificarTipoCliente
-
+    Private bandera As Boolean
     Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -65,14 +65,20 @@
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        bandera = True
         For Each ctrlIterador As Control In Me.Controls
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
+                    bandera = False
                 Else
                     ctrlIterador.BackColor = Color.White
                 End If
             End If
         Next
+        If bandera <> False Then
+            'codigo para modificar el tipo cliente
+
+        End If
     End Sub
 End Class
