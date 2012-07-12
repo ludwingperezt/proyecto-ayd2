@@ -86,6 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Empleados\frmModificarDatosPropiosEmpleado.Designer.vb">
+      <DependentUpon>frmModificarDatosPropiosEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\frmModificarDatosPropiosEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InformeCierreCaja.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -302,6 +308,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Empleados\frmModificarDatosPropiosEmpleado.resx">
+      <DependentUpon>frmModificarDatosPropiosEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InformeCierreCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InformeCierreCaja.vb</LastGenOutput>
