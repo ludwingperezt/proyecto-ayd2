@@ -50,6 +50,9 @@ Partial Class frmModificarEmpleado
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.cmbRolEmpleado = New System.Windows.Forms.ComboBox()
+        Me.lblRolEmpleado = New System.Windows.Forms.Label()
+        Me.btnComprobar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,34 +71,34 @@ Partial Class frmModificarEmpleado
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(324, 373)
+        Me.btnCancelar.Location = New System.Drawing.Point(324, 409)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 51
+        Me.btnCancelar.TabIndex = 14
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(422, 373)
+        Me.btnAceptar.Location = New System.Drawing.Point(422, 409)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 50
+        Me.btnAceptar.TabIndex = 13
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'dtpFechaContrato
         '
-        Me.dtpFechaContrato.Location = New System.Drawing.Point(143, 267)
+        Me.dtpFechaContrato.Location = New System.Drawing.Point(143, 294)
         Me.dtpFechaContrato.Name = "dtpFechaContrato"
         Me.dtpFechaContrato.Size = New System.Drawing.Size(200, 20)
-        Me.dtpFechaContrato.TabIndex = 49
+        Me.dtpFechaContrato.TabIndex = 8
         '
         'lblFechaContrato
         '
         Me.lblFechaContrato.AutoSize = True
-        Me.lblFechaContrato.Location = New System.Drawing.Point(26, 267)
+        Me.lblFechaContrato.Location = New System.Drawing.Point(26, 294)
         Me.lblFechaContrato.Name = "lblFechaContrato"
         Me.lblFechaContrato.Size = New System.Drawing.Size(95, 13)
         Me.lblFechaContrato.TabIndex = 48
@@ -107,12 +110,12 @@ Partial Class frmModificarEmpleado
         Me.txtTelefono.MaxLength = 15
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(100, 20)
-        Me.txtTelefono.TabIndex = 47
+        Me.txtTelefono.TabIndex = 4
         '
         'lblSueldo
         '
         Me.lblSueldo.AutoSize = True
-        Me.lblSueldo.Location = New System.Drawing.Point(28, 296)
+        Me.lblSueldo.Location = New System.Drawing.Point(28, 323)
         Me.lblSueldo.Name = "lblSueldo"
         Me.lblSueldo.Size = New System.Drawing.Size(40, 13)
         Me.lblSueldo.TabIndex = 46
@@ -124,7 +127,7 @@ Partial Class frmModificarEmpleado
         Me.txtDireccion.MaxLength = 60
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(354, 20)
-        Me.txtDireccion.TabIndex = 45
+        Me.txtDireccion.TabIndex = 2
         '
         'lblDireccion
         '
@@ -137,10 +140,10 @@ Partial Class frmModificarEmpleado
         '
         'txtSueldo
         '
-        Me.txtSueldo.Location = New System.Drawing.Point(143, 293)
+        Me.txtSueldo.Location = New System.Drawing.Point(143, 320)
         Me.txtSueldo.Name = "txtSueldo"
         Me.txtSueldo.Size = New System.Drawing.Size(100, 20)
-        Me.txtSueldo.TabIndex = 42
+        Me.txtSueldo.TabIndex = 9
         '
         'txtCelular
         '
@@ -148,7 +151,7 @@ Partial Class frmModificarEmpleado
         Me.txtCelular.MaxLength = 15
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(100, 20)
-        Me.txtCelular.TabIndex = 43
+        Me.txtCelular.TabIndex = 5
         '
         'lblCelular
         '
@@ -191,7 +194,7 @@ Partial Class frmModificarEmpleado
         Me.txtDPI.MaxLength = 70
         Me.txtDPI.Name = "txtDPI"
         Me.txtDPI.Size = New System.Drawing.Size(100, 20)
-        Me.txtDPI.TabIndex = 37
+        Me.txtDPI.TabIndex = 3
         '
         'lblNombre
         '
@@ -205,7 +208,7 @@ Partial Class frmModificarEmpleado
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(26, 348)
+        Me.lblPassword.Location = New System.Drawing.Point(26, 375)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(53, 13)
         Me.lblPassword.TabIndex = 71
@@ -213,16 +216,16 @@ Partial Class frmModificarEmpleado
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(143, 345)
+        Me.txtPassword.Location = New System.Drawing.Point(143, 372)
         Me.txtPassword.MaxLength = 20
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(100, 20)
-        Me.txtPassword.TabIndex = 70
+        Me.txtPassword.TabIndex = 12
         '
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Location = New System.Drawing.Point(26, 322)
+        Me.lblUsuario.Location = New System.Drawing.Point(26, 349)
         Me.lblUsuario.Name = "lblUsuario"
         Me.lblUsuario.Size = New System.Drawing.Size(43, 13)
         Me.lblUsuario.TabIndex = 69
@@ -230,11 +233,11 @@ Partial Class frmModificarEmpleado
         '
         'txtUsuario
         '
-        Me.txtUsuario.Location = New System.Drawing.Point(143, 319)
+        Me.txtUsuario.Location = New System.Drawing.Point(143, 346)
         Me.txtUsuario.MaxLength = 12
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(100, 20)
-        Me.txtUsuario.TabIndex = 68
+        Me.txtUsuario.TabIndex = 10
         '
         'cmbPuesto
         '
@@ -242,7 +245,7 @@ Partial Class frmModificarEmpleado
         Me.cmbPuesto.Location = New System.Drawing.Point(143, 240)
         Me.cmbPuesto.Name = "cmbPuesto"
         Me.cmbPuesto.Size = New System.Drawing.Size(121, 21)
-        Me.cmbPuesto.TabIndex = 67
+        Me.cmbPuesto.TabIndex = 6
         '
         'lblPuesto
         '
@@ -259,7 +262,7 @@ Partial Class frmModificarEmpleado
         Me.txtApellido.MaxLength = 40
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(354, 20)
-        Me.txtApellido.TabIndex = 65
+        Me.txtApellido.TabIndex = 1
         '
         'lblApellido
         '
@@ -273,10 +276,10 @@ Partial Class frmModificarEmpleado
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 411)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 452)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(509, 22)
-        Me.stsBarra.TabIndex = 72
+        Me.stsBarra.TabIndex = 15
         Me.stsBarra.Text = "StatusStrip1"
         '
         'slblDescripcion
@@ -292,11 +295,41 @@ Partial Class frmModificarEmpleado
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
+        'cmbRolEmpleado
+        '
+        Me.cmbRolEmpleado.FormattingEnabled = True
+        Me.cmbRolEmpleado.Location = New System.Drawing.Point(143, 267)
+        Me.cmbRolEmpleado.Name = "cmbRolEmpleado"
+        Me.cmbRolEmpleado.Size = New System.Drawing.Size(121, 21)
+        Me.cmbRolEmpleado.TabIndex = 7
+        '
+        'lblRolEmpleado
+        '
+        Me.lblRolEmpleado.AutoSize = True
+        Me.lblRolEmpleado.Location = New System.Drawing.Point(26, 270)
+        Me.lblRolEmpleado.Name = "lblRolEmpleado"
+        Me.lblRolEmpleado.Size = New System.Drawing.Size(23, 13)
+        Me.lblRolEmpleado.TabIndex = 74
+        Me.lblRolEmpleado.Text = "Rol"
+        '
+        'btnComprobar
+        '
+        Me.btnComprobar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnComprobar.Location = New System.Drawing.Point(249, 346)
+        Me.btnComprobar.Name = "btnComprobar"
+        Me.btnComprobar.Size = New System.Drawing.Size(75, 23)
+        Me.btnComprobar.TabIndex = 11
+        Me.btnComprobar.Text = "Comprobar"
+        Me.btnComprobar.UseVisualStyleBackColor = False
+        '
         'frmModificarEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(509, 433)
+        Me.ClientSize = New System.Drawing.Size(509, 474)
+        Me.Controls.Add(Me.btnComprobar)
+        Me.Controls.Add(Me.cmbRolEmpleado)
+        Me.Controls.Add(Me.lblRolEmpleado)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.txtPassword)
@@ -359,4 +392,7 @@ Partial Class frmModificarEmpleado
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents cmbRolEmpleado As System.Windows.Forms.ComboBox
+    Friend WithEvents lblRolEmpleado As System.Windows.Forms.Label
+    Friend WithEvents btnComprobar As System.Windows.Forms.Button
 End Class

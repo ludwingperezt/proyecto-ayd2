@@ -2,26 +2,38 @@
 Public Class frmModificarEmpleado
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
-        Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
-        lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
-        lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
-        lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
-        lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
-        lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
-        lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
-        lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
-        lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
-        lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
-        Dim bytes() As Byte
-        bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
-        lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
-        Try
-            lnpNuevoEmpleado.fnsModificarEmpleado()
-            MessageBox.Show("La operación de modificacion de empleado se llevó a cabo con éxito", "Modificacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.Dispose()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        For Each ctrlIterador As Control In Me.Controls
+            '' Validación de textbox
+            If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
+                If (ctrlIterador.Text = "") Then
+                    ctrlIterador.BackColor = Color.Yellow
+                Else
+                    ctrlIterador.BackColor = Color.White
+
+                    Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
+                    lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
+                    lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
+                    lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
+                    lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
+                    lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
+                    lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
+                    lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
+                    lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
+                    lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
+                    Dim bytes() As Byte
+                    bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
+                    lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
+                    Try
+                        lnpNuevoEmpleado.fnsModificarEmpleado()
+                        MessageBox.Show("La operación de modificacion de empleado se llevó a cabo con éxito", "Modificacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Me.Dispose()
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End Try
+
+                End If
+            End If
+        Next
     End Sub
 
     Private Sub txtNombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseLeave
@@ -122,5 +134,29 @@ Public Class frmModificarEmpleado
 
     Private Sub frmModificarEmpleado_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub cmbRolEmpleado_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbRolEmpleado.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub cmbRolEmpleado_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbRolEmpleado.MouseHover
+        slblDescripcion.Text = "Seleccione un Rol para el Empleado."
+    End Sub
+
+    Private Sub btnComprobar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnComprobar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.MouseHover
+        slblDescripcion.Text = "Comprobar si el Usuario ya Existe."
+    End Sub
+
+    Private Sub btnCancelar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseHover
+        slblDescripcion.Text = "Cancelar la Modificacion del Empleado"
+    End Sub
+
+    Private Sub btnAceptar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseHover
+        slblDescripcion.Text = "Confirmar la Modificacion del Empleado"
     End Sub
 End Class
