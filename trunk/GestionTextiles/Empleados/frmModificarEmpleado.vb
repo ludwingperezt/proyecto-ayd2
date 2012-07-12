@@ -14,7 +14,7 @@ Public Class frmModificarEmpleado
         lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
         Dim bytes() As Byte
         bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
-        lnpNuevoEmpleado.setFechaContratacionEmpleado(Convert.ToDateTime(dtpFechaContrato.ToString))
+        lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
         Try
             lnpNuevoEmpleado.fnsModificarEmpleado()
             MessageBox.Show("La operación de modificacion de empleado se llevó a cabo con éxito", "Modificacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -118,5 +118,9 @@ Public Class frmModificarEmpleado
 
     Private Sub txtPassword_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPassword.MouseHover
         slblDescripcion.Text = "Contraseña de Ingreso al Sistema para el Empleado"
+    End Sub
+
+    Private Sub frmModificarEmpleado_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
