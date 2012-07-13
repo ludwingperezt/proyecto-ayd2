@@ -85,6 +85,54 @@ namespace negocios
         {
             return this.lboActiva;
         }
+        /// <summary>
+        /// Funcion de modificacion del campo IdTerminal al que pertenece la serie de facturas
+        /// </summary>
+        /// <param name="liIdTerminal">int: idTerminal al que pertenece la serie de facturas</param>
+        public void setIdTerminal(int liIdTerminal)
+        {
+            this.liNumeroTerminal = liIdTerminal;
+        }
+        /// <summary>
+        /// Función de acceso al campo idTerminal a la que pertenece la serie
+        /// </summary>
+        /// <returns>int: numero de terminal a la que pertenece la serie</returns>
+        public int getIdTerminal()
+        {
+            return this.liNumeroTerminal;
+        }
+        /// <summary>
+        /// Funcion de modificacion del campo IdSucursal
+        /// </summary>
+        /// <param name="liIdSucursal">int: la sucursal a la que pertenece la serie y la terminal</param>
+        public void setIdSucursal(int liIdSucursal)
+        {
+            this.liNumeroSucursal = liIdSucursal;
+        }
+        /// <summary>
+        /// Función de acceso al campo idSucursal a la que pertenece la serie y la terminal o estaciòn de trabajo
+        /// </summary>
+        /// <returns>int: el Id de la sucursal a la que pertenece la serie</returns>
+        public int getIdSucursal()
+        {
+            return this.liNumeroSucursal;
+        }
+        /// <summary>
+        /// Funciòn de modificaciòn del limite de la serie de facturas que se pueden emitir
+        /// </summary>
+        /// <param name="liLimite">int: En nùmero màximo de facturas que pueden ser emitidas por esta serie</param>
+        public void setLimite(int liLimite)
+        {
+            this.liLimite = liLimite;
+        }
+        /// <summary>
+        /// Funcion de acceso al campo limite, de la serie de facturas
+        /// </summary>
+        /// <returns>int: el numero màximo de facturas que se pueden emitir</returns>
+        public int getLimite()
+        {
+            return this.liLimite;
+        }
         #endregion
         #region funciones de acceso a la base de datos
         /// <summary>
@@ -183,6 +231,7 @@ namespace negocios
         /// <returns>List de negociosSerie: cada objeto representa una tupla en la tabla series</returns>
         public static List<negociosSerie> fnlstListaSeries()
         {
+            //s.SERIE,s.ACTUAL,s.LIMITE,s.IDSUCURSAL,s.IDTERMINAL,s.ACTIVA
             DataTable dtLocal = negociosSerie.fnListarSeries();
             List<negociosSerie> lstSeries = new List<negociosSerie>();
             object[] objInstancia;
@@ -192,7 +241,10 @@ namespace negocios
                 negociosSerie temporal = new negociosSerie();
                 temporal.setSerie(Convert.ToString(objInstancia[0]));
                 temporal.setNumeroActual(Convert.ToInt32(objInstancia[1]));
-                temporal.setActiva(Convert.ToBoolean(objInstancia[2]));
+                temporal.setLimite(Convert.ToInt32(objInstancia[2]));
+                temporal.setIdSucursal(Convert.ToInt32(objInstancia[3]));
+                temporal.setIdTerminal(Convert.ToInt32(objInstancia[4]));
+                temporal.setActiva(Convert.ToBoolean(objInstancia[5]));
                 lstSeries.Add(temporal);
             }
             return lstSeries;
