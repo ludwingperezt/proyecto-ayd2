@@ -1,6 +1,7 @@
 ﻿Imports negocios
 Public Class frmEmpleados
     Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
+    Dim lnpRol As negociosRol = New negociosRol()
     Private Sub slblDescripcion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles slblDescripcion.Click
 
     End Sub
@@ -172,8 +173,9 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub frmEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-
+        cmbRolEmpleado.DataSource = lnpRol.fnlstListarRoles()
+        cmbRolEmpleado.DisplayMember = "NOMBRE"
+        cmbRolEmpleado.ValueMember = "IDROL"
     End Sub
 
     Private Sub cmbRolEmpleado_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbRolEmpleado.MouseLeave
