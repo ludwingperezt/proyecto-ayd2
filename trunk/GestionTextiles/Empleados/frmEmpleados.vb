@@ -186,11 +186,23 @@ Public Class frmEmpleados
         slblDescripcion.Text = "Seleccione un Rol para el Empleado."
     End Sub
 
-    Private Sub btnComprobar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.MouseLeave
+    Private Sub btnComprobar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnComprobar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.MouseHover
+    Private Sub btnComprobar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Comprobar si el Usuario ya Existe."
+    End Sub
+
+    Private Sub txtUsuario_Leave(sender As System.Object, e As System.EventArgs) Handles txtUsuario.Leave
+        ' ACA VA LA VALIDACIÓN DEL USUARIO, MAS O MENOS DE LA SIGUIENTE MANERA (VER LA VENTANA DE SERIES)
+
+        ' si el usuario no existe...
+        '   se muestra la imagen de check (OK.png) de la siguiente manera: picbValidacion.Image = imglValidacion.Images(1)
+        ' sino...
+        '   se muestra la imagen de X (noOK.png) picbValidacion.Image = imglValidacion.Images(1) y le das el foco al txtUsuario
+        ' fin_si
+
+        ' ver como está en frmSeries
     End Sub
 End Class
