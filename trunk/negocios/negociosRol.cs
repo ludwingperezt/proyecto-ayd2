@@ -98,12 +98,12 @@ namespace negocios
         public bool getPermisoAccesoModuloRol()
         {
             bool retorno = true;
-            int i=0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            int i = 0;
+            for (int j = 0; j < 4; j++)
+                if (larrbyPermisosRoles[j] == 0)
                     i++;
             if (i == 4)
-                retorno=false;
+                retorno = false;
             return retorno;
         }
 
@@ -182,8 +182,8 @@ namespace negocios
         {
             bool retorno = true;
             int i = 0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            for (int j = 0; j < 4; j++)
+                if (larrbyPermisosEmpleados[j] == 0)
                     i++;
             if (i == 4)
                 retorno = false;
@@ -282,10 +282,10 @@ namespace negocios
         {
             bool retorno = true;
             int i = 0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            for (int j = 0; j < 5; j++)
+                if (larrbyPermisosProveedores[j] == 0)
                     i++;
-            if (i == 4)
+            if (i == 5)
                 retorno = false;
             return retorno;
         }
@@ -413,8 +413,8 @@ namespace negocios
         {
             bool retorno = true;
             int i = 0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            for (int j = 0; j < 7; j++)
+                if (larrbyPermisosProductos[j] == 0)
                     i++;
             if (i == 7)
                 retorno = false;
@@ -464,8 +464,8 @@ namespace negocios
         {
             bool retorno = true;
             int i = 0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            for (int j = 0; j < 2; j++)
+                if (larrbyPermisosCompras[j] == 0)
                     i++;
             if (i == 2)
                 retorno = false;
@@ -531,8 +531,8 @@ namespace negocios
         {
             bool retorno = true;
             int i = 0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            for (int j=0; j<3;j++)
+                if (larrbyPermisosClientes[j] == 0)
                     i++;
             if (i == 3)
                 retorno = false;
@@ -583,8 +583,8 @@ namespace negocios
         {
             bool retorno = true;
             int i = 0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            for (int j = 0; j < 2; j++)
+                if (larrbyPermisosClientes[j] == 0)
                     i++;
             if (i == 2)
                 retorno = false;
@@ -729,8 +729,8 @@ namespace negocios
         {
             bool retorno = true;
             int i = 0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            for (int j = 0; j < 8; j++)
+                if (larrbyPermisosReportes[j] == 0)
                     i++;
             if (i == 8)
                 retorno = false;
@@ -808,14 +808,14 @@ namespace negocios
         /// Función de acceso al permiso de Módulo de Roles
         /// </summary>
         /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
-        public bool getPermisoAccesoModuloFacturacion()
+        public bool getPermisoAccesoModuloTalonario()
         {
             bool retorno = true;
             int i = 0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            for (int j = 4; j < 8; j++)
+                if (larrbyPermisosRoles[j] == 0)
                     i++;
-            if (i == 8)
+            if (i == 4)
                 retorno = false;
             return retorno;
         }
@@ -893,13 +893,13 @@ namespace negocios
         public bool getPermisoAccesoModuloTiposClientes()
         {
             bool retorno = true;
-            int i=0;
-            foreach (byte w in larrbyPermisosRoles)
-                if (w == 0)
+            int i = 0;
+            for (int j = 4; j < 8; j++)
+                if (larrbyPermisosEmpleados[j] == 0)
                     i++;
-            if (i == 8)
-                retorno=false;
-            return retorno;
+            if (i == 4)
+                retorno = false;
+            return retorno; 
         }
         #endregion
         #region otros métodos de acceso y modificacion
