@@ -174,6 +174,22 @@ namespace negocios
         {
             return this.gdecTotal;
         }
+        /// <summary>
+        /// Función de acceso al campo IdCliente, de la factura
+        /// </summary>
+        /// <param name="liIdCliente">int: id del cliente a quien se extiende la factura</param>
+        public void setIdCliente(int liIdCliente)
+        {
+            this.giIdCliente = liIdCliente;
+        }
+        /// <summary>
+        /// Función de modificaciòn del campo IdCliente, de la factura
+        /// </summary>
+        /// <returns>int: id del cliente a quien se extiende la factura</returns>
+        public int getIdCliente()
+        {
+            return this.giIdCliente;
+        }
         #endregion
         #region funciones de comunicación con la base de datos
         /// <summary>
