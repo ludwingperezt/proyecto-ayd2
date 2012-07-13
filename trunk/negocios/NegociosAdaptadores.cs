@@ -32,5 +32,7 @@ namespace negocios
         public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerSeriePorEstacionTableAdapter gAdaptadorSerieEstacion = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerSeriePorEstacionTableAdapter();
         public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerSeriePorSucursalTableAdapter gAdaptadorSerieSucursal = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerSeriePorSucursalTableAdapter();
         public static datos.ConexionFuncionesEspecialesTableAdapters.paginacionProductosTableAdapter gAdaptadorPaginacionProductos = new datos.ConexionFuncionesEspecialesTableAdapters.paginacionProductosTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerProductoPorCodigoTableAdapter gAdaptadorObtenerProductoPorCodigo = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerProductoPorCodigoTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerProductoPorNombreTableAdapter gAdaptadorObtenerProductoPorNombre = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerProductoPorNombreTableAdapter();
     }
 }
