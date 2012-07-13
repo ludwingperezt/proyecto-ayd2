@@ -88,7 +88,6 @@ Public Class frmEmpleados
                     ctrlIterador.BackColor = Color.White
                     ''ingreso de empleado nuevo
                     ''falta agregar el idRol
-
                     lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
                     lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
                     lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
