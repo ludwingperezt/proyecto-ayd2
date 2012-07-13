@@ -32,11 +32,11 @@ Partial Class frmModuloSeries
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnEliminarSerie = New System.Windows.Forms.Button()
-        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnmSerie = New System.Windows.Forms.Button()
         Me.btnNSerie = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.gbListaSeries = New System.Windows.Forms.GroupBox()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaSeries.SuspendLayout()
@@ -125,16 +125,6 @@ Partial Class frmModuloSeries
         Me.btnEliminarSerie.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnEliminarSerie.UseVisualStyleBackColor = False
         '
-        'btnActualizar
-        '
-        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnActualizar.Location = New System.Drawing.Point(352, 9)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
-        Me.btnActualizar.TabIndex = 2
-        Me.btnActualizar.Text = "Recargar Lista"
-        Me.btnActualizar.UseVisualStyleBackColor = False
-        '
         'btnmSerie
         '
         Me.btnmSerie.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -174,14 +164,26 @@ Partial Class frmModuloSeries
         '
         'gbListaSeries
         '
+        Me.gbListaSeries.Controls.Add(Me.btnRegresar)
         Me.gbListaSeries.Controls.Add(Me.dgvSeries)
-        Me.gbListaSeries.Controls.Add(Me.btnActualizar)
         Me.gbListaSeries.Location = New System.Drawing.Point(28, 116)
         Me.gbListaSeries.Name = "gbListaSeries"
         Me.gbListaSeries.Size = New System.Drawing.Size(469, 226)
         Me.gbListaSeries.TabIndex = 25
         Me.gbListaSeries.TabStop = False
         Me.gbListaSeries.Text = "Listado Series"
+        '
+        'btnRegresar
+        '
+        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRegresar.Location = New System.Drawing.Point(367, 10)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
+        Me.btnRegresar.TabIndex = 4
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'frmModuloSeries
         '
@@ -218,7 +220,6 @@ Partial Class frmModuloSeries
     Friend WithEvents btnmSerie As System.Windows.Forms.Button
     Friend WithEvents btnNSerie As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents btnActualizar As System.Windows.Forms.Button
     Friend WithEvents dgvSeries As System.Windows.Forms.DataGridView
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents btnEliminarSerie As System.Windows.Forms.Button
@@ -226,4 +227,5 @@ Partial Class frmModuloSeries
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents gbListaSeries As System.Windows.Forms.GroupBox
+    Friend WithEvents btnRegresar As System.Windows.Forms.Button
 End Class

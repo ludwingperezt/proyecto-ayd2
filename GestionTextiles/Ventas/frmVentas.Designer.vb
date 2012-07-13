@@ -33,13 +33,13 @@ Partial Class frmVentas
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.gbListaSeries = New System.Windows.Forms.GroupBox()
         Me.dgvSeries = New System.Windows.Forms.DataGridView()
-        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtNumero = New System.Windows.Forms.TextBox()
         Me.lblNumero = New System.Windows.Forms.Label()
         Me.lblSerie = New System.Windows.Forms.Label()
         Me.txtSerie = New System.Windows.Forms.TextBox()
         Me.btnFacturar = New System.Windows.Forms.Button()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.gbListaSeries.SuspendLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,6 +82,7 @@ Partial Class frmVentas
         'btnSalir
         '
         Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSalir.Location = New System.Drawing.Point(505, 467)
@@ -109,8 +110,8 @@ Partial Class frmVentas
         '
         'gbListaSeries
         '
+        Me.gbListaSeries.Controls.Add(Me.btnRegresar)
         Me.gbListaSeries.Controls.Add(Me.dgvSeries)
-        Me.gbListaSeries.Controls.Add(Me.btnActualizar)
         Me.gbListaSeries.Location = New System.Drawing.Point(12, 138)
         Me.gbListaSeries.Name = "gbListaSeries"
         Me.gbListaSeries.Size = New System.Drawing.Size(610, 240)
@@ -128,16 +129,6 @@ Partial Class frmVentas
         Me.dgvSeries.ReadOnly = True
         Me.dgvSeries.Size = New System.Drawing.Size(578, 188)
         Me.dgvSeries.TabIndex = 4
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnActualizar.Location = New System.Drawing.Point(487, 10)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
-        Me.btnActualizar.TabIndex = 3
-        Me.btnActualizar.Text = "Recargar Lista"
-        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'btnBuscar
         '
@@ -194,6 +185,18 @@ Partial Class frmVentas
         Me.btnFacturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnFacturar.UseVisualStyleBackColor = False
         '
+        'btnRegresar
+        '
+        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRegresar.Location = New System.Drawing.Point(502, 8)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
+        Me.btnRegresar.TabIndex = 5
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
+        '
         'frmVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -233,12 +236,12 @@ Partial Class frmVentas
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents gbListaSeries As System.Windows.Forms.GroupBox
     Friend WithEvents dgvSeries As System.Windows.Forms.DataGridView
-    Friend WithEvents btnActualizar As System.Windows.Forms.Button
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents txtNumero As System.Windows.Forms.TextBox
     Friend WithEvents lblNumero As System.Windows.Forms.Label
     Friend WithEvents lblSerie As System.Windows.Forms.Label
     Friend WithEvents txtSerie As System.Windows.Forms.TextBox
     Friend WithEvents btnFacturar As System.Windows.Forms.Button
+    Friend WithEvents btnRegresar As System.Windows.Forms.Button
 
 End Class
