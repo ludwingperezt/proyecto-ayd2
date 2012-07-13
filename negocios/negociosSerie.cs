@@ -12,6 +12,9 @@ namespace negocios
         private string lsSerie;
         private int liNumeroActual;
         private bool lboActiva;
+        private int liLimite;
+        private int liNumeroTerminal;
+        private int liNumeroSucursal;
 
         #region constructures
         /// <summary>
@@ -92,7 +95,7 @@ namespace negocios
         {
             try
             {
-                negociosAdaptadores.gAdaptadorDeConsultas.insertarSerieFactura(this.lsSerie,this.liNumeroActual);
+                negociosAdaptadores.gAdaptadorDeConsultas.insertarSerieFactura(this.lsSerie, this.liNumeroActual, this.liLimite, (byte)this.liNumeroSucursal, (short)this.liNumeroTerminal);
                 return "La serie se insertó correctamente";
             }
             catch (Exception ex)
@@ -106,7 +109,7 @@ namespace negocios
         /// </summary>
         public void fnvInsertarSerie()
         {
-            negociosAdaptadores.gAdaptadorDeConsultas.insertarSerieFactura(this.lsSerie, this.liNumeroActual);
+            negociosAdaptadores.gAdaptadorDeConsultas.insertarSerieFactura(this.lsSerie, this.liNumeroActual, this.liLimite, (byte)this.liNumeroSucursal, (short)this.liNumeroTerminal);
         }
         /// <summary>
         /// Función de modificación de una serie. En esta función el único dato que puede ser modificado es el número actual en el que se encuentra la serie.
@@ -218,6 +221,15 @@ namespace negocios
             SqlParameter retorno = comando.Parameters["@RETORNO"];
             conexion.Close();
             return Convert.ToBoolean(retorno.Value);
+        }
+        /// <summary>
+        /// Función que verifica la existencia de una serie de facturas de venta.
+        /// </summary>
+        /// <param name="lsSerie">string: el nombre de la serie a buscar</param>
+        /// <returns>bool: True si la serie existe, False si no</returns>
+        public static bool fnboVerificarExistenciaSerie(string lsSerie)
+        {
+            return (bool)negociosAdaptadores.gAdaptadorDeConsultas.verificarExistenciaSerie(lsSerie);
         }
         #endregion
     }

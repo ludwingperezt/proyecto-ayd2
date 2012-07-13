@@ -17,6 +17,7 @@ namespace negocios
         private double gduDescuento;
         private decimal gdecSubTotal;
         private decimal gdecTotal;
+        private int giIdCliente;
         private List<negociosDetalleFacturaCliente> glstListaDetalleFactura;
 
         #region constructores
@@ -180,7 +181,8 @@ namespace negocios
         /// </summary>
         protected void fnvdInsertarEncabezadoFacturaCliente()
         {
-            DataTable tablaTemporal = negociosAdaptadores.gAdaptadorEncabezadoFacturaCliente.GetData(gsNIT, gbyIdEmpleado, gsSerie, gduDescuento, gdecSubTotal, gdecTotal);
+            //DataTable tablaTemporal = negociosAdaptadores.gAdaptadorEncabezadoFacturaCliente.GetData(gsNIT, gbyIdEmpleado, gsSerie, gduDescuento, gdecSubTotal, gdecTotal);
+            DataTable tablaTemporal = negociosAdaptadores.gAdaptadorEncabezadoFacturaCliente.GetData(this.giIdCliente, gbyIdEmpleado, gsSerie, gduDescuento, gdecSubTotal, gdecTotal);
             object o = tablaTemporal.Rows[0].ItemArray[0];
             this.giIdFactura = Convert.ToInt32(o);
             this.giNumero = (int)negociosAdaptadores.gAdaptadorDeConsultas.obtenerNumeroFacturaCliente(this.giIdFactura);
