@@ -120,4 +120,9 @@ Public Class frmModuloEmpleados
     Private Sub btnRegresar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseHover
         slblDescripcion.Text = "Regresa al Filtro Inicial."
     End Sub
+
+    Private Sub frmModuloEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        dgvEmpleados.DataSource = lnpEmpleado.fnDbDevolverVeinteEmpleados()
+
+    End Sub
 End Class
