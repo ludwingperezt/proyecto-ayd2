@@ -75,24 +75,7 @@ Public Class frmRoles
         frmRoles.nrRolSeleccionado = Me.lstListaRolesFiltrada(e.RowIndex)
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If IsNothing(frmRoles.nrRolSeleccionado) Then
-            MessageBox.Show("Debe seleccionar un elemento de la lista para poder eliminarlo", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-        Else
-            If MessageBox.Show("¿Está seguro de querer eliminar el rol de permisos " + frmRoles.nrRolSeleccionado.getNombre() + "de la base de datos? Esta operación no se puede deshacer", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                Try
-                    frmRoles.nrRolSeleccionado.fnvdEliminarRol()
-                    MessageBox.Show("La operación finalizó con éxito", "Rol eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Me.fnvCargarLista()
-                    txtBusqueda.Text = ""
-                Catch ex As Exception
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
-            End If
-        End If
-    End Sub
-
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSeleccionarPermiso.Click
         If IsNothing(frmRoles.nrRolSeleccionado) Then
             MessageBox.Show("No puede usar esta opción si no ha hecho clic en algun elemento de la lista", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         Else
@@ -110,6 +93,31 @@ Public Class frmRoles
             Me.fnvCargarLista()
         Else
             Me.fnvBuscar(lsTexto)
+        End If
+    End Sub
+
+    Private Sub btnEliminarPermiso_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminarPermiso.Click
+        If IsNothing(frmRoles.nrRolSeleccionado) Then
+            MessageBox.Show("Debe seleccionar un elemento de la lista para poder eliminarlo", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            If MessageBox.Show("¿Está seguro de querer eliminar el rol de permisos " + frmRoles.nrRolSeleccionado.getNombre() + "de la base de datos? Esta operación no se puede deshacer", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                Try
+                    frmRoles.nrRolSeleccionado.fnvdEliminarRol()
+                    MessageBox.Show("La operación finalizó con éxito", "Rol eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Me.fnvCargarLista()
+                    txtBusqueda.Text = ""
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End If
+    End Sub
+
+    Private Sub txtBusqueda_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtBusqueda.TextChanged
+        If txtBusqueda.Text = "" Then
+            btnBuscar.Enabled = False
+        Else
+            btnBuscar.Enabled = True
         End If
     End Sub
 End Class

@@ -95,14 +95,14 @@ namespace negocios
         /// Función de acceso al permiso de Módulo de Roles
         /// </summary>
         /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
-        public bool getPermisoAccesoModulo()
+        public bool getPermisoAccesoModuloRol()
         {
             bool retorno = true;
             int i=0;
             foreach (byte w in larrbyPermisosRoles)
                 if (w == 0)
                     i++;
-            if (i == 3)
+            if (i == 4)
                 retorno=false;
             return retorno;
         }
@@ -173,6 +173,23 @@ namespace negocios
         {
             return Convert.ToBoolean(larrbyPermisosEmpleados[3]);
         }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Empleados
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModuloEmpleados()
+        {
+            bool retorno = true;
+            int i = 0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 4)
+                retorno = false;
+            return retorno;
+        }
+
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de proveedores
         /// <summary>
@@ -256,6 +273,23 @@ namespace negocios
         {
             return Convert.ToBoolean(larrbyPermisosProveedores[3]);
         }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Proveedores
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModuloProveedores()
+        {
+            bool retorno = true;
+            int i = 0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 4)
+                retorno = false;
+            return retorno;
+        }
+
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de productos
         /// <summary>
@@ -370,6 +404,22 @@ namespace negocios
         {
             return Convert.ToBoolean(larrbyPermisosProductos[6]);
         }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Productos
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModuloProductos()
+        {
+            bool retorno = true;
+            int i = 0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 7)
+                retorno = false;
+            return retorno;
+        }
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de compras
         /// <summary>
@@ -404,7 +454,24 @@ namespace negocios
         public bool getPermisoDevolverProductosProveedores()
         {
             return Convert.ToBoolean(larrbyPermisosCompras[1]);
-        }        
+        }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Roles
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModuloCompras()
+        {
+            bool retorno = true;
+            int i = 0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 2)
+                retorno = false;
+            return retorno;
+        }
+
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de clientes
         /// <summary>
@@ -455,6 +522,23 @@ namespace negocios
         {
             return Convert.ToBoolean(larrbyPermisosClientes[2]);
         }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Clientes
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModuloCliente()
+        {
+            bool retorno = true;
+            int i = 0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 3)
+                retorno = false;
+            return retorno;
+        }
+
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de ventas
         /// <summary>
@@ -489,6 +573,22 @@ namespace negocios
         public bool getPermisoEliminarFacturasVentas()
         {
             return Convert.ToBoolean(larrbyPermisosVentas[1]);
+        }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Ventas
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModuloVentas()
+        {
+            bool retorno = true;
+            int i = 0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 2)
+                retorno = false;
+            return retorno;
         }
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo de reportes
@@ -620,6 +720,23 @@ namespace negocios
         {
             return Convert.ToBoolean(larrbyPermisosReportes[7]);
         }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Roles
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModuloReportes()
+        {
+            bool retorno = true;
+            int i = 0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 8)
+                retorno = false;
+            return retorno;
+        }
+
         #endregion
         #region métodos de acceso y modificación de series de facturas de venta
         /// <summary>
@@ -686,6 +803,22 @@ namespace negocios
         {
             return Convert.ToBoolean(larrbyPermisosRoles[7]);
         }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Roles
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModuloFacturacion()
+        {
+            bool retorno = true;
+            int i = 0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 8)
+                retorno = false;
+            return retorno;
+        }
         #endregion
         #region métodos de acceso y modificación de permisos para el módulo tipos de clientes
         /// <summary>
@@ -751,6 +884,22 @@ namespace negocios
         public bool getPermisoEliminacionTiposCliente()
         {
             return Convert.ToBoolean(larrbyPermisosEmpleados[7]);
+        }
+
+        /// <summary>
+        /// Función de acceso al permiso de Módulo de Tipos Clientes
+        /// </summary>
+        /// <returns>bool: True si puede acceder al Módulo, False si no tiene permiso</returns>
+        public bool getPermisoAccesoModuloTiposClientes()
+        {
+            bool retorno = true;
+            int i=0;
+            foreach (byte w in larrbyPermisosRoles)
+                if (w == 0)
+                    i++;
+            if (i == 8)
+                retorno=false;
+            return retorno;
         }
         #endregion
         #region otros métodos de acceso y modificacion

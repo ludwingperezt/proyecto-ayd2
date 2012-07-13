@@ -159,7 +159,20 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub frmPrincipal_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        lnegPermisos.getPermisoVentas()
 
+        ' Esto queda para el final, xq sino no podremos realizar pruebas
+
+        'If lnegPermisos.getPermisoAccesoModuloCliente() Then
+        'BtnClientes.Enabled = True
+        'Else
+        'BtnClientes.Enabled = False
+        'End If
+
+        '       If lnegPermisos.getPermisoAccesoModuloCompras() Then
+        'BtnCompras.Enabled = True
+        'Else
+        'BtnCompras.Enabled = False
+        'End If
+        ' ...
     End Sub
 End Class
