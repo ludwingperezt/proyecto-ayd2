@@ -41,15 +41,15 @@ Public Class frmIngresoProductos
     End Sub
 
     Private Sub txtPrecioCompra_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecioCompra.KeyPress
-        'If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.Handled = ".")) Then
-        '    e.KeyChar = vbNullChar
-        'End If
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
+            e.KeyChar = vbNullChar
+        End If
     End Sub
 
     Private Sub txtPrecioVenta_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecioVenta.KeyPress
-        'If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.Handled = ".")) Then
-        '    e.KeyChar = vbNullChar
-        'End If
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
+            e.KeyChar = vbNullChar
+        End If
     End Sub
 
     Private Sub txtNombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseLeave
