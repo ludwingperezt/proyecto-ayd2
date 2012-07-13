@@ -56,11 +56,15 @@ Public Class frmModuloSeries
         Try
             frmModuloSeries.gnsSerieSeleccionada = Nothing
             Me.lstSeries = negociosSerie.fnlstListaSeries()
+            If Me.lstSeries.Count >= 1 Then
+                'MessageBox.Show("No se puede tener más de un talonario de facturas activo", "Ingreso de talonarios nuevos desactivado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btnNSerie.Enabled = False
+            Else
+                MessageBox.Show("Debe ingresar un nuevo talonario de facturas", "No hay talonarios disponibles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                btnNSerie.Enabled = True
+            End If
             Me.fnvLlenarDataGridView(Me.lstSeries)
         Catch ex As Exception
-            'Me.lstSeries.Clear()
-            'Me.lstSeriesFiltrada = Nothing
-            'Me.fnvLlenarDataGridView(Me.lstSeries)
             Me.dgvSeries.DataSource = Nothing
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -77,12 +81,18 @@ Public Class frmModuloSeries
     Private Sub fnvLlenarDataGridView(ByRef lst As List(Of negociosSerie))
         Dim ldtTabla As DataTable = New DataTable()
         ldtTabla.Columns.Add("Serie")
-        ldtTabla.Columns.Add("Numero_actual")
+        ldtTabla.Columns.Add("Número de la ultima factura emitida")
+        ldtTabla.Columns.Add("Número actual")
+        ldtTabla.Columns.Add("Límite de facturas")
+        ldtTabla.Columns.Add("Facturas restantes")
         For i = 0 To lst.Count - 1 Step 1
             Dim ldrFila As DataRow = ldtTabla.NewRow()
             Dim lnsSerieLocal As negociosSerie = lst(i)
             ldrFila(0) = lnsSerieLocal.getSerie()
-            ldrFila(1) = lnsSerieLocal.getNumeroActual()
+            ldrFila(1) = (lnsSerieLocal.getNumeroActual() - 1)
+            ldrFila(2) = lnsSerieLocal.getNumeroActual()
+            ldrFila(3) = lnsSerieLocal.getLimite()
+            ldrFila(4) = (lnsSerieLocal.getLimite() - (lnsSerieLocal.getNumeroActual() - 1))
             ldtTabla.Rows.Add(ldrFila)
         Next
         Me.dgvSeries.DataSource = ldtTabla
