@@ -348,6 +348,14 @@ namespace negocios
              {
                  return negociosAdaptadores.gAdaptadorEmpleadoNombre.GetData(lsnombreEmpleado);
              }
+             /// <summary>
+             /// Función que devuelve a los ultimos 20 empleados
+             /// </summary>
+             /// <returns>DataTable: devuelve los ultimos 20 empleados</returns>
+             public static DataTable fnDbDevolverVeinteEmpleados()
+             {
+                 return negociosAdaptadores.gAdaptadorUltimosVeinteEmpleados.GetData();
+             }
              #endregion
     }
 }
