@@ -36,19 +36,21 @@ Partial Class frmModuloCompras
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.btnAnularCompra = New System.Windows.Forms.Button()
         Me.btnbuscar = New System.Windows.Forms.Button()
-        Me.chkAnuladas = New System.Windows.Forms.CheckBox()
+        Me.gbListaCompras = New System.Windows.Forms.GroupBox()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaCompras, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbListaCompras.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnNCompra
         '
         Me.btnNCompra.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNCompra.Image = CType(resources.GetObject("btnNCompra.Image"), System.Drawing.Image)
-        Me.btnNCompra.Location = New System.Drawing.Point(272, 412)
+        Me.btnNCompra.Location = New System.Drawing.Point(383, 460)
         Me.btnNCompra.Name = "btnNCompra"
         Me.btnNCompra.Size = New System.Drawing.Size(97, 77)
-        Me.btnNCompra.TabIndex = 4
+        Me.btnNCompra.TabIndex = 5
         Me.btnNCompra.Text = "Nueva Compra"
         Me.btnNCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnNCompra.UseVisualStyleBackColor = False
@@ -58,18 +60,18 @@ Partial Class frmModuloCompras
         Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(488, 412)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalir.Location = New System.Drawing.Point(492, 541)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(99, 77)
-        Me.btnSalir.TabIndex = 6
+        Me.btnSalir.Size = New System.Drawing.Size(99, 37)
+        Me.btnSalir.TabIndex = 7
         Me.btnSalir.Text = "&Salir"
-        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 503)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 581)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(618, 22)
         Me.stsBarra.TabIndex = 12
@@ -120,10 +122,10 @@ Partial Class frmModuloCompras
         'dgvListaCompras
         '
         Me.dgvListaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListaCompras.Location = New System.Drawing.Point(30, 151)
+        Me.dgvListaCompras.Location = New System.Drawing.Point(21, 46)
         Me.dgvListaCompras.Name = "dgvListaCompras"
-        Me.dgvListaCompras.Size = New System.Drawing.Size(557, 243)
-        Me.dgvListaCompras.TabIndex = 3
+        Me.dgvListaCompras.Size = New System.Drawing.Size(557, 252)
+        Me.dgvListaCompras.TabIndex = 4
         '
         'cmbFiltro
         '
@@ -145,10 +147,10 @@ Partial Class frmModuloCompras
         '
         Me.btnAnularCompra.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAnularCompra.Image = CType(resources.GetObject("btnAnularCompra.Image"), System.Drawing.Image)
-        Me.btnAnularCompra.Location = New System.Drawing.Point(375, 412)
+        Me.btnAnularCompra.Location = New System.Drawing.Point(486, 460)
         Me.btnAnularCompra.Name = "btnAnularCompra"
         Me.btnAnularCompra.Size = New System.Drawing.Size(107, 77)
-        Me.btnAnularCompra.TabIndex = 5
+        Me.btnAnularCompra.TabIndex = 6
         Me.btnAnularCompra.Text = "&Anular Compra"
         Me.btnAnularCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnAnularCompra.UseVisualStyleBackColor = False
@@ -163,29 +165,37 @@ Partial Class frmModuloCompras
         Me.btnbuscar.Text = "B&uscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
-        'chkAnuladas
+        'gbListaCompras
         '
-        Me.chkAnuladas.AutoSize = True
-        Me.chkAnuladas.Checked = True
-        Me.chkAnuladas.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkAnuladas.Location = New System.Drawing.Point(277, 72)
-        Me.chkAnuladas.Name = "chkAnuladas"
-        Me.chkAnuladas.Size = New System.Drawing.Size(156, 17)
-        Me.chkAnuladas.TabIndex = 32
-        Me.chkAnuladas.Text = "Bucar en facturas anuladas"
-        Me.chkAnuladas.UseVisualStyleBackColor = True
+        Me.gbListaCompras.Controls.Add(Me.btnActualizar)
+        Me.gbListaCompras.Controls.Add(Me.dgvListaCompras)
+        Me.gbListaCompras.Location = New System.Drawing.Point(13, 145)
+        Me.gbListaCompras.Name = "gbListaCompras"
+        Me.gbListaCompras.Size = New System.Drawing.Size(593, 313)
+        Me.gbListaCompras.TabIndex = 33
+        Me.gbListaCompras.TabStop = False
+        Me.gbListaCompras.Text = "Lista Compras"
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnActualizar.Location = New System.Drawing.Point(471, 12)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
+        Me.btnActualizar.TabIndex = 3
+        Me.btnActualizar.Text = "Recargar Lista"
+        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'frmModuloCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(618, 525)
-        Me.Controls.Add(Me.chkAnuladas)
+        Me.ClientSize = New System.Drawing.Size(618, 603)
+        Me.Controls.Add(Me.gbListaCompras)
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.btnAnularCompra)
         Me.Controls.Add(Me.lblBuscar)
         Me.Controls.Add(Me.lblFiltro)
-        Me.Controls.Add(Me.dgvListaCompras)
         Me.Controls.Add(Me.cmbFiltro)
         Me.Controls.Add(Me.txtBusqueda)
         Me.Controls.Add(Me.btnSalir)
@@ -200,6 +210,7 @@ Partial Class frmModuloCompras
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         CType(Me.dgvListaCompras, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbListaCompras.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -217,5 +228,6 @@ Partial Class frmModuloCompras
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents btnAnularCompra As System.Windows.Forms.Button
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
-    Friend WithEvents chkAnuladas As System.Windows.Forms.CheckBox
+    Friend WithEvents gbListaCompras As System.Windows.Forms.GroupBox
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
 End Class

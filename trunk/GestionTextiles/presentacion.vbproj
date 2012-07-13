@@ -116,12 +116,6 @@
     <Compile Include="Compras\frmCompras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\frmListarCompras.Designer.vb">
-      <DependentUpon>frmListarCompras.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Compras\frmListarCompras.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Compras\frmModuloCompras.Designer.vb">
       <DependentUpon>frmModuloCompras.vb</DependentUpon>
     </Compile>
@@ -324,9 +318,6 @@
     <EmbeddedResource Include="Compras\frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Compras\frmListarCompras.resx">
-      <DependentUpon>frmListarCompras.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmModuloCompras.resx">
       <DependentUpon>frmModuloCompras.vb</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +455,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wintick1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wincross1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

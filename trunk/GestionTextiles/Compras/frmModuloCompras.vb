@@ -59,13 +59,7 @@ Public Class frmModuloCompras
         slblDescripcion.Text = "Salir del módulo de compras"
     End Sub
 
-    Private Sub frmModuloCompras_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        If chkAnuladas.Checked = True Then
-            dgvListaCompras.DataSource = negociosFacturasProveedorEliminadas.fnsListarFacturasProveedorEliminadas
-        End If
-    End Sub
-
-    Private Sub chkAnuladas_MouseLeave(sender As System.Object, e As System.EventArgs) Handles chkAnuladas.MouseLeave
+    Private Sub chkAnuladas_MouseLeave(sender As System.Object, e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -73,12 +67,11 @@ Public Class frmModuloCompras
         slblDescripcion.Text = "Lista de facturas de compras"
     End Sub
 
-    Private Sub chkAnuladas_MouseHover(sender As System.Object, e As System.EventArgs) Handles chkAnuladas.MouseHover
+    Private Sub chkAnuladas_MouseHover(sender As System.Object, e As System.EventArgs)
         slblDescripcion.Text = "Si está habilitada esta opción, se hara una búsqueda solamente entre las facturas anuladas"
     End Sub
 
     Private Sub btnSalir_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
         Me.Dispose()
-
     End Sub
 End Class
