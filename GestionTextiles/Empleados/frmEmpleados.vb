@@ -2,6 +2,7 @@
 Public Class frmEmpleados
     Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
     Dim lnpRol As negociosRol = New negociosRol()
+    Dim lbooBanderaPunto As Boolean = False
     Private Sub slblDescripcion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles slblDescripcion.Click
 
     End Sub
@@ -136,11 +137,18 @@ Public Class frmEmpleados
 
     End Sub
 
-  
-
     Private Sub txtSueldo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSueldo.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.Handled = ".")) Then
-            e.KeyChar = vbNullChar
+        If lbooBanderaPunto = False Then
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
+                e.KeyChar = vbNullChar
+                If e.KeyChar = "." Then
+                    lbooBanderaPunto = True
+                End If
+            End If
+        Else
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
+                e.KeyChar = vbNullChar
+            End If
         End If
     End Sub
 
