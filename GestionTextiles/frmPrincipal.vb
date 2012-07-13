@@ -177,7 +177,7 @@ Public Class frmPrincipal
         If gnegPermisos.getPermisoAccesoModuloEmpleados() Then
             BtnEmpleados.Enabled = True
         Else
-            BtnCompras.Enabled = False
+            BtnEmpleados.Enabled = False
         End If
 
         If gnegPermisos.getPermisoAccesoModuloVentas() Then
@@ -211,7 +211,7 @@ Public Class frmPrincipal
             BtnRoles.Enabled = False
         End If
 
-        If gnegPermisos.() Then
+        If gnegPermisos.getPermisoAccesoModuloTalonario() Then
             BtnGestionTalonarios.Enabled = True
         Else
             BtnGestionTalonarios.Enabled = False
