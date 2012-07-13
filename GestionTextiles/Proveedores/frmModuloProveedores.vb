@@ -123,7 +123,11 @@ Public Class frmModuloProveedores
 
     Private Sub fnvdRecargar()
         If IsNothing(lstnpProveedores) Then
-            frmModuloProveedores.lstnpProveedores = negociosProveedores.fnslListarProveedores()
+            Try
+                frmModuloProveedores.lstnpProveedores = negociosProveedores.fnslListarProveedores()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End If
         If bBusquenda = True Then
             frmModuloProveedores.gnpProveedor = Nothing

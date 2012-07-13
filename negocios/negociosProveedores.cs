@@ -146,6 +146,10 @@ namespace negocios
                 return "Inactivo";        
         }
 
+        public bool  getEstadoBool()
+        {
+            return this.activo;
+        }
         #endregion
         
         #region Comunicacion con la DB
@@ -155,30 +159,45 @@ namespace negocios
         /// <returns>DataTable: Tabla con la lista de los proveedores</returns>
         public static DataTable fnsDTListarProveedores()
         {
-            return negociosAdaptadores.gAdaptadorListarProveedores.GetData();
+            try
+            {
+                return negociosAdaptadores.gAdaptadorListarProveedores.GetData();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         public static List<negociosProveedores> fnslListarProveedores()
         {
             List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
-            DataTable ldtProveedores = negociosProveedores.fnsDTListarProveedores();
-            object[] oListaElmentos;
-            for (int i = 0; i < ldtProveedores.Rows.Count; i++)
+            try
             {
-                oListaElmentos = ldtProveedores.Rows[i].ItemArray;
-                negociosProveedores npNuevoProveedor = new negociosProveedores();
-                npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
-                npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
-                npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[2]));
-                npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[3]));
-                npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[4]));
-                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));                
-                npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[6]));
-                npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[7]));
-                npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[8]));
-                lnpProveedores.Add(npNuevoProveedor);
+                DataTable ldtProveedores = negociosProveedores.fnsDTListarProveedores();
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtProveedores.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtProveedores.Rows[i].ItemArray;
+                    negociosProveedores npNuevoProveedor = new negociosProveedores();
+                    npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
+                    npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
+                    npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[2]));
+                    npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[3]));
+                    npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[4]));
+                    npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));
+                    npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[6]));
+                    npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[7]));
+                    npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[8]));
+                    lnpProveedores.Add(npNuevoProveedor);
+                }
+                return lnpProveedores;
             }
-            return lnpProveedores;
+            catch (Exception e)
+            {
+                return null;
+            }
+            
         }
 
         /// <summary>
