@@ -22,6 +22,8 @@ Partial Class frmEmpleados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEmpleados))
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
@@ -52,8 +54,10 @@ Partial Class frmEmpleados
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.lblRolEmpleado = New System.Windows.Forms.Label()
         Me.cmbRolEmpleado = New System.Windows.Forms.ComboBox()
-        Me.btnComprobar = New System.Windows.Forms.Button()
+        Me.picbValidacion = New System.Windows.Forms.PictureBox()
+        Me.imglValidacion = New System.Windows.Forms.ImageList(Me.components)
         Me.stsBarra.SuspendLayout()
+        CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'stsBarra
@@ -292,6 +296,7 @@ Partial Class frmEmpleados
         Me.txtPassword.Location = New System.Drawing.Point(148, 359)
         Me.txtPassword.MaxLength = 20
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(100, 20)
         Me.txtPassword.TabIndex = 12
         '
@@ -312,22 +317,30 @@ Partial Class frmEmpleados
         Me.cmbRolEmpleado.Size = New System.Drawing.Size(121, 21)
         Me.cmbRolEmpleado.TabIndex = 7
         '
-        'btnComprobar
+        'picbValidacion
         '
-        Me.btnComprobar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnComprobar.Location = New System.Drawing.Point(254, 331)
-        Me.btnComprobar.Name = "btnComprobar"
-        Me.btnComprobar.Size = New System.Drawing.Size(75, 23)
-        Me.btnComprobar.TabIndex = 11
-        Me.btnComprobar.Text = "Comprobar"
-        Me.btnComprobar.UseVisualStyleBackColor = False
+        Me.picbValidacion.Location = New System.Drawing.Point(266, 329)
+        Me.picbValidacion.Name = "picbValidacion"
+        Me.picbValidacion.Size = New System.Drawing.Size(33, 29)
+        Me.picbValidacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picbValidacion.TabIndex = 46
+        Me.picbValidacion.TabStop = False
+        '
+        'imglValidacion
+        '
+        Me.imglValidacion.ImageStream = CType(resources.GetObject("imglValidacion.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.imglValidacion.TransparentColor = System.Drawing.Color.Transparent
+        Me.imglValidacion.Images.SetKeyName(0, "noOK.jpg")
+        Me.imglValidacion.Images.SetKeyName(1, "ok.png")
         '
         'frmEmpleados
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(530, 463)
-        Me.Controls.Add(Me.btnComprobar)
+        Me.Controls.Add(Me.picbValidacion)
         Me.Controls.Add(Me.cmbRolEmpleado)
         Me.Controls.Add(Me.lblRolEmpleado)
         Me.Controls.Add(Me.lblPassword)
@@ -363,6 +376,7 @@ Partial Class frmEmpleados
         Me.Text = "Nuevo Empleado"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
+        CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -397,5 +411,6 @@ Partial Class frmEmpleados
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents lblRolEmpleado As System.Windows.Forms.Label
     Friend WithEvents cmbRolEmpleado As System.Windows.Forms.ComboBox
-    Friend WithEvents btnComprobar As System.Windows.Forms.Button
+    Friend WithEvents picbValidacion As System.Windows.Forms.PictureBox
+    Friend WithEvents imglValidacion As System.Windows.Forms.ImageList
 End Class

@@ -106,6 +106,7 @@ Public Class frmSerie
         If negocios.negociosSerie.verificarExistenciaBaseSerie(txtSerie.Text) Then
             picbValidacion.Image = imglValidacion.Images(0)
             lbSerieValida = False
+            txtSerie.Focus()
         Else
             picbValidacion.Image = imglValidacion.Images(1)
             lbSerieValida = True
