@@ -79,40 +79,45 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        Dim lbooBandera As Boolean = True
+
         For Each ctrlIterador As Control In Me.Controls
             '' Validación de textbox
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
+                    lbooBandera = False
                 Else
                     ctrlIterador.BackColor = Color.White
-                    ''ingreso de empleado nuevo
-                    ''falta agregar el idRol
-                    lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
-                    lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
-                    lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
-                    lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
-                    lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
-                    lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
-                    lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
-                    lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
-                    lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
-                    lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
-                    lnpNuevoEmpleado.setHabilitadoEmpleado(1)
-                    Dim bytes() As Byte
-                    bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
-                    lnpNuevoEmpleado.setPasswordEmpleado(bytes)
-
-                    Try
-                        lnpNuevoEmpleado.fnsInsertarEmpleado()
-                        MessageBox.Show("La operación de insersión de empleado se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Me.Dispose()
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
                 End If
             End If
         Next
+        If lbooBandera Then
+            ''ingreso de empleado nuevo
+            ''falta agregar el idRol
+            lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
+            lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
+            lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
+            lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
+            lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
+            lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
+            lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
+            lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
+            lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
+            lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
+            lnpNuevoEmpleado.setHabilitadoEmpleado(1)
+            Dim bytes() As Byte
+            bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
+            lnpNuevoEmpleado.setPasswordEmpleado(bytes)
+
+            Try
+                lnpNuevoEmpleado.fnsInsertarEmpleado()
+                MessageBox.Show("La operación de insersión de empleado se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
     End Sub
 
     Private Sub txtTelefono_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefono.KeyPress
