@@ -23,5 +23,14 @@ namespace negocios
         public static buscarClienteNombreTableAdapter gAdaptadorClienteNombre = new buscarClienteNombreTableAdapter();
         public static buscarTipoClienteNombre1TableAdapter gAdaptadorTipoClienteNombre = new buscarTipoClienteNombre1TableAdapter();
         public static ultimosVeinteEmpleadosTableAdapter gAdaptadorUltimosVeinteEmpleados = new ultimosVeinteEmpleadosTableAdapter();
+        public static buscarSeriePorSerieTableAdapter gAdaptadorBuscarSeriePorSerie = new buscarSeriePorSerieTableAdapter();
+
+        public static datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorCodigoTableAdapter gAdaptadorProductoPorCodigo = new datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorCodigoTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorIdTableAdapter gAdaptadorProductoPorId = new datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorIdTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorNombreTableAdapter gAdaptadorProductoPorNombre = new datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorNombreTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.devolverRolPorIdTableAdapter gAdaptadorRolPorId = new datos.ConexionFuncionesEspecialesTableAdapters.devolverRolPorIdTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerSeriePorEstacionTableAdapter gAdaptadorSerieEstacion = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerSeriePorEstacionTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerSeriePorSucursalTableAdapter gAdaptadorSerieSucursal = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerSeriePorSucursalTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.paginacionProductosTableAdapter gAdaptadorPaginacionProductos = new datos.ConexionFuncionesEspecialesTableAdapters.paginacionProductosTableAdapter();
     }
 }

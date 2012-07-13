@@ -217,6 +217,40 @@ namespace negocios
         {
             return negociosAdaptadores.gAdaptadorListaSeries.GetData();
         }
+        
+        #endregion
+        #region funciones de acceso estático
+        /// <summary>
+        /// Función que verifica la existencia de una serie de facturas de venta.
+        /// </summary>
+        /// <param name="lsSerie">string: el nombre de la serie a buscar</param>
+        /// <returns>bool: True si la serie existe, False si no</returns>
+        public static bool verificarExistenciaBaseSerie(string lsSerie)
+        {
+            string ConnectionString = "Data Source=ROLANDO-PC;Initial Catalog=textiles;Persist Security Info=True;User ID=textilesUser;Password=123";
+            //string cadenaConexion = "Data Source=.\\SQLEXPRESS;Initial Catalog=textiles;Integrated Security=True";
+            SqlConnection conexion = new SqlConnection(ConnectionString);
+            SqlCommand comando = new SqlCommand("verificarExistenciaSerie", conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Add("@serie", SqlDbType.Char, 3);
+            comando.Parameters["@serie"].Value = lsSerie;
+            comando.Parameters.Add(new SqlParameter("@RETORNO", SqlDbType.Bit));
+            comando.Parameters["@RETORNO"].Direction = ParameterDirection.ReturnValue;
+            conexion.Open();
+            comando.ExecuteScalar();
+            SqlParameter retorno = comando.Parameters["@RETORNO"];
+            conexion.Close();
+            return Convert.ToBoolean(retorno.Value);
+        }
+        /// <summary>
+        /// Función que verifica la existencia de una serie de facturas de venta.
+        /// </summary>
+        /// <param name="lsSerie">string: el nombre de la serie a buscar</param>
+        /// <returns>bool: True si la serie existe, False si no</returns>
+        public static bool fnboVerificarExistenciaSerie(string lsSerie)
+        {
+            return (bool)negociosAdaptadores.gAdaptadorDeConsultas.verificarExistenciaSerie(lsSerie);
+        }
         /// <summary>
         /// Función de acceso estático de consulta de todas las series activas en la base de datos.
         /// </summary>
@@ -250,38 +284,28 @@ namespace negocios
             return lstSeries;
             //s.SERIE,s.ACTUAL,s.ACTIVA
         }
-        #endregion
-        #region funciones de acceso estático
         /// <summary>
-        /// Función que verifica la existencia de una serie de facturas de venta.
+        /// Funcion que busca una serie, segun su codigo de serie
         /// </summary>
-        /// <param name="lsSerie">string: el nombre de la serie a buscar</param>
-        /// <returns>bool: True si la serie existe, False si no</returns>
-        public static bool verificarExistenciaBaseSerie(string lsSerie)
+        /// <param name="lsSerie">string: la serie buscada</param>
+        /// <returns>negociosSerie: el objeto que representa la serie encontrada. Si no existe se retorna null</returns>
+        public static negociosSerie fnBuscarSeriePorSerie(string lsSerie)
         {
-            string ConnectionString = "Data Source=ROLANDO-PC;Initial Catalog=textiles;Persist Security Info=True;User ID=textilesUser;Password=123";
-            //string cadenaConexion = "Data Source=.\\SQLEXPRESS;Initial Catalog=textiles;Integrated Security=True";
-            SqlConnection conexion = new SqlConnection(ConnectionString);
-            SqlCommand comando = new SqlCommand("verificarExistenciaSerie", conexion);
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Add("@serie", SqlDbType.Char, 3);
-            comando.Parameters["@serie"].Value = lsSerie;
-            comando.Parameters.Add(new SqlParameter("@RETORNO", SqlDbType.Bit));
-            comando.Parameters["@RETORNO"].Direction = ParameterDirection.ReturnValue;
-            conexion.Open();
-            comando.ExecuteScalar();
-            SqlParameter retorno = comando.Parameters["@RETORNO"];
-            conexion.Close();
-            return Convert.ToBoolean(retorno.Value);
-        }
-        /// <summary>
-        /// Función que verifica la existencia de una serie de facturas de venta.
-        /// </summary>
-        /// <param name="lsSerie">string: el nombre de la serie a buscar</param>
-        /// <returns>bool: True si la serie existe, False si no</returns>
-        public static bool fnboVerificarExistenciaSerie(string lsSerie)
-        {
-            return (bool)negociosAdaptadores.gAdaptadorDeConsultas.verificarExistenciaSerie(lsSerie);
+            DataTable dtLocal = negociosSerie.fnListarSeries();
+            negociosSerie temporal=null;
+            object[] objInstancia;
+            if (dtLocal.Rows.Count > 0)
+            {
+                temporal = new negociosSerie();
+                objInstancia = dtLocal.Rows[0].ItemArray;                
+                temporal.setSerie(Convert.ToString(objInstancia[0]));
+                temporal.setNumeroActual(Convert.ToInt32(objInstancia[1]));
+                temporal.setLimite(Convert.ToInt32(objInstancia[2]));
+                temporal.setIdSucursal(Convert.ToInt32(objInstancia[3]));
+                temporal.setIdTerminal(Convert.ToInt32(objInstancia[4]));
+                temporal.setActiva(Convert.ToBoolean(objInstancia[5]));                
+            }
+            return temporal;
         }
         #endregion
     }
