@@ -1,5 +1,6 @@
-﻿Public Class frmLogin
-
+﻿Imports negocios
+Public Class frmLogin
+    Public Shared lnpNuevoUsuario As negociosEmpleado = New negociosEmpleado()
     Private Sub btnCancelar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -23,6 +24,10 @@
                     ctrlIterador.BackColor = Color.Yellow
                 Else
                     ctrlIterador.BackColor = Color.White
+                    ''buscar al usuario
+                    dgvUsuario.DataSource = lnpNuevoUsuario.fnDbBuscarEmpleadoNombre(txtUsuario.Text)
+                    Dim cantRegistros As Integer = dgvUsuario.Rows.Count
+                    txtcontraseña.Text = Convert.ToString(cantRegistros)
                 End If
             End If
         Next
