@@ -37,7 +37,7 @@ Partial Class frmModuloCompras
         Me.btnAnularCompra = New System.Windows.Forms.Button()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbListaCompras = New System.Windows.Forms.GroupBox()
-        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaCompras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaCompras.SuspendLayout()
@@ -167,7 +167,7 @@ Partial Class frmModuloCompras
         '
         'gbListaCompras
         '
-        Me.gbListaCompras.Controls.Add(Me.btnActualizar)
+        Me.gbListaCompras.Controls.Add(Me.btnRegresar)
         Me.gbListaCompras.Controls.Add(Me.dgvListaCompras)
         Me.gbListaCompras.Location = New System.Drawing.Point(13, 145)
         Me.gbListaCompras.Name = "gbListaCompras"
@@ -176,15 +176,17 @@ Partial Class frmModuloCompras
         Me.gbListaCompras.TabStop = False
         Me.gbListaCompras.Text = "Lista Compras"
         '
-        'btnActualizar
+        'btnRegresar
         '
-        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnActualizar.Location = New System.Drawing.Point(471, 12)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
-        Me.btnActualizar.TabIndex = 3
-        Me.btnActualizar.Text = "Recargar Lista"
-        Me.btnActualizar.UseVisualStyleBackColor = False
+        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRegresar.Location = New System.Drawing.Point(490, 17)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
+        Me.btnRegresar.TabIndex = 5
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'frmModuloCompras
         '
@@ -229,5 +231,5 @@ Partial Class frmModuloCompras
     Friend WithEvents btnAnularCompra As System.Windows.Forms.Button
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
     Friend WithEvents gbListaCompras As System.Windows.Forms.GroupBox
-    Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents btnRegresar As System.Windows.Forms.Button
 End Class
