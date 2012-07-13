@@ -1,6 +1,6 @@
 ﻿Imports negocios
 Public Class frmEmpleados
-
+    Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
     Private Sub slblDescripcion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles slblDescripcion.Click
 
     End Sub
@@ -87,7 +87,7 @@ Public Class frmEmpleados
                     ctrlIterador.BackColor = Color.White
                     ''ingreso de empleado nuevo
                     ''falta agregar el idRol
-                    Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
+
                     lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
                     lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
                     lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
@@ -172,6 +172,7 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub frmEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
 
     End Sub
 
