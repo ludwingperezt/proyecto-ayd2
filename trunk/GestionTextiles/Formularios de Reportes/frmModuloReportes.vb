@@ -37,17 +37,7 @@
         slblDescripcion.Text = "Muestra el Reporte de devoluciónes realizadas por los proveedores"
     End Sub
 
-    Private Sub btnCProveedor_Click(sender As System.Object, e As System.EventArgs)
-        frmReportes.gbParametros1.Visible = True
-        frmReportes.gbParametros2.Visible = False
-        frmReportes.lblTitulo.Text = "Reportes de Créditos por Proveedor"
-        frmReportes.ShowDialog()
-    End Sub
-
-    Private Sub btnCMes_Click(sender As System.Object, e As System.EventArgs)
-        frmReportes.gbParametros1.Visible = False
-        frmReportes.gbParametros2.Visible = True
-        frmReportes.lblTitulo.Text = "Reportes de Créditos por Mes"
-        frmReportes.ShowDialog()
+    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
+        frmReportePrueba.ShowDialog(Me)
     End Sub
 End Class

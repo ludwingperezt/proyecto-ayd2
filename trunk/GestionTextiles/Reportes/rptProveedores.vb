@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class InformeCierreCaja
+Public Class rptProveedores
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class InformeCierreCaja
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "InformeCierreCaja.rpt"
+            Return "rptProveedores.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class InformeCierreCaja
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "GestionTextiles.InformeCierreCaja.rpt"
+            Return "GestionTextiles.rptProveedores.rpt"
         End Get
         Set
             'Do nothing
@@ -70,7 +70,7 @@ Public Class InformeCierreCaja
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Section3() As CrystalDecisions.CrystalReports.Engine.Section
+    Public ReadOnly Property GroupHeaderSection1() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(2)
         End Get
@@ -78,7 +78,7 @@ Public Class InformeCierreCaja
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Section4() As CrystalDecisions.CrystalReports.Engine.Section
+    Public ReadOnly Property Section3() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(3)
         End Get
@@ -86,15 +86,31 @@ Public Class InformeCierreCaja
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Section5() As CrystalDecisions.CrystalReports.Engine.Section
+    Public ReadOnly Property GroupFooterSection1() As CrystalDecisions.CrystalReports.Engine.Section
         Get
             Return Me.ReportDefinition.Sections(4)
+        End Get
+    End Property
+    
+    <Browsable(false),  _
+     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
+    Public ReadOnly Property Section4() As CrystalDecisions.CrystalReports.Engine.Section
+        Get
+            Return Me.ReportDefinition.Sections(5)
+        End Get
+    End Property
+    
+    <Browsable(false),  _
+     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
+    Public ReadOnly Property Section5() As CrystalDecisions.CrystalReports.Engine.Section
+        Get
+            Return Me.ReportDefinition.Sections(6)
         End Get
     End Property
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedInformeCierreCaja
+Public Class CachedrptProveedores
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +152,7 @@ Public Class CachedInformeCierreCaja
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As InformeCierreCaja = New InformeCierreCaja()
+        Dim rpt As rptProveedores = New rptProveedores()
         rpt.Site = Me.Site
         Return rpt
     End Function

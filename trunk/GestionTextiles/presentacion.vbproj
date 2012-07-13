@@ -16,6 +16,21 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -97,6 +112,12 @@
     <Compile Include="Empleados\frmModificarDatosPropiosEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios de Reportes\frmReportePrueba.Designer.vb">
+      <DependentUpon>frmReportePrueba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReportePrueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InformeCierreCaja.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +128,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptFactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptProveedores.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProveedores.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ventas\frmAnular.Designer.vb">
@@ -316,6 +343,9 @@
     <EmbeddedResource Include="Empleados\frmModificarDatosPropiosEmpleado.resx">
       <DependentUpon>frmModificarDatosPropiosEmpleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios de Reportes\frmReportePrueba.resx">
+      <DependentUpon>frmReportePrueba.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InformeCierreCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InformeCierreCaja.vb</LastGenOutput>
@@ -323,6 +353,10 @@
     <EmbeddedResource Include="Reportes\rptFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptFactura.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptProveedores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProveedores.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frmAnular.resx">
       <DependentUpon>frmAnular.vb</DependentUpon>
@@ -455,7 +489,28 @@
   <ItemGroup>
     <None Include="Resources\winhand1.bmp" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\negocios\negocios.csproj">
       <Project>{1AD4564B-DA43-413B-8225-BB133BF3E2FB}</Project>
