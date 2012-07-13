@@ -1,8 +1,8 @@
 ﻿Imports negocios
 
 Public Class frmPrincipal
-    Public Shared lnegEmpleado As negociosEmpleado = New negociosEmpleado()
-    Public Shared lnegPermisos As negociosRol = New negociosRol()
+    Public Shared gnegEmpleado As negociosEmpleado = New negociosEmpleado()
+    Public Shared gnegPermisos As negociosRol = New negociosRol()
 
 
     '' TODOS LAS FECHAS SE DEBEN GESTIONAR DESDE ESTE TIMER
@@ -162,13 +162,13 @@ Public Class frmPrincipal
 
         ' Esto queda para el final, xq sino no podremos realizar pruebas
 
-        'If lnegPermisos.getPermisoAccesoModuloCliente() Then
+        'If gnegPermisos.getPermisoAccesoModuloCliente() Then
         'BtnClientes.Enabled = True
         'Else
         'BtnClientes.Enabled = False
         'End If
 
-        '       If lnegPermisos.getPermisoAccesoModuloCompras() Then
+        'if gnegPermisos.getPermisoAccesoModuloCompras() Then
         'BtnCompras.Enabled = True
         'Else
         'BtnCompras.Enabled = False
