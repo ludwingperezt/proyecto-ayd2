@@ -32,12 +32,17 @@ Partial Class frmModuloProductos
         Me.lblbusqueda = New System.Windows.Forms.Label()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.gbListaProductos = New System.Windows.Forms.GroupBox()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnRegresar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnSeleccionarProducto = New System.Windows.Forms.Button()
         Me.btnEliminarProducto = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnIngresarProducto = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.chCodigo = New System.Windows.Forms.CheckBox()
+        Me.chNombre = New System.Windows.Forms.CheckBox()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaProductos.SuspendLayout()
@@ -58,9 +63,9 @@ Partial Class frmModuloProductos
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 456)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 625)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(612, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(617, 22)
         Me.stsBarra.TabIndex = 56
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -68,19 +73,19 @@ Partial Class frmModuloProductos
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
         'btnbuscar
         '
         Me.btnbuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnbuscar.Location = New System.Drawing.Point(447, 80)
+        Me.btnbuscar.Location = New System.Drawing.Point(492, 75)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
         Me.btnbuscar.TabIndex = 1
@@ -89,15 +94,15 @@ Partial Class frmModuloProductos
         '
         'txtbusqueda
         '
-        Me.txtbusqueda.Location = New System.Drawing.Point(35, 85)
+        Me.txtbusqueda.Location = New System.Drawing.Point(166, 78)
         Me.txtbusqueda.Name = "txtbusqueda"
-        Me.txtbusqueda.Size = New System.Drawing.Size(400, 20)
+        Me.txtbusqueda.Size = New System.Drawing.Size(320, 20)
         Me.txtbusqueda.TabIndex = 0
         '
         'lblbusqueda
         '
         Me.lblbusqueda.AutoSize = True
-        Me.lblbusqueda.Location = New System.Drawing.Point(32, 58)
+        Me.lblbusqueda.Location = New System.Drawing.Point(31, 81)
         Me.lblbusqueda.Name = "lblbusqueda"
         Me.lblbusqueda.Size = New System.Drawing.Size(129, 13)
         Me.lblbusqueda.TabIndex = 53
@@ -111,19 +116,39 @@ Partial Class frmModuloProductos
         Me.dgvEmpleados.Location = New System.Drawing.Point(14, 48)
         Me.dgvEmpleados.Name = "dgvEmpleados"
         Me.dgvEmpleados.ReadOnly = True
-        Me.dgvEmpleados.Size = New System.Drawing.Size(544, 132)
+        Me.dgvEmpleados.Size = New System.Drawing.Size(544, 298)
         Me.dgvEmpleados.TabIndex = 51
         '
         'gbListaProductos
         '
+        Me.gbListaProductos.Controls.Add(Me.btnSiguiente)
+        Me.gbListaProductos.Controls.Add(Me.btnAnterior)
         Me.gbListaProductos.Controls.Add(Me.dgvEmpleados)
         Me.gbListaProductos.Controls.Add(Me.btnRegresar)
-        Me.gbListaProductos.Location = New System.Drawing.Point(9, 126)
+        Me.gbListaProductos.Location = New System.Drawing.Point(20, 111)
         Me.gbListaProductos.Name = "gbListaProductos"
-        Me.gbListaProductos.Size = New System.Drawing.Size(575, 196)
+        Me.gbListaProductos.Size = New System.Drawing.Size(575, 381)
         Me.gbListaProductos.TabIndex = 65
         Me.gbListaProductos.TabStop = False
         Me.gbListaProductos.Text = "Lista Productos:"
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Location = New System.Drawing.Point(483, 352)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(75, 23)
+        Me.btnSiguiente.TabIndex = 53
+        Me.btnSiguiente.Text = ">>"
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.Location = New System.Drawing.Point(400, 352)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
+        Me.btnAnterior.TabIndex = 52
+        Me.btnAnterior.Text = "<<"
+        Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnRegresar
         '
@@ -143,7 +168,7 @@ Partial Class frmModuloProductos
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalir.Location = New System.Drawing.Point(464, 415)
+        Me.btnSalir.Location = New System.Drawing.Point(492, 586)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(103, 30)
         Me.btnSalir.TabIndex = 7
@@ -154,7 +179,7 @@ Partial Class frmModuloProductos
         '
         Me.btnSeleccionarProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSeleccionarProducto.Image = Global.GestionTextiles.My.Resources.Resources.wintick1
-        Me.btnSeleccionarProducto.Location = New System.Drawing.Point(464, 338)
+        Me.btnSeleccionarProducto.Location = New System.Drawing.Point(492, 509)
         Me.btnSeleccionarProducto.Name = "btnSeleccionarProducto"
         Me.btnSeleccionarProducto.Size = New System.Drawing.Size(103, 71)
         Me.btnSeleccionarProducto.TabIndex = 6
@@ -166,7 +191,7 @@ Partial Class frmModuloProductos
         '
         Me.btnEliminarProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEliminarProducto.Image = CType(resources.GetObject("btnEliminarProducto.Image"), System.Drawing.Image)
-        Me.btnEliminarProducto.Location = New System.Drawing.Point(351, 338)
+        Me.btnEliminarProducto.Location = New System.Drawing.Point(379, 509)
         Me.btnEliminarProducto.Name = "btnEliminarProducto"
         Me.btnEliminarProducto.Size = New System.Drawing.Size(107, 71)
         Me.btnEliminarProducto.TabIndex = 5
@@ -178,7 +203,7 @@ Partial Class frmModuloProductos
         '
         Me.btnModificarProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnModificarProducto.Image = CType(resources.GetObject("btnModificarProducto.Image"), System.Drawing.Image)
-        Me.btnModificarProducto.Location = New System.Drawing.Point(228, 338)
+        Me.btnModificarProducto.Location = New System.Drawing.Point(256, 509)
         Me.btnModificarProducto.Name = "btnModificarProducto"
         Me.btnModificarProducto.Size = New System.Drawing.Size(108, 72)
         Me.btnModificarProducto.TabIndex = 4
@@ -190,7 +215,7 @@ Partial Class frmModuloProductos
         '
         Me.btnIngresarProducto.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnIngresarProducto.Image = CType(resources.GetObject("btnIngresarProducto.Image"), System.Drawing.Image)
-        Me.btnIngresarProducto.Location = New System.Drawing.Point(98, 338)
+        Me.btnIngresarProducto.Location = New System.Drawing.Point(126, 509)
         Me.btnIngresarProducto.Name = "btnIngresarProducto"
         Me.btnIngresarProducto.Size = New System.Drawing.Size(106, 72)
         Me.btnIngresarProducto.TabIndex = 3
@@ -198,11 +223,45 @@ Partial Class frmModuloProductos
         Me.btnIngresarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnIngresarProducto.UseVisualStyleBackColor = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(31, 54)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(104, 13)
+        Me.Label1.TabIndex = 67
+        Me.Label1.Text = "Criterio de búsqueda"
+        '
+        'chCodigo
+        '
+        Me.chCodigo.AutoSize = True
+        Me.chCodigo.Checked = True
+        Me.chCodigo.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chCodigo.Location = New System.Drawing.Point(168, 51)
+        Me.chCodigo.Name = "chCodigo"
+        Me.chCodigo.Size = New System.Drawing.Size(59, 17)
+        Me.chCodigo.TabIndex = 68
+        Me.chCodigo.Text = "Código"
+        Me.chCodigo.UseVisualStyleBackColor = True
+        '
+        'chNombre
+        '
+        Me.chNombre.AutoSize = True
+        Me.chNombre.Location = New System.Drawing.Point(233, 53)
+        Me.chNombre.Name = "chNombre"
+        Me.chNombre.Size = New System.Drawing.Size(63, 17)
+        Me.chNombre.TabIndex = 69
+        Me.chNombre.Text = "Nombre"
+        Me.chNombre.UseVisualStyleBackColor = True
+        '
         'frmModuloProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(612, 478)
+        Me.ClientSize = New System.Drawing.Size(617, 647)
+        Me.Controls.Add(Me.chNombre)
+        Me.Controls.Add(Me.chCodigo)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.gbListaProductos)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnSeleccionarProducto)
@@ -239,4 +298,9 @@ Partial Class frmModuloProductos
     Friend WithEvents btnSeleccionarProducto As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents gbListaProductos As System.Windows.Forms.GroupBox
+    Friend WithEvents btnSiguiente As System.Windows.Forms.Button
+    Friend WithEvents btnAnterior As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents chCodigo As System.Windows.Forms.CheckBox
+    Friend WithEvents chNombre As System.Windows.Forms.CheckBox
 End Class

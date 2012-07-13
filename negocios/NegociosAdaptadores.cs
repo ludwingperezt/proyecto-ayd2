@@ -37,5 +37,6 @@ namespace negocios
         public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerProductoPorNombreTableAdapter gAdaptadorObtenerProductoPorNombre = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerProductoPorNombreTableAdapter();
         public static datos.ConexionFuncionesEspecialesTableAdapters.QueriesTableAdapter gAdaptadorGeneral = new datos.ConexionFuncionesEspecialesTableAdapters.QueriesTableAdapter();
         public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerSerieEspecificaPorEstacionTableAdapter gAdaptadorFuncionesEspeciales = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerSerieEspecificaPorEstacionTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.busquedaExactaProductoTableAdapter gAdaptadorBusquedaExactaAmbosCriterios = new datos.ConexionFuncionesEspecialesTableAdapters.busquedaExactaProductoTableAdapter();
     }
 }

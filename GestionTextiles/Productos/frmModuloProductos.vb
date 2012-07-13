@@ -3,6 +3,8 @@ Public Class frmModuloProductos
     Private glstProductos As List(Of negociosProducto) = New List(Of negociosProducto)
     Private glstProductosFiltrada As List(Of negociosProducto) = New List(Of negociosProducto)
     Public Shared gnpProductoSeleccionado As negociosProducto
+    Private numeroPagina As Integer = 1
+
     Private banderaBusqueda As Boolean = False
     Private Sub txtbusqueda_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.MouseLeave
         slblDescripcion.Text = "Descripción"
@@ -140,24 +142,43 @@ Public Class frmModuloProductos
             frmModuloProductos.gnpProductoSeleccionado = Nothing
             Me.glstProductosFiltrada.Clear()
             Me.banderaBusqueda = False
-            Me.glstProductos = negociosProducto.fnlstListarProductos()
+            Me.glstProductos = negociosProducto.fnPaginacionProductos(25, Me.numeroPagina)
             Me.fnvCrearDataTable(Me.glstProductos)
+            If Me.glstProductos.Count < 25 Then
+                btnSiguiente.Enabled = False
+            Else
+                btnSiguiente.Enabled = True
+            End If
+            If Me.numeroPagina = 1 Then
+                btnAnterior.Enabled = False
+            Else
+                btnAnterior.Enabled = True
+            End If
         Catch ex As Exception
-            'Me.glstProductos.Clear()
-            'Me.glstProductosFiltrada.Clear()
-            'Me.fnvCrearDataTable(Me.glstProductos)
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             dgvEmpleados.DataSource = Nothing
         End Try
     End Sub
     Private Sub fnvBuscar(ByRef txt As String)
-        Me.glstProductosFiltrada = New List(Of negociosProducto)
-        For Each i As negociosProducto In Me.glstProductos
-            If i.getCodigo().Trim() = txt Or i.getNombre() = txt Or i.getColor() = txt Then
-                Me.glstProductosFiltrada.Add(i)
-            End If
-        Next
+        If chNombre.Checked = True And chCodigo.Checked = False Then 'busqueda solo por nombre
+            Me.glstProductosFiltrada = negociosProducto.fnFiltrarProductosPorNombre(txt)
+            Me.cargarResultadosBusqueda()
+        ElseIf chNombre.Checked = False And chCodigo.Checked = True Then 'busqueda solo por codigo
+            Me.glstProductosFiltrada = negociosProducto.fnFiltrarProductosPorCodigo(txt)
+            Me.cargarResultadosBusqueda()
+        ElseIf chNombre.Checked = True And chCodigo.Checked = False Then 'busqueda exacta por ambos criterios
+            Me.glstProductosFiltrada = negociosProducto.fnBuscarProductosPorCodigoNombre(txt)
+            Me.cargarResultadosBusqueda()
+        Else ''si no se seleccionò un criterio, se carga todo de nuevo
+            Me.fnvdRecargar()
+        End If
+    End Sub
+
+    Private Sub cargarResultadosBusqueda()
         Me.fnvCrearDataTable(Me.glstProductosFiltrada)
+        If Me.glstProductosFiltrada.Count = 0 Then
+            MessageBox.Show("No se encontraron coincidencias en la búsqueda para el criterio utilizado", "No hay resultados que mostrar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Private Sub txtbusqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.TextChanged
@@ -206,5 +227,17 @@ Public Class frmModuloProductos
 
     Private Sub btnSalir_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseHover
         slblDescripcion.Text = "Salir de la aplicación"
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnterior.Click
+        If Me.numeroPagina > 1 Then
+            Me.numeroPagina = Me.numeroPagina - 1
+            Me.fnvdRecargar()
+        End If
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.Click
+        Me.numeroPagina = Me.numeroPagina + 1
+        Me.fnvdRecargar()
     End Sub
 End Class
