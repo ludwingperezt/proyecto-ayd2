@@ -385,8 +385,17 @@ namespace negocios
                  {
                      return null;
                  }
-
              }
+             /// <summary>
+             /// Función que buscar un empleado
+             /// </summary>
+             /// <returns>DataTable: empleado por usuario.</returns>
+             public static DataTable fnDbBuscarPorNombre(string lsUsuarioEmpleado)
+             {
+                 return negociosAdaptadores.gAdaptadorBuscarEmpleadoUsuario.GetData(lsUsuarioEmpleado);
+             }
+             }
+
              #endregion
-    }
+    
 }
