@@ -125,8 +125,7 @@ Public Class frmModificarPermiso
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
-        If txtNombre != "" Then
-
+        If txtNombre.Text <> "" Then
             Dim lnrNuevoRol As negociosRol = New negociosRol()
             lnrNuevoRol.setNombre(txtNombre.Text)
             'creando permisos de roles
