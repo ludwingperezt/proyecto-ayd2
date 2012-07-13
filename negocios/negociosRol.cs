@@ -1049,7 +1049,10 @@ namespace negocios
         public DataTable listarRoles()
         {
             return negociosAdaptadores.gAdaptadorListaRoles.GetData();
-        }
+        }      
+        #endregion
+
+        #region metodos de acceso estàtico
         /// <summary>
         /// Función de acceso estàtico para listar todos los roles activos dentro de la base de datos
         /// </summary>
@@ -1089,11 +1092,38 @@ namespace negocios
                 temporal.larrbyPermisosVentas = (byte[])objInstancia[8];
                 temporal.larrbyPermisosReportes = (byte[])objInstancia[9];
                 temporal.liNivelAcceso = Convert.ToInt32(objInstancia[10]);
-                
+
                 lstRetorno.Add(temporal);
             }
 
             return lstRetorno;
+        }
+        /// <summary>
+        /// Funciòn que obtiene un objeto tipo Rol, segun su ID
+        /// </summary>
+        /// <param name="liIdRol">int: id del rol buscado</param>
+        /// <returns>negociosRol: el objeto que representa el rol de permisos.Si no se encuentra, retorna null</returns>
+        public static negociosRol fnObtenerRolPorId(int liIdRol)
+        {
+            DataTable dtLocal = negociosAdaptadores.gAdaptadorRolPorId.GetData(liIdRol);
+            negociosRol temporal = null;
+            if (dtLocal.Rows.Count > 0)
+            {                
+                temporal = new negociosRol();
+                object[] objInstancia = dtLocal.Rows[0].ItemArray;
+                temporal.setIdRol(Convert.ToInt32(objInstancia[0]));
+                temporal.setNombre(Convert.ToString(objInstancia[1]));
+                temporal.larrbyPermisosRoles = (byte[])objInstancia[2];
+                temporal.larrbyPermisosEmpleados = (byte[])objInstancia[3];
+                temporal.larrbyPermisosProveedores = (byte[])objInstancia[4];
+                temporal.larrbyPermisosProductos = (byte[])objInstancia[5];
+                temporal.larrbyPermisosCompras = (byte[])objInstancia[6];
+                temporal.larrbyPermisosClientes = (byte[])objInstancia[7];
+                temporal.larrbyPermisosVentas = (byte[])objInstancia[8];
+                temporal.larrbyPermisosReportes = (byte[])objInstancia[9];
+                temporal.liNivelAcceso = Convert.ToInt32(objInstancia[10]);
+            }
+            return temporal;
         }
         #endregion
     }

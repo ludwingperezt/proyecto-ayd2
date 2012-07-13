@@ -312,34 +312,7 @@ namespace negocios
         {
             return (bool)negociosAdaptadores.gAdaptadorDeConsultas.verificarExistencia((short)this.liIdProducto, cantidad);
         }
-        /// <summary>
-        /// Función que muestra todos los productos disponibles en la base de datos.
-        /// </summary>
-        /// <returns>DataTable: lista de los productos activos en la base de datos.</returns>
-        public static DataTable fnDTlistarProductos()
-        {
-            return negociosAdaptadores.gAdaptadorListaProductos.GetData();
-        }
-        public static List<negociosProducto> fnlstListarProductos()
-        {
-            List<negociosProducto> llstNegociosProductos = new List<negociosProducto>();
-            DataTable ldtProductos = negociosProducto.fnDTlistarProductos();
-            object[] elementos;
-            for (int i = 0; i < ldtProductos.Rows.Count; i++)
-            {
-                elementos = ldtProductos.Rows[i].ItemArray;
-                negociosProducto localProducto = new negociosProducto();
-                localProducto.setIdProducto(Convert.ToInt32(elementos[0]));
-                localProducto.setCodigo(Convert.ToString(elementos[1]));
-                localProducto.setNombre(Convert.ToString(elementos[2]));
-                localProducto.setStock(Convert.ToDouble(elementos[3]));
-                localProducto.setPrecioCompra(Convert.ToDecimal(elementos[4]));
-                localProducto.setPrecioVenta(Convert.ToDecimal(elementos[5]));
-                localProducto.setColor(Convert.ToString(elementos[6]));
-                llstNegociosProductos.Add(localProducto);
-            }            
-            return llstNegociosProductos;
-        }
+        
         #endregion
         #region accesos estáticos
         /// <summary>
@@ -369,6 +342,79 @@ namespace negocios
         public static void fnvdAumentarExistenciaProducto(short lshIdProducto,double cantidad)
         {
             negociosAdaptadores.gAdaptadorDeConsultas.aumentarStockProducto(lshIdProducto, cantidad);
+        }
+        /// <summary>
+        /// Función que muestra todos los productos disponibles en la base de datos.
+        /// </summary>
+        /// <returns>DataTable: lista de los productos activos en la base de datos.</returns>
+        public static DataTable fnDTlistarProductos()
+        {
+            return negociosAdaptadores.gAdaptadorListaProductos.GetData();
+        }
+        /// <summary>
+        /// Funcion que devuelve la lista completa de productos en la base de datos
+        /// </summary>
+        /// <returns>List: lista de los productos</returns>
+        public static List<negociosProducto> fnlstListarProductos()
+        {
+            List<negociosProducto> llstNegociosProductos = new List<negociosProducto>();
+            DataTable ldtProductos = negociosProducto.fnDTlistarProductos();
+            object[] elementos;
+            for (int i = 0; i < ldtProductos.Rows.Count; i++)
+            {
+                elementos = ldtProductos.Rows[i].ItemArray;
+                negociosProducto localProducto = new negociosProducto();
+                localProducto.setIdProducto(Convert.ToInt32(elementos[0]));
+                localProducto.setCodigo(Convert.ToString(elementos[1]));
+                localProducto.setNombre(Convert.ToString(elementos[2]));
+                localProducto.setStock(Convert.ToDouble(elementos[3]));
+                localProducto.setPrecioCompra(Convert.ToDecimal(elementos[4]));
+                localProducto.setPrecioVenta(Convert.ToDecimal(elementos[5]));
+                localProducto.setColor(Convert.ToString(elementos[6]));
+                llstNegociosProductos.Add(localProducto);
+            }
+            return llstNegociosProductos;
+        }
+
+        public static List<negociosProducto> fnPaginacionProductos(int liSizePagina, int liNumeroPagina)
+        {
+            return negociosProducto.construirLista(negociosAdaptadores.gAdaptadorPaginacionProductos.GetData(liSizePagina, liNumeroPagina));
+        }
+        public static List<negociosProducto> fnBuscarProductosPorCodigo(string codigo)
+        {
+            return negociosProducto.construirLista(negociosAdaptadores.gAdaptadorProductoPorCodigo.GetData(codigo));
+        }
+        public static List<negociosProducto> fnBuscarProductosPorNombre(string nombre)
+        {
+            return negociosProducto.construirLista(negociosAdaptadores.gAdaptadorProductoPorNombre.GetData(nombre));
+        }
+        public static negociosProducto fnObtenerProductoPorId(int idProducto)
+        {
+            return negociosProducto.construirLista(negociosAdaptadores.gAdaptadorProductoPorId.GetData((short)idProducto))[0];
+        }
+        /// <summary>
+        /// Funcion que construye una lista con los elementos de un dataTable
+        /// </summary>
+        /// <param name="ldtProductos">DataTable: resultado de una consulta</param>
+        /// <returns>list: lista de objetos de tipo negociosProducto</returns>
+        protected static List<negociosProducto> construirLista(DataTable ldtProductos)
+        {
+            List<negociosProducto> llstNegociosProductos = new List<negociosProducto>();
+            object[] elementos;
+            for (int i = 0; i < ldtProductos.Rows.Count; i++)
+            {
+                elementos = ldtProductos.Rows[i].ItemArray;
+                negociosProducto localProducto = new negociosProducto();
+                localProducto.setIdProducto(Convert.ToInt32(elementos[0]));
+                localProducto.setCodigo(Convert.ToString(elementos[1]));
+                localProducto.setNombre(Convert.ToString(elementos[2]));
+                localProducto.setStock(Convert.ToDouble(elementos[3]));
+                localProducto.setPrecioCompra(Convert.ToDecimal(elementos[4]));
+                localProducto.setPrecioVenta(Convert.ToDecimal(elementos[5]));
+                localProducto.setColor(Convert.ToString(elementos[6]));
+                llstNegociosProductos.Add(localProducto);
+            }
+            return llstNegociosProductos;
         }
         #endregion
     }
