@@ -258,8 +258,11 @@ Public Class frmModuloProveedores
         End If
     End Sub
 
-    Private Sub btnActualizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.Click
+    Private Sub btnActualizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.fnvdRecargar()
     End Sub
 
+    Private Sub btnRegresar_Click(sender As System.Object, e As System.EventArgs) Handles btnRegresar.Click
+        fnvdRecargar()
+    End Sub
 End Class

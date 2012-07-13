@@ -40,7 +40,7 @@ Partial Class frmModuloProveedores
         Me.cmbFiltradoEstados = New System.Windows.Forms.ComboBox()
         Me.lblFiltradoEstados = New System.Windows.Forms.Label()
         Me.gbListaProv = New System.Windows.Forms.GroupBox()
-        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaProv.SuspendLayout()
@@ -203,7 +203,7 @@ Partial Class frmModuloProveedores
         '
         'gbListaProv
         '
-        Me.gbListaProv.Controls.Add(Me.btnActualizar)
+        Me.gbListaProv.Controls.Add(Me.btnRegresar)
         Me.gbListaProv.Controls.Add(Me.dgvListaProveedores)
         Me.gbListaProv.Location = New System.Drawing.Point(33, 132)
         Me.gbListaProv.Name = "gbListaProv"
@@ -212,15 +212,17 @@ Partial Class frmModuloProveedores
         Me.gbListaProv.TabStop = False
         Me.gbListaProv.Text = "Lista de Proveedores"
         '
-        'btnActualizar
+        'btnRegresar
         '
-        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnActualizar.Location = New System.Drawing.Point(481, 13)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
-        Me.btnActualizar.TabIndex = 6
-        Me.btnActualizar.Text = "Recargar Lista"
-        Me.btnActualizar.UseVisualStyleBackColor = False
+        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRegresar.Location = New System.Drawing.Point(497, 15)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
+        Me.btnRegresar.TabIndex = 7
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'frmModuloProveedores
         '
@@ -272,5 +274,5 @@ Partial Class frmModuloProveedores
     Friend WithEvents cmbFiltradoEstados As System.Windows.Forms.ComboBox
     Friend WithEvents lblFiltradoEstados As System.Windows.Forms.Label
     Friend WithEvents gbListaProv As System.Windows.Forms.GroupBox
-    Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents btnRegresar As System.Windows.Forms.Button
 End Class
