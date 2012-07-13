@@ -390,7 +390,27 @@ namespace negocios
         }
         public static negociosProducto fnObtenerProductoPorId(int idProducto)
         {
-            return negociosProducto.construirLista(negociosAdaptadores.gAdaptadorProductoPorId.GetData((short)idProducto))[0];
+            List<negociosProducto> tmp = negociosProducto.construirLista(negociosAdaptadores.gAdaptadorProductoPorId.GetData((short)idProducto));
+            if (tmp.Count == 0)
+                return null;
+            else
+                return tmp[0];
+        }
+        public static negociosProducto fnObtenerProductoPorCodigo(string codigo)
+        {
+            List<negociosProducto> tmp = negociosProducto.construirLista(negociosAdaptadores.gAdaptadorObtenerProductoPorCodigo.GetData(codigo));
+            if (tmp.Count == 0)
+                return null;
+            else
+                return tmp[0];
+        }
+        public static negociosProducto fnObtenerProductoPorNombre(string nombre)
+        {
+            List<negociosProducto> tmp = negociosProducto.construirLista(negociosAdaptadores.gAdaptadorObtenerProductoPorNombre.GetData(nombre));
+            if (tmp.Count == 0)
+                return null;
+            else
+                return tmp[0];
         }
         /// <summary>
         /// Funcion que construye una lista con los elementos de un dataTable
