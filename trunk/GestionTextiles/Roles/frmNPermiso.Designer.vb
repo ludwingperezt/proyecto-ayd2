@@ -102,7 +102,7 @@ Partial Class frmModificarPermiso
         Me.lblProductos.AutoSize = True
         Me.lblProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblProductos.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblProductos.Location = New System.Drawing.Point(356, 175)
+        Me.lblProductos.Location = New System.Drawing.Point(390, 180)
         Me.lblProductos.Name = "lblProductos"
         Me.lblProductos.Size = New System.Drawing.Size(155, 16)
         Me.lblProductos.TabIndex = 0
@@ -113,7 +113,7 @@ Partial Class frmModificarPermiso
         Me.txtNombre.Location = New System.Drawing.Point(132, 73)
         Me.txtNombre.MaxLength = 20
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(271, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(294, 20)
         Me.txtNombre.TabIndex = 0
         '
         'lblNombre
@@ -160,9 +160,9 @@ Partial Class frmModificarPermiso
         Me.clbProductos.CheckOnClick = True
         Me.clbProductos.FormattingEnabled = True
         Me.clbProductos.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar", "Eliminar", "Buscar", "Cargar Productos", "Descargar Productos"})
-        Me.clbProductos.Location = New System.Drawing.Point(526, 175)
+        Me.clbProductos.Location = New System.Drawing.Point(560, 180)
         Me.clbProductos.Name = "clbProductos"
-        Me.clbProductos.Size = New System.Drawing.Size(120, 109)
+        Me.clbProductos.Size = New System.Drawing.Size(158, 109)
         Me.clbProductos.TabIndex = 5
         '
         'lblCompras
@@ -170,7 +170,7 @@ Partial Class frmModificarPermiso
         Me.lblCompras.AutoSize = True
         Me.lblCompras.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCompras.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblCompras.Location = New System.Drawing.Point(356, 300)
+        Me.lblCompras.Location = New System.Drawing.Point(390, 305)
         Me.lblCompras.Name = "lblCompras"
         Me.lblCompras.Size = New System.Drawing.Size(147, 16)
         Me.lblCompras.TabIndex = 0
@@ -181,7 +181,7 @@ Partial Class frmModificarPermiso
         Me.lblClientes.AutoSize = True
         Me.lblClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblClientes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblClientes.Location = New System.Drawing.Point(356, 347)
+        Me.lblClientes.Location = New System.Drawing.Point(390, 352)
         Me.lblClientes.Name = "lblClientes"
         Me.lblClientes.Size = New System.Drawing.Size(141, 16)
         Me.lblClientes.TabIndex = 0
@@ -192,7 +192,7 @@ Partial Class frmModificarPermiso
         Me.lblVentas.AutoSize = True
         Me.lblVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVentas.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblVentas.Location = New System.Drawing.Point(356, 409)
+        Me.lblVentas.Location = New System.Drawing.Point(390, 414)
         Me.lblVentas.Name = "lblVentas"
         Me.lblVentas.Size = New System.Drawing.Size(133, 16)
         Me.lblVentas.TabIndex = 0
@@ -203,7 +203,7 @@ Partial Class frmModificarPermiso
         Me.lblReportes.AutoSize = True
         Me.lblReportes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReportes.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblReportes.Location = New System.Drawing.Point(661, 252)
+        Me.lblReportes.Location = New System.Drawing.Point(759, 252)
         Me.lblReportes.Name = "lblReportes"
         Me.lblReportes.Size = New System.Drawing.Size(72, 16)
         Me.lblReportes.TabIndex = 0
@@ -225,7 +225,7 @@ Partial Class frmModificarPermiso
         Me.lblTipos.AutoSize = True
         Me.lblTipos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTipos.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblTipos.Location = New System.Drawing.Point(661, 175)
+        Me.lblTipos.Location = New System.Drawing.Point(759, 175)
         Me.lblTipos.Name = "lblTipos"
         Me.lblTipos.Size = New System.Drawing.Size(122, 16)
         Me.lblTipos.TabIndex = 0
@@ -236,9 +236,9 @@ Partial Class frmModificarPermiso
         Me.clbCompras.CheckOnClick = True
         Me.clbCompras.FormattingEnabled = True
         Me.clbCompras.Items.AddRange(New Object() {"Hacer Compras", "Devolver Productos"})
-        Me.clbCompras.Location = New System.Drawing.Point(526, 300)
+        Me.clbCompras.Location = New System.Drawing.Point(560, 305)
         Me.clbCompras.Name = "clbCompras"
-        Me.clbCompras.Size = New System.Drawing.Size(120, 34)
+        Me.clbCompras.Size = New System.Drawing.Size(158, 34)
         Me.clbCompras.TabIndex = 6
         '
         'clbClientes
@@ -246,9 +246,9 @@ Partial Class frmModificarPermiso
         Me.clbClientes.CheckOnClick = True
         Me.clbClientes.FormattingEnabled = True
         Me.clbClientes.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar"})
-        Me.clbClientes.Location = New System.Drawing.Point(526, 347)
+        Me.clbClientes.Location = New System.Drawing.Point(560, 352)
         Me.clbClientes.Name = "clbClientes"
-        Me.clbClientes.Size = New System.Drawing.Size(120, 49)
+        Me.clbClientes.Size = New System.Drawing.Size(158, 49)
         Me.clbClientes.TabIndex = 7
         '
         'clbVentas
@@ -256,9 +256,9 @@ Partial Class frmModificarPermiso
         Me.clbVentas.CheckOnClick = True
         Me.clbVentas.FormattingEnabled = True
         Me.clbVentas.Items.AddRange(New Object() {"Hacer Ventas", "Eliminar facturas de ventas"})
-        Me.clbVentas.Location = New System.Drawing.Point(526, 409)
+        Me.clbVentas.Location = New System.Drawing.Point(560, 414)
         Me.clbVentas.Name = "clbVentas"
-        Me.clbVentas.Size = New System.Drawing.Size(120, 34)
+        Me.clbVentas.Size = New System.Drawing.Size(158, 34)
         Me.clbVentas.TabIndex = 8
         '
         'clbCliente
@@ -266,9 +266,9 @@ Partial Class frmModificarPermiso
         Me.clbCliente.CheckOnClick = True
         Me.clbCliente.FormattingEnabled = True
         Me.clbCliente.Items.AddRange(New Object() {"Insertar", "Modificar", "Listar", "Eliminar"})
-        Me.clbCliente.Location = New System.Drawing.Point(789, 175)
+        Me.clbCliente.Location = New System.Drawing.Point(906, 175)
         Me.clbCliente.Name = "clbCliente"
-        Me.clbCliente.Size = New System.Drawing.Size(120, 64)
+        Me.clbCliente.Size = New System.Drawing.Size(206, 64)
         Me.clbCliente.TabIndex = 9
         '
         'clbReportes
@@ -276,9 +276,9 @@ Partial Class frmModificarPermiso
         Me.clbReportes.CheckOnClick = True
         Me.clbReportes.FormattingEnabled = True
         Me.clbReportes.Items.AddRange(New Object() {"Corte de caja", "Listar facturas de ventas eliminadas", "Devoluciones por proveedor", "Historial de costos", "Historial de ventas del mes", "Historial del compras del mes"})
-        Me.clbReportes.Location = New System.Drawing.Point(789, 248)
+        Me.clbReportes.Location = New System.Drawing.Point(906, 248)
         Me.clbReportes.Name = "clbReportes"
-        Me.clbReportes.Size = New System.Drawing.Size(120, 94)
+        Me.clbReportes.Size = New System.Drawing.Size(206, 94)
         Me.clbReportes.TabIndex = 10
         '
         'clbTalonario
@@ -294,9 +294,9 @@ Partial Class frmModificarPermiso
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 479)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 493)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(924, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(1156, 22)
         Me.stsBarra.TabIndex = 15
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -317,7 +317,7 @@ Partial Class frmModificarPermiso
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(741, 442)
+        Me.btnCancelar.Location = New System.Drawing.Point(766, 467)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 58
@@ -327,7 +327,7 @@ Partial Class frmModificarPermiso
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(834, 442)
+        Me.btnAceptar.Location = New System.Drawing.Point(859, 467)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 57
@@ -351,7 +351,7 @@ Partial Class frmModificarPermiso
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(924, 501)
+        Me.ClientSize = New System.Drawing.Size(1156, 515)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
