@@ -29,6 +29,7 @@ Public Class frmSerie
                     Dim lnsSerieLocal As negociosSerie = New negociosSerie()
                     lnsSerieLocal.setSerie(txtSerie.Text)
                     lnsSerieLocal.setNumeroActual(Convert.ToInt32(txtCorrelativo.Text))
+                    lnsSerieLocal.setLimite(Convert.ToInt32(txtLimite.Text))
                     Try
                         lnsSerieLocal.fnvInsertarSerie()
                         MessageBox.Show("La operación de insersión del talonario se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -51,6 +52,7 @@ Public Class frmSerie
             If lbooBandera Then
                 '' si es un update...
                 frmModuloSeries.gnsSerieSeleccionada.setNumeroActual(Convert.ToInt32(txtCorrelativo.Text))
+                frmModuloSeries.gnsSerieSeleccionada.setLimite(Convert.ToInt32(txtLimite.Text))
                 Try
                     If MessageBox.Show("¿Está seguro de modificar los datos del talonario?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
                         Try
@@ -98,12 +100,13 @@ Public Class frmSerie
             Me.Text = "Modificar serie"
             Me.txtSerie.Text = frmModuloSeries.gnsSerieSeleccionada.getSerie()
             Me.txtCorrelativo.Text = Convert.ToString(frmModuloSeries.gnsSerieSeleccionada.getNumeroActual())
+            Me.txtLimite.Text = Convert.ToString(frmModuloSeries.gnsSerieSeleccionada.getLimite())
         End If
     End Sub
 
     Private Sub txtSerie_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtSerie.TextChanged
         '' Validar si no existe la serie indicada...
-        If negocios.negociosSerie.verificarExistenciaBaseSerie(txtSerie.Text) Then
+        If negocios.negociosSerie.fnboVerificarExistenciaSerie(txtSerie.Text) Then
             picbValidacion.Image = imglValidacion.Images(0)
             lbSerieValida = False
             txtSerie.Focus()
