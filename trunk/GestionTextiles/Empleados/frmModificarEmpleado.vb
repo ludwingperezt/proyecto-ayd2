@@ -2,38 +2,41 @@
 Public Class frmModificarEmpleado
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        Dim lbooBandera As Boolean = True
+
         For Each ctrlIterador As Control In Me.Controls
             '' Validación de textbox
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
+                    lbooBandera = False
                 Else
                     ctrlIterador.BackColor = Color.White
-
-                    Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
-                    lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
-                    lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
-                    lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
-                    lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
-                    lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
-                    lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
-                    lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
-                    lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
-                    lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
-                    Dim bytes() As Byte
-                    bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
-                    lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
-                    Try
-                        lnpNuevoEmpleado.fnsModificarEmpleado()
-                        MessageBox.Show("La operación de modificacion de empleado se llevó a cabo con éxito", "Modificacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Me.Dispose()
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
-
                 End If
             End If
         Next
+        If lbooBandera Then
+            Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
+            lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
+            lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
+            lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
+            lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
+            lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
+            lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
+            lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
+            lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
+            lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
+            Dim bytes() As Byte
+            bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
+            lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
+            Try
+                lnpNuevoEmpleado.fnsModificarEmpleado()
+                MessageBox.Show("La operación de modificacion de empleado se llevó a cabo con éxito", "Modificacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
     End Sub
 
     Private Sub txtNombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNombre.MouseLeave
