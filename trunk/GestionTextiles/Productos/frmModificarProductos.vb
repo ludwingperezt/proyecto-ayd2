@@ -11,35 +11,38 @@
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        Dim lbooBandera As Boolean = True
 
         For Each ctrlIterador As Control In Me.Controls
             '' Validación de textbox
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
+                    lbooBandera = False
                 Else
                     ctrlIterador.BackColor = Color.White
-
-                    frmModuloProductos.gnpProductoSeleccionado.setNombre(txtNombre.Text)
-                    frmModuloProductos.gnpProductoSeleccionado.setCodigo(txtCodigo.Text)
-                    frmModuloProductos.gnpProductoSeleccionado.setStock(Convert.ToDouble(txtCantidad.Text))
-                    frmModuloProductos.gnpProductoSeleccionado.setPrecioCompra(Convert.ToDecimal(txtPrecioCompra.Text))
-                    frmModuloProductos.gnpProductoSeleccionado.setPrecioVenta(Convert.ToDecimal(txtPrecioVenta.Text))
-                    frmModuloProductos.gnpProductoSeleccionado.setColor(txtColor.Text)
-                    If MessageBox.Show("¿Está seguro de modificar los datos del producto?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
-                        Try
-                            frmModuloProductos.gnpProductoSeleccionado.fnvdModificarDescripcionProducto()
-                            MessageBox.Show("La operación de modificación finalizó con éxito", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            frmModuloProductos.gnpProductoSeleccionado = Nothing
-                            Me.Dispose()
-                        Catch ex As Exception
-                            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        End Try
-                    End If
-
                 End If
             End If
         Next
+
+        If lbooBandera Then
+            frmModuloProductos.gnpProductoSeleccionado.setNombre(txtNombre.Text)
+            frmModuloProductos.gnpProductoSeleccionado.setCodigo(txtCodigo.Text)
+            frmModuloProductos.gnpProductoSeleccionado.setStock(Convert.ToDouble(txtCantidad.Text))
+            frmModuloProductos.gnpProductoSeleccionado.setPrecioCompra(Convert.ToDecimal(txtPrecioCompra.Text))
+            frmModuloProductos.gnpProductoSeleccionado.setPrecioVenta(Convert.ToDecimal(txtPrecioVenta.Text))
+            frmModuloProductos.gnpProductoSeleccionado.setColor(txtColor.Text)
+            If MessageBox.Show("¿Está seguro de modificar los datos del producto?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
+                Try
+                    frmModuloProductos.gnpProductoSeleccionado.fnvdModificarDescripcionProducto()
+                    MessageBox.Show("La operación de modificación finalizó con éxito", "Modificación", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    frmModuloProductos.gnpProductoSeleccionado = Nothing
+                    Me.Dispose()
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End If
     End Sub
 
     Private Sub txtPrecioCompra_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecioCompra.KeyPress
