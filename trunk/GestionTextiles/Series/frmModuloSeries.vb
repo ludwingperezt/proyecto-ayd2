@@ -129,11 +129,11 @@ Public Class frmModuloSeries
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
+    Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs)
         Me.fnvCargarLista()
     End Sub
 
-    Private Sub btnActualizar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnActualizar.MouseLeave
+    Private Sub btnActualizar_MouseLeave(sender As System.Object, e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -161,7 +161,7 @@ Public Class frmModuloSeries
         Me.Dispose()
     End Sub
 
-    Private Sub btnActualizar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnActualizar.MouseHover
+    Private Sub btnActualizar_MouseHover(sender As System.Object, e As System.EventArgs)
         slblDescripcion.Text = "Carga toda la lista de series"
     End Sub
 
@@ -171,5 +171,9 @@ Public Class frmModuloSeries
 
     Private Sub btnBuscar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnBuscar.MouseHover
         slblDescripcion.Text = "Inicia la búsqueda..."
+    End Sub
+
+    Private Sub btnRegresar_Click(sender As System.Object, e As System.EventArgs)
+
     End Sub
 End Class
