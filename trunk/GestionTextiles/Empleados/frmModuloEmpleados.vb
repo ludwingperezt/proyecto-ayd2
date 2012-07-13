@@ -1,6 +1,6 @@
 ﻿Imports negocios
 Public Class frmModuloEmpleados
-    Dim lnpEmpleado As negociosEmpleado = New negociosEmpleado()
+    Public Shared lstnpEmpleados As IList(Of negociosEmpleado)
     Private Sub btnbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnbuscar.Click
         If txtbusqueda.Text = "" Then
             MessageBox.Show("Ingrese la busqueda deseada ")
@@ -122,7 +122,36 @@ Public Class frmModuloEmpleados
     End Sub
 
     Private Sub frmModuloEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        dgvEmpleados.DataSource = lnpEmpleado.fnDbDevolverVeinteEmpleados()
+        lstnpEmpleados = negociosEmpleado.fnslListarUltimosVeinteEmpleados()
+        'Me.dgvEmpleados.DataSource = fnvCrearDataTable(frmModuloEmpleados.lstnpEmpleados)
+    End Sub
+    Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosEmpleado))
+        Dim ldtTabla As DataTable = New DataTable()
+        Dim ldrFila As DataRow
+        Dim lnpEmpleado As negociosEmpleado
+        ldtTabla.Columns.Add("Nombre")
+        ldtTabla.Columns.Add("Apellido")
+        ldtTabla.Columns.Add("Direccion")
+        ldtTabla.Columns.Add("Telefono")
+        ldtTabla.Columns.Add("Celular")
+        ldtTabla.Columns.Add("Puesto")
+        ldtTabla.Columns.Add("Fecha Contratacion")
+        ldtTabla.Columns.Add("Salario")
 
+        For i = 0 To lista.Count - 1 Step 1
+            ldrFila = ldtTabla.NewRow()
+            lnpEmpleado = lista(i)
+            ldrFila(0) = lnpEmpleado.getNombreEmpleado()
+            ldrFila(1) = lnpEmpleado.getApellidoEmpleado()
+            ldrFila(2) = lnpEmpleado.getDireccionEmpleado()
+            ldrFila(3) = lnpEmpleado.getTelefonoEmpleado()
+            ldrFila(4) = lnpEmpleado.getCelularEmpleado()
+            ldrFila(5) = lnpEmpleado.getPuestoEmpleado()
+            ldrFila(6) = lnpEmpleado.getFechaDeContratacion()
+            ldrFila(7) = lnpEmpleado.getSalarioEmpleado()
+            ldtTabla.Rows.Add(ldrFila)
+
+        Next
+        Me.dgvEmpleados.DataSource = ldtTabla
     End Sub
 End Class
