@@ -8,9 +8,9 @@ Public Class frmModuloProveedores
 
     Private Sub btnNProveedor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNProveedor.Click
         frmNuevoProveedor.actualizar = False
-
         frmNuevoProveedor.ShowDialog()
         Me.fnvdRecargar()
+        txtBusqueda.Text = ""
     End Sub
 
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
@@ -149,6 +149,7 @@ Public Class frmModuloProveedores
             frmNuevoProveedor.actualizar = True
             frmNuevoProveedor.ShowDialog(Me)
             Me.fnvdRecargar()
+            txtBusqueda.Text = ""
         End If
 
     End Sub
@@ -166,15 +167,12 @@ Public Class frmModuloProveedores
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
-
+                txtBusqueda.Text = ""
             End If
         End If
         Me.fnvdRecargar()
     End Sub
 
-    Private Sub dgvListaProveedores_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvListaProveedores.CellContentClick
-
-    End Sub
 
     Private Sub btnbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnbuscar.Click
         If txtBusqueda.Text = "" Then

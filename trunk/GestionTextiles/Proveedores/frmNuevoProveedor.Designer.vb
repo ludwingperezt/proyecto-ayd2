@@ -42,16 +42,14 @@ Partial Class frmNuevoProveedor
         Me.txtCelular = New System.Windows.Forms.TextBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
-        Me.rdbbtnActivo = New System.Windows.Forms.RadioButton()
-        Me.rdbtnInactivo = New System.Windows.Forms.RadioButton()
-        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.btnActivar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 311)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 339)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(572, 22)
         Me.stsBarra.TabIndex = 8
@@ -205,7 +203,7 @@ Partial Class frmNuevoProveedor
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(326, 273)
+        Me.btnCancelar.Location = New System.Drawing.Point(326, 301)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 7
@@ -215,46 +213,23 @@ Partial Class frmNuevoProveedor
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(421, 273)
+        Me.btnAceptar.Location = New System.Drawing.Point(421, 301)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 8
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
-        'rdbbtnActivo
+        'btnActivar
         '
-        Me.rdbbtnActivo.AutoSize = True
-        Me.rdbbtnActivo.Location = New System.Drawing.Point(142, 257)
-        Me.rdbbtnActivo.Name = "rdbbtnActivo"
-        Me.rdbbtnActivo.Size = New System.Drawing.Size(55, 17)
-        Me.rdbbtnActivo.TabIndex = 16
-        Me.rdbbtnActivo.TabStop = True
-        Me.rdbbtnActivo.Text = "Activo"
-        Me.rdbbtnActivo.UseVisualStyleBackColor = True
-        Me.rdbbtnActivo.Visible = False
-        '
-        'rdbtnInactivo
-        '
-        Me.rdbtnInactivo.AutoSize = True
-        Me.rdbtnInactivo.Location = New System.Drawing.Point(216, 259)
-        Me.rdbtnInactivo.Name = "rdbtnInactivo"
-        Me.rdbtnInactivo.Size = New System.Drawing.Size(63, 17)
-        Me.rdbtnInactivo.TabIndex = 17
-        Me.rdbtnInactivo.TabStop = True
-        Me.rdbtnInactivo.Text = "Inactivo"
-        Me.rdbtnInactivo.UseVisualStyleBackColor = True
-        Me.rdbtnInactivo.Visible = False
-        '
-        'lblEstado
-        '
-        Me.lblEstado.AutoSize = True
-        Me.lblEstado.Location = New System.Drawing.Point(59, 261)
-        Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(40, 13)
-        Me.lblEstado.TabIndex = 18
-        Me.lblEstado.Text = "Estado"
-        Me.lblEstado.Visible = False
+        Me.btnActivar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnActivar.Location = New System.Drawing.Point(64, 273)
+        Me.btnActivar.Name = "btnActivar"
+        Me.btnActivar.Size = New System.Drawing.Size(116, 23)
+        Me.btnActivar.TabIndex = 16
+        Me.btnActivar.Text = "Activar Proveedor"
+        Me.btnActivar.UseVisualStyleBackColor = False
+        Me.btnActivar.Visible = False
         '
         'frmNuevoProveedor
         '
@@ -262,10 +237,8 @@ Partial Class frmNuevoProveedor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(572, 333)
-        Me.Controls.Add(Me.lblEstado)
-        Me.Controls.Add(Me.rdbtnInactivo)
-        Me.Controls.Add(Me.rdbbtnActivo)
+        Me.ClientSize = New System.Drawing.Size(572, 361)
+        Me.Controls.Add(Me.btnActivar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.txtCelular)
@@ -315,7 +288,5 @@ Partial Class frmNuevoProveedor
     Friend WithEvents txtCelular As System.Windows.Forms.TextBox
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
-    Friend WithEvents rdbbtnActivo As System.Windows.Forms.RadioButton
-    Friend WithEvents rdbtnInactivo As System.Windows.Forms.RadioButton
-    Friend WithEvents lblEstado As System.Windows.Forms.Label
+    Friend WithEvents btnActivar As System.Windows.Forms.Button
 End Class

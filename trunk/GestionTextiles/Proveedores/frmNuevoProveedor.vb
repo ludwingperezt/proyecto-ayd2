@@ -2,6 +2,8 @@
 
 Public Class frmNuevoProveedor
     Friend Shared actualizar As Boolean
+    Dim lbooActivarProveedor As Boolean
+
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Dim lbooBandera As Boolean = True
         Dim lsMensaje As String
@@ -29,16 +31,13 @@ Public Class frmNuevoProveedor
                 frmModuloProveedores.gnpProveedor.setNombre(Me.txtNombre.Text)
                 frmModuloProveedores.gnpProveedor.setPropietario(Me.txtPropietario.Text)
                 frmModuloProveedores.gnpProveedor.setTelefono(Me.txtTelefono.Text)
-                frmModuloProveedores.gnpProveedor.setCelular(Me.txtCelular.Text)               
+                frmModuloProveedores.gnpProveedor.setCelular(Me.txtCelular.Text)
 
                 If MessageBox.Show("¿Está seguro de modificar los datos de este proveedor?", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.Yes Then
                     Try
                         lsMensaje = frmModuloProveedores.gnpProveedor.fnsModificarProveedor()
-
-                        If rdbbtnActivo.Checked = True Then
+                        If lbooActivarProveedor Then
                             frmModuloProveedores.gnpProveedor.fnsDarDeAltaProveedor()
-                        ElseIf rdbtnInactivo.Checked = True Then
-                            frmModuloProveedores.gnpProveedor.fnsDarDeBajaProveedor()
                         End If
 
                         MessageBox.Show(lsMensaje, "Modificación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -136,9 +135,6 @@ Public Class frmNuevoProveedor
 
     Private Sub frmNuevoProveedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If actualizar = True Then
-            Me.rdbbtnActivo.Visible = True
-            Me.rdbtnInactivo.Visible = True
-            Me.lblEstado.Visible = True
             Me.lblTitulo.Text = "Modificar Proveedor"
             Me.txtNIT.Text = frmModuloProveedores.gnpProveedor.getNit()
             Me.txtDireccion.Text = frmModuloProveedores.gnpProveedor.getDireccion()
@@ -148,33 +144,25 @@ Public Class frmNuevoProveedor
             Me.txtTelefono.Text = frmModuloProveedores.gnpProveedor.getTelefono()
             Me.txtCelular.Text = frmModuloProveedores.gnpProveedor.getCelular()
             If frmModuloProveedores.gnpProveedor.getEstadoBool() = True Then
-                Me.rdbbtnActivo.Checked = True
-                Me.rdbtnInactivo.Checked = False
+                btnActivar.Visible = False
+                lbooActivarProveedor = True
             Else
-                Me.rdbtnInactivo.Checked = True
-                Me.rdbbtnActivo.Checked = False
+                btnActivar.Visible = True
+                lbooActivarProveedor = False
             End If
 
         Else
             Me.lblTitulo.Text = "Crear Proveedor"
-            Me.rdbtnInactivo.Visible = False
-            Me.rdbbtnActivo.Visible = False
-            Me.lblEstado.Visible = False
-
-
+            btnActivar.Visible = False
         End If
     End Sub
 
-    Private Sub rdbbtnActivo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdbbtnActivo.CheckedChanged
-        If rdbbtnActivo.Checked = True Then
-            rdbtnInactivo.Checked = False
-        End If
-
+    Private Sub btnActivar_Click(sender As System.Object, e As System.EventArgs) Handles btnActivar.Click
+        lbooActivarProveedor = True
+        btnActivar.Enabled = False
     End Sub
 
-    Private Sub rdbtnInactivo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdbtnInactivo.CheckedChanged
-        If rdbtnInactivo.Checked = True Then
-            rdbbtnActivo.Checked = False
-        End If
+    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+
     End Sub
 End Class
