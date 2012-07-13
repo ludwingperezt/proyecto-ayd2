@@ -380,13 +380,17 @@ namespace negocios
         {
             return negociosProducto.construirLista(negociosAdaptadores.gAdaptadorPaginacionProductos.GetData(liSizePagina, liNumeroPagina));
         }
-        public static List<negociosProducto> fnBuscarProductosPorCodigo(string codigo)
+        public static List<negociosProducto> fnFiltrarProductosPorCodigo(string codigo)
         {
             return negociosProducto.construirLista(negociosAdaptadores.gAdaptadorProductoPorCodigo.GetData(codigo));
         }
-        public static List<negociosProducto> fnBuscarProductosPorNombre(string nombre)
+        public static List<negociosProducto> fnFiltrarProductosPorNombre(string nombre)
         {
             return negociosProducto.construirLista(negociosAdaptadores.gAdaptadorProductoPorNombre.GetData(nombre));
+        }
+        public static List<negociosProducto> fnBuscarProductosPorCodigoNombre(string criterio)
+        {
+            return negociosProducto.construirLista(negociosAdaptadores.gAdaptadorBusquedaExactaAmbosCriterios.GetData(criterio,criterio));
         }
         public static negociosProducto fnObtenerProductoPorId(int idProducto)
         {
