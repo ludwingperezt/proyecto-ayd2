@@ -33,8 +33,10 @@ Partial Class frmLogin
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.dgvUsuario = New System.Windows.Forms.DataGridView()
         CType(Me.picbLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
+        CType(Me.dgvUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCancelar
@@ -122,12 +124,21 @@ Partial Class frmLogin
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
+        'dgvUsuario
+        '
+        Me.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUsuario.Location = New System.Drawing.Point(120, -29)
+        Me.dgvUsuario.Name = "dgvUsuario"
+        Me.dgvUsuario.Size = New System.Drawing.Size(32, 29)
+        Me.dgvUsuario.TabIndex = 59
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(318, 219)
+        Me.Controls.Add(Me.dgvUsuario)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.picbLogin)
         Me.Controls.Add(Me.txtcontraseña)
@@ -142,6 +153,7 @@ Partial Class frmLogin
         CType(Me.picbLogin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
+        CType(Me.dgvUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -156,4 +168,5 @@ Partial Class frmLogin
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents dgvUsuario As System.Windows.Forms.DataGridView
 End Class
