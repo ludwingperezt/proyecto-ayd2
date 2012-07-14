@@ -197,10 +197,12 @@ Partial Class frmtipocliente
         '
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
-        Me.btnActualizar.Location = New System.Drawing.Point(520, 19)
+        Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnActualizar.Location = New System.Drawing.Point(456, 21)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(27, 25)
+        Me.btnActualizar.Size = New System.Drawing.Size(91, 23)
         Me.btnActualizar.TabIndex = 2
+        Me.btnActualizar.Text = "Regresar"
         Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'cmbCliente

@@ -106,7 +106,7 @@ Partial Class frmingresoclientes
         'txtnit
         '
         Me.txtnit.Location = New System.Drawing.Point(126, 158)
-        Me.txtnit.MaxLength = 15
+        Me.txtnit.MaxLength = 12
         Me.txtnit.Name = "txtnit"
         Me.txtnit.Size = New System.Drawing.Size(124, 20)
         Me.txtnit.TabIndex = 3

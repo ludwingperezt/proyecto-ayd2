@@ -52,4 +52,36 @@
     Private Sub btnDevolucionesProveedorNit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorNit.Click
         frmReporteDevolucionesProveedorNit.Show()
     End Sub
+
+    Private Sub btnFacturasEliminadasFecha_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturasEliminadasFecha.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnFacturasEliminadasNit_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturasEliminadasNit.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnFacturasEliminadasFecha_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturasEliminadasFecha.MouseHover
+        slblDescripcion.Text = "Muetra el reporte de las facturas eliminadas por fecha"
+    End Sub
+
+    Private Sub btnFacturasEliminadasNit_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturasEliminadasNit.MouseHover
+        slblDescripcion.Text = "Muestra el reporte de las facturas eliminadas por nit del cliente"
+    End Sub
+
+    Private Sub btnDevolucionesProveedorFecha_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorFecha.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnDevolucionesProveedorNit_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorNit.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnDevolucionesProveedorFecha_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorFecha.MouseHover
+        slblDescripcion.Text = "Muestra el reporte de las devoluciones al proveedor por fecha"
+    End Sub
+
+    Private Sub btnDevolucionesProveedorNit_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorNit.MouseHover
+        slblDescripcion.Text = "Muestra el reporte de las devoluciones al proveedor por Nit"
+    End Sub
 End Class

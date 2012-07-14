@@ -257,7 +257,7 @@ namespace negocios
         /// <returns>DataTable: la lista de todas las series que se encuentran en la base de datos</returns>
         public static DataTable fnListarSeries()
         {
-            return negociosAdaptadores.gAdaptadorListaSeries.GetData();
+        return negociosAdaptadores.gAdaptadorListaSeries.GetData();
         }
         /// <summary>
         /// Devuelve una lista de objetos de tipo negociosSerie, que representan las tuplas en la tabla series
