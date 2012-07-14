@@ -228,6 +228,7 @@ Partial Class frmModuloEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnSalir
         Me.ClientSize = New System.Drawing.Size(619, 526)
         Me.Controls.Add(Me.lblFiltradoEstados)
         Me.Controls.Add(Me.cmbFiltradoEstados)
@@ -243,6 +244,7 @@ Partial Class frmModuloEmpleados
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.txtbusqueda)
         Me.Controls.Add(Me.lblbusqueda)
+        Me.MaximizeBox = False
         Me.Name = "frmModuloEmpleados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modulo de Empleados"

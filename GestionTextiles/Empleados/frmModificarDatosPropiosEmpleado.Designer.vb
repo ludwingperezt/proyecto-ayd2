@@ -203,8 +203,10 @@ Partial Class frmModificarDatosPropiosEmpleado
         '
         'frmModificarDatosPropiosEmpleado
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(551, 305)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.txtApellido)
@@ -222,6 +224,7 @@ Partial Class frmModificarDatosPropiosEmpleado
         Me.Controls.Add(Me.txtDPI)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.lblTitulo)
+        Me.MaximizeBox = False
         Me.Name = "frmModificarDatosPropiosEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modificar Datos Propios"
