@@ -1,6 +1,10 @@
 ﻿Imports negocios
 Public Class frmModuloEmpleados
-    Public Shared lstnpEmpleados As IList(Of negociosEmpleado)
+    Private glstEmpleados As List(Of negociosEmpleado) = New List(Of negociosEmpleado)
+    Private glstEmpleadosFiltrada As List(Of negociosEmpleado) = New List(Of negociosEmpleado)
+    Public Shared gnpEmpleadoSeleccionado As negociosEmpleado
+    Private banderaBusqueda As Boolean = False
+
     Private Sub btnbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnbuscar.Click
         If txtbusqueda.Text = "" Then
             MessageBox.Show("Ingrese la busqueda deseada ")
@@ -53,7 +57,7 @@ Public Class frmModuloEmpleados
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub dgvEmpleados_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvEmpleados.MouseLeave
+    Private Sub dgvEmpleados_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -73,7 +77,7 @@ Public Class frmModuloEmpleados
         slblDescripcion.Text = "Modificación de  Empleados"
     End Sub
 
-    Private Sub dgvEmpleados_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvEmpleados.MouseHover
+    Private Sub dgvEmpleados_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Listado de Empleados actuales"
     End Sub
 
@@ -122,9 +126,22 @@ Public Class frmModuloEmpleados
     End Sub
 
     Private Sub frmModuloEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        lstnpEmpleados = negociosEmpleado.fnslListarUltimosVeinteEmpleados()
-        'Me.dgvEmpleados.DataSource = fnvCrearDataTable(frmModuloEmpleados.lstnpEmpleados)
+        Me.fnvdRecargar()
     End Sub
+    Private Sub fnvdRecargar()
+        Try
+            dgvEmpleados.DataSource = ""
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = Nothing
+            Me.glstEmpleadosFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstEmpleados = negociosEmpleado.fnslListarUltimosVeinteEmpleados()
+            Me.fnvCrearDataTable(Me.glstEmpleados)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvEmpleados.DataSource = Nothing
+        End Try
+    End Sub
+
     Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosEmpleado))
         Dim ldtTabla As DataTable = New DataTable()
         Dim ldrFila As DataRow
