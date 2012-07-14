@@ -514,7 +514,7 @@ namespace negocios
             List<negociosEmpleado> lnpEmpleados = new List<negociosEmpleado>();
             try
             {
-                DataTable ldtEmpleados = negociosEmpleado.buscarEmpleadoNombre(sApellido);
+                DataTable ldtEmpleados = negociosEmpleado.buscarEmpleadoApellido(sApellido);
                 object[] oListaElmentos;
                 for (int i = 0; i < ldtEmpleados.Rows.Count; i++)
                 {
