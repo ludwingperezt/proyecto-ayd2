@@ -395,10 +395,7 @@ namespace negocios
         /// Función que busca a un empleado por nombre
         /// </summary>
         /// <returns>DataTable: busca a un empleado por nombre.</returns>
-        public static DataTable fnDbBuscarEmpleadoNombre(string lsnombreEmpleado)
-        {
-            return negociosAdaptadores.gAdaptadorEmpleadoNombre.GetData(lsnombreEmpleado);
-        }
+
         /// <summary>
         /// Función que devuelve a los ultimos 20 empleados
         /// </summary>
@@ -474,7 +471,6 @@ namespace negocios
             }
         }
 
-
         public static DataTable buscarEmpleadoNombre(string sNombre)
         {
             return negociosAdaptadores.gAdaptadorEmpleadoNombre.GetData(sNombre);
@@ -485,6 +481,40 @@ namespace negocios
             try
             {
                 DataTable ldtEmpleados = negociosEmpleado.buscarEmpleadoNombre(sNombre);
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtEmpleados.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtEmpleados.Rows[i].ItemArray;
+                    negociosEmpleado npNuevoEmpleado = new negociosEmpleado();
+                    npNuevoEmpleado.setIdRolEmpleado(Convert.ToByte(oListaElmentos[1]));
+                    npNuevoEmpleado.setNombreEmpleado(Convert.ToString(oListaElmentos[2]));
+                    npNuevoEmpleado.setApellidoEmpleado(Convert.ToString(oListaElmentos[3]));
+                    npNuevoEmpleado.setDireccionEmpleado(Convert.ToString(oListaElmentos[4]));
+                    npNuevoEmpleado.setTelefonoEmpleado(Convert.ToString(oListaElmentos[5]));
+                    npNuevoEmpleado.setCelularEmpleado(Convert.ToString(oListaElmentos[6]));
+                    npNuevoEmpleado.setPuestoEmpleado(Convert.ToString(oListaElmentos[7]));
+                    npNuevoEmpleado.setFechaContratacionEmpleado(Convert.ToDateTime(oListaElmentos[8]));
+                    npNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(oListaElmentos[9]));
+                    npNuevoEmpleado.setUsuarioEmpleado(Convert.ToString(oListaElmentos[10]));
+                    lnpEmpleados.Add(npNuevoEmpleado);
+                }
+                return lnpEmpleados;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        public static DataTable buscarEmpleadoApellido(string sApellido)
+        {
+            return negociosAdaptadores.gAdaptadorBuscarEmpleadoApellido.GetData(sApellido);
+        }
+        public static List<negociosEmpleado> fnslListarEmpleadoApellido(string sApellido)
+        {
+            List<negociosEmpleado> lnpEmpleados = new List<negociosEmpleado>();
+            try
+            {
+                DataTable ldtEmpleados = negociosEmpleado.buscarEmpleadoNombre(sApellido);
                 object[] oListaElmentos;
                 for (int i = 0; i < ldtEmpleados.Rows.Count; i++)
                 {
