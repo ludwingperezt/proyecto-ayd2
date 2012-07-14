@@ -110,7 +110,7 @@ Public Class frmEmpleados
             lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
             lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
             lnpNuevoEmpleado.setHabilitadoEmpleado(1)
-            lnpNuevoEmpleado.setPasswordEmpleado(lnpNuevoEmpleado.arrbyCalcularHash(txtPassword.Text))
+            'lnpNuevoEmpleado.setPasswordEmpleado(lnpNuevoEmpleado.arrbyCalcularHash(txtPassword.Text))
 
 
             Try
