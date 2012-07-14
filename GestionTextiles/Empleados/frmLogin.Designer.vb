@@ -149,7 +149,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.btnAceptar)
         Me.DoubleBuffered = True
         Me.Name = "frmLogin"
-        Me.Text = "frmLogin"
+        Me.Text = "Login"
         CType(Me.picbLogin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
