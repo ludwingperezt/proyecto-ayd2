@@ -18,7 +18,8 @@ namespace negocios
         public static ListarEmpleadosTableAdapter gAdaptadorListaEmpleados = new ListarEmpleadosTableAdapter();
         public static listarFacturasProveedorEliminadasTableAdapter gAdaptadorListarFacturasProveedorEliminadas = new listarFacturasProveedorEliminadasTableAdapter();
         public static insertarEncabezadoFacturaClienteTableAdapter gAdaptadorEncabezadoFacturaCliente = new insertarEncabezadoFacturaClienteTableAdapter();
-        public static buscarProveedorPorNitTableAdapter gAdaptadorRegistroProveedor = new buscarProveedorPorNitTableAdapter();
+        public static buscarProveedorPorNitTableAdapter gAdaptadorBuscarProveedorPorNit = new buscarProveedorPorNitTableAdapter();
+        public static buscarProveedorPorEstadoTableAdapter gAdaptadorBuscarProveedorPorEstado = new buscarProveedorPorEstadoTableAdapter();
         public static buscarEmpleadoNombre1TableAdapter gAdaptadorEmpleadoNombre = new buscarEmpleadoNombre1TableAdapter();
         public static buscarClienteNit1TableAdapter gAdaptadorClienteNit = new buscarClienteNit1TableAdapter();
         public static buscarClienteNombreTableAdapter gAdaptadorClienteNombre = new buscarClienteNombreTableAdapter();
@@ -26,6 +27,7 @@ namespace negocios
         public static ultimosVeinteEmpleadosTableAdapter gAdaptadorUltimosVeinteEmpleados = new ultimosVeinteEmpleadosTableAdapter();
         public static buscarSeriePorSerieTableAdapter gAdaptadorBuscarSeriePorSerie = new buscarSeriePorSerieTableAdapter();
         public static buscarEmpleadoUsuario1TableAdapter gAdaptadorBuscarEmpleadoUsuario = new buscarEmpleadoUsuario1TableAdapter ();
+
 
         public static datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorCodigoTableAdapter gAdaptadorProductoPorCodigo = new datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorCodigoTableAdapter();
         public static datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorIdTableAdapter gAdaptadorProductoPorId = new datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorIdTableAdapter();
