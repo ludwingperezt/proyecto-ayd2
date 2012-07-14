@@ -14,7 +14,7 @@ Public Class frmRoles
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnAsignarPermiso_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAsignarPermiso.MouseLeave
+    Private Sub btnAsignarPermiso_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarPermiso.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -22,17 +22,48 @@ Public Class frmRoles
         slblDescripcion.Text = "Nueva configuración de permisos"
     End Sub
 
-    Private Sub btnAsignarPermiso_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAsignarPermiso.MouseHover
+    Private Sub btnAsignarPermiso_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarPermiso.MouseHover
         slblDescripcion.Text = "Asignar permisos a un usuario"
     End Sub
 
-    Private Sub btnAsignarPermiso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAsignarPermiso.Click
+    Private Sub btnAsignarPermiso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarPermiso.Click
         frmModificarPermiso.actualizar = True
         frmModificarPermiso.ShowDialog()
         Me.fnvCargarLista()
     End Sub
     Private Sub frmRoles_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        fnvCargarLista()
+        ' Establecer permisos del modulo de series
+        Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
+
+        If lnegPermisos.getPermisoCreacionRol() Then
+            btnNPermiso.Enabled = True
+        Else
+            btnNPermiso.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoEliminacionRol() Then
+            btnEliminarPermiso.Enabled = True
+        Else
+            btnEliminarPermiso.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoModificacionRol() Then
+            btnModificarPermiso.Enabled = True
+        Else
+            btnModificarPermiso.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoListarRoles() Then
+            txtBusqueda.Enabled = True
+            btnBuscar.Enabled = True
+            dgvRoles.Enabled = True
+            Me.fnvCargarLista()
+        Else
+            txtBusqueda.Enabled = False
+            btnBuscar.Enabled = False
+            dgvRoles.Enabled = False
+        End If
+
     End Sub
 
     Private Sub fnvCargarLista()

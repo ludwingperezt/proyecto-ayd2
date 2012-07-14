@@ -30,14 +30,14 @@ Partial Class frmRoles
         Me.dgvRoles = New System.Windows.Forms.DataGridView()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.gbListaRoles = New System.Windows.Forms.GroupBox()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnSeleccionarPermiso = New System.Windows.Forms.Button()
         Me.btnEliminarPermiso = New System.Windows.Forms.Button()
-        Me.btnAsignarPermiso = New System.Windows.Forms.Button()
+        Me.btnModificarPermiso = New System.Windows.Forms.Button()
         Me.btnNPermiso = New System.Windows.Forms.Button()
         Me.lblBuscar = New System.Windows.Forms.Label()
-        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaRoles.SuspendLayout()
@@ -105,6 +105,18 @@ Partial Class frmRoles
         Me.gbListaRoles.TabStop = False
         Me.gbListaRoles.Text = "Lista Roles"
         '
+        'btnRegresar
+        '
+        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRegresar.Location = New System.Drawing.Point(439, 19)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
+        Me.btnRegresar.TabIndex = 6
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
+        '
         'lblTitulo
         '
         Me.lblTitulo.AutoSize = True
@@ -153,17 +165,17 @@ Partial Class frmRoles
         Me.btnEliminarPermiso.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnEliminarPermiso.UseVisualStyleBackColor = False
         '
-        'btnAsignarPermiso
+        'btnModificarPermiso
         '
-        Me.btnAsignarPermiso.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAsignarPermiso.Image = Global.GestionTextiles.My.Resources.Resources.winhand1
-        Me.btnAsignarPermiso.Location = New System.Drawing.Point(248, 405)
-        Me.btnAsignarPermiso.Name = "btnAsignarPermiso"
-        Me.btnAsignarPermiso.Size = New System.Drawing.Size(97, 85)
-        Me.btnAsignarPermiso.TabIndex = 5
-        Me.btnAsignarPermiso.Text = "Modificar permisos"
-        Me.btnAsignarPermiso.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnAsignarPermiso.UseVisualStyleBackColor = False
+        Me.btnModificarPermiso.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnModificarPermiso.Image = Global.GestionTextiles.My.Resources.Resources.winhand1
+        Me.btnModificarPermiso.Location = New System.Drawing.Point(248, 405)
+        Me.btnModificarPermiso.Name = "btnModificarPermiso"
+        Me.btnModificarPermiso.Size = New System.Drawing.Size(97, 85)
+        Me.btnModificarPermiso.TabIndex = 5
+        Me.btnModificarPermiso.Text = "Modificar permisos"
+        Me.btnModificarPermiso.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnModificarPermiso.UseVisualStyleBackColor = False
         '
         'btnNPermiso
         '
@@ -186,18 +198,6 @@ Partial Class frmRoles
         Me.lblBuscar.TabIndex = 41
         Me.lblBuscar.Text = "Buscar"
         '
-        'btnRegresar
-        '
-        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
-        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnRegresar.Location = New System.Drawing.Point(439, 19)
-        Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
-        Me.btnRegresar.TabIndex = 6
-        Me.btnRegresar.Text = "Regresar"
-        Me.btnRegresar.UseVisualStyleBackColor = False
-        '
         'frmRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -212,7 +212,7 @@ Partial Class frmRoles
         Me.Controls.Add(Me.btnSeleccionarPermiso)
         Me.Controls.Add(Me.btnEliminarPermiso)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.btnAsignarPermiso)
+        Me.Controls.Add(Me.btnModificarPermiso)
         Me.Controls.Add(Me.btnNPermiso)
         Me.Controls.Add(Me.stsBarra)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -232,7 +232,7 @@ Partial Class frmRoles
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents btnNPermiso As System.Windows.Forms.Button
-    Friend WithEvents btnAsignarPermiso As System.Windows.Forms.Button
+    Friend WithEvents btnModificarPermiso As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents btnEliminarPermiso As System.Windows.Forms.Button
     Friend WithEvents btnSeleccionarPermiso As System.Windows.Forms.Button
