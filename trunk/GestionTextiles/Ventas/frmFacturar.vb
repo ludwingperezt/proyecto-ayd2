@@ -140,10 +140,12 @@ Public Class frmFacturar
     End Sub
 
     Private Sub btnAceptar_Click(sender As System.Object, e As System.EventArgs) Handles btnAceptar.Click
+        Dim controlesLlenos As Boolean = True
         For Each ctrlIterador As Control In Me.Controls
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
+                    controlesLlenos = False
                 Else
                     ctrlIterador.BackColor = Color.White
                 End If
@@ -152,32 +154,45 @@ Public Class frmFacturar
             If TypeOf (ctrlIterador) Is Windows.Forms.ComboBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
+                    controlesLlenos = False
                 Else
                     ctrlIterador.BackColor = Color.White
                 End If
             End If
         Next
-        Try
-            If IsNothing(Me.clienteActual) Then
-                Me.clienteActual = New negociosCliente()
-                Me.clienteActual.setNitCliente(nitC)
-                Me.clienteActual.setNombreCliente(txtnombre.Text)
-                Me.clienteActual.setDireccionCliente(txtdireccion.Text)
-                Me.clienteActual.setIdTipoCliente(Convert.ToInt32(cmbtipocliente.SelectedValue))
-                Me.clienteActual.fnvInsertarCliente()
-                Me.clienteActual = negociosCliente.fnnaBuscarClienteNit(Me.clienteActual.getNitCliente())
-            End If
-            'Me.factura.setIdEmpleado(frmPrincipal.gnegEmpleado.getIdEmpleado())
-            Me.factura.setIdEmpleado(1)
-            Me.factura.setSerie(Me.serieActual.getSerie())
-            Me.factura.setIdCliente(Me.clienteActual.getIdCliente())
-            Me.factura.fnvInsertarFacturaCliente()
-            MessageBox.Show(Me.factura.fnInsertarFacturaCliente(), "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            'Aqui se muestra el reporte de la factura en sì
-            Me.Dispose()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        If controlesLlenos = False Then
+            'MessageBox.Show("Debe ingresar un nuevo talonario de facturas", "No hay talonario de facturas", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf Me.factura.getDetalleFactura.Count = 0 Then
+            MessageBox.Show("No hay productos para ingresar a la factura", "Factura ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Try
+                If IsNothing(Me.clienteActual) Then
+                    Me.clienteActual = New negociosCliente()
+                    Me.clienteActual.setNitCliente(nitC)
+                    Me.clienteActual.setNombreCliente(txtnombre.Text)
+                    Me.clienteActual.setDireccionCliente(txtdireccion.Text)
+                    Me.clienteActual.setIdTipoCliente(Convert.ToInt32(cmbtipocliente.SelectedValue))
+
+                    If nitC = "CF" Then 'si el cliente es consumidor final, tiene que buscarse en la base de datos y luego
+                        Me.clienteActual.fnvinsertarclienteCF()
+                    Else
+                        Me.clienteActual.fnvInsertarCliente()
+                        Me.clienteActual = negociosCliente.fnnaBuscarClienteNit(Me.clienteActual.getNitCliente())
+                    End If
+                End If
+                'Me.factura.setIdEmpleado(frmPrincipal.gnegEmpleado.getIdEmpleado())
+                Me.factura.setIdEmpleado(1)
+                Me.factura.setSerie(Me.serieActual.getSerie())
+                Me.factura.setIdCliente(Me.clienteActual.getIdCliente())
+                Me.factura.fnvInsertarFacturaCliente()
+                MessageBox.Show("La factura fue ingresada exitosamente", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                'Aqui se muestra el reporte de la factura en sì
+
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
     End Sub
 
     Private Sub txtCodigo_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs)
@@ -279,7 +294,7 @@ Public Class frmFacturar
         'If negociosCliente.fnBuscarClientePorNit(txtnit.Text) Then
         '    Me.clienteActual = 
         'End If
-        If txtnit.Text = "C.F." Or txtnit.Text = "CF" Or txtnit.Text = "C/F" Or txtnit.Text = "cf" Or txtnit.Text = "" Then
+        If txtnit.Text = "C.F." Or txtnit.Text = "C. F." Or txtnit.Text = "CF" Or txtnit.Text = "C/F" Or txtnit.Text = "cf" Or txtnit.Text = "c f" Or txtnit.Text = "C F" Or txtnit.Text = "" Then
             nitC = "CF"
         Else
             Try
