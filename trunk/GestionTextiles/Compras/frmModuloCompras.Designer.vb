@@ -151,7 +151,7 @@ Partial Class frmModuloCompras
         Me.btnAnularCompra.Name = "btnAnularCompra"
         Me.btnAnularCompra.Size = New System.Drawing.Size(107, 77)
         Me.btnAnularCompra.TabIndex = 6
-        Me.btnAnularCompra.Text = "&Anular Compra"
+        Me.btnAnularCompra.Text = "&Devolver Productos"
         Me.btnAnularCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnAnularCompra.UseVisualStyleBackColor = False
         '

@@ -79,14 +79,42 @@ Public Class frmModuloProveedores
     End Sub
 
     Private Sub frmModuloProveedores_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'dgvListaProveedores.DataSource = negociosProveedores.fnsDTListarProveedores
-        'dgvListaProveedores.Columns(0).Visible = False
-        'dgvListaProveedores.Columns(8).Visible = False
-        Try
-            fnvdRecargar()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        ' Establecer permisos del modulo de series
+        Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
+
+        If lnegPermisos.getPermisoCreacionProveedores() Then
+            btnNProveedor.Enabled = True
+        Else
+            btnNProveedor.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoEliminacionProveedores() Then
+            btnEliminarProv.Enabled = True
+        Else
+            btnEliminarProv.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoModificacionProveedores() Then
+            btnModificarProv.Enabled = True
+        Else
+            btnModificarProv.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoListarProveedores() Then
+            txtBusqueda.Enabled = True
+            btnbuscar.Enabled = True
+            dgvListaProveedores.Enabled = True
+            Try
+                fnvdRecargar()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            txtBusqueda.Enabled = False
+            btnbuscar.Enabled = False
+            dgvListaProveedores.Enabled = False
+        End If
+
     End Sub
 
     Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosProveedores))

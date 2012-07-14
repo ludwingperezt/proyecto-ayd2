@@ -74,4 +74,21 @@ Public Class frmModuloCompras
     Private Sub btnSalir_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
         Me.Dispose()
     End Sub
+
+    Private Sub frmModuloCompras_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        ' Establecer permisos del modulo de Compras
+        Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
+
+        If lnegPermisos.getPermisoCompra() Then
+            btnNCompra.Enabled = True
+        Else
+            btnNCompra.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoDevolverProductosProveedores() Then
+            btnAnularCompra.Enabled = True
+        Else
+            btnAnularCompra.Enabled = False
+        End If
+    End Sub
 End Class

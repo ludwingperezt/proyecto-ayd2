@@ -1,4 +1,6 @@
-﻿Public Class frmCompras
+﻿Imports negocios
+
+Public Class frmCompras
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         frmModuloProductos.btnSalir.Visible = False
