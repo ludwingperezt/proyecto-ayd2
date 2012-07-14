@@ -20,6 +20,7 @@ namespace negocios
         public static insertarEncabezadoFacturaClienteTableAdapter gAdaptadorEncabezadoFacturaCliente = new insertarEncabezadoFacturaClienteTableAdapter();
         public static buscarProveedorPorNitTableAdapter gAdaptadorRegistroProveedor = new buscarProveedorPorNitTableAdapter();
         public static buscarEmpleadoNombre1TableAdapter gAdaptadorEmpleadoNombre = new buscarEmpleadoNombre1TableAdapter();
+        public static buscarClienteNit1TableAdapter gAdaptadorClienteNit = new buscarClienteNit1TableAdapter();
         public static buscarClienteNombreTableAdapter gAdaptadorClienteNombre = new buscarClienteNombreTableAdapter();
         public static buscarTipoClienteNombre1TableAdapter gAdaptadorTipoClienteNombre = new buscarTipoClienteNombre1TableAdapter();
         public static ultimosVeinteEmpleadosTableAdapter gAdaptadorUltimosVeinteEmpleados = new ultimosVeinteEmpleadosTableAdapter();
