@@ -147,7 +147,8 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProductos.Click
-        frmModuloProductos.Show(Me)
+        frmModuloProductos.seleccion = False
+        frmModuloProductos.ShowDialog(Me)
     End Sub
 
     Private Sub btnProductos_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProductos.MouseLeave

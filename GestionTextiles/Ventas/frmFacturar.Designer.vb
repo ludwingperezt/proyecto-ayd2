@@ -28,13 +28,8 @@ Partial Class frmFacturar
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtnit = New System.Windows.Forms.TextBox()
         Me.txtdireccion = New System.Windows.Forms.TextBox()
-        Me.cmbserie = New System.Windows.Forms.ComboBox()
         Me.lblserie = New System.Windows.Forms.Label()
         Me.dgvdetallefactura = New System.Windows.Forms.DataGridView()
-        Me.clmCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clmCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clmTela = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clmSubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gpProducto = New System.Windows.Forms.GroupBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtCantidad = New System.Windows.Forms.TextBox()
@@ -60,6 +55,9 @@ Partial Class frmFacturar
         Me.lblcambio = New System.Windows.Forms.Label()
         Me.txtEfectivo = New System.Windows.Forms.TextBox()
         Me.lblefectivo = New System.Windows.Forms.Label()
+        Me.txtSerie = New System.Windows.Forms.TextBox()
+        Me.txtDescuento = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgvdetallefactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gpProducto.SuspendLayout()
         Me.stsBarra.SuspendLayout()
@@ -108,6 +106,7 @@ Partial Class frmFacturar
         Me.txtnit.Name = "txtnit"
         Me.txtnit.Size = New System.Drawing.Size(852, 20)
         Me.txtnit.TabIndex = 1
+        Me.txtnit.Text = "C.F."
         '
         'txtdireccion
         '
@@ -115,14 +114,6 @@ Partial Class frmFacturar
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.Size = New System.Drawing.Size(851, 20)
         Me.txtdireccion.TabIndex = 3
-        '
-        'cmbserie
-        '
-        Me.cmbserie.FormattingEnabled = True
-        Me.cmbserie.Location = New System.Drawing.Point(95, 81)
-        Me.cmbserie.Name = "cmbserie"
-        Me.cmbserie.Size = New System.Drawing.Size(110, 21)
-        Me.cmbserie.TabIndex = 0
         '
         'lblserie
         '
@@ -136,35 +127,10 @@ Partial Class frmFacturar
         'dgvdetallefactura
         '
         Me.dgvdetallefactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvdetallefactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clmCantidad, Me.clmCodigo, Me.clmTela, Me.clmSubtotal})
         Me.dgvdetallefactura.Location = New System.Drawing.Point(22, 390)
         Me.dgvdetallefactura.Name = "dgvdetallefactura"
         Me.dgvdetallefactura.Size = New System.Drawing.Size(925, 178)
         Me.dgvdetallefactura.TabIndex = 8
-        '
-        'clmCantidad
-        '
-        Me.clmCantidad.HeaderText = "Cantidad"
-        Me.clmCantidad.Name = "clmCantidad"
-        Me.clmCantidad.Width = 200
-        '
-        'clmCodigo
-        '
-        Me.clmCodigo.HeaderText = "Codigo"
-        Me.clmCodigo.Name = "clmCodigo"
-        Me.clmCodigo.Width = 200
-        '
-        'clmTela
-        '
-        Me.clmTela.HeaderText = "Tela"
-        Me.clmTela.Name = "clmTela"
-        Me.clmTela.Width = 300
-        '
-        'clmSubtotal
-        '
-        Me.clmSubtotal.HeaderText = "Subtotal"
-        Me.clmSubtotal.Name = "clmSubtotal"
-        Me.clmSubtotal.Width = 180
         '
         'gpProducto
         '
@@ -226,7 +192,7 @@ Partial Class frmFacturar
         'lbTotal
         '
         Me.lbTotal.AutoSize = True
-        Me.lbTotal.Location = New System.Drawing.Point(816, 650)
+        Me.lbTotal.Location = New System.Drawing.Point(743, 647)
         Me.lbTotal.Name = "lbTotal"
         Me.lbTotal.Size = New System.Drawing.Size(34, 13)
         Me.lbTotal.TabIndex = 20
@@ -235,7 +201,7 @@ Partial Class frmFacturar
         'lblDescuento
         '
         Me.lblDescuento.AutoSize = True
-        Me.lblDescuento.Location = New System.Drawing.Point(816, 604)
+        Me.lblDescuento.Location = New System.Drawing.Point(743, 601)
         Me.lblDescuento.Name = "lblDescuento"
         Me.lblDescuento.Size = New System.Drawing.Size(62, 13)
         Me.lblDescuento.TabIndex = 24
@@ -265,18 +231,18 @@ Partial Class frmFacturar
         'lblTitulo
         '
         Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(397, 26)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(119, 29)
+        Me.lblTitulo.Size = New System.Drawing.Size(124, 31)
         Me.lblTitulo.TabIndex = 28
         Me.lblTitulo.Text = "Facturar"
         '
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 734)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 726)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(964, 22)
         Me.stsBarra.TabIndex = 29
@@ -286,19 +252,19 @@ Partial Class frmFacturar
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(884, 650)
+        Me.lbltotal.Location = New System.Drawing.Point(837, 647)
         Me.lbltotal.Name = "lbltotal"
         Me.lbltotal.Size = New System.Drawing.Size(28, 13)
         Me.lbltotal.TabIndex = 31
@@ -307,7 +273,7 @@ Partial Class frmFacturar
         'lbldescuentofac
         '
         Me.lbldescuentofac.AutoSize = True
-        Me.lbldescuentofac.Location = New System.Drawing.Point(884, 604)
+        Me.lbldescuentofac.Location = New System.Drawing.Point(837, 624)
         Me.lbldescuentofac.Name = "lbldescuentofac"
         Me.lbldescuentofac.Size = New System.Drawing.Size(28, 13)
         Me.lbldescuentofac.TabIndex = 32
@@ -364,7 +330,7 @@ Partial Class frmFacturar
         'lblVuelto
         '
         Me.lblVuelto.AutoSize = True
-        Me.lblVuelto.Location = New System.Drawing.Point(698, 650)
+        Me.lblVuelto.Location = New System.Drawing.Point(625, 647)
         Me.lblVuelto.Name = "lblVuelto"
         Me.lblVuelto.Size = New System.Drawing.Size(28, 13)
         Me.lblVuelto.TabIndex = 63
@@ -373,7 +339,7 @@ Partial Class frmFacturar
         'lblcambio
         '
         Me.lblcambio.AutoSize = True
-        Me.lblcambio.Location = New System.Drawing.Point(597, 650)
+        Me.lblcambio.Location = New System.Drawing.Point(524, 647)
         Me.lblcambio.Name = "lblcambio"
         Me.lblcambio.Size = New System.Drawing.Size(45, 13)
         Me.lblcambio.TabIndex = 62
@@ -381,7 +347,7 @@ Partial Class frmFacturar
         '
         'txtEfectivo
         '
-        Me.txtEfectivo.Location = New System.Drawing.Point(664, 604)
+        Me.txtEfectivo.Location = New System.Drawing.Point(591, 601)
         Me.txtEfectivo.Name = "txtEfectivo"
         Me.txtEfectivo.Size = New System.Drawing.Size(100, 20)
         Me.txtEfectivo.TabIndex = 64
@@ -389,11 +355,35 @@ Partial Class frmFacturar
         'lblefectivo
         '
         Me.lblefectivo.AutoSize = True
-        Me.lblefectivo.Location = New System.Drawing.Point(597, 607)
+        Me.lblefectivo.Location = New System.Drawing.Point(524, 604)
         Me.lblefectivo.Name = "lblefectivo"
         Me.lblefectivo.Size = New System.Drawing.Size(49, 13)
         Me.lblefectivo.TabIndex = 65
         Me.lblefectivo.Text = "Efectivo:"
+        '
+        'txtSerie
+        '
+        Me.txtSerie.Enabled = False
+        Me.txtSerie.Location = New System.Drawing.Point(95, 81)
+        Me.txtSerie.Name = "txtSerie"
+        Me.txtSerie.Size = New System.Drawing.Size(100, 20)
+        Me.txtSerie.TabIndex = 66
+        '
+        'txtDescuento
+        '
+        Me.txtDescuento.Location = New System.Drawing.Point(811, 601)
+        Me.txtDescuento.Name = "txtDescuento"
+        Me.txtDescuento.Size = New System.Drawing.Size(100, 20)
+        Me.txtDescuento.TabIndex = 67
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(743, 624)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.TabIndex = 68
+        Me.Label1.Text = "Subtotal"
         '
         'frmFacturar
         '
@@ -401,7 +391,10 @@ Partial Class frmFacturar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(964, 756)
+        Me.ClientSize = New System.Drawing.Size(964, 748)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtDescuento)
+        Me.Controls.Add(Me.txtSerie)
         Me.Controls.Add(Me.lblefectivo)
         Me.Controls.Add(Me.txtEfectivo)
         Me.Controls.Add(Me.lblVuelto)
@@ -422,7 +415,6 @@ Partial Class frmFacturar
         Me.Controls.Add(Me.gpProducto)
         Me.Controls.Add(Me.dgvdetallefactura)
         Me.Controls.Add(Me.lblserie)
-        Me.Controls.Add(Me.cmbserie)
         Me.Controls.Add(Me.txtdireccion)
         Me.Controls.Add(Me.txtnit)
         Me.Controls.Add(Me.txtnombre)
@@ -449,7 +441,6 @@ Partial Class frmFacturar
     Friend WithEvents txtnombre As System.Windows.Forms.TextBox
     Friend WithEvents txtnit As System.Windows.Forms.TextBox
     Friend WithEvents txtdireccion As System.Windows.Forms.TextBox
-    Friend WithEvents cmbserie As System.Windows.Forms.ComboBox
     Friend WithEvents lblserie As System.Windows.Forms.Label
     Friend WithEvents dgvdetallefactura As System.Windows.Forms.DataGridView
     Friend WithEvents gpProducto As System.Windows.Forms.GroupBox
@@ -472,13 +463,12 @@ Partial Class frmFacturar
     Friend WithEvents lblEmpleado As System.Windows.Forms.Label
     Friend WithEvents cmbtipocliente As System.Windows.Forms.ComboBox
     Friend WithEvents lbltipocliente As System.Windows.Forms.Label
-    Friend WithEvents clmCantidad As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents clmCodigo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents clmTela As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents clmSubtotal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btntipocliente As System.Windows.Forms.Button
     Friend WithEvents lblVuelto As System.Windows.Forms.Label
     Friend WithEvents lblcambio As System.Windows.Forms.Label
     Friend WithEvents txtEfectivo As System.Windows.Forms.TextBox
     Friend WithEvents lblefectivo As System.Windows.Forms.Label
+    Friend WithEvents txtSerie As System.Windows.Forms.TextBox
+    Friend WithEvents txtDescuento As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

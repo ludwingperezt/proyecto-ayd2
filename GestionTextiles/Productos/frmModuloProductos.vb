@@ -3,6 +3,7 @@ Public Class frmModuloProductos
     Private glstProductos As List(Of negociosProducto) = New List(Of negociosProducto)
     Private glstProductosFiltrada As List(Of negociosProducto) = New List(Of negociosProducto)
     Public Shared gnpProductoSeleccionado As negociosProducto
+    Public Shared seleccion As Boolean = False
     Private numeroPagina As Integer = 1
 
     Private banderaBusqueda As Boolean = False
@@ -104,6 +105,16 @@ Public Class frmModuloProductos
     End Sub
 
     Private Sub frmModuloProductos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If seleccion Then
+            'si el form se abre para seleccionar un producto y pasarlo a la factura se hace esto:
+            btnSalir.Visible = False
+            btnIngresarProducto.Visible = False
+            btnEliminarProducto.Visible = False
+            btnModificarProducto.Visible = False
+        Else
+            'si el form se abre como modulo independiente se hace esto:
+            btnSeleccionarProducto.Visible = False
+        End If
         Me.fnvdRecargar()
     End Sub
     Private Sub fnvCrearDataTable(ByRef lst As List(Of negociosProducto))
@@ -193,6 +204,7 @@ Public Class frmModuloProductos
         If IsNothing(frmModuloProductos.gnpProductoSeleccionado) Then
             MessageBox.Show("No puede usar esta opción si no ha hecho clic en algun elemento de la lista", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         Else
+            frmFacturar.productoSeleccionado = frmModuloProductos.gnpProductoSeleccionado
             Me.Dispose()
         End If
     End Sub

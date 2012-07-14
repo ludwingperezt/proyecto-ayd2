@@ -307,6 +307,39 @@ namespace negocios
             }
             return temporal;
         }
+        /// <summary>
+        /// Obtiene la ùnica serie activa para emisión de facturas
+        /// </summary>
+        /// <returns>negociosSerie: el objeto de la ùnica serie activa</returns>
+        public static negociosSerie fnObtenerSerieActiva()
+        {
+            List<negociosSerie> lstSeries = negociosSerie.fnlstListaSeries();
+            negociosSerie temporal = null;
+
+            if (lstSeries.Count >= 1)
+            {
+                temporal = lstSeries[0];
+            }
+
+            return temporal;
+        }
+        /// <summary>
+        /// Obtiene la ùnica serie activa para emisión de facturas, segùn el ID de la terminal
+        /// </summary>
+        /// <param name="idTerminal">int: el id de la terminal</param>
+        /// <returns>negociosSerie: el objeto de la ùnica serie activa</returns>
+        public static negociosSerie fnObtenerSerieActivaIdTerminal(int idTerminal)
+        {
+            return null;
+        }
+        /// <summary>
+        /// Funciòn que retorna la lista de todas las series en la base de datos (la serie activa y las no activas que no han sido usadas), menos las series vencidas
+        /// </summary>
+        /// <returns></returns>
+        public static List<negociosSerie> fnlstListarSeriesTodas()
+        {
+            return null;
+        }
         #endregion
     }
 }
