@@ -134,9 +134,11 @@ Partial Class frmLogin
         '
         'frmLogin
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(330, 214)
         Me.Controls.Add(Me.dgvUsuario)
         Me.Controls.Add(Me.stsBarra)
@@ -148,6 +150,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
         Me.DoubleBuffered = True
+        Me.MaximizeBox = False
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
