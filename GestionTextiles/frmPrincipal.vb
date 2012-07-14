@@ -162,60 +162,60 @@ Public Class frmPrincipal
 
         ' Esto queda para el final, xq sino no podremos realizar pruebas
 
-        If gnegPermisos.getPermisoAccesoModuloCliente() Then
-            BtnClientes.Enabled = True
-        Else
-            BtnClientes.Enabled = False
-        End If
+        'If gnegPermisos.getPermisoAccesoModuloCliente() Then
+        '    BtnClientes.Enabled = True
+        'Else
+        '    BtnClientes.Enabled = False
+        'End If
 
-        If gnegPermisos.getPermisoAccesoModuloCompras() Then
-            BtnCompras.Enabled = True
-        Else
-            BtnCompras.Enabled = False
-        End If
+        'If gnegPermisos.getPermisoAccesoModuloCompras() Then
+        '    BtnCompras.Enabled = True
+        'Else
+        '    BtnCompras.Enabled = False
+        'End If
 
-        If gnegPermisos.getPermisoAccesoModuloEmpleados() Then
-            BtnEmpleados.Enabled = True
-        Else
-            BtnEmpleados.Enabled = False
-        End If
+        'If gnegPermisos.getPermisoAccesoModuloEmpleados() Then
+        '    BtnEmpleados.Enabled = True
+        'Else
+        '    BtnEmpleados.Enabled = False
+        'End If
 
-        If gnegPermisos.getPermisoAccesoModuloVentas() Then
-            BtnVentas.Enabled = True
-        Else
-            BtnVentas.Enabled = False
-        End If
+        'If gnegPermisos.getPermisoAccesoModuloVentas() Then
+        '    BtnVentas.Enabled = True
+        'Else
+        '    BtnVentas.Enabled = False
+        'End If
 
-        If gnegPermisos.getPermisoAccesoModuloProductos() Then
-            btnProductos.Enabled = True
-        Else
-            btnProductos.Enabled = False
-        End If
+        'If gnegPermisos.getPermisoAccesoModuloProductos() Then
+        '    btnProductos.Enabled = True
+        'Else
+        '    btnProductos.Enabled = False
+        'End If
 
-        If gnegPermisos.getPermisoAccesoModuloProveedores() Then
-            BtnProveedores.Enabled = True
-        Else
-            BtnProveedores.Enabled = False
+        'If gnegPermisos.getPermisoAccesoModuloProveedores() Then
+        '    BtnProveedores.Enabled = True
+        'Else
+        '    BtnProveedores.Enabled = False
 
-        End If
+        'End If
 
-        If gnegPermisos.getPermisoAccesoModuloReportes() Then
-            btnReportes.Enabled = True
-        Else
-            btnReportes.Enabled = False
-        End If
+        'If gnegPermisos.getPermisoAccesoModuloReportes() Then
+        '    btnReportes.Enabled = True
+        'Else
+        '    btnReportes.Enabled = False
+        'End If
 
-        If gnegPermisos.getPermisoAccesoModuloRol() Then
-            BtnRoles.Enabled = True
-        Else
-            BtnRoles.Enabled = False
-        End If
+        'If gnegPermisos.getPermisoAccesoModuloRol() Then
+        '    BtnRoles.Enabled = True
+        'Else
+        '    BtnRoles.Enabled = False
+        'End If
 
-        If gnegPermisos.getPermisoAccesoModuloTalonario() Then
-            BtnGestionTalonarios.Enabled = True
-        Else
-            BtnGestionTalonarios.Enabled = False
-        End If
+        'If gnegPermisos.getPermisoAccesoModuloTalonario() Then
+        '    BtnGestionTalonarios.Enabled = True
+        'Else
+        '    BtnGestionTalonarios.Enabled = False
+        'End If
 
 
     End Sub
