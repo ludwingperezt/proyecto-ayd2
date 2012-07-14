@@ -152,6 +152,14 @@ namespace negocios
                  return negociosAdaptadores.gAdaptadorClienteNombre.GetData(nombreCliente);
 
              }
+             /// <summary>
+             /// Función que busca a un cliente por nombre
+             /// </summary>
+             /// <returns>DataTable: me devuelve a un cliente buscado por nombre</returns>
+             public static DataTable fnDbBuscarClienteNit(string SnitCliente)
+             {
+                 return negociosAdaptadores.gAdaptadorClienteNit.GetData(SnitCliente);
+             }
              #endregion
     }
 }
