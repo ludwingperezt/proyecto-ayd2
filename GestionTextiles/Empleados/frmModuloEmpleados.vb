@@ -268,7 +268,6 @@ Public Class frmModuloEmpleados
             ldrFila(6) = lnpEmpleado.getFechaDeContratacion()
             ldrFila(7) = lnpEmpleado.getSalarioEmpleado()
             ldtTabla.Rows.Add(ldrFila)
-
         Next
         Me.dgvEmpleados.DataSource = ldtTabla
     End Sub
