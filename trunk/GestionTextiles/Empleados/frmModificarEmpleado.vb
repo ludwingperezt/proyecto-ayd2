@@ -6,6 +6,12 @@ Public Class frmModificarEmpleado
     Public Shared gnpRolSeleccionado As negociosRol
     Private glstRol As List(Of negociosRol) = New List(Of negociosRol)
     Private banderaBusqueda As Boolean = False
+    Private glstEmpleados As List(Of negociosEmpleado) = New List(Of negociosEmpleado)
+    Private glstEmpleadosFiltrada As List(Of negociosEmpleado) = New List(Of negociosEmpleado)
+    Public Shared gnpEmpleadoSeleccionado As negociosEmpleado
+    Dim cantidad As Integer
+
+
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Dim lbooBandera As Boolean = True
 
@@ -160,7 +166,7 @@ Public Class frmModificarEmpleado
     End Sub
     Private Sub fnvdRecargar()
         Try
-            frmEmpleados.gnpRolSeleccionado = Nothing
+            frmModificarEmpleado.gnpRolSeleccionado = Nothing
             Me.glstRolFiltrada.Clear()
             Me.banderaBusqueda = False
             Me.glstRol = negociosRol.fnlstListarRoles()
@@ -168,6 +174,47 @@ Public Class frmModificarEmpleado
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub fnvdRecargarUsuario()
+        Try
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = Nothing
+            Me.glstEmpleadosFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstEmpleados = negociosEmpleado.fnslListarEmpleadoUsuario(txtUsuario.Text)
+            Me.fnvCrearDataTable1(Me.glstEmpleados)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub fnvCrearDataTable1(ByRef lista As List(Of negociosEmpleado))
+        Dim ldtTabla As DataTable = New DataTable()
+        Dim ldrFila As DataRow
+        Dim lnpEmpleado As negociosEmpleado
+        ldtTabla.Columns.Add("Nombre")
+        ldtTabla.Columns.Add("Apellido")
+        ldtTabla.Columns.Add("Direccion")
+        ldtTabla.Columns.Add("Telefono")
+        ldtTabla.Columns.Add("Celular")
+        ldtTabla.Columns.Add("Puesto")
+        ldtTabla.Columns.Add("Fecha Contratacion")
+        ldtTabla.Columns.Add("Salario")
+
+        For i = 0 To lista.Count - 1 Step 1
+            ldrFila = ldtTabla.NewRow()
+            lnpEmpleado = lista(i)
+            ldrFila(0) = lnpEmpleado.getNombreEmpleado()
+            ldrFila(1) = lnpEmpleado.getApellidoEmpleado()
+            ldrFila(2) = lnpEmpleado.getDireccionEmpleado()
+            ldrFila(3) = lnpEmpleado.getTelefonoEmpleado()
+            ldrFila(4) = lnpEmpleado.getCelularEmpleado()
+            ldrFila(5) = lnpEmpleado.getPuestoEmpleado()
+            ldrFila(6) = lnpEmpleado.getFechaDeContratacion()
+            ldrFila(7) = lnpEmpleado.getSalarioEmpleado()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        cantidad = ldtTabla.Rows.Count
     End Sub
     Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosRol))
         Dim ldtTabla As DataTable = New DataTable()
@@ -241,5 +288,14 @@ Public Class frmModificarEmpleado
             End If
         End If
         
+    End Sub
+
+    Private Sub btnComprobar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.Click
+        Dim usuarioVerificar As String
+        usuarioVerificar = txtUsuario.Text
+        fnvdRecargarUsuario()
+        If (cantidad > 0) Then
+            MessageBox.Show("Ese usuario ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 End Class
