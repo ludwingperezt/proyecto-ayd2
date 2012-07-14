@@ -201,7 +201,8 @@ Public Class frmModificarPermiso
                 'si es una insersiòn
                 Try
                     lnrNuevoRol.fnvdCrearRol()
-                    slblDescripcion.Text = "La inserción del nuevo rol de permisos se llevó a cabo con éxito"
+                    'slblDescripcion.Text = "La inserción del nuevo rol de permisos se llevó a cabo con éxito"
+                    MessageBox.Show("La operación de insersión finalizó con éxito", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     frmRoles.nrRolSeleccionado = Nothing
                     Me.Dispose()
                 Catch ex As Exception
@@ -285,8 +286,8 @@ Public Class frmModificarPermiso
         clbReportes.SetItemChecked(3, frmRoles.nrRolSeleccionado.getPermisoHistorialCostos())
         clbReportes.SetItemChecked(4, frmRoles.nrRolSeleccionado.getPermisoHistorialVentasMes())
         clbReportes.SetItemChecked(5, frmRoles.nrRolSeleccionado.getPermisoHistorialComprasMes())
-        clbReportes.SetItemChecked(6, frmRoles.nrRolSeleccionado.getPermisoHistorialCreditoPorProveedor())
-        clbReportes.SetItemChecked(7, frmRoles.nrRolSeleccionado.getPermisoHistorialCreditoMes())
+        'clbReportes.SetItemChecked(6, frmRoles.nrRolSeleccionado.getPermisoHistorialCreditoPorProveedor())
+        'clbReportes.SetItemChecked(7, frmRoles.nrRolSeleccionado.getPermisoHistorialCreditoMes())
 
         'creando permisos de gestión de series (talonarios)
         clbTalonario.SetItemChecked(0, frmRoles.nrRolSeleccionado.getPermisoCreacionSerieFacturaVenta())
