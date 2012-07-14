@@ -1,10 +1,11 @@
 ﻿Imports negocios
 
 Public Class frmModuloProveedores
-    Public Shared lstnpProveedores, lstnpProveedoresFiltrado As IList(Of negociosProveedores)
-
+    Public Shared lstnpProveedores As IList(Of negociosProveedores)
+    Public Shared lstnpProveedoresFiltrado As IList(Of negociosProveedores) = New List(Of negociosProveedores)
     Public Shared gnpProveedor As negociosProveedores
     Dim bBusquenda As Boolean = False
+    Dim iNumeroPagina As Integer = 1
 
     Private Sub btnNProveedor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNProveedor.Click
         frmNuevoProveedor.actualizar = False
@@ -63,11 +64,16 @@ Public Class frmModuloProveedores
     End Sub
 
     Private Sub dgvListaProveedores_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvListaProveedores.CellClick
-        If bBusquenda Then
-            frmModuloProveedores.gnpProveedor = lstnpProveedoresFiltrado(e.RowIndex)
-        Else
-            frmModuloProveedores.gnpProveedor = lstnpProveedores(e.RowIndex)
-        End If
+        Try
+            If bBusquenda Then
+                frmModuloProveedores.gnpProveedor = lstnpProveedoresFiltrado(e.RowIndex)
+            Else
+                frmModuloProveedores.gnpProveedor = lstnpProveedores(e.RowIndex)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        
     End Sub
 
     Private Sub dgvListaProveedores_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvListaProveedores.MouseLeave
@@ -150,23 +156,30 @@ Public Class frmModuloProveedores
     End Sub
 
     Private Sub fnvdRecargar()
-        If IsNothing(lstnpProveedores) Then
-            Try
-                frmModuloProveedores.lstnpProveedores = negociosProveedores.fnslListarProveedores()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End If
-        If bBusquenda = True Then
+        Try
             frmModuloProveedores.gnpProveedor = Nothing
-            'frmModuloProveedores.lstnpProveedoresFiltrado = negociosProveedores.fnslListarProveedores()
-            Me.fnvCrearDataTable(frmModuloProveedores.lstnpProveedoresFiltrado)
             frmModuloProveedores.lstnpProveedoresFiltrado.Clear()
             bBusquenda = False
-        Else
-            frmModuloProveedores.gnpProveedor = Nothing
+            frmModuloProveedores.lstnpProveedores = negociosProveedores.fnslPaginacionProveedores(20, iNumeroPagina)
             Me.fnvCrearDataTable(frmModuloProveedores.lstnpProveedores)
-        End If
+            If frmModuloProveedores.lstnpProveedores.Count < 20 Then
+                btnSiguiente.Enabled = False
+            Else
+                btnSiguiente.Enabled = True
+
+            End If
+
+            If Me.iNumeroPagina = 1 Then
+                btnAnterior.Enabled = False
+            Else
+                btnAnterior.Enabled = True
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvListaProveedores.DataSource = Nothing
+
+        End Try
+        
 
     End Sub
 
@@ -295,6 +308,19 @@ Public Class frmModuloProveedores
     End Sub
 
     Private Sub btnRegresar_Click(sender As System.Object, e As System.EventArgs) Handles btnRegresar.Click
+        iNumeroPagina = 1
+        fnvdRecargar()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnterior.Click
+        If iNumeroPagina > 1 Then
+            iNumeroPagina = iNumeroPagina - 1
+            fnvdRecargar()
+        End If
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.Click
+        iNumeroPagina = iNumeroPagina + 1
         fnvdRecargar()
     End Sub
 End Class
