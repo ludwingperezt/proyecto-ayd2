@@ -1,7 +1,7 @@
 ﻿Imports negocios
 Public Class frmEmpleados
-    Dim lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
-    Dim lnpRol As negociosRol = New negociosRol()
+    Public Shared lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
+    Public Shared lnRol As negociosRol = New negociosRol
     Dim lbooBanderaPunto As Boolean = False
     Private Sub slblDescripcion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles slblDescripcion.Click
 
@@ -107,10 +107,7 @@ Public Class frmEmpleados
             lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
             lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
             lnpNuevoEmpleado.setHabilitadoEmpleado(1)
-            Dim bytes() As Byte
-            bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
-            lnpNuevoEmpleado.setPasswordEmpleado(bytes)
-
+            lnpNuevoEmpleado.setPasswordEmpleado(lnpNuevoEmpleado.arrbyCalcularHash(txtPassword.Text))
             Try
                 lnpNuevoEmpleado.fnsInsertarEmpleado()
                 MessageBox.Show("La operación de insersión de empleado se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -188,9 +185,10 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub frmEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        cmbRolEmpleado.DataSource = lnpRol.fnlstListarRoles()
+        cmbRolEmpleado.DataSource = lnRol.fnlstListarRoles()
         cmbRolEmpleado.DisplayMember = "NOMBRE"
-        cmbRolEmpleado.ValueMember = "IDROL"
+        'cmbRolEmpleado.ValueMember = "IDROL"
+        DataGridView1.DataSource = lnRol.fnlstListarRoles()
     End Sub
 
     Private Sub cmbRolEmpleado_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbRolEmpleado.MouseLeave
