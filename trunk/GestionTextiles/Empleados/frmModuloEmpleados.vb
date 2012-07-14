@@ -126,7 +126,54 @@ Public Class frmModuloEmpleados
     End Sub
 
     Private Sub frmModuloEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.fnvdRecargar()
+
+
+        ' Establecer permisos
+        Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
+
+        If lnegPermisos.getPermisoCreacionEmpleados Then
+            btnIngresarEmpleado.Enabled = True
+        Else
+            btnIngresarEmpleado.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoModificacionEmpleados Then
+            btnModificarEmpleado.Enabled = True
+        Else
+            btnModificarEmpleado.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoEliminacionEmpleados Then
+            btnEliminarEmpleados.Enabled = True
+        Else
+            btnEliminarEmpleados.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoListarEmpleados Then
+            txtbusqueda.Enabled = True
+            btnbuscar.Enabled = True
+            cmbFiltroCriterio.Enabled = True
+            cmbFiltradoEstados.Enabled = True
+            dgvEmpleados.Enabled = True
+            btnRegresar.Enabled = True
+            Try
+                fnvdRecargar()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            txtbusqueda.Enabled = False
+            btnbuscar.Enabled = False
+            cmbFiltroCriterio.Enabled = False
+            cmbFiltradoEstados.Enabled = False
+            dgvEmpleados.Enabled = False
+            btnRegresar.Enabled = False
+        End If
+
+
+
+
+
     End Sub
     Private Sub fnvdRecargar()
         Try
