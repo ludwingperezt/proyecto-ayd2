@@ -41,8 +41,8 @@ Partial Class frmModuloProveedores
         Me.lblFiltradoEstados = New System.Windows.Forms.Label()
         Me.gbListaProv = New System.Windows.Forms.GroupBox()
         Me.btnRegresar = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaProv.SuspendLayout()
@@ -228,23 +228,25 @@ Partial Class frmModuloProveedores
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
-        'btnAnterior
-        '
-        Me.btnAnterior.Location = New System.Drawing.Point(286, 15)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
-        Me.btnAnterior.TabIndex = 8
-        Me.btnAnterior.Text = "Anterior"
-        Me.btnAnterior.UseVisualStyleBackColor = True
-        '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(367, 15)
+        Me.btnSiguiente.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSiguiente.Image = Global.GestionTextiles.My.Resources.Resources.bluesharp1
+        Me.btnSiguiente.Location = New System.Drawing.Point(406, 15)
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(75, 23)
-        Me.btnSiguiente.TabIndex = 9
-        Me.btnSiguiente.Text = "Siguiente"
-        Me.btnSiguiente.UseVisualStyleBackColor = True
+        Me.btnSiguiente.TabIndex = 55
+        Me.btnSiguiente.UseVisualStyleBackColor = False
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAnterior.Image = Global.GestionTextiles.My.Resources.Resources.bluesharp2
+        Me.btnAnterior.Location = New System.Drawing.Point(323, 15)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
+        Me.btnAnterior.TabIndex = 54
+        Me.btnAnterior.UseVisualStyleBackColor = False
         '
         'frmModuloProveedores
         '

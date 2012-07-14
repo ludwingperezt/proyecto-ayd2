@@ -166,7 +166,6 @@ Public Class frmModuloProveedores
                 btnSiguiente.Enabled = False
             Else
                 btnSiguiente.Enabled = True
-
             End If
 
             If Me.iNumeroPagina = 1 Then
@@ -179,7 +178,7 @@ Public Class frmModuloProveedores
             dgvListaProveedores.DataSource = Nothing
 
         End Try
-        
+
 
     End Sub
 
@@ -307,19 +306,31 @@ Public Class frmModuloProveedores
         Me.fnvdRecargar()
     End Sub
 
-    Private Sub btnRegresar_Click(sender As System.Object, e As System.EventArgs) Handles btnRegresar.Click
+    Private Sub btnRegresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.Click
         iNumeroPagina = 1
         fnvdRecargar()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnterior.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If iNumeroPagina > 1 Then
             iNumeroPagina = iNumeroPagina - 1
             fnvdRecargar()
         End If
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        iNumeroPagina = iNumeroPagina + 1
+        fnvdRecargar()
+    End Sub
+
+    Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnterior.Click
+        If iNumeroPagina > 1 Then
+            iNumeroPagina = iNumeroPagina - 1
+            fnvdRecargar()
+        End If
+    End Sub
+
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.Click
         iNumeroPagina = iNumeroPagina + 1
         fnvdRecargar()
     End Sub
