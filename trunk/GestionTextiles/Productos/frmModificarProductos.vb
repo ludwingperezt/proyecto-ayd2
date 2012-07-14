@@ -1,5 +1,6 @@
 ﻿Public Class frmModificarProductos
-
+    Dim lbooBanderaPunto As Boolean = False
+    Dim lbooBanderaPunto2 As Boolean = False
     Private Sub frmModificarProductos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         MessageBox.Show("La modificación de datos en esta parte del programa puede dañar la integridad de la base de datos", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Me.txtNombre.Text = frmModuloProductos.gnpProductoSeleccionado.getNombre()
@@ -46,14 +47,32 @@
     End Sub
 
     Private Sub txtPrecioCompra_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecioCompra.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
-            e.KeyChar = vbNullChar
+        If lbooBanderaPunto = False Then
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
+                e.KeyChar = vbNullChar
+                If e.KeyChar = "." Then
+                    lbooBanderaPunto = True
+                End If
+            End If
+        Else
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
+                e.KeyChar = vbNullChar
+            End If
         End If
     End Sub
 
     Private Sub txtPrecioVenta_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecioVenta.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
-            e.KeyChar = vbNullChar
+        If lbooBanderaPunto = False Then
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
+                e.KeyChar = vbNullChar
+                If e.KeyChar = "." Then
+                    lbooBanderaPunto = True
+                End If
+            End If
+        Else
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
+                e.KeyChar = vbNullChar
+            End If
         End If
     End Sub
 
