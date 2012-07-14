@@ -27,9 +27,13 @@ Public Class frmRoles
     End Sub
 
     Private Sub btnAsignarPermiso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarPermiso.Click
-        frmModificarPermiso.actualizar = True
-        frmModificarPermiso.ShowDialog()
-        Me.fnvCargarLista()
+        If IsNothing(frmRoles.nrRolSeleccionado) Then
+            MessageBox.Show("Debe seleccionar un elemento de la lista para poder modificarlo", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            frmModificarPermiso.actualizar = True
+            frmModificarPermiso.ShowDialog()
+            Me.fnvCargarLista()
+        End If
     End Sub
     Private Sub frmRoles_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Establecer permisos del modulo de series
@@ -68,6 +72,7 @@ Public Class frmRoles
 
     Private Sub fnvCargarLista()
         Try
+            txtBusqueda.Text = ""
             frmRoles.nrRolSeleccionado = Nothing
             Me.lstListaRoles = negociosRol.fnlstListarRoles()
             Me.fnvLlenarDataGridView(Me.lstListaRoles)
@@ -120,6 +125,7 @@ Public Class frmRoles
         If lsTexto = "" Then
             Me.fnvCargarLista()
         Else
+            frmRoles.nrRolSeleccionado = Nothing
             Me.fnvBuscar(lsTexto)
         End If
     End Sub
