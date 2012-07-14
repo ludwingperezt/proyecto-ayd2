@@ -29,14 +29,6 @@ Partial Class frmModuloEmpleados
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.txtbusqueda = New System.Windows.Forms.TextBox()
         Me.lblbusqueda = New System.Windows.Forms.Label()
-        Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnEliminarEmpleados = New System.Windows.Forms.Button()
         Me.btnModificarEmpleado = New System.Windows.Forms.Button()
@@ -48,9 +40,10 @@ Partial Class frmModuloEmpleados
         Me.cmbFiltroCriterio = New System.Windows.Forms.ComboBox()
         Me.lblFiltradoEstados = New System.Windows.Forms.Label()
         Me.cmbFiltradoEstados = New System.Windows.Forms.ComboBox()
+        Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.stsBarra.SuspendLayout()
-        CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaEmpleados.SuspendLayout()
+        CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'stsBarra
@@ -100,51 +93,6 @@ Partial Class frmModuloEmpleados
         Me.lblbusqueda.Size = New System.Drawing.Size(43, 13)
         Me.lblbusqueda.TabIndex = 42
         Me.lblbusqueda.Text = "Buscar:"
-        '
-        'dgvEmpleados
-        '
-        Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column1, Me.Column4, Me.Column3, Me.Column5, Me.Column6, Me.Column7})
-        Me.dgvEmpleados.Location = New System.Drawing.Point(11, 50)
-        Me.dgvEmpleados.Name = "dgvEmpleados"
-        Me.dgvEmpleados.Size = New System.Drawing.Size(544, 132)
-        Me.dgvEmpleados.TabIndex = 40
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Nombre"
-        Me.Column2.Name = "Column2"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Cedula / DPI"
-        Me.Column1.Name = "Column1"
-        '
-        'Column4
-        '
-        Me.Column4.FillWeight = 75.0!
-        Me.Column4.HeaderText = "Dirección"
-        Me.Column4.Name = "Column4"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Telefono"
-        Me.Column3.Name = "Column3"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Celular"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Fecha Contrato"
-        Me.Column6.Name = "Column6"
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Sueldo"
-        Me.Column7.Name = "Column7"
         '
         'lblTitulo
         '
@@ -209,8 +157,8 @@ Partial Class frmModuloEmpleados
         '
         'gbListaEmpleados
         '
-        Me.gbListaEmpleados.Controls.Add(Me.btnRegresar)
         Me.gbListaEmpleados.Controls.Add(Me.dgvEmpleados)
+        Me.gbListaEmpleados.Controls.Add(Me.btnRegresar)
         Me.gbListaEmpleados.Location = New System.Drawing.Point(16, 152)
         Me.gbListaEmpleados.Name = "gbListaEmpleados"
         Me.gbListaEmpleados.Size = New System.Drawing.Size(568, 199)
@@ -268,6 +216,14 @@ Partial Class frmModuloEmpleados
         Me.cmbFiltradoEstados.TabIndex = 1
         Me.cmbFiltradoEstados.Visible = False
         '
+        'dgvEmpleados
+        '
+        Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEmpleados.Location = New System.Drawing.Point(19, 55)
+        Me.dgvEmpleados.Name = "dgvEmpleados"
+        Me.dgvEmpleados.Size = New System.Drawing.Size(536, 131)
+        Me.dgvEmpleados.TabIndex = 5
+        '
         'frmModuloEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -291,8 +247,8 @@ Partial Class frmModuloEmpleados
         Me.Text = "Modulo de Empleados"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
-        CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbListaEmpleados.ResumeLayout(False)
+        CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -303,15 +259,7 @@ Partial Class frmModuloEmpleados
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
     Friend WithEvents txtbusqueda As System.Windows.Forms.TextBox
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
-    Friend WithEvents dgvEmpleados As System.Windows.Forms.DataGridView
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnEliminarEmpleados As System.Windows.Forms.Button
     Friend WithEvents btnModificarEmpleado As System.Windows.Forms.Button
     Friend WithEvents btnIngresarEmpleado As System.Windows.Forms.Button
@@ -322,4 +270,5 @@ Partial Class frmModuloEmpleados
     Friend WithEvents lblFiltradoEstados As System.Windows.Forms.Label
     Friend WithEvents cmbFiltradoEstados As System.Windows.Forms.ComboBox
     Friend WithEvents btnRegresar As System.Windows.Forms.Button
+    Friend WithEvents dgvEmpleados As System.Windows.Forms.DataGridView
 End Class
