@@ -105,14 +105,12 @@ Public Class frmEmpleados
             lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
             lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
             lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
-            lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
+            lnpNuevoEmpleado.setPuestoEmpleado(txtPuesto.Text)
             lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
             lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
             lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
             lnpNuevoEmpleado.setHabilitadoEmpleado(1)
             'lnpNuevoEmpleado.setPasswordEmpleado(lnpNuevoEmpleado.arrbyCalcularHash(txtPassword.Text))
-
-
             Try
                 lnpNuevoEmpleado.fnsInsertarEmpleado()
                 MessageBox.Show("La operación de insersión de empleado se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -135,7 +133,7 @@ Public Class frmEmpleados
         End If
     End Sub
 
-    Private Sub cmbPuesto_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbPuesto.SelectedIndexChanged
+    Private Sub cmbPuesto_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
@@ -165,11 +163,11 @@ Public Class frmEmpleados
         slblDescripcion.Text = "Apellidos del Empleado. Ej. Perez Gonon"
     End Sub
 
-    Private Sub cmbPuesto_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbPuesto.MouseLeave
+    Private Sub cmbPuesto_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub cmbPuesto_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbPuesto.MouseHover
+    Private Sub cmbPuesto_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Selecciones el Puesto del Empleado"
     End Sub
 
