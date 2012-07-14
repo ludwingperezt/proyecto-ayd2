@@ -108,6 +108,57 @@ Public Class frmModuloProductos
     End Sub
 
     Private Sub frmModuloProductos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        ' Establecer permisos
+        Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
+
+        If lnegPermisos.getPermisoCreacionProductos Then
+            btnIngresarProducto.Enabled = True
+        Else
+            btnIngresarProducto.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoModificacionProductos Then
+            btnModificarProducto.Enabled = True
+        Else
+            btnModificarProducto.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoEliminacionProductos Then
+            btnEliminarProducto.Enabled = True
+        Else
+            btnEliminarProducto.Enabled = False
+        End If
+
+        'If lnegPermisos.getPermisoBusquedaProductos Then
+        'Else
+        'End If
+
+        If lnegPermisos.getPermisoListarProductos Then
+            btnbuscar.Enabled = True
+            btnAnterior.Enabled = True
+            btnSiguiente.Enabled = True
+            btnRegresar.Enabled = True
+            chCodigo.Enabled = True
+            txtbusqueda.Enabled = True
+            chNombre.Enabled = True
+            dgvEmpleados.Enabled = True
+            Try
+                fnvdRecargar()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            btnbuscar.Enabled = False
+            btnAnterior.Enabled = False
+            btnSiguiente.Enabled = False
+            btnRegresar.Enabled = False
+            chCodigo.Enabled = False
+            txtbusqueda.Enabled = False
+            chNombre.Enabled = False
+            dgvEmpleados.Enabled = False
+        End If
+
         If seleccion Then
             'si el form se abre para seleccionar un producto y pasarlo a la factura se hace esto:
             btnSalir.Visible = False
@@ -118,7 +169,7 @@ Public Class frmModuloProductos
             'si el form se abre como modulo independiente se hace esto:
             btnSeleccionarProducto.Visible = False
         End If
-        Me.fnvdRecargar()
+
     End Sub
     Private Sub fnvCrearDataTable(ByRef lst As List(Of negociosProducto))
         Dim ldtTabla As DataTable = New DataTable()
