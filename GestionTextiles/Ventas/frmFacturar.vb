@@ -305,7 +305,7 @@ Public Class frmFacturar
         Me.factura.setDescuento(Convert.ToDouble(txtDescuento.Text))
         If IsNothing(frmFacturar.productoSeleccionado) Then
             MessageBox.Show("Debe seleccionar un producto para ingresarlo a la factura", "Ningún producto seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ElseIf txtCantidad.Text <> "" Then
+        ElseIf txtCantidad.Text = "" Then
             MessageBox.Show("Debe especificar la cantidad de producto a comprar", "Falta cantidad de producto", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
