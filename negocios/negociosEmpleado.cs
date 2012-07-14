@@ -415,6 +415,7 @@ namespace negocios
                 {
                     oListaElmentos = ldtEmpleados.Rows[i].ItemArray;
                     negociosEmpleado npNuevoEmpleado = new negociosEmpleado();
+                    npNuevoEmpleado.setIdEmpleado(Convert.ToByte(oListaElmentos[0]));
                     npNuevoEmpleado.setIdRolEmpleado(Convert.ToByte(oListaElmentos[1]));
                     npNuevoEmpleado.setNombreEmpleado(Convert.ToString(oListaElmentos[2]));
                     npNuevoEmpleado.setApellidoEmpleado(Convert.ToString(oListaElmentos[3]));
@@ -451,6 +452,7 @@ namespace negocios
                 {
                     oListaElmentos = ldtEmpleados.Rows[i].ItemArray;
                     negociosEmpleado npNuevoEmpleado = new negociosEmpleado();
+                    npNuevoEmpleado.setIdEmpleado(Convert.ToByte(oListaElmentos[0]));
                     npNuevoEmpleado.setIdRolEmpleado(Convert.ToByte(oListaElmentos[1]));
                     npNuevoEmpleado.setNombreEmpleado(Convert.ToString(oListaElmentos[2]));
                     npNuevoEmpleado.setApellidoEmpleado(Convert.ToString(oListaElmentos[3]));
@@ -486,6 +488,7 @@ namespace negocios
                 {
                     oListaElmentos = ldtEmpleados.Rows[i].ItemArray;
                     negociosEmpleado npNuevoEmpleado = new negociosEmpleado();
+                    npNuevoEmpleado.setIdEmpleado(Convert.ToByte(oListaElmentos[0]));
                     npNuevoEmpleado.setIdRolEmpleado(Convert.ToByte(oListaElmentos[1]));
                     npNuevoEmpleado.setNombreEmpleado(Convert.ToString(oListaElmentos[2]));
                     npNuevoEmpleado.setApellidoEmpleado(Convert.ToString(oListaElmentos[3]));
@@ -520,6 +523,7 @@ namespace negocios
                 {
                     oListaElmentos = ldtEmpleados.Rows[i].ItemArray;
                     negociosEmpleado npNuevoEmpleado = new negociosEmpleado();
+                    npNuevoEmpleado.setIdEmpleado(Convert.ToByte(oListaElmentos[0]));
                     npNuevoEmpleado.setIdRolEmpleado(Convert.ToByte(oListaElmentos[1]));
                     npNuevoEmpleado.setNombreEmpleado(Convert.ToString(oListaElmentos[2]));
                     npNuevoEmpleado.setApellidoEmpleado(Convert.ToString(oListaElmentos[3]));
