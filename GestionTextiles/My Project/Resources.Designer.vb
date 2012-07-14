@@ -60,6 +60,20 @@ Namespace My.Resources
             End Set
         End Property
         
+        Friend ReadOnly Property bluesharp1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bluesharp1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property bluesharp2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bluesharp2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property numberhash1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("numberhash1", resourceCulture)

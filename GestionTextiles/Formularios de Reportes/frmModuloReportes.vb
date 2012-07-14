@@ -11,7 +11,6 @@
 
     Private Sub btnReporteDevolucionesProveedor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporteDevolucionesProveedor.Click
         frmReporteDevolucionesProveedor.Show()
-        frmreporte()
     End Sub
 
     Private Sub btnCorte_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCorte.MouseLeave

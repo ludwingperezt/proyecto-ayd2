@@ -556,6 +556,12 @@
   <ItemGroup>
     <None Include="Resources\wincross1.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluesharp2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluesharp1.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
