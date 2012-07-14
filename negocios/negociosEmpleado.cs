@@ -294,7 +294,7 @@ namespace negocios
         /// </summary>
         /// <param name="lsPass"></param>
         /// <returns>Arreglo con la contraseña hasheada</returns>
-        private byte[] arrbyCalcularHash(String lsPass)
+        public byte[] arrbyCalcularHash(String lsPass)
         {
             SHA1 algoritmo = SHA1Managed.Create();
             ASCIIEncoding arreglo = new ASCIIEncoding();
