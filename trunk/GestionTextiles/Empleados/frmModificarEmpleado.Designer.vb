@@ -357,6 +357,7 @@ Partial Class frmModificarEmpleado
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmModificarEmpleado"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modificar Empleado"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
