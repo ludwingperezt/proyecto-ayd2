@@ -153,6 +153,7 @@ namespace negocios
         #endregion
         
         #region Comunicacion con la DB
+        #region Acceso estatico
         /// <summary>
         /// Funcion para listar todos los proveedores existentes
         /// </summary>
@@ -179,13 +180,14 @@ namespace negocios
                 negociosProveedores npNuevoProveedor = new negociosProveedores();
                 npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
                 npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
-                npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[2]));
-                npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[3]));
-                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[4]));
-                npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[5]));
-                npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[6]));
-                npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[7]));
-                npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[8]));
+                npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[2]));
+                npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[3]));
+                npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[4]));
+                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));
+                npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[6]));
+                npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[7]));
+                npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[8]));
+                
                 lstnpProveedores.Add(npNuevoProveedor);
             }
             return lstnpProveedores;
@@ -216,6 +218,11 @@ namespace negocios
             
         }
 
+        public static List<negociosProveedores> fnslPaginacionProveedores(int iTamañoPagina, int iNumeroPagina)
+        {
+            return negociosProveedores.construirLista(negociosAdaptadores.gAdaptadorPaginacionProveedores.GetData(iTamañoPagina,iNumeroPagina));
+        }
+
         public static List<negociosProveedores> fnslBuscarProveedorPorEstado(bool bEstado)
         {
             List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
@@ -224,11 +231,25 @@ namespace negocios
 
         public static List<negociosProveedores> fnslBuscarProveedorPorNit(string sNit)
         {
-            List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
-           
-            return lnpProveedores = negociosProveedores.construirLista(negociosAdaptadores.gAdaptadorBuscarProveedorPorNit.GetData(sNit));
-            
-
+            List<negociosProveedores> lstnpProveedores = new List<negociosProveedores>();
+            DataTable lstnpDTProveedores = negociosAdaptadores.gAdaptadorBuscarProveedorPorNit.GetData(sNit);
+            object[] oListaElmentos;
+            for (int i = 0; i < lstnpDTProveedores.Rows.Count; i++)
+            {
+                oListaElmentos = lstnpDTProveedores.Rows[i].ItemArray;
+                negociosProveedores npNuevoProveedor = new negociosProveedores();
+                npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
+                npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
+                npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[2]));
+                npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[3]));
+                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[4]));
+                npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[5]));
+                npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[6]));
+                npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[7]));
+                npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[8]));
+                lstnpProveedores.Add(npNuevoProveedor);
+            }
+            return lstnpProveedores;     
         }
 
         public static List<negociosProveedores> fnslBuscarProveedorPorPropietario(string sPropietario)
@@ -252,6 +273,7 @@ namespace negocios
             List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
             return lnpProveedores = negociosProveedores.construirLista(negociosAdaptadores.gAdaptadorBuscarProveedorPorEmpresa.GetData(sEmpresa));
         }
+        #endregion
 
         #region acceso no estatico
         /// <summary>

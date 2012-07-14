@@ -41,6 +41,8 @@ Partial Class frmModuloProveedores
         Me.lblFiltradoEstados = New System.Windows.Forms.Label()
         Me.gbListaProv = New System.Windows.Forms.GroupBox()
         Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaProv.SuspendLayout()
@@ -203,6 +205,8 @@ Partial Class frmModuloProveedores
         '
         'gbListaProv
         '
+        Me.gbListaProv.Controls.Add(Me.btnSiguiente)
+        Me.gbListaProv.Controls.Add(Me.btnAnterior)
         Me.gbListaProv.Controls.Add(Me.btnRegresar)
         Me.gbListaProv.Controls.Add(Me.dgvListaProveedores)
         Me.gbListaProv.Location = New System.Drawing.Point(33, 132)
@@ -223,6 +227,24 @@ Partial Class frmModuloProveedores
         Me.btnRegresar.TabIndex = 7
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.Location = New System.Drawing.Point(286, 15)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
+        Me.btnAnterior.TabIndex = 8
+        Me.btnAnterior.Text = "Anterior"
+        Me.btnAnterior.UseVisualStyleBackColor = True
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Location = New System.Drawing.Point(367, 15)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(75, 23)
+        Me.btnSiguiente.TabIndex = 9
+        Me.btnSiguiente.Text = "Siguiente"
+        Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'frmModuloProveedores
         '
@@ -275,4 +297,6 @@ Partial Class frmModuloProveedores
     Friend WithEvents lblFiltradoEstados As System.Windows.Forms.Label
     Friend WithEvents gbListaProv As System.Windows.Forms.GroupBox
     Friend WithEvents btnRegresar As System.Windows.Forms.Button
+    Friend WithEvents btnSiguiente As System.Windows.Forms.Button
+    Friend WithEvents btnAnterior As System.Windows.Forms.Button
 End Class
