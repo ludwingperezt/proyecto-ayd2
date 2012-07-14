@@ -215,42 +215,39 @@ Public Class frmModuloProveedores
     Private Sub fnsFiltarListaProveedores(ByVal sTextoBuscado As String)
         lstnpProveedoresFiltrado = New List(Of negociosProveedores)
         sTextoBuscado = sTextoBuscado.Trim()
-        For Each i As negociosProveedores In frmModuloProveedores.lstnpProveedores
-            If cmbFiltro.SelectedItem = "NIT" Then
-                If i.getNit().Trim().Contains(sTextoBuscado) Then
-                    lstnpProveedoresFiltrado.Add(i)
-                End If
+        Try
+            If cmbFiltro.SelectedItem = "" Then
+                For Each i As negociosProveedores In frmModuloProveedores.lstnpProveedores
+                    If i.getNombre().Trim().Contains(sTextoBuscado) Or i.getPropietario().Trim().Contains(sTextoBuscado) Or i.getDireccion().Trim().Contains(sTextoBuscado) Or i.getNit().Trim().Contains(sTextoBuscado) Or i.getEmpresa().Trim().Contains(sTextoBuscado) Or i.getTelefono().Trim().Contains(sTextoBuscado) Or i.getCelular().Trim().Contains(sTextoBuscado) Then
+                        lstnpProveedoresFiltrado.Add(i)
+                    End If
+                Next
+            End If
+
+            If cmbFiltro.SelectedItem = "Propietario" Then
+                lstnpProveedoresFiltrado = negociosProveedores.fnslBuscarProveedorPorPropietario(sTextoBuscado)
             End If
 
             If cmbFiltro.SelectedItem = "Empresa" Then
-                If i.getEmpresa.Trim().Contains(sTextoBuscado) Then
-                    lstnpProveedoresFiltrado.Add(i)
-                End If
+                lstnpProveedoresFiltrado = negociosProveedores.fnslBuscarProveedorPorEmpresa(sTextoBuscado)
             End If
-            If cmbFiltro.SelectedItem = "Propietario" Then
-                If i.getPropietario.Trim().Contains(sTextoBuscado) Then
-                    lstnpProveedoresFiltrado.Add(i)
-                End If
+
+            If cmbFiltro.SelectedItem = "NIT" Then
+                lstnpProveedoresFiltrado = negociosProveedores.fnslBuscarProveedorPorNit(sTextoBuscado)
             End If
-            If cmbFiltro.SelectedItem = "" Then
-                If i.getNombre().Trim().Contains(sTextoBuscado) Or i.getPropietario().Trim().Contains(sTextoBuscado) Or i.getDireccion().Trim().Contains(sTextoBuscado) Or i.getNit().Trim().Contains(sTextoBuscado) Or i.getEmpresa().Trim().Contains(sTextoBuscado) Or i.getTelefono().Trim().Contains(sTextoBuscado) Or i.getCelular().Trim().Contains(sTextoBuscado) Then
-                    lstnpProveedoresFiltrado.Add(i)
-                End If
-            End If
-        Next
-        If cmbFiltro.SelectedItem = "Estado" Then
-            Try
+
+            If cmbFiltro.SelectedItem = "Estado" Then
                 If sTextoBuscado = "Activo" Then
                     lstnpProveedoresFiltrado = negociosProveedores.fnslBuscarProveedorPorEstado(True)
                 ElseIf sTextoBuscado = "Inactivo" Then
                     lstnpProveedoresFiltrado = negociosProveedores.fnslBuscarProveedorPorEstado(False)
                 End If
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-            
-        End If
-        Me.fnvCrearDataTable(lstnpProveedoresFiltrado)
+            End If
+
+            Me.fnvCrearDataTable(lstnpProveedoresFiltrado)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub cmbFiltro_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbFiltro.SelectedIndexChanged

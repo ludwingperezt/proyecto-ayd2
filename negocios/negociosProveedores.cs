@@ -169,11 +169,32 @@ namespace negocios
             }
         }
 
+        protected static List<negociosProveedores> construirLista(DataTable lstnpDTProveedores)
+        {
+            List<negociosProveedores> lstnpProveedores = new List<negociosProveedores>();
+            object[] oListaElmentos;
+            for (int i = 0; i < lstnpDTProveedores.Rows.Count; i++)
+            {
+                oListaElmentos = lstnpDTProveedores.Rows[i].ItemArray;
+                negociosProveedores npNuevoProveedor = new negociosProveedores();
+                npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
+                npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
+                npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[2]));
+                npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[3]));
+                npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[4]));
+                npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[5]));
+                npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[6]));
+                npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[7]));
+                npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[8]));
+                lstnpProveedores.Add(npNuevoProveedor);
+            }
+            return lstnpProveedores;
+        }
+
         public static List<negociosProveedores> fnslListarProveedores()
         {
             List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
-            try
-            {
+            
                 DataTable ldtProveedores = negociosProveedores.fnsDTListarProveedores();
                 object[] oListaElmentos;
                 for (int i = 0; i < ldtProveedores.Rows.Count; i++)
@@ -192,76 +213,47 @@ namespace negocios
                     lnpProveedores.Add(npNuevoProveedor);
                 }
                 return lnpProveedores;
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
             
         }
 
         public static List<negociosProveedores> fnslBuscarProveedorPorEstado(bool bEstado)
         {
             List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
-            try
-            {
-                DataTable ldtProveedores = negociosAdaptadores.gAdaptadorBuscarProveedorPorEstado.GetData(bEstado);
-                object[] oListaElmentos;
-                for (int i = 0; i < ldtProveedores.Rows.Count; i++)
-                {
-                    oListaElmentos = ldtProveedores.Rows[i].ItemArray;
-                    negociosProveedores npNuevoProveedor = new negociosProveedores();
-                    npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
-                    npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
-                    npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[2]));
-                    npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[3]));
-                    npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[4]));
-                    npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));
-                    npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[6]));
-                    npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[7]));
-                    npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[8]));
-                    lnpProveedores.Add(npNuevoProveedor);
-                }
-                return lnpProveedores;
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
-
+            return lnpProveedores = negociosProveedores.construirLista(negociosAdaptadores.gAdaptadorBuscarProveedorPorEstado.GetData(bEstado));
         }
 
         public static List<negociosProveedores> fnslBuscarProveedorPorNit(string sNit)
         {
             List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
-            try
-            {
-                DataTable ldtProveedores = negociosAdaptadores.gAdaptadorBuscarProveedorPorNit.GetData(sNit);
-                object[] oListaElmentos;
-                for (int i = 0; i < ldtProveedores.Rows.Count; i++)
-                {
-                    oListaElmentos = ldtProveedores.Rows[i].ItemArray;
-                    negociosProveedores npNuevoProveedor = new negociosProveedores();
-                    npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
-                    npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
-                    npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[2]));
-                    npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[3]));
-                    npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[4]));
-                    npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));
-                    npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[6]));
-                    npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[7]));
-                    npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[8]));
-                    lnpProveedores.Add(npNuevoProveedor);
-                }
-                return lnpProveedores;
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
+           
+            return lnpProveedores = negociosProveedores.construirLista(negociosAdaptadores.gAdaptadorBuscarProveedorPorNit.GetData(sNit));
+            
 
         }
 
+        public static List<negociosProveedores> fnslBuscarProveedorPorPropietario(string sPropietario)
+        {
+            List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
+            
+                return lnpProveedores = negociosProveedores.construirLista(negociosAdaptadores.gAdaptadorBuscarProveedorPorPropietario.GetData(sPropietario));
+            
+        }
+
+        public static List<negociosProveedores> fnslBuscarProveedorPorNombre(string sNombre)
+        {
+            List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
+            
+                return lnpProveedores = negociosProveedores.construirLista(negociosAdaptadores.gAdaptadorBuscarProveedorPorNombre.GetData(sNombre));
+            
+        }
+
+        public static List<negociosProveedores> fnslBuscarProveedorPorEmpresa(string sEmpresa)
+        {
+            List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
+            return lnpProveedores = negociosProveedores.construirLista(negociosAdaptadores.gAdaptadorBuscarProveedorPorEmpresa.GetData(sEmpresa));
+        }
+
+        #region acceso no estatico
         /// <summary>
         /// Funcion para insertar un nuevo proveedor en la base de datos
         /// </summary>
@@ -331,6 +323,7 @@ namespace negocios
                 return e.Message;
             }
         }
+        #endregion
         #endregion
     }
 }
