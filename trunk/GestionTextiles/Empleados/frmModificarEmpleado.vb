@@ -1,6 +1,11 @@
 ﻿Imports negocios
 Public Class frmModificarEmpleado
     Dim lbooBanderaPunto As Boolean = False
+    Friend Shared actualizar As Boolean
+    Private glstRolFiltrada As List(Of negociosRol) = New List(Of negociosRol)
+    Public Shared gnpRolSeleccionado As negociosRol
+    Private glstRol As List(Of negociosRol) = New List(Of negociosRol)
+    Private banderaBusqueda As Boolean = False
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Dim lbooBandera As Boolean = True
 
@@ -23,11 +28,8 @@ Public Class frmModificarEmpleado
             lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
             lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
             lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
-            lnpNuevoEmpleado.setPuestoEmpleado(cmbPuesto.SelectedItem.ToString)
             lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
             lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
-            Dim bytes() As Byte
-            bytes = System.Text.Encoding.Unicode.GetBytes(txtPassword.Text)
             lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
             Try
                 lnpNuevoEmpleado.fnsModificarEmpleado()
@@ -63,7 +65,7 @@ Public Class frmModificarEmpleado
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub cmbPuesto_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbPuesto.MouseLeave
+    Private Sub cmbPuesto_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -79,7 +81,7 @@ Public Class frmModificarEmpleado
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub txtPassword_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPassword.MouseLeave
+    Private Sub txtPassword_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -115,7 +117,7 @@ Public Class frmModificarEmpleado
         slblDescripcion.Text = "Numero de Celular del Empleado."
     End Sub
 
-    Private Sub cmbPuesto_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbPuesto.MouseHover
+    Private Sub cmbPuesto_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Selecciones el Puesto del Empleado"
     End Sub
 
@@ -129,16 +131,58 @@ Public Class frmModificarEmpleado
 
     Private Sub txtUsuario_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUsuario.MouseHover
         slblDescripcion.Text = "Usuario del Empleado"
+
+        If actualizar = True Then
+            Me.txtNombre.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getNombreEmpleado()
+            Me.txtDireccion.Text = frmModuloProveedores.gnpProveedor.getDireccion()
+            Me.txtApellido.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getApellidoEmpleado()
+            Me.txtDireccion.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getDireccionEmpleado()
+            Me.txtDPI.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getDpiCedula()
+            Me.txtTelefono.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getTelefonoEmpleado()
+            Me.txtCelular.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getCelularEmpleado()
+            Me.txtPuesto.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getPuestoEmpleado()
+            Me.txtSueldo.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getSalarioEmpleado()
+            Me.txtUsuario.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getUsuarioEmpleado()
+        End If
     End Sub
 
-    Private Sub txtPassword_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPassword.MouseHover
+    Private Sub txtPassword_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Contraseña de Ingreso al Sistema para el Empleado"
     End Sub
 
     Private Sub frmModificarEmpleado_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        Me.glstRol = negociosRol.fnlstListarRoles()
+        Me.fnvdRecargar()
     End Sub
+    Private Sub fnvdRecargar()
+        Try
+            frmEmpleados.gnpRolSeleccionado = Nothing
+            Me.glstRolFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstRol = negociosRol.fnlstListarRoles()
+            Me.fnvCrearDataTable(Me.glstRol)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosRol))
+        Dim ldtTabla As DataTable = New DataTable()
+        Dim ldrFila As DataRow
+        Dim lnpRol As negociosRol
+        ldtTabla.Columns.Add("IdRol")
+        ldtTabla.Columns.Add("Nombre")
 
+        For i = 0 To lista.Count - 1 Step 1
+            ldrFila = ldtTabla.NewRow()
+            lnpRol = lista(i)
+            ldrFila(0) = lnpRol.getIdRol()
+            ldrFila(1) = lnpRol.getNombre()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        cmbRolEmpleado.DataSource = ldtTabla
+        cmbRolEmpleado.DisplayMember = "Nombre"
+        cmbRolEmpleado.ValueMember = "IdRol"
+    End Sub
     Private Sub cmbRolEmpleado_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbRolEmpleado.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub

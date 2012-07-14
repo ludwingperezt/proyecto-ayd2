@@ -39,11 +39,8 @@ Partial Class frmModificarEmpleado
         Me.lblDPI = New System.Windows.Forms.Label()
         Me.txtDPI = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
-        Me.lblPassword = New System.Windows.Forms.Label()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
-        Me.cmbPuesto = New System.Windows.Forms.ComboBox()
         Me.lblPuesto = New System.Windows.Forms.Label()
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.lblApellido = New System.Windows.Forms.Label()
@@ -53,6 +50,7 @@ Partial Class frmModificarEmpleado
         Me.cmbRolEmpleado = New System.Windows.Forms.ComboBox()
         Me.lblRolEmpleado = New System.Windows.Forms.Label()
         Me.btnComprobar = New System.Windows.Forms.Button()
+        Me.txtPuesto = New System.Windows.Forms.TextBox()
         Me.stsBarra.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -71,7 +69,7 @@ Partial Class frmModificarEmpleado
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(324, 409)
+        Me.btnCancelar.Location = New System.Drawing.Point(326, 389)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 14
@@ -81,7 +79,7 @@ Partial Class frmModificarEmpleado
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(422, 409)
+        Me.btnAceptar.Location = New System.Drawing.Point(424, 389)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 13
@@ -205,23 +203,6 @@ Partial Class frmModificarEmpleado
         Me.lblNombre.TabIndex = 36
         Me.lblNombre.Text = "Nombre"
         '
-        'lblPassword
-        '
-        Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(26, 375)
-        Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(53, 13)
-        Me.lblPassword.TabIndex = 71
-        Me.lblPassword.Text = "Password"
-        '
-        'txtPassword
-        '
-        Me.txtPassword.Location = New System.Drawing.Point(143, 372)
-        Me.txtPassword.MaxLength = 20
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
-        Me.txtPassword.TabIndex = 12
-        '
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
@@ -238,14 +219,6 @@ Partial Class frmModificarEmpleado
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(100, 20)
         Me.txtUsuario.TabIndex = 10
-        '
-        'cmbPuesto
-        '
-        Me.cmbPuesto.FormattingEnabled = True
-        Me.cmbPuesto.Location = New System.Drawing.Point(143, 240)
-        Me.cmbPuesto.Name = "cmbPuesto"
-        Me.cmbPuesto.Size = New System.Drawing.Size(121, 21)
-        Me.cmbPuesto.TabIndex = 6
         '
         'lblPuesto
         '
@@ -276,7 +249,7 @@ Partial Class frmModificarEmpleado
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 452)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 426)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(509, 22)
         Me.stsBarra.TabIndex = 15
@@ -322,22 +295,27 @@ Partial Class frmModificarEmpleado
         Me.btnComprobar.Text = "Comprobar"
         Me.btnComprobar.UseVisualStyleBackColor = False
         '
+        'txtPuesto
+        '
+        Me.txtPuesto.Location = New System.Drawing.Point(143, 241)
+        Me.txtPuesto.Name = "txtPuesto"
+        Me.txtPuesto.Size = New System.Drawing.Size(100, 20)
+        Me.txtPuesto.TabIndex = 75
+        '
         'frmModificarEmpleado
         '
         Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(509, 474)
+        Me.ClientSize = New System.Drawing.Size(509, 448)
+        Me.Controls.Add(Me.txtPuesto)
         Me.Controls.Add(Me.btnComprobar)
         Me.Controls.Add(Me.cmbRolEmpleado)
         Me.Controls.Add(Me.lblRolEmpleado)
         Me.Controls.Add(Me.stsBarra)
-        Me.Controls.Add(Me.lblPassword)
-        Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.txtUsuario)
-        Me.Controls.Add(Me.cmbPuesto)
         Me.Controls.Add(Me.lblPuesto)
         Me.Controls.Add(Me.txtApellido)
         Me.Controls.Add(Me.lblApellido)
@@ -385,11 +363,8 @@ Partial Class frmModificarEmpleado
     Friend WithEvents lblDPI As System.Windows.Forms.Label
     Friend WithEvents txtDPI As System.Windows.Forms.TextBox
     Friend WithEvents lblNombre As System.Windows.Forms.Label
-    Friend WithEvents lblPassword As System.Windows.Forms.Label
-    Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents lblUsuario As System.Windows.Forms.Label
     Friend WithEvents txtUsuario As System.Windows.Forms.TextBox
-    Friend WithEvents cmbPuesto As System.Windows.Forms.ComboBox
     Friend WithEvents lblPuesto As System.Windows.Forms.Label
     Friend WithEvents txtApellido As System.Windows.Forms.TextBox
     Friend WithEvents lblApellido As System.Windows.Forms.Label
@@ -399,4 +374,5 @@ Partial Class frmModificarEmpleado
     Friend WithEvents cmbRolEmpleado As System.Windows.Forms.ComboBox
     Friend WithEvents lblRolEmpleado As System.Windows.Forms.Label
     Friend WithEvents btnComprobar As System.Windows.Forms.Button
+    Friend WithEvents txtPuesto As System.Windows.Forms.TextBox
 End Class
