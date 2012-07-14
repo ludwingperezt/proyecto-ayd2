@@ -41,9 +41,9 @@ Partial Class frmClientes
         Me.btnmodificarclientes = New System.Windows.Forms.Button()
         Me.btningresarcliente = New System.Windows.Forms.Button()
         Me.gpListadoClientes = New System.Windows.Forms.GroupBox()
-        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.lblParametro = New System.Windows.Forms.Label()
         Me.cmbCliente = New System.Windows.Forms.ComboBox()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
         Me.gpListadoClientes.SuspendLayout()
@@ -205,16 +205,6 @@ Partial Class frmClientes
         Me.gpListadoClientes.TabStop = False
         Me.gpListadoClientes.Text = "Listado Clientes"
         '
-        'btnActualizar
-        '
-        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
-        Me.btnActualizar.Location = New System.Drawing.Point(520, 19)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(27, 25)
-        Me.btnActualizar.TabIndex = 2
-        Me.btnActualizar.UseVisualStyleBackColor = False
-        '
         'lblParametro
         '
         Me.lblParametro.AutoSize = True
@@ -232,6 +222,18 @@ Partial Class frmClientes
         Me.cmbCliente.Name = "cmbCliente"
         Me.cmbCliente.Size = New System.Drawing.Size(127, 21)
         Me.cmbCliente.TabIndex = 62
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnActualizar.Location = New System.Drawing.Point(467, 19)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(80, 23)
+        Me.btnActualizar.TabIndex = 2
+        Me.btnActualizar.Text = "Regresar"
+        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'frmClientes
         '
@@ -254,7 +256,7 @@ Partial Class frmClientes
         Me.MaximizeBox = False
         Me.Name = "frmClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmClientes"
+        Me.Text = "Módulo Clientes"
         CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
@@ -281,7 +283,7 @@ Partial Class frmClientes
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents gpListadoClientes As System.Windows.Forms.GroupBox
-    Friend WithEvents btnActualizar As System.Windows.Forms.Button
     Friend WithEvents lblParametro As System.Windows.Forms.Label
     Friend WithEvents cmbCliente As System.Windows.Forms.ComboBox
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
 End Class

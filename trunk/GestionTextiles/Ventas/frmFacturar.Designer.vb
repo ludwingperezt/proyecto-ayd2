@@ -103,6 +103,7 @@ Partial Class frmFacturar
         'txtnit
         '
         Me.txtnit.Location = New System.Drawing.Point(95, 125)
+        Me.txtnit.MaxLength = 12
         Me.txtnit.Name = "txtnit"
         Me.txtnit.Size = New System.Drawing.Size(852, 20)
         Me.txtnit.TabIndex = 1

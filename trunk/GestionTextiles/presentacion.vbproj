@@ -113,6 +113,18 @@
     <Compile Include="Formularios de Reportes\frmReporteDevolucionesProveedorNit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteFacturasEliminadasFecha.Designer.vb">
+      <DependentUpon>frmReporteFacturasEliminadasFecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteFacturasEliminadasFecha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteFacturasEliminadasNit.Designer.vb">
+      <DependentUpon>frmReporteFacturasEliminadasNit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteFacturasEliminadasNit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\CierreDeCaja.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -357,6 +369,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios de Reportes\frmReporteDevolucionesProveedorNit.resx">
       <DependentUpon>frmReporteDevolucionesProveedorNit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios de Reportes\frmReporteFacturasEliminadasFecha.resx">
+      <DependentUpon>frmReporteFacturasEliminadasFecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios de Reportes\frmReporteFacturasEliminadasNit.resx">
+      <DependentUpon>frmReporteFacturasEliminadasNit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CierreDeCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

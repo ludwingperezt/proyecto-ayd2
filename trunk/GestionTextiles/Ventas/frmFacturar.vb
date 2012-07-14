@@ -212,10 +212,26 @@ Public Class frmFacturar
 
     End Sub
     Private Sub txtnit_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtnit.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
-            e.KeyChar = vbNullChar
+
+        If txtnit.TextLength = 0 And e.KeyChar = "c" Then
+            txtnit.Text = "CF"
+            cmbtipocliente.Enabled = False
 
         End If
+        'verificamos que se ingresen letras o numeros
+        If txtnit.TextLength >= 8 Then 'la ultima posicion del nit puede ser letra 
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
+                e.KeyChar = vbNullChar
+
+            End If
+        Else
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
+                e.KeyChar = vbNullChar
+
+            End If
+
+        End If
+        
     End Sub
 
     Private Sub cmbserie_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)

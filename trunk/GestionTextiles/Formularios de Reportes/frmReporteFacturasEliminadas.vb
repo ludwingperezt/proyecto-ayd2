@@ -31,19 +31,19 @@
         '' slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub chFecha_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chFecha.MouseLeave
+    Private Sub chFecha_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ''slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub chNit_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chNit.MouseLeave
+    Private Sub chNit_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ''slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub chFecha_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chFecha.MouseHover
+    Private Sub chFecha_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ''slblDescripcion.Text = "Opción para habilitar la busqueda de facturas eliminadas por fecha"
     End Sub
 
-    Private Sub chNit_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chNit.MouseHover
+    Private Sub chNit_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ''slblDescripcion.Text = "Opción para habilitar la busqueda de facturas eliminadas por cliente"
     End Sub
 
