@@ -47,7 +47,6 @@ Partial Class frmEmpleados
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.lblApellido = New System.Windows.Forms.Label()
         Me.lblPuesto = New System.Windows.Forms.Label()
-        Me.cmbPuesto = New System.Windows.Forms.ComboBox()
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.lblPassword = New System.Windows.Forms.Label()
@@ -58,6 +57,7 @@ Partial Class frmEmpleados
         Me.imglValidacion = New System.Windows.Forms.ImageList(Me.components)
         Me.CmbIdRol = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtPuesto = New System.Windows.Forms.TextBox()
         Me.stsBarra.SuspendLayout()
         CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -259,14 +259,6 @@ Partial Class frmEmpleados
         Me.lblPuesto.TabIndex = 38
         Me.lblPuesto.Text = "Puesto"
         '
-        'cmbPuesto
-        '
-        Me.cmbPuesto.FormattingEnabled = True
-        Me.cmbPuesto.Location = New System.Drawing.Point(148, 227)
-        Me.cmbPuesto.Name = "cmbPuesto"
-        Me.cmbPuesto.Size = New System.Drawing.Size(121, 21)
-        Me.cmbPuesto.TabIndex = 6
-        '
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
@@ -353,6 +345,13 @@ Partial Class frmEmpleados
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'txtPuesto
+        '
+        Me.txtPuesto.Location = New System.Drawing.Point(148, 228)
+        Me.txtPuesto.Name = "txtPuesto"
+        Me.txtPuesto.Size = New System.Drawing.Size(100, 20)
+        Me.txtPuesto.TabIndex = 49
+        '
         'frmEmpleados
         '
         Me.AcceptButton = Me.btnAceptar
@@ -360,6 +359,7 @@ Partial Class frmEmpleados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(530, 463)
+        Me.Controls.Add(Me.txtPuesto)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.CmbIdRol)
         Me.Controls.Add(Me.picbValidacion)
@@ -369,7 +369,6 @@ Partial Class frmEmpleados
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.txtUsuario)
-        Me.Controls.Add(Me.cmbPuesto)
         Me.Controls.Add(Me.lblPuesto)
         Me.Controls.Add(Me.txtApellido)
         Me.Controls.Add(Me.lblApellido)
@@ -426,7 +425,6 @@ Partial Class frmEmpleados
     Friend WithEvents txtApellido As System.Windows.Forms.TextBox
     Friend WithEvents lblApellido As System.Windows.Forms.Label
     Friend WithEvents lblPuesto As System.Windows.Forms.Label
-    Friend WithEvents cmbPuesto As System.Windows.Forms.ComboBox
     Friend WithEvents lblUsuario As System.Windows.Forms.Label
     Friend WithEvents txtUsuario As System.Windows.Forms.TextBox
     Friend WithEvents lblPassword As System.Windows.Forms.Label
@@ -437,4 +435,5 @@ Partial Class frmEmpleados
     Friend WithEvents imglValidacion As System.Windows.Forms.ImageList
     Friend WithEvents CmbIdRol As System.Windows.Forms.ComboBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents txtPuesto As System.Windows.Forms.TextBox
 End Class
