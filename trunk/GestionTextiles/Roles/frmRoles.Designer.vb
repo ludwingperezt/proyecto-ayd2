@@ -28,7 +28,6 @@ Partial Class frmRoles
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.dgvRoles = New System.Windows.Forms.DataGridView()
-        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.gbListaRoles = New System.Windows.Forms.GroupBox()
         Me.lblTitulo = New System.Windows.Forms.Label()
@@ -38,6 +37,7 @@ Partial Class frmRoles
         Me.btnAsignarPermiso = New System.Windows.Forms.Button()
         Me.btnNPermiso = New System.Windows.Forms.Button()
         Me.lblBuscar = New System.Windows.Forms.Label()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaRoles.SuspendLayout()
@@ -83,16 +83,6 @@ Partial Class frmRoles
         Me.dgvRoles.Size = New System.Drawing.Size(514, 170)
         Me.dgvRoles.TabIndex = 3
         '
-        'btnActualizar
-        '
-        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnActualizar.Location = New System.Drawing.Point(424, 19)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(103, 25)
-        Me.btnActualizar.TabIndex = 2
-        Me.btnActualizar.Text = "Recargar Lista"
-        Me.btnActualizar.UseVisualStyleBackColor = False
-        '
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -106,8 +96,8 @@ Partial Class frmRoles
         '
         'gbListaRoles
         '
+        Me.gbListaRoles.Controls.Add(Me.btnRegresar)
         Me.gbListaRoles.Controls.Add(Me.dgvRoles)
-        Me.gbListaRoles.Controls.Add(Me.btnActualizar)
         Me.gbListaRoles.Location = New System.Drawing.Point(24, 137)
         Me.gbListaRoles.Name = "gbListaRoles"
         Me.gbListaRoles.Size = New System.Drawing.Size(542, 236)
@@ -196,6 +186,18 @@ Partial Class frmRoles
         Me.lblBuscar.TabIndex = 41
         Me.lblBuscar.Text = "Buscar"
         '
+        'btnRegresar
+        '
+        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRegresar.Location = New System.Drawing.Point(439, 19)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
+        Me.btnRegresar.TabIndex = 6
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
+        '
         'frmRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -236,9 +238,9 @@ Partial Class frmRoles
     Friend WithEvents btnSeleccionarPermiso As System.Windows.Forms.Button
     Friend WithEvents txtBusqueda As System.Windows.Forms.TextBox
     Friend WithEvents dgvRoles As System.Windows.Forms.DataGridView
-    Friend WithEvents btnActualizar As System.Windows.Forms.Button
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents gbListaRoles As System.Windows.Forms.GroupBox
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents lblBuscar As System.Windows.Forms.Label
+    Friend WithEvents btnRegresar As System.Windows.Forms.Button
 End Class

@@ -83,9 +83,6 @@ Public Class frmRoles
         End If
     End Sub
 
-    Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
-        Me.fnvCargarLista()
-    End Sub
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         Dim lsTexto As String = txtBusqueda.Text
@@ -123,5 +120,9 @@ Public Class frmRoles
 
     Private Sub btnSalir_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
         Me.Dispose()
+    End Sub
+
+    Private Sub btnRegresar_Click(sender As System.Object, e As System.EventArgs) Handles btnRegresar.Click
+        fnvCargarLista()
     End Sub
 End Class
