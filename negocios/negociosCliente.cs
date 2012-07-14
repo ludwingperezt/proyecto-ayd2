@@ -11,6 +11,7 @@ namespace negocios
     /// </summary>
     public class negociosCliente
     {
+        private int idCliente;
        private string nit;
        private byte idTipoCliente;
        private string nombre;
@@ -98,6 +99,19 @@ namespace negocios
              {
                  this.direccion = lsDireccion;
              }
+
+             public void setIdCliente(int idCliente)
+             {
+                 this.idCliente = idCliente;
+             }
+             public int getIdCliente()
+             {
+                 return this.idCliente;
+             }
+             public void setIdTipoCliente(int idTipoCliente)
+             {
+                 this.idTipoCliente = (byte)idTipoCliente;
+             }
              #endregion
 
         #region Métodos de comunicación con la base de datos
@@ -159,6 +173,27 @@ namespace negocios
              public static DataTable fnDbBuscarClienteNit(string SnitCliente)
              {
                  return negociosAdaptadores.gAdaptadorClienteNit.GetData(SnitCliente);
+             }
+             public static negociosCliente fnnaBuscarClienteNit(string lsNit)
+             {
+                 DataTable dtLocal = negociosCliente.fnDbBuscarClienteNit(lsNit);
+                 negociosCliente temporal = null;
+                 object[] objInstancia;
+                 if (dtLocal.Rows.Count > 0)
+                 {
+                     temporal = new negociosCliente();
+                     objInstancia = dtLocal.Rows[0].ItemArray;
+                     temporal.setIdCliente(Convert.ToInt32(objInstancia[0]));
+                     temporal.setIdTipoCliente(Convert.ToInt32(objInstancia[1]));
+                     temporal.setNitCliente(Convert.ToString(objInstancia[2]));
+                     temporal.setNombreCliente(Convert.ToString(objInstancia[3]));
+                     temporal.setDireccionCliente(Convert.ToString(objInstancia[4]));
+                 }
+                 return temporal;
+             }
+             public void fnvInsertarCliente()
+             {
+                     negociosAdaptadores.gAdaptadorDeConsultas.insertarCliente(this.idTipoCliente, this.nombre, this.direccion, this.nit);
              }
              #endregion
     }
