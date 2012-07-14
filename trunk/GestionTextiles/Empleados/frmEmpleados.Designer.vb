@@ -55,7 +55,6 @@ Partial Class frmEmpleados
         Me.cmbRolEmpleado = New System.Windows.Forms.ComboBox()
         Me.picbValidacion = New System.Windows.Forms.PictureBox()
         Me.imglValidacion = New System.Windows.Forms.ImageList(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.txtPuesto = New System.Windows.Forms.TextBox()
         Me.stsBarra.SuspendLayout()
         CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -326,15 +325,6 @@ Partial Class frmEmpleados
         Me.imglValidacion.Images.SetKeyName(0, "noOK.jpg")
         Me.imglValidacion.Images.SetKeyName(1, "ok.png")
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(389, 334)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 48
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'txtPuesto
         '
         Me.txtPuesto.Location = New System.Drawing.Point(148, 228)
@@ -350,7 +340,6 @@ Partial Class frmEmpleados
         Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(530, 463)
         Me.Controls.Add(Me.txtPuesto)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.picbValidacion)
         Me.Controls.Add(Me.cmbRolEmpleado)
         Me.Controls.Add(Me.lblRolEmpleado)
@@ -422,6 +411,5 @@ Partial Class frmEmpleados
     Friend WithEvents cmbRolEmpleado As System.Windows.Forms.ComboBox
     Friend WithEvents picbValidacion As System.Windows.Forms.PictureBox
     Friend WithEvents imglValidacion As System.Windows.Forms.ImageList
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents txtPuesto As System.Windows.Forms.TextBox
 End Class

@@ -1,6 +1,6 @@
 ﻿Imports negocios
 Public Class frmEmpleados
-    Private Shared lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
+    Public Shared lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
     Private glstRol As List(Of negociosRol) = New List(Of negociosRol)
     Dim lbooBanderaPunto As Boolean = False
 
@@ -98,7 +98,6 @@ Public Class frmEmpleados
         Next
         If lbooBandera Then
             ''ingreso de empleado nuevo
-            ''falta agregar el idRol
             lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
             lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
             lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
@@ -110,7 +109,8 @@ Public Class frmEmpleados
             lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
             lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
             lnpNuevoEmpleado.setHabilitadoEmpleado(1)
-            'lnpNuevoEmpleado.setPasswordEmpleado(lnpNuevoEmpleado.arrbyCalcularHash(txtPassword.Text))
+            lnpNuevoEmpleado.setPasswordEmpleado(lnpNuevoEmpleado.arrbyCalcularHash(txtPassword.Text))
+            lnpNuevoEmpleado.setIdRolEmpleado(Convert.ToByte(cmbRolEmpleado.SelectedItem))
             Try
                 lnpNuevoEmpleado.fnsInsertarEmpleado()
                 MessageBox.Show("La operación de insersión de empleado se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -248,9 +248,17 @@ Public Class frmEmpleados
         ' ver como está en frmSeries
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim obtenido As String
         obtenido = cmbRolEmpleado.SelectedValue
         txtApellido.Text = obtenido
+    End Sub
+
+    Private Sub cmbRolEmpleado_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbRolEmpleado.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub lblTitulo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblTitulo.Click
+
     End Sub
 End Class
