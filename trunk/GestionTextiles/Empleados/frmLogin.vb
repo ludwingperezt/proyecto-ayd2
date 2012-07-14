@@ -1,6 +1,8 @@
 ﻿Imports negocios
 Public Class frmLogin
-    Public Shared lnpNuevoUsuario As negociosEmpleado = New negociosEmpleado()
+    Public Shared lnpNuevoUsuario As negociosEmpleado = New negociosEmpleado
+    Private glstEmpleados As List(Of negociosEmpleado) = New List(Of negociosEmpleado)
+
     Private Sub btnCancelar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -25,14 +27,31 @@ Public Class frmLogin
                 Else
                     ctrlIterador.BackColor = Color.White
                     ''buscar al usuario
-                    dgvUsuario.DataSource = lnpNuevoUsuario.fnDbBuscarEmpleadoNombre(txtUsuario.Text)
+                    dgvUsuario.DataSource = lnpNuevoUsuario.fnDbBuscarPorNombre(txtUsuario.Text)
                     Dim cantRegistros As Integer = dgvUsuario.Rows.Count
-                    txtcontraseña.Text = Convert.ToString(cantRegistros)
-                End If
+                    If (cantRegistros > 1) Then
+                        lnpNuevoUsuario.setIdRolEmpleado(Convert.ToByte(dgvUsuario.CurrentRow.Cells(1).Value))
+                        lnpNuevoUsuario.setNombreEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells(2).Value))
+                        lnpNuevoUsuario.setApellidoEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(3).Value))
+                        lnpNuevoUsuario.setDireccionEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(4).Value))
+                        lnpNuevoUsuario.setTelefonoEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(5).Value))
+                        lnpNuevoUsuario.setCelularEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(6).Value))
+                        lnpNuevoUsuario.setPuestoEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(7).Value))
+                        Dim sContrasenia As String
+                        sContrasenia = getString(dgvUsuario.CurrentRow.Cells.Item(11).Value)
+                        If (txtcontraseña.Text = sContrasenia) Then
+                        Else
+                            MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    Else
+                        '   txtUsuario.Text = ""
+                        MessageBox.Show("El usuario no Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+
+                    End If
             End If
         Next
     End Sub
-
     Private Sub txtUsuario_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUsuario.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -47,5 +66,12 @@ Public Class frmLogin
 
     Private Sub txtcontraseña_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtcontraseña.MouseHover
         slblDescripcion.Text = "Ingreso de la contraseña del usuario"
+    End Sub
+    Public Function getString(ByVal text As Byte()) As [String]
+        Dim codificador As New System.Text.ASCIIEncoding()
+        Return codificador.GetString(text)
+    End Function
+    Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

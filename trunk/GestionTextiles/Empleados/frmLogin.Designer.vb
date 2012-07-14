@@ -95,7 +95,7 @@ Partial Class frmLogin
         'picbLogin
         '
         Me.picbLogin.Image = CType(resources.GetObject("picbLogin.Image"), System.Drawing.Image)
-        Me.picbLogin.Location = New System.Drawing.Point(-62, 2)
+        Me.picbLogin.Location = New System.Drawing.Point(-62, -5)
         Me.picbLogin.Name = "picbLogin"
         Me.picbLogin.Size = New System.Drawing.Size(179, 240)
         Me.picbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -105,9 +105,9 @@ Partial Class frmLogin
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 197)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 192)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(318, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(330, 22)
         Me.stsBarra.TabIndex = 58
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -127,9 +127,9 @@ Partial Class frmLogin
         'dgvUsuario
         '
         Me.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuario.Location = New System.Drawing.Point(120, -29)
+        Me.dgvUsuario.Location = New System.Drawing.Point(138, -38)
         Me.dgvUsuario.Name = "dgvUsuario"
-        Me.dgvUsuario.Size = New System.Drawing.Size(32, 29)
+        Me.dgvUsuario.Size = New System.Drawing.Size(72, 41)
         Me.dgvUsuario.TabIndex = 59
         '
         'frmLogin
@@ -137,7 +137,7 @@ Partial Class frmLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(318, 219)
+        Me.ClientSize = New System.Drawing.Size(330, 214)
         Me.Controls.Add(Me.dgvUsuario)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.picbLogin)
