@@ -1,12 +1,17 @@
 ﻿Imports System.Xml
 Imports negocios
 Public Class frmFacturar
+    Private serieActual As negociosSerie
+    Public Shared productoSeleccionado As negociosProducto
+    Private clienteActual As negociosCliente
+    Private factura As negociosFacturaCliente = New negociosFacturaCliente()
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+        factura.fnsCancelarFactura()
         Me.Dispose()
     End Sub
 
-    Private Sub cmbserie_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbserie.MouseLeave
+    Private Sub cmbserie_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -54,7 +59,7 @@ Public Class frmFacturar
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub cmbserie_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbserie.MouseHover
+    Private Sub cmbserie_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Se debe seleccionar la serie  "
     End Sub
 
@@ -151,9 +156,18 @@ Public Class frmFacturar
                     ctrlIterador.BackColor = Color.White
                 End If
             End If
-
-
         Next
+        Try
+            If IsNothing(Me.clienteActual) Then
+
+            End If
+            Me.factura.setIdEmpleado(frmPrincipal.gnegEmpleado.getIdEmpleado())
+            MessageBox.Show(Me.factura.fnInsertarFacturaCliente(), "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'Aqui se muestra el reporte de la factura en sì
+            Me.Dispose()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub txtCodigo_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs)
@@ -194,23 +208,107 @@ Public Class frmFacturar
         End If
     End Sub
 
-    Private Sub cmbserie_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbserie.SelectedIndexChanged
+    Private Sub cmbserie_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
-        frmModuloProductos.ShowDialog()
+        frmModuloProductos.seleccion = True
+        frmModuloProductos.ShowDialog(Me)
+        frmModuloProductos.Dispose()
+        If IsNothing(frmFacturar.productoSeleccionado) = False Then
+            txtTela.Text = frmFacturar.productoSeleccionado.getNombre()
+        End If
+
         ' ahora se procede a obtener el objeto estático que está en el frmModuloProductos...
     End Sub
 
     Private Sub frmFacturar_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'usar en el futuro, la funcion para obtener la serie segun el idTerminal
+        Try
+            cmbtipocliente.DataSource = negociosTipoCliente.fnDbListarTiposClientes()
+            cmbtipocliente.DisplayMember = "NOMBRE"
+            cmbtipocliente.ValueMember = "IDTIPOCLIENTE"
+            Me.dgvdetallefactura.DataSource = Nothing
+            Me.serieActual = negociosSerie.fnObtenerSerieActiva()
+            If IsNothing(Me.serieActual) Then
+                MessageBox.Show("Debe ingresar un nuevo talonario de facturas", "No hay talonario de facturas", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Me.Dispose()
+            Else
+                txtSerie.Text = Me.serieActual.getSerie()
+                lblEmpleado.Text = frmPrincipal.gnegEmpleado.getNombreEmpleado() + " " + frmPrincipal.gnegEmpleado.getApellidoEmpleado()
+            End If
 
-        Me.cmbserie.DataSource = negociosSerie.fnListarSeries()
-        Me.cmbserie.DisplayMember = "SERIE"
-        Me.cmbserie.ValueMember = "SERIE"
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        
     End Sub
 
     Private Sub btntipocliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btntipocliente.Click
         frmtipocliente.Show()
+    End Sub
+
+    Private Sub txtnit_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnit.Leave
+        'If negociosCliente.fnBuscarClientePorNit(txtnit.Text) Then
+        '    Me.clienteActual = 
+        'End If
+    End Sub
+
+    Private Sub btnagregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.Click
+        Dim lnfcDetalleTemporal As negociosDetalleFacturaCliente = New negociosDetalleFacturaCliente()
+        If txtDescuento.Text = "" Then
+            txtDescuento.Text = "0.00"
+        End If
+        Me.factura.setDescuento(Convert.ToDouble(txtDescuento.Text))
+        If IsNothing(frmFacturar.productoSeleccionado) = False And txtCantidad.Text <> "" Then
+            Try
+                If negociosProducto.fnboVerificarCantidadExistenteProducto(frmFacturar.productoSeleccionado.getIdProducto(), Convert.ToDouble(txtCantidad.Text)) Then
+
+                    lnfcDetalleTemporal.fnvSetDatosDetalle(frmFacturar.productoSeleccionado.getIdProducto, frmFacturar.productoSeleccionado.getPrecioVenta(), Convert.ToDouble(txtCantidad.Text), frmFacturar.productoSeleccionado.getNombre(), frmFacturar.productoSeleccionado.getCodigo())
+
+                    frmFacturar.productoSeleccionado.fnvdDisminuirExistenciaProducto(lnfcDetalleTemporal.getCantidad())
+                    Me.factura.fnvdAgregarProducto(lnfcDetalleTemporal)
+
+                    Me.lbltotal.Text = Convert.ToString(Me.factura.getTotal())
+                    Me.lblDescuento.Text = Convert.ToString(Me.factura.getSubTotal())
+                    'agregar al dgv
+                    
+                    Me.fnvdLlenarDataGridView(Me.factura.getDetalleFactura())
+                Else
+                    MessageBox.Show("La existencia del producto no es suficiente para cubrir el pedido", "Producto insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
+    Private Sub txtCantidad_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCantidad.Leave
+
+    End Sub
+
+    Private Sub fnvdLlenarDataGridView(ByRef lst As List(Of negociosDetalleFacturaCliente))
+        Me.txtTela.Text = ""
+        Me.txtCantidad.Text = ""
+        frmFacturar.productoSeleccionado = Nothing
+        Dim ldtTabla As DataTable = New DataTable()
+        ldtTabla.Columns.Add("Código")
+        ldtTabla.Columns.Add("Tela")
+        ldtTabla.Columns.Add("Cantidad")
+        ldtTabla.Columns.Add("Precio")
+        ldtTabla.Columns.Add("Monto")
+
+        For i = 0 To lst.Count - 1 Step 1
+            Dim ldrFila As DataRow = ldtTabla.NewRow()
+            Dim objLocal As negociosDetalleFacturaCliente = lst(i)
+            ldrFila(0) = objLocal.getCodigoProducto()
+            ldrFila(1) = objLocal.getNombreProducto()
+            ldrFila(2) = objLocal.getCantidad()
+            ldrFila(3) = objLocal.getPrecio()
+            ldrFila(4) = objLocal.getMonto()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        Me.dgvdetallefactura.DataSource = ldtTabla
     End Sub
 End Class

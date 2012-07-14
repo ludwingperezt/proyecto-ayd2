@@ -60,4 +60,8 @@
     Private Sub btnCotizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
+
+    Private Sub btnFacturar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturar.Click
+        frmFacturar.ShowDialog(Me)
+    End Sub
 End Class

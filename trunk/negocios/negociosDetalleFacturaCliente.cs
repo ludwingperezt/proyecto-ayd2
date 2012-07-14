@@ -12,6 +12,10 @@ namespace negocios
         private short gshIdProducto;
         private decimal gdecPrecio;
         private double gduCantidad;
+        private decimal gdecMonto;
+
+        private string lsNombreProducto;
+        private string lsCodigoProducto;
 
         #region constructores
         /// <summary>
@@ -102,6 +106,26 @@ namespace negocios
         {
             return this.gduCantidad;
         }
+        public void setNombreProducto(string lsNombre)
+        {
+            this.lsNombreProducto = lsNombre;
+        }
+        public string getNombreProducto()
+        {
+            return this.lsNombreProducto;
+        }
+        public void setCodigoProducto(string lsCodigo)
+        {
+            this.lsCodigoProducto = lsCodigo;
+        }
+        public string getCodigoProducto()
+        {
+            return this.lsCodigoProducto;
+        }
+        public decimal getMonto()
+        {
+            return this.gdecMonto;
+        }
         #endregion
         #region funciones de comunicación con la base de datos
         /// <summary>
@@ -110,6 +134,40 @@ namespace negocios
         public void fnsInsertarDetalleFacturaCliente()
         {
             negociosAdaptadores.gAdaptadorDeConsultas.insertarDetalleFacturaCliente(this.giIdEncabezadoFacturaCliente, this.gshIdProducto, gdecPrecio, this.gduCantidad);
+        }
+        public void fnvSetDatosDetalle(int idProducto, decimal precio, double cantidad, string nombre, string codigo)
+        {
+            this.gshIdProducto = (short)idProducto;
+            this.gdecPrecio = precio;
+            this.gduCantidad = cantidad;
+            this.lsNombreProducto = nombre;
+            this.lsCodigoProducto = codigo;
+            this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
+        }
+        public void fnvAumentarCantidad(double cantidad)
+        {
+            this.gduCantidad += cantidad;
+            this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
+        }
+        public void fnvDisminuirCantidad(double cantidad)
+        {
+            this.gduCantidad -= cantidad;
+            this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
+        }
+        public void fnvCambiarCantidad(double cantidad)
+        {
+            this.gduCantidad = cantidad;
+            this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
+        }
+        public decimal fndecSetDatosDetalle(int idProducto, decimal precio, double cantidad, string nombre, string codigo)
+        {
+            this.gshIdProducto = (short)idProducto;
+            this.gdecPrecio = precio;
+            this.gduCantidad = cantidad;
+            this.lsNombreProducto = nombre;
+            this.lsCodigoProducto = codigo;
+            this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
+            return this.gdecMonto;
         }
         #endregion
     }

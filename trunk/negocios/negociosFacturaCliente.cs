@@ -190,6 +190,14 @@ namespace negocios
         {
             return this.giIdCliente;
         }
+        /// <summary>
+        /// Función que retorna el detalle de factura
+        /// </summary>
+        /// <returns>List: objetos negociosDetalleFacturaCliente de todos los productos de la factura</returns>
+        public List<negociosDetalleFacturaCliente> getDetalleFactura()
+        {
+            return this.glstListaDetalleFactura;
+        }
         #endregion
         #region funciones de comunicación con la base de datos
         /// <summary>
@@ -239,7 +247,23 @@ namespace negocios
         /// <param name="lndfcProducto">negociosDetalleFacturaCliente: la especificación de precio y cantidad de producto comprado</param>
         public void fnvdAgregarProducto(negociosDetalleFacturaCliente lndfcProducto)
         {
-            glstListaDetalleFactura.Add(lndfcProducto);
+            int index = -1;
+            this.gdecTotal+=(lndfcProducto.getPrecio()*Convert.ToDecimal(lndfcProducto.getCantidad()));
+            this.gdecSubTotal = this.gdecTotal - Convert.ToDecimal(this.gduDescuento);
+            for (int i = 0; i < this.glstListaDetalleFactura.Count; i++ )
+            {
+                if (glstListaDetalleFactura[i].getIdProducto() == lndfcProducto.getIdProducto())
+                {
+                    index = i;
+                    break;
+                }
+            }
+            if (index > -1)
+            {
+                glstListaDetalleFactura[index].fnvAumentarCantidad(lndfcProducto.getCantidad());
+            }
+            else
+                glstListaDetalleFactura.Add(lndfcProducto);
         }
         /// <summary>
         /// Función para quitar un producto de la factura. La cantidad solicitada del producto se devuelve a la bodega.
@@ -260,6 +284,8 @@ namespace negocios
                         break;
                     }
                 }
+                this.gdecTotal = this.gdecTotal - (ndfcTemporal.getPrecio()* Convert.ToDecimal(ndfcTemporal.getCantidad()));
+                this.gdecSubTotal = this.gdecTotal - Convert.ToDecimal(this.gduDescuento);
                 glstListaDetalleFactura.Remove(ndfcTemporal);
                 negociosProducto.fnvdAumentarExistenciaProducto(ndfcTemporal.getIdProducto(), ndfcTemporal.getCantidad());
                 return "El producto se dió de baja de la factura con éxito";
