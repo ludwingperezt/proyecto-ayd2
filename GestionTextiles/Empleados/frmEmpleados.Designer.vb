@@ -56,8 +56,10 @@ Partial Class frmEmpleados
         Me.cmbRolEmpleado = New System.Windows.Forms.ComboBox()
         Me.picbValidacion = New System.Windows.Forms.PictureBox()
         Me.imglValidacion = New System.Windows.Forms.ImageList(Me.components)
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.stsBarra.SuspendLayout()
         CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'stsBarra
@@ -333,6 +335,14 @@ Partial Class frmEmpleados
         Me.imglValidacion.Images.SetKeyName(0, "noOK.jpg")
         Me.imglValidacion.Images.SetKeyName(1, "ok.png")
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(354, 173)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView1.TabIndex = 47
+        '
         'frmEmpleados
         '
         Me.AcceptButton = Me.btnAceptar
@@ -340,6 +350,7 @@ Partial Class frmEmpleados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(530, 463)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.picbValidacion)
         Me.Controls.Add(Me.cmbRolEmpleado)
         Me.Controls.Add(Me.lblRolEmpleado)
@@ -377,6 +388,7 @@ Partial Class frmEmpleados
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -413,4 +425,5 @@ Partial Class frmEmpleados
     Friend WithEvents cmbRolEmpleado As System.Windows.Forms.ComboBox
     Friend WithEvents picbValidacion As System.Windows.Forms.PictureBox
     Friend WithEvents imglValidacion As System.Windows.Forms.ImageList
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
 End Class
