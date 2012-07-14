@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace negocios
 {
@@ -261,6 +262,14 @@ namespace negocios
              {
                  this.password = lsPasswordEmpleado;
              }
+        /// <summary>
+        /// Permite el seteo del password a partir de una cadena limpia (que no ha sido hasheada)
+        /// </summary>
+        /// <param name="lsPaswordEmpleado">Contraseña</param>
+             public void setPasswordEmpleado(string lsPaswordEmpleado)
+             {
+                 this.password=arrbyCalcularHash(lsPaswordEmpleado);
+             }
              /// <summary>
              /// Método modificador el campo habilitado del empleado
              /// </summary>
@@ -278,7 +287,48 @@ namespace negocios
                  this.dpiCedula = lsDpiCedula;
              }
              #endregion
+        #region otros métodos...
+        /// <summary>
+        /// Permite obtener una clave hash de una cadena (contraseña)
+        /// Se utiliza el algoritmo SHA1
+        /// </summary>
+        /// <param name="lsPass"></param>
+        /// <returns>Arreglo con la contraseña hasheada</returns>
+        private byte[] arrbyCalcularHash(String lsPass)
+        {
+            SHA1 algoritmo=SHA1Managed.Create();
+            ASCIIEncoding arreglo=new ASCIIEncoding();
+            byte[] retorno;
+            retorno=algoritmo.ComputeHash(arreglo.GetBytes(lsPass));
+            return retorno;
+        }
 
+        /// <summary>
+        /// Compara un password sin hashear con el que se encuentra en el objeto
+        /// </summary>
+        /// <param name="lsOtroPass">Contraseña a comparar</param>
+        /// <returns>True si son idénticos, False si no son equivalentes</returns>
+        public bool bCompararPass(String lsOtroPass)
+        {
+            byte[] otroPassHasheado=arrbyCalcularHash(lsOtroPass);
+            bool retorno=true;
+            if (otroPassHasheado.Length==password.Length){
+                for (int i=0;i<lsOtroPass.Length;i++)
+                {
+                    if (otroPassHasheado[i]!=password[i]){
+                        retorno=false;
+                        break;
+                    }
+                }
+            }
+            else
+                retorno=false;
+
+            return retorno;
+        }
+
+    #endregion
+}
       #region Métodos de comunicación con la base de datos
              /// <summary>
              /// Método que inserta un nuevo empleado a la base de datos.
@@ -397,5 +447,4 @@ namespace negocios
              }
 
              #endregion
-    
-}
+
