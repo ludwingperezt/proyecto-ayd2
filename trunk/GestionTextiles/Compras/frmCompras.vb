@@ -1,13 +1,10 @@
 ﻿Public Class frmCompras
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
-        frmModuloProductos.btnSalir.Text = "Aceptar"
-        frmModuloProductos.btnSalir.Image = My.Resources.ok
-        frmModuloProductos.btnEliminarProducto.Visible = False
-        frmModuloProductos.btnModificarProducto.Visible = False
-        frmModuloProductos.btnIngresarProducto.Visible = False
+        frmModuloProductos.btnSalir.Visible = False
 
         frmModuloProductos.ShowDialog()
+        frmModuloProductos.Dispose()
         ' ahora se procede a obtener el objeto estático que está en el frmModuloProductos...
     End Sub
 
@@ -48,20 +45,18 @@
 
     Private Sub txtCantidad_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCantidad.KeyPress
 
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = "." Or e.KeyChar = vbBack)) Then
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
             e.KeyChar = vbNullChar
-        End If
-        If e.KeyChar = "." Then
-            If txtCantidad.Text.Contains(".") Then
-                e.KeyChar = ""
-            End If
         End If
 
     End Sub
     Private Sub txtnit_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNit.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
-            e.KeyChar = vbNullChar
-
+        If txtNit.Text.Trim.ToLower.StartsWith("c") Then
+            txtNombre.Enabled = True
+            txtDireccion.Enabled = True
+        Else
+            txtNombre.Enabled = False
+            txtDireccion.Enabled = False
         End If
     End Sub
 
