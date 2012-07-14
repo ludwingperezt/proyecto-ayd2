@@ -100,7 +100,39 @@ Public Class frmModuloSeries
     End Sub
 
     Private Sub frmModuloSeries_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.fnvCargarLista()
+        ' Establecer permisos del modulo de series
+        Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
+
+        If lnegPermisos.getPermisoCreacionSerieFacturaVenta() Then
+            btnNSerie.Enabled = True
+        Else
+            btnNSerie.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoEliminacionSerieFacturaVenta() Then
+            btnEliminarSerie.Enabled = True
+        Else
+            btnEliminarSerie.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoModificacionSerieFacturaVenta() Then
+            btnmSerie.Enabled = True
+        Else
+            btnmSerie.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoListarSerieFacturaVenta() Then
+            txtBusqueda.Enabled = True
+            btnBuscar.Enabled = True
+            dgvSeries.Enabled = True
+            Me.fnvCargarLista()
+        Else
+            txtBusqueda.Enabled = False
+            btnBuscar.Enabled = False
+            dgvSeries.Enabled = False
+        End If
+
+
     End Sub
 
     Private Sub btnEliminarSerie_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminarSerie.Click

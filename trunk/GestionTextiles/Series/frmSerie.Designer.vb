@@ -33,11 +33,11 @@ Partial Class frmSerie
         Me.txtSerie = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCorrelativo = New System.Windows.Forms.TextBox()
-        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.imglValidacion = New System.Windows.Forms.ImageList(Me.components)
         Me.txtLimite = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.picbValidacion = New System.Windows.Forms.PictureBox()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
         CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -119,17 +119,6 @@ Partial Class frmSerie
         Me.txtCorrelativo.TabIndex = 1
         Me.txtCorrelativo.Text = "1"
         '
-        'lblTitulo
-        '
-        Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(57, 9)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(174, 31)
-        Me.lblTitulo.TabIndex = 38
-        Me.lblTitulo.Text = "Nueva Serie"
-        '
         'imglValidacion
         '
         Me.imglValidacion.ImageStream = CType(resources.GetObject("imglValidacion.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -163,15 +152,26 @@ Partial Class frmSerie
         Me.picbValidacion.TabIndex = 39
         Me.picbValidacion.TabStop = False
         '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblTitulo.Location = New System.Drawing.Point(57, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(157, 29)
+        Me.lblTitulo.TabIndex = 42
+        Me.lblTitulo.Text = "Nueva Serie"
+        '
         'frmSerie
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 256)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtLimite)
         Me.Controls.Add(Me.picbValidacion)
-        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.txtCorrelativo)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtSerie)
@@ -200,9 +200,9 @@ Partial Class frmSerie
     Friend WithEvents txtSerie As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtCorrelativo As System.Windows.Forms.TextBox
-    Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents picbValidacion As System.Windows.Forms.PictureBox
     Friend WithEvents imglValidacion As System.Windows.Forms.ImageList
     Friend WithEvents txtLimite As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblTitulo As System.Windows.Forms.Label
 End Class

@@ -30,13 +30,13 @@ Partial Class frmModuloSeries
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnEliminarSerie = New System.Windows.Forms.Button()
         Me.btnmSerie = New System.Windows.Forms.Button()
         Me.btnNSerie = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.gbListaSeries = New System.Windows.Forms.GroupBox()
         Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaSeries.SuspendLayout()
@@ -55,13 +55,13 @@ Partial Class frmModuloSeries
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
         'dgvSeries
@@ -101,17 +101,6 @@ Partial Class frmModuloSeries
         Me.btnBuscar.TabIndex = 1
         Me.btnBuscar.Text = "B&uscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'lblTitulo
-        '
-        Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(84, 9)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(402, 31)
-        Me.lblTitulo.TabIndex = 24
-        Me.lblTitulo.Text = "Módulo Gestión de Talonarios"
         '
         'btnEliminarSerie
         '
@@ -186,14 +175,25 @@ Partial Class frmModuloSeries
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblTitulo.Location = New System.Drawing.Point(63, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(408, 29)
+        Me.lblTitulo.TabIndex = 30
+        Me.lblTitulo.Text = "Modulo de Gestión de Talonarios"
+        '
         'frmModuloSeries
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSalir
         Me.ClientSize = New System.Drawing.Size(521, 490)
-        Me.Controls.Add(Me.gbListaSeries)
         Me.Controls.Add(Me.lblTitulo)
+        Me.Controls.Add(Me.gbListaSeries)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnEliminarSerie)
@@ -226,7 +226,7 @@ Partial Class frmModuloSeries
     Friend WithEvents btnEliminarSerie As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
-    Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents gbListaSeries As System.Windows.Forms.GroupBox
     Friend WithEvents btnRegresar As System.Windows.Forms.Button
+    Friend WithEvents lblTitulo As System.Windows.Forms.Label
 End Class
