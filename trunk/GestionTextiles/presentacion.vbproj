@@ -101,6 +101,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Formularios de Reportes\frmReporteDevolucionesProveedorFecha.Designer.vb">
+      <DependentUpon>frmReporteDevolucionesProveedorFecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteDevolucionesProveedorFecha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteDevolucionesProveedorNit.Designer.vb">
+      <DependentUpon>frmReporteDevolucionesProveedorNit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteDevolucionesProveedorNit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\CierreDeCaja.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CierreDeCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataSets Reportes\dsReportes.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,12 +135,6 @@
     </Compile>
     <Compile Include="Formularios de Reportes\frmReportePrueba.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\InformeCierreCaja.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InformeCierreCaja.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rptFactura.vb">
       <AutoGen>True</AutoGen>
@@ -340,15 +352,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios de Reportes\frmReporteDevolucionesProveedorFecha.resx">
+      <DependentUpon>frmReporteDevolucionesProveedorFecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios de Reportes\frmReporteDevolucionesProveedorNit.resx">
+      <DependentUpon>frmReporteDevolucionesProveedorNit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CierreDeCaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CierreDeCaja.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Empleados\frmModificarDatosPropiosEmpleado.resx">
       <DependentUpon>frmModificarDatosPropiosEmpleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios de Reportes\frmReportePrueba.resx">
       <DependentUpon>frmReportePrueba.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\InformeCierreCaja.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>InformeCierreCaja.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
