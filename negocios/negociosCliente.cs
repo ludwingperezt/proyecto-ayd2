@@ -176,7 +176,7 @@ namespace negocios
              }
              public static negociosCliente fnnaBuscarClienteNit(string lsNit)
              {
-                 DataTable dtLocal = negociosCliente.fnDbBuscarClienteNit(lsNit);
+                 DataTable dtLocal = negociosAdaptadores.gAdaptadorBcn.GetData(lsNit);
                  negociosCliente temporal = null;
                  object[] objInstancia;
                  if (dtLocal.Rows.Count > 0)
