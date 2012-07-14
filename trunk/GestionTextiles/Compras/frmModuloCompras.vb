@@ -2,7 +2,10 @@
 
 
 Public Class frmModuloCompras
-
+    Private glstCompras As List(Of negociosFacturasProveedores) = New List(Of negociosFacturasProveedores)
+    Private glstComprasFiltrada As List(Of negociosFacturasProveedores) = New List(Of negociosFacturasProveedores)
+    Public Shared gnpComprasSeleccionado As negociosFacturasProveedores
+    Private banderaBusqueda As Boolean = False
     Private Sub btnNCompra_Click(sender As System.Object, e As System.EventArgs) Handles btnNCompra.Click
         frmCompras.ShowDialog()
     End Sub
@@ -76,6 +79,7 @@ Public Class frmModuloCompras
     End Sub
 
     Private Sub frmModuloCompras_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        fnvdRecargar()
         ' Establecer permisos del modulo de Compras
         Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
 
@@ -90,5 +94,38 @@ Public Class frmModuloCompras
         Else
             btnAnularCompra.Enabled = False
         End If
+    End Sub
+    Private Sub fnvdRecargar()
+        Try
+            dgvListaCompras.DataSource = ""
+            frmModuloCompras.gnpComprasSeleccionado = Nothing
+            Me.glstComprasFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstCompras = negociosFacturasProveedores.fnslListarUltimasVeinteCompras()
+            Me.fnvCrearDataTable(Me.glstCompras)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvListaCompras.DataSource = Nothing
+        End Try
+    End Sub
+
+    Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosFacturasProveedores))
+        Dim ldtTabla As DataTable = New DataTable()
+        Dim ldrFila As DataRow
+        Dim lnpCompras As negociosFacturasProveedores
+        ldtTabla.Columns.Add("Serie")
+        ldtTabla.Columns.Add("Numero")
+        ldtTabla.Columns.Add("Fecha")
+        ldtTabla.Columns.Add("Total")
+        For i = 0 To lista.Count - 1 Step 1
+            ldrFila = ldtTabla.NewRow()
+            lnpCompras = lista(i)
+            ldrFila(3) = lnpCompras.getSerie()
+            ldrFila(4) = lnpCompras.getNumero()
+            ldrFila(5) = lnpCompras.getFecha()
+            ldrFila(6) = lnpCompras.getTotal()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        Me.dgvListaCompras.DataSource = ldtTabla
     End Sub
 End Class
