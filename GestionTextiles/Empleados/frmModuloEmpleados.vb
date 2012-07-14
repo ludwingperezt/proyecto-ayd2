@@ -287,4 +287,8 @@ Public Class frmModuloEmpleados
             frmModuloEmpleados.gnpEmpleadoSeleccionado = glstEmpleados(e.RowIndex)
         End If
     End Sub
+
+    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        Dispose()
+    End Sub
 End Class
