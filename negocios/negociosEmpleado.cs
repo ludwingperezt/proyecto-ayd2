@@ -23,7 +23,7 @@ namespace negocios
         private DateTime fechaContratacion;
         private decimal salario;
         private string usuario;
-        private byte[] password = new byte[20]; 
+        private byte[] password = new byte[20];
         private Boolean habilitado;
         private string dpiCedula;
 
@@ -437,13 +437,39 @@ namespace negocios
                 return null;
             }
         }
-        /// <summary>
-        /// Función que buscar un empleado
-        /// </summary>
-        /// <returns>DataTable: empleado por usuario.</returns>
-        public static DataTable fnDbBuscarPorNombre(string lsUsuarioEmpleado)
+        public static DataTable buscarEmpleadoUsuario(string sUsuario)
         {
-            return negociosAdaptadores.gAdaptadorBuscarEmpleadoUsuario.GetData(lsUsuarioEmpleado);
+            return negociosAdaptadores.gAdaptadorBuscarEmpleadoUsuario.GetData(sUsuario);
+        }
+        public static List<negociosEmpleado> fnslListarEmpleadoUsuario(string sUsuario)
+        {
+            List<negociosEmpleado> lnpEmpleados = new List<negociosEmpleado>();
+            try
+            {
+                DataTable ldtEmpleados = negociosEmpleado.buscarEmpleadoUsuario(sUsuario);
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtEmpleados.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtEmpleados.Rows[i].ItemArray;
+                    negociosEmpleado npNuevoEmpleado = new negociosEmpleado();
+                    npNuevoEmpleado.setIdRolEmpleado(Convert.ToByte(oListaElmentos[1]));
+                    npNuevoEmpleado.setNombreEmpleado(Convert.ToString(oListaElmentos[2]));
+                    npNuevoEmpleado.setApellidoEmpleado(Convert.ToString(oListaElmentos[3]));
+                    npNuevoEmpleado.setDireccionEmpleado(Convert.ToString(oListaElmentos[4]));
+                    npNuevoEmpleado.setTelefonoEmpleado(Convert.ToString(oListaElmentos[5]));
+                    npNuevoEmpleado.setCelularEmpleado(Convert.ToString(oListaElmentos[6]));
+                    npNuevoEmpleado.setPuestoEmpleado(Convert.ToString(oListaElmentos[7]));
+                    npNuevoEmpleado.setFechaContratacionEmpleado(Convert.ToDateTime(oListaElmentos[8]));
+                    npNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(oListaElmentos[9]));
+                    npNuevoEmpleado.setUsuarioEmpleado(Convert.ToString(oListaElmentos[10]));
+                    lnpEmpleados.Add(npNuevoEmpleado);
+                }
+                return lnpEmpleados;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }
