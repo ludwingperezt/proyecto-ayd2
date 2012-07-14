@@ -23,7 +23,7 @@ namespace negocios
         private DateTime fechaContratacion;
         private decimal salario;
         private string usuario;
-        private byte[] password = new byte[20]; //es tipo binary ¿?
+        private byte[] password = new byte[20]; 
         private Boolean habilitado;
         private string dpiCedula;
 
