@@ -1,5 +1,7 @@
 ﻿Imports negocios
 Public Class frmIngresoProductos
+    Dim lbooBanderaPunto As Boolean = False
+    Dim lbooBanderaPunto2 As Boolean = False
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Dim lbooBandera As Boolean = True
 
@@ -45,14 +47,32 @@ Public Class frmIngresoProductos
     End Sub
 
     Private Sub txtPrecioCompra_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecioCompra.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
-            e.KeyChar = vbNullChar
+        If lbooBanderaPunto = False Then
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
+                e.KeyChar = vbNullChar
+                If e.KeyChar = "." Then
+                    lbooBanderaPunto = True
+                End If
+            End If
+        Else
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
+                e.KeyChar = vbNullChar
+            End If
         End If
     End Sub
 
     Private Sub txtPrecioVenta_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecioVenta.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
-            e.KeyChar = vbNullChar
+        If lbooBanderaPunto2 = False Then
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
+                e.KeyChar = vbNullChar
+                If e.KeyChar = "." Then
+                    lbooBanderaPunto2 = True
+                End If
+            End If
+        Else
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
+                e.KeyChar = vbNullChar
+            End If
         End If
     End Sub
 
