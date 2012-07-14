@@ -199,8 +199,10 @@ Partial Class frmIngresoProductos
         '
         'frmIngresoProductos
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(504, 285)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
@@ -218,9 +220,10 @@ Partial Class frmIngresoProductos
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.lblTitulo)
+        Me.MaximizeBox = False
         Me.Name = "frmIngresoProductos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmIngresoProductos"
+        Me.Text = "Ingreso Nuevo Productos"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.ResumeLayout(False)
