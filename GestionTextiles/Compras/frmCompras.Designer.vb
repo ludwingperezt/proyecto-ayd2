@@ -35,10 +35,8 @@ Partial Class frmCompras
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lbEtiquetaTotal = New System.Windows.Forms.Label()
         Me.gpProducto = New System.Windows.Forms.GroupBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.dgvDetalleFactura = New System.Windows.Forms.DataGridView()
-        Me.clmCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clmTela = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clmSubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblserie = New System.Windows.Forms.Label()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.txtNit = New System.Windows.Forms.TextBox()
@@ -53,7 +51,6 @@ Partial Class frmCompras
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblEmpleado = New System.Windows.Forms.Label()
         Me.btnagregar = New System.Windows.Forms.Button()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.gpProducto.SuspendLayout()
         CType(Me.dgvDetalleFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +61,7 @@ Partial Class frmCompras
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
         Me.stsBarra.Location = New System.Drawing.Point(0, 653)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(504, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(625, 22)
         Me.stsBarra.TabIndex = 40
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -93,7 +90,7 @@ Partial Class frmCompras
         Me.txtTela.Enabled = False
         Me.txtTela.Location = New System.Drawing.Point(82, 29)
         Me.txtTela.Name = "txtTela"
-        Me.txtTela.Size = New System.Drawing.Size(194, 20)
+        Me.txtTela.Size = New System.Drawing.Size(283, 20)
         Me.txtTela.TabIndex = 6
         '
         'lblCantidad
@@ -119,7 +116,7 @@ Partial Class frmCompras
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.Green
-        Me.lblTotal.Location = New System.Drawing.Point(365, 565)
+        Me.lblTotal.Location = New System.Drawing.Point(485, 562)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(74, 16)
         Me.lblTotal.TabIndex = 56
@@ -131,7 +128,7 @@ Partial Class frmCompras
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(202, 9)
+        Me.lblTitulo.Location = New System.Drawing.Point(266, 9)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(114, 29)
         Me.lblTitulo.TabIndex = 55
@@ -141,7 +138,7 @@ Partial Class frmCompras
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(266, 614)
+        Me.btnCancelar.Location = New System.Drawing.Point(386, 611)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 11
@@ -151,7 +148,7 @@ Partial Class frmCompras
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(364, 614)
+        Me.btnAceptar.Location = New System.Drawing.Point(484, 611)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 12
@@ -163,7 +160,7 @@ Partial Class frmCompras
         Me.lbEtiquetaTotal.AutoSize = True
         Me.lbEtiquetaTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbEtiquetaTotal.ForeColor = System.Drawing.Color.Green
-        Me.lbEtiquetaTotal.Location = New System.Drawing.Point(268, 565)
+        Me.lbEtiquetaTotal.Location = New System.Drawing.Point(388, 562)
         Me.lbEtiquetaTotal.Name = "lbEtiquetaTotal"
         Me.lbEtiquetaTotal.Size = New System.Drawing.Size(48, 16)
         Me.lbEtiquetaTotal.TabIndex = 51
@@ -176,42 +173,35 @@ Partial Class frmCompras
         Me.gpProducto.Controls.Add(Me.lblTela)
         Me.gpProducto.Controls.Add(Me.lblCantidad)
         Me.gpProducto.Controls.Add(Me.txtTela)
-        Me.gpProducto.Location = New System.Drawing.Point(51, 214)
+        Me.gpProducto.Location = New System.Drawing.Point(70, 213)
         Me.gpProducto.Name = "gpProducto"
-        Me.gpProducto.Size = New System.Drawing.Size(388, 90)
+        Me.gpProducto.Size = New System.Drawing.Size(489, 90)
         Me.gpProducto.TabIndex = 50
         Me.gpProducto.TabStop = False
         Me.gpProducto.Text = "Producto"
         '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBuscar.Location = New System.Drawing.Point(389, 27)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 7
+        Me.btnBuscar.Text = "Buscar..."
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
         'dgvDetalleFactura
         '
         Me.dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDetalleFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clmCantidad, Me.clmTela, Me.clmSubtotal})
-        Me.dgvDetalleFactura.Location = New System.Drawing.Point(51, 363)
+        Me.dgvDetalleFactura.Location = New System.Drawing.Point(70, 362)
         Me.dgvDetalleFactura.Name = "dgvDetalleFactura"
-        Me.dgvDetalleFactura.Size = New System.Drawing.Size(388, 187)
+        Me.dgvDetalleFactura.Size = New System.Drawing.Size(489, 187)
         Me.dgvDetalleFactura.TabIndex = 10
-        '
-        'clmCantidad
-        '
-        Me.clmCantidad.HeaderText = "Cantidad"
-        Me.clmCantidad.Name = "clmCantidad"
-        Me.clmCantidad.Width = 50
-        '
-        'clmTela
-        '
-        Me.clmTela.HeaderText = "Tela"
-        Me.clmTela.Name = "clmTela"
-        '
-        'clmSubtotal
-        '
-        Me.clmSubtotal.HeaderText = "Subtotal"
-        Me.clmSubtotal.Name = "clmSubtotal"
         '
         'lblserie
         '
         Me.lblserie.AutoSize = True
-        Me.lblserie.Location = New System.Drawing.Point(63, 51)
+        Me.lblserie.Location = New System.Drawing.Point(82, 50)
         Me.lblserie.Name = "lblserie"
         Me.lblserie.Size = New System.Drawing.Size(31, 13)
         Me.lblserie.TabIndex = 48
@@ -219,33 +209,33 @@ Partial Class frmCompras
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(132, 173)
+        Me.txtDireccion.Location = New System.Drawing.Point(151, 172)
         Me.txtDireccion.MaxLength = 60
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.ReadOnly = True
-        Me.txtDireccion.Size = New System.Drawing.Size(307, 20)
+        Me.txtDireccion.Size = New System.Drawing.Size(408, 20)
         Me.txtDireccion.TabIndex = 5
         '
         'txtNit
         '
-        Me.txtNit.Location = New System.Drawing.Point(131, 115)
+        Me.txtNit.Location = New System.Drawing.Point(150, 114)
         Me.txtNit.Name = "txtNit"
-        Me.txtNit.Size = New System.Drawing.Size(88, 20)
+        Me.txtNit.Size = New System.Drawing.Size(113, 20)
         Me.txtNit.TabIndex = 3
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(131, 145)
+        Me.txtNombre.Location = New System.Drawing.Point(150, 144)
         Me.txtNombre.MaxLength = 70
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.ReadOnly = True
-        Me.txtNombre.Size = New System.Drawing.Size(308, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(409, 20)
         Me.txtNombre.TabIndex = 4
         '
         'lbldireccion
         '
         Me.lbldireccion.AutoSize = True
-        Me.lbldireccion.Location = New System.Drawing.Point(63, 173)
+        Me.lbldireccion.Location = New System.Drawing.Point(82, 172)
         Me.lbldireccion.Name = "lbldireccion"
         Me.lbldireccion.Size = New System.Drawing.Size(52, 13)
         Me.lbldireccion.TabIndex = 43
@@ -254,7 +244,7 @@ Partial Class frmCompras
         'lblnit
         '
         Me.lblnit.AutoSize = True
-        Me.lblnit.Location = New System.Drawing.Point(63, 123)
+        Me.lblnit.Location = New System.Drawing.Point(82, 117)
         Me.lblnit.Name = "lblnit"
         Me.lblnit.Size = New System.Drawing.Size(20, 13)
         Me.lblnit.TabIndex = 42
@@ -263,7 +253,7 @@ Partial Class frmCompras
         'Lblnombre
         '
         Me.Lblnombre.AutoSize = True
-        Me.Lblnombre.Location = New System.Drawing.Point(63, 148)
+        Me.Lblnombre.Location = New System.Drawing.Point(82, 147)
         Me.Lblnombre.Name = "Lblnombre"
         Me.Lblnombre.Size = New System.Drawing.Size(44, 13)
         Me.Lblnombre.TabIndex = 41
@@ -271,7 +261,7 @@ Partial Class frmCompras
         '
         'txtSerie
         '
-        Me.txtSerie.Location = New System.Drawing.Point(133, 51)
+        Me.txtSerie.Location = New System.Drawing.Point(152, 50)
         Me.txtSerie.MaxLength = 4
         Me.txtSerie.Name = "txtSerie"
         Me.txtSerie.Size = New System.Drawing.Size(53, 20)
@@ -281,7 +271,7 @@ Partial Class frmCompras
         'lblCorrelativo
         '
         Me.lblCorrelativo.AutoSize = True
-        Me.lblCorrelativo.Location = New System.Drawing.Point(283, 51)
+        Me.lblCorrelativo.Location = New System.Drawing.Point(302, 50)
         Me.lblCorrelativo.Name = "lblCorrelativo"
         Me.lblCorrelativo.Size = New System.Drawing.Size(57, 13)
         Me.lblCorrelativo.TabIndex = 48
@@ -289,8 +279,8 @@ Partial Class frmCompras
         '
         'txtCorrelativo
         '
-        Me.txtCorrelativo.Location = New System.Drawing.Point(353, 51)
-        Me.txtCorrelativo.MaxLength = 4
+        Me.txtCorrelativo.Location = New System.Drawing.Point(372, 50)
+        Me.txtCorrelativo.MaxLength = 20
         Me.txtCorrelativo.Name = "txtCorrelativo"
         Me.txtCorrelativo.Size = New System.Drawing.Size(86, 20)
         Me.txtCorrelativo.TabIndex = 1
@@ -298,7 +288,7 @@ Partial Class frmCompras
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(131, 89)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(150, 88)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 2
@@ -306,7 +296,7 @@ Partial Class frmCompras
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(63, 96)
+        Me.Label1.Location = New System.Drawing.Point(82, 88)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 42
@@ -315,7 +305,7 @@ Partial Class frmCompras
         'lblEmpleado
         '
         Me.lblEmpleado.AutoSize = True
-        Me.lblEmpleado.Location = New System.Drawing.Point(350, 95)
+        Me.lblEmpleado.Location = New System.Drawing.Point(493, 95)
         Me.lblEmpleado.Name = "lblEmpleado"
         Me.lblEmpleado.Size = New System.Drawing.Size(66, 13)
         Me.lblEmpleado.TabIndex = 57
@@ -324,28 +314,18 @@ Partial Class frmCompras
         'btnagregar
         '
         Me.btnagregar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnagregar.Location = New System.Drawing.Point(302, 310)
+        Me.btnagregar.Location = New System.Drawing.Point(453, 309)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(106, 23)
         Me.btnagregar.TabIndex = 58
         Me.btnagregar.Text = "Agregar a la cesta"
         Me.btnagregar.UseVisualStyleBackColor = False
         '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBuscar.Location = New System.Drawing.Point(282, 27)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscar.TabIndex = 7
-        Me.btnBuscar.Text = "Buscar..."
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(504, 675)
+        Me.ClientSize = New System.Drawing.Size(625, 675)
         Me.Controls.Add(Me.btnagregar)
         Me.Controls.Add(Me.lblEmpleado)
         Me.Controls.Add(Me.DateTimePicker1)
@@ -407,9 +387,6 @@ Partial Class frmCompras
     Friend WithEvents lblCorrelativo As System.Windows.Forms.Label
     Friend WithEvents txtCorrelativo As System.Windows.Forms.TextBox
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
-    Friend WithEvents clmCantidad As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents clmTela As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents clmSubtotal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblEmpleado As System.Windows.Forms.Label
