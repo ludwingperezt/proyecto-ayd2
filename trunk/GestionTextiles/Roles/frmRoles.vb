@@ -120,4 +120,8 @@ Public Class frmRoles
             btnBuscar.Enabled = True
         End If
     End Sub
+
+    Private Sub btnSalir_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
+        Me.Dispose()
+    End Sub
 End Class

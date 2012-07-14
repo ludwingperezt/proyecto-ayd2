@@ -34,10 +34,10 @@ Partial Class frmSerie
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCorrelativo = New System.Windows.Forms.TextBox()
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.picbValidacion = New System.Windows.Forms.PictureBox()
         Me.imglValidacion = New System.Windows.Forms.ImageList(Me.components)
         Me.txtLimite = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.picbValidacion = New System.Windows.Forms.PictureBox()
         Me.stsBarra.SuspendLayout()
         CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,13 +55,13 @@ Partial Class frmSerie
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
         'btnCancelar
@@ -130,15 +130,6 @@ Partial Class frmSerie
         Me.lblTitulo.TabIndex = 38
         Me.lblTitulo.Text = "Nueva Serie"
         '
-        'picbValidacion
-        '
-        Me.picbValidacion.Location = New System.Drawing.Point(220, 62)
-        Me.picbValidacion.Name = "picbValidacion"
-        Me.picbValidacion.Size = New System.Drawing.Size(33, 29)
-        Me.picbValidacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picbValidacion.TabIndex = 39
-        Me.picbValidacion.TabStop = False
-        '
         'imglValidacion
         '
         Me.imglValidacion.ImageStream = CType(resources.GetObject("imglValidacion.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -162,6 +153,15 @@ Partial Class frmSerie
         Me.Label3.Size = New System.Drawing.Size(36, 13)
         Me.Label3.TabIndex = 41
         Me.Label3.Text = "Límite"
+        '
+        'picbValidacion
+        '
+        Me.picbValidacion.Location = New System.Drawing.Point(220, 62)
+        Me.picbValidacion.Name = "picbValidacion"
+        Me.picbValidacion.Size = New System.Drawing.Size(33, 29)
+        Me.picbValidacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picbValidacion.TabIndex = 39
+        Me.picbValidacion.TabStop = False
         '
         'frmSerie
         '
