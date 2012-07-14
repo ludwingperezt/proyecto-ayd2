@@ -240,4 +240,36 @@ Public Class frmModuloProductos
         Me.numeroPagina = Me.numeroPagina + 1
         Me.fnvdRecargar()
     End Sub
+
+    Private Sub chCodigo_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chCodigo.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub chNombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chNombre.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnAnterior_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnterior.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnSiguiente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub chCodigo_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chCodigo.MouseHover
+        slblDescripcion.Text = "Seleccion Criterio de Busqueda por Codigo"
+    End Sub
+
+    Private Sub chNombre_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chNombre.MouseHover
+        slblDescripcion.Text = "Seleccion Criterio de Busqueda por Nombre"
+    End Sub
+
+    Private Sub btnAnterior_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnterior.MouseHover
+        slblDescripcion.Text = "Regresar Filtrado"
+    End Sub
+
+    Private Sub btnSiguiente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.MouseHover
+        slblDescripcion.Text = "Siguiente Filtrado"
+    End Sub
 End Class
