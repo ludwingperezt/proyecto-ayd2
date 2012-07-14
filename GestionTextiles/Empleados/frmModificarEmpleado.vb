@@ -25,12 +25,17 @@ Public Class frmModificarEmpleado
             lnpNuevoEmpleado.setApellidoEmpleado(txtApellido.Text)
             lnpNuevoEmpleado.setNombreEmpleado(txtNombre.Text)
             lnpNuevoEmpleado.setDireccionEmpleado(txtDireccion.Text)
-            lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToInt16(txtTelefono.Text))
+            lnpNuevoEmpleado.setTelefonoEmpleado(Convert.ToString(txtTelefono.Text))
             lnpNuevoEmpleado.setDpiCedula(txtDPI.Text)
-            lnpNuevoEmpleado.setCelularEmpleado(Convert.ToInt16(txtCelular.Text))
+            lnpNuevoEmpleado.setCelularEmpleado(Convert.ToString(txtCelular.Text))
+            lnpNuevoEmpleado.setPuestoEmpleado(txtPuesto.Text)
             lnpNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(txtSueldo.Text))
             lnpNuevoEmpleado.setUsuarioEmpleado(txtUsuario.Text)
             lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
+            lnpNuevoEmpleado.setHabilitadoEmpleado(1)
+            lnpNuevoEmpleado.setPasswordEmpleado(frmModuloEmpleados.gnpEmpleadoSeleccionado.getPasswordEmpleado())
+            lnpNuevoEmpleado.setIdRolEmpleado(Convert.ToByte(cmbRolEmpleado.SelectedValue))
+            lnpNuevoEmpleado.setIdEmpleado(frmModuloEmpleados.gnpEmpleadoSeleccionado.getIdEmpleado())
             Try
                 lnpNuevoEmpleado.fnsModificarEmpleado()
                 MessageBox.Show("La operación de modificacion de empleado se llevó a cabo con éxito", "Modificacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -131,19 +136,7 @@ Public Class frmModificarEmpleado
 
     Private Sub txtUsuario_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUsuario.MouseHover
         slblDescripcion.Text = "Usuario del Empleado"
-
-        If actualizar = True Then
-            Me.txtNombre.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getNombreEmpleado()
-            Me.txtDireccion.Text = frmModuloProveedores.gnpProveedor.getDireccion()
-            Me.txtApellido.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getApellidoEmpleado()
-            Me.txtDireccion.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getDireccionEmpleado()
-            Me.txtDPI.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getDpiCedula()
-            Me.txtTelefono.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getTelefonoEmpleado()
-            Me.txtCelular.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getCelularEmpleado()
-            Me.txtPuesto.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getPuestoEmpleado()
-            Me.txtSueldo.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getSalarioEmpleado()
-            Me.txtUsuario.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getUsuarioEmpleado()
-        End If
+       
     End Sub
 
     Private Sub txtPassword_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -153,6 +146,17 @@ Public Class frmModificarEmpleado
     Private Sub frmModificarEmpleado_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.glstRol = negociosRol.fnlstListarRoles()
         Me.fnvdRecargar()
+        If actualizar = True Then
+            Me.txtNombre.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getNombreEmpleado()
+            Me.txtApellido.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getApellidoEmpleado()
+            Me.txtDireccion.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getDireccionEmpleado()
+            Me.txtDPI.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getDpiCedula()
+            Me.txtTelefono.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getTelefonoEmpleado()
+            Me.txtCelular.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getCelularEmpleado()
+            Me.txtPuesto.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getPuestoEmpleado()
+            Me.txtSueldo.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getSalarioEmpleado()
+            Me.txtUsuario.Text = frmModuloEmpleados.gnpEmpleadoSeleccionado.getUsuarioEmpleado()
+        End If
     End Sub
     Private Sub fnvdRecargar()
         Try
