@@ -239,6 +239,11 @@ namespace negocios
                 return ex.Message;
             }
         }
+        public void fnvInsertarFacturaCliente()
+        {
+                fnvdInsertarEncabezadoFacturaCliente();
+                fnvdInsertarDetallesFactura();
+        }
         #endregion
         #region Otras funciones
         /// <summary>

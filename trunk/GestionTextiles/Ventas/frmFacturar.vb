@@ -3,9 +3,9 @@ Imports negocios
 Public Class frmFacturar
     Private serieActual As negociosSerie
     Public Shared productoSeleccionado As negociosProducto
-    Private clienteActual As negociosCliente
+    Private clienteActual As negociosCliente = Nothing
     Private factura As negociosFacturaCliente = New negociosFacturaCliente()
-
+    Private nitC As String
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         factura.fnsCancelarFactura()
         Me.Dispose()
@@ -159,9 +159,19 @@ Public Class frmFacturar
         Next
         Try
             If IsNothing(Me.clienteActual) Then
-
+                Me.clienteActual = New negociosCliente()
+                Me.clienteActual.setNitCliente(nitC)
+                Me.clienteActual.setNombreCliente(txtnombre.Text)
+                Me.clienteActual.setDireccionCliente(txtdireccion.Text)
+                Me.clienteActual.setIdTipoCliente(Convert.ToInt32(cmbtipocliente.SelectedValue))
+                Me.clienteActual.fnvInsertarCliente()
+                Me.clienteActual = negociosCliente.fnnaBuscarClienteNit(Me.clienteActual.getNitCliente())
             End If
-            Me.factura.setIdEmpleado(frmPrincipal.gnegEmpleado.getIdEmpleado())
+            'Me.factura.setIdEmpleado(frmPrincipal.gnegEmpleado.getIdEmpleado())
+            Me.factura.setIdEmpleado(1)
+            Me.factura.setSerie(Me.serieActual.getSerie())
+            Me.factura.setIdCliente(Me.clienteActual.getIdCliente())
+            Me.factura.fnvInsertarFacturaCliente()
             MessageBox.Show(Me.factura.fnInsertarFacturaCliente(), "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'Aqui se muestra el reporte de la factura en sì
             Me.Dispose()
@@ -253,6 +263,22 @@ Public Class frmFacturar
         'If negociosCliente.fnBuscarClientePorNit(txtnit.Text) Then
         '    Me.clienteActual = 
         'End If
+        If txtnit.Text = "C.F." Or txtnit.Text = "CF" Or txtnit.Text = "C/F" Or txtnit.Text = "cf" Or txtnit.Text = "" Then
+            nitC = "CF"
+        Else
+            Try
+                nitC = txtnit.Text.Replace("-", "")
+                nitC = nitC.Trim()
+                Me.clienteActual = negociosCliente.fnnaBuscarClienteNit(txtnit.Text.Replace("-", ""))
+                If IsNothing(Me.clienteActual) = False Then
+                    txtnombre.Text = Me.clienteActual.getNombreCliente()
+                    txtdireccion.Text = Me.clienteActual.getDireccionCliente()
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+        End If
     End Sub
 
     Private Sub btnagregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.Click
@@ -261,7 +287,11 @@ Public Class frmFacturar
             txtDescuento.Text = "0.00"
         End If
         Me.factura.setDescuento(Convert.ToDouble(txtDescuento.Text))
-        If IsNothing(frmFacturar.productoSeleccionado) = False And txtCantidad.Text <> "" Then
+        If IsNothing(frmFacturar.productoSeleccionado) Then
+            MessageBox.Show("Debe seleccionar un producto para ingresarlo a la factura", "Ningún producto seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf txtCantidad.Text <> "" Then
+            MessageBox.Show("Debe especificar la cantidad de producto a comprar", "Falta cantidad de producto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
             Try
                 If negociosProducto.fnboVerificarCantidadExistenteProducto(frmFacturar.productoSeleccionado.getIdProducto(), Convert.ToDouble(txtCantidad.Text)) Then
 
@@ -271,9 +301,9 @@ Public Class frmFacturar
                     Me.factura.fnvdAgregarProducto(lnfcDetalleTemporal)
 
                     Me.lbltotal.Text = Convert.ToString(Me.factura.getTotal())
-                    Me.lblDescuento.Text = Convert.ToString(Me.factura.getSubTotal())
+                    Me.lbldescuentofac.Text = Convert.ToString(Me.factura.getSubTotal())
                     'agregar al dgv
-                    
+
                     Me.fnvdLlenarDataGridView(Me.factura.getDetalleFactura())
                 Else
                     MessageBox.Show("La existencia del producto no es suficiente para cubrir el pedido", "Producto insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Error)

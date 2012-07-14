@@ -106,7 +106,7 @@ Partial Class frmFacturar
         Me.txtnit.Name = "txtnit"
         Me.txtnit.Size = New System.Drawing.Size(852, 20)
         Me.txtnit.TabIndex = 1
-        Me.txtnit.Text = "C.F."
+        Me.txtnit.Text = "CF"
         '
         'txtdireccion
         '
