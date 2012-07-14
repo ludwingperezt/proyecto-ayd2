@@ -65,9 +65,12 @@ Public Class frmModuloProductos
 
     Private Sub btnbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnbuscar.Click
         If txtbusqueda.Text = "" Then
+            Me.numeroPagina = 1
             Me.fnvdRecargar()
         Else
             'codigo para busqueda
+            btnAnterior.Enabled = False
+            btnSiguiente.Enabled = False
             Me.banderaBusqueda = True
             Me.fnvBuscar(txtbusqueda.Text)
         End If
@@ -177,7 +180,7 @@ Public Class frmModuloProductos
         ElseIf chNombre.Checked = False And chCodigo.Checked = True Then 'busqueda solo por codigo
             Me.glstProductosFiltrada = negociosProducto.fnFiltrarProductosPorCodigo(txt)
             Me.cargarResultadosBusqueda()
-        ElseIf chNombre.Checked = True And chCodigo.Checked = False Then 'busqueda exacta por ambos criterios
+        ElseIf chNombre.Checked = True And chCodigo.Checked = True Then 'busqueda exacta por ambos criterios
             Me.glstProductosFiltrada = negociosProducto.fnBuscarProductosPorCodigoNombre(txt)
             Me.cargarResultadosBusqueda()
         Else ''si no se seleccionò un criterio, se carga todo de nuevo
@@ -214,6 +217,7 @@ Public Class frmModuloProductos
     End Sub
 
     Private Sub btnRegresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.Click
+        Me.numeroPagina = 1
         Me.fnvdRecargar()
     End Sub
 
