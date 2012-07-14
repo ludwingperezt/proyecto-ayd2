@@ -11,7 +11,17 @@ Public Class frmModuloCompras
     End Sub
 
     Private Sub btnbuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnbuscar.Click
+        Dim parametro As String
+        parametro = cmbFiltro.SelectedValue()
+        If (parametro = "Nit") Then
 
+        End If
+        If (parametro = "Empresa") Then
+
+        End If
+        If (parametro = "Propietario") Then
+
+        End If
     End Sub
 
     Private Sub cmbFiltro_MouseLeave(sender As System.Object, e As System.EventArgs) Handles cmbFiltro.MouseLeave
