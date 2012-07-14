@@ -35,12 +35,12 @@ Partial Class frmModuloEmpleados
         Me.btnIngresarEmpleado = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.gbListaEmpleados = New System.Windows.Forms.GroupBox()
+        Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.btnRegresar = New System.Windows.Forms.Button()
         Me.lblFiltroCriterio = New System.Windows.Forms.Label()
         Me.cmbFiltroCriterio = New System.Windows.Forms.ComboBox()
         Me.lblFiltradoEstados = New System.Windows.Forms.Label()
         Me.cmbFiltradoEstados = New System.Windows.Forms.ComboBox()
-        Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.stsBarra.SuspendLayout()
         Me.gbListaEmpleados.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,6 +166,14 @@ Partial Class frmModuloEmpleados
         Me.gbListaEmpleados.TabStop = False
         Me.gbListaEmpleados.Text = "Listado Empleados"
         '
+        'dgvEmpleados
+        '
+        Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEmpleados.Location = New System.Drawing.Point(19, 55)
+        Me.dgvEmpleados.Name = "dgvEmpleados"
+        Me.dgvEmpleados.Size = New System.Drawing.Size(536, 131)
+        Me.dgvEmpleados.TabIndex = 5
+        '
         'btnRegresar
         '
         Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -216,14 +224,6 @@ Partial Class frmModuloEmpleados
         Me.cmbFiltradoEstados.TabIndex = 1
         Me.cmbFiltradoEstados.Visible = False
         '
-        'dgvEmpleados
-        '
-        Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleados.Location = New System.Drawing.Point(19, 55)
-        Me.dgvEmpleados.Name = "dgvEmpleados"
-        Me.dgvEmpleados.Size = New System.Drawing.Size(536, 131)
-        Me.dgvEmpleados.TabIndex = 5
-        '
         'frmModuloEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -244,6 +244,7 @@ Partial Class frmModuloEmpleados
         Me.Controls.Add(Me.txtbusqueda)
         Me.Controls.Add(Me.lblbusqueda)
         Me.Name = "frmModuloEmpleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modulo de Empleados"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
