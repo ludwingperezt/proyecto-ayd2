@@ -149,6 +149,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.btnAceptar)
         Me.DoubleBuffered = True
         Me.Name = "frmLogin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         CType(Me.picbLogin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
