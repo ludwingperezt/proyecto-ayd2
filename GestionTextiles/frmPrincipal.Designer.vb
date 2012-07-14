@@ -76,7 +76,7 @@ Partial Class frmPrincipal
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(295, 13)
+        Me.lblTitulo.Location = New System.Drawing.Point(301, 9)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(205, 29)
         Me.lblTitulo.TabIndex = 40
@@ -232,9 +232,11 @@ Partial Class frmPrincipal
         'lblEmpleado
         '
         Me.lblEmpleado.AutoSize = True
-        Me.lblEmpleado.Location = New System.Drawing.Point(601, 29)
+        Me.lblEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmpleado.ForeColor = System.Drawing.Color.DarkGoldenrod
+        Me.lblEmpleado.Location = New System.Drawing.Point(33, 43)
         Me.lblEmpleado.Name = "lblEmpleado"
-        Me.lblEmpleado.Size = New System.Drawing.Size(66, 13)
+        Me.lblEmpleado.Size = New System.Drawing.Size(99, 18)
         Me.lblEmpleado.TabIndex = 59
         Me.lblEmpleado.Text = "EMPLEADO"
         '
