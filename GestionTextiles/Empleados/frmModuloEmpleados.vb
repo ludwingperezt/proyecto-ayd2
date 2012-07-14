@@ -10,8 +10,17 @@ Public Class frmModuloEmpleados
             MessageBox.Show("Ingrese la busqueda deseada ")
         Else
             'codigo para busqueda
-            'verificar si funciona
-            dgvEmpleados.DataSource = negociosEmpleado.fnDbBuscarEmpleadoNombre(txtbusqueda.Text)
+            Dim parametro As String
+            parametro = cmbFiltroCriterio.SelectedItem
+            If (parametro = "Nombre") Then
+                fnvdRecargarNombre()
+            End If
+            If (parametro = "Usuario") Then
+                fnvdRecargarUsuario()
+            End If
+            If (parametro = "Apellido") Then
+                fnvdRecargarApellido()
+            End If
         End If
     End Sub
 
@@ -175,6 +184,45 @@ Public Class frmModuloEmpleados
 
 
     End Sub
+    Private Sub fnvdRecargarUsuario()
+        Try
+            dgvEmpleados.DataSource = ""
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = Nothing
+            Me.glstEmpleadosFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstEmpleados = negociosEmpleado.fnslListarEmpleadoUsuario(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstEmpleados)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvEmpleados.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvdRecargarNombre()
+        Try
+            dgvEmpleados.DataSource = ""
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = Nothing
+            Me.glstEmpleadosFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstEmpleados = negociosEmpleado.fnslListarEmpleadoNombre(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstEmpleados)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvEmpleados.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvdRecargarApellido()
+        Try
+            dgvEmpleados.DataSource = ""
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = Nothing
+            Me.glstEmpleadosFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstEmpleados = negociosEmpleado.fnslListarEmpleadoApellido(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstEmpleados)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvEmpleados.DataSource = Nothing
+        End Try
+    End Sub
     Private Sub fnvdRecargar()
         Try
             dgvEmpleados.DataSource = ""
@@ -217,5 +265,9 @@ Public Class frmModuloEmpleados
 
         Next
         Me.dgvEmpleados.DataSource = ldtTabla
+    End Sub
+
+    Private Sub btnRegresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.Click
+        Me.fnvdRecargar()
     End Sub
 End Class
