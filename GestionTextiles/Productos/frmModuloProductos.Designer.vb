@@ -32,6 +32,9 @@ Partial Class frmModuloProductos
         Me.lblbusqueda = New System.Windows.Forms.Label()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.gbListaProductos = New System.Windows.Forms.GroupBox()
+        Me.lblCriterioBusqueda = New System.Windows.Forms.Label()
+        Me.chCodigo = New System.Windows.Forms.CheckBox()
+        Me.chNombre = New System.Windows.Forms.CheckBox()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnRegresar = New System.Windows.Forms.Button()
@@ -40,9 +43,6 @@ Partial Class frmModuloProductos
         Me.btnEliminarProducto = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnIngresarProducto = New System.Windows.Forms.Button()
-        Me.lblCriterioBusqueda = New System.Windows.Forms.Label()
-        Me.chCodigo = New System.Windows.Forms.CheckBox()
-        Me.chNombre = New System.Windows.Forms.CheckBox()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaProductos.SuspendLayout()
@@ -132,23 +132,56 @@ Partial Class frmModuloProductos
         Me.gbListaProductos.TabStop = False
         Me.gbListaProductos.Text = "Lista Productos:"
         '
+        'lblCriterioBusqueda
+        '
+        Me.lblCriterioBusqueda.AutoSize = True
+        Me.lblCriterioBusqueda.Location = New System.Drawing.Point(31, 54)
+        Me.lblCriterioBusqueda.Name = "lblCriterioBusqueda"
+        Me.lblCriterioBusqueda.Size = New System.Drawing.Size(104, 13)
+        Me.lblCriterioBusqueda.TabIndex = 67
+        Me.lblCriterioBusqueda.Text = "Criterio de búsqueda"
+        '
+        'chCodigo
+        '
+        Me.chCodigo.AutoSize = True
+        Me.chCodigo.Checked = True
+        Me.chCodigo.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chCodigo.Location = New System.Drawing.Point(168, 51)
+        Me.chCodigo.Name = "chCodigo"
+        Me.chCodigo.Size = New System.Drawing.Size(59, 17)
+        Me.chCodigo.TabIndex = 68
+        Me.chCodigo.Text = "Código"
+        Me.chCodigo.UseVisualStyleBackColor = True
+        '
+        'chNombre
+        '
+        Me.chNombre.AutoSize = True
+        Me.chNombre.Location = New System.Drawing.Point(233, 53)
+        Me.chNombre.Name = "chNombre"
+        Me.chNombre.Size = New System.Drawing.Size(63, 17)
+        Me.chNombre.TabIndex = 69
+        Me.chNombre.Text = "Nombre"
+        Me.chNombre.UseVisualStyleBackColor = True
+        '
         'btnSiguiente
         '
+        Me.btnSiguiente.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSiguiente.Image = Global.GestionTextiles.My.Resources.Resources.bluesharp1
         Me.btnSiguiente.Location = New System.Drawing.Point(483, 352)
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(75, 23)
         Me.btnSiguiente.TabIndex = 53
-        Me.btnSiguiente.Text = ">>"
-        Me.btnSiguiente.UseVisualStyleBackColor = True
+        Me.btnSiguiente.UseVisualStyleBackColor = False
         '
         'btnAnterior
         '
+        Me.btnAnterior.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAnterior.Image = Global.GestionTextiles.My.Resources.Resources.bluesharp2
         Me.btnAnterior.Location = New System.Drawing.Point(400, 352)
         Me.btnAnterior.Name = "btnAnterior"
         Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
         Me.btnAnterior.TabIndex = 52
-        Me.btnAnterior.Text = "<<"
-        Me.btnAnterior.UseVisualStyleBackColor = True
+        Me.btnAnterior.UseVisualStyleBackColor = False
         '
         'btnRegresar
         '
@@ -222,37 +255,6 @@ Partial Class frmModuloProductos
         Me.btnIngresarProducto.Text = "&Ingresar Producto"
         Me.btnIngresarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnIngresarProducto.UseVisualStyleBackColor = False
-        '
-        'lblCriterioBusqueda
-        '
-        Me.lblCriterioBusqueda.AutoSize = True
-        Me.lblCriterioBusqueda.Location = New System.Drawing.Point(31, 54)
-        Me.lblCriterioBusqueda.Name = "lblCriterioBusqueda"
-        Me.lblCriterioBusqueda.Size = New System.Drawing.Size(104, 13)
-        Me.lblCriterioBusqueda.TabIndex = 67
-        Me.lblCriterioBusqueda.Text = "Criterio de búsqueda"
-        '
-        'chCodigo
-        '
-        Me.chCodigo.AutoSize = True
-        Me.chCodigo.Checked = True
-        Me.chCodigo.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chCodigo.Location = New System.Drawing.Point(168, 51)
-        Me.chCodigo.Name = "chCodigo"
-        Me.chCodigo.Size = New System.Drawing.Size(59, 17)
-        Me.chCodigo.TabIndex = 68
-        Me.chCodigo.Text = "Código"
-        Me.chCodigo.UseVisualStyleBackColor = True
-        '
-        'chNombre
-        '
-        Me.chNombre.AutoSize = True
-        Me.chNombre.Location = New System.Drawing.Point(233, 53)
-        Me.chNombre.Name = "chNombre"
-        Me.chNombre.Size = New System.Drawing.Size(63, 17)
-        Me.chNombre.TabIndex = 69
-        Me.chNombre.Text = "Nombre"
-        Me.chNombre.UseVisualStyleBackColor = True
         '
         'frmModuloProductos
         '
