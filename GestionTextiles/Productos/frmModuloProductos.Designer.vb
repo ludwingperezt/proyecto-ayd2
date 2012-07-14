@@ -40,7 +40,7 @@ Partial Class frmModuloProductos
         Me.btnEliminarProducto = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnIngresarProducto = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblCriterioBusqueda = New System.Windows.Forms.Label()
         Me.chCodigo = New System.Windows.Forms.CheckBox()
         Me.chNombre = New System.Windows.Forms.CheckBox()
         Me.stsBarra.SuspendLayout()
@@ -73,13 +73,13 @@ Partial Class frmModuloProductos
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
         'btnbuscar
@@ -223,14 +223,14 @@ Partial Class frmModuloProductos
         Me.btnIngresarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnIngresarProducto.UseVisualStyleBackColor = False
         '
-        'Label1
+        'lblCriterioBusqueda
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 54)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(104, 13)
-        Me.Label1.TabIndex = 67
-        Me.Label1.Text = "Criterio de búsqueda"
+        Me.lblCriterioBusqueda.AutoSize = True
+        Me.lblCriterioBusqueda.Location = New System.Drawing.Point(31, 54)
+        Me.lblCriterioBusqueda.Name = "lblCriterioBusqueda"
+        Me.lblCriterioBusqueda.Size = New System.Drawing.Size(104, 13)
+        Me.lblCriterioBusqueda.TabIndex = 67
+        Me.lblCriterioBusqueda.Text = "Criterio de búsqueda"
         '
         'chCodigo
         '
@@ -261,7 +261,7 @@ Partial Class frmModuloProductos
         Me.ClientSize = New System.Drawing.Size(617, 647)
         Me.Controls.Add(Me.chNombre)
         Me.Controls.Add(Me.chCodigo)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblCriterioBusqueda)
         Me.Controls.Add(Me.gbListaProductos)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnSeleccionarProducto)
@@ -300,7 +300,7 @@ Partial Class frmModuloProductos
     Friend WithEvents gbListaProductos As System.Windows.Forms.GroupBox
     Friend WithEvents btnSiguiente As System.Windows.Forms.Button
     Friend WithEvents btnAnterior As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblCriterioBusqueda As System.Windows.Forms.Label
     Friend WithEvents chCodigo As System.Windows.Forms.CheckBox
     Friend WithEvents chNombre As System.Windows.Forms.CheckBox
 End Class
