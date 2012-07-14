@@ -1,8 +1,12 @@
 ﻿Imports negocios
 Public Class frmEmpleados
-    Public Shared lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
-    Public Shared lnRol As negociosRol = New negociosRol
+    Private Shared lnpNuevoEmpleado As negociosEmpleado = New negociosEmpleado()
+    Private glstRol As List(Of negociosRol) = New List(Of negociosRol)
     Dim lbooBanderaPunto As Boolean = False
+
+    Private glstRolFiltrada As List(Of negociosRol) = New List(Of negociosRol)
+    Public Shared gnpRolSeleccionado As negociosRol
+    Private banderaBusqueda As Boolean = False
     Private Sub slblDescripcion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles slblDescripcion.Click
 
     End Sub
@@ -185,12 +189,37 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub frmEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        cmbRolEmpleado.DataSource = lnRol.fnlstListarRoles()
-        cmbRolEmpleado.DisplayMember = "NOMBRE"
-        'cmbRolEmpleado.ValueMember = "IDROL"
-        DataGridView1.DataSource = lnRol.fnlstListarRoles()
+        Me.glstRol = negociosRol.fnlstListarRoles()
+        Me.fnvdRecargar()
     End Sub
+    Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosRol))
+        Dim ldtTabla As DataTable = New DataTable()
+        Dim ldrFila As DataRow
+        Dim lnpRol As negociosRol
+        ldtTabla.Columns.Add("IdRol")
+        ldtTabla.Columns.Add("Nombre")
 
+        For i = 0 To lista.Count - 1 Step 1
+            ldrFila = ldtTabla.NewRow()
+            lnpRol = lista(i)
+            ldrFila(0) = lnpRol.getIdRol()
+            ldrFila(1) = lnpRol.getNombre()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        cmbRolEmpleado.DataSource = ldtTabla
+        cmbRolEmpleado.DisplayMember = "Nombre"
+    End Sub
+    Private Sub fnvdRecargar()
+        Try
+            frmEmpleados.gnpRolSeleccionado = Nothing
+            Me.glstRolFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstRol = negociosRol.fnlstListarRoles()
+            Me.fnvCrearDataTable(Me.glstRol)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
     Private Sub cmbRolEmpleado_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbRolEmpleado.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
