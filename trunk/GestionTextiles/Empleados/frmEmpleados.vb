@@ -138,15 +138,18 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub txtSueldo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSueldo.KeyPress
-        If lbooBanderaPunto = False Then
-            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
+        If txtSueldo.Text.Contains(".") Then
+            lbooBanderaPunto = True
+        Else
+            lbooBanderaPunto = False
+        End If
+
+        If lbooBanderaPunto = True Then
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
                 e.KeyChar = vbNullChar
-                If e.KeyChar = "." Then
-                    lbooBanderaPunto = True
-                End If
             End If
         Else
-            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
                 e.KeyChar = vbNullChar
             End If
         End If
