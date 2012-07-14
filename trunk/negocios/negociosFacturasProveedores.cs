@@ -112,6 +112,40 @@ namespace negocios
         {
             
         }
+        /// <summary>
+        /// Función que devuelve a las ultimas 20 compras
+        /// </summary>
+        /// <returns>DataTable: devuelve las ultimas 20 compras</returns>
+        public static DataTable fnDbDevolverVeinteCompras()
+        {
+            return negociosAdaptadores.gAdaptadorUltimasVeinteCompras.GetData();
+        }
+        public static List<negociosFacturasProveedores> fnslListarUltimasVeinteCompras()
+        {
+            List<negociosFacturasProveedores> lnpFacturaProveedores = new List<negociosFacturasProveedores>();
+            try
+            {
+                DataTable ldtFacturaProveedores = negociosFacturasProveedores.fnDbDevolverVeinteCompras();
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtFacturaProveedores.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtFacturaProveedores.Rows[i].ItemArray;
+                    negociosFacturasProveedores npNuevaFacturaProveedores = new negociosFacturasProveedores();
+                    npNuevaFacturaProveedores.setIdProveedor(Convert.ToByte(oListaElmentos[1]));
+                    npNuevaFacturaProveedores.setIdEmpleado(Convert.ToByte(oListaElmentos[2]));
+                    npNuevaFacturaProveedores.setSerie(Convert.ToString(oListaElmentos[3]));
+                    npNuevaFacturaProveedores.setNumero(Convert.ToInt32(oListaElmentos[4]));
+                    npNuevaFacturaProveedores.setFecha(Convert.ToDateTime(oListaElmentos[5]));
+                    npNuevaFacturaProveedores.setTotal(Convert.ToDecimal(oListaElmentos[6]));
+                    lnpFacturaProveedores.Add(npNuevaFacturaProveedores);
+                }
+                return lnpFacturaProveedores;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
         #endregion
     }
 
