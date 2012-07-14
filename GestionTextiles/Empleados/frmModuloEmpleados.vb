@@ -35,7 +35,14 @@ Public Class frmModuloEmpleados
     End Sub
 
     Private Sub btnModificarEmpleado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarEmpleado.Click
-        frmModificarEmpleado.ShowDialog(Me)
+        If IsNothing(frmModuloEmpleados.gnpEmpleadoSeleccionado) Then
+            MessageBox.Show("Debe seleccionar un empleado de la lista para poder modificar sus datos", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            frmModificarEmpleado.actualizar = True
+            frmModificarEmpleado.ShowDialog(Me)
+            Me.fnvdRecargar()
+            txtbusqueda.Text = ""
+        End If
     End Sub
 
     Private Sub btnEliminarEmpleados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarEmpleados.Click
@@ -133,10 +140,14 @@ Public Class frmModuloEmpleados
     Private Sub btnRegresar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseHover
         slblDescripcion.Text = "Regresa al Filtro Inicial."
     End Sub
-
+    Private Sub dgvEmpleados_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvEmpleados.CellClick
+        If banderaBusqueda Then
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = glstEmpleadosFiltrada(e.RowIndex)
+        Else
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = glstEmpleados(e.RowIndex)
+        End If
+    End Sub
     Private Sub frmModuloEmpleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-
         ' Establecer permisos
         Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
 
@@ -178,11 +189,6 @@ Public Class frmModuloEmpleados
             dgvEmpleados.Enabled = False
             btnRegresar.Enabled = False
         End If
-
-
-
-
-
     End Sub
     Private Sub fnvdRecargarUsuario()
         Try
@@ -269,5 +275,17 @@ Public Class frmModuloEmpleados
 
     Private Sub btnRegresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.Click
         Me.fnvdRecargar()
+    End Sub
+
+    Private Sub gbListaEmpleados_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gbListaEmpleados.Enter
+
+    End Sub
+
+    Private Sub dgvEmpleados_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvEmpleados.CellContentClick
+        If banderaBusqueda Then
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = glstEmpleadosFiltrada(e.RowIndex)
+        Else
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = glstEmpleados(e.RowIndex)
+        End If
     End Sub
 End Class
