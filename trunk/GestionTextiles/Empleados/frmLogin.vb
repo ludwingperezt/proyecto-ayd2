@@ -27,7 +27,7 @@ Public Class frmLogin
                 Else
                     ctrlIterador.BackColor = Color.White
                     ''buscar al usuario
-                    dgvUsuario.DataSource = lnpNuevoUsuario.fnDbBuscarPorNombre(txtUsuario.Text)
+                    'dgvUsuario.DataSource = lnpNuevoUsuario.fnDbBuscarPorNombre(txtUsuario.Text)
                     Dim cantRegistros As Integer = dgvUsuario.Rows.Count
                     If (cantRegistros > 1) Then
                         lnpNuevoUsuario.setIdRolEmpleado(Convert.ToByte(dgvUsuario.CurrentRow.Cells(1).Value))
