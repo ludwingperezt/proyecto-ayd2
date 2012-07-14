@@ -99,15 +99,26 @@ namespace negocios
              {
                  this.direccion = lsDireccion;
              }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idCliente"></param>
              public void setIdCliente(int idCliente)
              {
                  this.idCliente = idCliente;
              }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
              public int getIdCliente()
              {
                  return this.idCliente;
              }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idTipoCliente"></param>
              public void setIdTipoCliente(int idTipoCliente)
              {
                  this.idTipoCliente = (byte)idTipoCliente;
@@ -174,6 +185,11 @@ namespace negocios
              {
                  return negociosAdaptadores.gAdaptadorClienteNit.GetData(SnitCliente);
              }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lsNit"></param>
+        /// <returns></returns>
              public static negociosCliente fnnaBuscarClienteNit(string lsNit)
              {
                  DataTable dtLocal = negociosAdaptadores.gAdaptadorBcn.GetData(lsNit);
@@ -191,9 +207,34 @@ namespace negocios
                  }
                  return temporal;
              }
+        /// <summary>
+        /// 
+        /// </summary>
              public void fnvInsertarCliente()
              {
                      negociosAdaptadores.gAdaptadorDeConsultas.insertarCliente(this.idTipoCliente, this.nombre, this.direccion, this.nit);
+             }
+        /// <summary>
+        /// 
+        /// </summary>
+             public void fnvinsertarclienteCF()
+             {
+                 DataTable dtLocal = negociosAdaptadores.gAdaptadorBuquedaExactaClNombreDireccion.GetData(this.nombre, this.direccion);
+                 if ((dtLocal.Rows.Count > 1) || ((dtLocal.Rows.Count == 0))) //si la bùsqueda exacta de los datos del cliente por nombre y por direccion no retornan resultados o si retornan màs de un resultado, se inserta la tupla del cliente y se obtiene el Id del cliente insertado
+                 {
+                     DataTable dtResult = negociosAdaptadores.gAdaptadorInsClDevolverId.GetData(this.idTipoCliente, this.nit, this.nombre, this.direccion);
+                     object o = dtResult.Rows[0].ItemArray[0];
+                     this.idCliente = Convert.ToInt32(o);
+                 }
+                 else
+                 {
+                     object[] objInstancia = dtLocal.Rows[0].ItemArray;
+                     this.idCliente = (Convert.ToInt32(objInstancia[0]));                    
+                     this.setIdTipoCliente(Convert.ToInt32(objInstancia[1]));
+                     this.setNitCliente(Convert.ToString(objInstancia[2]));
+                     this.setNombreCliente(Convert.ToString(objInstancia[3]));
+                     this.setDireccionCliente(Convert.ToString(objInstancia[4]));                     
+                 }
              }
              #endregion
     }
