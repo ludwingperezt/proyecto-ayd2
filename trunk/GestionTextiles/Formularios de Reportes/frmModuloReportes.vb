@@ -40,4 +40,8 @@
     Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
         frmReportePrueba.ShowDialog(Me)
     End Sub
+
+    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        Me.Dispose()
+    End Sub
 End Class
