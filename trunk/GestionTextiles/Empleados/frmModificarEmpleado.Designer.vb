@@ -324,8 +324,10 @@ Partial Class frmModificarEmpleado
         '
         'frmModificarEmpleado
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(509, 474)
         Me.Controls.Add(Me.btnComprobar)
         Me.Controls.Add(Me.cmbRolEmpleado)
@@ -356,6 +358,7 @@ Partial Class frmModificarEmpleado
         Me.Controls.Add(Me.txtDPI)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.lblTitulo)
+        Me.MaximizeBox = False
         Me.Name = "frmModificarEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modificar Empleado"
