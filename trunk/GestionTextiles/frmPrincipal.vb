@@ -160,7 +160,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub frmPrincipal_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        gnegPermisos = negociosRol.fnObtenerRolPorId(3)
+        gnegPermisos = negociosRol.fnObtenerRolPorId(2)
         lblEmpleado.Text = "Bienvenido: " + gnegEmpleado.getUsuarioEmpleado() + " - " + gnegPermisos.getNombre
         ' Esto queda para el final, xq sino no podremos realizar pruebas
 
