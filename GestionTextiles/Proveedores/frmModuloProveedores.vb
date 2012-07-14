@@ -204,17 +204,24 @@ Public Class frmModuloProveedores
                     lstnpProveedoresFiltrado.Add(i)
                 End If
             End If
-            If cmbFiltro.SelectedItem = "Estado" Then
-                If i.getEstado.Trim().Contains(sTextoBuscado) Then
-                    lstnpProveedoresFiltrado.Add(i)
-                End If
-            End If
             If cmbFiltro.SelectedItem = "" Then
                 If i.getNombre().Trim().Contains(sTextoBuscado) Or i.getPropietario().Trim().Contains(sTextoBuscado) Or i.getDireccion().Trim().Contains(sTextoBuscado) Or i.getNit().Trim().Contains(sTextoBuscado) Or i.getEmpresa().Trim().Contains(sTextoBuscado) Or i.getTelefono().Trim().Contains(sTextoBuscado) Or i.getCelular().Trim().Contains(sTextoBuscado) Then
                     lstnpProveedoresFiltrado.Add(i)
                 End If
             End If
         Next
+        If cmbFiltro.SelectedItem = "Estado" Then
+            Try
+                If sTextoBuscado = "Activo" Then
+                    lstnpProveedoresFiltrado = negociosProveedores.fnslBuscarProveedorPorEstado(True)
+                ElseIf sTextoBuscado = "Inactivo" Then
+                    lstnpProveedoresFiltrado = negociosProveedores.fnslBuscarProveedorPorEstado(False)
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+            
+        End If
         Me.fnvCrearDataTable(lstnpProveedoresFiltrado)
     End Sub
 

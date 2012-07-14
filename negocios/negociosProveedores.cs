@@ -200,6 +200,68 @@ namespace negocios
             
         }
 
+        public static List<negociosProveedores> fnslBuscarProveedorPorEstado(bool bEstado)
+        {
+            List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
+            try
+            {
+                DataTable ldtProveedores = negociosAdaptadores.gAdaptadorBuscarProveedorPorEstado.GetData(bEstado);
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtProveedores.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtProveedores.Rows[i].ItemArray;
+                    negociosProveedores npNuevoProveedor = new negociosProveedores();
+                    npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
+                    npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
+                    npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[2]));
+                    npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[3]));
+                    npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[4]));
+                    npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));
+                    npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[6]));
+                    npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[7]));
+                    npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[8]));
+                    lnpProveedores.Add(npNuevoProveedor);
+                }
+                return lnpProveedores;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+        }
+
+        public static List<negociosProveedores> fnslBuscarProveedorPorNit(string sNit)
+        {
+            List<negociosProveedores> lnpProveedores = new List<negociosProveedores>();
+            try
+            {
+                DataTable ldtProveedores = negociosAdaptadores.gAdaptadorBuscarProveedorPorNit.GetData(sNit);
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtProveedores.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtProveedores.Rows[i].ItemArray;
+                    negociosProveedores npNuevoProveedor = new negociosProveedores();
+                    npNuevoProveedor.setId(Convert.ToInt16(oListaElmentos[0]));
+                    npNuevoProveedor.setNombre(Convert.ToString(oListaElmentos[1]));
+                    npNuevoProveedor.setNit(Convert.ToString(oListaElmentos[2]));
+                    npNuevoProveedor.setDireccion(Convert.ToString(oListaElmentos[3]));
+                    npNuevoProveedor.setEmpresa(Convert.ToString(oListaElmentos[4]));
+                    npNuevoProveedor.setPropietario(Convert.ToString(oListaElmentos[5]));
+                    npNuevoProveedor.setTelefono(Convert.ToString(oListaElmentos[6]));
+                    npNuevoProveedor.setCelular(Convert.ToString(oListaElmentos[7]));
+                    npNuevoProveedor.setEstado(Convert.ToBoolean(oListaElmentos[8]));
+                    lnpProveedores.Add(npNuevoProveedor);
+                }
+                return lnpProveedores;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+        }
+
         /// <summary>
         /// Funcion para insertar un nuevo proveedor en la base de datos
         /// </summary>
@@ -268,15 +330,6 @@ namespace negocios
             {
                 return e.Message;
             }
-        }
-        /// <summary>
-        /// Funcion para buscar a un proveedor por su nit
-        /// </summary>
-        /// <returns>DataTable: Tabla con la tupla del proveedor</returns>
-        public DataTable fnsBuscarProveedorNit(string nitProveedor)
-        {
-
-                return negociosAdaptadores.gAdaptadorRegistroProveedor.GetData(nitProveedor);
         }
         #endregion
     }
