@@ -85,7 +85,6 @@ Public Class frmEmpleados
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Dim lbooBandera As Boolean = True
-
         For Each ctrlIterador As Control In Me.Controls
             '' Validación de textbox
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
@@ -112,6 +111,8 @@ Public Class frmEmpleados
             lnpNuevoEmpleado.setFechaContratacionEmpleado(dtpFechaContrato.Value)
             lnpNuevoEmpleado.setHabilitadoEmpleado(1)
             lnpNuevoEmpleado.setPasswordEmpleado(lnpNuevoEmpleado.arrbyCalcularHash(txtPassword.Text))
+
+
             Try
                 lnpNuevoEmpleado.fnsInsertarEmpleado()
                 MessageBox.Show("La operación de insersión de empleado se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -208,6 +209,8 @@ Public Class frmEmpleados
         Next
         cmbRolEmpleado.DataSource = ldtTabla
         cmbRolEmpleado.DisplayMember = "Nombre"
+        CmbIdRol.DataSource = ldtTabla
+        CmbIdRol.DisplayMember = "IdRol"
     End Sub
     Private Sub fnvdRecargar()
         Try
@@ -246,5 +249,11 @@ Public Class frmEmpleados
         ' fin_si
 
         ' ver como está en frmSeries
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim obtenido As String
+        obtenido = CmbIdRol.SelectedItem
+        txtApellido.Text = obtenido
     End Sub
 End Class
