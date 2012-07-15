@@ -27,10 +27,6 @@ Partial Class frmtipocliente
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.txtbusqueda = New System.Windows.Forms.TextBox()
         Me.lblbusqueda = New System.Windows.Forms.Label()
-        Me.dgvtiposcliente = New System.Windows.Forms.DataGridView()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
@@ -42,9 +38,10 @@ Partial Class frmtipocliente
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.cmbCliente = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        CType(Me.dgvtiposcliente, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgvtiposcliente = New System.Windows.Forms.DataGridView()
         Me.stsBarra.SuspendLayout()
         Me.gpListadoClientes.SuspendLayout()
+        CType(Me.dgvtiposcliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -54,9 +51,9 @@ Partial Class frmtipocliente
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
         Me.lblTitulo.Location = New System.Drawing.Point(164, 30)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(249, 29)
+        Me.lblTitulo.Size = New System.Drawing.Size(259, 29)
         Me.lblTitulo.TabIndex = 29
-        Me.lblTitulo.Text = "Getion Tipo Cliente"
+        Me.lblTitulo.Text = "Gestion Tipo Cliente"
         '
         'btnbuscar
         '
@@ -83,33 +80,6 @@ Partial Class frmtipocliente
         Me.lblbusqueda.Size = New System.Drawing.Size(40, 13)
         Me.lblbusqueda.TabIndex = 40
         Me.lblbusqueda.Text = "Buscar"
-        '
-        'dgvtiposcliente
-        '
-        Me.dgvtiposcliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvtiposcliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4})
-        Me.dgvtiposcliente.Location = New System.Drawing.Point(15, 50)
-        Me.dgvtiposcliente.Name = "dgvtiposcliente"
-        Me.dgvtiposcliente.Size = New System.Drawing.Size(544, 89)
-        Me.dgvtiposcliente.TabIndex = 3
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Nombre"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 200
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Descripción"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 200
-        '
-        'Column4
-        '
-        Me.Column4.FillWeight = 75.0!
-        Me.Column4.HeaderText = "Descuento"
-        Me.Column4.Name = "Column4"
         '
         'stsBarra
         '
@@ -184,8 +154,8 @@ Partial Class frmtipocliente
         '
         'gpListadoClientes
         '
-        Me.gpListadoClientes.Controls.Add(Me.btnActualizar)
         Me.gpListadoClientes.Controls.Add(Me.dgvtiposcliente)
+        Me.gpListadoClientes.Controls.Add(Me.btnActualizar)
         Me.gpListadoClientes.Location = New System.Drawing.Point(10, 174)
         Me.gpListadoClientes.Name = "gpListadoClientes"
         Me.gpListadoClientes.Size = New System.Drawing.Size(570, 166)
@@ -198,7 +168,7 @@ Partial Class frmtipocliente
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
         Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnActualizar.Location = New System.Drawing.Point(456, 21)
+        Me.btnActualizar.Location = New System.Drawing.Point(456, 13)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(91, 23)
         Me.btnActualizar.TabIndex = 2
@@ -223,6 +193,14 @@ Partial Class frmtipocliente
         Me.Label1.TabIndex = 63
         Me.Label1.Text = "Parametro de busqueda: "
         '
+        'dgvtiposcliente
+        '
+        Me.dgvtiposcliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvtiposcliente.Location = New System.Drawing.Point(15, 42)
+        Me.dgvtiposcliente.Name = "dgvtiposcliente"
+        Me.dgvtiposcliente.Size = New System.Drawing.Size(532, 114)
+        Me.dgvtiposcliente.TabIndex = 3
+        '
         'frmtipocliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,10 +223,10 @@ Partial Class frmtipocliente
         Me.Name = "frmtipocliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tipo Cliente"
-        CType(Me.dgvtiposcliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.gpListadoClientes.ResumeLayout(False)
+        CType(Me.dgvtiposcliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -257,10 +235,6 @@ Partial Class frmtipocliente
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
     Friend WithEvents txtbusqueda As System.Windows.Forms.TextBox
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
-    Friend WithEvents dgvtiposcliente As System.Windows.Forms.DataGridView
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btningresar As System.Windows.Forms.Button
     Friend WithEvents btnmodificartipocliente As System.Windows.Forms.Button
     Friend WithEvents btneliminartipocliente As System.Windows.Forms.Button
@@ -272,4 +246,5 @@ Partial Class frmtipocliente
     Friend WithEvents btnActualizar As System.Windows.Forms.Button
     Friend WithEvents cmbCliente As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents dgvtiposcliente As System.Windows.Forms.DataGridView
 End Class
