@@ -1,4 +1,5 @@
-﻿Public Class frmingresotipocliente
+﻿Imports negocios
+Public Class frmingresotipocliente
     Private bandera As Boolean
     Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseLeave
         slblDescripcion.Text = "Descripción"
@@ -54,7 +55,18 @@
         Next
         If bandera <> False Then 'bandera para ver si  no hay espacios vacios
             'Ingreso del nuevo tipo cliente
-
+            Dim lnpNuevoTipoCliente As negociosTipoCliente = New negociosTipoCliente()
+            lnpNuevoTipoCliente.setNombreTipoCliente(txtnombre.Text)
+            lnpNuevoTipoCliente.setDescripcionTipoCliente(txtdescripcion.Text)
+            lnpNuevoTipoCliente.setDescuentoTipoCliente(Convert.ToSingle(txtdescuento.Text))
+            Try
+                lnpNuevoTipoCliente.fnsInsertarTipoCliente()
+                MessageBox.Show("La operación de insersión de cliente se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                frmingresoclientes.fnvdRecargar()
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End If
     End Sub
 
@@ -68,12 +80,11 @@
     Private Sub txtdescuento_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtdescuento.KeyPress
         If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
             e.KeyChar = vbNullChar
-
         End If
-        If Convert.ToDouble(txtdescuento.Text) <= 100 Then
-            e.KeyChar = vbNullChar
-            MessageBox.Show("Descuento exedido  del 100% ")
-        End If
+        'If (Convert.ToDouble(txtdescuento.Text)) <= 100 Then
+        'e.KeyChar = vbNullChar
+        'MessageBox.Show("Descuento exedido  del 100% ")
+        'End If
     End Sub
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
@@ -82,6 +93,10 @@
     End Sub
 
     Private Sub txtdescripcion_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtdescripcion.KeyPress
+
+    End Sub
+
+    Private Sub frmingresotipocliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
