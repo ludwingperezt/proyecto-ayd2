@@ -29,6 +29,7 @@ Partial Class frmVentas
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.gbListaSeries = New System.Windows.Forms.GroupBox()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.dgvSeries = New System.Windows.Forms.DataGridView()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtNumero = New System.Windows.Forms.TextBox()
@@ -37,9 +38,10 @@ Partial Class frmVentas
         Me.txtSerie = New System.Windows.Forms.TextBox()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnFacturar = New System.Windows.Forms.Button()
-        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.btnAnular = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
+        Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.gbListaSeries.SuspendLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,9 +50,9 @@ Partial Class frmVentas
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 503)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 649)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(634, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(866, 22)
         Me.stsBarra.TabIndex = 0
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -73,14 +75,28 @@ Partial Class frmVentas
         '
         'gbListaSeries
         '
+        Me.gbListaSeries.Controls.Add(Me.btnSiguiente)
+        Me.gbListaSeries.Controls.Add(Me.btnAnterior)
         Me.gbListaSeries.Controls.Add(Me.btnRegresar)
         Me.gbListaSeries.Controls.Add(Me.dgvSeries)
         Me.gbListaSeries.Location = New System.Drawing.Point(12, 138)
         Me.gbListaSeries.Name = "gbListaSeries"
-        Me.gbListaSeries.Size = New System.Drawing.Size(610, 240)
+        Me.gbListaSeries.Size = New System.Drawing.Size(830, 359)
         Me.gbListaSeries.TabIndex = 63
         Me.gbListaSeries.TabStop = False
         Me.gbListaSeries.Text = "Listado Facturas"
+        '
+        'btnRegresar
+        '
+        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRegresar.Location = New System.Drawing.Point(728, 8)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
+        Me.btnRegresar.TabIndex = 5
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'dgvSeries
         '
@@ -90,13 +106,12 @@ Partial Class frmVentas
         Me.dgvSeries.Location = New System.Drawing.Point(12, 37)
         Me.dgvSeries.Name = "dgvSeries"
         Me.dgvSeries.ReadOnly = True
-        Me.dgvSeries.Size = New System.Drawing.Size(578, 188)
+        Me.dgvSeries.Size = New System.Drawing.Size(804, 287)
         Me.dgvSeries.TabIndex = 4
         '
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBuscar.Enabled = False
         Me.btnBuscar.Location = New System.Drawing.Point(294, 96)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(103, 25)
@@ -142,7 +157,7 @@ Partial Class frmVentas
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalir.Location = New System.Drawing.Point(505, 467)
+        Me.btnSalir.Location = New System.Drawing.Point(745, 597)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(97, 29)
         Me.btnSalir.TabIndex = 7
@@ -154,7 +169,7 @@ Partial Class frmVentas
         '
         Me.btnFacturar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnFacturar.Image = CType(resources.GetObject("btnFacturar.Image"), System.Drawing.Image)
-        Me.btnFacturar.Location = New System.Drawing.Point(389, 384)
+        Me.btnFacturar.Location = New System.Drawing.Point(629, 514)
         Me.btnFacturar.Name = "btnFacturar"
         Me.btnFacturar.Size = New System.Drawing.Size(98, 77)
         Me.btnFacturar.TabIndex = 5
@@ -162,23 +177,11 @@ Partial Class frmVentas
         Me.btnFacturar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnFacturar.UseVisualStyleBackColor = False
         '
-        'btnRegresar
-        '
-        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
-        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnRegresar.Location = New System.Drawing.Point(502, 8)
-        Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
-        Me.btnRegresar.TabIndex = 5
-        Me.btnRegresar.Text = "Regresar"
-        Me.btnRegresar.UseVisualStyleBackColor = False
-        '
         'btnAnular
         '
         Me.btnAnular.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAnular.Image = CType(resources.GetObject("btnAnular.Image"), System.Drawing.Image)
-        Me.btnAnular.Location = New System.Drawing.Point(505, 384)
+        Me.btnAnular.Location = New System.Drawing.Point(745, 514)
         Me.btnAnular.Name = "btnAnular"
         Me.btnAnular.Size = New System.Drawing.Size(97, 77)
         Me.btnAnular.TabIndex = 6
@@ -197,12 +200,30 @@ Partial Class frmVentas
         Me.lblTitulo.TabIndex = 64
         Me.lblTitulo.Text = "Módulo de Ventas"
         '
+        'btnAnterior
+        '
+        Me.btnAnterior.Location = New System.Drawing.Point(660, 330)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
+        Me.btnAnterior.TabIndex = 6
+        Me.btnAnterior.Text = "<<"
+        Me.btnAnterior.UseVisualStyleBackColor = True
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Location = New System.Drawing.Point(741, 330)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(75, 23)
+        Me.btnSiguiente.TabIndex = 7
+        Me.btnSiguiente.Text = ">>"
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
         'frmVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSalir
-        Me.ClientSize = New System.Drawing.Size(634, 525)
+        Me.ClientSize = New System.Drawing.Size(866, 671)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnFacturar)
         Me.Controls.Add(Me.txtNumero)
@@ -243,5 +264,7 @@ Partial Class frmVentas
     Friend WithEvents btnFacturar As System.Windows.Forms.Button
     Friend WithEvents btnRegresar As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
+    Friend WithEvents btnSiguiente As System.Windows.Forms.Button
+    Friend WithEvents btnAnterior As System.Windows.Forms.Button
 
 End Class
