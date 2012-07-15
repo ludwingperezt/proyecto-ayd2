@@ -220,7 +220,7 @@ Public Class frmModuloProveedores
         Else
             bBusquenda = True
             Me.fnsFiltarListaProveedores(txtBusqueda.Text)
-            Me.fnvdRecargar()
+            'Me.fnvdRecargar()
         End If
     End Sub
 
