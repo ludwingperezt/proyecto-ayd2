@@ -126,6 +126,42 @@ Public Class frmtipocliente
     End Sub
 
     Private Sub frmtipocliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ' Establecer permisos
+        Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
+
+        If lnegPermisos.getPermisoCreacionTiposCliente() Then
+            btningresar.Enabled = True
+        Else
+            btningresar.Enabled = False
+        End If
+        If lnegPermisos.getPermisoListarTiposCliente() Then
+            cmbCliente.Enabled = True
+            txtbusqueda.Enabled = True
+            btnbuscar.Enabled = True
+            btnActualizar.Enabled = True
+            dgvtiposcliente.Enabled = True
+
+        Else
+            cmbCliente.Enabled = False
+            txtbusqueda.Enabled = False
+            btnbuscar.Enabled = False
+            btnActualizar.Enabled = False
+            dgvtiposcliente.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoModificacionTiposCliente() Then
+            btnmodificartipocliente.Enabled = True
+        Else
+            btnmodificartipocliente.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoEliminacionTiposCliente() Then
+            btneliminartipocliente.Enabled = True
+        Else
+            btneliminartipocliente.Enabled = False
+        End If
+
+        ''
         fnvdRecargar()
     End Sub
     Public Sub fnvdRecargar()

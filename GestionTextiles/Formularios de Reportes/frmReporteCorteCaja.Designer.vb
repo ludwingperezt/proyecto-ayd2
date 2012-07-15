@@ -32,7 +32,7 @@ Partial Class frmReporteCorteCaja
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.crvReporte = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.CierreDeCaja2 = New GestionTextiles.CierreDeCaja()
+
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -136,7 +136,7 @@ Partial Class frmReporteCorteCaja
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(25, 179)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.ReportSource = Me.CierreDeCaja2
+
         Me.crvReporte.Size = New System.Drawing.Size(1322, 445)
         Me.crvReporte.TabIndex = 14
         '

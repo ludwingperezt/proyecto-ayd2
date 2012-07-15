@@ -29,6 +29,7 @@ Partial Class frmReporteDevolucionesProveedorNit
         Me.lblNitCLiente = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
+
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,6 +43,7 @@ Partial Class frmReporteDevolucionesProveedorNit
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(12, 144)
         Me.crvReporte.Name = "crvReporte"
+
         Me.crvReporte.Size = New System.Drawing.Size(1024, 649)
         Me.crvReporte.TabIndex = 23
         '
@@ -107,7 +109,7 @@ Partial Class frmReporteDevolucionesProveedorNit
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
-        'frmDevolucionesProveedorNit
+        'frmReporteDevolucionesProveedorNit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -115,7 +117,7 @@ Partial Class frmReporteDevolucionesProveedorNit
         Me.Controls.Add(Me.crvReporte)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.gbParametros1)
-        Me.Name = "frmDevolucionesProveedorNit"
+        Me.Name = "frmReporteDevolucionesProveedorNit"
         Me.Text = "Devoluciónes Proveedor por Nit"
         Me.gbParametros1.ResumeLayout(False)
         Me.gbParametros1.PerformLayout()
@@ -130,4 +132,5 @@ Partial Class frmReporteDevolucionesProveedorNit
     Friend WithEvents lblNitCLiente As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
+    Friend WithEvents DevolucionProveedoresNit1 As GestionTextiles.DevolucionProveedoresNit
 End Class
