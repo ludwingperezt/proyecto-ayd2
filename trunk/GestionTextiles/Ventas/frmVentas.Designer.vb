@@ -27,10 +27,7 @@ Partial Class frmVentas
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.btnAnular = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.gbListaSeries = New System.Windows.Forms.GroupBox()
         Me.dgvSeries = New System.Windows.Forms.DataGridView()
         Me.btnBuscar = New System.Windows.Forms.Button()
@@ -38,8 +35,11 @@ Partial Class frmVentas
         Me.lblNumero = New System.Windows.Forms.Label()
         Me.lblSerie = New System.Windows.Forms.Label()
         Me.txtSerie = New System.Windows.Forms.TextBox()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnFacturar = New System.Windows.Forms.Button()
         Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.btnAnular = New System.Windows.Forms.Button()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
         Me.gbListaSeries.SuspendLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,55 +58,18 @@ Partial Class frmVentas
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
-        '
-        'btnAnular
-        '
-        Me.btnAnular.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAnular.Image = CType(resources.GetObject("btnAnular.Image"), System.Drawing.Image)
-        Me.btnAnular.Location = New System.Drawing.Point(505, 384)
-        Me.btnAnular.Name = "btnAnular"
-        Me.btnAnular.Size = New System.Drawing.Size(97, 77)
-        Me.btnAnular.TabIndex = 6
-        Me.btnAnular.Text = "An&ular Factura"
-        Me.btnAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnAnular.UseVisualStyleBackColor = False
-        '
-        'btnSalir
-        '
-        Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalir.Location = New System.Drawing.Point(505, 467)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(97, 29)
-        Me.btnSalir.TabIndex = 7
-        Me.btnSalir.Text = "&Salir"
-        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSalir.UseVisualStyleBackColor = False
         '
         'ToolTip1
         '
         Me.ToolTip1.ToolTipTitle = "Anula una factura, utilizando la serie y su correlativo"
-        '
-        'lblTitulo
-        '
-        Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(207, 9)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(247, 31)
-        Me.lblTitulo.TabIndex = 5
-        Me.lblTitulo.Text = "Módulo de Ventas"
         '
         'gbListaSeries
         '
@@ -173,6 +136,20 @@ Partial Class frmVentas
         Me.txtSerie.Size = New System.Drawing.Size(100, 20)
         Me.txtSerie.TabIndex = 0
         '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalir.Location = New System.Drawing.Point(505, 467)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(97, 29)
+        Me.btnSalir.TabIndex = 7
+        Me.btnSalir.Text = "&Salir"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
         'btnFacturar
         '
         Me.btnFacturar.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -197,12 +174,36 @@ Partial Class frmVentas
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
+        'btnAnular
+        '
+        Me.btnAnular.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAnular.Image = CType(resources.GetObject("btnAnular.Image"), System.Drawing.Image)
+        Me.btnAnular.Location = New System.Drawing.Point(505, 384)
+        Me.btnAnular.Name = "btnAnular"
+        Me.btnAnular.Size = New System.Drawing.Size(97, 77)
+        Me.btnAnular.TabIndex = 6
+        Me.btnAnular.Text = "An&ular Factura"
+        Me.btnAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnAnular.UseVisualStyleBackColor = False
+        '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblTitulo.Location = New System.Drawing.Point(220, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(226, 29)
+        Me.lblTitulo.TabIndex = 64
+        Me.lblTitulo.Text = "Módulo de Ventas"
+        '
         'frmVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSalir
         Me.ClientSize = New System.Drawing.Size(634, 525)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnFacturar)
         Me.Controls.Add(Me.txtNumero)
         Me.Controls.Add(Me.gbListaSeries)
@@ -210,7 +211,6 @@ Partial Class frmVentas
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.lblSerie)
         Me.Controls.Add(Me.txtSerie)
-        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnAnular)
         Me.Controls.Add(Me.stsBarra)
@@ -233,7 +233,6 @@ Partial Class frmVentas
     Friend WithEvents btnAnular As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
-    Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents gbListaSeries As System.Windows.Forms.GroupBox
     Friend WithEvents dgvSeries As System.Windows.Forms.DataGridView
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
@@ -243,5 +242,6 @@ Partial Class frmVentas
     Friend WithEvents txtSerie As System.Windows.Forms.TextBox
     Friend WithEvents btnFacturar As System.Windows.Forms.Button
     Friend WithEvents btnRegresar As System.Windows.Forms.Button
+    Friend WithEvents lblTitulo As System.Windows.Forms.Label
 
 End Class

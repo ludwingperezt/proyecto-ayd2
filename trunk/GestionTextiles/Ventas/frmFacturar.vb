@@ -305,7 +305,7 @@ Public Class frmFacturar
     End Sub
 
     Private Sub btntipocliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btntipocliente.Click
-        frmtipocliente.Show()
+        frmtipocliente.ShowDialog(Me)
     End Sub
 
     Private Sub txtnit_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnit.Leave
@@ -435,5 +435,16 @@ Public Class frmFacturar
 
     Private Sub frmFacturar_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         factura.fnsCancelarFactura()
+    End Sub
+
+    Private Sub txtDescuento_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtDescuento.KeyPress
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = "." Or e.KeyChar = vbBack)) Then
+            e.KeyChar = vbNullChar
+        End If
+        If e.KeyChar = "." Then
+            If txtCantidad.Text.Contains(".") Then
+                e.KeyChar = ""
+            End If
+        End If
     End Sub
 End Class
