@@ -53,7 +53,7 @@
         frmReporteDevolucionesProveedorNit.Show()
     End Sub
 
-    Private Sub btnFacturasEliminadasFecha_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturasEliminadasFecha.MouseLeave
+    Private Sub btnFacturasEliminadasFecha_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturasEliminadasFecha.MouseLeave, btnFactura.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -61,7 +61,7 @@
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnFacturasEliminadasFecha_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturasEliminadasFecha.MouseHover
+    Private Sub btnFacturasEliminadasFecha_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturasEliminadasFecha.MouseHover, btnFactura.MouseHover
         slblDescripcion.Text = "Muetra el reporte de las facturas eliminadas por fecha"
     End Sub
 
@@ -83,5 +83,9 @@
 
     Private Sub btnDevolucionesProveedorNit_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorNit.MouseHover
         slblDescripcion.Text = "Muestra el reporte de las devoluciones al proveedor por Nit"
+    End Sub
+
+    Private Sub btnFactura_Click(sender As System.Object, e As System.EventArgs) Handles btnFactura.Click
+        frmReportes.ShowDialog(Me)
     End Sub
 End Class
