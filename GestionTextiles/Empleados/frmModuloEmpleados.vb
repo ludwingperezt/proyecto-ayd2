@@ -21,6 +21,9 @@ Public Class frmModuloEmpleados
             If (parametro = "Apellido") Then
                 fnvdRecargarApellido()
             End If
+            If (parametro = "Cedula / DPI") Then
+                fnvdRecargarCedulaDpi()
+            End If
         End If
     End Sub
 
@@ -203,6 +206,19 @@ Public Class frmModuloEmpleados
             Me.glstEmpleadosFiltrada.Clear()
             Me.banderaBusqueda = False
             Me.glstEmpleados = negociosEmpleado.fnslListarEmpleadoUsuario(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstEmpleados)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvEmpleados.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvdRecargarCedulaDpi()
+        Try
+            dgvEmpleados.DataSource = ""
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = Nothing
+            Me.glstEmpleadosFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstEmpleados = negociosEmpleado.fnsBuscarEmpleadoCedulaDpi(txtbusqueda.Text)
             Me.fnvCrearDataTable(Me.glstEmpleados)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
