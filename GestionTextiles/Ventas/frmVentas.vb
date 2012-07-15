@@ -52,7 +52,7 @@ Public Class frmVentas
 
     Private Sub btnAnular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnular.Click
         If IsNothing(frmVentas.nfcSeleccionado) = False Then
-            frmAnular.ShowDialog(Me)
+            frmEliminarFactura.ShowDialog(Me)
         Else
             MessageBox.Show("Debe seleccionar una factura o buscarla por serie y número para poder eliminarla", "No se seleccionó una factura", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         End If

@@ -219,6 +219,7 @@ namespace negocios
                 temporal.gshIdProducto = (short)(Convert.ToInt32(objInstancia[1]));
                 temporal.gdecPrecio = (Convert.ToDecimal(objInstancia[2]));
                 temporal.gduCantidad = (Convert.ToDouble(objInstancia[3]));
+                temporal.gdecMonto = temporal.gdecPrecio * (Convert.ToDecimal(temporal.gduCantidad));
                 lst.Add(temporal);
             }
             return lst;
@@ -242,6 +243,7 @@ namespace negocios
                 temporal.gshIdProducto = (short)(Convert.ToInt32(objInstancia[2]));
                 temporal.gdecPrecio = (Convert.ToDecimal(objInstancia[3]));
                 temporal.gduCantidad = (Convert.ToDouble(objInstancia[4]));
+                temporal.gdecMonto = temporal.gdecPrecio * (Convert.ToDecimal(temporal.gduCantidad));
                 lst.Add(temporal);
             }
             return lst;
