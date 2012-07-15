@@ -132,5 +132,5 @@ Partial Class frmReporteDevolucionesProveedorNit
     Friend WithEvents lblNitCLiente As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
-    Friend WithEvents DevolucionProveedoresNit1 As GestionTextiles.DevolucionProveedoresNit
+
 End Class

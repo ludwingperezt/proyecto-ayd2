@@ -167,6 +167,6 @@ Partial Class frmReporteCorteCaja
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents crvReporte As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents CierreDeCaja2 As GestionTextiles.CierreDeCaja
+
 
 End Class
