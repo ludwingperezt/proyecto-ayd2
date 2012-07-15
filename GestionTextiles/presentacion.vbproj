@@ -202,10 +202,22 @@
     <Compile Include="Empleados\frmEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ventas\frmCambio.Designer.vb">
+      <DependentUpon>frmCambio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frmCambio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventas\frmCuadroEdicion.Designer.vb">
       <DependentUpon>frmCuadroEdicion.vb</DependentUpon>
     </Compile>
     <Compile Include="Ventas\frmCuadroEdicion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frmEliminarFactura.Designer.vb">
+      <DependentUpon>frmEliminarFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frmEliminarFactura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas\frmFacturar.Designer.vb">
@@ -435,8 +447,14 @@
     <EmbeddedResource Include="Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frmCambio.resx">
+      <DependentUpon>frmCambio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frmCuadroEdicion.resx">
       <DependentUpon>frmCuadroEdicion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frmEliminarFactura.resx">
+      <DependentUpon>frmEliminarFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frmFacturar.resx">
       <DependentUpon>frmFacturar.vb</DependentUpon>
@@ -608,6 +626,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bluesharp1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_from_shopping_cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_cart_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_to_shopping_cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_cart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-remove.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
