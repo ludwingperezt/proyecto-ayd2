@@ -176,5 +176,5 @@ Partial Class frmReporteDevolucionesProveedor
     Friend WithEvents dtpFin As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpInicio As System.Windows.Forms.DateTimePicker
     Friend WithEvents crvReporte As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents DevolucionesProveedorFechaNit1 As GestionTextiles.DevolucionesProveedorFechaNit
+
 End Class
