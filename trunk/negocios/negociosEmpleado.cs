@@ -543,7 +543,23 @@ namespace negocios
                 return null;
             }
         }
+        public static negociosEmpleado fnneObtenerNombreApellidoEmpleadoPorId(byte id)
+        {
+            DataTable dtLocal = negociosAdaptadores.gAdaptadorNombreApellidosEmpleado.GetData(id);
+            negociosEmpleado temporal = null;
+
+            if (dtLocal.Rows.Count > 0)
+            {
+                object[] objInstancia = dtLocal.Rows[0].ItemArray;
+                temporal = new negociosEmpleado();
+                temporal.setNombreEmpleado(Convert.ToString(objInstancia[0]));
+                temporal.setApellidoEmpleado(Convert.ToString(objInstancia[1]));
+                temporal.setIdEmpleado(id);
+            }
+            return temporal;
+        }
+        #endregion
     }
 }
-#endregion
+
 
