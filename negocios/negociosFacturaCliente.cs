@@ -247,28 +247,27 @@ namespace negocios
         public void fnvCalcularDescuento(double descuento)
         {
             this.gdecTotal = 0;
-            foreach (negociosDetalleFacturaCliente i in this.glstListaDetalleFactura)
-            {
-                gdecTotal += i.getMonto();
-            }
+            this.gdecSubTotal = 0;
+            fndecCalcularSubTotal();
             this.gduDescuento = descuento;
-            this.gdecSubTotal = this.gdecTotal - (Convert.ToDecimal(descuento));
-        }
-        public decimal fndecCalcularTotal()
-        {
-            this.gdecTotal = 0;
-            foreach (negociosDetalleFacturaCliente i in this.glstListaDetalleFactura)
-            {
-                gdecTotal += i.getMonto();
-            }
-            //this.gdecSubTotal = this.gdecTotal - (Convert.ToDecimal(this.getDescuento()));
-            return this.gdecTotal;
+            this.gdecTotal = this.gdecSubTotal - (Convert.ToDecimal(descuento));
         }
         public decimal fndecCalcularSubTotal()
         {
-            this.gdecTotal = fndecCalcularTotal();
-            this.gdecSubTotal = this.gdecTotal - (Convert.ToDecimal(this.getDescuento()));
+            this.gdecSubTotal = 0;
+            foreach (negociosDetalleFacturaCliente i in this.glstListaDetalleFactura)
+            {
+                gdecSubTotal += i.getMonto();
+            }
             return this.gdecSubTotal;
+        }
+
+
+        public decimal fndecCalcularTotal()
+        {
+            fndecCalcularSubTotal();
+            this.gdecTotal = this.gdecSubTotal - (Convert.ToDecimal(this.getDescuento()));
+            return this.gdecTotal;
         }
         #endregion
         #region Otras funciones

@@ -113,7 +113,7 @@ namespace negocios
         /// <summary>
         /// Método que accede al campo puesto del empleado
         /// </summary>
-        /// <return>string: el puesto del empleado</param>
+        /// <return>string: el puesto del empleado</return>
         public string getPuestoEmpleado()
         {
             return this.puesto;
@@ -121,7 +121,8 @@ namespace negocios
         /// <summary>
         /// Método que accede a la fecha de contratacion del empleado
         /// </summary>
-        /// <return>dateTime: la fecha de contratacion del empleado</param>
+        /// <return>dateTime: la fecha de contratacion del empleado</return>
+        /// 
         public DateTime getFechaDeContratacion()
         {
             return this.fechaContratacion;
@@ -129,7 +130,7 @@ namespace negocios
         /// <summary>
         /// Método que accede al campo salario del empleado
         /// </summary>
-        /// <return>: el salario del empleado</param>
+        /// <return>: el salario del empleado</return>
         public decimal getSalarioEmpleado()
         {
             return this.salario;
@@ -137,7 +138,7 @@ namespace negocios
         /// <summary>
         /// Método que accede al campo usuario del empleado
         /// </summary>
-        /// <return>string: el usuario del empleado</param>
+        /// <return>string: el usuario del empleado</return>
         public string getUsuarioEmpleado()
         {
             return this.usuario;
@@ -145,7 +146,7 @@ namespace negocios
         /// <summary>
         /// Método que accede al campo password del empleado
         /// </summary>
-        /// <return>byte: el password del empleado</param>
+        /// <return>byte: el password del empleado</return>
         public byte[] getPasswordEmpleado()
         {
             return this.password;
@@ -153,7 +154,7 @@ namespace negocios
         /// <summary>
         /// Método que accede al campo habilitado del empleado
         /// </summary>
-        /// <return>Boolean: el bit de habilitado del empleado</param>
+        /// <return>Boolean: el bit de habilitado del empleado</return>
         public Boolean getHabilitadoEmpleado()
         {
             return this.habilitado;
@@ -161,7 +162,7 @@ namespace negocios
         /// <summary>
         /// Método que accede al campo dpiCedula del empleado
         /// </summary>
-        /// <return>string: el numero de la cedula o dpi del empleado</param>
+        /// <return>string: el numero de la cedula o dpi del empleado</return>
         public string getDpiCedula()
         {
             return this.dpiCedula;

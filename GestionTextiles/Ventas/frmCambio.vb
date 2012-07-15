@@ -3,20 +3,27 @@
 
 
     Private Sub txtEfectivo_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtEfectivo.KeyPress
-        If txtEfectivo.Text.Contains(".") Then
-            lbooBanderaPunto = True
-        Else
-            lbooBanderaPunto = False
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = "." Or e.KeyChar = vbBack)) Then
+            e.KeyChar = vbNullChar
         End If
+        If e.KeyChar = "." Then
+            If txtEfectivo.Text.Contains(".") Then
+                e.KeyChar = ""
+            End If
+        End If
+    End Sub
 
-        If lbooBanderaPunto = True Then
-            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack)) Then
-                e.KeyChar = vbNullChar
-            End If
+    Private Sub txtEfectivo_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtEfectivo.TextChanged
+        If txtEfectivo.Text = "" Then
+            lblVuelto.Text = "-" + lblTotal.Text
         Else
-            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = ".")) Then
-                e.KeyChar = vbNullChar
-            End If
+            lblVuelto.Text = (Decimal.Parse(txtEfectivo.Text) - Decimal.Parse(lblTotal.Text))
+        End If
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+        If (Decimal.Parse(lblVuelto.Text) >= 0) Then
+            Me.Dispose()
         End If
     End Sub
 End Class
