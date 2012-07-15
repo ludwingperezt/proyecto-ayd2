@@ -35,6 +35,7 @@ Public Class frmingresoclientes
             lnpNuevoCliente.setNombreCliente(txtnombre.Text)
             lnpNuevoCliente.setNitCliente(txtnit.Text)
             lnpNuevoCliente.setDireccionCliente(txtdireccion.Text)
+            lnpNuevoCliente.setIdTipoCliente(cmbtipocliente.SelectedValue)
             Try
                 lnpNuevoCliente.fnsInsertarCliente()
                 MessageBox.Show("La operación de insersión de cliente se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -163,7 +164,7 @@ Public Class frmingresoclientes
     Private Sub frmingresoclientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         fnvdRecargar()
     End Sub
-    Private Sub fnvdRecargar()
+    Public Sub fnvdRecargar()
         Try
             frmingresoclientes.gnpTipoClienteSeleccionado = Nothing
             Me.glstTipoClienteFiltrada.Clear()
