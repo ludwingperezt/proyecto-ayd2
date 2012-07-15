@@ -33,7 +33,7 @@ Partial Class frmReporteDevolucionesProveedor
         Me.dtpFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
         Me.crvReporte = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.DevolucionesProveedorFechaNit1 = New GestionTextiles.DevolucionesProveedorFechaNit()
+
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -145,7 +145,7 @@ Partial Class frmReporteDevolucionesProveedor
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(2, 166)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.ReportSource = Me.DevolucionesProveedorFechaNit1
+
         Me.crvReporte.Size = New System.Drawing.Size(1074, 445)
         Me.crvReporte.TabIndex = 20
         '

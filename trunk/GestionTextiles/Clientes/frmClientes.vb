@@ -1,4 +1,5 @@
 ﻿Imports negocios
+Imports System.Xml
 Public Class frmClientes
     Dim lnpNuevoCliente As negociosCliente = New negociosCliente()
 
@@ -119,6 +120,36 @@ Public Class frmClientes
     End Sub
 
     Private Sub frmClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
+
+        If lnegPermisos.getPermisoCreacionClientes() Then
+            btningresarcliente.Enabled = True
+        Else
+            btningresarcliente.Enabled = False
+        End If
+        If lnegPermisos.getPermisoListarClientes() Then
+            cmbCliente.Enabled = True
+            txtbusqueda.Enabled = True
+            btnbuscar.Enabled = True
+            btnActualizar.Enabled = True
+            dgvclientes.Enabled = True
+        Else
+            cmbCliente.Enabled = False
+            txtbusqueda.Enabled = False
+            btnbuscar.Enabled = False
+            btnActualizar.Enabled = False
+            dgvclientes.Enabled = False
+        End If
+        If lnegPermisos.getPermisoModificacionClientes() Then
+            btnmodificarclientes.Enabled = True
+            btneliminarcliente.Enabled = True
+        Else
+            btnmodificarclientes.Enabled = False
+            btneliminarcliente.Enabled = True
+        End If
+       
+
+        ''
         Try
             fnvdRecargar()
         Catch ex As Exception
