@@ -35,10 +35,10 @@ Partial Class frmtipocliente
         Me.btnmodificartipocliente = New System.Windows.Forms.Button()
         Me.btningresar = New System.Windows.Forms.Button()
         Me.gpListadoClientes = New System.Windows.Forms.GroupBox()
+        Me.dgvtiposcliente = New System.Windows.Forms.DataGridView()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.cmbCliente = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dgvtiposcliente = New System.Windows.Forms.DataGridView()
         Me.stsBarra.SuspendLayout()
         Me.gpListadoClientes.SuspendLayout()
         CType(Me.dgvtiposcliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,6 +163,14 @@ Partial Class frmtipocliente
         Me.gpListadoClientes.TabStop = False
         Me.gpListadoClientes.Text = "Listado Clientes"
         '
+        'dgvtiposcliente
+        '
+        Me.dgvtiposcliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvtiposcliente.Location = New System.Drawing.Point(15, 42)
+        Me.dgvtiposcliente.Name = "dgvtiposcliente"
+        Me.dgvtiposcliente.Size = New System.Drawing.Size(532, 114)
+        Me.dgvtiposcliente.TabIndex = 3
+        '
         'btnActualizar
         '
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -192,14 +200,6 @@ Partial Class frmtipocliente
         Me.Label1.Size = New System.Drawing.Size(126, 13)
         Me.Label1.TabIndex = 63
         Me.Label1.Text = "Parametro de busqueda: "
-        '
-        'dgvtiposcliente
-        '
-        Me.dgvtiposcliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvtiposcliente.Location = New System.Drawing.Point(15, 42)
-        Me.dgvtiposcliente.Name = "dgvtiposcliente"
-        Me.dgvtiposcliente.Size = New System.Drawing.Size(532, 114)
-        Me.dgvtiposcliente.TabIndex = 3
         '
         'frmtipocliente
         '

@@ -170,4 +170,8 @@ Public Class frmtipocliente
     Private Sub btnActualizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.Click
         fnvdRecargar()
     End Sub
+
+    Private Sub dgvtiposcliente_CellContentClick_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvtiposcliente.CellContentClick
+
+    End Sub
 End Class
