@@ -1,6 +1,12 @@
 ﻿Imports negocios
 Public Class frmingresoclientes
     Private bandera As Boolean
+
+    Private glstTipoCliente As List(Of negociosTipoCliente) = New List(Of negociosTipoCliente)
+    Dim lbooBanderaPunto As Boolean = False
+    Private glstTipoClienteFiltrada As List(Of negociosTipoCliente) = New List(Of negociosTipoCliente)
+    Public Shared gnpTipoClienteSeleccionado As negociosTipoCliente
+    Private banderaBusqueda As Boolean = False
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         bandera = True
         For Each ctrlIterador As Control In Me.Controls
@@ -24,8 +30,6 @@ Public Class frmingresoclientes
             End If
         Next
         If bandera <> False Then 'aqui compruba que no hayan datos perdidos
-
-
             'ingreso nuevo cliente
             Dim lnpNuevoCliente As negociosCliente = New negociosCliente()
             lnpNuevoCliente.setNombreCliente(txtnombre.Text)
@@ -154,5 +158,42 @@ Public Class frmingresoclientes
 
     Private Sub lbltipocliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbltipocliente.Click
 
+    End Sub
+
+    Private Sub frmingresoclientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        fnvdRecargar()
+    End Sub
+    Private Sub fnvdRecargar()
+        Try
+            frmingresoclientes.gnpTipoClienteSeleccionado = Nothing
+            Me.glstTipoClienteFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstTipoCliente = negociosTipoCliente.fnslListarTipoClientes()
+            Me.fnvCrearDataTable(Me.glstTipoCliente)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosTipoCliente))
+        Dim ldtTabla As DataTable = New DataTable()
+        Dim ldrFila As DataRow
+        Dim lnpTipoClientes As negociosTipoCliente
+        ldtTabla.Columns.Add("IdTipoCliente")
+        ldtTabla.Columns.Add("Nombre")
+        ldtTabla.Columns.Add("Descripcion")
+        ldtTabla.Columns.Add("Descuento")
+
+        For i = 0 To lista.Count - 1 Step 1
+            ldrFila = ldtTabla.NewRow()
+            lnpTipoClientes = lista(i)
+            ldrFila(0) = lnpTipoClientes.getIdTipoCliente()
+            ldrFila(1) = lnpTipoClientes.getNombreTipoCliente()
+            ldrFila(2) = lnpTipoClientes.getDescripcionTipoCliente()
+            ldrFila(3) = lnpTipoClientes.getDescuentoTipoCliente()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        cmbtipocliente.DataSource = ldtTabla
+        cmbtipocliente.DisplayMember = "Nombre"
+        cmbtipocliente.ValueMember = "IdTipoCliente"
     End Sub
 End Class
