@@ -205,6 +205,64 @@ namespace negocios
                      return null;
                  }
              }
+             public static DataTable fnDbBuscarClienteNombre1(string snombreCliente)
+             {
+                 return negociosAdaptadores.gAdaptadorClienteNombre.GetData(snombreCliente);
+             }
+             public static List<negociosCliente> fnsClienteNombre(string sNombre)
+             {
+                 List<negociosCliente> lnpCliente = new List<negociosCliente>();
+                 try
+                 {
+                     DataTable ldtClientes = negocios.negociosCliente.fnDbBuscarClienteNombre1(sNombre);
+                     object[] oListaElmentos;
+                     for (int i = 0; i < ldtClientes.Rows.Count; i++)
+                     {
+                         oListaElmentos = ldtClientes.Rows[i].ItemArray;
+                         negociosCliente npNuevoCliente = new negociosCliente();
+                         npNuevoCliente.setIdCliente(Convert.ToByte(oListaElmentos[0]));
+                         npNuevoCliente.setIdTipoCliente(Convert.ToByte(oListaElmentos[1]));
+                         npNuevoCliente.setNitCliente(Convert.ToString(oListaElmentos[2]));
+                         npNuevoCliente.setNombreCliente(Convert.ToString(oListaElmentos[3]));
+                         npNuevoCliente.setDireccionCliente(Convert.ToString(oListaElmentos[4]));
+                         lnpCliente.Add(npNuevoCliente);
+                     }
+                     return lnpCliente;
+                 }
+                 catch (Exception e)
+                 {
+                     return null;
+                 }
+             }
+              public static DataTable fnDbBuscarClienteNit1(string snitCliente)
+             {
+                 return negociosAdaptadores.gAdaptadorClienteNit.GetData(snitCliente);
+             }
+             public static List<negociosCliente> fnsClienteNit(string sNit)
+             {
+                 List<negociosCliente> lnpCliente = new List<negociosCliente>();
+                 try
+                 {
+                     DataTable ldtClientes = negocios.negociosCliente.fnDbBuscarClienteNit1(sNit);
+                     object[] oListaElmentos;
+                     for (int i = 0; i < ldtClientes.Rows.Count; i++)
+                     {
+                         oListaElmentos = ldtClientes.Rows[i].ItemArray;
+                         negociosCliente npNuevoCliente = new negociosCliente();
+                         npNuevoCliente.setIdCliente(Convert.ToByte(oListaElmentos[0]));
+                         npNuevoCliente.setIdTipoCliente(Convert.ToByte(oListaElmentos[1]));
+                         npNuevoCliente.setNitCliente(Convert.ToString(oListaElmentos[2]));
+                         npNuevoCliente.setNombreCliente(Convert.ToString(oListaElmentos[3]));
+                         npNuevoCliente.setDireccionCliente(Convert.ToString(oListaElmentos[4]));
+                         lnpCliente.Add(npNuevoCliente);
+                     }
+                     return lnpCliente;
+                 }
+                 catch (Exception e)
+                 {
+                     return null;
+                 }
+             }
              public static DataTable fnDbListarClientes()
              {
                  return negociosAdaptadores.gAdaptadorListarClientes.GetData();
