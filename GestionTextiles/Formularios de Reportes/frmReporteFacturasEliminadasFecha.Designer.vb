@@ -31,6 +31,7 @@ Partial Class frmReporteFacturasEliminadasFecha
         Me.lblInicio = New System.Windows.Forms.Label()
         Me.dtpFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
+        Me.FacturasEliminadasPorFechaFinal1 = New GestionTextiles.FacturasEliminadasPorFechaFinal()
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -44,6 +45,7 @@ Partial Class frmReporteFacturasEliminadasFecha
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(12, 159)
         Me.crvReporte.Name = "crvReporte"
+        Me.crvReporte.ReportSource = Me.FacturasEliminadasPorFechaFinal1
         Me.crvReporte.Size = New System.Drawing.Size(1001, 445)
         Me.crvReporte.TabIndex = 20
         '
@@ -151,4 +153,5 @@ Partial Class frmReporteFacturasEliminadasFecha
     Friend WithEvents lblInicio As System.Windows.Forms.Label
     Friend WithEvents dtpFin As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpInicio As System.Windows.Forms.DateTimePicker
+    Friend WithEvents FacturasEliminadasPorFechaFinal1 As GestionTextiles.FacturasEliminadasPorFechaFinal
 End Class

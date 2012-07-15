@@ -31,7 +31,7 @@ Partial Class frmReporteDevolucionesProveedorFecha
         Me.lblInicio = New System.Windows.Forms.Label()
         Me.dtpFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
-
+        Me.DevolucionesProveedorFechaFinal1 = New GestionTextiles.DevolucionesProveedorFechaFinal()
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,7 +45,7 @@ Partial Class frmReporteDevolucionesProveedorFecha
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(24, 144)
         Me.crvReporte.Name = "crvReporte"
-
+        Me.crvReporte.ReportSource = Me.DevolucionesProveedorFechaFinal1
         Me.crvReporte.Size = New System.Drawing.Size(835, 445)
         Me.crvReporte.TabIndex = 23
         '
@@ -153,5 +153,6 @@ Partial Class frmReporteDevolucionesProveedorFecha
     Friend WithEvents lblInicio As System.Windows.Forms.Label
     Friend WithEvents dtpFin As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpInicio As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DevolucionesProveedorFechaFinal1 As GestionTextiles.DevolucionesProveedorFechaFinal
 
 End Class

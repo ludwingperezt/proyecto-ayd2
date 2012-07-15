@@ -86,7 +86,7 @@ Public Class frmClientes
         If IsNothing(frmClientes.gnpClienteSeleccionado) Then
             MessageBox.Show("Debe seleccionar un cliente de la lista para poder modificar sus datos", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         Else
-            frmModificarCliente.actualizar = True
+            'frmModificarCliente.actualizar = True
             frmModificarCliente.ShowDialog(Me)
             Me.fnvdRecargar()
             txtbusqueda.Text = ""

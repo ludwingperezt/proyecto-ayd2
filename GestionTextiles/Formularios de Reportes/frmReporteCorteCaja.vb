@@ -1,5 +1,6 @@
 ﻿Public Class frmReporteCorteCaja
-
+    Private fechaInicial As DateTime
+    Private fechaFinal As DateTime
     Private Sub frmReporteCorteCaja_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
@@ -57,6 +58,8 @@
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        Dim rpt As New CachedCierreDeCajaFinal  ' se instancia un objeto del reporte
+        Dim taEncabezado As New dsReportesTableAdapters.cierredecajaTableAdapter ' se instancia el tableAdapter (este es la conexión a la BD)
 
     End Sub
 End Class
