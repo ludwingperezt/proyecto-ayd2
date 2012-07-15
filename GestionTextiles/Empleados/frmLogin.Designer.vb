@@ -33,17 +33,15 @@ Partial Class frmLogin
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.dgvUsuario = New System.Windows.Forms.DataGridView()
         CType(Me.picbLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.stsBarra.SuspendLayout()
-        CType(Me.dgvUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCancelar
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(123, 145)
+        Me.btnCancelar.Location = New System.Drawing.Point(138, 131)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 2
@@ -53,7 +51,7 @@ Partial Class frmLogin
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(221, 145)
+        Me.btnAceptar.Location = New System.Drawing.Point(221, 131)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 3
@@ -72,7 +70,7 @@ Partial Class frmLogin
         'lblContraseña
         '
         Me.lblContraseña.AutoSize = True
-        Me.lblContraseña.Location = New System.Drawing.Point(120, 81)
+        Me.lblContraseña.Location = New System.Drawing.Point(120, 75)
         Me.lblContraseña.Name = "lblContraseña"
         Me.lblContraseña.Size = New System.Drawing.Size(61, 13)
         Me.lblContraseña.TabIndex = 31
@@ -87,7 +85,7 @@ Partial Class frmLogin
         '
         'txtcontraseña
         '
-        Me.txtcontraseña.Location = New System.Drawing.Point(123, 97)
+        Me.txtcontraseña.Location = New System.Drawing.Point(123, 91)
         Me.txtcontraseña.Name = "txtcontraseña"
         Me.txtcontraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtcontraseña.Size = New System.Drawing.Size(173, 20)
@@ -98,7 +96,7 @@ Partial Class frmLogin
         Me.picbLogin.Image = CType(resources.GetObject("picbLogin.Image"), System.Drawing.Image)
         Me.picbLogin.Location = New System.Drawing.Point(-62, -5)
         Me.picbLogin.Name = "picbLogin"
-        Me.picbLogin.Size = New System.Drawing.Size(179, 240)
+        Me.picbLogin.Size = New System.Drawing.Size(179, 198)
         Me.picbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picbLogin.TabIndex = 34
         Me.picbLogin.TabStop = False
@@ -106,7 +104,7 @@ Partial Class frmLogin
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 192)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 171)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(330, 22)
         Me.stsBarra.TabIndex = 58
@@ -125,14 +123,6 @@ Partial Class frmLogin
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
-        'dgvUsuario
-        '
-        Me.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuario.Location = New System.Drawing.Point(138, -38)
-        Me.dgvUsuario.Name = "dgvUsuario"
-        Me.dgvUsuario.Size = New System.Drawing.Size(72, 41)
-        Me.dgvUsuario.TabIndex = 59
-        '
         'frmLogin
         '
         Me.AcceptButton = Me.btnAceptar
@@ -140,8 +130,7 @@ Partial Class frmLogin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(330, 214)
-        Me.Controls.Add(Me.dgvUsuario)
+        Me.ClientSize = New System.Drawing.Size(330, 193)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.picbLogin)
         Me.Controls.Add(Me.txtcontraseña)
@@ -158,7 +147,6 @@ Partial Class frmLogin
         CType(Me.picbLogin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
-        CType(Me.dgvUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -173,5 +161,4 @@ Partial Class frmLogin
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents dgvUsuario As System.Windows.Forms.DataGridView
 End Class
