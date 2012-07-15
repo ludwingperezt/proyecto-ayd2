@@ -14,6 +14,7 @@ namespace negocios
         private int numero;
         private DateTime fecha;
         private decimal total;//
+        private List<negociosDetallesFacturasProveedores> lndfpDetallesFactura;
 
         #region constructores
         /// <summary>
@@ -21,6 +22,7 @@ namespace negocios
         /// </summary>
         public void negociosFacturaProveedores()
         {
+            this.lndfpDetallesFactura = new List<negociosDetallesFacturasProveedores>();
         }
         #endregion
 
@@ -68,6 +70,11 @@ namespace negocios
         /// Grupo de funciones para leer los datos de la clase
         /// </summary>
 
+        public List<negociosDetallesFacturasProveedores> getListaDetallesFacturaProveedor()
+        {
+            return this.lndfpDetallesFactura;
+        }
+
         public int getIdFacturaProveedor()
         {
             return this.idFacturaProveedor;
@@ -112,6 +119,34 @@ namespace negocios
         {
             
         }
+
+        /// <summary>
+        /// Funcion para cancelar la factura del proveedor indicada de la base de datos
+        /// </summary>
+        /// <param name="sAnotacion"></param>
+        /// <returns>string: mensaje de confirmacion</returns>
+        public string fnsDevolverFacturaProveedor(string sAnotacion)
+        {
+            try
+            {
+                negociosAdaptadores.gAdaptadorDeConsultas.darDeBajaFacturaProveedor(this.idFacturaProveedor, sAnotacion);
+                foreach (negociosDetallesFacturasProveedores i in this.lndfpDetallesFactura)
+                {
+                    //if (negociosProducto.fnboVerificarCantidadExistenteProducto((short)i.getIdProducto(), Convert.ToDouble(i.getCantidad())))
+                    //{
+                        negociosProducto.fnvdDisminuirExistenciaProducto((short)i.getIdProducto(), Convert.ToDouble(i.getCantidad()));
+                    //}
+                    //else
+                    //    return "Producto: " + negociosProducto.fnObtenerProductoPorId(i.getIdProducto()).getNombre() + ", insuficiente para devolucion";
+                }
+                return "Factura Eliminada Exitosamente";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }   
+        }
+
         /// <summary>
         /// Función que devuelve a las ultimas 20 compras
         /// </summary>
