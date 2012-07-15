@@ -7,6 +7,13 @@ Public Class frmEmpleados
     Private glstRolFiltrada As List(Of negociosRol) = New List(Of negociosRol)
     Public Shared gnpRolSeleccionado As negociosRol
     Private banderaBusqueda As Boolean = False
+
+
+    Dim cantidad As Integer
+    Private glstEmpleados As List(Of negociosEmpleado) = New List(Of negociosEmpleado)
+    Private glstEmpleadosFiltrada As List(Of negociosEmpleado) = New List(Of negociosEmpleado)
+    Public Shared gnpEmpleadoSeleccionado As negociosEmpleado
+
     Private Sub slblDescripcion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles slblDescripcion.Click
 
     End Sub
@@ -237,15 +244,56 @@ Public Class frmEmpleados
     End Sub
 
     Private Sub txtUsuario_Leave(sender As System.Object, e As System.EventArgs) Handles txtUsuario.Leave
-        ' ACA VA LA VALIDACIÓN DEL USUARIO, MAS O MENOS DE LA SIGUIENTE MANERA (VER LA VENTANA DE SERIES)
+        Dim usuarioVerificar As String
+        usuarioVerificar = txtUsuario.Text
+        fnvdRecargarUsuario()
+        If (cantidad > 0) Then
+            picbValidacion.Image = imglValidacion.Images(0)
+            txtUsuario.Focus()
+        Else
+            picbValidacion.Image = imglValidacion.Images(1)
+        End If
+    End Sub
 
-        ' si el usuario no existe...
-        '   se muestra la imagen de check (OK.png) de la siguiente manera: picbValidacion.Image = imglValidacion.Images(1)
-        ' sino...
-        '   se muestra la imagen de X (noOK.png) picbValidacion.Image = imglValidacion.Images(1) y le das el foco al txtUsuario
-        ' fin_si
+    Private Sub fnvdRecargarUsuario()
+        Try
+            frmModuloEmpleados.gnpEmpleadoSeleccionado = Nothing
+            Me.glstEmpleadosFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstEmpleados = negociosEmpleado.fnslListarEmpleadoUsuario(txtUsuario.Text)
+            Me.fnvCrearDataTable1(Me.glstEmpleados)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 
-        ' ver como está en frmSeries
+    Private Sub fnvCrearDataTable1(ByRef lista As List(Of negociosEmpleado))
+        Dim ldtTabla As DataTable = New DataTable()
+        Dim ldrFila As DataRow
+        Dim lnpEmpleado As negociosEmpleado
+        ldtTabla.Columns.Add("Nombre")
+        ldtTabla.Columns.Add("Apellido")
+        ldtTabla.Columns.Add("Direccion")
+        ldtTabla.Columns.Add("Telefono")
+        ldtTabla.Columns.Add("Celular")
+        ldtTabla.Columns.Add("Puesto")
+        ldtTabla.Columns.Add("Fecha Contratacion")
+        ldtTabla.Columns.Add("Salario")
+
+        For i = 0 To lista.Count - 1 Step 1
+            ldrFila = ldtTabla.NewRow()
+            lnpEmpleado = lista(i)
+            ldrFila(0) = lnpEmpleado.getNombreEmpleado()
+            ldrFila(1) = lnpEmpleado.getApellidoEmpleado()
+            ldrFila(2) = lnpEmpleado.getDireccionEmpleado()
+            ldrFila(3) = lnpEmpleado.getTelefonoEmpleado()
+            ldrFila(4) = lnpEmpleado.getCelularEmpleado()
+            ldrFila(5) = lnpEmpleado.getPuestoEmpleado()
+            ldrFila(6) = lnpEmpleado.getFechaDeContratacion()
+            ldrFila(7) = lnpEmpleado.getSalarioEmpleado()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        cantidad = ldtTabla.Rows.Count
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -261,4 +309,5 @@ Public Class frmEmpleados
     Private Sub lblTitulo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblTitulo.Click
 
     End Sub
+
 End Class
