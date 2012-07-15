@@ -47,7 +47,7 @@ Partial Class frmReportes
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(-1, 41)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.Size = New System.Drawing.Size(861, 572)
+        Me.crvReporte.Size = New System.Drawing.Size(859, 572)
         Me.crvReporte.TabIndex = 8
         '
         'frmReportes
