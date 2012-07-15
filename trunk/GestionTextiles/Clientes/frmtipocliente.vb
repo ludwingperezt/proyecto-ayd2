@@ -118,7 +118,7 @@ Public Class frmtipocliente
     Private Sub frmtipocliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         fnvdRecargar()
     End Sub
-    Private Sub fnvdRecargar()
+    Public Sub fnvdRecargar()
         Try
             frmingresoclientes.gnpTipoClienteSeleccionado = Nothing
             Me.glstTipoClienteFiltrada.Clear()
