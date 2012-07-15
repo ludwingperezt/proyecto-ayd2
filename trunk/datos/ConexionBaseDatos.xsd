@@ -1529,6 +1529,26 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ultimosVeinteClientesTableAdapter" GeneratorDataComponentClassName="ultimosVeinteClientesTableAdapter" Name="ultimosVeinteClientes" UserDataComponentName="ultimosVeinteClientesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.ultimosVeinteClientes" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IDCLIENTE, IDTIPOCLIENTE, NIT, NOMBRE, DIRECCION FROM dbo.ultimosVeinteClientes()</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDCLIENTE" DataSetColumn="IDCLIENTE" />
+              <Mapping SourceColumn="IDTIPOCLIENTE" DataSetColumn="IDTIPOCLIENTE" />
+              <Mapping SourceColumn="NIT" DataSetColumn="NIT" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="DIRECCION" DataSetColumn="DIRECCION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.db_owner.insertarCliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarCliente" MethodsParameterType="CLR" Modifier="Public" Name="insertarCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="insertarCliente">
@@ -4618,6 +4638,35 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ultimosVeinteClientes" msprop:Generator_TableClassName="ultimosVeinteClientesDataTable" msprop:Generator_TableVarName="tableultimosVeinteClientes" msprop:Generator_TablePropName="ultimosVeinteClientes" msprop:Generator_RowDeletingName="ultimosVeinteClientesRowDeleting" msprop:Generator_UserTableName="ultimosVeinteClientes" msprop:Generator_RowChangingName="ultimosVeinteClientesRowChanging" msprop:Generator_RowEvHandlerName="ultimosVeinteClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="ultimosVeinteClientesRowDeleted" msprop:Generator_RowEvArgName="ultimosVeinteClientesRowChangeEvent" msprop:Generator_RowChangedName="ultimosVeinteClientesRowChanged" msprop:Generator_RowClassName="ultimosVeinteClientesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDCLIENTE" msprop:Generator_ColumnVarNameInTable="columnIDCLIENTE" msprop:Generator_ColumnPropNameInRow="IDCLIENTE" msprop:Generator_ColumnPropNameInTable="IDCLIENTEColumn" msprop:Generator_UserColumnName="IDCLIENTE" type="xs:int" />
+              <xs:element name="IDTIPOCLIENTE" msprop:Generator_ColumnVarNameInTable="columnIDTIPOCLIENTE" msprop:Generator_ColumnPropNameInRow="IDTIPOCLIENTE" msprop:Generator_ColumnPropNameInTable="IDTIPOCLIENTEColumn" msprop:Generator_UserColumnName="IDTIPOCLIENTE" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="NIT" msprop:Generator_ColumnVarNameInTable="columnNIT" msprop:Generator_ColumnPropNameInRow="NIT" msprop:Generator_ColumnPropNameInTable="NITColumn" msprop:Generator_UserColumnName="NIT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIRECCION" msprop:Generator_ColumnVarNameInTable="columnDIRECCION" msprop:Generator_ColumnPropNameInRow="DIRECCION" msprop:Generator_ColumnPropNameInTable="DIRECCIONColumn" msprop:Generator_UserColumnName="DIRECCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -4844,6 +4893,10 @@
     <xs:unique name="paginacionProveedores_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:paginacionProveedores" />
       <xs:field xpath="mstns:IDPROVEEDOR" />
+    </xs:unique>
+    <xs:unique name="ultimosVeinteClientes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ultimosVeinteClientes" />
+      <xs:field xpath="mstns:IDCLIENTE" />
     </xs:unique>
   </xs:element>
 </xs:schema>
