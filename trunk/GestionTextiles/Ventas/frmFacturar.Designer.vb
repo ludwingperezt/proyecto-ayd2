@@ -46,7 +46,7 @@ Partial Class frmFacturar
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lbltotal = New System.Windows.Forms.Label()
-        Me.lbldescuentofac = New System.Windows.Forms.Label()
+        Me.lblSubTotal = New System.Windows.Forms.Label()
         Me.lblEmpleado = New System.Windows.Forms.Label()
         Me.lbltipocliente = New System.Windows.Forms.Label()
         Me.btntipocliente = New System.Windows.Forms.Button()
@@ -58,10 +58,6 @@ Partial Class frmFacturar
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnagregar = New System.Windows.Forms.Button()
-        Me.lblcambio = New System.Windows.Forms.Label()
-        Me.lblVuelto = New System.Windows.Forms.Label()
-        Me.txtEfectivo = New System.Windows.Forms.TextBox()
-        Me.lblefectivo = New System.Windows.Forms.Label()
         CType(Me.dgvdetallefactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gpProducto.SuspendLayout()
         Me.stsBarra.SuspendLayout()
@@ -215,18 +211,20 @@ Partial Class frmFacturar
         'lbTotal
         '
         Me.lbTotal.AutoSize = True
-        Me.lbTotal.Location = New System.Drawing.Point(739, 598)
+        Me.lbTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTotal.Location = New System.Drawing.Point(729, 601)
         Me.lbTotal.Name = "lbTotal"
-        Me.lbTotal.Size = New System.Drawing.Size(34, 13)
+        Me.lbTotal.Size = New System.Drawing.Size(40, 13)
         Me.lbTotal.TabIndex = 20
         Me.lbTotal.Text = "Total:"
         '
         'lblDescuento
         '
         Me.lblDescuento.AutoSize = True
-        Me.lblDescuento.Location = New System.Drawing.Point(739, 552)
+        Me.lblDescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescuento.Location = New System.Drawing.Point(729, 555)
         Me.lblDescuento.Name = "lblDescuento"
-        Me.lblDescuento.Size = New System.Drawing.Size(62, 13)
+        Me.lblDescuento.Size = New System.Drawing.Size(72, 13)
         Me.lblDescuento.TabIndex = 24
         Me.lblDescuento.Text = "Descuento:"
         '
@@ -276,20 +274,22 @@ Partial Class frmFacturar
         'lbltotal
         '
         Me.lbltotal.AutoSize = True
+        Me.lbltotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltotal.ForeColor = System.Drawing.Color.Red
         Me.lbltotal.Location = New System.Drawing.Point(833, 598)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(28, 13)
+        Me.lbltotal.Size = New System.Drawing.Size(32, 13)
         Me.lbltotal.TabIndex = 31
         Me.lbltotal.Text = "0.00"
         '
-        'lbldescuentofac
+        'lblSubTotal
         '
-        Me.lbldescuentofac.AutoSize = True
-        Me.lbldescuentofac.Location = New System.Drawing.Point(833, 575)
-        Me.lbldescuentofac.Name = "lbldescuentofac"
-        Me.lbldescuentofac.Size = New System.Drawing.Size(28, 13)
-        Me.lbldescuentofac.TabIndex = 32
-        Me.lbldescuentofac.Text = "0.00"
+        Me.lblSubTotal.AutoSize = True
+        Me.lblSubTotal.Location = New System.Drawing.Point(833, 575)
+        Me.lblSubTotal.Name = "lblSubTotal"
+        Me.lblSubTotal.Size = New System.Drawing.Size(28, 13)
+        Me.lblSubTotal.TabIndex = 32
+        Me.lblSubTotal.Text = "0.00"
         '
         'lblEmpleado
         '
@@ -335,13 +335,15 @@ Partial Class frmFacturar
         Me.txtDescuento.Size = New System.Drawing.Size(100, 20)
         Me.txtDescuento.TabIndex = 14
         Me.txtDescuento.Text = "0.00"
+        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(739, 575)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(729, 578)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.Size = New System.Drawing.Size(54, 13)
         Me.Label1.TabIndex = 68
         Me.Label1.Text = "Subtotal"
         '
@@ -401,40 +403,6 @@ Partial Class frmFacturar
         Me.btnagregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnagregar.UseVisualStyleBackColor = False
         '
-        'lblcambio
-        '
-        Me.lblcambio.AutoSize = True
-        Me.lblcambio.Location = New System.Drawing.Point(520, 598)
-        Me.lblcambio.Name = "lblcambio"
-        Me.lblcambio.Size = New System.Drawing.Size(45, 13)
-        Me.lblcambio.TabIndex = 62
-        Me.lblcambio.Text = "Cambio:"
-        '
-        'lblVuelto
-        '
-        Me.lblVuelto.AutoSize = True
-        Me.lblVuelto.Location = New System.Drawing.Point(621, 598)
-        Me.lblVuelto.Name = "lblVuelto"
-        Me.lblVuelto.Size = New System.Drawing.Size(28, 13)
-        Me.lblVuelto.TabIndex = 63
-        Me.lblVuelto.Text = "0.00"
-        '
-        'txtEfectivo
-        '
-        Me.txtEfectivo.Location = New System.Drawing.Point(586, 568)
-        Me.txtEfectivo.Name = "txtEfectivo"
-        Me.txtEfectivo.Size = New System.Drawing.Size(100, 20)
-        Me.txtEfectivo.TabIndex = 13
-        '
-        'lblefectivo
-        '
-        Me.lblefectivo.AutoSize = True
-        Me.lblefectivo.Location = New System.Drawing.Point(519, 571)
-        Me.lblefectivo.Name = "lblefectivo"
-        Me.lblefectivo.Size = New System.Drawing.Size(49, 13)
-        Me.lblefectivo.TabIndex = 65
-        Me.lblefectivo.Text = "Efectivo:"
-        '
         'frmFacturar
         '
         Me.AcceptButton = Me.btnAceptar
@@ -448,16 +416,12 @@ Partial Class frmFacturar
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtDescuento)
         Me.Controls.Add(Me.txtSerie)
-        Me.Controls.Add(Me.lblefectivo)
-        Me.Controls.Add(Me.txtEfectivo)
-        Me.Controls.Add(Me.lblVuelto)
-        Me.Controls.Add(Me.lblcambio)
         Me.Controls.Add(Me.btntipocliente)
         Me.Controls.Add(Me.cmbtipocliente)
         Me.Controls.Add(Me.lbltipocliente)
         Me.Controls.Add(Me.lblEmpleado)
         Me.Controls.Add(Me.btnagregar)
-        Me.Controls.Add(Me.lbldescuentofac)
+        Me.Controls.Add(Me.lblSubTotal)
         Me.Controls.Add(Me.lbltotal)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.btnCancelar)
@@ -504,7 +468,7 @@ Partial Class frmFacturar
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents lbltotal As System.Windows.Forms.Label
-    Friend WithEvents lbldescuentofac As System.Windows.Forms.Label
+    Friend WithEvents lblSubTotal As System.Windows.Forms.Label
     Friend WithEvents btnagregar As System.Windows.Forms.Button
     Friend WithEvents txtCantidad As System.Windows.Forms.TextBox
     Friend WithEvents lblcantidad As System.Windows.Forms.Label
@@ -521,8 +485,4 @@ Partial Class frmFacturar
     Friend WithEvents btnEditar As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents cmbtipocliente As System.Windows.Forms.ComboBox
-    Friend WithEvents lblcambio As System.Windows.Forms.Label
-    Friend WithEvents lblVuelto As System.Windows.Forms.Label
-    Friend WithEvents txtEfectivo As System.Windows.Forms.TextBox
-    Friend WithEvents lblefectivo As System.Windows.Forms.Label
 End Class

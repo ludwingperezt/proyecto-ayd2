@@ -29,6 +29,8 @@ Partial Class frmVentas
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.gbListaSeries = New System.Windows.Forms.GroupBox()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnRegresar = New System.Windows.Forms.Button()
         Me.dgvSeries = New System.Windows.Forms.DataGridView()
         Me.btnBuscar = New System.Windows.Forms.Button()
@@ -40,8 +42,6 @@ Partial Class frmVentas
         Me.btnFacturar = New System.Windows.Forms.Button()
         Me.btnAnular = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.gbListaSeries.SuspendLayout()
         CType(Me.dgvSeries, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +85,26 @@ Partial Class frmVentas
         Me.gbListaSeries.TabIndex = 63
         Me.gbListaSeries.TabStop = False
         Me.gbListaSeries.Text = "Listado Facturas"
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSiguiente.Image = Global.GestionTextiles.My.Resources.Resources.bluesharp1
+        Me.btnSiguiente.Location = New System.Drawing.Point(741, 330)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(75, 23)
+        Me.btnSiguiente.TabIndex = 7
+        Me.btnSiguiente.UseVisualStyleBackColor = False
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAnterior.Image = Global.GestionTextiles.My.Resources.Resources.bluesharp2
+        Me.btnAnterior.Location = New System.Drawing.Point(660, 330)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
+        Me.btnAnterior.TabIndex = 6
+        Me.btnAnterior.UseVisualStyleBackColor = False
         '
         'btnRegresar
         '
@@ -194,29 +214,11 @@ Partial Class frmVentas
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(220, 9)
+        Me.lblTitulo.Location = New System.Drawing.Point(335, 9)
         Me.lblTitulo.Name = "lblTitulo"
         Me.lblTitulo.Size = New System.Drawing.Size(226, 29)
         Me.lblTitulo.TabIndex = 64
         Me.lblTitulo.Text = "Módulo de Ventas"
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.Location = New System.Drawing.Point(660, 330)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
-        Me.btnAnterior.TabIndex = 6
-        Me.btnAnterior.Text = "<<"
-        Me.btnAnterior.UseVisualStyleBackColor = True
-        '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.Location = New System.Drawing.Point(741, 330)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(75, 23)
-        Me.btnSiguiente.TabIndex = 7
-        Me.btnSiguiente.Text = ">>"
-        Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'frmVentas
         '

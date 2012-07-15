@@ -125,11 +125,11 @@ Public Class frmFacturar
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub lbldescuentofac_MouseLeave(sender As System.Object, e As System.EventArgs) Handles lbldescuentofac.MouseLeave
+    Private Sub lbldescuentofac_MouseLeave(sender As System.Object, e As System.EventArgs) Handles lblSubTotal.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub lbldescuentofac_MouseHover(sender As System.Object, e As System.EventArgs) Handles lbldescuentofac.MouseHover
+    Private Sub lbldescuentofac_MouseHover(sender As System.Object, e As System.EventArgs) Handles lblSubTotal.MouseHover
         slblDescripcion.Text = "Descuento factura"
     End Sub
 
@@ -187,17 +187,13 @@ Public Class frmFacturar
                 If Me.factura.getDescuento() = 0 And txtDescuento.Text <> "0.00" Then
                     Me.factura.fnvCalcularDescuento(Convert.ToDouble(txtDescuento.Text))
                 End If
+                frmCambio.ShowDialog()
+                frmCambio.Dispose()
+                'Me.factura.setDescuento(Convert.ToDouble(txtDescuento.Text))
+                'Me.lbltotal.Text = Convert.ToString(Me.factura.fndecCalcularTotal())
+                'Me.lbldescuentofac.Text = Convert.ToString(Me.factura.fndecCalcularSubTotal())
 
-                Dim efectivo As Decimal = Convert.ToDecimal(txtEfectivo.Text)
-                Dim cambio As Decimal = efectivo - Me.factura.getSubTotal()
-                If efectivo >= Me.factura.getSubTotal() Then
-                    lblVuelto.Text = Convert.ToString(cambio)
-                End If
-                Me.factura.setDescuento(Convert.ToDouble(txtDescuento.Text))
-                Me.lbltotal.Text = Convert.ToString(Me.factura.fndecCalcularTotal())
-                Me.lbldescuentofac.Text = Convert.ToString(Me.factura.fndecCalcularSubTotal())
-
-                Me.factura.setIdEmpleado(1)
+                Me.factura.setIdEmpleado(frmPrincipal.gnegEmpleado.getIdEmpleado)
                 Me.factura.setSerie(Me.serieActual.getSerie())
                 Me.factura.setIdCliente(Me.clienteActual.getIdCliente())
                 Me.factura.fnvInsertarFacturaCliente()
@@ -263,7 +259,7 @@ Public Class frmFacturar
             End If
 
         End If
-        
+
     End Sub
 
     Private Sub cmbserie_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -301,7 +297,7 @@ Public Class frmFacturar
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Dispose()
         End Try
-        
+
     End Sub
 
     Private Sub btntipocliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btntipocliente.Click
@@ -349,8 +345,9 @@ Public Class frmFacturar
                     frmFacturar.productoSeleccionado.fnvdDisminuirExistenciaProducto(lnfcDetalleTemporal.getCantidad())
                     Me.factura.fnvdAgregarProducto(lnfcDetalleTemporal)
                     Me.factura.setDescuento(Convert.ToDouble(txtDescuento.Text))
+                    Me.lblSubTotal.Text = Convert.ToString(Me.factura.fndecCalcularSubTotal())
                     Me.lbltotal.Text = Convert.ToString(Me.factura.fndecCalcularTotal())
-                    Me.lbldescuentofac.Text = Convert.ToString(Me.factura.fndecCalcularSubTotal())
+
                     'agregar al dgv
 
                     Me.fnvdLlenarDataGridView(Me.factura.getDetalleFactura())
@@ -393,10 +390,10 @@ Public Class frmFacturar
         For Each i As DataGridViewColumn In Me.dgvdetallefactura.Columns
             i.SortMode = DataGridViewColumnSortMode.NotSortable
         Next
-        Me.factura.setDescuento(Convert.ToDouble(txtDescuento.Text))
-        Me.lbltotal.Text = Convert.ToString(Me.factura.fndecCalcularTotal())
-        Me.lbldescuentofac.Text = Convert.ToString(Me.factura.fndecCalcularSubTotal())
-        Me.dgvdetallefactura.DataSource = ldtTabla
+        factura.setDescuento(Convert.ToDouble(txtDescuento.Text))
+        lblSubTotal.Text = Convert.ToString(Me.factura.fndecCalcularSubTotal())
+        lbltotal.Text = Convert.ToString(Me.factura.fndecCalcularTotal())
+        dgvdetallefactura.DataSource = ldtTabla
     End Sub
 
     Private Sub dgvdetallefactura_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvdetallefactura.CellClick
@@ -411,8 +408,8 @@ Public Class frmFacturar
             Me.factura.fnvQuitarProducto(Me.indexRow)
             Me.fnvdLlenarDataGridView(Me.factura.getDetalleFactura())
             Me.factura.setDescuento(Convert.ToDouble(txtDescuento.Text))
+            Me.lblSubTotal.Text = Convert.ToString(Me.factura.fndecCalcularSubTotal())
             Me.lbltotal.Text = Convert.ToString(Me.factura.fndecCalcularTotal())
-            Me.lbldescuentofac.Text = Convert.ToString(Me.factura.fndecCalcularSubTotal())
         End If
     End Sub
 
@@ -445,6 +442,14 @@ Public Class frmFacturar
             If txtCantidad.Text.Contains(".") Then
                 e.KeyChar = ""
             End If
+        End If
+    End Sub
+
+    Private Sub txtDescuento_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtDescuento.TextChanged
+        If Decimal.Parse(txtDescuento.Text) = 0 Then
+            lbltotal.Text = factura.fndecCalcularSubTotal
+        Else
+            lbltotal.Text = (Decimal.Parse(lblSubTotal.Text) - Decimal.Parse(lblDescuento.Text))
         End If
     End Sub
 End Class
