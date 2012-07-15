@@ -1,7 +1,7 @@
 ﻿Imports negocios
 
 Public Class frmPrincipal
-    Public Shared gnegEmpleado As negociosEmpleado = New negociosEmpleado()
+    Public Shared gnegEmpleado As negociosEmpleado
     Public Shared gnegPermisos As negociosRol = New negociosRol()
 
 
@@ -139,8 +139,9 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub BtnLogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogin.Click
-        frmLogin.ShowDialog()
-        frmLogin.Dispose()
+        gnegEmpleado = Nothing
+        gnegPermisos = Nothing
+        fnvLoguear()
     End Sub
 
     Private Sub BtnGestionTalonarios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGestionTalonarios.Click
@@ -161,74 +162,89 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub frmPrincipal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        fnvLoguear()
+    End Sub
+
+    Private Sub fnvLoguear()
         Try
-            'frmLogin.ShowDialog(Me)
-            'If IsNothing(frmPrincipal.gnegEmpleado) Or IsNothing(frmPrincipal.gnegEmpleado) Then
-            '    frmLogin.ShowDialog(Me)
-            'Else
-            '    'validar
-            'End If
-            gnegPermisos = negociosRol.fnObtenerRolPorId(2)
-            lblEmpleado.Text = "Bienvenido: " + gnegEmpleado.getUsuarioEmpleado() + " - " + gnegPermisos.getNombre
-            ' Esto queda para el final, xq sino no podremos realizar pruebas
-
-            If gnegPermisos.getPermisoAccesoModuloCliente() Then
-                BtnClientes.Enabled = True
-            Else
+            frmLogin.ShowDialog(Me)
+            If IsNothing(frmPrincipal.gnegEmpleado) Then
                 BtnClientes.Enabled = False
-            End If
-
-            If gnegPermisos.getPermisoAccesoModuloCompras() Then
-                BtnCompras.Enabled = True
-            Else
                 BtnCompras.Enabled = False
-            End If
-
-            If gnegPermisos.getPermisoAccesoModuloEmpleados() Then
-                BtnEmpleados.Enabled = True
-            Else
                 BtnEmpleados.Enabled = False
-            End If
-
-            If gnegPermisos.getPermisoAccesoModuloVentas() Then
-                BtnVentas.Enabled = True
-            Else
-                BtnVentas.Enabled = False
-            End If
-
-            If gnegPermisos.getPermisoAccesoModuloProductos() Then
-                btnProductos.Enabled = True
-            Else
-                btnProductos.Enabled = False
-            End If
-
-            If gnegPermisos.getPermisoAccesoModuloProveedores() Then
-                BtnProveedores.Enabled = True
-            Else
-                BtnProveedores.Enabled = False
-
-            End If
-
-            If gnegPermisos.getPermisoAccesoModuloReportes() Then
-                btnReportes.Enabled = True
-            Else
-                btnReportes.Enabled = False
-            End If
-
-            If gnegPermisos.getPermisoAccesoModuloRol() Then
-                BtnRoles.Enabled = True
-            Else
-                BtnRoles.Enabled = False
-            End If
-
-            If gnegPermisos.getPermisoAccesoModuloTalonario() Then
-                BtnGestionTalonarios.Enabled = True
-            Else
                 BtnGestionTalonarios.Enabled = False
+                btnProductos.Enabled = False
+                BtnProveedores.Enabled = False
+                btnReportes.Enabled = False
+                BtnRoles.Enabled = False
+                BtnVentas.Enabled = False
+                lblEmpleado.Text = "Invitado"
+                BtnLogin.Text = "Iniciar Sesión"
+            Else
+                BtnLogin.Text = "Cerrar Sesión"
+                gnegPermisos = negociosRol.fnObtenerRolPorId(gnegEmpleado.getIdRolEmpleado)
+                lblEmpleado.Text = "Bienvenido: " + gnegEmpleado.getUsuarioEmpleado() + " - " + gnegPermisos.getNombre
+                ' Esto queda para el final, xq sino no podremos realizar pruebas
+
+                If gnegPermisos.getPermisoAccesoModuloCliente() Then
+                    BtnClientes.Enabled = True
+                Else
+                    BtnClientes.Enabled = False
+                End If
+
+                If gnegPermisos.getPermisoAccesoModuloCompras() Then
+                    BtnCompras.Enabled = True
+                Else
+                    BtnCompras.Enabled = False
+                End If
+
+                If gnegPermisos.getPermisoAccesoModuloEmpleados() Then
+                    BtnEmpleados.Enabled = True
+                Else
+                    BtnEmpleados.Enabled = False
+                End If
+
+                If gnegPermisos.getPermisoAccesoModuloVentas() Then
+                    BtnVentas.Enabled = True
+                Else
+                    BtnVentas.Enabled = False
+                End If
+
+                If gnegPermisos.getPermisoAccesoModuloProductos() Then
+                    btnProductos.Enabled = True
+                Else
+                    btnProductos.Enabled = False
+                End If
+
+                If gnegPermisos.getPermisoAccesoModuloProveedores() Then
+                    BtnProveedores.Enabled = True
+                Else
+                    BtnProveedores.Enabled = False
+
+                End If
+
+                If gnegPermisos.getPermisoAccesoModuloReportes() Then
+                    btnReportes.Enabled = True
+                Else
+                    btnReportes.Enabled = False
+                End If
+
+                If gnegPermisos.getPermisoAccesoModuloRol() Then
+                    BtnRoles.Enabled = True
+                Else
+                    BtnRoles.Enabled = False
+                End If
+
+                If gnegPermisos.getPermisoAccesoModuloTalonario() Then
+                    BtnGestionTalonarios.Enabled = True
+                Else
+                    BtnGestionTalonarios.Enabled = False
+                End If
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Dispose()
         End Try
+        frmLogin.Dispose()
     End Sub
 End Class

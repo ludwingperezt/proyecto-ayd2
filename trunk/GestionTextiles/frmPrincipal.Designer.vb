@@ -85,6 +85,7 @@ Partial Class frmPrincipal
         'BtnGestionTalonarios
         '
         Me.BtnGestionTalonarios.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnGestionTalonarios.Enabled = False
         Me.BtnGestionTalonarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGestionTalonarios.Image = CType(resources.GetObject("BtnGestionTalonarios.Image"), System.Drawing.Image)
         Me.BtnGestionTalonarios.ImageAlign = System.Drawing.ContentAlignment.TopCenter
@@ -99,6 +100,7 @@ Partial Class frmPrincipal
         'BtnRoles
         '
         Me.BtnRoles.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnRoles.Enabled = False
         Me.BtnRoles.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRoles.Image = CType(resources.GetObject("BtnRoles.Image"), System.Drawing.Image)
         Me.BtnRoles.Location = New System.Drawing.Point(184, 231)
@@ -112,6 +114,7 @@ Partial Class frmPrincipal
         'btnReportes
         '
         Me.btnReportes.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnReportes.Enabled = False
         Me.btnReportes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReportes.Image = CType(resources.GetObject("btnReportes.Image"), System.Drawing.Image)
         Me.btnReportes.ImageAlign = System.Drawing.ContentAlignment.TopRight
@@ -153,6 +156,7 @@ Partial Class frmPrincipal
         'BtnEmpleados
         '
         Me.BtnEmpleados.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnEmpleados.Enabled = False
         Me.BtnEmpleados.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEmpleados.Image = CType(resources.GetObject("BtnEmpleados.Image"), System.Drawing.Image)
         Me.BtnEmpleados.Location = New System.Drawing.Point(36, 231)
@@ -166,6 +170,7 @@ Partial Class frmPrincipal
         'BtnClientes
         '
         Me.BtnClientes.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnClientes.Enabled = False
         Me.BtnClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClientes.Image = CType(resources.GetObject("BtnClientes.Image"), System.Drawing.Image)
         Me.BtnClientes.Location = New System.Drawing.Point(331, 64)
@@ -179,6 +184,7 @@ Partial Class frmPrincipal
         'BtnCompras
         '
         Me.BtnCompras.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnCompras.Enabled = False
         Me.BtnCompras.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCompras.Image = CType(resources.GetObject("BtnCompras.Image"), System.Drawing.Image)
         Me.BtnCompras.Location = New System.Drawing.Point(480, 64)
@@ -192,6 +198,7 @@ Partial Class frmPrincipal
         'BtnProveedores
         '
         Me.BtnProveedores.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnProveedores.Enabled = False
         Me.BtnProveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnProveedores.Image = CType(resources.GetObject("BtnProveedores.Image"), System.Drawing.Image)
         Me.BtnProveedores.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -206,6 +213,7 @@ Partial Class frmPrincipal
         'BtnVentas
         '
         Me.BtnVentas.BackColor = System.Drawing.SystemColors.HighlightText
+        Me.BtnVentas.Enabled = False
         Me.BtnVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnVentas.Image = CType(resources.GetObject("BtnVentas.Image"), System.Drawing.Image)
         Me.BtnVentas.Location = New System.Drawing.Point(36, 64)
@@ -219,6 +227,7 @@ Partial Class frmPrincipal
         'btnProductos
         '
         Me.btnProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnProductos.Enabled = False
         Me.btnProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProductos.Image = CType(resources.GetObject("btnProductos.Image"), System.Drawing.Image)
         Me.btnProductos.Location = New System.Drawing.Point(184, 64)

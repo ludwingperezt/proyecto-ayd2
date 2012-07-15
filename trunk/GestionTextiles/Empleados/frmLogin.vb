@@ -28,26 +28,26 @@ Public Class frmLogin
                     ctrlIterador.BackColor = Color.White
                     ''buscar al usuario
                     'dgvUsuario.DataSource = lnpNuevoUsuario.fnDbBuscarPorNombre(txtUsuario.Text)
-                    Dim cantRegistros As Integer = dgvUsuario.Rows.Count
-                    If (cantRegistros > 1) Then
-                        lnpNuevoUsuario.setIdRolEmpleado(Convert.ToByte(dgvUsuario.CurrentRow.Cells(1).Value))
-                        lnpNuevoUsuario.setNombreEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells(2).Value))
-                        lnpNuevoUsuario.setApellidoEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(3).Value))
-                        lnpNuevoUsuario.setDireccionEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(4).Value))
-                        lnpNuevoUsuario.setTelefonoEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(5).Value))
-                        lnpNuevoUsuario.setCelularEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(6).Value))
-                        lnpNuevoUsuario.setPuestoEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(7).Value))
-                        Dim sContrasenia As String
-                        sContrasenia = getString(dgvUsuario.CurrentRow.Cells.Item(11).Value)
-                        If (txtcontraseña.Text = sContrasenia) Then
-                        Else
-                            MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        End If
-                    Else
-                        '   txtUsuario.Text = ""
-                        MessageBox.Show("El usuario no Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End If
-                    'verificar() ''login ludwing
+                    'Dim cantRegistros As Integer = dgvUsuario.Rows.Count
+                    'If (cantRegistros > 1) Then
+                    '    lnpNuevoUsuario.setIdRolEmpleado(Convert.ToByte(dgvUsuario.CurrentRow.Cells(1).Value))
+                    '    lnpNuevoUsuario.setNombreEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells(2).Value))
+                    '    lnpNuevoUsuario.setApellidoEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(3).Value))
+                    '    lnpNuevoUsuario.setDireccionEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(4).Value))
+                    '    lnpNuevoUsuario.setTelefonoEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(5).Value))
+                    '    lnpNuevoUsuario.setCelularEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(6).Value))
+                    '    lnpNuevoUsuario.setPuestoEmpleado(Convert.ToString(dgvUsuario.CurrentRow.Cells.Item(7).Value))
+                    '    Dim sContrasenia As String
+                    '    sContrasenia = getString(dgvUsuario.CurrentRow.Cells.Item(11).Value)
+                    '    If (txtcontraseña.Text = sContrasenia) Then
+                    '    Else
+                    '        MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    '    End If
+                    'Else
+                    '    '   txtUsuario.Text = ""
+                    '    MessageBox.Show("El usuario no Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    'End If '
+                    verificar() ''login ludwing
                     End If
             End If
         Next
