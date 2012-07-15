@@ -132,7 +132,7 @@ Partial Class frmPrincipal
         Me.BtnLogin.Name = "BtnLogin"
         Me.BtnLogin.Size = New System.Drawing.Size(126, 148)
         Me.BtnLogin.TabIndex = 0
-        Me.BtnLogin.Text = "Login"
+        Me.BtnLogin.Text = "Cerrar Sesión"
         Me.BtnLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnLogin.UseVisualStyleBackColor = False
         '
