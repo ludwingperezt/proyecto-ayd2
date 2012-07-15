@@ -140,6 +140,7 @@ Public Class frmPrincipal
 
     Private Sub BtnLogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogin.Click
         frmLogin.ShowDialog()
+        frmLogin.Dispose()
     End Sub
 
     Private Sub BtnGestionTalonarios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGestionTalonarios.Click
@@ -161,6 +162,12 @@ Public Class frmPrincipal
 
     Private Sub frmPrincipal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
+            'frmLogin.ShowDialog(Me)
+            'If IsNothing(frmPrincipal.gnegEmpleado) Or IsNothing(frmPrincipal.gnegEmpleado) Then
+            '    frmLogin.ShowDialog(Me)
+            'Else
+            '    'validar
+            'End If
             gnegPermisos = negociosRol.fnObtenerRolPorId(2)
             lblEmpleado.Text = "Bienvenido: " + gnegEmpleado.getUsuarioEmpleado() + " - " + gnegPermisos.getNombre
             ' Esto queda para el final, xq sino no podremos realizar pruebas

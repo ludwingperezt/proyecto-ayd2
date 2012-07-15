@@ -47,7 +47,7 @@ Public Class frmLogin
                         '   txtUsuario.Text = ""
                         MessageBox.Show("El usuario no Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
-
+                    'verificar() ''login ludwing
                     End If
             End If
         Next
@@ -77,5 +77,28 @@ Public Class frmLogin
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Dispose()
+    End Sub
+
+    Private Sub verificar()
+        Try
+            Dim acceso As String = auxiliar.getLogin(txtUsuario.Text, txtcontraseña.Text)
+            If acceso = 0 Then
+                frmPrincipal.gnegEmpleado = Nothing
+                frmPrincipal.gnegPermisos = Nothing
+                MessageBox.Show("La contraseña o usuario ingresados no son correctos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf acceso = 1 Then
+                frmPrincipal.gnegEmpleado = auxiliar.getEmpleado(txtUsuario.Text, txtcontraseña.Text)
+                If IsNothing(frmPrincipal.gnegEmpleado) = False Then
+                    frmPrincipal.gnegPermisos = negociosRol.fnObtenerRolPorId(Convert.ToInt32(frmPrincipal.gnegEmpleado.getIdRolEmpleado()))
+                    Me.Dispose()
+                End If
+            ElseIf acceso = 2 Then
+                frmPrincipal.gnegEmpleado = Nothing
+                frmPrincipal.gnegPermisos = Nothing
+                MessageBox.Show("El usuario no tiene acceso al sistema", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
