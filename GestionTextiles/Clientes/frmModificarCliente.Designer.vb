@@ -97,7 +97,7 @@ Partial Class frmModificarCliente
         '
         Me.cmbtipocliente.FormattingEnabled = True
         Me.cmbtipocliente.ItemHeight = 13
-        Me.cmbtipocliente.Location = New System.Drawing.Point(116, 175)
+        Me.cmbtipocliente.Location = New System.Drawing.Point(113, 175)
         Me.cmbtipocliente.Name = "cmbtipocliente"
         Me.cmbtipocliente.Size = New System.Drawing.Size(121, 21)
         Me.cmbtipocliente.TabIndex = 54
