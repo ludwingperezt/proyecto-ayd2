@@ -1,4 +1,5 @@
-﻿Public Class frmModificarTipoCliente
+﻿Imports negocios
+Public Class frmModificarTipoCliente
     Private bandera As Boolean
     Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseLeave
         slblDescripcion.Text = "Descripción"
@@ -78,7 +79,19 @@
         Next
         If bandera <> False Then
             'codigo para modificar el tipo cliente
-
+            Dim lnpNuevoTipoCliente As negociosTipoCliente = New negociosTipoCliente()
+            lnpNuevoTipoCliente.setNombreTipoCliente(txtnombre.Text)
+            lnpNuevoTipoCliente.setDescripcionTipoCliente(txtdescripcion.Text)
+            lnpNuevoTipoCliente.setDescuentoTipoCliente(Convert.ToSingle(txtdescuento.Text))
+            Try
+                lnpNuevoTipoCliente.fnsInsertarTipoCliente()
+                MessageBox.Show("La operación de modificacion de tipo de cliente se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                frmingresoclientes.fnvdRecargar()
+                frmtipocliente.fnvdRecargar()
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End If
     End Sub
 End Class
