@@ -82,7 +82,14 @@ Public Class frmClientes
     End Sub
 
     Private Sub btnmodificarclientes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmodificarclientes.Click
-        frmModificarCliente.Show()
+        If IsNothing(frmClientes.gnpClienteSeleccionado) Then
+            MessageBox.Show("Debe seleccionar un cliente de la lista para poder modificar sus datos", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            frmModificarCliente.actualizar = True
+            frmModificarCliente.ShowDialog(Me)
+            Me.fnvdRecargar()
+            txtbusqueda.Text = ""
+        End If
     End Sub
 
     Private Sub txtbusqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.TextChanged
@@ -101,10 +108,6 @@ Public Class frmClientes
 
     Private Sub btnActualizar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.MouseHover
         slblDescripcion.Text = "Actualiza el  listado de los Cliente en sistema"
-    End Sub
-
-    Private Sub dgvclientes_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
-
     End Sub
 
     Private Sub cmbCliente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbCliente.MouseLeave
@@ -167,5 +170,13 @@ Public Class frmClientes
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub dgvclientes_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvclientes.CellContentClick
+        If banderaBusqueda Then
+            frmClientes.gnpClienteSeleccionado = glstClientesFiltrada(e.RowIndex)
+        Else
+            frmClientes.gnpClienteSeleccionado = glstClientes(e.RowIndex)
+        End If
     End Sub
 End Class
