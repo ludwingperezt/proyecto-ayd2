@@ -58,8 +58,14 @@
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
-        Dim rpt As New CachedCierreDeCajaFinal  ' se instancia un objeto del reporte
-        Dim taEncabezado As New dsReportesTableAdapters.cierredecajaTableAdapter ' se instancia el tableAdapter (este es la conexión a la BD)
+        fechaInicial = dtpInicio.Text
+        fechaFinal = dtpFin.Text
+        Dim rpt As New CierreDeCajaFinal  ' se instancia un objeto del reporte
+        Dim consulta As New dsReportesTableAdapters.cierredecajaTableAdapter ' se instancia el tableAdapter (este es la conexión a la BD)
+        Dim ds As New dsReportes ' el dataset se debe llenar, para colocarlo como fuente del reporte
+        consulta.Fill(ds.cierredecaja, fechaInicial, fechaFinal) ' se llena la dataTable de proveedores, q en si será la fuente del reporte
+        rpt.SetDataSource(ds) ' se coloca como fuente del reporte
+        crvReporte.ReportSource = rpt ' el reporte es fuente del crystal report viewer
 
     End Sub
 End Class
