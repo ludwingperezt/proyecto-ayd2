@@ -141,6 +141,34 @@ namespace negocios
              {
                  return negociosAdaptadores.gAdaptadorListarTiposClientes.GetData();
              }
+             public static DataTable ListarTipoClientes()
+             {
+                 return negociosAdaptadores.gAdaptadorListarTiposClientes.GetData();
+             }
+             public static List<negociosTipoCliente> fnslListarTipoClientes( )
+             {
+                 List<negociosTipoCliente> lnpTiposCliente = new List<negociosTipoCliente>();
+                 try
+                 {
+                     DataTable ldtTipoClientes = negociosTipoCliente.fnDbListarTiposClientes();
+                     object[] oListaElmentos;
+                     for (int i = 0; i < ldtTipoClientes.Rows.Count; i++)
+                     {
+                         oListaElmentos = ldtTipoClientes.Rows[i].ItemArray;
+                         negociosTipoCliente npNuevoTipoCliente = new negociosTipoCliente();
+                         npNuevoTipoCliente.setIdTipoCliente(Convert.ToByte(oListaElmentos[0]));
+                         npNuevoTipoCliente.setNombreTipoCliente(Convert.ToString(oListaElmentos[1]));
+                         npNuevoTipoCliente.setDescripcionTipoCliente(Convert.ToString(oListaElmentos[2]));
+                         npNuevoTipoCliente.setDescuentoTipoCliente(float.Parse(Convert.ToString(oListaElmentos[3])));
+                         lnpTiposCliente.Add(npNuevoTipoCliente);
+                     }
+                     return lnpTiposCliente;
+                 }
+                 catch (Exception e)
+                 {
+                     return null;
+                 }
+             }
              #endregion
     }
 }
