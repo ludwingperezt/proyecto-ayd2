@@ -68,10 +68,45 @@ Public Class frmClientes
             MessageBox.Show("Ingrese la busqueda deseada ")
         Else
             ''verificar porque no se puede acceder
-            dgvclientes.DataSource = lnpNuevoCliente.fnDbBuscarClienteNombre(txtbusqueda.Text)
+            Dim verificar As String
+            verificar = cmbCliente.SelectedItem()
+            If (verificar = "Nombre") Then
+                fnvdRecargarNombre()
+            End If
+            If (verificar = "Nit") Then
+                fnvdRecargarNit()
+            End If
+            If (verificar = "Tipo Cliente") Then
+
+            End If
         End If
     End Sub
-
+    Private Sub fnvdRecargarNombre()
+        Try
+            dgvclientes.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstClientesFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstClientes = negociosCliente.fnsClienteNombre(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstClientes)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvclientes.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvdRecargarNit()
+        Try
+            dgvclientes.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstClientesFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstClientes = negociosCliente.fnsClienteNit(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstClientes)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvclientes.DataSource = Nothing
+        End Try
+    End Sub
     Private Sub btningresarcliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btningresarcliente.Click
         frmingresoclientes.Show()
 
@@ -147,7 +182,7 @@ Public Class frmClientes
             btnmodificarclientes.Enabled = False
             btneliminarcliente.Enabled = True
         End If
-       
+
 
         ''
         Try

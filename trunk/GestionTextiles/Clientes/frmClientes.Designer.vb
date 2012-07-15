@@ -196,7 +196,7 @@ Partial Class frmClientes
         'cmbCliente
         '
         Me.cmbCliente.FormattingEnabled = True
-        Me.cmbCliente.Items.AddRange(New Object() {"Tipo Cliente", "Nombre", "Apellido", "Nit"})
+        Me.cmbCliente.Items.AddRange(New Object() {"Tipo Cliente", "Nombre", "Nit"})
         Me.cmbCliente.Location = New System.Drawing.Point(151, 84)
         Me.cmbCliente.Name = "cmbCliente"
         Me.cmbCliente.Size = New System.Drawing.Size(127, 21)
