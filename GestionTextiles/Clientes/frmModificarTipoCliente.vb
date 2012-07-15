@@ -1,6 +1,7 @@
 ﻿Imports negocios
 Public Class frmModificarTipoCliente
     Private bandera As Boolean
+    Friend Shared actualizar As Boolean
     Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -54,10 +55,10 @@ Public Class frmModificarTipoCliente
             e.KeyChar = vbNullChar
 
         End If
-        If Convert.ToDouble(txtdescuento.Text) <= 100 Then
-            e.KeyChar = vbNullChar
-            MessageBox.Show("Descuento exedido  del 100% ")
-        End If
+        'If Convert.ToDouble(txtdescuento.Text) <= 100 Then
+        'e.KeyChar = vbNullChar
+        'MessageBox.Show("Descuento exedido  del 100% ")
+        'End If
     End Sub
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
@@ -80,12 +81,13 @@ Public Class frmModificarTipoCliente
         If bandera <> False Then
             'codigo para modificar el tipo cliente
             Dim lnpNuevoTipoCliente As negociosTipoCliente = New negociosTipoCliente()
+            lnpNuevoTipoCliente.setIdTipoCliente(frmtipocliente.gnpTipoClienteSeleccionado.getIdTipoCliente())
             lnpNuevoTipoCliente.setNombreTipoCliente(txtnombre.Text)
             lnpNuevoTipoCliente.setDescripcionTipoCliente(txtdescripcion.Text)
             lnpNuevoTipoCliente.setDescuentoTipoCliente(Convert.ToSingle(txtdescuento.Text))
             Try
-                lnpNuevoTipoCliente.fnsInsertarTipoCliente()
-                MessageBox.Show("La operación de modificacion de tipo de cliente se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                lnpNuevoTipoCliente.fnsModificarTipoCliente()
+                MessageBox.Show("La modificacion de tipo de cliente se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 frmingresoclientes.fnvdRecargar()
                 frmtipocliente.fnvdRecargar()
                 Me.Dispose()
@@ -93,5 +95,17 @@ Public Class frmModificarTipoCliente
                 MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
+    End Sub
+
+    Private Sub frmModificarTipoCliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If actualizar = True Then
+            Me.txtnombre.Text = frmtipocliente.gnpTipoClienteSeleccionado.getNombreTipoCliente()
+            Me.txtdescripcion.Text = frmtipocliente.gnpTipoClienteSeleccionado.getDescripcionTipoCliente()
+            Me.txtdescuento.Text = frmtipocliente.gnpTipoClienteSeleccionado.getDescuentoTipoCliente()
+        End If
+    End Sub
+
+    Private Sub txtdescuento_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdescuento.TextChanged
+
     End Sub
 End Class
