@@ -56,5 +56,7 @@ namespace negocios
         public static datos.ConexionFuncionesEspecialesTableAdapters.buscarFacturasPorSerieNumeroTableAdapter gBuscarFacturaSerieNumero = new datos.ConexionFuncionesEspecialesTableAdapters.buscarFacturasPorSerieNumeroTableAdapter();
         public static datos.ConexionFuncionesEspecialesTableAdapters.paginacionFacturasClienteTableAdapter gPaginacionFacturasClientes = new datos.ConexionFuncionesEspecialesTableAdapters.paginacionFacturasClienteTableAdapter();
 
+        public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerClienteYTipoClienteTableAdapter gAdaptadorClienteTipoCliente = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerClienteYTipoClienteTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerNombreApellidoEmpleadoTableAdapter gAdaptadorNombreApellidosEmpleado = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerNombreApellidoEmpleadoTableAdapter();
     }
 }

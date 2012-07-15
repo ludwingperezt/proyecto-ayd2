@@ -16,6 +16,7 @@ namespace negocios
        private byte idTipoCliente;
        private string nombre;
        private string direccion;
+       private negociosTipoCliente ntcTipoCliente;
 
         #region constructores
         /// <summary>
@@ -124,6 +125,22 @@ namespace negocios
                  this.idTipoCliente = (byte)idTipoCliente;
              }
              #endregion
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ntc"></param>
+             public void setTipoCliente(negociosTipoCliente ntc)
+             {
+                 this.ntcTipoCliente = ntc;
+             }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+             public negociosTipoCliente getTipoCliente()
+             {
+                 return this.ntcTipoCliente;
+             }
 
         #region Métodos de comunicación con la base de datos
              /// <summary>
@@ -261,6 +278,38 @@ namespace negocios
                      this.setDireccionCliente(Convert.ToString(objInstancia[4]));                     
                  }
              }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+             public static negociosCliente fnncObtenerClienteYTipo(int id)
+             {
+                 negociosCliente temporal = null;
+                 DataTable dtLocal = negociosAdaptadores.gAdaptadorClienteTipoCliente.GetData(id);
+                 if (dtLocal.Rows.Count > 0)
+                 {
+                     object[] objInstancia = dtLocal.Rows[0].ItemArray;
+                     temporal = new negociosCliente();
+                     temporal.setIdCliente(id);
+                     //c.IDTIPOCLIENTE,c.NIT,c.NOMBRE,c.DIRECCION,t.NOMBRE,t.DESCRIPCION,t.DESCUENTO
+                     temporal.setIdTipoCliente(Convert.ToInt32(objInstancia[0]));
+                     temporal.setNitCliente(Convert.ToString(objInstancia[1]));
+                     temporal.setNombreCliente(Convert.ToString(objInstancia[2]));
+                     temporal.setDireccionCliente(Convert.ToString(objInstancia[3]));
+
+                     negociosTipoCliente ntcTemp = new negociosTipoCliente();
+                     ntcTemp.setIdTipoCliente((byte)temporal.getIdCliente());
+                     ntcTemp.setNombreTipoCliente(Convert.ToString(objInstancia[4]));
+                     ntcTemp.setDescripcionTipoCliente(Convert.ToString(objInstancia[5]));
+                     ntcTemp.setDescuentoTipoCliente((float)Convert.ToDouble(objInstancia[6]));
+
+                     temporal.setTipoCliente(ntcTemp);
+                 }
+                 return temporal;
+             }
              #endregion
+
+
     }
 }
