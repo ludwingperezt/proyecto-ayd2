@@ -187,9 +187,10 @@ Public Class frmFacturar
                 Me.factura.setSerie(Me.serieActual.getSerie())
                 Me.factura.setIdCliente(Me.clienteActual.getIdCliente())
                 Me.factura.fnvInsertarFacturaCliente()
-                MessageBox.Show("La factura fue ingresada exitosamente", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                'MessageBox.Show("La factura fue ingresada exitosamente", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 'Aqui se muestra el reporte de la factura en sì
-
+                frmReportes.setDatos(Me.factura.getSerie, Me.factura.getNumeroFactura())
+                frmReportes.ShowDialog(Me)
                 Me.Dispose()
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
