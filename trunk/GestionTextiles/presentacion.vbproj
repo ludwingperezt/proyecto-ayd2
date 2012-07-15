@@ -101,6 +101,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Reportes\devolucionesProveedorFecha.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>devolucionesProveedorFecha.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\DevolucionesProveedorFechaNit.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevolucionesProveedorFechaNit.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Formularios de Reportes\frmReporteDevolucionesProveedorFecha.Designer.vb">
       <DependentUpon>frmReporteDevolucionesProveedorFecha.vb</DependentUpon>
     </Compile>
@@ -370,6 +382,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\devolucionesProveedorFecha.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>devolucionesProveedorFecha.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\DevolucionesProveedorFechaNit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DevolucionesProveedorFechaNit.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios de Reportes\frmReporteDevolucionesProveedorFecha.resx">
       <DependentUpon>frmReporteDevolucionesProveedorFecha.vb</DependentUpon>
     </EmbeddedResource>
