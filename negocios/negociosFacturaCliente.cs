@@ -244,6 +244,32 @@ namespace negocios
                 fnvdInsertarEncabezadoFacturaCliente();
                 fnvdInsertarDetallesFactura();
         }
+        public void fnvCalcularDescuento(double descuento)
+        {
+            this.gdecTotal = 0;
+            foreach (negociosDetalleFacturaCliente i in this.glstListaDetalleFactura)
+            {
+                gdecTotal += i.getMonto();
+            }
+            this.gduDescuento = descuento;
+            this.gdecSubTotal = this.gdecTotal - (Convert.ToDecimal(descuento));
+        }
+        public decimal fndecCalcularTotal()
+        {
+            this.gdecTotal = 0;
+            foreach (negociosDetalleFacturaCliente i in this.glstListaDetalleFactura)
+            {
+                gdecTotal += i.getMonto();
+            }
+            //this.gdecSubTotal = this.gdecTotal - (Convert.ToDecimal(this.getDescuento()));
+            return this.gdecTotal;
+        }
+        public decimal fndecCalcularSubTotal()
+        {
+            this.gdecTotal = fndecCalcularTotal();
+            this.gdecSubTotal = this.gdecTotal - (Convert.ToDecimal(this.getDescuento()));
+            return this.gdecSubTotal;
+        }
         #endregion
         #region Otras funciones
         /// <summary>
