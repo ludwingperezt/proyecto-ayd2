@@ -6,6 +6,7 @@ Public Class frmModificarCliente
     Private glstTipoClienteFiltrada As List(Of negociosTipoCliente) = New List(Of negociosTipoCliente)
     Public Shared gnpTipoClienteSeleccionado As negociosTipoCliente
     Private banderaBusqueda As Boolean = False
+    Friend Shared actualizar As Boolean
     Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -153,6 +154,9 @@ Public Class frmModificarCliente
 
     Private Sub frmModificarCliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         fnvdRecargar()
+        Me.txtdireccion.Text = frmClientes.gnpClienteSeleccionado.getDireccionCliente()
+        Me.txtnombre.Text = frmClientes.gnpClienteSeleccionado.getNombreCliente()
+        Me.txtnit.Text = frmClientes.gnpClienteSeleccionado.getNitCliente()
     End Sub
     Public Sub fnvdRecargar()
         Try
