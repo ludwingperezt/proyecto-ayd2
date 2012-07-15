@@ -153,4 +153,12 @@ Public Class frmClientes
         Next
         Me.dgvclientes.DataSource = ldtTabla
     End Sub
+
+    Private Sub btnActualizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar.Click
+        Try
+            fnvdRecargar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class
