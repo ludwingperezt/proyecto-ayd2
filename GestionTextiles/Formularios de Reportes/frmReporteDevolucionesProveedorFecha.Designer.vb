@@ -153,5 +153,5 @@ Partial Class frmReporteDevolucionesProveedorFecha
     Friend WithEvents lblInicio As System.Windows.Forms.Label
     Friend WithEvents dtpFin As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpInicio As System.Windows.Forms.DateTimePicker
-    Friend WithEvents devolucionesProveedorFecha1 As GestionTextiles.devolucionesProveedorFecha
+
 End Class
