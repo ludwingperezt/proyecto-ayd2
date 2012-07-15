@@ -138,4 +138,13 @@ Public Class frmModuloCompras
         Next
         Me.dgvListaCompras.DataSource = ldtTabla
     End Sub
+
+    Private Sub btnAnularCompra_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnularCompra.Click
+        If IsNothing(gnpComprasSeleccionado) Then
+            MessageBox.Show("Debe seleccionar una factura de la lista para poder eliminarla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            frmEliminarFacturaProveedor.ShowDialog(Me)
+            fnvdRecargar()
+        End If
+    End Sub
 End Class

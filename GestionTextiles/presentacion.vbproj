@@ -101,6 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Compras\frmEliminarFacturaProveedor.Designer.vb">
+      <DependentUpon>frmEliminarFacturaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmEliminarFacturaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\devolucionesProveedorFecha.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -394,6 +400,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Compras\frmEliminarFacturaProveedor.resx">
+      <DependentUpon>frmEliminarFacturaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\devolucionesProveedorFecha.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>devolucionesProveedorFecha.vb</LastGenOutput>
