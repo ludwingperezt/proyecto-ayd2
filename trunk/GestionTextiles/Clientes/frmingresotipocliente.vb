@@ -63,6 +63,7 @@ Public Class frmingresotipocliente
                 lnpNuevoTipoCliente.fnsInsertarTipoCliente()
                 MessageBox.Show("La operación de insersión de cliente se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 frmingresoclientes.fnvdRecargar()
+                frmtipocliente.fnvdRecargar()
                 Me.Dispose()
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
