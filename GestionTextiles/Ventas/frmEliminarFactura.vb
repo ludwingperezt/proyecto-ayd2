@@ -185,8 +185,8 @@ Public Class frmEliminarFactura
             If MessageBox.Show("¿Está seguro de querer eliminar la presente factura de la base de datos? Esta operación no se puede deshacer", "Precaución", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim nota As String = InputBox("Razón de la eliminación:", "Razón", "Error en la factura")
                 If nota <> "" Then
-                    'factura.fnvEliminarFacturaDeBaseDatos(frmPrincipal.gnegEmpleado.getIdEmpleado(), nota)
-                    factura.fnvEliminarFacturaDeBaseDatos(4, nota)
+                    factura.fnvEliminarFacturaDeBaseDatos(frmPrincipal.gnegEmpleado.getIdEmpleado(), nota)
+                    'factura.fnvEliminarFacturaDeBaseDatos(4, nota)
                     MessageBox.Show("La factura se eliminó correctamente", "Eliminación de factura", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Me.Dispose()
                 End If
