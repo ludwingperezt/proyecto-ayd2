@@ -160,10 +160,35 @@ namespace negocios
                      return ex.Message;
                  }
              }
-             /// <summary>
-             /// Función que lista a los clientes
-             /// </summary>
-             /// <returns>DataTable: lista de los clientes de la base de datos.</returns>
+             public static DataTable fnDbDevolverVeinteClientes()
+             {
+                 return negociosAdaptadores.gAdaptadorBuscarVeinteClientes.GetData();
+             }
+             public static List<negociosCliente> fnsVeinteClientes()
+             {
+                 List<negociosCliente> lnpCliente = new List<negociosCliente>();
+                 try
+                 {
+                     DataTable ldtClientes = negocios.negociosCliente.fnDbDevolverVeinteClientes();
+                     object[] oListaElmentos;
+                     for (int i = 0; i < ldtClientes.Rows.Count; i++)
+                     {
+                         oListaElmentos = ldtClientes.Rows[i].ItemArray;
+                         negociosCliente npNuevoCliente = new negociosCliente();
+                         npNuevoCliente.setIdCliente(Convert.ToByte(oListaElmentos[0]));
+                         npNuevoCliente.setIdTipoCliente(Convert.ToByte(oListaElmentos[1]));
+                         npNuevoCliente.setNitCliente(Convert.ToString(oListaElmentos[2]));
+                         npNuevoCliente.setNombreCliente(Convert.ToString(oListaElmentos[3]));
+                         npNuevoCliente.setDireccionCliente(Convert.ToString(oListaElmentos[4]));
+                         lnpCliente.Add(npNuevoCliente);
+                     }
+                     return lnpCliente;
+                 }
+                 catch (Exception e)
+                 {
+                     return null;
+                 }
+             }
              public static DataTable fnDbListarClientes()
              {
                  return negociosAdaptadores.gAdaptadorListarClientes.GetData();
