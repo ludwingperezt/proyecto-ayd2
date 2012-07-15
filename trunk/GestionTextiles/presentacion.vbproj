@@ -190,6 +190,12 @@
     <Compile Include="Empleados\frmEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ventas\frmCuadroEdicion.Designer.vb">
+      <DependentUpon>frmCuadroEdicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frmCuadroEdicion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventas\frmFacturar.Designer.vb">
       <DependentUpon>frmFacturar.vb</DependentUpon>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frmCuadroEdicion.resx">
+      <DependentUpon>frmCuadroEdicion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frmFacturar.resx">
       <DependentUpon>frmFacturar.vb</DependentUpon>

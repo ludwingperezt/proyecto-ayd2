@@ -302,6 +302,49 @@ namespace negocios
             
         }
         /// <summary>
+        /// Función para quitar un producto de la factura. La cantidad solicitada del producto se devuelve a la bodega.
+        /// </summary>
+        /// <param name="liIndexDetalleProducto">int: indice del producto dentro de la lista de detalles</param>
+        public void fnvQuitarProducto(int liIndexDetalleProducto)
+        {
+            negociosDetalleFacturaCliente ndfcTemporal = this.glstListaDetalleFactura[liIndexDetalleProducto];
+            this.gdecTotal = this.gdecTotal - (ndfcTemporal.getPrecio() * Convert.ToDecimal(ndfcTemporal.getCantidad()));
+            this.gdecSubTotal = this.gdecTotal - Convert.ToDecimal(this.gduDescuento);
+            glstListaDetalleFactura.Remove(ndfcTemporal);
+            negociosProducto.fnvdAumentarExistenciaProducto(ndfcTemporal.getIdProducto(), ndfcTemporal.getCantidad());             
+        }
+        /// <summary>
+        /// Función que cambia la cantidad de un producto dentro de una factura
+        /// </summary>
+        /// <param name="liIndexDetalleProducto">int: indice del producto dentro de la lista de detalles</param>
+        /// <param name="nuevaCantidad">double: la nueva cantidad</param>
+        public void fnvCambiarCantidadProducto(int liIndexDetalleProducto, double nuevaCantidad)
+        {
+            negociosDetalleFacturaCliente ndfcTemporal = this.glstListaDetalleFactura[liIndexDetalleProducto];
+            double cantidadActual = ndfcTemporal.getCantidad();
+
+            //devolver
+            this.gdecTotal = this.gdecTotal - ndfcTemporal.getMonto();
+            this.gdecSubTotal = this.gdecTotal - Convert.ToDecimal(this.gduDescuento);
+            negociosProducto.fnvdAumentarExistenciaProducto(ndfcTemporal.getIdProducto(), ndfcTemporal.getCantidad());
+            
+            //cambiar la cantidad
+            ndfcTemporal.fnvCambiarCantidad(nuevaCantidad);
+
+            //descargar la nueva cantidad
+            if (negociosProducto.fnboVerificarCantidadExistenteProducto(ndfcTemporal.getIdProducto(), nuevaCantidad))
+            {
+                negociosProducto.fnvdDisminuirExistenciaProducto(ndfcTemporal.getIdProducto(), nuevaCantidad);
+            }
+            else
+            {
+                this.glstListaDetalleFactura.Remove(ndfcTemporal);
+                throw new Exception("La cantidad no puede ser cambiada porque no existe suficiente producto en bodega. Se ha devuelto todo el producto a bodega.");
+            }
+            this.gdecTotal = this.gdecTotal + ndfcTemporal.getMonto();
+            this.gdecSubTotal = this.gdecTotal + Convert.ToDecimal(this.gduDescuento);
+        }
+        /// <summary>
         /// Función para cancelar la operación de facturación. Devuelve todas las cantidades de todos los productos a la bodega.
         /// </summary>
         /// <returns>string: mensaje de confirmación de la operación o de error en caso de fallo</returns>

@@ -6,6 +6,8 @@ Public Class frmFacturar
     Private clienteActual As negociosCliente = Nothing
     Private factura As negociosFacturaCliente = New negociosFacturaCliente()
     Private nitC As String
+    Private indexRow As Integer = -1
+    Private indexColumn As Integer = -1
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         factura.fnsCancelarFactura()
         Me.Dispose()
@@ -282,6 +284,7 @@ Public Class frmFacturar
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Dispose()
         End Try
         
     End Sub
@@ -352,6 +355,8 @@ Public Class frmFacturar
     Private Sub fnvdLlenarDataGridView(ByRef lst As List(Of negociosDetalleFacturaCliente))
         Me.txtTela.Text = ""
         Me.txtCantidad.Text = ""
+        Me.indexRow = -1
+        Me.indexColumn = -1
         frmFacturar.productoSeleccionado = Nothing
         Dim ldtTabla As DataTable = New DataTable()
         ldtTabla.Columns.Add("Código")
@@ -359,7 +364,6 @@ Public Class frmFacturar
         ldtTabla.Columns.Add("Cantidad")
         ldtTabla.Columns.Add("Precio")
         ldtTabla.Columns.Add("Monto")
-
         For i = 0 To lst.Count - 1 Step 1
             Dim ldrFila As DataRow = ldtTabla.NewRow()
             Dim objLocal As negociosDetalleFacturaCliente = lst(i)
@@ -370,6 +374,45 @@ Public Class frmFacturar
             ldrFila(4) = objLocal.getMonto()
             ldtTabla.Rows.Add(ldrFila)
         Next
+        'quitando la ordenacion de columnas
+        For Each i As DataGridViewColumn In Me.dgvdetallefactura.Columns
+            i.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        Me.lbltotal.Text = Convert.ToString(Me.factura.getTotal())
+        Me.lbldescuentofac.Text = Convert.ToString(Me.factura.getSubTotal())
         Me.dgvdetallefactura.DataSource = ldtTabla
+    End Sub
+
+    Private Sub dgvdetallefactura_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvdetallefactura.CellClick
+        Me.indexColumn = e.ColumnIndex
+        Me.indexRow = e.RowIndex
+    End Sub
+
+    Private Sub btnEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+        If indexColumn = -1 Or indexRow = -1 Then
+            MessageBox.Show("Debe seleccionar un producto de la lista para poder eliminarlo de la factura", "Producto no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            Me.factura.fnvQuitarProducto(Me.indexRow)
+            Me.fnvdLlenarDataGridView(Me.factura.getDetalleFactura())
+            Me.lbltotal.Text = Convert.ToString(Me.factura.getTotal())
+            Me.lbldescuentofac.Text = Convert.ToString(Me.factura.getSubTotal())
+        End If
+    End Sub
+
+    Private Sub btnEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEditar.Click
+        If indexColumn = -1 Or indexRow = -1 Then
+            MessageBox.Show("Debe seleccionar un producto de la lista para poder modificar la cantidad comprada", "Producto no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            Dim ncantidad As Double = frmCuadroEdicion.fnDuObtenerNuevaCantidad(Me)
+            frmCuadroEdicion.Dispose()
+            If ncantidad <> 0 Then
+                Try
+                    Me.factura.fnvCambiarCantidadProducto(indexRow, ncantidad)
+                    Me.fnvdLlenarDataGridView(Me.factura.getDetalleFactura())
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End If
     End Sub
 End Class

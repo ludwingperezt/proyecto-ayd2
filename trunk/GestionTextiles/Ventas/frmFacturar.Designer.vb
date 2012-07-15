@@ -22,8 +22,8 @@ Partial Class frmFacturar
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Lblnombre = New System.Windows.Forms.Label()
         Me.lblnit = New System.Windows.Forms.Label()
         Me.lbldireccion = New System.Windows.Forms.Label()
@@ -60,6 +60,8 @@ Partial Class frmFacturar
         Me.txtSerie = New System.Windows.Forms.TextBox()
         Me.txtDescuento = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         CType(Me.dgvdetallefactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gpProducto.SuspendLayout()
         Me.stsBarra.SuspendLayout()
@@ -131,23 +133,23 @@ Partial Class frmFacturar
         '
         Me.dgvdetallefactura.AllowUserToAddRows = False
         Me.dgvdetallefactura.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvdetallefactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvdetallefactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvdetallefactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvdetallefactura.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvdetallefactura.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvdetallefactura.Location = New System.Drawing.Point(22, 390)
         Me.dgvdetallefactura.Name = "dgvdetallefactura"
         Me.dgvdetallefactura.Size = New System.Drawing.Size(925, 178)
@@ -273,13 +275,13 @@ Partial Class frmFacturar
         '
         Me.slblDescripcion.AutoToolTip = True
         Me.slblDescripcion.Name = "slblDescripcion"
-        Me.slblDescripcion.Size = New System.Drawing.Size(61, 17)
+        Me.slblDescripcion.Size = New System.Drawing.Size(69, 17)
         Me.slblDescripcion.Text = "Descripción"
         '
         'slblFecha
         '
         Me.slblFecha.Name = "slblFecha"
-        Me.slblFecha.Size = New System.Drawing.Size(81, 17)
+        Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
         'lbltotal
@@ -406,6 +408,24 @@ Partial Class frmFacturar
         Me.Label1.TabIndex = 68
         Me.Label1.Text = "Subtotal"
         '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(22, 575)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(114, 23)
+        Me.btnEliminar.TabIndex = 69
+        Me.btnEliminar.Text = "Eliminar de la cesta"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnEditar
+        '
+        Me.btnEditar.Location = New System.Drawing.Point(157, 574)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(172, 23)
+        Me.btnEditar.TabIndex = 70
+        Me.btnEditar.Text = "Cambiar cantidad de producto"
+        Me.btnEditar.UseVisualStyleBackColor = True
+        '
         'frmFacturar
         '
         Me.AcceptButton = Me.btnAceptar
@@ -413,6 +433,8 @@ Partial Class frmFacturar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(964, 748)
+        Me.Controls.Add(Me.btnEditar)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtDescuento)
         Me.Controls.Add(Me.txtSerie)
@@ -492,4 +514,6 @@ Partial Class frmFacturar
     Friend WithEvents txtSerie As System.Windows.Forms.TextBox
     Friend WithEvents txtDescuento As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnEliminar As System.Windows.Forms.Button
+    Friend WithEvents btnEditar As System.Windows.Forms.Button
 End Class
