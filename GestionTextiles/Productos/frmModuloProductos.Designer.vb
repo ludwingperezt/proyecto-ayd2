@@ -23,7 +23,6 @@ Partial Class frmModuloProductos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmModuloProductos))
-        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
@@ -43,22 +42,11 @@ Partial Class frmModuloProductos
         Me.btnEliminarProducto = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnIngresarProducto = New System.Windows.Forms.Button()
+        Me.lblTitulo = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaProductos.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'lblTitulo
-        '
-        Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblTitulo.Location = New System.Drawing.Point(195, 10)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(248, 31)
-        Me.lblTitulo.TabIndex = 57
-        Me.lblTitulo.Text = "Módulo Productos"
-        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'stsBarra
         '
@@ -256,12 +244,24 @@ Partial Class frmModuloProductos
         Me.btnIngresarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnIngresarProducto.UseVisualStyleBackColor = False
         '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblTitulo.Location = New System.Drawing.Point(208, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(227, 29)
+        Me.lblTitulo.TabIndex = 70
+        Me.lblTitulo.Text = "Modulo Productos"
+        '
         'frmModuloProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSalir
         Me.ClientSize = New System.Drawing.Size(617, 647)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.chNombre)
         Me.Controls.Add(Me.chCodigo)
         Me.Controls.Add(Me.lblCriterioBusqueda)
@@ -271,7 +271,6 @@ Partial Class frmModuloProductos
         Me.Controls.Add(Me.btnEliminarProducto)
         Me.Controls.Add(Me.btnModificarProducto)
         Me.Controls.Add(Me.btnIngresarProducto)
-        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.txtbusqueda)
@@ -291,7 +290,6 @@ Partial Class frmModuloProductos
     Friend WithEvents btnEliminarProducto As System.Windows.Forms.Button
     Friend WithEvents btnModificarProducto As System.Windows.Forms.Button
     Friend WithEvents btnIngresarProducto As System.Windows.Forms.Button
-    Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
@@ -303,9 +301,10 @@ Partial Class frmModuloProductos
     Friend WithEvents btnSeleccionarProducto As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents gbListaProductos As System.Windows.Forms.GroupBox
-    Friend WithEvents btnSiguiente As System.Windows.Forms.Button
-    Friend WithEvents btnAnterior As System.Windows.Forms.Button
     Friend WithEvents lblCriterioBusqueda As System.Windows.Forms.Label
     Friend WithEvents chCodigo As System.Windows.Forms.CheckBox
     Friend WithEvents chNombre As System.Windows.Forms.CheckBox
+    Friend WithEvents btnSiguiente As System.Windows.Forms.Button
+    Friend WithEvents btnAnterior As System.Windows.Forms.Button
+    Friend WithEvents lblTitulo As System.Windows.Forms.Label
 End Class
