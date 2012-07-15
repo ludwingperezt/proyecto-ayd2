@@ -88,10 +88,10 @@ Partial Class frmPrincipal
         Me.BtnGestionTalonarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGestionTalonarios.Image = CType(resources.GetObject("BtnGestionTalonarios.Image"), System.Drawing.Image)
         Me.BtnGestionTalonarios.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnGestionTalonarios.Location = New System.Drawing.Point(337, 231)
+        Me.BtnGestionTalonarios.Location = New System.Drawing.Point(331, 231)
         Me.BtnGestionTalonarios.Name = "BtnGestionTalonarios"
-        Me.BtnGestionTalonarios.Size = New System.Drawing.Size(125, 148)
-        Me.BtnGestionTalonarios.TabIndex = 8
+        Me.BtnGestionTalonarios.Size = New System.Drawing.Size(138, 148)
+        Me.BtnGestionTalonarios.TabIndex = 7
         Me.BtnGestionTalonarios.Text = "Gestión de Talonario"
         Me.BtnGestionTalonarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnGestionTalonarios.UseVisualStyleBackColor = False
@@ -104,7 +104,7 @@ Partial Class frmPrincipal
         Me.BtnRoles.Location = New System.Drawing.Point(184, 231)
         Me.BtnRoles.Name = "BtnRoles"
         Me.BtnRoles.Size = New System.Drawing.Size(138, 148)
-        Me.BtnRoles.TabIndex = 7
+        Me.BtnRoles.TabIndex = 6
         Me.BtnRoles.Text = "Módulo de Roles"
         Me.BtnRoles.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnRoles.UseVisualStyleBackColor = False
@@ -118,7 +118,7 @@ Partial Class frmPrincipal
         Me.btnReportes.Location = New System.Drawing.Point(480, 231)
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(132, 148)
-        Me.btnReportes.TabIndex = 9
+        Me.btnReportes.TabIndex = 8
         Me.btnReportes.Text = "Módulo de Reportes"
         Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnReportes.UseVisualStyleBackColor = False
@@ -128,10 +128,10 @@ Partial Class frmPrincipal
         Me.BtnLogin.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BtnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLogin.Image = CType(resources.GetObject("BtnLogin.Image"), System.Drawing.Image)
-        Me.BtnLogin.Location = New System.Drawing.Point(36, 64)
+        Me.BtnLogin.Location = New System.Drawing.Point(633, 231)
         Me.BtnLogin.Name = "BtnLogin"
         Me.BtnLogin.Size = New System.Drawing.Size(126, 148)
-        Me.BtnLogin.TabIndex = 0
+        Me.BtnLogin.TabIndex = 9
         Me.BtnLogin.Text = "Cerrar Sesión"
         Me.BtnLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnLogin.UseVisualStyleBackColor = False
@@ -139,6 +139,7 @@ Partial Class frmPrincipal
         'BtnSalir
         '
         Me.BtnSalir.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.BtnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -147,7 +148,6 @@ Partial Class frmPrincipal
         Me.BtnSalir.Size = New System.Drawing.Size(128, 34)
         Me.BtnSalir.TabIndex = 10
         Me.BtnSalir.Text = "&Salir"
-        Me.BtnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnSalir.UseVisualStyleBackColor = False
         '
         'BtnEmpleados
@@ -157,8 +157,8 @@ Partial Class frmPrincipal
         Me.BtnEmpleados.Image = CType(resources.GetObject("BtnEmpleados.Image"), System.Drawing.Image)
         Me.BtnEmpleados.Location = New System.Drawing.Point(36, 231)
         Me.BtnEmpleados.Name = "BtnEmpleados"
-        Me.BtnEmpleados.Size = New System.Drawing.Size(126, 148)
-        Me.BtnEmpleados.TabIndex = 6
+        Me.BtnEmpleados.Size = New System.Drawing.Size(138, 148)
+        Me.BtnEmpleados.TabIndex = 5
         Me.BtnEmpleados.Text = "Modulo Empleados"
         Me.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnEmpleados.UseVisualStyleBackColor = False
@@ -168,10 +168,10 @@ Partial Class frmPrincipal
         Me.BtnClientes.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BtnClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClientes.Image = CType(resources.GetObject("BtnClientes.Image"), System.Drawing.Image)
-        Me.BtnClientes.Location = New System.Drawing.Point(480, 64)
+        Me.BtnClientes.Location = New System.Drawing.Point(331, 64)
         Me.BtnClientes.Name = "BtnClientes"
-        Me.BtnClientes.Size = New System.Drawing.Size(132, 148)
-        Me.BtnClientes.TabIndex = 3
+        Me.BtnClientes.Size = New System.Drawing.Size(138, 148)
+        Me.BtnClientes.TabIndex = 2
         Me.BtnClientes.Text = "Modulo Clientes"
         Me.BtnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnClientes.UseVisualStyleBackColor = False
@@ -181,10 +181,10 @@ Partial Class frmPrincipal
         Me.BtnCompras.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BtnCompras.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCompras.Image = CType(resources.GetObject("BtnCompras.Image"), System.Drawing.Image)
-        Me.BtnCompras.Location = New System.Drawing.Point(337, 64)
+        Me.BtnCompras.Location = New System.Drawing.Point(480, 64)
         Me.BtnCompras.Name = "BtnCompras"
-        Me.BtnCompras.Size = New System.Drawing.Size(125, 148)
-        Me.BtnCompras.TabIndex = 2
+        Me.BtnCompras.Size = New System.Drawing.Size(132, 148)
+        Me.BtnCompras.TabIndex = 3
         Me.BtnCompras.Text = "Modulo Compras"
         Me.BtnCompras.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnCompras.UseVisualStyleBackColor = False
@@ -208,10 +208,10 @@ Partial Class frmPrincipal
         Me.BtnVentas.BackColor = System.Drawing.SystemColors.HighlightText
         Me.BtnVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnVentas.Image = CType(resources.GetObject("BtnVentas.Image"), System.Drawing.Image)
-        Me.BtnVentas.Location = New System.Drawing.Point(184, 64)
+        Me.BtnVentas.Location = New System.Drawing.Point(36, 64)
         Me.BtnVentas.Name = "BtnVentas"
         Me.BtnVentas.Size = New System.Drawing.Size(138, 148)
-        Me.BtnVentas.TabIndex = 1
+        Me.BtnVentas.TabIndex = 0
         Me.BtnVentas.Text = "Módulo de Ventas"
         Me.BtnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnVentas.UseVisualStyleBackColor = False
@@ -221,10 +221,10 @@ Partial Class frmPrincipal
         Me.btnProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProductos.Image = CType(resources.GetObject("btnProductos.Image"), System.Drawing.Image)
-        Me.btnProductos.Location = New System.Drawing.Point(633, 231)
+        Me.btnProductos.Location = New System.Drawing.Point(184, 64)
         Me.btnProductos.Name = "btnProductos"
-        Me.btnProductos.Size = New System.Drawing.Size(125, 148)
-        Me.btnProductos.TabIndex = 5
+        Me.btnProductos.Size = New System.Drawing.Size(138, 148)
+        Me.btnProductos.TabIndex = 1
         Me.btnProductos.Text = "Productos"
         Me.btnProductos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnProductos.UseVisualStyleBackColor = False
@@ -245,6 +245,7 @@ Partial Class frmPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.CancelButton = Me.BtnSalir
         Me.ClientSize = New System.Drawing.Size(789, 470)
         Me.Controls.Add(Me.lblEmpleado)
         Me.Controls.Add(Me.btnProductos)
