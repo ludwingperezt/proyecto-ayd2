@@ -58,5 +58,6 @@ namespace negocios
 
         public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerClienteYTipoClienteTableAdapter gAdaptadorClienteTipoCliente = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerClienteYTipoClienteTableAdapter();
         public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerNombreApellidoEmpleadoTableAdapter gAdaptadorNombreApellidosEmpleado = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerNombreApellidoEmpleadoTableAdapter();
+        public static datos.ConexionFuncionesEspecialesTableAdapters.obtenerEmpleadoValidoTableAdapter gAdaptadorGetEmpleadoValidoLogin = new datos.ConexionFuncionesEspecialesTableAdapters.obtenerEmpleadoValidoTableAdapter();
     }
 }
