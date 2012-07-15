@@ -198,7 +198,7 @@ Partial Class frmModuloEmpleados
         'cmbFiltroCriterio
         '
         Me.cmbFiltroCriterio.FormattingEnabled = True
-        Me.cmbFiltroCriterio.Items.AddRange(New Object() {"Nombre", "Apellido", "Usuario", "Cedula / DPI", "Telefono", "Celular", "Puesto", "Rol"})
+        Me.cmbFiltroCriterio.Items.AddRange(New Object() {"Nombre", "Apellido", "Usuario", "Cedula / DPI"})
         Me.cmbFiltroCriterio.Location = New System.Drawing.Point(107, 83)
         Me.cmbFiltroCriterio.Name = "cmbFiltroCriterio"
         Me.cmbFiltroCriterio.Size = New System.Drawing.Size(121, 21)
