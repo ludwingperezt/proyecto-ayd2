@@ -29,7 +29,7 @@ Partial Class frmReporteDevolucionesProveedorNit
         Me.lblNitCLiente = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
-
+        Me.devolucionesProveedorFechaNitFinal1 = New GestionTextiles.devolucionesProveedorFechaNitFinal()
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,7 +43,7 @@ Partial Class frmReporteDevolucionesProveedorNit
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(12, 144)
         Me.crvReporte.Name = "crvReporte"
-
+        Me.crvReporte.ReportSource = Me.devolucionesProveedorFechaNitFinal1
         Me.crvReporte.Size = New System.Drawing.Size(1024, 649)
         Me.crvReporte.TabIndex = 23
         '
@@ -132,5 +132,6 @@ Partial Class frmReporteDevolucionesProveedorNit
     Friend WithEvents lblNitCLiente As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
+    Friend WithEvents devolucionesProveedorFechaNitFinal1 As GestionTextiles.devolucionesProveedorFechaNitFinal
 
 End Class
