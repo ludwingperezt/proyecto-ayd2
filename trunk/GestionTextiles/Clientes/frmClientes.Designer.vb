@@ -35,10 +35,10 @@ Partial Class frmClientes
         Me.btnmodificarclientes = New System.Windows.Forms.Button()
         Me.btningresarcliente = New System.Windows.Forms.Button()
         Me.gpListadoClientes = New System.Windows.Forms.GroupBox()
+        Me.dgvclientes = New System.Windows.Forms.DataGridView()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.lblParametro = New System.Windows.Forms.Label()
         Me.cmbCliente = New System.Windows.Forms.ComboBox()
-        Me.dgvclientes = New System.Windows.Forms.DataGridView()
         Me.stsBarra.SuspendLayout()
         Me.gpListadoClientes.SuspendLayout()
         CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,6 +164,14 @@ Partial Class frmClientes
         Me.gpListadoClientes.TabStop = False
         Me.gpListadoClientes.Text = "Listado Clientes"
         '
+        'dgvclientes
+        '
+        Me.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvclientes.Location = New System.Drawing.Point(9, 55)
+        Me.dgvclientes.Name = "dgvclientes"
+        Me.dgvclientes.Size = New System.Drawing.Size(541, 150)
+        Me.dgvclientes.TabIndex = 3
+        '
         'btnActualizar
         '
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -188,19 +196,11 @@ Partial Class frmClientes
         'cmbCliente
         '
         Me.cmbCliente.FormattingEnabled = True
-        Me.cmbCliente.Items.AddRange(New Object() {"Tipo Cliente", "Nombre", "Apellido", "Dirección", "Nit"})
+        Me.cmbCliente.Items.AddRange(New Object() {"Tipo Cliente", "Nombre", "Apellido", "Nit"})
         Me.cmbCliente.Location = New System.Drawing.Point(151, 84)
         Me.cmbCliente.Name = "cmbCliente"
         Me.cmbCliente.Size = New System.Drawing.Size(127, 21)
         Me.cmbCliente.TabIndex = 62
-        '
-        'dgvclientes
-        '
-        Me.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvclientes.Location = New System.Drawing.Point(9, 55)
-        Me.dgvclientes.Name = "dgvclientes"
-        Me.dgvclientes.Size = New System.Drawing.Size(541, 150)
-        Me.dgvclientes.TabIndex = 3
         '
         'frmClientes
         '
