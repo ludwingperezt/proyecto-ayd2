@@ -96,6 +96,7 @@ Public Class frmModificarCliente
 
             'modificacion del cliente 
             Dim lnpNuevoCliente As negociosCliente = New negociosCliente()
+            lnpNuevoCliente.setIdCliente(frmClientes.gnpClienteSeleccionado.getIdCliente())
             lnpNuevoCliente.setNombreCliente(txtnombre.Text)
             lnpNuevoCliente.setNitCliente(txtnit.Text)
             lnpNuevoCliente.setDireccionCliente(txtdireccion.Text)
