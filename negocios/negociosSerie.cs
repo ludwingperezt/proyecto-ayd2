@@ -340,6 +340,15 @@ namespace negocios
         {
             return null;
         }
+
+        /// <summary>
+        /// Función usada para setear en el registro de windo
+        /// </summary>
+        /// <param name="idMaquina"></param>
+        public static void setIDTerminal(int idMaquina)
+        {
+            
+        }
         #endregion
     }
 }
