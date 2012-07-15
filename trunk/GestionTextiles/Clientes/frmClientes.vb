@@ -122,6 +122,13 @@ Public Class frmClientes
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    Private Sub dgvclientes_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvclientes.CellClick
+        If banderaBusqueda Then
+            frmClientes.gnpClienteSeleccionado = glstClientesFiltrada(e.RowIndex)
+        Else
+            frmClientes.gnpClienteSeleccionado = glstClientes(e.RowIndex)
+        End If
+    End Sub
     Private Sub fnvdRecargar()
         Try
             dgvclientes.DataSource = ""
