@@ -1,6 +1,11 @@
 ﻿Imports negocios
 Public Class frmClientes
     Dim lnpNuevoCliente As negociosCliente = New negociosCliente()
+
+    Private glstClientes As List(Of negociosCliente) = New List(Of negociosCliente)
+    Private glstClientesFiltrada As List(Of negociosCliente) = New List(Of negociosCliente)
+    Public Shared gnpClienteSeleccionado As negociosCliente
+    Private banderaBusqueda As Boolean = False
     Private Sub txtbusqueda_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -9,7 +14,7 @@ Public Class frmClientes
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub DataGridView1_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvclientes.MouseLeave
+    Private Sub DataGridView1_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -37,7 +42,7 @@ Public Class frmClientes
         slblDescripcion.Text = "Debe  precionar el boton 'buscar' para inciar la busqueda "
     End Sub
 
-    Private Sub DataGridView1_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvclientes.MouseHover
+    Private Sub DataGridView1_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Listado de clientes actuales"
     End Sub
 
@@ -98,7 +103,7 @@ Public Class frmClientes
         slblDescripcion.Text = "Actualiza el  listado de los Cliente en sistema"
     End Sub
 
-    Private Sub dgvclientes_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvclientes.CellContentClick
+    Private Sub dgvclientes_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
 
     End Sub
 
@@ -108,5 +113,44 @@ Public Class frmClientes
 
     Private Sub cmbCliente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbCliente.MouseHover
         slblDescripcion.Text = "Seleccióne el parametro por el que desea buscar"
+    End Sub
+
+    Private Sub frmClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Try
+            fnvdRecargar()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub fnvdRecargar()
+        Try
+            dgvclientes.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstClientesFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstClientes = negociosCliente.fnsVeinteClientes()
+            Me.fnvCrearDataTable(Me.glstClientes)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvclientes.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosCliente))
+        Dim ldtTabla As DataTable = New DataTable()
+        Dim ldrFila As DataRow
+        Dim lnpClientes As negociosCliente
+        ldtTabla.Columns.Add("Nit")
+        ldtTabla.Columns.Add("Nombre")
+        ldtTabla.Columns.Add("Direccion")
+
+        For i = 0 To lista.Count - 1 Step 1
+            ldrFila = ldtTabla.NewRow()
+            lnpClientes = lista(i)
+            ldrFila(0) = lnpClientes.getNitCliente()
+            ldrFila(1) = lnpClientes.getNombreCliente()
+            ldrFila(2) = lnpClientes.getDireccionCliente()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        Me.dgvclientes.DataSource = ldtTabla
     End Sub
 End Class

@@ -24,12 +24,6 @@ Partial Class frmClientes
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClientes))
         Me.lblTitulo = New System.Windows.Forms.Label()
-        Me.dgvclientes = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblbusqueda = New System.Windows.Forms.Label()
         Me.txtbusqueda = New System.Windows.Forms.TextBox()
         Me.btnbuscar = New System.Windows.Forms.Button()
@@ -41,12 +35,13 @@ Partial Class frmClientes
         Me.btnmodificarclientes = New System.Windows.Forms.Button()
         Me.btningresarcliente = New System.Windows.Forms.Button()
         Me.gpListadoClientes = New System.Windows.Forms.GroupBox()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.lblParametro = New System.Windows.Forms.Label()
         Me.cmbCliente = New System.Windows.Forms.ComboBox()
-        Me.btnActualizar = New System.Windows.Forms.Button()
-        CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgvclientes = New System.Windows.Forms.DataGridView()
         Me.stsBarra.SuspendLayout()
         Me.gpListadoClientes.SuspendLayout()
+        CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -60,42 +55,6 @@ Partial Class frmClientes
         Me.lblTitulo.TabIndex = 29
         Me.lblTitulo.Text = "Módulo Clientes"
         Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'dgvclientes
-        '
-        Me.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvclientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        Me.dgvclientes.Location = New System.Drawing.Point(3, 50)
-        Me.dgvclientes.Name = "dgvclientes"
-        Me.dgvclientes.Size = New System.Drawing.Size(544, 145)
-        Me.dgvclientes.TabIndex = 3
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Tipo Cliente"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Nombre"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Apellido"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.FillWeight = 75.0!
-        Me.Column4.HeaderText = "Dirección"
-        Me.Column4.Name = "Column4"
-        '
-        'Column5
-        '
-        Me.Column5.FillWeight = 50.0!
-        Me.Column5.HeaderText = "Nit"
-        Me.Column5.Name = "Column5"
         '
         'lblbusqueda
         '
@@ -196,14 +155,26 @@ Partial Class frmClientes
         '
         'gpListadoClientes
         '
-        Me.gpListadoClientes.Controls.Add(Me.btnActualizar)
         Me.gpListadoClientes.Controls.Add(Me.dgvclientes)
+        Me.gpListadoClientes.Controls.Add(Me.btnActualizar)
         Me.gpListadoClientes.Location = New System.Drawing.Point(12, 174)
         Me.gpListadoClientes.Name = "gpListadoClientes"
         Me.gpListadoClientes.Size = New System.Drawing.Size(562, 215)
         Me.gpListadoClientes.TabIndex = 60
         Me.gpListadoClientes.TabStop = False
         Me.gpListadoClientes.Text = "Listado Clientes"
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnActualizar.Location = New System.Drawing.Point(467, 19)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(80, 23)
+        Me.btnActualizar.TabIndex = 2
+        Me.btnActualizar.Text = "Regresar"
+        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'lblParametro
         '
@@ -223,17 +194,13 @@ Partial Class frmClientes
         Me.cmbCliente.Size = New System.Drawing.Size(127, 21)
         Me.cmbCliente.TabIndex = 62
         '
-        'btnActualizar
+        'dgvclientes
         '
-        Me.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnActualizar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
-        Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnActualizar.Location = New System.Drawing.Point(467, 19)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(80, 23)
-        Me.btnActualizar.TabIndex = 2
-        Me.btnActualizar.Text = "Regresar"
-        Me.btnActualizar.UseVisualStyleBackColor = False
+        Me.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvclientes.Location = New System.Drawing.Point(9, 55)
+        Me.dgvclientes.Name = "dgvclientes"
+        Me.dgvclientes.Size = New System.Drawing.Size(541, 150)
+        Me.dgvclientes.TabIndex = 3
         '
         'frmClientes
         '
@@ -257,22 +224,16 @@ Partial Class frmClientes
         Me.Name = "frmClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Módulo Clientes"
-        CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
         Me.gpListadoClientes.ResumeLayout(False)
+        CType(Me.dgvclientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents btningresarcliente As System.Windows.Forms.Button
-    Friend WithEvents dgvclientes As System.Windows.Forms.DataGridView
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnmodificarclientes As System.Windows.Forms.Button
     Friend WithEvents btneliminarcliente As System.Windows.Forms.Button
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
@@ -286,4 +247,5 @@ Partial Class frmClientes
     Friend WithEvents lblParametro As System.Windows.Forms.Label
     Friend WithEvents cmbCliente As System.Windows.Forms.ComboBox
     Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents dgvclientes As System.Windows.Forms.DataGridView
 End Class
