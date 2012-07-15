@@ -159,66 +159,69 @@ Public Class frmPrincipal
         slblDescripcion.Text = "Módulo para gestionar los productos"
     End Sub
 
-    Private Sub frmPrincipal_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        gnegPermisos = negociosRol.fnObtenerRolPorId(2)
-        lblEmpleado.Text = "Bienvenido: " + gnegEmpleado.getUsuarioEmpleado() + " - " + gnegPermisos.getNombre
-        ' Esto queda para el final, xq sino no podremos realizar pruebas
+    Private Sub frmPrincipal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Try
+            gnegPermisos = negociosRol.fnObtenerRolPorId(2)
+            lblEmpleado.Text = "Bienvenido: " + gnegEmpleado.getUsuarioEmpleado() + " - " + gnegPermisos.getNombre
+            ' Esto queda para el final, xq sino no podremos realizar pruebas
 
-        If gnegPermisos.getPermisoAccesoModuloCliente() Then
-            BtnClientes.Enabled = True
-        Else
-            BtnClientes.Enabled = False
-        End If
+            If gnegPermisos.getPermisoAccesoModuloCliente() Then
+                BtnClientes.Enabled = True
+            Else
+                BtnClientes.Enabled = False
+            End If
 
-        If gnegPermisos.getPermisoAccesoModuloCompras() Then
-            BtnCompras.Enabled = True
-        Else
-            BtnCompras.Enabled = False
-        End If
+            If gnegPermisos.getPermisoAccesoModuloCompras() Then
+                BtnCompras.Enabled = True
+            Else
+                BtnCompras.Enabled = False
+            End If
 
-        If gnegPermisos.getPermisoAccesoModuloEmpleados() Then
-            BtnEmpleados.Enabled = True
-        Else
-            BtnEmpleados.Enabled = False
-        End If
+            If gnegPermisos.getPermisoAccesoModuloEmpleados() Then
+                BtnEmpleados.Enabled = True
+            Else
+                BtnEmpleados.Enabled = False
+            End If
 
-        If gnegPermisos.getPermisoAccesoModuloVentas() Then
-            BtnVentas.Enabled = True
-        Else
-            BtnVentas.Enabled = False
-        End If
+            If gnegPermisos.getPermisoAccesoModuloVentas() Then
+                BtnVentas.Enabled = True
+            Else
+                BtnVentas.Enabled = False
+            End If
 
-        If gnegPermisos.getPermisoAccesoModuloProductos() Then
-            btnProductos.Enabled = True
-        Else
-            btnProductos.Enabled = False
-        End If
+            If gnegPermisos.getPermisoAccesoModuloProductos() Then
+                btnProductos.Enabled = True
+            Else
+                btnProductos.Enabled = False
+            End If
 
-        If gnegPermisos.getPermisoAccesoModuloProveedores() Then
-            BtnProveedores.Enabled = True
-        Else
-            BtnProveedores.Enabled = False
+            If gnegPermisos.getPermisoAccesoModuloProveedores() Then
+                BtnProveedores.Enabled = True
+            Else
+                BtnProveedores.Enabled = False
 
-        End If
+            End If
 
-        If gnegPermisos.getPermisoAccesoModuloReportes() Then
-            btnReportes.Enabled = True
-        Else
-            btnReportes.Enabled = False
-        End If
+            If gnegPermisos.getPermisoAccesoModuloReportes() Then
+                btnReportes.Enabled = True
+            Else
+                btnReportes.Enabled = False
+            End If
 
-        If gnegPermisos.getPermisoAccesoModuloRol() Then
-            BtnRoles.Enabled = True
-        Else
-            BtnRoles.Enabled = False
-        End If
+            If gnegPermisos.getPermisoAccesoModuloRol() Then
+                BtnRoles.Enabled = True
+            Else
+                BtnRoles.Enabled = False
+            End If
 
-        If gnegPermisos.getPermisoAccesoModuloTalonario() Then
-            BtnGestionTalonarios.Enabled = True
-        Else
-            BtnGestionTalonarios.Enabled = False
-        End If
-
-
+            If gnegPermisos.getPermisoAccesoModuloTalonario() Then
+                BtnGestionTalonarios.Enabled = True
+            Else
+                BtnGestionTalonarios.Enabled = False
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Dispose()
+        End Try
     End Sub
 End Class
