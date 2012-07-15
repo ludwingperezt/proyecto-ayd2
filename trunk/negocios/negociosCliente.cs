@@ -38,7 +38,6 @@ namespace negocios
              /// <summary>
              /// Método que accede al nit del cliente
              /// </summary>
-             /// <returns>string: el nit del cliente</returns>
              public string getNitCliente()
              {
                  return this.nit;
@@ -169,7 +168,7 @@ namespace negocios
              {
                  try
                  {
-                     negociosAdaptadores.gAdaptadorDeConsultas.ModificarCliente(this.idTipoCliente, this.nombre, this.direccion, this.nit);
+                     negociosAdaptadores.gAdaptadorDeConsultas.ModificarCliente(getIdCliente(),getIdTipoCliente(),getNombreCliente(),getDireccionCliente(),getNitCliente());
                      return "La modificación de los datos del cliente se llevó a cabo con éxito";
                  }
                  catch (Exception ex)
@@ -217,7 +216,6 @@ namespace negocios
              public static DataTable fnDbBuscarClienteNombre(string nombreCliente)
              {
                  return negociosAdaptadores.gAdaptadorClienteNombre.GetData(nombreCliente);
-
              }
              /// <summary>
              /// Función que busca a un cliente por nit
