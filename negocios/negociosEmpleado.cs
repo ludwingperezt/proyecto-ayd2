@@ -434,7 +434,41 @@ namespace negocios
             }
         }
 
-
+        public static DataTable fnDbBuscarEmpleadoCedulaDpi(string sDpiCeluda)
+        {
+            return negociosAdaptadores.gAdaptadorBuscarEmpleadoCedulaDpi.GetData(sDpiCeluda);
+        }
+        public static List<negociosEmpleado> fnsBuscarEmpleadoCedulaDpi(string sDpiCedula)
+        {
+            List<negociosEmpleado> lnpEmpleados = new List<negociosEmpleado>();
+            try
+            {
+                DataTable ldtEmpleados = negociosEmpleado.fnDbBuscarEmpleadoCedulaDpi(sDpiCedula);
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtEmpleados.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtEmpleados.Rows[i].ItemArray;
+                    negociosEmpleado npNuevoEmpleado = new negociosEmpleado();
+                    npNuevoEmpleado.setIdEmpleado(Convert.ToByte(oListaElmentos[0]));
+                    npNuevoEmpleado.setIdRolEmpleado(Convert.ToByte(oListaElmentos[1]));
+                    npNuevoEmpleado.setNombreEmpleado(Convert.ToString(oListaElmentos[2]));
+                    npNuevoEmpleado.setApellidoEmpleado(Convert.ToString(oListaElmentos[3]));
+                    npNuevoEmpleado.setDireccionEmpleado(Convert.ToString(oListaElmentos[4]));
+                    npNuevoEmpleado.setTelefonoEmpleado(Convert.ToString(oListaElmentos[5]));
+                    npNuevoEmpleado.setCelularEmpleado(Convert.ToString(oListaElmentos[6]));
+                    npNuevoEmpleado.setPuestoEmpleado(Convert.ToString(oListaElmentos[7]));
+                    npNuevoEmpleado.setFechaContratacionEmpleado(Convert.ToDateTime(oListaElmentos[8]));
+                    npNuevoEmpleado.setSalarioEmpleado(Convert.ToDecimal(oListaElmentos[9]));
+                    npNuevoEmpleado.setUsuarioEmpleado(Convert.ToString(oListaElmentos[10]));
+                    lnpEmpleados.Add(npNuevoEmpleado);
+                }
+                return lnpEmpleados;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
         public static DataTable buscarEmpleadoUsuario(string sUsuario)
         {
             return negociosAdaptadores.gAdaptadorBuscarEmpleadoUsuario.GetData(sUsuario);
