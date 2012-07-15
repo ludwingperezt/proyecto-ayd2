@@ -390,5 +390,82 @@ namespace negocios
             }            
         }
         #endregion
+
+        #region funciones para eliminar facturas de productos
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dtLocal"></param>
+        /// <returns></returns>
+        protected static List<negociosFacturaCliente> obtnerListaVisibleFactura(DataTable dtLocal)
+        {
+            List<negociosFacturaCliente> lst = new List<negociosFacturaCliente>();
+            object[] objInstancia;
+            for (int i = 0; i < dtLocal.Rows.Count; i++)
+            {
+                objInstancia = dtLocal.Rows[i].ItemArray;
+                negociosFacturaCliente temporal = new negociosFacturaCliente();
+                temporal.giIdFactura = (Convert.ToInt32(objInstancia[0]));
+                temporal.giIdCliente = (Convert.ToInt32(objInstancia[1]));
+                temporal.gbyIdEmpleado = (Convert.ToByte(objInstancia[2]));
+                temporal.gsSerie = (Convert.ToString(objInstancia[3]));
+                temporal.giNumero = (Convert.ToInt32(objInstancia[4]));
+                temporal.gdtFecha = (Convert.ToDateTime(objInstancia[5]));
+                temporal.gduDescuento = (Convert.ToDouble(objInstancia[6]));
+                temporal.gdecSubTotal = (Convert.ToDecimal(objInstancia[7]));
+                temporal.gdecTotal = (Convert.ToDecimal(objInstancia[8]));
+                lst.Add(temporal);
+            }
+            return lst;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sizePage"></param>
+        /// <param name="pageNum"></param>
+        /// <returns></returns>
+        public static List<negociosFacturaCliente> fnlstListarFacturas(int sizePage, int pageNum)
+        {
+            //IDFACTURACLIENTE,IDCLIENTE,IDEMPLEADO,SERIE,NUMERO,FECHA,DESCUENTO,SUBTOTAL,TOTAL
+            //IDFACTURACLIENTE,IDCLIENTE,IDEMPLEADO,SERIE,NUMERO,FECHA,DESCUENTO,SUBTOTAL,TOTAL,ROW_NUMBER()
+            return negociosFacturaCliente.obtnerListaVisibleFactura(negociosAdaptadores.gPaginacionFacturasClientes.GetData(sizePage, pageNum));
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="serie"></param>
+        /// <param name="numero"></param>
+        /// <returns></returns>
+        public static List<negociosFacturaCliente> fnlstBuscarFacturaSerieNumero(string serie, int numero)
+        {
+            return negociosFacturaCliente.obtnerListaVisibleFactura(negociosAdaptadores.gBuscarFacturaSerieNumero.GetData(serie, numero));
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idFactura"></param>
+        /// <returns></returns>
+        public static List<negociosDetalleFacturaCliente> fnlstObtenerDetalleFacturaCliente(int idFactura)
+        {
+            return negociosDetalleFacturaCliente.fnlstObtenerListaDetallesFactura(idFactura);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idEmpleado"></param>
+        /// <param name="nota"></param>
+        public void fnvInsertarFacturaEliminada(byte idEmpleado,string nota)
+        {
+            negociosAdaptadores.gAdaptadorGeneral.insertarFacturaEliminada(this.giIdFactura, idEmpleado, nota);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void fnvDevolverProductosFacturaEliminada()
+        {
+            negociosAdaptadores.gAdaptadorGeneral.devolverProductosDetallesFacturaEliminada(this.giIdFactura);
+        }
+
+        #endregion
     }
 }

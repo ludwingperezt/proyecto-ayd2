@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace negocios
 {
@@ -135,6 +136,14 @@ namespace negocios
         {
             negociosAdaptadores.gAdaptadorDeConsultas.insertarDetalleFacturaCliente(this.giIdEncabezadoFacturaCliente, this.gshIdProducto, gdecPrecio, this.gduCantidad);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idProducto"></param>
+        /// <param name="precio"></param>
+        /// <param name="cantidad"></param>
+        /// <param name="nombre"></param>
+        /// <param name="codigo"></param>
         public void fnvSetDatosDetalle(int idProducto, decimal precio, double cantidad, string nombre, string codigo)
         {
             this.gshIdProducto = (short)idProducto;
@@ -144,21 +153,42 @@ namespace negocios
             this.lsCodigoProducto = codigo;
             this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cantidad"></param>
         public void fnvAumentarCantidad(double cantidad)
         {
             this.gduCantidad += cantidad;
             this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cantidad"></param>
         public void fnvDisminuirCantidad(double cantidad)
         {
             this.gduCantidad -= cantidad;
             this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cantidad"></param>
         public void fnvCambiarCantidad(double cantidad)
         {
             this.gduCantidad = cantidad;
             this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idProducto"></param>
+        /// <param name="precio"></param>
+        /// <param name="cantidad"></param>
+        /// <param name="nombre"></param>
+        /// <param name="codigo"></param>
+        /// <returns></returns>
         public decimal fndecSetDatosDetalle(int idProducto, decimal precio, double cantidad, string nombre, string codigo)
         {
             this.gshIdProducto = (short)idProducto;
@@ -169,6 +199,57 @@ namespace negocios
             this.gdecMonto = this.gdecPrecio * Convert.ToDecimal(this.gduCantidad);
             return this.gdecMonto;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idFactura"></param>
+        /// <returns></returns>
+        public static List<negociosDetalleFacturaCliente> fnlstObtenerListaDetallesFactura(int idFactura)
+        {
+            //IDDETALLEFACTURACLIENTE,IDPRODUCTO,PRECIO,CANTIDAD
+            DataTable dtLocal = negociosAdaptadores.gBuscarDetalleFactura.GetData(idFactura);
+            List<negociosDetalleFacturaCliente> lst = new List<negociosDetalleFacturaCliente>();
+            object[] objInstancia;
+            for (int i = 0; i < dtLocal.Rows.Count; i++)
+            {
+                objInstancia = dtLocal.Rows[i].ItemArray;
+                negociosDetalleFacturaCliente temporal = new negociosDetalleFacturaCliente();
+                temporal.giIdEncabezadoFacturaCliente = idFactura;
+                temporal.giIdDetalleFacturaCliente = (Convert.ToInt32(objInstancia[0]));
+                temporal.gshIdProducto = (short)(Convert.ToInt32(objInstancia[1]));
+                temporal.gdecPrecio = (Convert.ToDecimal(objInstancia[2]));
+                temporal.gduCantidad = (Convert.ToDouble(objInstancia[3]));
+                lst.Add(temporal);
+            }
+            return lst;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dtLocal"></param>
+        /// <returns></returns>
+        protected static List<negociosDetalleFacturaCliente> fnlstObtenerListaVisible(DataTable dtLocal)
+        {
+            //id,factura, IDDETALLEFACTURACLIENTE,IDPRODUCTO,PRECIO,CANTIDAD
+            List<negociosDetalleFacturaCliente> lst = new List<negociosDetalleFacturaCliente>();
+            object[] objInstancia;
+            for (int i = 0; i < dtLocal.Rows.Count; i++)
+            {
+                objInstancia = dtLocal.Rows[i].ItemArray;
+                negociosDetalleFacturaCliente temporal = new negociosDetalleFacturaCliente();
+                temporal.giIdEncabezadoFacturaCliente = (Convert.ToInt32(objInstancia[0]));
+                temporal.giIdDetalleFacturaCliente = (Convert.ToInt32(objInstancia[1]));
+                temporal.gshIdProducto = (short)(Convert.ToInt32(objInstancia[2]));
+                temporal.gdecPrecio = (Convert.ToDecimal(objInstancia[3]));
+                temporal.gduCantidad = (Convert.ToDouble(objInstancia[4]));
+                lst.Add(temporal);
+            }
+            return lst;
+        }
+
         #endregion
+
+
+
     }
 }
