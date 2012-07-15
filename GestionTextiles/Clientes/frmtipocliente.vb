@@ -84,6 +84,16 @@ Public Class frmtipocliente
     End Sub
 
     Private Sub btnmodificartipocliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmodificartipocliente.Click
+        If IsNothing(frmtipocliente.gnpTipoClienteSeleccionado) Then
+            MessageBox.Show("Debe seleccionar un tipo de Cliente de la lista para poder modificar sus datos", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Else
+            frmModificarTipoCliente.actualizar = True
+            frmModificarTipoCliente.ShowDialog(Me)
+            Me.fnvdRecargar()
+            txtbusqueda.Text = ""
+        End If
+
+
         frmModificarTipoCliente.Show()
     End Sub
 
@@ -128,6 +138,13 @@ Public Class frmtipocliente
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+    Private Sub dgvtiposcliente_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvtiposcliente.CellClick
+        If banderaBusqueda Then
+            frmtipocliente.gnpTipoClienteSeleccionado = glstTipoClienteFiltrada(e.RowIndex)
+        Else
+            frmtipocliente.gnpTipoClienteSeleccionado = glstTipoCliente(e.RowIndex)
+        End If
     End Sub
     Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosTipoCliente))
         Dim ldtTabla As DataTable = New DataTable()
