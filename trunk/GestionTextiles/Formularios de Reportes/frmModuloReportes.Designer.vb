@@ -49,7 +49,6 @@ Partial Class frmModuloReportes
         Me.btnDevolucionesProveedorNit = New System.Windows.Forms.Button()
         Me.btnReporteDevolucionesProveedor = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.btnFactura = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.gpAdministrador.SuspendLayout()
         Me.gpCompras.SuspendLayout()
@@ -94,13 +93,12 @@ Partial Class frmModuloReportes
         'gpAdministrador
         '
         Me.gpAdministrador.Controls.Add(Me.btnFacturasEliminadasNit)
-        Me.gpAdministrador.Controls.Add(Me.btnFactura)
         Me.gpAdministrador.Controls.Add(Me.btnFacturasEliminadasFecha)
         Me.gpAdministrador.Controls.Add(Me.btnReporteFacturasasEliminadas)
         Me.gpAdministrador.Controls.Add(Me.btnCorte)
         Me.gpAdministrador.Location = New System.Drawing.Point(30, 66)
         Me.gpAdministrador.Name = "gpAdministrador"
-        Me.gpAdministrador.Size = New System.Drawing.Size(764, 123)
+        Me.gpAdministrador.Size = New System.Drawing.Size(764, 104)
         Me.gpAdministrador.TabIndex = 11
         Me.gpAdministrador.TabStop = False
         Me.gpAdministrador.Text = "Ventas"
@@ -158,7 +156,7 @@ Partial Class frmModuloReportes
         Me.gpCompras.Controls.Add(Me.Button6)
         Me.gpCompras.Controls.Add(Me.Button4)
         Me.gpCompras.Controls.Add(Me.Button5)
-        Me.gpCompras.Location = New System.Drawing.Point(30, 215)
+        Me.gpCompras.Location = New System.Drawing.Point(30, 187)
         Me.gpCompras.Name = "gpCompras"
         Me.gpCompras.Size = New System.Drawing.Size(764, 88)
         Me.gpCompras.TabIndex = 12
@@ -206,7 +204,7 @@ Partial Class frmModuloReportes
         Me.gpEmpleados.Controls.Add(Me.Button1)
         Me.gpEmpleados.Controls.Add(Me.Button2)
         Me.gpEmpleados.Controls.Add(Me.Button3)
-        Me.gpEmpleados.Location = New System.Drawing.Point(30, 329)
+        Me.gpEmpleados.Location = New System.Drawing.Point(30, 301)
         Me.gpEmpleados.Name = "gpEmpleados"
         Me.gpEmpleados.Size = New System.Drawing.Size(764, 86)
         Me.gpEmpleados.TabIndex = 13
@@ -254,7 +252,7 @@ Partial Class frmModuloReportes
         Me.gpClientes.Controls.Add(Me.Button7)
         Me.gpClientes.Controls.Add(Me.Button8)
         Me.gpClientes.Controls.Add(Me.Button9)
-        Me.gpClientes.Location = New System.Drawing.Point(30, 437)
+        Me.gpClientes.Location = New System.Drawing.Point(30, 415)
         Me.gpClientes.Name = "gpClientes"
         Me.gpClientes.Size = New System.Drawing.Size(764, 84)
         Me.gpClientes.TabIndex = 14
@@ -302,7 +300,7 @@ Partial Class frmModuloReportes
         Me.gpProveedores.Controls.Add(Me.btnDevolucionesProveedorFecha)
         Me.gpProveedores.Controls.Add(Me.btnDevolucionesProveedorNit)
         Me.gpProveedores.Controls.Add(Me.btnReporteDevolucionesProveedor)
-        Me.gpProveedores.Location = New System.Drawing.Point(30, 547)
+        Me.gpProveedores.Location = New System.Drawing.Point(30, 525)
         Me.gpProveedores.Name = "gpProveedores"
         Me.gpProveedores.Size = New System.Drawing.Size(764, 87)
         Me.gpProveedores.TabIndex = 15
@@ -351,24 +349,12 @@ Partial Class frmModuloReportes
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnSalir.Location = New System.Drawing.Point(539, 651)
+        Me.btnSalir.Location = New System.Drawing.Point(539, 629)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(214, 36)
         Me.btnSalir.TabIndex = 8
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'btnFactura
-        '
-        Me.btnFactura.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnFactura.Image = CType(resources.GetObject("btnFactura.Image"), System.Drawing.Image)
-        Me.btnFactura.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnFactura.Location = New System.Drawing.Point(58, 79)
-        Me.btnFactura.Name = "btnFactura"
-        Me.btnFactura.Size = New System.Drawing.Size(310, 24)
-        Me.btnFactura.TabIndex = 2
-        Me.btnFactura.Text = "Factura"
-        Me.btnFactura.UseVisualStyleBackColor = False
         '
         'frmModuloReportes
         '
@@ -426,5 +412,4 @@ Partial Class frmModuloReportes
     Friend WithEvents btnDevolucionesProveedorNit As System.Windows.Forms.Button
     Friend WithEvents btnFacturasEliminadasNit As System.Windows.Forms.Button
     Friend WithEvents btnFacturasEliminadasFecha As System.Windows.Forms.Button
-    Friend WithEvents btnFactura As System.Windows.Forms.Button
 End Class
