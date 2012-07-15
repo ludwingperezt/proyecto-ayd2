@@ -447,9 +447,10 @@ Public Class frmFacturar
 
     Private Sub txtDescuento_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtDescuento.TextChanged
         If Decimal.Parse(txtDescuento.Text) = 0 Then
-            lbltotal.Text = factura.fndecCalcularSubTotal
+            factura.setDescuento(0)
+            lbltotal.Text = factura.fndecCalcularTotal()
         Else
-            lbltotal.Text = (Decimal.Parse(lblSubTotal.Text) - Decimal.Parse(lblDescuento.Text))
+            lbltotal.Text = (Decimal.Parse(lblSubTotal.Text) - Decimal.Parse(txtDescuento.Text))
         End If
     End Sub
 End Class
