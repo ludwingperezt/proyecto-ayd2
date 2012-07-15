@@ -454,18 +454,26 @@ namespace negocios
         /// </summary>
         /// <param name="idEmpleado"></param>
         /// <param name="nota"></param>
-        public void fnvInsertarFacturaEliminada(byte idEmpleado,string nota)
+        protected void fnvInsertarFacturaEliminada(byte idEmpleado,string nota)
         {
             negociosAdaptadores.gAdaptadorGeneral.insertarFacturaEliminada(this.giIdFactura, idEmpleado, nota);
         }
         /// <summary>
         /// 
         /// </summary>
-        public void fnvDevolverProductosFacturaEliminada()
+        protected void fnvDevolverProductosFacturaEliminada()
         {
             negociosAdaptadores.gAdaptadorGeneral.devolverProductosDetallesFacturaEliminada(this.giIdFactura);
         }
-
+        public void fnvCargarListaDetalles()
+        {
+            this.glstListaDetalleFactura = negociosDetalleFacturaCliente.fnlstObtenerListaDetallesFactura(this.giIdFactura);
+        }
+        public void fnvEliminarFacturaDeBaseDatos(byte idEmpleado, string nota)
+        {
+            this.fnvInsertarFacturaEliminada(idEmpleado, nota);
+            this.fnvDevolverProductosFacturaEliminada();
+        }
         #endregion
     }
 }

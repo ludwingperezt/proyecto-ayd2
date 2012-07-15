@@ -22,19 +22,15 @@ Partial Class frmEliminarFactura
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtDescuento = New System.Windows.Forms.TextBox()
+        Me.lblSubtotal = New System.Windows.Forms.Label()
         Me.txtSerie = New System.Windows.Forms.TextBox()
-        Me.cmbtipocliente = New System.Windows.Forms.ComboBox()
         Me.lbltipocliente = New System.Windows.Forms.Label()
         Me.lblEmpleado = New System.Windows.Forms.Label()
-        Me.lbldescuentofac = New System.Windows.Forms.Label()
-        Me.lbltotal = New System.Windows.Forms.Label()
         Me.stsBarra = New System.Windows.Forms.StatusStrip()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
@@ -49,7 +45,16 @@ Partial Class frmEliminarFactura
         Me.lblnit = New System.Windows.Forms.Label()
         Me.Lblnombre = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtNumero = New System.Windows.Forms.TextBox()
+        Me.txtTipoCliente = New System.Windows.Forms.TextBox()
+        Me.lblEmpl = New System.Windows.Forms.Label()
+        Me.lblFecha = New System.Windows.Forms.Label()
+        Me.txtEmpleado = New System.Windows.Forms.TextBox()
+        Me.txtFecha = New System.Windows.Forms.TextBox()
+        Me.txtDescuento = New System.Windows.Forms.TextBox()
+        Me.txtSubTotal = New System.Windows.Forms.TextBox()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.lblDetalle = New System.Windows.Forms.Label()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvdetallefactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,40 +83,23 @@ Partial Class frmEliminarFactura
         Me.slblFecha.Size = New System.Drawing.Size(90, 17)
         Me.slblFecha.Text = "FECHA Y HORA"
         '
-        'Label1
+        'lblSubtotal
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(757, 479)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(46, 13)
-        Me.Label1.TabIndex = 101
-        Me.Label1.Text = "Subtotal"
-        '
-        'txtDescuento
-        '
-        Me.txtDescuento.Location = New System.Drawing.Point(833, 456)
-        Me.txtDescuento.Name = "txtDescuento"
-        Me.txtDescuento.Size = New System.Drawing.Size(100, 20)
-        Me.txtDescuento.TabIndex = 87
-        Me.txtDescuento.Text = "0.00"
+        Me.lblSubtotal.AutoSize = True
+        Me.lblSubtotal.ForeColor = System.Drawing.Color.Navy
+        Me.lblSubtotal.Location = New System.Drawing.Point(127, 264)
+        Me.lblSubtotal.Name = "lblSubtotal"
+        Me.lblSubtotal.Size = New System.Drawing.Size(49, 13)
+        Me.lblSubtotal.TabIndex = 101
+        Me.lblSubtotal.Text = "Subtotal:"
         '
         'txtSerie
         '
-        Me.txtSerie.Enabled = False
         Me.txtSerie.Location = New System.Drawing.Point(97, 51)
         Me.txtSerie.Name = "txtSerie"
+        Me.txtSerie.ReadOnly = True
         Me.txtSerie.Size = New System.Drawing.Size(100, 20)
         Me.txtSerie.TabIndex = 72
-        '
-        'cmbtipocliente
-        '
-        Me.cmbtipocliente.Enabled = False
-        Me.cmbtipocliente.FormattingEnabled = True
-        Me.cmbtipocliente.ItemHeight = 13
-        Me.cmbtipocliente.Location = New System.Drawing.Point(98, 172)
-        Me.cmbtipocliente.Name = "cmbtipocliente"
-        Me.cmbtipocliente.Size = New System.Drawing.Size(121, 21)
-        Me.cmbtipocliente.TabIndex = 79
         '
         'lbltipocliente
         '
@@ -126,29 +114,11 @@ Partial Class frmEliminarFactura
         'lblEmpleado
         '
         Me.lblEmpleado.AutoSize = True
-        Me.lblEmpleado.Location = New System.Drawing.Point(700, 46)
+        Me.lblEmpleado.Location = New System.Drawing.Point(732, 27)
         Me.lblEmpleado.Name = "lblEmpleado"
         Me.lblEmpleado.Size = New System.Drawing.Size(66, 13)
         Me.lblEmpleado.TabIndex = 96
         Me.lblEmpleado.Text = "EMPLEADO"
-        '
-        'lbldescuentofac
-        '
-        Me.lbldescuentofac.AutoSize = True
-        Me.lbldescuentofac.Location = New System.Drawing.Point(851, 479)
-        Me.lbldescuentofac.Name = "lbldescuentofac"
-        Me.lbldescuentofac.Size = New System.Drawing.Size(28, 13)
-        Me.lbldescuentofac.TabIndex = 95
-        Me.lbldescuentofac.Text = "0.00"
-        '
-        'lbltotal
-        '
-        Me.lbltotal.AutoSize = True
-        Me.lbltotal.Location = New System.Drawing.Point(851, 502)
-        Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(28, 13)
-        Me.lbltotal.TabIndex = 94
-        Me.lbltotal.Text = "0.00"
         '
         'stsBarra
         '
@@ -183,7 +153,8 @@ Partial Class frmEliminarFactura
         'lblDescuento
         '
         Me.lblDescuento.AutoSize = True
-        Me.lblDescuento.Location = New System.Drawing.Point(757, 456)
+        Me.lblDescuento.ForeColor = System.Drawing.Color.Navy
+        Me.lblDescuento.Location = New System.Drawing.Point(114, 242)
         Me.lblDescuento.Name = "lblDescuento"
         Me.lblDescuento.Size = New System.Drawing.Size(62, 13)
         Me.lblDescuento.TabIndex = 92
@@ -192,7 +163,8 @@ Partial Class frmEliminarFactura
         'lbTotal
         '
         Me.lbTotal.AutoSize = True
-        Me.lbTotal.Location = New System.Drawing.Point(757, 502)
+        Me.lbTotal.ForeColor = System.Drawing.Color.Navy
+        Me.lbTotal.Location = New System.Drawing.Point(142, 290)
         Me.lbTotal.Name = "lbTotal"
         Me.lbTotal.Size = New System.Drawing.Size(34, 13)
         Me.lbTotal.TabIndex = 91
@@ -202,26 +174,26 @@ Partial Class frmEliminarFactura
         '
         Me.dgvdetallefactura.AllowUserToAddRows = False
         Me.dgvdetallefactura.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvdetallefactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvdetallefactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvdetallefactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvdetallefactura.DefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvdetallefactura.Location = New System.Drawing.Point(24, 199)
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvdetallefactura.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvdetallefactura.Location = New System.Drawing.Point(12, 327)
         Me.dgvdetallefactura.Name = "dgvdetallefactura"
-        Me.dgvdetallefactura.Size = New System.Drawing.Size(909, 239)
+        Me.dgvdetallefactura.Size = New System.Drawing.Size(946, 199)
         Me.dgvdetallefactura.TabIndex = 83
         '
         'lblserie
@@ -235,27 +207,27 @@ Partial Class frmEliminarFactura
         '
         'txtdireccion
         '
-        Me.txtdireccion.Enabled = False
         Me.txtdireccion.Location = New System.Drawing.Point(98, 139)
         Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.ReadOnly = True
         Me.txtdireccion.Size = New System.Drawing.Size(851, 20)
         Me.txtdireccion.TabIndex = 78
         '
         'txtnit
         '
-        Me.txtnit.Enabled = False
         Me.txtnit.Location = New System.Drawing.Point(97, 81)
         Me.txtnit.MaxLength = 12
         Me.txtnit.Name = "txtnit"
+        Me.txtnit.ReadOnly = True
         Me.txtnit.Size = New System.Drawing.Size(852, 20)
         Me.txtnit.TabIndex = 74
         Me.txtnit.Text = "CF"
         '
         'txtnombre
         '
-        Me.txtnombre.Enabled = False
         Me.txtnombre.Location = New System.Drawing.Point(97, 111)
         Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.ReadOnly = True
         Me.txtnombre.Size = New System.Drawing.Size(852, 20)
         Me.txtnombre.TabIndex = 77
         '
@@ -298,29 +270,114 @@ Partial Class frmEliminarFactura
         Me.Label2.TabIndex = 103
         Me.Label2.Text = "Número"
         '
-        'TextBox1
+        'txtNumero
         '
-        Me.TextBox1.Location = New System.Drawing.Point(284, 53)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 104
+        Me.txtNumero.Location = New System.Drawing.Point(284, 53)
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.ReadOnly = True
+        Me.txtNumero.Size = New System.Drawing.Size(100, 20)
+        Me.txtNumero.TabIndex = 104
+        '
+        'txtTipoCliente
+        '
+        Me.txtTipoCliente.Location = New System.Drawing.Point(98, 172)
+        Me.txtTipoCliente.Name = "txtTipoCliente"
+        Me.txtTipoCliente.ReadOnly = True
+        Me.txtTipoCliente.Size = New System.Drawing.Size(851, 20)
+        Me.txtTipoCliente.TabIndex = 105
+        '
+        'lblEmpl
+        '
+        Me.lblEmpl.AutoSize = True
+        Me.lblEmpl.ForeColor = System.Drawing.Color.Navy
+        Me.lblEmpl.Location = New System.Drawing.Point(21, 212)
+        Me.lblEmpl.Name = "lblEmpl"
+        Me.lblEmpl.Size = New System.Drawing.Size(155, 13)
+        Me.lblEmpl.TabIndex = 106
+        Me.lblEmpl.Text = "Empleado que emitió la factura:"
+        '
+        'lblFecha
+        '
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.ForeColor = System.Drawing.Color.Navy
+        Me.lblFecha.Location = New System.Drawing.Point(564, 212)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(155, 13)
+        Me.lblFecha.TabIndex = 107
+        Me.lblFecha.Text = "Fecha de emisión de la factura:"
+        '
+        'txtEmpleado
+        '
+        Me.txtEmpleado.Location = New System.Drawing.Point(192, 209)
+        Me.txtEmpleado.Name = "txtEmpleado"
+        Me.txtEmpleado.ReadOnly = True
+        Me.txtEmpleado.Size = New System.Drawing.Size(347, 20)
+        Me.txtEmpleado.TabIndex = 109
+        '
+        'txtFecha
+        '
+        Me.txtFecha.Location = New System.Drawing.Point(735, 212)
+        Me.txtFecha.Name = "txtFecha"
+        Me.txtFecha.ReadOnly = True
+        Me.txtFecha.Size = New System.Drawing.Size(214, 20)
+        Me.txtFecha.TabIndex = 110
+        '
+        'txtDescuento
+        '
+        Me.txtDescuento.Location = New System.Drawing.Point(192, 235)
+        Me.txtDescuento.Name = "txtDescuento"
+        Me.txtDescuento.ReadOnly = True
+        Me.txtDescuento.Size = New System.Drawing.Size(100, 20)
+        Me.txtDescuento.TabIndex = 111
+        '
+        'txtSubTotal
+        '
+        Me.txtSubTotal.Location = New System.Drawing.Point(192, 261)
+        Me.txtSubTotal.Name = "txtSubTotal"
+        Me.txtSubTotal.ReadOnly = True
+        Me.txtSubTotal.Size = New System.Drawing.Size(100, 20)
+        Me.txtSubTotal.TabIndex = 112
+        '
+        'txtTotal
+        '
+        Me.txtTotal.Location = New System.Drawing.Point(192, 287)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.ReadOnly = True
+        Me.txtTotal.Size = New System.Drawing.Size(100, 20)
+        Me.txtTotal.TabIndex = 113
+        '
+        'lblDetalle
+        '
+        Me.lblDetalle.AutoSize = True
+        Me.lblDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDetalle.ForeColor = System.Drawing.Color.Navy
+        Me.lblDetalle.Location = New System.Drawing.Point(15, 311)
+        Me.lblDetalle.Name = "lblDetalle"
+        Me.lblDetalle.Size = New System.Drawing.Size(47, 13)
+        Me.lblDetalle.TabIndex = 114
+        Me.lblDetalle.Text = "Detalle"
         '
         'frmEliminarFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(970, 606)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.lblDetalle)
+        Me.Controls.Add(Me.txtTotal)
+        Me.Controls.Add(Me.txtSubTotal)
+        Me.Controls.Add(Me.txtDescuento)
+        Me.Controls.Add(Me.txtFecha)
+        Me.Controls.Add(Me.txtEmpleado)
+        Me.Controls.Add(Me.lblFecha)
+        Me.Controls.Add(Me.lblEmpl)
+        Me.Controls.Add(Me.txtTipoCliente)
+        Me.Controls.Add(Me.txtNumero)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblTitulo)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtDescuento)
+        Me.Controls.Add(Me.lblSubtotal)
         Me.Controls.Add(Me.txtSerie)
-        Me.Controls.Add(Me.cmbtipocliente)
         Me.Controls.Add(Me.lbltipocliente)
         Me.Controls.Add(Me.lblEmpleado)
-        Me.Controls.Add(Me.lbldescuentofac)
-        Me.Controls.Add(Me.lbltotal)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
@@ -346,14 +403,10 @@ Partial Class frmEliminarFactura
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txtDescuento As System.Windows.Forms.TextBox
+    Friend WithEvents lblSubtotal As System.Windows.Forms.Label
     Friend WithEvents txtSerie As System.Windows.Forms.TextBox
-    Friend WithEvents cmbtipocliente As System.Windows.Forms.ComboBox
     Friend WithEvents lbltipocliente As System.Windows.Forms.Label
     Friend WithEvents lblEmpleado As System.Windows.Forms.Label
-    Friend WithEvents lbldescuentofac As System.Windows.Forms.Label
-    Friend WithEvents lbltotal As System.Windows.Forms.Label
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
@@ -368,5 +421,14 @@ Partial Class frmEliminarFactura
     Friend WithEvents lblnit As System.Windows.Forms.Label
     Friend WithEvents Lblnombre As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtNumero As System.Windows.Forms.TextBox
+    Friend WithEvents txtTipoCliente As System.Windows.Forms.TextBox
+    Friend WithEvents lblEmpl As System.Windows.Forms.Label
+    Friend WithEvents lblFecha As System.Windows.Forms.Label
+    Friend WithEvents txtEmpleado As System.Windows.Forms.TextBox
+    Friend WithEvents txtFecha As System.Windows.Forms.TextBox
+    Friend WithEvents txtDescuento As System.Windows.Forms.TextBox
+    Friend WithEvents txtSubTotal As System.Windows.Forms.TextBox
+    Friend WithEvents txtTotal As System.Windows.Forms.TextBox
+    Friend WithEvents lblDetalle As System.Windows.Forms.Label
 End Class
