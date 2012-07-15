@@ -373,9 +373,7 @@ namespace negocios
         {
             try
             {
-                byte dato;
-                dato = Convert.ToByte(this.habilitado);
-                negociosAdaptadores.gAdaptadorDeConsultas.darBajaEmpleado(dato);
+                negociosAdaptadores.gAdaptadorDeConsultas.darBajaEmpleado((getIdEmpleado()));
                 return "Se dio de baja con éxito al empleado";
             }
             catch (Exception ex)
