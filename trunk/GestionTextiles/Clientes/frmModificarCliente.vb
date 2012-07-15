@@ -1,5 +1,11 @@
-﻿Public Class frmModificarCliente
+﻿Imports negocios
+Public Class frmModificarCliente
     Private bandera As Boolean
+    Private glstTipoCliente As List(Of negociosTipoCliente) = New List(Of negociosTipoCliente)
+    Dim lbooBanderaPunto As Boolean = False
+    Private glstTipoClienteFiltrada As List(Of negociosTipoCliente) = New List(Of negociosTipoCliente)
+    Public Shared gnpTipoClienteSeleccionado As negociosTipoCliente
+    Private banderaBusqueda As Boolean = False
     Private Sub txtnombre_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtnombre.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
@@ -88,7 +94,18 @@
         If bandera <> False Then
 
             'modificacion del cliente 
-
+            Dim lnpNuevoCliente As negociosCliente = New negociosCliente()
+            lnpNuevoCliente.setNombreCliente(txtnombre.Text)
+            lnpNuevoCliente.setNitCliente(txtnit.Text)
+            lnpNuevoCliente.setDireccionCliente(txtdireccion.Text)
+            lnpNuevoCliente.setIdTipoCliente(cmbtipocliente.SelectedValue)
+            Try
+                lnpNuevoCliente.fnsModificarCliente()
+                MessageBox.Show("La operación de modificacion de cliente se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Dispose()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End If
     End Sub
 
@@ -132,5 +149,42 @@
             e.KeyChar = vbNullChar
 
         End If
+    End Sub
+
+    Private Sub frmModificarCliente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        fnvdRecargar()
+    End Sub
+    Public Sub fnvdRecargar()
+        Try
+            frmingresoclientes.gnpTipoClienteSeleccionado = Nothing
+            Me.glstTipoClienteFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstTipoCliente = negociosTipoCliente.fnslListarTipoClientes()
+            Me.fnvCrearDataTable(Me.glstTipoCliente)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub fnvCrearDataTable(ByRef lista As List(Of negociosTipoCliente))
+        Dim ldtTabla As DataTable = New DataTable()
+        Dim ldrFila As DataRow
+        Dim lnpTipoClientes As negociosTipoCliente
+        ldtTabla.Columns.Add("IdTipoCliente")
+        ldtTabla.Columns.Add("Nombre")
+        ldtTabla.Columns.Add("Descripcion")
+        ldtTabla.Columns.Add("Descuento")
+
+        For i = 0 To lista.Count - 1 Step 1
+            ldrFila = ldtTabla.NewRow()
+            lnpTipoClientes = lista(i)
+            ldrFila(0) = lnpTipoClientes.getIdTipoCliente()
+            ldrFila(1) = lnpTipoClientes.getNombreTipoCliente()
+            ldrFila(2) = lnpTipoClientes.getDescripcionTipoCliente()
+            ldrFila(3) = lnpTipoClientes.getDescuentoTipoCliente()
+            ldtTabla.Rows.Add(ldrFila)
+        Next
+        cmbtipocliente.DataSource = ldtTabla
+        cmbtipocliente.DisplayMember = "Nombre"
+        cmbtipocliente.ValueMember = "IdTipoCliente"
     End Sub
 End Class
