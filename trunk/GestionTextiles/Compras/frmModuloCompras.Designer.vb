@@ -38,6 +38,8 @@ Partial Class frmModuloCompras
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbListaCompras = New System.Windows.Forms.GroupBox()
         Me.btnRegresar = New System.Windows.Forms.Button()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaCompras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaCompras.SuspendLayout()
@@ -124,7 +126,7 @@ Partial Class frmModuloCompras
         Me.dgvListaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListaCompras.Location = New System.Drawing.Point(21, 46)
         Me.dgvListaCompras.Name = "dgvListaCompras"
-        Me.dgvListaCompras.Size = New System.Drawing.Size(557, 252)
+        Me.dgvListaCompras.Size = New System.Drawing.Size(557, 232)
         Me.dgvListaCompras.TabIndex = 4
         '
         'cmbFiltro
@@ -167,6 +169,8 @@ Partial Class frmModuloCompras
         '
         'gbListaCompras
         '
+        Me.gbListaCompras.Controls.Add(Me.btnSiguiente)
+        Me.gbListaCompras.Controls.Add(Me.btnAnterior)
         Me.gbListaCompras.Controls.Add(Me.btnRegresar)
         Me.gbListaCompras.Controls.Add(Me.dgvListaCompras)
         Me.gbListaCompras.Location = New System.Drawing.Point(13, 145)
@@ -187,6 +191,26 @@ Partial Class frmModuloCompras
         Me.btnRegresar.TabIndex = 5
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSiguiente.Image = Global.GestionTextiles.My.Resources.Resources.bluesharp1
+        Me.btnSiguiente.Location = New System.Drawing.Point(503, 284)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(75, 23)
+        Me.btnSiguiente.TabIndex = 55
+        Me.btnSiguiente.UseVisualStyleBackColor = False
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAnterior.Image = Global.GestionTextiles.My.Resources.Resources.bluesharp2
+        Me.btnAnterior.Location = New System.Drawing.Point(420, 284)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
+        Me.btnAnterior.TabIndex = 54
+        Me.btnAnterior.UseVisualStyleBackColor = False
         '
         'frmModuloCompras
         '
@@ -232,4 +256,6 @@ Partial Class frmModuloCompras
     Friend WithEvents btnbuscar As System.Windows.Forms.Button
     Friend WithEvents gbListaCompras As System.Windows.Forms.GroupBox
     Friend WithEvents btnRegresar As System.Windows.Forms.Button
+    Friend WithEvents btnSiguiente As System.Windows.Forms.Button
+    Friend WithEvents btnAnterior As System.Windows.Forms.Button
 End Class
