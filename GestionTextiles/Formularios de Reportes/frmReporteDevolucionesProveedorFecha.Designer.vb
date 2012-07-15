@@ -31,6 +31,7 @@ Partial Class frmReporteDevolucionesProveedorFecha
         Me.lblInicio = New System.Windows.Forms.Label()
         Me.dtpFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
+        Me.devolucionesProveedorFecha1 = New GestionTextiles.devolucionesProveedorFecha()
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -44,6 +45,7 @@ Partial Class frmReporteDevolucionesProveedorFecha
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(24, 144)
         Me.crvReporte.Name = "crvReporte"
+        Me.crvReporte.ReportSource = Me.devolucionesProveedorFecha1
         Me.crvReporte.Size = New System.Drawing.Size(835, 445)
         Me.crvReporte.TabIndex = 23
         '
@@ -126,7 +128,7 @@ Partial Class frmReporteDevolucionesProveedorFecha
         Me.dtpInicio.Size = New System.Drawing.Size(197, 20)
         Me.dtpInicio.TabIndex = 0
         '
-        'frmDevolucionesProveedorFecha
+        'frmReporteDevolucionesProveedorFecha
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -134,7 +136,7 @@ Partial Class frmReporteDevolucionesProveedorFecha
         Me.Controls.Add(Me.crvReporte)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.gbParametros1)
-        Me.Name = "frmDevolucionesProveedorFecha"
+        Me.Name = "frmReporteDevolucionesProveedorFecha"
         Me.Text = "Devoluciones Proveedor por Fecha"
         Me.gbParametros1.ResumeLayout(False)
         Me.gbParametros1.PerformLayout()
@@ -151,4 +153,5 @@ Partial Class frmReporteDevolucionesProveedorFecha
     Friend WithEvents lblInicio As System.Windows.Forms.Label
     Friend WithEvents dtpFin As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpInicio As System.Windows.Forms.DateTimePicker
+    Friend WithEvents devolucionesProveedorFecha1 As GestionTextiles.devolucionesProveedorFecha
 End Class

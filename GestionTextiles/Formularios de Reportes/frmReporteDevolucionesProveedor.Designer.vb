@@ -33,6 +33,7 @@ Partial Class frmReporteDevolucionesProveedor
         Me.dtpFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
         Me.crvReporte = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.DevolucionesProveedorFechaNit1 = New GestionTextiles.DevolucionesProveedorFechaNit()
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,7 +60,7 @@ Partial Class frmReporteDevolucionesProveedor
         Me.gbParametros1.Controls.Add(Me.dtpInicio)
         Me.gbParametros1.Location = New System.Drawing.Point(2, 83)
         Me.gbParametros1.Name = "gbParametros1"
-        Me.gbParametros1.Size = New System.Drawing.Size(835, 77)
+        Me.gbParametros1.Size = New System.Drawing.Size(1074, 77)
         Me.gbParametros1.TabIndex = 18
         Me.gbParametros1.TabStop = False
         Me.gbParametros1.Text = "Parámetros"
@@ -85,7 +86,7 @@ Partial Class frmReporteDevolucionesProveedor
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(656, 48)
+        Me.btnCancelar.Location = New System.Drawing.Point(876, 48)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 31
@@ -95,7 +96,7 @@ Partial Class frmReporteDevolucionesProveedor
         'btnAceptar
         '
         Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(754, 48)
+        Me.btnAceptar.Location = New System.Drawing.Point(974, 48)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 30
@@ -144,14 +145,15 @@ Partial Class frmReporteDevolucionesProveedor
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(2, 166)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.Size = New System.Drawing.Size(835, 445)
+        Me.crvReporte.ReportSource = Me.DevolucionesProveedorFechaNit1
+        Me.crvReporte.Size = New System.Drawing.Size(1074, 445)
         Me.crvReporte.TabIndex = 20
         '
         'frmReporteDevolucionesProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(837, 612)
+        Me.ClientSize = New System.Drawing.Size(1076, 612)
         Me.Controls.Add(Me.crvReporte)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.gbParametros1)
@@ -174,4 +176,5 @@ Partial Class frmReporteDevolucionesProveedor
     Friend WithEvents dtpFin As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpInicio As System.Windows.Forms.DateTimePicker
     Friend WithEvents crvReporte As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents DevolucionesProveedorFechaNit1 As GestionTextiles.DevolucionesProveedorFechaNit
 End Class
