@@ -22,6 +22,8 @@ Partial Class frmModificarEmpleado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmModificarEmpleado))
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
@@ -49,9 +51,11 @@ Partial Class frmModificarEmpleado
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.cmbRolEmpleado = New System.Windows.Forms.ComboBox()
         Me.lblRolEmpleado = New System.Windows.Forms.Label()
-        Me.btnComprobar = New System.Windows.Forms.Button()
         Me.txtPuesto = New System.Windows.Forms.TextBox()
+        Me.picbValidacion = New System.Windows.Forms.PictureBox()
+        Me.imglValidacion = New System.Windows.Forms.ImageList(Me.components)
         Me.stsBarra.SuspendLayout()
+        CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -285,22 +289,28 @@ Partial Class frmModificarEmpleado
         Me.lblRolEmpleado.TabIndex = 74
         Me.lblRolEmpleado.Text = "Rol"
         '
-        'btnComprobar
-        '
-        Me.btnComprobar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnComprobar.Location = New System.Drawing.Point(249, 346)
-        Me.btnComprobar.Name = "btnComprobar"
-        Me.btnComprobar.Size = New System.Drawing.Size(75, 23)
-        Me.btnComprobar.TabIndex = 11
-        Me.btnComprobar.Text = "Comprobar"
-        Me.btnComprobar.UseVisualStyleBackColor = False
-        '
         'txtPuesto
         '
         Me.txtPuesto.Location = New System.Drawing.Point(143, 241)
         Me.txtPuesto.Name = "txtPuesto"
         Me.txtPuesto.Size = New System.Drawing.Size(100, 20)
         Me.txtPuesto.TabIndex = 75
+        '
+        'picbValidacion
+        '
+        Me.picbValidacion.Location = New System.Drawing.Point(262, 339)
+        Me.picbValidacion.Name = "picbValidacion"
+        Me.picbValidacion.Size = New System.Drawing.Size(33, 29)
+        Me.picbValidacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picbValidacion.TabIndex = 76
+        Me.picbValidacion.TabStop = False
+        '
+        'imglValidacion
+        '
+        Me.imglValidacion.ImageStream = CType(resources.GetObject("imglValidacion.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.imglValidacion.TransparentColor = System.Drawing.Color.Transparent
+        Me.imglValidacion.Images.SetKeyName(0, "noOK.jpg")
+        Me.imglValidacion.Images.SetKeyName(1, "ok.png")
         '
         'frmModificarEmpleado
         '
@@ -309,8 +319,8 @@ Partial Class frmModificarEmpleado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(509, 448)
+        Me.Controls.Add(Me.picbValidacion)
         Me.Controls.Add(Me.txtPuesto)
-        Me.Controls.Add(Me.btnComprobar)
         Me.Controls.Add(Me.cmbRolEmpleado)
         Me.Controls.Add(Me.lblRolEmpleado)
         Me.Controls.Add(Me.stsBarra)
@@ -342,6 +352,7 @@ Partial Class frmModificarEmpleado
         Me.Text = "Modificar Empleado"
         Me.stsBarra.ResumeLayout(False)
         Me.stsBarra.PerformLayout()
+        CType(Me.picbValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -373,6 +384,7 @@ Partial Class frmModificarEmpleado
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents cmbRolEmpleado As System.Windows.Forms.ComboBox
     Friend WithEvents lblRolEmpleado As System.Windows.Forms.Label
-    Friend WithEvents btnComprobar As System.Windows.Forms.Button
     Friend WithEvents txtPuesto As System.Windows.Forms.TextBox
+    Friend WithEvents picbValidacion As System.Windows.Forms.PictureBox
+    Friend WithEvents imglValidacion As System.Windows.Forms.ImageList
 End Class

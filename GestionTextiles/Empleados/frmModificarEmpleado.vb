@@ -11,7 +11,6 @@ Public Class frmModificarEmpleado
     Public Shared gnpEmpleadoSeleccionado As negociosEmpleado
     Dim cantidad As Integer
 
-
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
         Dim lbooBandera As Boolean = True
 
@@ -242,11 +241,11 @@ Public Class frmModificarEmpleado
         slblDescripcion.Text = "Seleccione un Rol para el Empleado."
     End Sub
 
-    Private Sub btnComprobar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.MouseLeave
+    Private Sub btnComprobar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnComprobar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.MouseHover
+    Private Sub btnComprobar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Comprobar si el Usuario ya Existe."
     End Sub
 
@@ -290,12 +289,29 @@ Public Class frmModificarEmpleado
         
     End Sub
 
-    Private Sub btnComprobar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComprobar.Click
+    Private Sub btnComprobar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim usuarioVerificar As String
         usuarioVerificar = txtUsuario.Text
         fnvdRecargarUsuario()
         If (cantidad > 0) Then
             MessageBox.Show("Ese usuario ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+    End Sub
+
+    Private Sub txtUsuario_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUsuario.Leave
+        Dim usuarioVerificar As String
+        usuarioVerificar = txtUsuario.Text
+        fnvdRecargarUsuario()
+        If (cantidad > 0) Then
+            picbValidacion.Image = imglValidacion.Images(0)
+            txtUsuario.Focus()
+
+        Else
+            picbValidacion.Image = imglValidacion.Images(1)
+        End If
+    End Sub
+
+    Private Sub txtUsuario_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUsuario.TextChanged
+
     End Sub
 End Class
