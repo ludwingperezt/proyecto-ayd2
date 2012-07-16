@@ -1,4 +1,7 @@
 ﻿Public Class frmReporteFacturasEliminadas
+    Private fechaInicial As DateTime
+    Private fechaFinal As DateTime
+    Private nitC As Char
 
     Private Sub txtNit_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNit.KeyPress
         If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
@@ -73,5 +76,21 @@
 
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Dispose()
+    End Sub
+
+    Private Sub frmReporteFacturasEliminadas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        fechaInicial = dtpInicio.Text
+        fechaFinal = dtpFin.Text
+        nitC = txtNit.Text
+        ' Dim rpt As New facturas  ' se instancia un objeto del reporte
+        ' Dim consulta As New dsReportesTableAdapters.cierredecajaTableAdapter ' se instancia el tableAdapter (este es la conexión a la BD)
+        ' Dim ds As New dsReportes ' el dataset se debe llenar, para colocarlo como fuente del reporte
+        ' consulta.Fill(ds.cierredecaja, fechaInicial, fechaFinal) ' se llena la dataTable de proveedores, q en si será la fuente del reporte
+        'rpt.SetDataSource(ds) ' se coloca como fuente del reporte
+        'crvReporte.ReportSource = rpt ' el reporte es fuente del crystal report viewer
     End Sub
 End Class
