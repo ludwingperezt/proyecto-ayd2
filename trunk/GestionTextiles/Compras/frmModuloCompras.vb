@@ -105,7 +105,7 @@ Public Class frmModuloCompras
             btnAnularCompra.Enabled = False
         End If
     End Sub
-    Private Sub fnvdRecargar()
+    Public Sub fnvdRecargar()
         Try
             dgvListaCompras.DataSource = ""
             frmModuloCompras.gnpComprasSeleccionado = Nothing
