@@ -32,7 +32,7 @@ Partial Class frmCompras
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.btnEliminarCesta = New System.Windows.Forms.Button()
         Me.lbEtiquetaTotal = New System.Windows.Forms.Label()
         Me.gpProducto = New System.Windows.Forms.GroupBox()
         Me.txtCosto = New System.Windows.Forms.TextBox()
@@ -61,9 +61,9 @@ Partial Class frmCompras
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 653)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 665)
         Me.stsBarra.Name = "stsBarra"
-        Me.stsBarra.Size = New System.Drawing.Size(625, 22)
+        Me.stsBarra.Size = New System.Drawing.Size(617, 22)
         Me.stsBarra.TabIndex = 40
         Me.stsBarra.Text = "StatusStrip1"
         '
@@ -118,7 +118,7 @@ Partial Class frmCompras
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.ForeColor = System.Drawing.Color.Green
-        Me.lblTotal.Location = New System.Drawing.Point(485, 562)
+        Me.lblTotal.Location = New System.Drawing.Point(507, 589)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(16, 16)
         Me.lblTotal.TabIndex = 56
@@ -140,29 +140,29 @@ Partial Class frmCompras
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(386, 611)
+        Me.btnCancelar.Location = New System.Drawing.Point(391, 630)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 11
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
-        'btnAceptar
+        'btnEliminarCesta
         '
-        Me.btnAceptar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAceptar.Location = New System.Drawing.Point(484, 611)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAceptar.TabIndex = 12
-        Me.btnAceptar.Text = "&Aceptar"
-        Me.btnAceptar.UseVisualStyleBackColor = False
+        Me.btnEliminarCesta.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnEliminarCesta.Location = New System.Drawing.Point(489, 630)
+        Me.btnEliminarCesta.Name = "btnEliminarCesta"
+        Me.btnEliminarCesta.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminarCesta.TabIndex = 12
+        Me.btnEliminarCesta.Text = "&Aceptar"
+        Me.btnEliminarCesta.UseVisualStyleBackColor = False
         '
         'lbEtiquetaTotal
         '
         Me.lbEtiquetaTotal.AutoSize = True
         Me.lbEtiquetaTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbEtiquetaTotal.ForeColor = System.Drawing.Color.Green
-        Me.lbEtiquetaTotal.Location = New System.Drawing.Point(388, 562)
+        Me.lbEtiquetaTotal.Location = New System.Drawing.Point(410, 589)
         Me.lbEtiquetaTotal.Name = "lbEtiquetaTotal"
         Me.lbEtiquetaTotal.Size = New System.Drawing.Size(48, 16)
         Me.lbEtiquetaTotal.TabIndex = 51
@@ -213,9 +213,9 @@ Partial Class frmCompras
         'dgvDetalleFactura
         '
         Me.dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDetalleFactura.Location = New System.Drawing.Point(70, 362)
+        Me.dgvDetalleFactura.Location = New System.Drawing.Point(38, 382)
         Me.dgvDetalleFactura.Name = "dgvDetalleFactura"
-        Me.dgvDetalleFactura.Size = New System.Drawing.Size(489, 187)
+        Me.dgvDetalleFactura.Size = New System.Drawing.Size(521, 187)
         Me.dgvDetalleFactura.TabIndex = 10
         '
         'lblserie
@@ -334,18 +334,20 @@ Partial Class frmCompras
         'btnagregar
         '
         Me.btnagregar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnagregar.Image = Global.GestionTextiles.My.Resources.Resources.cart_add1
         Me.btnagregar.Location = New System.Drawing.Point(453, 309)
         Me.btnagregar.Name = "btnagregar"
-        Me.btnagregar.Size = New System.Drawing.Size(106, 23)
-        Me.btnagregar.TabIndex = 58
+        Me.btnagregar.Size = New System.Drawing.Size(106, 60)
+        Me.btnagregar.TabIndex = 61
         Me.btnagregar.Text = "Agregar a la cesta"
+        Me.btnagregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnagregar.UseVisualStyleBackColor = False
         '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(625, 675)
+        Me.ClientSize = New System.Drawing.Size(617, 687)
         Me.Controls.Add(Me.btnagregar)
         Me.Controls.Add(Me.lblEmpleado)
         Me.Controls.Add(Me.DateTimePicker1)
@@ -354,7 +356,7 @@ Partial Class frmCompras
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.btnAceptar)
+        Me.Controls.Add(Me.btnEliminarCesta)
         Me.Controls.Add(Me.lbEtiquetaTotal)
         Me.Controls.Add(Me.gpProducto)
         Me.Controls.Add(Me.lblCorrelativo)
@@ -392,7 +394,7 @@ Partial Class frmCompras
     Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
-    Friend WithEvents btnAceptar As System.Windows.Forms.Button
+    Friend WithEvents btnEliminarCesta As System.Windows.Forms.Button
     Friend WithEvents lbEtiquetaTotal As System.Windows.Forms.Label
     Friend WithEvents gpProducto As System.Windows.Forms.GroupBox
     Friend WithEvents dgvDetalleFactura As System.Windows.Forms.DataGridView
@@ -410,7 +412,7 @@ Partial Class frmCompras
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblEmpleado As System.Windows.Forms.Label
-    Friend WithEvents btnagregar As System.Windows.Forms.Button
     Friend WithEvents txtCosto As System.Windows.Forms.TextBox
     Friend WithEvents lblCosto As System.Windows.Forms.Label
+    Friend WithEvents btnagregar As System.Windows.Forms.Button
 End Class

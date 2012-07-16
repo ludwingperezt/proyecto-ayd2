@@ -40,11 +40,11 @@ Public Class frmCompras
             MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Private Sub insertarDetalleFactura()
+    Private Sub insertarDetalleFactura(ByVal cantidad, ByVal idProducto, ByVal costo)
         Try
-            DetalleFacturaProveedor.setCantidad(Convert.ToInt32(txtCantidad.Text))
-            DetalleFacturaProveedor.setIdProducto(productoSeleccionado.getIdProducto())
-            DetalleFacturaProveedor.setCosto(Convert.ToDecimal(txtCosto.Text))
+            DetalleFacturaProveedor.setCantidad(cantidad)
+            DetalleFacturaProveedor.setIdProducto(idProducto)
+            DetalleFacturaProveedor.setCosto(costo)
             DetalleFacturaProveedor.setIdFacturaProveedor(EncabezadoFactura.getIdFacturaProveedor())
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -58,7 +58,11 @@ Public Class frmCompras
         ldrFila1(3) = txtCantidad.Text
         ldtTabla1.Rows.Add(ldrFila1)
         dgvDetalleFactura.DataSource = ldtTabla1
-        total = total + (Convert.ToDecimal(txtCosto.Text))
+        dgvDetalleFactura.Columns(0).Visible = False
+        total = 0
+        For i As Integer = 0 To dgvDetalleFactura.RowCount - 1
+            total = total + Convert.ToDouble(dgvDetalleFactura.Item(2, i).Value)
+        Next
         txtTela.Text = ""
         txtCantidad.Text = ""
         txtCosto.Text = ""
@@ -68,13 +72,22 @@ Public Class frmCompras
         Me.Dispose()
     End Sub
 
-    Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+    Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarCesta.Click
         For Each ctrlIterador As Control In Me.Controls
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
                 Else
+                    Dim idProcuto As Integer
+                    Dim cantidad As Integer
+                    Dim costo As Double
                     ctrlIterador.BackColor = Color.White
+                    insertarEncabezadoFactura()
+                    For i As Integer = 0 To dgvDetalleFactura.RowCount - 1
+                        idProcuto = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("idProducto").Value.ToString())
+                        cantidad = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("cantidad").Value.ToString())
+                        costo = Convert.ToDecimal(dgvDetalleFactura.Rows(i).Cells("costo").Value.ToString())
+                    Next
                 End If
             End If
         Next
@@ -156,7 +169,7 @@ Public Class frmCompras
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnagregar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.MouseLeave
+    Private Sub btnagregar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -168,7 +181,7 @@ Public Class frmCompras
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnAceptar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseLeave
+    Private Sub btnAceptar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarCesta.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -208,7 +221,7 @@ Public Class frmCompras
         slblDescripcion.Text = "Cantidad de tela"
     End Sub
 
-    Private Sub btnagregar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.MouseHover
+    Private Sub btnagregar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Agregar el producto al detalle de compra"
     End Sub
 
@@ -228,7 +241,7 @@ Public Class frmCompras
         slblDescripcion.Text = "Cierra la ventana si guardar"
     End Sub
 
-    Private Sub btnAceptar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseHover
+    Private Sub btnAceptar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarCesta.MouseHover
         slblDescripcion.Text = "Cierra la ventana y guarda la factura"
     End Sub
 
@@ -238,6 +251,7 @@ Public Class frmCompras
         ldtTabla1.Columns.Add("Nombre")
         ldtTabla1.Columns.Add("Costo")
         ldtTabla1.Columns.Add("Cantidad")
+
     End Sub
 
     Private Sub txtNit_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNit.TextChanged
@@ -261,7 +275,6 @@ Public Class frmCompras
         ldtTabla.Columns.Add("Nit")
         ldtTabla.Columns.Add("Nombre")
         ldtTabla.Columns.Add("Direccion")
-
         For i = 0 To lista.Count - 1 Step 1
             ldrFila = ldtTabla.NewRow()
             lnpProveedor = lista(i)
@@ -278,7 +291,30 @@ Public Class frmCompras
         End If
     End Sub
 
-    Private Sub btnagregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.Click
+    Private Sub btnagregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         cargarDataTableDetalle()
+    End Sub
+
+    Private Sub lbEtiquetaTotal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbEtiquetaTotal.Click
+
+    End Sub
+
+    Private Sub lblTotal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblTotal.Click
+
+    End Sub
+
+    Private Sub btnagregar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.Click
+        cargarDataTableDetalle()
+    End Sub
+
+    Private Sub btnEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        ldtTabla1.Rows.RemoveAt(Me.dgvDetalleFactura.CurrentRow.Index)
+        cargarDataTableDetalle()
+    End Sub
+
+    Private Sub dgvDetalleFactura_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvDetalleFactura.CellClick
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     End Sub
 End Class
