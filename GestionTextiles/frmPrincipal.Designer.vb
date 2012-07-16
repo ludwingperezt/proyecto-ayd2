@@ -68,7 +68,6 @@ Partial Class frmPrincipal
         '
         'tmrRefrescarBarra
         '
-        Me.tmrRefrescarBarra.Enabled = True
         Me.tmrRefrescarBarra.Interval = 1000
         '
         'lblTitulo
