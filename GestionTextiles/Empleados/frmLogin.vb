@@ -61,7 +61,7 @@ Public Class frmLogin
     End Sub
 
     Private Sub txtUsuario_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUsuario.MouseHover
-        slblDescripcion.Text = "Ingreso del nombre de usuario para tener acceso al sistema"
+        slblDescripcion.Text = "Ingreso del nombre de usuario"
     End Sub
 
     Private Sub txtcontraseña_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtcontraseña.MouseHover
