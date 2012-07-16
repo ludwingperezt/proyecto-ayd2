@@ -339,4 +339,16 @@ Public Class frmModuloProductos
     Private Sub btnSiguiente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.MouseHover
         slblDescripcion.Text = "Siguiente Filtrado"
     End Sub
+
+    Private Sub chCodigo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chCodigo.CheckedChanged
+        If chCodigo.Checked = True Then
+            chNombre.Checked = False
+        End If
+    End Sub
+
+    Private Sub chNombre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chNombre.CheckedChanged
+        If chNombre.Checked = True Then
+            chCodigo.Checked = False
+        End If
+    End Sub
 End Class

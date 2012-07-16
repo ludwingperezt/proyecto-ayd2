@@ -76,7 +76,7 @@ Partial Class frmModuloProductos
         Me.btnbuscar.Location = New System.Drawing.Point(492, 75)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(103, 25)
-        Me.btnbuscar.TabIndex = 1
+        Me.btnbuscar.TabIndex = 3
         Me.btnbuscar.Text = "B&uscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
@@ -85,7 +85,7 @@ Partial Class frmModuloProductos
         Me.txtbusqueda.Location = New System.Drawing.Point(166, 78)
         Me.txtbusqueda.Name = "txtbusqueda"
         Me.txtbusqueda.Size = New System.Drawing.Size(320, 20)
-        Me.txtbusqueda.TabIndex = 0
+        Me.txtbusqueda.TabIndex = 2
         '
         'lblbusqueda
         '
@@ -128,7 +128,7 @@ Partial Class frmModuloProductos
         Me.btnSiguiente.Location = New System.Drawing.Point(483, 352)
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(75, 23)
-        Me.btnSiguiente.TabIndex = 53
+        Me.btnSiguiente.TabIndex = 6
         Me.btnSiguiente.UseVisualStyleBackColor = False
         '
         'btnAnterior
@@ -138,7 +138,7 @@ Partial Class frmModuloProductos
         Me.btnAnterior.Location = New System.Drawing.Point(400, 352)
         Me.btnAnterior.Name = "btnAnterior"
         Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
-        Me.btnAnterior.TabIndex = 52
+        Me.btnAnterior.TabIndex = 5
         Me.btnAnterior.UseVisualStyleBackColor = False
         '
         'btnRegresar
@@ -149,7 +149,7 @@ Partial Class frmModuloProductos
         Me.btnRegresar.Location = New System.Drawing.Point(470, 19)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
-        Me.btnRegresar.TabIndex = 2
+        Me.btnRegresar.TabIndex = 4
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
@@ -170,7 +170,7 @@ Partial Class frmModuloProductos
         Me.chCodigo.Location = New System.Drawing.Point(168, 51)
         Me.chCodigo.Name = "chCodigo"
         Me.chCodigo.Size = New System.Drawing.Size(59, 17)
-        Me.chCodigo.TabIndex = 68
+        Me.chCodigo.TabIndex = 0
         Me.chCodigo.Text = "Código"
         Me.chCodigo.UseVisualStyleBackColor = True
         '
@@ -180,7 +180,7 @@ Partial Class frmModuloProductos
         Me.chNombre.Location = New System.Drawing.Point(233, 53)
         Me.chNombre.Name = "chNombre"
         Me.chNombre.Size = New System.Drawing.Size(63, 17)
-        Me.chNombre.TabIndex = 69
+        Me.chNombre.TabIndex = 1
         Me.chNombre.Text = "Nombre"
         Me.chNombre.UseVisualStyleBackColor = True
         '
@@ -193,7 +193,7 @@ Partial Class frmModuloProductos
         Me.btnSalir.Location = New System.Drawing.Point(492, 586)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(103, 30)
-        Me.btnSalir.TabIndex = 7
+        Me.btnSalir.TabIndex = 11
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
@@ -204,7 +204,7 @@ Partial Class frmModuloProductos
         Me.btnSeleccionarProducto.Location = New System.Drawing.Point(492, 509)
         Me.btnSeleccionarProducto.Name = "btnSeleccionarProducto"
         Me.btnSeleccionarProducto.Size = New System.Drawing.Size(103, 71)
-        Me.btnSeleccionarProducto.TabIndex = 6
+        Me.btnSeleccionarProducto.TabIndex = 10
         Me.btnSeleccionarProducto.Text = "&Seleccionar "
         Me.btnSeleccionarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSeleccionarProducto.UseVisualStyleBackColor = False
@@ -216,7 +216,7 @@ Partial Class frmModuloProductos
         Me.btnEliminarProducto.Location = New System.Drawing.Point(379, 509)
         Me.btnEliminarProducto.Name = "btnEliminarProducto"
         Me.btnEliminarProducto.Size = New System.Drawing.Size(107, 71)
-        Me.btnEliminarProducto.TabIndex = 5
+        Me.btnEliminarProducto.TabIndex = 9
         Me.btnEliminarProducto.Text = "&Eliminar Producto"
         Me.btnEliminarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnEliminarProducto.UseVisualStyleBackColor = False
@@ -228,7 +228,7 @@ Partial Class frmModuloProductos
         Me.btnModificarProducto.Location = New System.Drawing.Point(256, 509)
         Me.btnModificarProducto.Name = "btnModificarProducto"
         Me.btnModificarProducto.Size = New System.Drawing.Size(108, 72)
-        Me.btnModificarProducto.TabIndex = 4
+        Me.btnModificarProducto.TabIndex = 8
         Me.btnModificarProducto.Text = "&Modificar Producto"
         Me.btnModificarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnModificarProducto.UseVisualStyleBackColor = False
@@ -240,7 +240,7 @@ Partial Class frmModuloProductos
         Me.btnIngresarProducto.Location = New System.Drawing.Point(126, 509)
         Me.btnIngresarProducto.Name = "btnIngresarProducto"
         Me.btnIngresarProducto.Size = New System.Drawing.Size(106, 72)
-        Me.btnIngresarProducto.TabIndex = 3
+        Me.btnIngresarProducto.TabIndex = 7
         Me.btnIngresarProducto.Text = "&Ingresar Producto"
         Me.btnIngresarProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnIngresarProducto.UseVisualStyleBackColor = False
