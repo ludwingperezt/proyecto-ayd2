@@ -13,7 +13,7 @@
         frmReporteDevolucionesProveedor.Show()
     End Sub
 
-    Private Sub btnCorte_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCorte.MouseLeave
+    Private Sub btnCorte_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCorte.MouseLeave, btnFactura.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -25,7 +25,7 @@
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnCorte_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCorte.MouseHover
+    Private Sub btnCorte_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCorte.MouseHover, btnFactura.MouseHover
         slblDescripcion.Text = "Muestra el Reporte de Cierre de caja "
     End Sub
 
@@ -103,5 +103,9 @@
 
     Private Sub btnVentas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVentas.Click
         frmReporteVentasPorFechaRango.ShowDialog(Me)
+    End Sub
+
+    Private Sub btnFactura_Click_1(sender As System.Object, e As System.EventArgs) Handles btnFactura.Click
+        frmPreFacturaRep.ShowDialog(Me)
     End Sub
 End Class
