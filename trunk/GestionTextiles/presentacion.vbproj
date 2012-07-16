@@ -17,7 +17,7 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>C:\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,9 +27,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -66,6 +67,24 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DTX.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>90393C3617782B4C64F1DD7E1238898DA2A63376</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>presentacion_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -148,6 +167,18 @@
     <Compile Include="Formularios de Reportes\frmReportePrueba.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios de Reportes\frmReportesComprasPorFechaRango.Designer.vb">
+      <DependentUpon>frmReportesComprasPorFechaRango.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReportesComprasPorFechaRango.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteVentasPorFechaRango.Designer.vb">
+      <DependentUpon>frmReporteVentasPorFechaRango.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteVentasPorFechaRango.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\CierreDeCajaFinal.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,6 +209,12 @@
       <DependentUpon>FacturasEliminadasPorFechaFinal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\rptComprasPorRangoFecha.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptComprasPorRangoFecha.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\rptFactura.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -188,6 +225,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptProveedores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptVentasPorFecha.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptVentasPorFecha.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ventas\frmAnular.Designer.vb">
@@ -433,6 +476,9 @@
     <EmbeddedResource Include="Formularios de Reportes\frmReportePrueba.resx">
       <DependentUpon>frmReportePrueba.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios de Reportes\frmReportesComprasPorFechaRango.resx">
+      <DependentUpon>frmReportesComprasPorFechaRango.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CierreDeCajaFinal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CierreDeCajaFinal.vb</LastGenOutput>
@@ -453,6 +499,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FacturasEliminadasPorFechaFinal.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptComprasPorRangoFecha.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptComprasPorRangoFecha.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptFactura.vb</LastGenOutput>
@@ -460,6 +510,10 @@
     <EmbeddedResource Include="Reportes\rptProveedores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptProveedores.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptVentasPorFecha.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptVentasPorFecha.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frmAnular.resx">
       <DependentUpon>frmAnular.vb</DependentUpon>
@@ -679,6 +733,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cart-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DTX.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

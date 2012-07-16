@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("GestionTextiles")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("GestionTextiles")> 
+<Assembly: AssemblyTitle("Sistema Informático para la gestión de puntos de venta")> 
+<Assembly: AssemblyDescription("Automatización de Almacenes Textiles")> 
+<Assembly: AssemblyCompany("DESARROLLO DE SISTEMAS PROFESIONALES S. A")> 
+<Assembly: AssemblyProduct("DATTEX PLUS")> 
 <Assembly: AssemblyCopyright("Copyright ©  2012")> 
 <Assembly: AssemblyTrademark("")> 
 
