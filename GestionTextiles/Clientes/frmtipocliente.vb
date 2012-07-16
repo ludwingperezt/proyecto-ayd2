@@ -70,10 +70,59 @@ Public Class frmtipocliente
             MessageBox.Show("Ingrese una descripción para realizar la busqueda")
         Else
             ' codigo para realizar la busqueda
-            dgvtiposcliente.DataSource = negociosCliente.fnDbBuscarClienteNombre(txtbusqueda.Text)
+            'dgvtiposcliente.DataSource = negociosCliente.fnDbBuscarClienteNombre(txtbusqueda.Text)
+            Dim verificar As String
+            verificar = cmbCliente.SelectedItem
+            If (verificar = "Nombre") Then
+                fnvdRecargarNombre()
+            End If
+            If (verificar = "Descuento") Then
+                fnvdRecargarDescuento()
+            End If
+            If (verificar = "Descripción") Then
+                fnvdRecargarDescripcion()
+            End If
         End If
     End Sub
-
+    Private Sub fnvdRecargarNombre()
+        Try
+            dgvtiposcliente.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstTipoClienteFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstTipoCliente = negociosTipoCliente.fnslListarTipoClientesNombre(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstTipoCliente)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvtiposcliente.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvdRecargarDescuento()
+        Try
+            dgvtiposcliente.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstTipoClienteFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstTipoCliente = negociosTipoCliente.fnslListarTipoClientesDescuento(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstTipoCliente)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvtiposcliente.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvdRecargarDescripcion()
+        Try
+            dgvtiposcliente.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstTipoClienteFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstTipoCliente = negociosTipoCliente.fnslListarTipoClientesDescripcion(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstTipoCliente)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvtiposcliente.DataSource = Nothing
+        End Try
+    End Sub
     Private Sub btningresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btningresar.Click
         frmingresotipocliente.Show()
     End Sub
