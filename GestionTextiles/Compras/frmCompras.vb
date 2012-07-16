@@ -9,6 +9,14 @@ Public Class frmCompras
     Public Shared gnpProveedorSeleccionado As negociosProveedores
     Private banderaBusqueda As Boolean = False
     Public Shared productoSeleccionado As negociosProducto
+    Private DetalleFacturaProveedor As negociosDetallesFacturasProveedores
+    Private idProveedore As Integer
+    Dim EncabezadoFactura As negociosFacturasProveedores
+    Dim ldtTabla1 As DataTable = New DataTable()
+    Dim ldrFila1 As DataRow
+    Dim lnpDetalleFactura As negociosDetallesFacturasProveedores
+    Dim total As Decimal
+
 
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
         frmModuloProductos.btnSalir.Visible = False
@@ -20,7 +28,48 @@ Public Class frmCompras
         txtCantidad.Focus()
         ' ahora se procede a obtener el objeto estático que está en el frmModuloProductos...
     End Sub
-
+    Private Sub insertarEncabezadoFactura()
+        Try
+            EncabezadoFactura = New negociosFacturasProveedores()
+            EncabezadoFactura.setIdEmpleado(frmPrincipal.gnegEmpleado.getIdEmpleado())
+            EncabezadoFactura.setIdProveedor(idProveedore)
+            EncabezadoFactura.setSerie(txtSerie.Text)
+            EncabezadoFactura.setNumero(Convert.ToInt32(txtCorrelativo.Text))
+            EncabezadoFactura.setTotal(Convert.ToDecimal(lblTotal.Text))
+            EncabezadoFactura.setFecha(DateTimePicker1.Value)
+            EncabezadoFactura.fnsInsertarFacturaProveedor()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub insertarDetalleFactura()
+        Try
+            DetalleFacturaProveedor.setCantidad(Convert.ToInt32(txtCantidad.Text))
+            DetalleFacturaProveedor.setIdProducto(productoSeleccionado.getIdProducto())
+            DetalleFacturaProveedor.setCosto(Convert.ToDecimal(txtCosto.Text))
+            DetalleFacturaProveedor.setIdFacturaProveedor(EncabezadoFactura.getIdFacturaProveedor())
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub cargarDataTableDetalle()
+        ldtTabla1.Columns.Add("Id Producto")
+        ldtTabla1.Columns.Add("Nombre")
+        ldtTabla1.Columns.Add("Costo")
+        ldtTabla1.Columns.Add("Cantidad")
+        ldrFila1 = ldtTabla1.NewRow()
+        ldrFila1(0) = productoSeleccionado.getIdProducto()
+        ldrFila1(1) = productoSeleccionado.getNombre()
+        ldrFila1(2) = txtCosto.Text
+        ldrFila1(3) = txtCantidad.Text
+        ldtTabla1.Rows.Add(ldrFila1)
+        dgvDetalleFactura.DataSource = ldtTabla1
+        total = total + (Convert.ToDecimal(txtCosto.Text))
+        txtTela.Text = ""
+        txtCantidad.Text = ""
+        txtCosto.Text = ""
+        lblTotal.Text = Convert.ToString(total)
+    End Sub
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Dispose()
     End Sub
@@ -224,9 +273,14 @@ Public Class frmCompras
             ldtTabla.Rows.Add(ldrFila)
             txtNombre.Text = lnpProveedor.getNombre()
             txtDireccion.Text = lnpProveedor.getDireccion()
+            idProveedore = lnpProveedor.getId()
         Next
         If (txtDireccion.Text <> "") Then
             gpProducto.Enabled = True
         End If
+    End Sub
+
+    Private Sub btnagregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.Click
+        cargarDataTableDetalle()
     End Sub
 End Class

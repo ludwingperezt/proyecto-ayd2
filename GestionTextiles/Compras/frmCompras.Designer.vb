@@ -35,6 +35,8 @@ Partial Class frmCompras
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lbEtiquetaTotal = New System.Windows.Forms.Label()
         Me.gpProducto = New System.Windows.Forms.GroupBox()
+        Me.txtCosto = New System.Windows.Forms.TextBox()
+        Me.lblCosto = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.dgvDetalleFactura = New System.Windows.Forms.DataGridView()
         Me.lblserie = New System.Windows.Forms.Label()
@@ -118,9 +120,9 @@ Partial Class frmCompras
         Me.lblTotal.ForeColor = System.Drawing.Color.Green
         Me.lblTotal.Location = New System.Drawing.Point(485, 562)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(74, 16)
+        Me.lblTotal.Size = New System.Drawing.Size(16, 16)
         Me.lblTotal.TabIndex = 56
-        Me.lblTotal.Text = "lblTOTAL"
+        Me.lblTotal.Text = "0"
         Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblTitulo
@@ -168,6 +170,8 @@ Partial Class frmCompras
         '
         'gpProducto
         '
+        Me.gpProducto.Controls.Add(Me.txtCosto)
+        Me.gpProducto.Controls.Add(Me.lblCosto)
         Me.gpProducto.Controls.Add(Me.btnBuscar)
         Me.gpProducto.Controls.Add(Me.txtCantidad)
         Me.gpProducto.Controls.Add(Me.lblTela)
@@ -179,6 +183,22 @@ Partial Class frmCompras
         Me.gpProducto.TabIndex = 50
         Me.gpProducto.TabStop = False
         Me.gpProducto.Text = "Producto"
+        '
+        'txtCosto
+        '
+        Me.txtCosto.Location = New System.Drawing.Point(228, 56)
+        Me.txtCosto.Name = "txtCosto"
+        Me.txtCosto.Size = New System.Drawing.Size(136, 20)
+        Me.txtCosto.TabIndex = 62
+        '
+        'lblCosto
+        '
+        Me.lblCosto.AutoSize = True
+        Me.lblCosto.Location = New System.Drawing.Point(185, 61)
+        Me.lblCosto.Name = "lblCosto"
+        Me.lblCosto.Size = New System.Drawing.Size(34, 13)
+        Me.lblCosto.TabIndex = 61
+        Me.lblCosto.Text = "Costo"
         '
         'btnBuscar
         '
@@ -391,4 +411,6 @@ Partial Class frmCompras
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblEmpleado As System.Windows.Forms.Label
     Friend WithEvents btnagregar As System.Windows.Forms.Button
+    Friend WithEvents txtCosto As System.Windows.Forms.TextBox
+    Friend WithEvents lblCosto As System.Windows.Forms.Label
 End Class
