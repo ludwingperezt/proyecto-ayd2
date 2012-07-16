@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmReportePrueba
+Partial Class frmClientesxCompras
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -33,21 +33,20 @@ Partial Class frmReportePrueba
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crvReporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
-        Me.crvReporte.Location = New System.Drawing.Point(-1, 0)
+        Me.crvReporte.Location = New System.Drawing.Point(-1, -3)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.Size = New System.Drawing.Size(647, 389)
-        Me.crvReporte.TabIndex = 9
+        Me.crvReporte.Size = New System.Drawing.Size(823, 545)
+        Me.crvReporte.TabIndex = 27
         '
-        'frmReportePrueba
+        'frmClientesxCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(646, 385)
+        Me.ClientSize = New System.Drawing.Size(820, 541)
         Me.Controls.Add(Me.crvReporte)
-        Me.MaximizeBox = False
-        Me.Name = "frmReportePrueba"
+        Me.Name = "frmClientesxCompras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Todos los Proveedores"
+        Me.Text = "Clientes Por Compras"
         Me.ResumeLayout(False)
 
     End Sub

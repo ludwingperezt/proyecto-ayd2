@@ -126,10 +126,22 @@
     <Compile Include="Compras\frmEliminarFacturaProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios de Reportes\frmClientesxCompras.Designer.vb">
+      <DependentUpon>frmClientesxCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmClientesxCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios de Reportes\frmPreFacturaRep.Designer.vb">
       <DependentUpon>frmPreFacturaRep.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios de Reportes\frmPreFacturaRep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteClientesPorTipo.Designer.vb">
+      <DependentUpon>frmReporteClientesPorTipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios de Reportes\frmReporteClientesPorTipo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios de Reportes\frmReporteCostosRangoFecha.Designer.vb">
@@ -231,6 +243,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FacturasEliminadasPorFechaFinal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptClientesPorTipo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptClientesPorTipo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptClientesxCompras.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptClientesxCompras.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rptComprasPorRangoFecha.vb">
@@ -494,8 +518,14 @@
     <EmbeddedResource Include="Compras\frmEliminarFacturaProveedor.resx">
       <DependentUpon>frmEliminarFacturaProveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios de Reportes\frmClientesxCompras.resx">
+      <DependentUpon>frmClientesxCompras.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios de Reportes\frmPreFacturaRep.resx">
       <DependentUpon>frmPreFacturaRep.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios de Reportes\frmReporteClientesPorTipo.resx">
+      <DependentUpon>frmReporteClientesPorTipo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios de Reportes\frmReporteCostosRangoFecha.resx">
       <DependentUpon>frmReporteCostosRangoFecha.vb</DependentUpon>
@@ -520,6 +550,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios de Reportes\frmReportesComprasPorFechaRango.resx">
       <DependentUpon>frmReportesComprasPorFechaRango.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios de Reportes\frmReporteVentasPorFechaRango.resx">
+      <DependentUpon>frmReporteVentasPorFechaRango.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CierreDeCajaFinal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -548,6 +581,14 @@
     <EmbeddedResource Include="Reportes\FacturasEliminadasPorFechaFinal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FacturasEliminadasPorFechaFinal.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptClientesPorTipo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClientesPorTipo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptClientesxCompras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClientesxCompras.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptComprasPorRangoFecha.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

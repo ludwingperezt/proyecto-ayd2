@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmReportePrueba
+Partial Class frmReporteClientesPorTipo
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,6 +22,7 @@ Partial Class frmReportePrueba
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.devolucionesProveedorFechaNitFinal1 = New GestionTextiles.devolucionesProveedorFechaNitFinal()
         Me.crvReporte = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.SuspendLayout()
         '
@@ -33,23 +34,23 @@ Partial Class frmReportePrueba
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crvReporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
-        Me.crvReporte.Location = New System.Drawing.Point(-1, 0)
+        Me.crvReporte.Location = New System.Drawing.Point(1, 0)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.Size = New System.Drawing.Size(647, 389)
-        Me.crvReporte.TabIndex = 9
+        Me.crvReporte.Size = New System.Drawing.Size(947, 749)
+        Me.crvReporte.TabIndex = 26
         '
-        'frmReportePrueba
+        'frmReporteClientesPorTipo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(646, 385)
+        Me.ClientSize = New System.Drawing.Size(949, 750)
         Me.Controls.Add(Me.crvReporte)
-        Me.MaximizeBox = False
-        Me.Name = "frmReportePrueba"
+        Me.Name = "frmReporteClientesPorTipo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Todos los Proveedores"
+        Me.Text = "Reporte Clientes Por Tipo"
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents devolucionesProveedorFechaNitFinal1 As GestionTextiles.devolucionesProveedorFechaNitFinal
     Friend WithEvents crvReporte As CrystalDecisions.Windows.Forms.CrystalReportViewer
 End Class
