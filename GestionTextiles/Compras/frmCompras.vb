@@ -99,23 +99,24 @@ Public Class frmCompras
             Dim idFacturas As Integer
             encabezado = New negociosFacturasProveedores()
             Dim ldtTabla As DataTable = New DataTable()
+        Try
             idFacturas = encabezado.fnslListarFacturaSerieNumero()
-            Try
-                insertarEncabezadoFactura()
-                Dim i As Int32 = 0
-                For i = 0 To ldtTabla.Rows.Count - 1
-                    ldrFila1 = ldtTabla.Rows(i)
-                    pasoIdProducto = Convert.ToInt32(ldrFila1(0))
-                    pasoCantidad = Convert.ToInt32(ldrFila1(3))
-                    pasoCosto = Convert.ToDecimal(ldrFila1(2))
-                    idFactura = idFacturas
-                    insertarDetalleFactura()
-                Next
-                MessageBox.Show("La operación de compra se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            insertarEncabezadoFactura()
+            Dim i As Int32 = 0
+            For i = 0 To ldtTabla1.Rows.Count - 1
+                ldrFila1 = ldtTabla1.Rows(i)
+                pasoIdProducto = Convert.ToInt32(ldrFila1(0))
+                pasoCantidad = Convert.ToInt32(ldrFila1(3))
+                pasoCosto = Convert.ToDecimal(ldrFila1(2))
+                idFactura = idFacturas
+                insertarDetalleFactura()
+            Next
+            MessageBox.Show("La operación de compra se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Dispose()
+            frmModuloCompras.fnvdRecargar()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
+        End Try
     End Sub
 
     Private Sub txtCodigo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
