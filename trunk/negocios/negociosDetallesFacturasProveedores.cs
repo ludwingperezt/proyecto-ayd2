@@ -11,7 +11,7 @@ namespace negocios
         private int idFacturaProveedor;
         private int idProducto;
         private decimal costo;
-        private decimal cantidad;
+        private double cantidad;
 
         #region constructores
         /// <summary>
@@ -48,7 +48,7 @@ namespace negocios
             this.costo = ldecCosto;
         }
 
-        public void setCantidad(int ldecCantidad)
+        public void setCantidad(double  ldecCantidad)
         {
             this.cantidad = ldecCantidad;
         }
@@ -76,10 +76,26 @@ namespace negocios
             return this.costo;
         }
 
-        public decimal getCantidad()
+        public double getCantidad()
         {
             return this.cantidad;
         }
         #endregion
+
+        /// <summary>
+        /// Función de inserción de detalle factura proveedor en la base de datos.
+        /// </summary>
+        public string fnsInsertarDetalleFacturaProveedor()
+        {
+            try
+            {
+                negociosAdaptadores.gAdaptadorDeConsultas.insertarDetalleFacturaProveedores(this.idFacturaProveedor, this.idProducto, this.costo, this.cantidad);
+                return "La inserción del empleado en la base de datos se llevó a cabo con éxito";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
 }
