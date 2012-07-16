@@ -151,4 +151,32 @@ Public Class frmModuloCompras
     Private Sub btnRegresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.Click
         fnvdRecargar()
     End Sub
+
+    Private Sub btnNCompra_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnNCompra.MouseHover
+        slblDescripcion.Text = "Permite agregar productos al stock"
+    End Sub
+
+    Private Sub btnAnterior_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnAnterior.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnAnterior_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnAnterior.MouseHover
+        slblDescripcion.Text = "Permite visualizar los anteriores resultados de búsqueda"
+    End Sub
+
+    Private Sub btnSiguiente_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnSiguiente.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnSiguiente_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnSiguiente.MouseHover
+        slblDescripcion.Text = "Muestra los siguientes resultados de la búsqueda"
+    End Sub
+
+    Private Sub btnRegresar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnRegresar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnRegresar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnRegresar.MouseHover
+        slblDescripcion.Text = "Carga la lista original de Facturas de Compras"
+    End Sub
 End Class

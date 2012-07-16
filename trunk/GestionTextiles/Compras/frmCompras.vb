@@ -186,7 +186,7 @@ Public Class frmCompras
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnagregar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub btnagregar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -238,7 +238,7 @@ Public Class frmCompras
         slblDescripcion.Text = "Cantidad de tela"
     End Sub
 
-    Private Sub btnagregar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub btnagregar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.MouseHover
         slblDescripcion.Text = "Agregar el producto al detalle de compra"
     End Sub
 
@@ -334,4 +334,21 @@ Public Class frmCompras
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     End Sub
+
+    Private Sub txtCorrelativo_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtCorrelativo.MouseHover
+        slblDescripcion.Text = "Ingrese el correlativo de la factura"
+    End Sub
+
+    Private Sub txtCosto_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtCosto.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtCosto_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtCosto.MouseHover
+        slblDescripcion.Text = "Ingrese el costo unitario del producto"
+    End Sub
+
+    Private Sub btnBuscar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnBuscar.MouseHover
+        slblDescripcion.Text = "Realiza la búsqueda"
+    End Sub
+
 End Class
