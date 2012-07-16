@@ -1,7 +1,6 @@
 ﻿Imports negocios
 
 Public Class frmCompras
-
     Public Shared lnpNuevoProveedor As negociosProveedores = New negociosProveedores()
     Private glstProveedor As List(Of negociosProveedores) = New List(Of negociosProveedores)
     Dim lbooBanderaPunto As Boolean = False
@@ -16,7 +15,6 @@ Public Class frmCompras
     Dim ldrFila1 As DataRow
     Dim lnpDetalleFactura As negociosDetallesFacturasProveedores
     Dim total As Decimal
-
 
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
         frmModuloProductos.btnSalir.Visible = False
@@ -53,10 +51,6 @@ Public Class frmCompras
         End Try
     End Sub
     Private Sub cargarDataTableDetalle()
-        ldtTabla1.Columns.Add("Id Producto")
-        ldtTabla1.Columns.Add("Nombre")
-        ldtTabla1.Columns.Add("Costo")
-        ldtTabla1.Columns.Add("Cantidad")
         ldrFila1 = ldtTabla1.NewRow()
         ldrFila1(0) = productoSeleccionado.getIdProducto()
         ldrFila1(1) = productoSeleccionado.getNombre()
@@ -240,6 +234,10 @@ Public Class frmCompras
 
     Private Sub frmCompras_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         lblEmpleado.Text = frmPrincipal.gnegEmpleado.getNombreEmpleado()
+        ldtTabla1.Columns.Add("Id Producto")
+        ldtTabla1.Columns.Add("Nombre")
+        ldtTabla1.Columns.Add("Costo")
+        ldtTabla1.Columns.Add("Cantidad")
     End Sub
 
     Private Sub txtNit_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNit.TextChanged
