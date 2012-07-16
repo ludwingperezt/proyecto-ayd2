@@ -97,6 +97,7 @@ Partial Class frmPreFacturaRep
         Me.Controls.Add(Me.txtSerie)
         Me.Controls.Add(Me.lblserie)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MaximizeBox = False
         Me.Name = "frmPreFacturaRep"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Datos de Factura"
