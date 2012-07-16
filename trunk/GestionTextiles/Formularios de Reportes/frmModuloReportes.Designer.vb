@@ -35,9 +35,9 @@ Partial Class frmModuloReportes
         Me.gpCompras = New System.Windows.Forms.GroupBox()
         Me.btnCompras = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnCostos = New System.Windows.Forms.Button()
         Me.gpEmpleados = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnVentas = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.gpClientes = New System.Windows.Forms.GroupBox()
@@ -92,13 +92,14 @@ Partial Class frmModuloReportes
         '
         'gpAdministrador
         '
+        Me.gpAdministrador.Controls.Add(Me.btnVentas)
         Me.gpAdministrador.Controls.Add(Me.btnFacturasEliminadasNit)
         Me.gpAdministrador.Controls.Add(Me.btnFacturasEliminadasFecha)
         Me.gpAdministrador.Controls.Add(Me.btnReporteFacturasasEliminadas)
         Me.gpAdministrador.Controls.Add(Me.btnCorte)
         Me.gpAdministrador.Location = New System.Drawing.Point(30, 66)
         Me.gpAdministrador.Name = "gpAdministrador"
-        Me.gpAdministrador.Size = New System.Drawing.Size(764, 104)
+        Me.gpAdministrador.Size = New System.Drawing.Size(764, 115)
         Me.gpAdministrador.TabIndex = 11
         Me.gpAdministrador.TabStop = False
         Me.gpAdministrador.Text = "Ventas"
@@ -155,7 +156,7 @@ Partial Class frmModuloReportes
         '
         Me.gpCompras.Controls.Add(Me.btnCompras)
         Me.gpCompras.Controls.Add(Me.Button4)
-        Me.gpCompras.Controls.Add(Me.Button5)
+        Me.gpCompras.Controls.Add(Me.btnCostos)
         Me.gpCompras.Location = New System.Drawing.Point(30, 187)
         Me.gpCompras.Name = "gpCompras"
         Me.gpCompras.Size = New System.Drawing.Size(764, 88)
@@ -187,21 +188,20 @@ Partial Class frmModuloReportes
         Me.Button4.Text = "Button4"
         Me.Button4.UseVisualStyleBackColor = False
         '
-        'Button5
+        'btnCostos
         '
-        Me.Button5.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button5.Location = New System.Drawing.Point(413, 19)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(310, 25)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Button5"
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.btnCostos.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnCostos.Image = CType(resources.GetObject("btnCostos.Image"), System.Drawing.Image)
+        Me.btnCostos.ImageAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnCostos.Location = New System.Drawing.Point(413, 19)
+        Me.btnCostos.Name = "btnCostos"
+        Me.btnCostos.Size = New System.Drawing.Size(310, 25)
+        Me.btnCostos.TabIndex = 4
+        Me.btnCostos.Text = "Co&stos Por Rango de Fecha"
+        Me.btnCostos.UseVisualStyleBackColor = False
         '
         'gpEmpleados
         '
-        Me.gpEmpleados.Controls.Add(Me.Button1)
         Me.gpEmpleados.Controls.Add(Me.Button2)
         Me.gpEmpleados.Controls.Add(Me.Button3)
         Me.gpEmpleados.Location = New System.Drawing.Point(30, 301)
@@ -211,17 +211,17 @@ Partial Class frmModuloReportes
         Me.gpEmpleados.TabStop = False
         Me.gpEmpleados.Text = "Empleados"
         '
-        'Button1
+        'btnVentas
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button1.Location = New System.Drawing.Point(58, 19)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(310, 26)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnVentas.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnVentas.Image = CType(resources.GetObject("btnVentas.Image"), System.Drawing.Image)
+        Me.btnVentas.ImageAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnVentas.Location = New System.Drawing.Point(58, 78)
+        Me.btnVentas.Name = "btnVentas"
+        Me.btnVentas.Size = New System.Drawing.Size(310, 26)
+        Me.btnVentas.TabIndex = 5
+        Me.btnVentas.Text = "&Ventas Por Rango de Fecha"
+        Me.btnVentas.UseVisualStyleBackColor = False
         '
         'Button2
         '
@@ -390,7 +390,7 @@ Partial Class frmModuloReportes
     Friend WithEvents btnReporteFacturasasEliminadas As System.Windows.Forms.Button
     Friend WithEvents btnReporteDevolucionesProveedor As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents btnCostos As System.Windows.Forms.Button
     Friend WithEvents btnCompras As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
@@ -400,7 +400,7 @@ Partial Class frmModuloReportes
     Friend WithEvents gpAdministrador As System.Windows.Forms.GroupBox
     Friend WithEvents gpCompras As System.Windows.Forms.GroupBox
     Friend WithEvents gpEmpleados As System.Windows.Forms.GroupBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnVentas As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents gpClientes As System.Windows.Forms.GroupBox

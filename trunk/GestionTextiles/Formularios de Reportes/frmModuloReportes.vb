@@ -96,4 +96,12 @@
     Private Sub btnCompras_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCompras.Click
         frmReportesComprasPorFechaRango.ShowDialog(Me)
     End Sub
+
+    Private Sub btnCostos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCostos.Click
+
+    End Sub
+
+    Private Sub btnVentas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVentas.Click
+        frmReporteVentasPorFechaRango.ShowDialog(Me)
+    End Sub
 End Class
