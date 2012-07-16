@@ -15,6 +15,7 @@ Public Class frmCompras
     Dim ldrFila1 As DataRow
     Dim lnpDetalleFactura As negociosDetallesFacturasProveedores
     Dim total As Decimal
+    Public Shared encabezado As negociosFacturasProveedores
 
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
         frmModuloProductos.btnSalir.Visible = False
@@ -40,12 +41,12 @@ Public Class frmCompras
             MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Private Sub insertarDetalleFactura(ByVal cantidad, ByVal idProducto, ByVal costo)
+    Private Sub insertarDetalleFactura(ByVal cantidad, ByVal idProducto, ByVal costo, ByVal idFactura)
         Try
             DetalleFacturaProveedor.setCantidad(cantidad)
             DetalleFacturaProveedor.setIdProducto(idProducto)
             DetalleFacturaProveedor.setCosto(costo)
-            DetalleFacturaProveedor.setIdFacturaProveedor(EncabezadoFactura.getIdFacturaProveedor())
+            DetalleFacturaProveedor.setIdFacturaProveedor(idFactura)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -78,15 +79,22 @@ Public Class frmCompras
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
                 Else
-                    Dim idProcuto As Integer
+                    Dim idProducto As Integer
                     Dim cantidad As Integer
                     Dim costo As Double
+                    Dim idFacturas As Integer
                     ctrlIterador.BackColor = Color.White
                     insertarEncabezadoFactura()
+                    encabezado = New negociosFacturasProveedores()
+                    Dim ldtTabla As DataTable = New DataTable()
+                    ldtTabla = encabezado.fnDbDevolverFacturaSerieNumero(Convert.ToInt32(txtCorrelativo.Text), txtSerie.Text)
+                    idFacturas = ldtTabla.Rows(0).Item(0).ToString()
+
                     For i As Integer = 0 To dgvDetalleFactura.RowCount - 1
-                        idProcuto = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("idProducto").Value.ToString())
+                        idProducto = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("idProducto").Value.ToString())
                         cantidad = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("cantidad").Value.ToString())
                         costo = Convert.ToDecimal(dgvDetalleFactura.Rows(i).Cells("costo").Value.ToString())
+                        insertarDetalleFactura(cantidad, idProducto, costo, idFacturas)
                     Next
                 End If
             End If
