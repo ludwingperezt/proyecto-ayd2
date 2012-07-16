@@ -23,6 +23,7 @@ Partial Class frmReporteFacturasEliminadasNit
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.crvReporte = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.FacturasEliminadasNit1 = New GestionTextiles.FacturasEliminadasNit()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.gbParametros1 = New System.Windows.Forms.GroupBox()
         Me.txtNit = New System.Windows.Forms.TextBox()
@@ -42,6 +43,7 @@ Partial Class frmReporteFacturasEliminadasNit
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(12, 162)
         Me.crvReporte.Name = "crvReporte"
+        Me.crvReporte.ReportSource = Me.FacturasEliminadasNit1
         Me.crvReporte.Size = New System.Drawing.Size(1007, 445)
         Me.crvReporte.TabIndex = 20
         '
@@ -130,4 +132,5 @@ Partial Class frmReporteFacturasEliminadasNit
     Friend WithEvents lblNitCLiente As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
+    Friend WithEvents FacturasEliminadasNit1 As GestionTextiles.FacturasEliminadasNit
 End Class
