@@ -187,6 +187,7 @@ Public Class frmFacturar
                 If Me.factura.getDescuento() = 0 And txtDescuento.Text <> "0.00" Then
                     Me.factura.fnvCalcularDescuento(Convert.ToDouble(txtDescuento.Text))
                 End If
+                frmCambio.lblTotal.Text = lbltotal.Text
                 frmCambio.ShowDialog()
                 frmCambio.Dispose()
                 'Me.factura.setDescuento(Convert.ToDouble(txtDescuento.Text))

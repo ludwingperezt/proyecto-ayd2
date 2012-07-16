@@ -100,6 +100,7 @@ Partial Class frmModuloProductos
         '
         Me.dgvEmpleados.AllowUserToAddRows = False
         Me.dgvEmpleados.AllowUserToDeleteRows = False
+        Me.dgvEmpleados.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmpleados.Location = New System.Drawing.Point(14, 48)
         Me.dgvEmpleados.Name = "dgvEmpleados"

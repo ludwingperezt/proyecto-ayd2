@@ -47,23 +47,25 @@ Partial Class frmCuadroEdicion
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button1.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Button1.Location = New System.Drawing.Point(222, 36)
+        Me.Button1.Location = New System.Drawing.Point(303, 36)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Aceptar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button2.Location = New System.Drawing.Point(303, 36)
+        Me.Button2.Location = New System.Drawing.Point(209, 36)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'frmCuadroEdicion
         '
@@ -75,6 +77,7 @@ Partial Class frmCuadroEdicion
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtCantidad)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmCuadroEdicion"

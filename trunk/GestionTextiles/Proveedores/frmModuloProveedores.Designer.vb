@@ -143,6 +143,7 @@ Partial Class frmModuloProveedores
         '
         'dgvListaProveedores
         '
+        Me.dgvListaProveedores.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvListaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListaProveedores.Location = New System.Drawing.Point(28, 44)
         Me.dgvListaProveedores.Name = "dgvListaProveedores"
