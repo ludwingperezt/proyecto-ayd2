@@ -130,10 +130,10 @@ Public Class frmModuloCompras
         For i = 0 To lista.Count - 1 Step 1
             ldrFila = ldtTabla.NewRow()
             lnpCompras = lista(i)
-            ldrFila(3) = lnpCompras.getSerie()
-            ldrFila(4) = lnpCompras.getNumero()
-            ldrFila(5) = lnpCompras.getFecha()
-            ldrFila(6) = lnpCompras.getTotal()
+            ldrFila(0) = lnpCompras.getSerie()
+            ldrFila(1) = lnpCompras.getNumero()
+            ldrFila(2) = lnpCompras.getFecha()
+            ldrFila(3) = lnpCompras.getTotal()
             ldtTabla.Rows.Add(ldrFila)
         Next
         Me.dgvListaCompras.DataSource = ldtTabla
