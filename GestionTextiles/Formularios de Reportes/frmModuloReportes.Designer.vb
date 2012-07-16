@@ -36,26 +36,16 @@ Partial Class frmModuloReportes
         Me.btnCorte = New System.Windows.Forms.Button()
         Me.gpCompras = New System.Windows.Forms.GroupBox()
         Me.btnCompras = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.btnCostos = New System.Windows.Forms.Button()
-        Me.gpEmpleados = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.gpClientes = New System.Windows.Forms.GroupBox()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
         Me.gpProveedores = New System.Windows.Forms.GroupBox()
         Me.btnDevolucionesProveedorFecha = New System.Windows.Forms.Button()
+        Me.btnProv = New System.Windows.Forms.Button()
         Me.btnDevolucionesProveedorNit = New System.Windows.Forms.Button()
         Me.btnReporteDevolucionesProveedor = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.btnProv = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         Me.gpAdministrador.SuspendLayout()
         Me.gpCompras.SuspendLayout()
-        Me.gpEmpleados.SuspendLayout()
-        Me.gpClientes.SuspendLayout()
         Me.gpProveedores.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -73,7 +63,7 @@ Partial Class frmModuloReportes
         'stsBarra
         '
         Me.stsBarra.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.slblDescripcion, Me.slblFecha})
-        Me.stsBarra.Location = New System.Drawing.Point(0, 699)
+        Me.stsBarra.Location = New System.Drawing.Point(0, 479)
         Me.stsBarra.Name = "stsBarra"
         Me.stsBarra.Size = New System.Drawing.Size(839, 22)
         Me.stsBarra.TabIndex = 10
@@ -182,7 +172,6 @@ Partial Class frmModuloReportes
         'gpCompras
         '
         Me.gpCompras.Controls.Add(Me.btnCompras)
-        Me.gpCompras.Controls.Add(Me.Button4)
         Me.gpCompras.Controls.Add(Me.btnCostos)
         Me.gpCompras.Location = New System.Drawing.Point(30, 187)
         Me.gpCompras.Name = "gpCompras"
@@ -203,18 +192,6 @@ Partial Class frmModuloReportes
         Me.btnCompras.Text = "C&ompras Por Rango de Fecha"
         Me.btnCompras.UseVisualStyleBackColor = False
         '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button4.Location = New System.Drawing.Point(58, 57)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(310, 25)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
         'btnCostos
         '
         Me.btnCostos.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -227,96 +204,13 @@ Partial Class frmModuloReportes
         Me.btnCostos.Text = "Co&stos Por Rango de Fecha"
         Me.btnCostos.UseVisualStyleBackColor = False
         '
-        'gpEmpleados
-        '
-        Me.gpEmpleados.Controls.Add(Me.Button2)
-        Me.gpEmpleados.Controls.Add(Me.Button3)
-        Me.gpEmpleados.Location = New System.Drawing.Point(30, 301)
-        Me.gpEmpleados.Name = "gpEmpleados"
-        Me.gpEmpleados.Size = New System.Drawing.Size(764, 86)
-        Me.gpEmpleados.TabIndex = 13
-        Me.gpEmpleados.TabStop = False
-        Me.gpEmpleados.Text = "Empleados"
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button2.Location = New System.Drawing.Point(58, 51)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(310, 23)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button3.Location = New System.Drawing.Point(413, 19)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(310, 26)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'gpClientes
-        '
-        Me.gpClientes.Controls.Add(Me.Button7)
-        Me.gpClientes.Controls.Add(Me.Button8)
-        Me.gpClientes.Controls.Add(Me.Button9)
-        Me.gpClientes.Location = New System.Drawing.Point(30, 415)
-        Me.gpClientes.Name = "gpClientes"
-        Me.gpClientes.Size = New System.Drawing.Size(764, 84)
-        Me.gpClientes.TabIndex = 14
-        Me.gpClientes.TabStop = False
-        Me.gpClientes.Text = "Clientes"
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button7.Location = New System.Drawing.Point(58, 19)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(310, 25)
-        Me.Button7.TabIndex = 5
-        Me.Button7.Text = "Button7"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button8.Image = CType(resources.GetObject("Button8.Image"), System.Drawing.Image)
-        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button8.Location = New System.Drawing.Point(58, 50)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(310, 24)
-        Me.Button8.TabIndex = 3
-        Me.Button8.Text = "Button8"
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Button9
-        '
-        Me.Button9.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button9.Image = CType(resources.GetObject("Button9.Image"), System.Drawing.Image)
-        Me.Button9.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button9.Location = New System.Drawing.Point(413, 19)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(310, 25)
-        Me.Button9.TabIndex = 4
-        Me.Button9.Text = "Button9"
-        Me.Button9.UseVisualStyleBackColor = False
-        '
         'gpProveedores
         '
         Me.gpProveedores.Controls.Add(Me.btnDevolucionesProveedorFecha)
         Me.gpProveedores.Controls.Add(Me.btnProv)
         Me.gpProveedores.Controls.Add(Me.btnDevolucionesProveedorNit)
         Me.gpProveedores.Controls.Add(Me.btnReporteDevolucionesProveedor)
-        Me.gpProveedores.Location = New System.Drawing.Point(30, 525)
+        Me.gpProveedores.Location = New System.Drawing.Point(30, 298)
         Me.gpProveedores.Name = "gpProveedores"
         Me.gpProveedores.Size = New System.Drawing.Size(764, 87)
         Me.gpProveedores.TabIndex = 15
@@ -334,6 +228,18 @@ Partial Class frmModuloReportes
         Me.btnDevolucionesProveedorFecha.TabIndex = 3
         Me.btnDevolucionesProveedorFecha.Text = "D&evoluciónes Proveedor Por Fecha"
         Me.btnDevolucionesProveedorFecha.UseVisualStyleBackColor = False
+        '
+        'btnProv
+        '
+        Me.btnProv.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnProv.Image = CType(resources.GetObject("btnProv.Image"), System.Drawing.Image)
+        Me.btnProv.ImageAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnProv.Location = New System.Drawing.Point(413, 53)
+        Me.btnProv.Name = "btnProv"
+        Me.btnProv.Size = New System.Drawing.Size(310, 28)
+        Me.btnProv.TabIndex = 4
+        Me.btnProv.Text = "Todos Pr&oveedores"
+        Me.btnProv.UseVisualStyleBackColor = False
         '
         'btnDevolucionesProveedorNit
         '
@@ -365,24 +271,12 @@ Partial Class frmModuloReportes
         Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnSalir.Location = New System.Drawing.Point(539, 629)
+        Me.btnSalir.Location = New System.Drawing.Point(539, 410)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(214, 36)
         Me.btnSalir.TabIndex = 8
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'btnProv
-        '
-        Me.btnProv.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnProv.Image = CType(resources.GetObject("btnProv.Image"), System.Drawing.Image)
-        Me.btnProv.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnProv.Location = New System.Drawing.Point(413, 53)
-        Me.btnProv.Name = "btnProv"
-        Me.btnProv.Size = New System.Drawing.Size(310, 28)
-        Me.btnProv.TabIndex = 4
-        Me.btnProv.Text = "Todos Pr&oveedores"
-        Me.btnProv.UseVisualStyleBackColor = False
         '
         'frmModuloReportes
         '
@@ -390,10 +284,8 @@ Partial Class frmModuloReportes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.CancelButton = Me.btnSalir
-        Me.ClientSize = New System.Drawing.Size(839, 721)
+        Me.ClientSize = New System.Drawing.Size(839, 501)
         Me.Controls.Add(Me.gpProveedores)
-        Me.Controls.Add(Me.gpClientes)
-        Me.Controls.Add(Me.gpEmpleados)
         Me.Controls.Add(Me.gpCompras)
         Me.Controls.Add(Me.gpAdministrador)
         Me.Controls.Add(Me.btnSalir)
@@ -408,8 +300,6 @@ Partial Class frmModuloReportes
         Me.stsBarra.PerformLayout()
         Me.gpAdministrador.ResumeLayout(False)
         Me.gpCompras.ResumeLayout(False)
-        Me.gpEmpleados.ResumeLayout(False)
-        Me.gpClientes.ResumeLayout(False)
         Me.gpProveedores.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -418,7 +308,6 @@ Partial Class frmModuloReportes
     Friend WithEvents btnCorte As System.Windows.Forms.Button
     Friend WithEvents btnReporteFacturasasEliminadas As System.Windows.Forms.Button
     Friend WithEvents btnReporteDevolucionesProveedor As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents btnCostos As System.Windows.Forms.Button
     Friend WithEvents btnCompras As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
@@ -428,14 +317,7 @@ Partial Class frmModuloReportes
     Friend WithEvents slblFecha As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents gpAdministrador As System.Windows.Forms.GroupBox
     Friend WithEvents gpCompras As System.Windows.Forms.GroupBox
-    Friend WithEvents gpEmpleados As System.Windows.Forms.GroupBox
     Friend WithEvents btnVentas As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents gpClientes As System.Windows.Forms.GroupBox
-    Friend WithEvents Button7 As System.Windows.Forms.Button
-    Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents gpProveedores As System.Windows.Forms.GroupBox
     Friend WithEvents btnDevolucionesProveedorFecha As System.Windows.Forms.Button
     Friend WithEvents btnDevolucionesProveedorNit As System.Windows.Forms.Button

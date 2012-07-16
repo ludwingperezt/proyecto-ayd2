@@ -117,21 +117,21 @@ Public Class frmModificarCliente
     End Sub
 
     Private Sub txtnombre_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtnombre.KeyPress
-        If (Not (e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then  'revisar para que solo sean  letras
+        If (Not (e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar >= "A" And e.KeyChar <= "Z" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then  'revisar para que solo sean  letras
             e.KeyChar = vbNullChar
 
         End If
     End Sub
 
     Private Sub txtapellido_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
-        If (Not (e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then  'revisar para que solo sean  letras
+        If (Not (e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar >= "A" And e.KeyChar <= "Z" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then  'revisar para que solo sean  letras
             e.KeyChar = vbNullChar
 
         End If
     End Sub
 
     Private Sub txtdireccion_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtdireccion.KeyPress
-        If (Not (e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar = vbBack Or e.KeyChar = " " Or e.KeyChar = "-" Or e.KeyChar = ".")) Then  'revisar si lleva numeros en los nombres de las telas
+        If (Not (e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar >= "A" And e.KeyChar <= "Z" Or e.KeyChar = vbBack Or e.KeyChar = " " Or e.KeyChar = "-" Or e.KeyChar = ".")) Then  'revisar si lleva numeros en los nombres de las telas
             e.KeyChar = vbNullChar
         End If
         If e.KeyChar = "." Then 'se revisa que no  se repita el caracter punto
@@ -147,9 +147,19 @@ Public Class frmModificarCliente
     End Sub
 
     Private Sub txtnit_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtnit.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
-            e.KeyChar = vbNullChar
+        
+        'verificamos que se ingresen letras o numeros
+        If txtnit.TextLength >= 8 Then 'la ultima posicion del nit puede ser letra 
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar >= "a" And e.KeyChar <= "z" Or e.KeyChar >= "A" And e.KeyChar <= "Z" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
+                e.KeyChar = vbNullChar
 
+            End If
+        Else
+
+            If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
+                e.KeyChar = vbNullChar
+
+            End If
         End If
     End Sub
 
