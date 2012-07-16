@@ -177,10 +177,8 @@ Public Class frmClientes
         End If
         If lnegPermisos.getPermisoModificacionClientes() Then
             btnmodificarclientes.Enabled = True
-            btneliminarcliente.Enabled = True
         Else
             btnmodificarclientes.Enabled = False
-            btneliminarcliente.Enabled = True
         End If
 
 
