@@ -45,7 +45,8 @@ Partial Class frmReportePrueba
         Me.ClientSize = New System.Drawing.Size(646, 385)
         Me.Controls.Add(Me.crvReporte)
         Me.Name = "frmReportePrueba"
-        Me.Text = "frmReportePrueba"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Todos los Proveedores"
         Me.ResumeLayout(False)
 
     End Sub
