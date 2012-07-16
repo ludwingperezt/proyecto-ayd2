@@ -43,7 +43,6 @@ Partial Class frmReporteDevolucionesProveedorNit
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(12, 144)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.ReportSource = Me.devolucionesProveedorFechaNitFinal1
         Me.crvReporte.Size = New System.Drawing.Size(1024, 649)
         Me.crvReporte.TabIndex = 23
         '
@@ -111,13 +110,17 @@ Partial Class frmReporteDevolucionesProveedorNit
         '
         'frmReporteDevolucionesProveedorNit
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(1038, 658)
         Me.Controls.Add(Me.crvReporte)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.gbParametros1)
+        Me.MaximizeBox = False
         Me.Name = "frmReporteDevolucionesProveedorNit"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Devoluciónes Proveedor por Nit"
         Me.gbParametros1.ResumeLayout(False)
         Me.gbParametros1.PerformLayout()
