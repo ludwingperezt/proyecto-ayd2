@@ -162,4 +162,63 @@ Public Class frmRoles
     Private Sub btnRegresar_Click(sender As System.Object, e As System.EventArgs) Handles btnRegresar.Click
         fnvCargarLista()
     End Sub
+
+    Private Sub txtBusqueda_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBusqueda.MouseHover
+        slblDescripcion.Text = "Nombre del rol de permisos a buscar"
+    End Sub
+
+    Private Sub txtBusqueda_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBusqueda.MouseLeave
+        regresarDescripcion()
+    End Sub
+    Private Sub regresarDescripcion()
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnBuscar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.MouseHover
+        slblDescripcion.Text = "Debe  presionar éste botón buscar roles según el nombre especificado"
+    End Sub
+
+    Private Sub btnBuscar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnRegresar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseHover
+        slblDescripcion.Text = "Carga los nombres de los roles existentes en la base de datos al formulario"
+    End Sub
+
+    Private Sub btnRegresar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub dgvRoles_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvRoles.MouseHover
+        slblDescripcion.Text = "Muestra la lista de roles existente"
+    End Sub
+
+    Private Sub dgvRoles_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvRoles.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnEliminarPermiso_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarPermiso.MouseHover
+        slblDescripcion.Text = "Elimina el rol de la base de datos"
+    End Sub
+
+    Private Sub btnEliminarPermiso_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarPermiso.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnSeleccionarPermiso_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSeleccionarPermiso.MouseHover
+        slblDescripcion.Text = "Selecciona un rol de la lista"
+    End Sub
+
+    Private Sub btnSeleccionarPermiso_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSeleccionarPermiso.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnSalir_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseHover
+        slblDescripcion.Text = "Salir de este formulario"
+    End Sub
+
+    Private Sub btnSalir_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseLeave
+        regresarDescripcion()
+    End Sub
 End Class

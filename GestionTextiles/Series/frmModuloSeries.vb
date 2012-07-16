@@ -218,4 +218,23 @@ Public Class frmModuloSeries
     Private Sub btnRegresar_Click(sender As System.Object, e As System.EventArgs)
 
     End Sub
+
+    Private Sub btnRegresar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseHover
+        slblDescripcion.Text = "Recarga la lista de series"
+    End Sub
+    Private Sub regresarDescripcion()
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnRegresar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnEliminarSerie_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarSerie.MouseHover
+        slblDescripcion.Text = "Elimina una serie seleccionada de la lista"
+    End Sub
+
+    Private Sub btnEliminarSerie_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarSerie.MouseLeave
+        regresarDescripcion()
+    End Sub
 End Class
