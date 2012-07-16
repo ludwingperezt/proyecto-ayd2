@@ -263,6 +263,35 @@ namespace negocios
                      return null;
                  }
              }
+             public static DataTable fnDbBuscarClienteDireccion1(string sdireccionCliente)
+             {
+                 return negociosAdaptadores.gAdaptadorClientePorDireccion.GetData(sdireccionCliente);
+             }
+             public static List<negociosCliente> fnsClienteDireccion1(string sdireccion)
+             {
+                 List<negociosCliente> lnpCliente = new List<negociosCliente>();
+                 try
+                 {
+                     DataTable ldtClientes = negocios.negociosCliente.fnDbBuscarClienteDireccion1(sdireccion);
+                     object[] oListaElmentos;
+                     for (int i = 0; i < ldtClientes.Rows.Count; i++)
+                     {
+                         oListaElmentos = ldtClientes.Rows[i].ItemArray;
+                         negociosCliente npNuevoCliente = new negociosCliente();
+                         npNuevoCliente.setIdCliente(Convert.ToByte(oListaElmentos[0]));
+                         npNuevoCliente.setIdTipoCliente(Convert.ToByte(oListaElmentos[1]));
+                         npNuevoCliente.setNitCliente(Convert.ToString(oListaElmentos[2]));
+                         npNuevoCliente.setNombreCliente(Convert.ToString(oListaElmentos[3]));
+                         npNuevoCliente.setDireccionCliente(Convert.ToString(oListaElmentos[4]));
+                         lnpCliente.Add(npNuevoCliente);
+                     }
+                     return lnpCliente;
+                 }
+                 catch (Exception e)
+                 {
+                     return null;
+                 }
+             }
              public static DataTable fnDbListarClientes()
              {
                  return negociosAdaptadores.gAdaptadorListarClientes.GetData();
