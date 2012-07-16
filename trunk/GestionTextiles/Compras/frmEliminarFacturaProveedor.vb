@@ -4,7 +4,7 @@ Public Class frmEliminarFacturaProveedor
     Dim provTemp As negociosProveedores
 
     Private Sub frmEliminarFacturaProveedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        lblEmpleado.Text = frmPrincipal.gnegEmpleado.getNombreEmpleado()
+        lblEmpleado.Text = frmPrincipal.gnegEmpleado.getUsuarioEmpleado()
         Try
             provTemp = negociosProveedores.fnnpBuscarProveedorPorId(frmModuloCompras.gnpComprasSeleccionado.getIdProveedor())
             Me.txtSerie.Text = frmModuloCompras.gnpComprasSeleccionado.getSerie()
