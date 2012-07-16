@@ -33,6 +33,7 @@ Partial Class frmReporteFacturasEliminadas
         Me.dtpFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
         Me.crvReporte = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.FacturasEliminadasFechaNit1 = New GestionTextiles.FacturasEliminadasFechaNit()
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -144,6 +145,7 @@ Partial Class frmReporteFacturasEliminadas
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(0, 165)
         Me.crvReporte.Name = "crvReporte"
+        Me.crvReporte.ReportSource = Me.FacturasEliminadasFechaNit1
         Me.crvReporte.Size = New System.Drawing.Size(1013, 445)
         Me.crvReporte.TabIndex = 17
         '
@@ -174,4 +176,5 @@ Partial Class frmReporteFacturasEliminadas
     Friend WithEvents txtNit As System.Windows.Forms.TextBox
     Friend WithEvents lblNitCLiente As System.Windows.Forms.Label
     Friend WithEvents crvReporte As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents FacturasEliminadasFechaNit1 As GestionTextiles.FacturasEliminadasFechaNit
 End Class

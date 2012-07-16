@@ -86,11 +86,11 @@
         fechaInicial = dtpInicio.Text
         fechaFinal = dtpFin.Text
         nitC = txtNit.Text
-        ' Dim rpt As New facturas  ' se instancia un objeto del reporte
-        ' Dim consulta As New dsReportesTableAdapters.cierredecajaTableAdapter ' se instancia el tableAdapter (este es la conexión a la BD)
-        ' Dim ds As New dsReportes ' el dataset se debe llenar, para colocarlo como fuente del reporte
-        ' consulta.Fill(ds.cierredecaja, fechaInicial, fechaFinal) ' se llena la dataTable de proveedores, q en si será la fuente del reporte
-        'rpt.SetDataSource(ds) ' se coloca como fuente del reporte
-        'crvReporte.ReportSource = rpt ' el reporte es fuente del crystal report viewer
+        Dim rpt As New FacturasEliminadasFechaNit   ' se instancia un objeto del reporte
+        Dim consulta As New dsReportesTableAdapters.facturasEliminadasFechaNitTableAdapter  ' se instancia el tableAdapter (este es la conexión a la BD)
+        Dim ds As New dsReportes ' el dataset se debe llenar, para colocarlo como fuente del reporte
+        consulta.Fill(ds.facturasEliminadasFechaNit, fechaInicial, fechaFinal, nitC) ' se llena la dataTable de proveedores, q en si será la fuente del reporte
+        rpt.SetDataSource(ds) ' se coloca como fuente del reporte
+        crvReporte.ReportSource = rpt ' el reporte es fuente del crystal report viewer
     End Sub
 End Class
