@@ -281,7 +281,9 @@ Public Class frmCompras
     End Sub
 
     Private Sub txtNit_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNit.TextChanged
-        fnvdRecargar()
+
+
+
     End Sub
     Private Sub fnvdRecargar()
         Try
@@ -358,4 +360,7 @@ Public Class frmCompras
         slblDescripcion.Text = "Realiza la búsqueda"
     End Sub
 
+    Private Sub vtVerificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
 End Class
