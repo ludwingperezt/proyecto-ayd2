@@ -40,7 +40,7 @@ Public Class frmtipocliente
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btneliminartipocliente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btneliminartipocliente.MouseLeave
+    Private Sub btneliminartipocliente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -57,7 +57,7 @@ Public Class frmtipocliente
         slblDescripcion.Text = "Modifica un tipo de cliente existente"
     End Sub
 
-    Private Sub btneliminartipocliente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btneliminartipocliente.MouseHover
+    Private Sub btneliminartipocliente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Elimnina un tipo de cliente existente"
     End Sub
 
