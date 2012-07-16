@@ -334,4 +334,56 @@ Public Class frmModuloProveedores
         iNumeroPagina = iNumeroPagina + 1
         fnvdRecargar()
     End Sub
+
+    Private Sub cmbFiltro_MouseLeave(sender As System.Object, e As System.EventArgs) Handles cmbFiltro.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub cmbFiltradoEstados_MouseLeave(sender As System.Object, e As System.EventArgs) Handles cmbFiltradoEstados.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtBusqueda_MouseLeave(sender As System.Object, e As System.EventArgs) Handles txtBusqueda.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnAnterior_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnAnterior.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnSiguiente_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnSiguiente.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub cmbFiltro_MouseHover(sender As System.Object, e As System.EventArgs) Handles cmbFiltro.MouseHover
+        slblDescripcion.Text = "Permite seleccionar el criterio de búsqueda"
+    End Sub
+
+    Private Sub txtBusqueda_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtBusqueda.MouseHover
+        slblDescripcion.Text = "Ingrese el tecto a buscar"
+    End Sub
+
+    Private Sub btnbuscar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnbuscar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnbuscar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnbuscar.MouseHover
+        slblDescripcion.Text = "Click para iniciar búsqueda"
+    End Sub
+
+    Private Sub btnRegresar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnRegresar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnRegresar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnRegresar.MouseHover
+        slblDescripcion.Text = "Recarga toda la lista de proveedores"
+    End Sub
+
+    Private Sub btnAnterior_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnAnterior.MouseHover
+        slblDescripcion.Text = "Ver los anteriores resultados"
+    End Sub
+
+    Private Sub btnSiguiente_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnSiguiente.MouseHover
+        slblDescripcion.Text = "Ver los siguientes resultados"
+    End Sub
 End Class
