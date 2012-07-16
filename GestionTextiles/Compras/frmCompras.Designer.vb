@@ -203,6 +203,7 @@ Partial Class frmCompras
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnBuscar.Enabled = False
         Me.btnBuscar.Location = New System.Drawing.Point(389, 27)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
@@ -238,6 +239,7 @@ Partial Class frmCompras
         '
         'txtNit
         '
+        Me.txtNit.Enabled = False
         Me.txtNit.Location = New System.Drawing.Point(150, 114)
         Me.txtNit.Name = "txtNit"
         Me.txtNit.Size = New System.Drawing.Size(113, 20)
@@ -299,6 +301,7 @@ Partial Class frmCompras
         '
         'txtCorrelativo
         '
+        Me.txtCorrelativo.Enabled = False
         Me.txtCorrelativo.Location = New System.Drawing.Point(372, 50)
         Me.txtCorrelativo.MaxLength = 20
         Me.txtCorrelativo.Name = "txtCorrelativo"

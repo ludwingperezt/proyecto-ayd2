@@ -281,8 +281,7 @@ Public Class frmCompras
     End Sub
 
     Private Sub txtNit_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNit.TextChanged
-
-
+        fnvdRecargar()
 
     End Sub
     Private Sub fnvdRecargar()
@@ -292,6 +291,7 @@ Public Class frmCompras
             Me.banderaBusqueda = False
             Me.glstProveedor = negociosProveedores.fnslBuscarProveedorPorNit(txtNit.Text)
             Me.fnvCrearDataTable(Me.glstProveedor)
+            btnBuscar.Enabled = True
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -362,5 +362,13 @@ Public Class frmCompras
 
     Private Sub vtVerificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
+    End Sub
+
+    Private Sub txtSerie_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.TextChanged
+        txtCorrelativo.Enabled = True
+    End Sub
+
+    Private Sub txtCorrelativo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCorrelativo.TextChanged
+        txtNit.Enabled = True
     End Sub
 End Class
