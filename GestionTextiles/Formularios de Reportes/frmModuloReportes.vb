@@ -98,7 +98,7 @@
     End Sub
 
     Private Sub btnCostos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCostos.Click
-
+        frmReporteCostosRangoFecha.ShowDialog(Me)
     End Sub
 
     Private Sub btnVentas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVentas.Click
