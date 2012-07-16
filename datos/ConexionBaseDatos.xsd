@@ -1895,7 +1895,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarProducto" MethodsParameterType="CLR" Modifier="Public" Name="insertarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy21" UserSourceName="insertarProducto">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarProducto" MethodsParameterType="CLR" Modifier="Public" Name="insertarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy20" UserSourceName="insertarProducto">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.insertarProducto</CommandText>
@@ -1911,7 +1911,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarRol" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarRol" MethodsParameterType="CLR" Modifier="Public" Name="insertarRol" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy22" UserSourceName="insertarRol">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarRol" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarRol" MethodsParameterType="CLR" Modifier="Public" Name="insertarRol" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy21" UserSourceName="insertarRol">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.insertarRol</CommandText>
@@ -1931,7 +1931,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarEliminarProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarEliminarProducto" MethodsParameterType="CLR" Modifier="Public" Name="modificarEliminarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy23" UserSourceName="modificarEliminarProducto">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarEliminarProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarEliminarProducto" MethodsParameterType="CLR" Modifier="Public" Name="modificarEliminarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy22" UserSourceName="modificarEliminarProducto">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.modificarEliminarProducto</CommandText>
@@ -1949,7 +1949,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarEliminarRol" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarEliminarRol" MethodsParameterType="CLR" Modifier="Public" Name="modificarEliminarRol" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy24" UserSourceName="modificarEliminarRol">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarEliminarRol" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarEliminarRol" MethodsParameterType="CLR" Modifier="Public" Name="modificarEliminarRol" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy23" UserSourceName="modificarEliminarRol">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.modificarEliminarRol</CommandText>
@@ -1971,7 +1971,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarFacutraProveedorEliminada" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarFacutraProveedorEliminada" MethodsParameterType="CLR" Modifier="Public" Name="modificarFacutraProveedorEliminada" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy25" UserSourceName="modificarFacutraProveedorEliminada">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarFacutraProveedorEliminada" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarFacutraProveedorEliminada" MethodsParameterType="CLR" Modifier="Public" Name="modificarFacutraProveedorEliminada" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy24" UserSourceName="modificarFacutraProveedorEliminada">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.modificarFacutraProveedorEliminada</CommandText>
@@ -1985,7 +1985,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarProducto" MethodsParameterType="CLR" Modifier="Public" Name="modificarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy26" UserSourceName="modificarProducto">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarProducto" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarProducto" MethodsParameterType="CLR" Modifier="Public" Name="modificarProducto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy25" UserSourceName="modificarProducto">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.modificarProducto</CommandText>
@@ -2002,7 +2002,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarProveedor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarProveedor" MethodsParameterType="CLR" Modifier="Public" Name="modificarProveedor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy27" UserSourceName="modificarProveedor">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarProveedor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarProveedor" MethodsParameterType="CLR" Modifier="Public" Name="modificarProveedor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy26" UserSourceName="modificarProveedor">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.modificarProveedor</CommandText>
@@ -2020,7 +2020,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarRol" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarRol" MethodsParameterType="CLR" Modifier="Public" Name="modificarRol" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy28" UserSourceName="modificarRol">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarRol" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarRol" MethodsParameterType="CLR" Modifier="Public" Name="modificarRol" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy27" UserSourceName="modificarRol">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.modificarRol</CommandText>
@@ -2041,7 +2041,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarSerie" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarSerie" MethodsParameterType="CLR" Modifier="Public" Name="modificarSerie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy29" UserSourceName="modificarSerie">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarSerie" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarSerie" MethodsParameterType="CLR" Modifier="Public" Name="modificarSerie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy28" UserSourceName="modificarSerie">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.modificarSerie</CommandText>
@@ -2053,7 +2053,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.ModificarTipoCliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ModificarTipoCliente" MethodsParameterType="CLR" Modifier="Public" Name="ModificarTipoCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy30" UserSourceName="ModificarTipoCliente">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.ModificarTipoCliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ModificarTipoCliente" MethodsParameterType="CLR" Modifier="Public" Name="ModificarTipoCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy29" UserSourceName="ModificarTipoCliente">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.ModificarTipoCliente</CommandText>
@@ -2067,7 +2067,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.verificarExistencia" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="verificarExistencia" MethodsParameterType="CLR" Modifier="Public" Name="verificarExistencia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy31" UserSourceName="verificarExistencia">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.verificarExistencia" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="verificarExistencia" MethodsParameterType="CLR" Modifier="Public" Name="verificarExistencia" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy30" UserSourceName="verificarExistencia">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.verificarExistencia</CommandText>
@@ -2079,7 +2079,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.obtenerNumeroFacturaCliente" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="obtenerNumeroFacturaCliente" MethodsParameterType="CLR" Modifier="Public" Name="obtenerNumeroFacturaCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy32" UserSourceName="obtenerNumeroFacturaCliente">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.obtenerNumeroFacturaCliente" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="obtenerNumeroFacturaCliente" MethodsParameterType="CLR" Modifier="Public" Name="obtenerNumeroFacturaCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy31" UserSourceName="obtenerNumeroFacturaCliente">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.obtenerNumeroFacturaCliente</CommandText>
@@ -2090,7 +2090,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarEmpleados" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarEmpleados" MethodsParameterType="CLR" Modifier="Public" Name="insertarEmpleados" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy33" UserSourceName="insertarEmpleados">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarEmpleados" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarEmpleados" MethodsParameterType="CLR" Modifier="Public" Name="insertarEmpleados" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy32" UserSourceName="insertarEmpleados">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.insertarEmpleados</CommandText>
@@ -2113,7 +2113,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.ModificarEmpleado" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ModificarEmpleado" MethodsParameterType="CLR" Modifier="Public" Name="ModificarEmpleado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy34" UserSourceName="ModificarEmpleado">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.ModificarEmpleado" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ModificarEmpleado" MethodsParameterType="CLR" Modifier="Public" Name="ModificarEmpleado" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy33" UserSourceName="ModificarEmpleado">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.ModificarEmpleado</CommandText>
@@ -2137,7 +2137,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarSerieFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarSerieFactura" MethodsParameterType="CLR" Modifier="Public" Name="insertarSerieFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy35" UserSourceName="insertarSerieFactura">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarSerieFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarSerieFactura" MethodsParameterType="CLR" Modifier="Public" Name="insertarSerieFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy34" UserSourceName="insertarSerieFactura">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.insertarSerieFactura</CommandText>
@@ -2152,7 +2152,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarSerieFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarSerieFactura" MethodsParameterType="CLR" Modifier="Public" Name="modificarSerieFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy36" UserSourceName="modificarSerieFactura">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.modificarSerieFactura" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="modificarSerieFactura" MethodsParameterType="CLR" Modifier="Public" Name="modificarSerieFactura" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy35" UserSourceName="modificarSerieFactura">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.modificarSerieFactura</CommandText>
@@ -2167,7 +2167,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.verificarExistenciaSerie" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="verificarExistenciaSerie" MethodsParameterType="CLR" Modifier="Public" Name="verificarExistenciaSerie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy37" UserSourceName="verificarExistenciaSerie">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.verificarExistenciaSerie" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="verificarExistenciaSerie" MethodsParameterType="CLR" Modifier="Public" Name="verificarExistenciaSerie" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy36" UserSourceName="verificarExistenciaSerie">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.verificarExistenciaSerie</CommandText>
@@ -2178,7 +2178,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.darDeBajaFacturaProveedor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="darDeBajaFacturaProveedor" MethodsParameterType="CLR" Modifier="Public" Name="darDeBajaFacturaProveedor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy38" UserSourceName="darDeBajaFacturaProveedor">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.darDeBajaFacturaProveedor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="darDeBajaFacturaProveedor" MethodsParameterType="CLR" Modifier="Public" Name="darDeBajaFacturaProveedor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy37" UserSourceName="darDeBajaFacturaProveedor">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.darDeBajaFacturaProveedor</CommandText>
@@ -2190,7 +2190,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarTipoCliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarTipoCliente" MethodsParameterType="CLR" Modifier="Public" Name="insertarTipoCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy39" UserSourceName="insertarTipoCliente">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarTipoCliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarTipoCliente" MethodsParameterType="CLR" Modifier="Public" Name="insertarTipoCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy38" UserSourceName="insertarTipoCliente">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.insertarTipoCliente</CommandText>
@@ -2203,7 +2203,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.ModificarCliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ModificarCliente" MethodsParameterType="CLR" Modifier="Public" Name="ModificarCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy40" UserSourceName="ModificarCliente">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.ModificarCliente" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ModificarCliente" MethodsParameterType="CLR" Modifier="Public" Name="ModificarCliente" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy39" UserSourceName="ModificarCliente">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.ModificarCliente</CommandText>
@@ -2218,7 +2218,7 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarFacturaProveedor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarFacturaProveedor" MethodsParameterType="CLR" Modifier="Public" Name="insertarFacturaProveedor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy20" UserSourceName="insertarFacturaProveedor">
+          <DbSource ConnectionRef="textilesConnectionString (Settings)" DbObjectName="textiles.dbo.insertarFacturaProveedor" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="insertarFacturaProveedor" MethodsParameterType="CLR" Modifier="Public" Name="insertarFacturaProveedor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy40" UserSourceName="insertarFacturaProveedor">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.insertarFacturaProveedor</CommandText>
