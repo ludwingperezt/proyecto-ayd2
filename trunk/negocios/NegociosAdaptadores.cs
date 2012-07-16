@@ -45,7 +45,7 @@ namespace negocios
         public static buscarTipoClienteDescripcionTableAdapter gAdapatadorTipoClienteDescripcion1 = new buscarTipoClienteDescripcionTableAdapter();
         public static buscarTipoClienteDescuentoTableAdapter gAdaptadorTipoClienteDescuento1 = new buscarTipoClienteDescuentoTableAdapter();
         public static buscarTipoClienteNombreTableAdapter gAdaptadorTipoClienteNombre1 = new buscarTipoClienteNombreTableAdapter();
-
+        public static ultimoRegistroTableAdapter gAdaptadorUltimoRegistro = new ultimoRegistroTableAdapter();
 
         public static datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorCodigoTableAdapter gAdaptadorProductoPorCodigo = new datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorCodigoTableAdapter();
         public static datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorIdTableAdapter gAdaptadorProductoPorId = new datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorIdTableAdapter();
