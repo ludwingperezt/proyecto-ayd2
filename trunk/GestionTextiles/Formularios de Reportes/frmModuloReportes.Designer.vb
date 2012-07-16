@@ -33,7 +33,7 @@ Partial Class frmModuloReportes
         Me.btnReporteFacturasasEliminadas = New System.Windows.Forms.Button()
         Me.btnCorte = New System.Windows.Forms.Button()
         Me.gpCompras = New System.Windows.Forms.GroupBox()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.btnCompras = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.gpEmpleados = New System.Windows.Forms.GroupBox()
@@ -153,7 +153,7 @@ Partial Class frmModuloReportes
         '
         'gpCompras
         '
-        Me.gpCompras.Controls.Add(Me.Button6)
+        Me.gpCompras.Controls.Add(Me.btnCompras)
         Me.gpCompras.Controls.Add(Me.Button4)
         Me.gpCompras.Controls.Add(Me.Button5)
         Me.gpCompras.Location = New System.Drawing.Point(30, 187)
@@ -163,17 +163,17 @@ Partial Class frmModuloReportes
         Me.gpCompras.TabStop = False
         Me.gpCompras.Text = "Compras"
         '
-        'Button6
+        'btnCompras
         '
-        Me.Button6.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.Button6.Location = New System.Drawing.Point(58, 19)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(310, 25)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Button6"
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.btnCompras.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnCompras.Image = CType(resources.GetObject("btnCompras.Image"), System.Drawing.Image)
+        Me.btnCompras.ImageAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnCompras.Location = New System.Drawing.Point(58, 19)
+        Me.btnCompras.Name = "btnCompras"
+        Me.btnCompras.Size = New System.Drawing.Size(310, 25)
+        Me.btnCompras.TabIndex = 5
+        Me.btnCompras.Text = "C&ompras Por Rango de Fecha"
+        Me.btnCompras.UseVisualStyleBackColor = False
         '
         'Button4
         '
@@ -391,7 +391,7 @@ Partial Class frmModuloReportes
     Friend WithEvents btnReporteDevolucionesProveedor As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents btnCompras As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip

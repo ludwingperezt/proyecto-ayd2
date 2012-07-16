@@ -92,4 +92,8 @@
     Private Sub btnFacturasEliminadasNit_Click(sender As System.Object, e As System.EventArgs) Handles btnFacturasEliminadasNit.Click
         frmReporteFacturasEliminadasNit.ShowDialog(Me)
     End Sub
+
+    Private Sub btnCompras_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCompras.Click
+        frmReportesComprasPorFechaRango.ShowDialog(Me)
+    End Sub
 End Class
