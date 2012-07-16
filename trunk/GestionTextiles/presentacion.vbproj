@@ -329,12 +329,6 @@
     <Compile Include="Clientes\frmingresotipocliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proveedores\frmListarProveedores.Designer.vb">
-      <DependentUpon>frmListarProveedores.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Proveedores\frmListarProveedores.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Empleados\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -590,9 +584,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes\frmingresotipocliente.resx">
       <DependentUpon>frmingresotipocliente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proveedores\frmListarProveedores.resx">
-      <DependentUpon>frmListarProveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

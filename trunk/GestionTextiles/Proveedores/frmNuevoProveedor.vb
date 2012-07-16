@@ -172,4 +172,16 @@ Public Class frmNuevoProveedor
     Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
 
     End Sub
+
+    Private Sub txtEmpresa_MouseHover(sender As System.Object, e As System.EventArgs) Handles txtEmpresa.MouseHover
+        slblDescripcion.Text = "Ingrese el nombre de la empresa proveedora"
+    End Sub
+
+    Private Sub btnActivar_MouseLeave(sender As System.Object, e As System.EventArgs) Handles btnActivar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnActivar_MouseHover(sender As System.Object, e As System.EventArgs) Handles btnActivar.MouseHover
+        slblDescripcion.Text = "El empleado se encuetra de baja, puede darlo de alta"
+    End Sub
 End Class
