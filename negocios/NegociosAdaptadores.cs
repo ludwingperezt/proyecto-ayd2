@@ -40,6 +40,7 @@ namespace negocios
         public static buscarClienteNitTableAdapter gAdaptadorBuscarClientesNit = new buscarClienteNitTableAdapter();
         public static devolverIdFacturaTableAdapter gAdaptadorDevolverIdFactura = new devolverIdFacturaTableAdapter();
         public static buscarClienteDireccionTableAdapter gAdaptadorClientePorDireccion = new buscarClienteDireccionTableAdapter();
+        public static buscarClienteNit2TableAdapter gAdaptadorClientePorNit2 = new buscarClienteNit2TableAdapter();
 
         public static datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorCodigoTableAdapter gAdaptadorProductoPorCodigo = new datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorCodigoTableAdapter();
         public static datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorIdTableAdapter gAdaptadorProductoPorId = new datos.ConexionFuncionesEspecialesTableAdapters.buscarProductoPorIdTableAdapter();
