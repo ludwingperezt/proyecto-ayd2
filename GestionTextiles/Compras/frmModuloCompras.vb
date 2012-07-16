@@ -6,22 +6,62 @@ Public Class frmModuloCompras
     Private glstComprasFiltrada As List(Of negociosFacturasProveedores) = New List(Of negociosFacturasProveedores)
     Public Shared gnpComprasSeleccionado As negociosFacturasProveedores
     Private banderaBusqueda As Boolean = False
+
     Private Sub btnNCompra_Click(sender As System.Object, e As System.EventArgs) Handles btnNCompra.Click
         frmCompras.ShowDialog()
     End Sub
 
     Private Sub btnbuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnbuscar.Click
         Dim parametro As String
-        parametro = cmbFiltro.SelectedValue()
-        If (parametro = "Nit") Then
-
+        parametro = cmbFiltro.SelectedItem
+        If (parametro = "Serie") Then
+            fnvdRecargarSerie()
         End If
-        If (parametro = "Empresa") Then
-
+        If (parametro = "No. Factura") Then
+            fnvdRecargarNumero()
         End If
-        If (parametro = "Propietario") Then
-
+        If (parametro = "Fecha") Then
+            fnvdRecargarFecha()
         End If
+    End Sub
+    Private Sub fnvdRecargarSerie()
+        Try
+            dgvListaCompras.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstComprasFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstCompras = negociosFacturasProveedores.fnslListarFacturaSerie(txtBusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstCompras)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvListaCompras.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvdRecargarNumero()
+        Try
+            dgvListaCompras.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstComprasFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstCompras = negociosFacturasProveedores.fnslListarFacturaNumero(txtBusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstCompras)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvListaCompras.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvdRecargarFecha()
+        Try
+            dgvListaCompras.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstComprasFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstCompras = negociosFacturasProveedores.fnslListarFacturaFecha(Convert.ToDateTime(txtBusqueda.Text))
+            Me.fnvCrearDataTable(Me.glstCompras)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvListaCompras.DataSource = Nothing
+        End Try
     End Sub
 
     Private Sub cmbFiltro_MouseLeave(sender As System.Object, e As System.EventArgs) Handles cmbFiltro.MouseLeave
