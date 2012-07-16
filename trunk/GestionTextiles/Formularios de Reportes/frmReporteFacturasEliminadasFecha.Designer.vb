@@ -45,7 +45,6 @@ Partial Class frmReporteFacturasEliminadasFecha
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(12, 159)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.ReportSource = Me.FacturasEliminadasPorFechaFinal1
         Me.crvReporte.Size = New System.Drawing.Size(1001, 445)
         Me.crvReporte.TabIndex = 20
         '
@@ -130,13 +129,16 @@ Partial Class frmReporteFacturasEliminadasFecha
         '
         'frmReporteFacturasEliminadasFecha
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(1025, 509)
         Me.Controls.Add(Me.crvReporte)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.gbParametros1)
         Me.Name = "frmReporteFacturasEliminadasFecha"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte de Facturas Eliminadas por Fecha"
         Me.gbParametros1.ResumeLayout(False)
         Me.gbParametros1.PerformLayout()
