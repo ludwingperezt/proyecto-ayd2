@@ -222,6 +222,106 @@ namespace negocios
                 return 0;
             }
         }
+        public static DataTable fnDbListarFacturasSerie(string sSerie)
+        {
+            return negociosAdaptadores.gAdaptadorFacturaProveedorSerie.GetData(sSerie);
+        }
+        public static DataTable fnDbListarFacturasNumero(int iNumero)
+        {
+            return negociosAdaptadores.gAdaptadorFacturaProveedorNumero.GetData(iNumero);
+        }
+        public static DataTable fnDbListarFacturasFecha(DateTime dFecha)
+        {
+            return negociosAdaptadores.gAdaptadorFacturaProveedorFecha.GetData(dFecha);
+        }
+        
+        public static List<negociosFacturasProveedores> fnslListarFacturaSerie(string sFacturaSerie)
+        {
+            int idFactura = 0;
+            List<negociosFacturasProveedores> lnpFacturaProveedores = new List<negociosFacturasProveedores>();
+            try
+            {
+                DataTable ldtFacturaProveedores = negociosFacturasProveedores.fnDbListarFacturasSerie(sFacturaSerie);
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtFacturaProveedores.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtFacturaProveedores.Rows[i].ItemArray;
+                    negociosFacturasProveedores npNuevaFacturaProveedores = new negociosFacturasProveedores();
+                    npNuevaFacturaProveedores.setIdFacturaProveedor(Convert.ToInt32(oListaElmentos[0]));
+                    npNuevaFacturaProveedores.setIdProveedor(Convert.ToByte(oListaElmentos[1]));
+                    npNuevaFacturaProveedores.setIdEmpleado(Convert.ToByte(oListaElmentos[2]));
+                    npNuevaFacturaProveedores.setSerie(Convert.ToString(oListaElmentos[3]));
+                    npNuevaFacturaProveedores.setNumero(Convert.ToInt32(oListaElmentos[4]));
+                    npNuevaFacturaProveedores.setFecha(Convert.ToDateTime(oListaElmentos[5]));
+                    npNuevaFacturaProveedores.setTotal(Convert.ToDecimal(oListaElmentos[6]));
+                    lnpFacturaProveedores.Add(npNuevaFacturaProveedores);
+                    idFactura = Convert.ToInt32(oListaElmentos[0]) + 1;
+                }
+                return lnpFacturaProveedores;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        public static List<negociosFacturasProveedores> fnslListarFacturaNumero(int numero)
+        {
+            int idFactura = 0;
+            List<negociosFacturasProveedores> lnpFacturaProveedores = new List<negociosFacturasProveedores>();
+            try
+            {
+                DataTable ldtFacturaProveedores = negociosFacturasProveedores.fnDbListarFacturasNumero(numero);
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtFacturaProveedores.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtFacturaProveedores.Rows[i].ItemArray;
+                    negociosFacturasProveedores npNuevaFacturaProveedores = new negociosFacturasProveedores();
+                    npNuevaFacturaProveedores.setIdFacturaProveedor(Convert.ToInt32(oListaElmentos[0]));
+                    npNuevaFacturaProveedores.setIdProveedor(Convert.ToByte(oListaElmentos[1]));
+                    npNuevaFacturaProveedores.setIdEmpleado(Convert.ToByte(oListaElmentos[2]));
+                    npNuevaFacturaProveedores.setSerie(Convert.ToString(oListaElmentos[3]));
+                    npNuevaFacturaProveedores.setNumero(Convert.ToInt32(oListaElmentos[4]));
+                    npNuevaFacturaProveedores.setFecha(Convert.ToDateTime(oListaElmentos[5]));
+                    npNuevaFacturaProveedores.setTotal(Convert.ToDecimal(oListaElmentos[6]));
+                    lnpFacturaProveedores.Add(npNuevaFacturaProveedores);
+                    idFactura = Convert.ToInt32(oListaElmentos[0]) + 1;
+                }
+                return lnpFacturaProveedores;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        public static List<negociosFacturasProveedores> fnslListarFacturaFecha(DateTime dFecha)
+        {
+            int idFactura = 0;
+            List<negociosFacturasProveedores> lnpFacturaProveedores = new List<negociosFacturasProveedores>();
+            try
+            {
+                DataTable ldtFacturaProveedores = negociosFacturasProveedores.fnDbListarFacturasFecha(dFecha);
+                object[] oListaElmentos;
+                for (int i = 0; i < ldtFacturaProveedores.Rows.Count; i++)
+                {
+                    oListaElmentos = ldtFacturaProveedores.Rows[i].ItemArray;
+                    negociosFacturasProveedores npNuevaFacturaProveedores = new negociosFacturasProveedores();
+                    npNuevaFacturaProveedores.setIdFacturaProveedor(Convert.ToInt32(oListaElmentos[0]));
+                    npNuevaFacturaProveedores.setIdProveedor(Convert.ToByte(oListaElmentos[1]));
+                    npNuevaFacturaProveedores.setIdEmpleado(Convert.ToByte(oListaElmentos[2]));
+                    npNuevaFacturaProveedores.setSerie(Convert.ToString(oListaElmentos[3]));
+                    npNuevaFacturaProveedores.setNumero(Convert.ToInt32(oListaElmentos[4]));
+                    npNuevaFacturaProveedores.setFecha(Convert.ToDateTime(oListaElmentos[5]));
+                    npNuevaFacturaProveedores.setTotal(Convert.ToDecimal(oListaElmentos[6]));
+                    lnpFacturaProveedores.Add(npNuevaFacturaProveedores);
+                    idFactura = Convert.ToInt32(oListaElmentos[0]) + 1;
+                }
+                return lnpFacturaProveedores;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
         #endregion
     }
 
