@@ -213,8 +213,7 @@ namespace negocios
                     npNuevaFacturaProveedores.setFecha(Convert.ToDateTime(oListaElmentos[5]));
                     npNuevaFacturaProveedores.setTotal(Convert.ToDecimal(oListaElmentos[6]));
                     lnpFacturaProveedores.Add(npNuevaFacturaProveedores);
-                    idFactura= Convert.ToInt32(oListaElmentos[0]);
-                    
+                    idFactura= Convert.ToInt32(oListaElmentos[0])+1;
                 }
                 return idFactura;
             }
