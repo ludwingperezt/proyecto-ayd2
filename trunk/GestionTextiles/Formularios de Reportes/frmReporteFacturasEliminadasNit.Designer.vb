@@ -37,13 +37,12 @@ Partial Class frmReporteFacturasEliminadasNit
         '
         Me.crvReporte.ActiveViewIndex = -1
         Me.crvReporte.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crvReporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(12, 162)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.ReportSource = Me.FacturasEliminadasNit1
         Me.crvReporte.Size = New System.Drawing.Size(1007, 445)
         Me.crvReporte.TabIndex = 20
         '
