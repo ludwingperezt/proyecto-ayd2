@@ -24,6 +24,7 @@ namespace negocios
         public static buscarProveedorPorPropietaioTableAdapter gAdaptadorBuscarProveedorPorPropietario = new buscarProveedorPorPropietaioTableAdapter();
         public static buscarProveedorPorNombreTableAdapter gAdaptadorBuscarProveedorPorNombre = new buscarProveedorPorNombreTableAdapter();
         public static buscarProveedorPorEmpresaTableAdapter gAdaptadorBuscarProveedorPorEmpresa = new buscarProveedorPorEmpresaTableAdapter();
+        public static buscarProveedorPorIDTableAdapter gAdapatadorBuscarProveedorPorId = new buscarProveedorPorIDTableAdapter();
         public static buscarEmpleadoNombre1TableAdapter gAdaptadorEmpleadoNombre = new buscarEmpleadoNombre1TableAdapter();
         public static buscarClienteNit1TableAdapter gAdaptadorClienteNit = new buscarClienteNit1TableAdapter();
         public static buscarClienteNombre1TableAdapter gAdaptadorClienteNombre = new buscarClienteNombre1TableAdapter();
