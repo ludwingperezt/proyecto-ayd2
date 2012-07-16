@@ -155,11 +155,7 @@ Public Class frmtipocliente
             btnmodificartipocliente.Enabled = False
         End If
 
-        If lnegPermisos.getPermisoEliminacionTiposCliente() Then
-            btneliminartipocliente.Enabled = True
-        Else
-            btneliminartipocliente.Enabled = False
-        End If
+
 
         ''
         fnvdRecargar()
