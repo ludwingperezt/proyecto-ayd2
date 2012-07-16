@@ -31,7 +31,6 @@ Partial Class frmtipocliente
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnsalir = New System.Windows.Forms.Button()
-        Me.btneliminartipocliente = New System.Windows.Forms.Button()
         Me.btnmodificartipocliente = New System.Windows.Forms.Button()
         Me.btningresar = New System.Windows.Forms.Button()
         Me.gpListadoClientes = New System.Windows.Forms.GroupBox()
@@ -116,23 +115,11 @@ Partial Class frmtipocliente
         Me.btnsalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnsalir.UseVisualStyleBackColor = False
         '
-        'btneliminartipocliente
-        '
-        Me.btneliminartipocliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btneliminartipocliente.Image = CType(resources.GetObject("btneliminartipocliente.Image"), System.Drawing.Image)
-        Me.btneliminartipocliente.Location = New System.Drawing.Point(426, 346)
-        Me.btneliminartipocliente.Name = "btneliminartipocliente"
-        Me.btneliminartipocliente.Size = New System.Drawing.Size(131, 62)
-        Me.btneliminartipocliente.TabIndex = 6
-        Me.btneliminartipocliente.Text = "&Eliminar tipo cliente"
-        Me.btneliminartipocliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btneliminartipocliente.UseVisualStyleBackColor = False
-        '
         'btnmodificartipocliente
         '
         Me.btnmodificartipocliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnmodificartipocliente.Image = CType(resources.GetObject("btnmodificartipocliente.Image"), System.Drawing.Image)
-        Me.btnmodificartipocliente.Location = New System.Drawing.Point(282, 346)
+        Me.btnmodificartipocliente.Location = New System.Drawing.Point(440, 355)
         Me.btnmodificartipocliente.Name = "btnmodificartipocliente"
         Me.btnmodificartipocliente.Size = New System.Drawing.Size(129, 62)
         Me.btnmodificartipocliente.TabIndex = 5
@@ -144,7 +131,7 @@ Partial Class frmtipocliente
         '
         Me.btningresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btningresar.Image = CType(resources.GetObject("btningresar.Image"), System.Drawing.Image)
-        Me.btningresar.Location = New System.Drawing.Point(134, 346)
+        Me.btningresar.Location = New System.Drawing.Point(292, 355)
         Me.btningresar.Name = "btningresar"
         Me.btningresar.Size = New System.Drawing.Size(131, 62)
         Me.btningresar.TabIndex = 4
@@ -211,7 +198,6 @@ Partial Class frmtipocliente
         Me.Controls.Add(Me.gpListadoClientes)
         Me.Controls.Add(Me.stsBarra)
         Me.Controls.Add(Me.btnsalir)
-        Me.Controls.Add(Me.btneliminartipocliente)
         Me.Controls.Add(Me.btnmodificartipocliente)
         Me.Controls.Add(Me.btningresar)
         Me.Controls.Add(Me.btnbuscar)
@@ -237,7 +223,6 @@ Partial Class frmtipocliente
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
     Friend WithEvents btningresar As System.Windows.Forms.Button
     Friend WithEvents btnmodificartipocliente As System.Windows.Forms.Button
-    Friend WithEvents btneliminartipocliente As System.Windows.Forms.Button
     Friend WithEvents btnsalir As System.Windows.Forms.Button
     Friend WithEvents stsBarra As System.Windows.Forms.StatusStrip
     Friend WithEvents slblDescripcion As System.Windows.Forms.ToolStripStatusLabel
