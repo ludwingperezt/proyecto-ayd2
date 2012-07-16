@@ -153,6 +153,13 @@ Public Class frmNuevoProveedor
 
         Else
             Me.lblTitulo.Text = "Crear Proveedor"
+            Me.txtNIT.Text = ""
+            Me.txtDireccion.Text = ""
+            Me.txtEmpresa.Text = ""
+            Me.txtNombre.Text = ""
+            Me.txtPropietario.Text = ""
+            Me.txtTelefono.Text = ""
+            Me.txtCelular.Text = ""
             btnActivar.Visible = False
         End If
     End Sub
