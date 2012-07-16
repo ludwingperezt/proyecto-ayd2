@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class FacturasEliminadasFechaNit
+Public Class rptFacturasEliminadasFyN
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class FacturasEliminadasFechaNit
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "FacturasEliminadasFechaNit.rpt"
+            Return "rptFacturasEliminadasFyN.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class FacturasEliminadasFechaNit
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "GestionTextiles.FacturasEliminadasFechaNit.rpt"
+            Return "GestionTextiles.rptFacturasEliminadasFyN.rpt"
         End Get
         Set
             'Do nothing
@@ -94,7 +94,7 @@ Public Class FacturasEliminadasFechaNit
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedFacturasEliminadasFechaNit
+Public Class CachedrptFacturasEliminadasFyN
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +136,7 @@ Public Class CachedFacturasEliminadasFechaNit
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As FacturasEliminadasFechaNit = New FacturasEliminadasFechaNit()
+        Dim rpt As rptFacturasEliminadasFyN = New rptFacturasEliminadasFyN()
         rpt.Site = Me.Site
         Return rpt
     End Function

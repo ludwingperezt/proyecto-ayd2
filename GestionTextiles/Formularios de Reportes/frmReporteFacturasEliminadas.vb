@@ -1,10 +1,10 @@
 ﻿Public Class frmReporteFacturasEliminadas
     Private fechaInicial As DateTime
     Private fechaFinal As DateTime
-    Private nitC As Char
+    Private nitC As String
 
     Private Sub txtNit_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNit.KeyPress
-        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " ")) Then
+        If (Not (e.KeyChar >= "0" And e.KeyChar <= "9" Or e.KeyChar = vbBack Or e.KeyChar = " " Or e.KeyChar = "c" Or e.KeyChar = "C" Or e.KeyChar = "f" Or e.KeyChar = "F")) Then
             e.KeyChar = vbNullChar
 
         End If
@@ -86,7 +86,7 @@
         fechaInicial = dtpInicio.Text
         fechaFinal = dtpFin.Text
         nitC = txtNit.Text
-        Dim rpt As New FacturasEliminadasFechaNit   ' se instancia un objeto del reporte
+        Dim rpt As New rptFacturasEliminadasFyN   ' se instancia un objeto del reporte
         Dim consulta As New dsReportesTableAdapters.facturasEliminadasFechaNitTableAdapter  ' se instancia el tableAdapter (este es la conexión a la BD)
         Dim ds As New dsReportes ' el dataset se debe llenar, para colocarlo como fuente del reporte
         consulta.Fill(ds.facturasEliminadasFechaNit, fechaInicial, fechaFinal, nitC) ' se llena la dataTable de proveedores, q en si será la fuente del reporte

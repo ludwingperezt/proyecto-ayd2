@@ -88,4 +88,8 @@
     Private Sub btnFactura_Click(sender As System.Object, e As System.EventArgs)
         frmReportes.ShowDialog(Me)
     End Sub
+
+    Private Sub btnFacturasEliminadasNit_Click(sender As System.Object, e As System.EventArgs) Handles btnFacturasEliminadasNit.Click
+        frmReporteFacturasEliminadasNit.ShowDialog(Me)
+    End Sub
 End Class
