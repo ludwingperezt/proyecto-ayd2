@@ -31,7 +31,6 @@ Partial Class frmClientes
         Me.slblDescripcion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.slblFecha = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.btneliminarcliente = New System.Windows.Forms.Button()
         Me.btnmodificarclientes = New System.Windows.Forms.Button()
         Me.btningresarcliente = New System.Windows.Forms.Button()
         Me.gpListadoClientes = New System.Windows.Forms.GroupBox()
@@ -117,23 +116,11 @@ Partial Class frmClientes
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'btneliminarcliente
-        '
-        Me.btneliminarcliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btneliminarcliente.Image = CType(resources.GetObject("btneliminarcliente.Image"), System.Drawing.Image)
-        Me.btneliminarcliente.Location = New System.Drawing.Point(452, 406)
-        Me.btneliminarcliente.Name = "btneliminarcliente"
-        Me.btneliminarcliente.Size = New System.Drawing.Size(107, 71)
-        Me.btneliminarcliente.TabIndex = 6
-        Me.btneliminarcliente.Text = "&Eliminar Cliente"
-        Me.btneliminarcliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btneliminarcliente.UseVisualStyleBackColor = False
-        '
         'btnmodificarclientes
         '
         Me.btnmodificarclientes.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnmodificarclientes.Image = CType(resources.GetObject("btnmodificarclientes.Image"), System.Drawing.Image)
-        Me.btnmodificarclientes.Location = New System.Drawing.Point(327, 406)
+        Me.btnmodificarclientes.Location = New System.Drawing.Point(455, 405)
         Me.btnmodificarclientes.Name = "btnmodificarclientes"
         Me.btnmodificarclientes.Size = New System.Drawing.Size(107, 72)
         Me.btnmodificarclientes.TabIndex = 5
@@ -145,7 +132,7 @@ Partial Class frmClientes
         '
         Me.btningresarcliente.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btningresarcliente.Image = CType(resources.GetObject("btningresarcliente.Image"), System.Drawing.Image)
-        Me.btningresarcliente.Location = New System.Drawing.Point(201, 406)
+        Me.btningresarcliente.Location = New System.Drawing.Point(329, 405)
         Me.btningresarcliente.Name = "btningresarcliente"
         Me.btningresarcliente.Size = New System.Drawing.Size(109, 72)
         Me.btningresarcliente.TabIndex = 4
@@ -216,7 +203,6 @@ Partial Class frmClientes
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.txtbusqueda)
         Me.Controls.Add(Me.lblbusqueda)
-        Me.Controls.Add(Me.btneliminarcliente)
         Me.Controls.Add(Me.btnmodificarclientes)
         Me.Controls.Add(Me.btningresarcliente)
         Me.Controls.Add(Me.lblTitulo)
@@ -236,7 +222,6 @@ Partial Class frmClientes
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents btningresarcliente As System.Windows.Forms.Button
     Friend WithEvents btnmodificarclientes As System.Windows.Forms.Button
-    Friend WithEvents btneliminarcliente As System.Windows.Forms.Button
     Friend WithEvents lblbusqueda As System.Windows.Forms.Label
     Friend WithEvents txtbusqueda As System.Windows.Forms.TextBox
     Friend WithEvents btnbuscar As System.Windows.Forms.Button

@@ -27,7 +27,7 @@ Public Class frmClientes
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btneliminarcliente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btneliminarcliente.MouseLeave
+    Private Sub btneliminarcliente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -55,7 +55,7 @@ Public Class frmClientes
         slblDescripcion.Text = "Modificación de  clientes"
     End Sub
 
-    Private Sub btneliminarcliente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btneliminarcliente.MouseHover
+    Private Sub btneliminarcliente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs)
         slblDescripcion.Text = "Eliminacion de clientes"
     End Sub
 
