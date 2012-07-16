@@ -29,8 +29,8 @@ Partial Class frmReportes
         '
         Me.crvReporte.ActiveViewIndex = -1
         Me.crvReporte.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crvReporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(-1, 0)
@@ -44,6 +44,7 @@ Partial Class frmReportes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(859, 613)
         Me.Controls.Add(Me.crvReporte)
+        Me.MaximizeBox = False
         Me.Name = "frmReportes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reportes"
