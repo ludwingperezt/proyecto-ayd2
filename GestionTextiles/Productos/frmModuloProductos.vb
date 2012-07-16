@@ -259,6 +259,7 @@ Public Class frmModuloProductos
             MessageBox.Show("No puede usar esta opción si no ha hecho clic en algun elemento de la lista", "Precaución", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         Else
             frmFacturar.productoSeleccionado = frmModuloProductos.gnpProductoSeleccionado
+            frmCompras.productoSeleccionado = frmModuloProductos.gnpProductoSeleccionado
             Me.Dispose()
         End If
     End Sub
