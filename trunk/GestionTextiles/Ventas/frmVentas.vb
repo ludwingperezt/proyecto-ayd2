@@ -181,4 +181,79 @@ Public Class frmVentas
     Private Sub dgvSeries_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvSeries.CellClick
         frmVentas.nfcSeleccionado = Me.lstFacturas(e.RowIndex)
     End Sub
+
+    Private Sub txtSerie_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.MouseHover
+        slblDescripcion.Text = "Serie de factura a buscar"
+    End Sub
+
+    Private Sub txtSerie_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.MouseLeave
+        regresarDescripcion()
+    End Sub
+    Private Sub regresarDescripcion()
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtNumero_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.MouseHover
+        slblDescripcion.Text = "Número de factura a buscar"
+    End Sub
+
+    Private Sub btnBuscar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.MouseHover
+        slblDescripcion.Text = "Debe  presionar el boton 'buscar' para inciar la busqueda"
+    End Sub
+
+    Private Sub txtNumero_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnBuscar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnRegresar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.MouseHover
+        slblDescripcion.Text = "Pulse el botón 'regresar' para cargar la lista completa de facturas"
+    End Sub
+
+    Private Sub btnRegresar_ClientSizeChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.ClientSizeChanged
+        regresarDescripcion()
+    End Sub
+
+    Private Sub dgvSeries_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvSeries.MouseHover
+        slblDescripcion.Text = "Lista de facturas en la base de datos"
+    End Sub
+
+    Private Sub dgvSeries_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvSeries.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnAnterior_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnterior.MouseHover
+        slblDescripcion.Text = "Debe  presionar éste botón para ver los resultados de la página anterior"
+    End Sub
+
+    Private Sub btnAnterior_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnterior.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnSiguiente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.MouseHover
+        slblDescripcion.Text = "Debe  presionar éste botón para ver los resultados de la página siguiente"
+    End Sub
+
+    Private Sub btnSiguiente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnFacturar_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturar.MouseHover
+        slblDescripcion.Text = "Debe  presionar éste botón para ingresar una nueva factura"
+    End Sub
+
+    Private Sub btnFacturar_MouseLeave_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFacturar.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnSalir_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseHover
+        slblDescripcion.Text = "Salir de éste formulario"
+    End Sub
+
+    Private Sub btnSalir_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.MouseLeave
+        regresarDescripcion()
+    End Sub
 End Class

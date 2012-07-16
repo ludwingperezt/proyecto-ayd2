@@ -108,7 +108,7 @@ Public Class frmEliminarFactura
     End Sub
 
     Private Sub btnAceptar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseHover
-        slblDescripcion.Text = "Inicia impresión de factura"
+        slblDescripcion.Text = "Elimina la factura de la base de datos"
     End Sub
 
     Private Sub lblnumerofac_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -194,5 +194,71 @@ Public Class frmEliminarFactura
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+    Private Sub regresarDescripcion()
+        slblDescripcion.Text = "Descripción"
+    End Sub
+    Private Sub txtSerie_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.MouseHover
+        slblDescripcion.Text = "Serie de la factura"
+    End Sub
+
+    Private Sub txtSerie_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtNumero_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.MouseHover
+        slblDescripcion.Text = "Número de la factura"
+    End Sub
+
+    Private Sub txtNumero_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtTipoCliente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTipoCliente.MouseHover
+        slblDescripcion.Text = "Categoría de clientes a la cual pertenece el cliente"
+    End Sub
+
+    Private Sub txtTipoCliente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTipoCliente.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtEmpleado_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEmpleado.MouseHover
+        slblDescripcion.Text = "Nombre de la persona que realizó la factura"
+    End Sub
+
+    Private Sub txtEmpleado_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEmpleado.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtFecha_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFecha.MouseHover
+        slblDescripcion.Text = "Fecha y hora de emisión de la factura"
+    End Sub
+
+    Private Sub txtFecha_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFecha.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtDescuento_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDescuento.MouseHover
+        slblDescripcion.Text = "Descuento aplicado a la factura"
+    End Sub
+
+    Private Sub txtDescuento_MouseLeave_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDescuento.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtSubTotal_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSubTotal.MouseHover
+        slblDescripcion.Text = "Subtotal de la factura"
+    End Sub
+
+    Private Sub txtSubTotal_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSubTotal.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtTotal_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTotal.MouseHover
+        slblDescripcion.Text = "Total de la factura"
+    End Sub
+
+    Private Sub txtTotal_MouseLeave_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTotal.MouseLeave
+        regresarDescripcion()
     End Sub
 End Class

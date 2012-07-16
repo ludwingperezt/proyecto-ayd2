@@ -454,4 +454,86 @@ Public Class frmFacturar
             lbltotal.Text = (Decimal.Parse(lblSubTotal.Text) - Decimal.Parse(txtDescuento.Text))
         End If
     End Sub
+    Private Sub regresarDescripcion()
+        slblDescripcion.Text = "Descripción"
+    End Sub
+    Private Sub txtSerie_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.MouseHover
+        slblDescripcion.Text = "Serie de la factura"
+    End Sub
+
+    Private Sub txtSerie_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub cmbtipocliente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbtipocliente.MouseHover
+        slblDescripcion.Text = "Selección del tipo de cliente"
+    End Sub
+
+    Private Sub cmbtipocliente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbtipocliente.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btntipocliente_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btntipocliente.MouseHover
+        slblDescripcion.Text = "Ir al módulo de gestión de tipos de cliente"
+    End Sub
+
+    Private Sub btntipocliente_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btntipocliente.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtTela_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTela.MouseHover
+        slblDescripcion.Text = "Nombre del producto seleccionado"
+    End Sub
+
+    Private Sub txtTela_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTela.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtCantidad_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCantidad.MouseHover
+        slblDescripcion.Text = "Cantidad solicitada del producto"
+    End Sub
+
+    Private Sub txtCantidad_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCantidad.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnBuscar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.MouseHover
+        slblDescripcion.Text = "Debe  presionar éste botón para seleccionar un producto"
+    End Sub
+
+    Private Sub btnBuscar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnagregar_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.MouseHover
+        slblDescripcion.Text = "Debe  presionar éste botón para agreagar el producto a la factura"
+    End Sub
+
+    Private Sub btnagregar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnagregar.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnEliminar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.MouseHover
+        slblDescripcion.Text = "Debe  presionar éste botón para eliminar un producto de la factura"
+    End Sub
+
+    Private Sub btnEliminar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub btnEditar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEditar.MouseHover
+        slblDescripcion.Text = "Debe  presionar éste botón para cambiar la cantidad de un producto en ésta factura"
+    End Sub
+
+    Private Sub btnEditar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEditar.MouseLeave
+        regresarDescripcion()
+    End Sub
+
+    Private Sub txtDescuento_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDescuento.MouseHover
+        slblDescripcion.Text = "Descuento neto para aplicar a la factura"
+    End Sub
+
+    Private Sub txtDescuento_MouseLeave_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDescuento.MouseLeave
+        regresarDescripcion()
+    End Sub
 End Class
