@@ -119,7 +119,7 @@ namespace negocios
         {
             try
             {
-                negociosAdaptadores.gAdaptadorDeConsultas.insertarFacturaProveedor1(idFacturaProveedor, Convert.ToInt16(idProveedor),Convert.ToByte(idEmpleado), serie, numero, fecha, total);
+                negociosAdaptadores.gAdaptadorDeConsultas.insertarFacturaProveedor(Convert.ToInt16(idProveedor),Convert.ToInt32(idEmpleado), serie, numero, fecha, total);
                 return "La inserción del empleado en la base de datos se llevó a cabo con éxito";
             }
             catch (Exception ex)
@@ -189,16 +189,16 @@ namespace negocios
                 return null;
             }
         }
-        public static DataTable fnDbDevolverFacturaSerieNumero(int numero, string serie)
+        public static DataTable fnDbDevolverFacturaSerieNumero()
         {
-            return negociosAdaptadores.gAdaptadorDevolverIdFactura.GetData(numero,serie);
+            return negociosAdaptadores.gAdaptadorUltimoRegistro.GetData();
         }
-        public static List<negociosFacturasProveedores> fnslListarFacturaSerieNumero(int numeroF, string serieF)
+        public static List<negociosFacturasProveedores> fnslListarFacturaSerieNumero()
         {
             List<negociosFacturasProveedores> lnpFacturaProveedores = new List<negociosFacturasProveedores>();
             try
             {
-                DataTable ldtFacturaProveedores = negociosFacturasProveedores.fnDbDevolverFacturaSerieNumero(numeroF,serieF);
+                DataTable ldtFacturaProveedores = negociosFacturasProveedores.fnDbDevolverFacturaSerieNumero();
                 object[] oListaElmentos;
                 for (int i = 0; i < ldtFacturaProveedores.Rows.Count; i++)
                 {
