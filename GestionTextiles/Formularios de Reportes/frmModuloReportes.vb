@@ -73,7 +73,7 @@
         slblDescripcion.Text = "Descripción"
     End Sub
 
-    Private Sub btnDevolucionesProveedorNit_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorNit.MouseLeave
+    Private Sub btnDevolucionesProveedorNit_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorNit.MouseLeave, btnProv.MouseLeave
         slblDescripcion.Text = "Descripción"
     End Sub
 
@@ -81,7 +81,7 @@
         slblDescripcion.Text = "Muestra el reporte de las devoluciones al proveedor por fecha"
     End Sub
 
-    Private Sub btnDevolucionesProveedorNit_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorNit.MouseHover
+    Private Sub btnDevolucionesProveedorNit_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDevolucionesProveedorNit.MouseHover, btnProv.MouseHover
         slblDescripcion.Text = "Muestra el reporte de las devoluciones al proveedor por Nit"
     End Sub
 
@@ -107,5 +107,9 @@
 
     Private Sub btnFactura_Click_1(sender As System.Object, e As System.EventArgs) Handles btnFactura.Click
         frmPreFacturaRep.ShowDialog(Me)
+    End Sub
+
+    Private Sub btnProv_Click(sender As System.Object, e As System.EventArgs) Handles btnProv.Click
+        frmReportePrueba.ShowDialog()
     End Sub
 End Class

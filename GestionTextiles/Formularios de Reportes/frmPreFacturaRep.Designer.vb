@@ -34,7 +34,6 @@ Partial Class frmPreFacturaRep
         '
         Me.txtNumero.Location = New System.Drawing.Point(285, 14)
         Me.txtNumero.Name = "txtNumero"
-        Me.txtNumero.ReadOnly = True
         Me.txtNumero.Size = New System.Drawing.Size(100, 20)
         Me.txtNumero.TabIndex = 108
         '
@@ -51,7 +50,6 @@ Partial Class frmPreFacturaRep
         '
         Me.txtSerie.Location = New System.Drawing.Point(98, 12)
         Me.txtSerie.Name = "txtSerie"
-        Me.txtSerie.ReadOnly = True
         Me.txtSerie.Size = New System.Drawing.Size(100, 20)
         Me.txtSerie.TabIndex = 105
         '
@@ -87,8 +85,10 @@ Partial Class frmPreFacturaRep
         '
         'frmPreFacturaRep
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(404, 81)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
@@ -99,7 +99,7 @@ Partial Class frmPreFacturaRep
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmPreFacturaRep"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Datos"
+        Me.Text = "Datos de Factura"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
