@@ -147,4 +147,8 @@ Public Class frmModuloCompras
             fnvdRecargar()
         End If
     End Sub
+
+    Private Sub btnRegresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegresar.Click
+        fnvdRecargar()
+    End Sub
 End Class
