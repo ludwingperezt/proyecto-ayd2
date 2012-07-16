@@ -116,4 +116,32 @@ Public Class frmSerie
         End If
 
     End Sub
+
+    Private Sub txtSerie_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.MouseHover
+        slblDescripcion.Text = "Talonario/serie de facturas"
+    End Sub
+
+    Private Sub txtCorrelativo_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCorrelativo.MouseHover
+        slblDescripcion.Text = "Número correlativo de la serie de facturas"
+    End Sub
+
+    Private Sub txtLimite_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtLimite.MouseHover
+        slblDescripcion.Text = "Límite de facturas para la serie"
+    End Sub
+
+    Private Sub txtLimite_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtLimite.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub btnCancelar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.MouseHover
+        slblDescripcion.Text = "Salir del formulario sin guardar cambios"
+    End Sub
+
+    Private Sub btnAceptar_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseHover
+        slblDescripcion.Text = "Confirma la operación a la base de datos"
+    End Sub
+
+    Private Sub btnAceptar_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
 End Class
