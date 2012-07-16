@@ -35,6 +35,7 @@ Public Class frmModuloEmpleados
 
     Private Sub btnIngresarEmpleado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIngresarEmpleado.Click
         frmEmpleados.ShowDialog(Me)
+        fnvdRecargar()
     End Sub
 
     Private Sub btnModificarEmpleado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarEmpleado.Click
@@ -46,6 +47,7 @@ Public Class frmModuloEmpleados
             Me.fnvdRecargar()
             txtbusqueda.Text = ""
         End If
+        fnvdRecargar()
     End Sub
 
     Private Sub btnEliminarEmpleados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarEmpleados.Click
@@ -56,6 +58,7 @@ Public Class frmModuloEmpleados
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+        fnvdRecargar()
     End Sub
 
     Private Sub txtbusqueda_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtbusqueda.MouseLeave
