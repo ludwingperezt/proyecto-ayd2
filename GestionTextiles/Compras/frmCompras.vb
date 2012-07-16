@@ -84,18 +84,27 @@ Public Class frmCompras
                     Dim costo As Double
                     Dim idFacturas As Integer
                     ctrlIterador.BackColor = Color.White
-                    insertarEncabezadoFactura()
+
                     encabezado = New negociosFacturasProveedores()
                     Dim ldtTabla As DataTable = New DataTable()
+                    Try
+                        insertarEncabezadoFactura()
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End Try
                     ldtTabla = encabezado.fnDbDevolverFacturaSerieNumero(Convert.ToInt32(txtCorrelativo.Text), txtSerie.Text)
-                    idFacturas = ldtTabla.Rows(0).Item(0).ToString()
+                    idFacturas = ldtTabla.Rows(1).Item(0).ToString()
+                    Try
 
-                    For i As Integer = 0 To dgvDetalleFactura.RowCount - 1
-                        idProducto = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("idProducto").Value.ToString())
-                        cantidad = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("cantidad").Value.ToString())
-                        costo = Convert.ToDecimal(dgvDetalleFactura.Rows(i).Cells("costo").Value.ToString())
-                        insertarDetalleFactura(cantidad, idProducto, costo, idFacturas)
-                    Next
+                        For i As Integer = 0 To dgvDetalleFactura.RowCount - 1
+                            idProducto = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("idProducto").Value.ToString())
+                            cantidad = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("cantidad").Value.ToString())
+                            costo = Convert.ToDecimal(dgvDetalleFactura.Rows(i).Cells("costo").Value.ToString())
+                            insertarDetalleFactura(cantidad, idProducto, costo, idFacturas)
+                        Next
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End Try
                 End If
             End If
         Next
