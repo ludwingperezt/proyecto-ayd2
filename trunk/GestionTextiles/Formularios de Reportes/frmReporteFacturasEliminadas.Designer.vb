@@ -139,8 +139,8 @@ Partial Class frmReporteFacturasEliminadas
         '
         Me.crvReporte.ActiveViewIndex = -1
         Me.crvReporte.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crvReporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(0, 165)
@@ -150,13 +150,17 @@ Partial Class frmReporteFacturasEliminadas
         '
         'frmReporteFacturasEliminadas
         '
+        Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(1016, 611)
         Me.Controls.Add(Me.crvReporte)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.gbParametros1)
+        Me.MaximizeBox = False
         Me.Name = "frmReporteFacturasEliminadas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Facturas Eliminadas"
         Me.gbParametros1.ResumeLayout(False)
         Me.gbParametros1.PerformLayout()
