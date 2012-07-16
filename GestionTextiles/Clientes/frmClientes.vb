@@ -76,8 +76,8 @@ Public Class frmClientes
             If (verificar = "Nit") Then
                 fnvdRecargarNit()
             End If
-            If (verificar = "Tipo Cliente") Then
-
+            If (verificar = "Direccion") Then
+                fnvdRecargarDireccion()
             End If
         End If
     End Sub
@@ -88,6 +88,19 @@ Public Class frmClientes
             Me.glstClientesFiltrada.Clear()
             Me.banderaBusqueda = False
             Me.glstClientes = negociosCliente.fnsClienteNombre(txtbusqueda.Text)
+            Me.fnvCrearDataTable(Me.glstClientes)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            dgvclientes.DataSource = Nothing
+        End Try
+    End Sub
+    Private Sub fnvdRecargarDireccion()
+        Try
+            dgvclientes.DataSource = ""
+            frmClientes.gnpClienteSeleccionado = Nothing
+            Me.glstClientesFiltrada.Clear()
+            Me.banderaBusqueda = False
+            Me.glstClientes = negociosCliente.fnsClienteDireccion1(txtbusqueda.Text)
             Me.fnvCrearDataTable(Me.glstClientes)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
