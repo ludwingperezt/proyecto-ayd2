@@ -23,6 +23,7 @@ Partial Class frmReporteDevolucionesProveedorFecha
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.crvReporte = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.DevolucionesProveedorFechaFinal1 = New GestionTextiles.DevolucionesProveedorFechaFinal()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.gbParametros1 = New System.Windows.Forms.GroupBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -31,7 +32,6 @@ Partial Class frmReporteDevolucionesProveedorFecha
         Me.lblInicio = New System.Windows.Forms.Label()
         Me.dtpFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
-        Me.DevolucionesProveedorFechaFinal1 = New GestionTextiles.DevolucionesProveedorFechaFinal()
         Me.gbParametros1.SuspendLayout()
         Me.SuspendLayout()
         '
