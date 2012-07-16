@@ -389,6 +389,7 @@ Partial Class frmModuloReportes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.CancelButton = Me.btnSalir
         Me.ClientSize = New System.Drawing.Size(839, 721)
         Me.Controls.Add(Me.gpProveedores)
         Me.Controls.Add(Me.gpClientes)
