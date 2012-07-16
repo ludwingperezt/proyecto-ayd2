@@ -133,7 +133,7 @@ Partial Class frmModuloCompras
         'cmbFiltro
         '
         Me.cmbFiltro.FormattingEnabled = True
-        Me.cmbFiltro.Items.AddRange(New Object() {"Empresa", "No. Factura", "Fecha"})
+        Me.cmbFiltro.Items.AddRange(New Object() {"Serie", "No. Factura", "Fecha"})
         Me.cmbFiltro.Location = New System.Drawing.Point(95, 73)
         Me.cmbFiltro.Name = "cmbFiltro"
         Me.cmbFiltro.Size = New System.Drawing.Size(121, 21)
