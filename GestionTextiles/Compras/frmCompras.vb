@@ -8,7 +8,7 @@ Public Class frmCompras
     Public Shared gnpProveedorSeleccionado As negociosProveedores
     Private banderaBusqueda As Boolean = False
     Public Shared productoSeleccionado As negociosProducto
-    Private DetalleFacturaProveedor As negociosDetallesFacturasProveedores
+    Private DetalleFacturaProveedor As negociosDetallesFacturasProveedores = New negociosDetallesFacturasProveedores()
     Private idProveedore As Integer
     Dim EncabezadoFactura As negociosFacturasProveedores
     Dim ldtTabla1 As DataTable = New DataTable()
@@ -16,8 +16,14 @@ Public Class frmCompras
     Dim lnpDetalleFactura As negociosDetallesFacturasProveedores
     Dim total As Decimal
     Public Shared encabezado As negociosFacturasProveedores
+    Dim pasoCantidad As Integer
+    Dim pasoIdProducto As Integer
+    Dim pasoCosto As Decimal
+    Dim idFactura As Integer
+
 
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
+
         frmModuloProductos.btnSalir.Visible = False
 
         frmModuloProductos.seleccion = 1
@@ -41,12 +47,13 @@ Public Class frmCompras
             MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Private Sub insertarDetalleFactura(ByVal cantidad, ByVal idProducto, ByVal costo, ByVal idFactura)
+    Private Sub insertarDetalleFactura()
         Try
-            DetalleFacturaProveedor.setCantidad(cantidad)
-            DetalleFacturaProveedor.setIdProducto(idProducto)
-            DetalleFacturaProveedor.setCosto(costo)
+            DetalleFacturaProveedor.setCantidad(pasoCantidad)
+            DetalleFacturaProveedor.setIdProducto(pasoIdProducto)
+            DetalleFacturaProveedor.setCosto(pasoCosto)
             DetalleFacturaProveedor.setIdFacturaProveedor(idFactura)
+            DetalleFacturaProveedor.fnsInsertarDetalleFacturaProveedor()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error en la operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -74,40 +81,41 @@ Public Class frmCompras
     End Sub
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarCesta.Click
+        Dim bandera As Boolean
+        bandera = 0
         For Each ctrlIterador As Control In Me.Controls
             If TypeOf (ctrlIterador) Is Windows.Forms.TextBox Then
                 If (ctrlIterador.Text = "") Then
                     ctrlIterador.BackColor = Color.Yellow
                 Else
-                    Dim idProducto As Integer
-                    Dim cantidad As Integer
-                    Dim costo As Double
-                    Dim idFacturas As Integer
                     ctrlIterador.BackColor = Color.White
-
-                    encabezado = New negociosFacturasProveedores()
-                    Dim ldtTabla As DataTable = New DataTable()
-                    Try
-                        insertarEncabezadoFactura()
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
-                    ldtTabla = encabezado.fnDbDevolverFacturaSerieNumero(Convert.ToInt32(txtCorrelativo.Text), txtSerie.Text)
-                    idFacturas = ldtTabla.Rows(1).Item(0).ToString()
-                    Try
-
-                        For i As Integer = 0 To dgvDetalleFactura.RowCount - 1
-                            idProducto = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("idProducto").Value.ToString())
-                            cantidad = Convert.ToInt32(dgvDetalleFactura.Rows(i).Cells("cantidad").Value.ToString())
-                            costo = Convert.ToDecimal(dgvDetalleFactura.Rows(i).Cells("costo").Value.ToString())
-                            insertarDetalleFactura(cantidad, idProducto, costo, idFacturas)
-                        Next
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
+                    bandera = 1
                 End If
             End If
         Next
+            Dim idProducto As Integer
+            Dim cantidad As Integer
+            Dim costo As Double
+            Dim idFacturas As Integer
+            encabezado = New negociosFacturasProveedores()
+            Dim ldtTabla As DataTable = New DataTable()
+            idFacturas = encabezado.fnslListarFacturaSerieNumero()
+            Try
+                insertarEncabezadoFactura()
+                Dim i As Int32 = 0
+                For i = 0 To ldtTabla.Rows.Count - 1
+                    ldrFila1 = ldtTabla.Rows(i)
+                    pasoIdProducto = Convert.ToInt32(ldrFila1(0))
+                    pasoCantidad = Convert.ToInt32(ldrFila1(3))
+                    pasoCosto = Convert.ToDecimal(ldrFila1(2))
+                    idFactura = idFacturas
+                    insertarDetalleFactura()
+                Next
+                MessageBox.Show("La operación de compra se llevó a cabo con éxito", "Insersión exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Dispose()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
     End Sub
 
     Private Sub txtCodigo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
@@ -309,7 +317,6 @@ Public Class frmCompras
     End Sub
 
     Private Sub btnagregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        cargarDataTableDetalle()
     End Sub
 
     Private Sub lbEtiquetaTotal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbEtiquetaTotal.Click
@@ -326,7 +333,6 @@ Public Class frmCompras
 
     Private Sub btnEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ldtTabla1.Rows.RemoveAt(Me.dgvDetalleFactura.CurrentRow.Index)
-        cargarDataTableDetalle()
     End Sub
 
     Private Sub dgvDetalleFactura_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvDetalleFactura.CellClick
