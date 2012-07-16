@@ -133,7 +133,7 @@ namespace negocios
         /// </summary>
         /// <param name="sAnotacion"></param>
         /// <returns>string: mensaje de confirmacion</returns>
-        public string fnsDevolverFacturaProveedor(string sAnotacion)
+        public string fnsEliminarFacturaProveedor(string sAnotacion)
         {
             try
             {

@@ -229,6 +229,17 @@ namespace negocios
             return lnpProveedores = negociosProveedores.construirLista(negociosAdaptadores.gAdaptadorBuscarProveedorPorEstado.GetData(bEstado));
         }
 
+        public static negociosProveedores fnnpBuscarProveedorPorId(int iId)
+        {
+            List<negociosProveedores> temporal = negociosProveedores.construirLista(negociosAdaptadores.gAdapatadorBuscarProveedorPorId.GetData((short)iId));
+            if (temporal.Count == 0)
+            {
+                return null;
+            }
+            else return temporal[0];
+
+        }
+
         public static List<negociosProveedores> fnslBuscarProveedorPorNit(string sNit)
         {
             List<negociosProveedores> lstnpProveedores = new List<negociosProveedores>();

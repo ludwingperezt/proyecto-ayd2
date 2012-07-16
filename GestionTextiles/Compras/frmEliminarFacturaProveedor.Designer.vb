@@ -53,6 +53,7 @@ Partial Class frmEliminarFacturaProveedor
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.Enabled = False
         Me.DateTimePicker1.Location = New System.Drawing.Point(80, 88)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
@@ -60,6 +61,7 @@ Partial Class frmEliminarFacturaProveedor
         '
         'txtCorrelativo
         '
+        Me.txtCorrelativo.Enabled = False
         Me.txtCorrelativo.Location = New System.Drawing.Point(295, 50)
         Me.txtCorrelativo.MaxLength = 20
         Me.txtCorrelativo.Name = "txtCorrelativo"
@@ -69,6 +71,7 @@ Partial Class frmEliminarFacturaProveedor
         '
         'txtSerie
         '
+        Me.txtSerie.Enabled = False
         Me.txtSerie.Location = New System.Drawing.Point(82, 50)
         Me.txtSerie.MaxLength = 4
         Me.txtSerie.Name = "txtSerie"
@@ -107,6 +110,7 @@ Partial Class frmEliminarFacturaProveedor
         '
         'txtDireccion
         '
+        Me.txtDireccion.Enabled = False
         Me.txtDireccion.Location = New System.Drawing.Point(81, 172)
         Me.txtDireccion.MaxLength = 60
         Me.txtDireccion.Name = "txtDireccion"
@@ -116,6 +120,7 @@ Partial Class frmEliminarFacturaProveedor
         '
         'txtNombre
         '
+        Me.txtNombre.Enabled = False
         Me.txtNombre.Location = New System.Drawing.Point(80, 144)
         Me.txtNombre.MaxLength = 70
         Me.txtNombre.Name = "txtNombre"
@@ -161,6 +166,7 @@ Partial Class frmEliminarFacturaProveedor
         '
         'txtNit
         '
+        Me.txtNit.Enabled = False
         Me.txtNit.Location = New System.Drawing.Point(80, 114)
         Me.txtNit.Name = "txtNit"
         Me.txtNit.Size = New System.Drawing.Size(113, 20)
@@ -170,6 +176,7 @@ Partial Class frmEliminarFacturaProveedor
         '
         Me.dgvDetalleFactura.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDetalleFactura.Enabled = False
         Me.dgvDetalleFactura.Location = New System.Drawing.Point(12, 198)
         Me.dgvDetalleFactura.Name = "dgvDetalleFactura"
         Me.dgvDetalleFactura.Size = New System.Drawing.Size(482, 201)
