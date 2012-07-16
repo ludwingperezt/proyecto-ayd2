@@ -112,4 +112,17 @@
     Private Sub btnProv_Click(sender As System.Object, e As System.EventArgs) Handles btnProv.Click
         frmReportePrueba.ShowDialog()
     End Sub
+
+    Private Sub gpClientes_MouseHover(sender As System.Object, e As System.EventArgs) Handles gpClientes.MouseHover
+
+    End Sub
+
+    Private Sub btnClientesXTipo_Click(sender As System.Object, e As System.EventArgs) Handles btnClientesXTipo.Click
+        frmReporteClientesPorTipo.ShowDialog(Me)
+
+    End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        frmClientesxCompras.ShowDialog(Me)
+    End Sub
 End Class

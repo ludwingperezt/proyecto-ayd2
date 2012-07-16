@@ -139,13 +139,13 @@ Partial Class frmReporteDevolucionesProveedor
         '
         Me.crvReporte.ActiveViewIndex = -1
         Me.crvReporte.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crvReporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crvReporte.Cursor = System.Windows.Forms.Cursors.Default
         Me.crvReporte.Location = New System.Drawing.Point(2, 166)
         Me.crvReporte.Name = "crvReporte"
-        Me.crvReporte.Size = New System.Drawing.Size(1074, 445)
+        Me.crvReporte.Size = New System.Drawing.Size(1074, 443)
         Me.crvReporte.TabIndex = 20
         '
         'frmReporteDevolucionesProveedor
