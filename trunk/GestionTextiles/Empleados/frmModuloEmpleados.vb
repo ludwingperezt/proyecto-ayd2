@@ -313,4 +313,12 @@ Public Class frmModuloEmpleados
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
         Dispose()
     End Sub
+
+    Private Sub dgvEmpleados_MouseLeave_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvEmpleados.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub dgvEmpleados_MouseHover_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvEmpleados.MouseHover
+        slblDescripcion.Text = "Lista de Empleados"
+    End Sub
 End Class

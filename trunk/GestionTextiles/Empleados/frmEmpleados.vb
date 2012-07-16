@@ -310,4 +310,11 @@ Public Class frmEmpleados
 
     End Sub
 
+    Private Sub txtPuesto_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPuesto.MouseLeave
+        slblDescripcion.Text = "Descripción"
+    End Sub
+
+    Private Sub txtPuesto_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPuesto.MouseHover
+        slblDescripcion.Text = "Puesto del Empleado"
+    End Sub
 End Class
