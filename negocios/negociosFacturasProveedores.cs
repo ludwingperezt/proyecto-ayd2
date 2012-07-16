@@ -115,9 +115,17 @@ namespace negocios
         /// <summary>
         /// Función de inserción de factura proveedor en la base de datos.
         /// </summary>
-        public void fnsInsertarFacturaProveedor()
+        public string fnsInsertarFacturaProveedor()
         {
-            
+            try
+            {
+                negociosAdaptadores.gAdaptadorDeConsultas.insertarFacturaProveedor1(idFacturaProveedor, Convert.ToInt16(idProveedor),Convert.ToByte(idEmpleado), serie, numero, fecha, total);
+                return "La inserción del empleado en la base de datos se llevó a cabo con éxito";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
         /// <summary>
