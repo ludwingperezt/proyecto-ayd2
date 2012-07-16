@@ -37,7 +37,7 @@
         slblDescripcion.Text = "Muestra el Reporte de devoluciónes realizadas por los proveedores"
     End Sub
 
-    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         frmReportePrueba.ShowDialog(Me)
     End Sub
 
