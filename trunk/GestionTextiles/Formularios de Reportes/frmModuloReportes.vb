@@ -1,4 +1,6 @@
-﻿Public Class frmModuloReportes
+﻿Imports negocios
+
+Public Class frmModuloReportes
 
     Private Sub btnCorte_Click(sender As System.Object, e As System.EventArgs) Handles btnCorte.Click
         'frmReportes.ShowDialog()
@@ -124,5 +126,30 @@
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
         frmClientesxCompras.ShowDialog(Me)
+    End Sub
+
+    Private Sub frmModuloReportes_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Dim lnegPermisos As negociosRol = frmPrincipal.gnegPermisos
+        If lnegPermisos.getPermisoCortesCaja Then
+            gpClientes.Enabled = True
+        Else
+            gpClientes.Enabled = False
+        End If
+        If lnegPermisos.getPermisoReporteFacturasVentaEliminadas Then
+            gpCompras.Enabled = True
+        Else
+            gpCompras.Enabled = False
+        End If
+        If lnegPermisos.getPermisoReporteDevolucionesProveedor Then
+            gpProveedores.Enabled = True
+        Else
+            gpProveedores.Enabled = False
+        End If
+
+        If lnegPermisos.getPermisoHistorialCostos Then
+            gpAdministrador.Enabled = True
+        Else
+            gpAdministrador.Enabled = False
+        End If
     End Sub
 End Class

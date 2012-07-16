@@ -275,7 +275,7 @@ Partial Class frmModificarPermiso
         '
         Me.clbReportes.CheckOnClick = True
         Me.clbReportes.FormattingEnabled = True
-        Me.clbReportes.Items.AddRange(New Object() {"Corte de caja", "Listar facturas de ventas eliminadas", "Devoluciones por proveedor", "Historial de costos", "Historial de ventas del mes", "Historial del compras del mes"})
+        Me.clbReportes.Items.AddRange(New Object() {"Reportes Clientes", "Reportes Compras", "Reportes Proveedores", "Reportes Ventas"})
         Me.clbReportes.Location = New System.Drawing.Point(906, 248)
         Me.clbReportes.Name = "clbReportes"
         Me.clbReportes.Size = New System.Drawing.Size(206, 94)
