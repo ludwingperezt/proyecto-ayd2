@@ -236,7 +236,7 @@ namespace negocios
              }
               public static DataTable fnDbBuscarClienteNit1(string snitCliente)
              {
-                 return negociosAdaptadores.gAdaptadorClienteNit.GetData(snitCliente);
+                 return negociosAdaptadores.gAdaptadorClientePorNit2.GetData(snitCliente);
              }
              public static List<negociosCliente> fnsClienteNit(string sNit)
              {
