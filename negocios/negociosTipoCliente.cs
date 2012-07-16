@@ -169,6 +169,90 @@ namespace negocios
                      return null;
                  }
              }
+             public static DataTable ListarTipoClientesDescripcion(string sDescripcion)
+             {
+                 return negociosAdaptadores.gAdapatadorTipoClienteDescripcion1.GetData(sDescripcion);
+             }
+             public static List<negociosTipoCliente> fnslListarTipoClientesDescripcion(string sDescripcion)
+             {
+                 List<negociosTipoCliente> lnpTiposCliente = new List<negociosTipoCliente>();
+                 try
+                 {
+                     DataTable ldtTipoClientes = negociosTipoCliente.ListarTipoClientesDescripcion(sDescripcion);
+                     object[] oListaElmentos;
+                     for (int i = 0; i < ldtTipoClientes.Rows.Count; i++)
+                     {
+                         oListaElmentos = ldtTipoClientes.Rows[i].ItemArray;
+                         negociosTipoCliente npNuevoTipoCliente = new negociosTipoCliente();
+                         npNuevoTipoCliente.setIdTipoCliente(Convert.ToByte(oListaElmentos[0]));
+                         npNuevoTipoCliente.setNombreTipoCliente(Convert.ToString(oListaElmentos[1]));
+                         npNuevoTipoCliente.setDescripcionTipoCliente(Convert.ToString(oListaElmentos[2]));
+                         npNuevoTipoCliente.setDescuentoTipoCliente(float.Parse(Convert.ToString(oListaElmentos[3])));
+                         lnpTiposCliente.Add(npNuevoTipoCliente);
+                     }
+                     return lnpTiposCliente;
+                 }
+                 catch (Exception e)
+                 {
+                     return null;
+                 }
+             }
+             public static DataTable ListarTipoClientesDescuento(double sDescuento)
+             {
+                 return negociosAdaptadores.gAdaptadorTipoClienteDescuento1.GetData(sDescuento);
+             }
+             public static List<negociosTipoCliente> fnslListarTipoClientesDescuento(double sDescuento)
+             {
+                 List<negociosTipoCliente> lnpTiposCliente = new List<negociosTipoCliente>();
+                 try
+                 {
+                     DataTable ldtTipoClientes = negociosTipoCliente.ListarTipoClientesDescuento(sDescuento);
+                     object[] oListaElmentos;
+                     for (int i = 0; i < ldtTipoClientes.Rows.Count; i++)
+                     {
+                         oListaElmentos = ldtTipoClientes.Rows[i].ItemArray;
+                         negociosTipoCliente npNuevoTipoCliente = new negociosTipoCliente();
+                         npNuevoTipoCliente.setIdTipoCliente(Convert.ToByte(oListaElmentos[0]));
+                         npNuevoTipoCliente.setNombreTipoCliente(Convert.ToString(oListaElmentos[1]));
+                         npNuevoTipoCliente.setDescripcionTipoCliente(Convert.ToString(oListaElmentos[2]));
+                         npNuevoTipoCliente.setDescuentoTipoCliente(float.Parse(Convert.ToString(oListaElmentos[3])));
+                         lnpTiposCliente.Add(npNuevoTipoCliente);
+                     }
+                     return lnpTiposCliente;
+                 }
+                 catch (Exception e)
+                 {
+                     return null;
+                 }
+             }
+             public static DataTable ListarTipoClientesNombre(string sNombre)
+             {
+                 return negociosAdaptadores.gAdaptadorTipoClienteNombre1.GetData(sNombre);
+             }
+             public static List<negociosTipoCliente> fnslListarTipoClientesNombre(string sNombre)
+             {
+                 List<negociosTipoCliente> lnpTiposCliente = new List<negociosTipoCliente>();
+                 try
+                 {
+                     DataTable ldtTipoClientes = negociosTipoCliente.ListarTipoClientesNombre(sNombre);
+                     object[] oListaElmentos;
+                     for (int i = 0; i < ldtTipoClientes.Rows.Count; i++)
+                     {
+                         oListaElmentos = ldtTipoClientes.Rows[i].ItemArray;
+                         negociosTipoCliente npNuevoTipoCliente = new negociosTipoCliente();
+                         npNuevoTipoCliente.setIdTipoCliente(Convert.ToByte(oListaElmentos[0]));
+                         npNuevoTipoCliente.setNombreTipoCliente(Convert.ToString(oListaElmentos[1]));
+                         npNuevoTipoCliente.setDescripcionTipoCliente(Convert.ToString(oListaElmentos[2]));
+                         npNuevoTipoCliente.setDescuentoTipoCliente(float.Parse(Convert.ToString(oListaElmentos[3])));
+                         lnpTiposCliente.Add(npNuevoTipoCliente);
+                     }
+                     return lnpTiposCliente;
+                 }
+                 catch (Exception e)
+                 {
+                     return null;
+                 }
+             }
              #endregion
     }
 }
