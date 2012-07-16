@@ -166,6 +166,7 @@ Partial Class frmClientes
         '
         'dgvclientes
         '
+        Me.dgvclientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvclientes.Location = New System.Drawing.Point(9, 55)
         Me.dgvclientes.Name = "dgvclientes"

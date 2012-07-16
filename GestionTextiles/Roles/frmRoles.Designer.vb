@@ -76,6 +76,7 @@ Partial Class frmRoles
         '
         Me.dgvRoles.AllowUserToAddRows = False
         Me.dgvRoles.AllowUserToDeleteRows = False
+        Me.dgvRoles.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvRoles.Location = New System.Drawing.Point(14, 50)
         Me.dgvRoles.Name = "dgvRoles"

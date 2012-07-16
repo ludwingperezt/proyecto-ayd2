@@ -168,6 +168,7 @@ Partial Class frmEliminarFacturaProveedor
         '
         'dgvDetalleFactura
         '
+        Me.dgvDetalleFactura.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDetalleFactura.Location = New System.Drawing.Point(12, 198)
         Me.dgvDetalleFactura.Name = "dgvDetalleFactura"

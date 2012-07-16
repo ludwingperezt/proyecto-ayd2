@@ -168,6 +168,7 @@ Partial Class frmModuloEmpleados
         '
         'dgvEmpleados
         '
+        Me.dgvEmpleados.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmpleados.Location = New System.Drawing.Point(19, 55)
         Me.dgvEmpleados.Name = "dgvEmpleados"

@@ -122,6 +122,7 @@ Partial Class frmVentas
         '
         Me.dgvSeries.AllowUserToAddRows = False
         Me.dgvSeries.AllowUserToDeleteRows = False
+        Me.dgvSeries.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvSeries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSeries.Location = New System.Drawing.Point(12, 37)
         Me.dgvSeries.Name = "dgvSeries"

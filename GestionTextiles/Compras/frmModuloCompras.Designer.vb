@@ -37,9 +37,9 @@ Partial Class frmModuloCompras
         Me.btnAnularCompra = New System.Windows.Forms.Button()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.gbListaCompras = New System.Windows.Forms.GroupBox()
-        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.stsBarra.SuspendLayout()
         CType(Me.dgvListaCompras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbListaCompras.SuspendLayout()
@@ -123,6 +123,7 @@ Partial Class frmModuloCompras
         '
         'dgvListaCompras
         '
+        Me.dgvListaCompras.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvListaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListaCompras.Location = New System.Drawing.Point(21, 46)
         Me.dgvListaCompras.Name = "dgvListaCompras"
@@ -180,18 +181,6 @@ Partial Class frmModuloCompras
         Me.gbListaCompras.TabStop = False
         Me.gbListaCompras.Text = "Lista Compras"
         '
-        'btnRegresar
-        '
-        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
-        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnRegresar.Location = New System.Drawing.Point(490, 17)
-        Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
-        Me.btnRegresar.TabIndex = 5
-        Me.btnRegresar.Text = "Regresar"
-        Me.btnRegresar.UseVisualStyleBackColor = False
-        '
         'btnSiguiente
         '
         Me.btnSiguiente.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -211,6 +200,18 @@ Partial Class frmModuloCompras
         Me.btnAnterior.Size = New System.Drawing.Size(75, 23)
         Me.btnAnterior.TabIndex = 54
         Me.btnAnterior.UseVisualStyleBackColor = False
+        '
+        'btnRegresar
+        '
+        Me.btnRegresar.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.GestionTextiles.My.Resources.Resources.refresh
+        Me.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRegresar.Location = New System.Drawing.Point(490, 17)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(88, 23)
+        Me.btnRegresar.TabIndex = 5
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'frmModuloCompras
         '
