@@ -8,11 +8,12 @@ Public Class frmEliminarFacturaProveedor
         Try
             provTemp = negociosProveedores.fnnpBuscarProveedorPorId(frmModuloCompras.gnpComprasSeleccionado.getIdProveedor())
             Me.txtSerie.Text = frmModuloCompras.gnpComprasSeleccionado.getSerie()
-            Me.txtCorrelativo.Text = frmModuloCompras.gnpComprasSeleccionado.getNumero().ToString()
+            Me.txtCorrelativo.Text = frmModuloCompras.gnpComprasSeleccionado.getNumero()
+            Me.txtNombre.Text = provTemp.getNombre()
+            Me.DateTimePicker1.Value = frmModuloCompras.gnpComprasSeleccionado.getFecha()
+            fnvCrearDataTable(frmModuloCompras.gnpComprasSeleccionado.getListaDetallesFacturaProveedor())
             Me.txtNit.Text = provTemp.getNit()
             Me.txtDireccion.Text = provTemp.getDireccion()
-            Me.txtNombre.Text = provTemp.getNombre()
-            fnvCrearDataTable(frmModuloCompras.gnpComprasSeleccionado.getListaDetallesFacturaProveedor())
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
