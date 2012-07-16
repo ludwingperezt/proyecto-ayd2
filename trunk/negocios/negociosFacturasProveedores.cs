@@ -193,8 +193,9 @@ namespace negocios
         {
             return negociosAdaptadores.gAdaptadorUltimoRegistro.GetData();
         }
-        public static List<negociosFacturasProveedores> fnslListarFacturaSerieNumero()
+        public static int  fnslListarFacturaSerieNumero()
         {
+            int idFactura = 0;
             List<negociosFacturasProveedores> lnpFacturaProveedores = new List<negociosFacturasProveedores>();
             try
             {
@@ -212,12 +213,14 @@ namespace negocios
                     npNuevaFacturaProveedores.setFecha(Convert.ToDateTime(oListaElmentos[5]));
                     npNuevaFacturaProveedores.setTotal(Convert.ToDecimal(oListaElmentos[6]));
                     lnpFacturaProveedores.Add(npNuevaFacturaProveedores);
+                    idFactura= Convert.ToInt32(oListaElmentos[0])+1;
+                    
                 }
-                return lnpFacturaProveedores;
+                return idFactura;
             }
             catch (Exception e)
             {
-                return null;
+                return 0;
             }
         }
         #endregion
