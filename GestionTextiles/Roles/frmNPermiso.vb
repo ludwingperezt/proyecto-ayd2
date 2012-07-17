@@ -284,8 +284,8 @@ Public Class frmModificarPermiso
         clbReportes.SetItemChecked(1, frmRoles.nrRolSeleccionado.getPermisoReporteFacturasVentaEliminadas())
         clbReportes.SetItemChecked(2, frmRoles.nrRolSeleccionado.getPermisoReporteDevolucionesProveedor())
         clbReportes.SetItemChecked(3, frmRoles.nrRolSeleccionado.getPermisoHistorialCostos())
-        clbReportes.SetItemChecked(4, frmRoles.nrRolSeleccionado.getPermisoHistorialVentasMes())
-        clbReportes.SetItemChecked(5, frmRoles.nrRolSeleccionado.getPermisoHistorialComprasMes())
+        'clbReportes.SetItemChecked(4, frmRoles.nrRolSeleccionado.getPermisoHistorialVentasMes())
+        'clbReportes.SetItemChecked(5, frmRoles.nrRolSeleccionado.getPermisoHistorialComprasMes())
         'clbReportes.SetItemChecked(6, frmRoles.nrRolSeleccionado.getPermisoHistorialCreditoPorProveedor())
         'clbReportes.SetItemChecked(7, frmRoles.nrRolSeleccionado.getPermisoHistorialCreditoMes())
 
